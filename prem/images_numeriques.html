@@ -1,0 +1,592 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Marc TURRO">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
+    
+    
+      
+        <title>Travail sur les images numériques - Numérique et Sciences Informatiques</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bb3983ee.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#travail-sur-les-images-numeriques" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../index.html" title="Numérique et Sciences Informatiques" class="md-header__button md-logo" aria-label="Numérique et Sciences Informatiques" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Numérique et Sciences Informatiques
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Travail sur les images numériques
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Effacer" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../index.html" class="md-tabs__link">
+      Accueil
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../premnsi.html" class="md-tabs__link">
+      Première NSI
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../termnsi.html" class="md-tabs__link">
+      Terminale NSI
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../-'Ressources pour la classe de première':'res_prem.md' -'Ressources pour la classe de terminale':'res_term.md'" class="md-tabs__link">
+      Ressources
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Numérique et Sciences Informatiques" class="md-nav__button md-logo" aria-label="Numérique et Sciences Informatiques" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Numérique et Sciences Informatiques
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Accueil
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../premnsi.html" class="md-nav__link">
+        Première NSI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../termnsi.html" class="md-nav__link">
+        Terminale NSI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../-'Ressources pour la classe de première':'res_prem.md' -'Ressources pour la classe de terminale':'res_term.md'" class="md-nav__link">
+        Ressources
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#genese" class="md-nav__link">
+    Genèse
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+<h1 id="travail-sur-les-images-numeriques">Travail sur les images numériques<a class="headerlink" href="#travail-sur-les-images-numeriques" title="Permanent link">&para;</a></h1>
+<h2 id="genese">Genèse<a class="headerlink" href="#genese" title="Permanent link">&para;</a></h2>
+<p>Les images numériques sont comme toutes données informatiques, des objets définis selon une certaines normes: <strong>l'extension</strong> de ce fichier précise notamment comment est structuré ce fichier.
+Le cas des images au format <strong>.png</strong> est révélateur: standard développé par le W3C( comme Html, Css ou Javascript...), il est particulièrement adapté pour publier des images sur des sites internet. Il trouve ses origines dans la volonté de concurrencer le fichier compressé <strong>.gif</strong>, dont le propriétaire réclamait les droits d'utilisations.</p>
+<p>Une image Portable Network Graphics (PNG) est un format ouvert, on peut donc explorer son contenu!</p>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<ol>
+<li>Récupérer l'image <code>firefox.png</code>.</li>
+<li>Ouvrez l'image avec les routines Python habituelles, en mode lecture binaire et visualisez l'entête du fichier( programme donné juste après).</li>
+<li>Déterminer le nombre d'octets constituants ce fichier. Le comparer à la valeur obtenue par un clic droit sur l'image puis propriétés.</li>
+<li>Trouvez d'autres fichiers <strong>.png</strong> et vérifier qu'ils ont tous la même signature(ils commencent tous par la même série d'octets qui est leur signature...).Affichez la liste des octets dans votre console.Donnez cette signature.</li>
+</ol>
+</div>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">#Rappel sur les ouvertures en lecture ou ecritures de fichiers</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">fichier_src</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;........&quot;</span><span class="p">,</span><span class="s2">&quot;rb&quot;</span><span class="p">)</span><span class="c1">#Completer avec le chemin vers l&#39;image</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1">#l&#39;ouverture en mode rb ouvre le fichier en binaire (octet...)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">listeOctet</span> <span class="o">=</span> <span class="p">[</span><span class="n">elt</span> <span class="k">for</span> <span class="n">elt</span> <span class="ow">in</span> <span class="n">fichier_src</span><span class="o">.</span><span class="n">read</span><span class="p">()]</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">listeOctet</span><span class="p">))</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">listeOctet</span><span class="p">)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="n">fichier_src</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+En général, les images numériques sont des <strong>images matricielles</strong>, par opposition aux images <strong>vectorielles</strong> définies par des courbes mathématiques. Les fichiers <code>.svg</code> développés par le W3C, sont des images vectorielles très adaptées à la construction de logo, comme celui de Firefox, décomposable en éléments géométriques.</p>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<ol>
+<li>Observez le logo Firefox défini sous <code>.svg</code> à cette <a href="https://upload.wikimedia.org/wikipedia/commons/2/28/Firefox_logo%2C_2017.svg?uselang=fr">adresse</a> et trouvez sa description <code>.svg</code> (clic droit-&gt; code source de la page).</li>
+<li>Zoomez(touche <code>Crtl + molette</code>).</li>
+<li>Ouvrez le fichier <a href="../img/firefox.png"><strong>firefox.png</strong></a> dans le navigateur Firefox(clic droit-&gt; ouvrir avec...). Zoomez et comparez avec la manipulation précédente.</li>
+<li>Quelle différence entre une image matricielle et vectorielle?</li>
+</ol>
+</div>
+<h1 id="image-matricielle">Image matricielle<a class="headerlink" href="#image-matricielle" title="Permanent link">&para;</a></h1>
+<div class="admonition tip">
+<p class="admonition-title">Image matricielle</p>
+<p>Une photo, une image est donc définie généralement par un tableau de valeurs, appelée <strong>matrice</strong>, définissant ainsi chaque pixel de cette image. On retrouvera en général:</p>
+<ul>
+<li>des images en <strong>niveaux de gris</strong> en mode <code>L</code>: lorsque les couleurs sont codées sur 8 bits, c'est-à-dire 1 octet, il y a donc 256 niveaux de quantifications possibles allant du 0(noir) au blanc(255).</li>
+<li>des images <strong>couleurs</strong> codées en <code>RGB</code> pour Red Green Blue: chaque couleur est codée sur 8 bits soit un octet.</li>
+<li>un canal <strong>alpha</strong> permettant de contrôler la transparence d'une image, notamment lorsque l'on souhaite superposer l'une sur l'autre.</li>
+</ul>
+</div>
+<p>Dans une image matricielle contenant des pixels, le premier pixel est celui en haut à gauche et le dernier, celui en bas à droite. Puis on parcourt une image ligne par ligne, de gauche à droite. Ceci est important pour comprendre comment on peut lire ou écrire sur une image!
+On entend par:  </p>
+<div class="admonition tip">
+<p class="admonition-title">À retenir</p>
+<ol>
+<li>lire un pixel, donner la valeur de sa couleur qui se présente sous différentes formes (entier, triplet ou quadruplet d'entiers) selon le mode de représentation (L, RBG ou RGBA)</li>
+<li>écrire un pixel, définir sa couleur par la donnée d'un entier, d'un triplet ou un quadruplet selon le mode de représentation... </li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<p>Dans une image couleur où chaque couleur est codée sur un octet, combien de couleurs différentes peut-on obtenir?</p>
+</div>
+<h1 id="enfin-du-python">Enfin du Python!<a class="headerlink" href="#enfin-du-python" title="Permanent link">&para;</a></h1>
+<p>Cette section propose de manipuler des images numériques à l'aide d'un bibliothèque Python appelée <strong>PIL</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<p>Installer la bibliothèque PILLOW dans Thonny(lors de l'import il faudra l'appeler sous sous ancien nom PIL...).</p>
+</div>
+<p>Il s'agit de traduire en Python l'idée de:</p>
+<div class="admonition tip">
+<p class="admonition-title">Les routines !</p>
+<ol>
+<li>ouvrir un fichier image <code>puppy.png</code> en un fichier objet  <code>img</code> sur lequel on travaille;</li>
+<li>déterminer les propriétés de cette image(<code>mode,size,format</code>);</li>
+<li>créer une nouvelle image;</li>
+<li>lire et écrire sur une image (attention on lit dans l'une on écrit dans l'autre!)</li>
+<li>montrer ou enregistrer l'image obtenue.</li>
+</ol>
+</div>
+<p>Pour illustrer les commandes python répondant à ces besoins, nous allons utiliser la photo <code>puppy.png</code> (à récupérer à l'endroit habituel...).
+Attention tous les programmes doivent avoir en en-tête, l'import des bibliothèques:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+</code></pre></div>
+<h2 id="ouvrir-une-image-et-lire-des-informations">Ouvrir une image et lire des informations<a class="headerlink" href="#ouvrir-une-image-et-lire-des-informations" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="c1">#Ouverture de l&#39;image existante</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="c1">#Le chemin relatif doit être donné</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="n">im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;..\Images\puppy.png&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="c1">#On peut connaître les données</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">im</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span><span class="n">im</span><span class="o">.</span><span class="n">size</span><span class="p">,</span><span class="n">im</span><span class="o">.</span><span class="n">format</span><span class="p">)</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="n">im</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<p>L'objet <code>im</code> n'est pas une image mais un objet tampon sur lequel nous travaillerons avant de le fermer.</p>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<p>Quelles sont les caractéristiques de l'image <code>puppy.png</code>(mode, taille, format)?</p>
+</div>
+<h2 id="creation-dune-nouvelle-image">Création d'une nouvelle image<a class="headerlink" href="#creation-dune-nouvelle-image" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="c1">#Ouverture d&#39;une nouvelle image</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="n">IM</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">750</span><span class="p">,</span><span class="mi">200</span><span class="p">))</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="n">IM</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;NouvImage1.png&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="n">IM</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<p>Donner le mode et la taille de l'image créée précédemment</p>
+</div>
+<h2 id="lire-la-valeur-dintensite-dun-pixel">Lire la valeur d'intensité d'un pixel<a class="headerlink" href="#lire-la-valeur-dintensite-dun-pixel" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="c1">#Ouverture de l&#39;image existante</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="c1">#Le chemin relatif doit être donné</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="n">im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;..\Images\puppy.png&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="n">pix</span> <span class="o">=</span> <span class="n">im</span><span class="o">.</span><span class="n">getpixel</span><span class="p">((</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">pix</span><span class="p">)</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="n">im</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<p><strong>Attention</strong>, la méthode <code>getpixel</code> prend en paramètre un couple correspondant aux coordonnées <code>(colonne, ligne)</code> du pixel dans l'image: dans l'exemple, 20 ième colonne et 30ième ligne(il faut bien sûr s'assurer que ce pixel existe...) </p>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<p>En s'utilisant le code précédent, </p>
+<ol>
+<li>donner l'intensité des pixels <span class="arithmatex">\((105,42)\)</span> de l'image <code>puppy.png</code>.</li>
+<li>quelles sont les coordonnées du dernier pixel de l'image(en bas à droite).Donnez son intensité</li>
+</ol>
+</div>
+<h2 id="ecrire-lintensite-dun-pixel">Écrire l'intensité d'un pixel<a class="headerlink" href="#ecrire-lintensite-dun-pixel" title="Permanent link">&para;</a></h2>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="c1">#Ouverture d&#39;une nouvelle image</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="n">IM</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">750</span><span class="p">,</span><span class="mi">200</span><span class="p">))</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="n">IM</span><span class="o">.</span><span class="n">putpixel</span><span class="p">((</span><span class="mi">425</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="mi">150</span><span class="p">)</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="n">IM</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;NouvImage2.png&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="n">IM</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+La méthode <code>putpixel</code>s'applique à l'objet <code>IM</code> et prend en paramètres l'endroit où l'on veut écrire <code>(c,l)</code>(425 et 100 dans notre exemple) et la valeur d'intensité <code>p</code>(150 dans l'exemple). Attention dans le cas d'une image couleur l'intensité est un triplet <code>(r,g,b)</code> voire <code>(r,g,b,a)</code>. </p>
+<h2 id="parcourir-une-image-pixel-par-pixel">Parcourir une image pixel par pixel<a class="headerlink" href="#parcourir-une-image-pixel-par-pixel" title="Permanent link">&para;</a></h2>
+<p>Pour parcourir une image pixel par pixel, on va utiliser une double boucle: l'une pour parcourir les lignes , l'autre  pour parcourir les colonnes.</p>
+<div class="admonition tip">
+<p class="admonition-title">Le code suivant:</p>
+<ol>
+<li>ouvre une image en lecture</li>
+<li>crée une nouvelle image de caractéristiques identiques</li>
+<li>parcoure et lit la valeur d'intensité de chaque pixel de l'image initiale</li>
+<li>parcoure et écris au même endroit sur l'image finale la valeur capturée à laquelle on ajoute 100 (on travaille modulo 26 pour rester dans la plage <span class="arithmatex">\([0;255]\)</span>).</li>
+<li>on enregistre l'image ainsi créée.</li>
+</ol>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="c1">#Ouverture de l&#39;image</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="c1">#Le chemin relatif doit être donné</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="n">imInit</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;..\Images\puppy.png&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="c1">#Ouverture d&#39;une nouvelle image</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="c1">#Même mode et taille que l&#39;image déjà ouverte</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="n">ImFin</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">imInit</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span> <span class="n">imInit</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="c1">#La double boucle permet de parcourir l&#39;image de haut en bas de gauche à droite </span>
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">imInit</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span><span class="c1">#l comme ligne</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a>    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">imInit</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span><span class="c1">#c comme colone</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11"></a>        <span class="n">pix</span> <span class="o">=</span> <span class="n">imInit</span><span class="o">.</span><span class="n">getpixel</span><span class="p">((</span><span class="n">c</span><span class="p">,</span><span class="n">l</span><span class="p">))</span><span class="c1"># getpixel capture la valeur de couleur du pixel (x,y)</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12"></a>        <span class="c1">#on fait un get sur im: c&#39;est une lecture!</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13"></a>        <span class="n">ImFin</span><span class="o">.</span><span class="n">putpixel</span><span class="p">((</span><span class="n">c</span><span class="p">,</span><span class="n">l</span><span class="p">),</span> <span class="p">(</span><span class="n">pix</span> <span class="o">+</span> <span class="mi">100</span><span class="p">)</span><span class="o">%</span><span class="mi">256</span><span class="p">)</span><span class="c1">#putpixel colore le pixel (x,y) de l&#39;image IM avec la valeur de (pix + 100)%256</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14"></a>        <span class="c1">#on fait donc une écriture sur Im.</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="n">ImFin</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16"></a><span class="n">ImFin</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;ImageTranslate100.png&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="n">imInit</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18"></a><span class="n">ImFin</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<p>Construire de la même façon les images translatées de 10 pixels et de 255 pixels. Pensez à changer le nom de sauvegarde sinon vous écraserez les fichiers précédemment construits.</p>
+</div>
+<h1 id="le-coin-des-exercices">Le coin des exercices<a class="headerlink" href="#le-coin-des-exercices" title="Permanent link">&para;</a></h1>
+<p>En n'utilisant que les routines précédentes (il y  a des méthodes de la bibliothèque Pil qui permettent de réaliser directement les transformations demandées...), réalisez les exercices suivants.</p>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<ol>
+<li>Créer une image en niveaux de gris de dimension 500 sur 100 pixels où chaque pixel a une intensité égale à un nombre aléatoire entre 0  et 255. On sauvegardera sous le nom <code>hasard.png</code> cette image.</li>
+<li>Créer une image en couleur de dimension 500 sur 100 pixels où chaque pixel a une intensité de rouge, de vert et de bleu est égale à un nombre aléatoire entre 0  et 255. On sauvegardera cette image sous le nom <code>hasardcouleur.png</code> .</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<p>Créer l'image <code>puppynegative.png</code> obtenu à partir de l'image <code>puppy.png</code> en transformant le pixel <code>p</code>en le pixel <code>255 - p</code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<p>Créer une image de dimension 600(width) sur 400(height) pixels qui est le drapeau français.On sauvegardera cette image sous le nom <code>drapeau.png</code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<p>Créer une image en niveaux de gris de dimension 500 sur 100 pixels où chaque pixel de ligne de rang pair est blanc et les autres noir. On sauvegardera cette image sous le nom <code>ligneblanche.png</code> .</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<p>L'image <code>Firefox.png</code> est une image couleur qui est donc la superposition de trois images: l'une contient les composantes de rouge, l'autre de vert et la dernière de bleu.
+Construire ces trois images que vous sauvegarderez sous le nom <code>filtreRougeFirefox.png</code>,....</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<p>Construire l'image obtenue par une symétrie verticale. On sauvegardera l'image sous le nom <code>puppyV.png</code>.
+Construire l'image obtenue par une symétrie horizontale.On sauvegardera l'image sous le nom <code>puppyH.png</code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<p><strong>Effet de seuillage</strong>: L'idée est d'effectuer un seuillage sur l'image en construisant une nouvelle image selon le principe suivant: tous les pixels dont l'intensité est inférieure ou égal à 127 sont transformés en pixel d'intensité 0 et ceux d'intensité strictement supérieur à 127 transformés en pixel d'intensité 1..On sauvegardera l'image sous le nom <code>puppySeuil127.png</code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<p>Même exercice que précédemment mais le choix du seuil <span class="arithmatex">\(s\)</span> est fait par l'utilisateur..On sauvegardera l'image sous le nom <code>puppySeuilS.png</code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<p>Même exercice que précédemment mais <code>n</code> seuil seront créés.On sauvegardera l'image sous le nom <code>puppyQuantificationN.png</code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<p>À l'aide la bibliothèque <code>matplotlib</code>que vous connaissez déjà, construire l'histogramme des intensités de niveaux de gris de l'image <code>puppy.png</code>: en abscisse, on trouve une intensité <span class="arithmatex">\(i\)</span> de 0 à 255 et en ordonnée le nombre de pixels d'intensité <span class="arithmatex">\(i\)</span> dans l'image.</p>
+</div>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copier dans le presse-papier", "clipboard.copied": "Copi\u00e9 dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}, "search": "../assets/javascripts/workers/search.361d90f1.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.289a2a4b.min.js"></script>
+      
+        <script src="../xtra/javascripts/mathjax-config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
