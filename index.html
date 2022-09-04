@@ -337,6 +337,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#les-fichiers-de-commandebat" class="md-nav__link">
+    Les fichiers de commande(.bat)
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -462,6 +469,20 @@ copie <strong>tous</strong> les fichiers portant l'extension <code>.txt</code> d
 <li>Ouvrez l'invite de commande.</li>
 <li>Tapez <code>PATH</code> et observez les chemins proposés</li>
 <li>Tapez <code>echo %USERNAME%</code>, pour afficher la valeur de la variable <code>USERNAME</code></li>
+</ol>
+</div>
+<h2 id="les-fichiers-de-commandebat">Les fichiers de commande(.bat)<a class="headerlink" href="#les-fichiers-de-commandebat" title="Permanent link">⚓︎</a></h2>
+<p>On souhaite souvent exécuter les mêmes tâches en ligne de commande. On peut alors regrouper les commandes dans un fichier qui sera directement lue par le système <code>DOS</code>: ce sont les fichiers dont l'extension est <code>.bat</code></p>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<ol>
+<li>En ligne de commande tapez: 
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span>  Nous sommes le %date%, il est %time%
+</code></pre></div></li>
+<li>Ouvrez le bloc notes en tapant la commande <code>notepad</code>( si elle est au path...) puis recopiez le texte <code>echo  Nous sommes le %date%, il est %time%</code></li>
+<li><strong>Sauvegardez</strong> le fichier sous le nom <code>dateheure</code> avec l'extension <code>.bat</code>. Vous devriez voir apparaître un engrenage dans l'icône décrivant le fichier: <img alt="image" src="data/fichierbat.png" /></li>
+<li>Exécutez alors ce fichier par un double-clic. Que se passe t-il?</li>
+<li>Modifier le fichier en ajoutant une ligne avec l'instruction <code>pause</code>. Sauvegardez et exécutez à nouveau le fichier.</li>
 </ol>
 </div>
 
