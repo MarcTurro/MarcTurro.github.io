@@ -1,0 +1,809 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Marc TURRO">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
+    
+    
+      
+        <title>Récursivité - Numérique et Sciences Informatiques</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bb3983ee.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fonctions-recursives" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../index.html" title="Numérique et Sciences Informatiques" class="md-header__button md-logo" aria-label="Numérique et Sciences Informatiques" data-md-component="logo">
+      
+  <img src="../img/logoNSIsite.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Numérique et Sciences Informatiques
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Récursivité
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Effacer" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../index.html" class="md-tabs__link">
+      Accueil
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../prem/premnsi.html" class="md-tabs__link">
+        Première NSI
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="termnsi.html" class="md-tabs__link md-tabs__link--active">
+        Terminale NSI
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../maths.md" class="md-tabs__link">
+      Un peu de maths aussi ...
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../res_prem.html" class="md-tabs__link">
+        Ressources
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Numérique et Sciences Informatiques" class="md-nav__button md-logo" aria-label="Numérique et Sciences Informatiques" data-md-component="logo">
+      
+  <img src="../img/logoNSIsite.png" alt="logo">
+
+    </a>
+    Numérique et Sciences Informatiques
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Accueil
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Première NSI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Première NSI" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Première NSI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prem/premnsi.html" class="md-nav__link">
+        accueil
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prem/cours_de_reseaux.html" class="md-nav__link">
+        Réseaux informatiques
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prem/images_numeriques.html" class="md-nav__link">
+        Travail sur les images numériques
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prem/index_tpbash.html" class="md-nav__link">
+        Passez la commande !
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Terminale NSI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Terminale NSI" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Terminale NSI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="termnsi.html" class="md-nav__link">
+        Accueil
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Récursivité
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="recursivite.html" class="md-nav__link md-nav__link--active">
+        Récursivité
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#un-exemple-comment-calculer-la-somme-des-n-premiers-entiers-consecutifs" class="md-nav__link">
+    Un exemple: comment calculer la somme des n premiers entiers consécutifs?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualiser-la-pile-dexecution-dun-appel-recursif" class="md-nav__link">
+    Visualiser la pile d'exécution d'un appel récursif
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maths.md" class="md-nav__link">
+        Un peu de maths aussi ...
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Ressources
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Ressources" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Ressources
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../res_prem.html" class="md-nav__link">
+        Ressources pour la classe de première
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../res_term.html" class="md-nav__link">
+        Ressources pour la classe de terminale
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#un-exemple-comment-calculer-la-somme-des-n-premiers-entiers-consecutifs" class="md-nav__link">
+    Un exemple: comment calculer la somme des n premiers entiers consécutifs?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualiser-la-pile-dexecution-dun-appel-recursif" class="md-nav__link">
+    Visualiser la pile d'exécution d'un appel récursif
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+<h1 id="fonctions-recursives">Fonctions récursives<a class="headerlink" href="#fonctions-recursives" title="Permanent link">&para;</a></h1>
+<h2 id="un-exemple-comment-calculer-la-somme-des-n-premiers-entiers-consecutifs">Un exemple: comment calculer la somme des n premiers entiers consécutifs?<a class="headerlink" href="#un-exemple-comment-calculer-la-somme-des-n-premiers-entiers-consecutifs" title="Permanent link">&para;</a></h2>
+<p>Il s'agit de calculer la somme (dite de Gauss...)  </p>
+<div class="arithmatex">\[ S = 1 + 2 + 3 + 4 + ... +  n-1 + n \]</div>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<ol>
+<li>Copier et coller le code Python ci-dessous</li>
+<li>Testez pour plusieurs vaelurs simples de <span class="arithmatex">\(n\)</span></li>
+</ol>
+</div>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Donner un entier positif&quot;</span><span class="p">))</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">S</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>    <span class="n">S</span> <span class="o">=</span> <span class="n">S</span> <span class="o">+</span> <span class="n">i</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La somme des </span><span class="si">{}</span><span class="s2"> premiers entiers est </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">S</span><span class="p">))</span>
+</code></pre></div>
+Le code ci-dessus est <strong>impératif</strong> au sens où nous donnons des ordres que l'ordinateur exécute ligne par ligne.</p>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<ol>
+<li>Transformer le code ci-dessus en une fonction <code>somme_entier</code> qui prend en paramètre le seul entier <span class="arithmatex">\(n\)</span> et qui retourne la somme recherchée.</li>
+<li>Ajouter des assertions à la fonction</li>
+<li>Effectuer des tests unitaires (voir le cours...)</li>
+</ol>
+</div>
+<p>Posons la notation <span class="arithmatex">\(S_n\)</span> pour indiquer la somme <span class="arithmatex">\(1 + 2 + 3 + 4 + ... +  n-1 + n\)</span>. Remarquons alors ceci:</p>
+<div class="arithmatex">\[S_n=1 + 2 + 3 + 4 + ... +  n-1 + n =S_{n -1} + n\]</div>
+<p>Autrement dit, le calcul de <span class="arithmatex">\(S_n\)</span> est récurrent et la traduction python de cette relation donne:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">somme_rect</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">=</span> <span class="n">somme_rect</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">n</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Mais attention!</p>
+<p>La relation précédente n'est valable que pour <span class="arithmatex">\(n\geq 1\)</span> et à la condition qu'elle soit aussi <strong>initialisée</strong>: si on déclare que <code>somme_rec(0) = 0</code>, on peut alors calculer <code>somme_rec(1),somme_rec(2),...</code></p>
+</div>
+<p>Au final, nous obtenons la version <strong>récursive</strong> de la fonction précédente:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">def</span> <span class="nf">somme_rec</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>        <span class="k">return</span> <span class="mi">0</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>    <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>        <span class="k">return</span> <span class="n">somme_rec</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">n</span>
+</code></pre></div>
+<h2 id="visualiser-la-pile-dexecution-dun-appel-recursif">Visualiser la pile d'exécution d'un appel récursif<a class="headerlink" href="#visualiser-la-pile-dexecution-dun-appel-recursif" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<ol>
+<li>Allez sur le site <a href="https://pythontutor.com/render.html#mode=edit">python tutor</a> et recopier le code de la fonction récursive dans la zone d'édition.</li>
+<li>Exécutez <code>somme_rec(5)</code> et visualisez les différents appels.</li>
+<li>Même consigne avec <code>somme_rec(50)</code>.</li>
+<li>Quel pourrait être le problème des fonctions récursives? </li>
+</ol>
+</div>
+<p>Il existe de nombreuses situations algorithmiques qui justifient l'appel d'une fonction récursive. Cependant le nombre d'appel dans la pile est souvent limitée pour des raisons évidentes de sécurité puisque la zone mémoire qui stocke tous les appels peut très vite augmentée...</p>
+<p>Dans Thonny, on peut connaître le nombre maximum d'appel:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kn">import</span> <span class="nn">sys</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">getrecursionlimit</span><span class="p">())</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">À savoir</p>
+<p>Lors de l’exécution d’un algorithme récursif, les appels successifs de la fonction sont stockés dans une pile, c’est <strong>la pile d’exécution</strong>.
+Plus précisément, la pile d’exécution est un emplacement mémoire destiné à stocker les paramètres, les variables locales ainsi que les adresses mémoires de retour des fonctions en cours d’exécution. </p>
+</div>
+<h1 id="vocabulaire">Vocabulaire<a class="headerlink" href="#vocabulaire" title="Permanent link">&para;</a></h1>
+<div class="admonition info">
+<p class="admonition-title">À savoir</p>
+<p>Une fonction <strong>récursive</strong> est une focntion qui s'appelle elle-même dans son exécution. Elle présente toujours:
+    - un <strong>cas d'arrêt</strong> correspondant au cas de base, l'équivalent de l'initialisation en mathématiques...
+    - un appel récursif <strong>décrémenté</strong>: ainsi après plusieurs appels, on se ramène au cas de base!</p>
+</div>
+<h1 id="exercices">Exercices<a class="headerlink" href="#exercices" title="Permanent link">&para;</a></h1>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<p>La factorielle d'un entier n, notée <span class="arithmatex">\(n!\)</span> est égale à : <span class="arithmatex">\(n!=1\times 2 \times 3 \times...\times (n-1) \times n\)</span> si <span class="arithmatex">\(n&gt;0\)</span> et égal à 1 si <span class="arithmatex">\(n=0\)</span>.</p>
+<ol>
+<li>Écrire la fonction <strong>facto_simple(n)</strong> qui prend en paramètre un entier <span class="arithmatex">\(n\)</span> et qui renvoie la factorielle de <span class="arithmatex">\(n\)</span>.</li>
+<li>Écrire la fonction <strong>récursive</strong> facto_recu(n) qui prend en paramètre un entier <span class="arithmatex">\(n\)</span> et qui renvoie la factorielle de <span class="arithmatex">\(n\)</span>.</li>
+</ol>
+<p>On posera des assertions puis des tests dans ces fonctions pour vérifier leur comportement.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<p>On rappelle que <span class="arithmatex">\(x^n=x\times x \times x....\times x\)</span>, <span class="arithmatex">\(n\)</span> fois où <span class="arithmatex">\(x\)</span> est un réel quelconque et <span class="arithmatex">\(n\)</span> un entier.</p>
+<ol>
+<li>Écrire la fonction <strong>puissance_recu(n,x)</strong> qui prend en paramètres l'entier <span class="arithmatex">\(n\)</span> et le réel <span class="arithmatex">\(x\)</span>.</li>
+<li>On peut améliorer cette dernière fonction en considérant la définition ci-dessous:</li>
+</ol>
+<div class="arithmatex">\[\textrm{puissance}(x , n) = 
+\left\{
+      \begin{array}{c c}
+        x &amp; \textrm{si } n = 1 \\
+        \textrm{puissance}(x^2 , n/2) &amp; \textrm{si } n \textrm{ est pair}\\
+        x \times \textrm{puissance}(x^2 , (n - 1)/2) &amp; \textrm{si } n \textrm{ est impair}\\
+      \end{array}
+\right.\]</div>
+<p>Écrire la fonction <strong>puissance_mieux(n, x)</strong> avec cette définition et comparer le temps d'exécution de ces deux fonctions. On utilisera le module <code>timeit</code> pour cela...</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<ol>
+<li>Écrire une fonction nommée <code>reverse(phrase)</code>qui prend en paramètre la chaîne de caractère <code>phrase</code>  et qui la renvoie à l'envers...</li>
+<li>Écrire la version récursive de cette fonction.</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<p>Que dessine la fonction récursive suivante dans <code>turtle</code> (essayez de devinez au lieu de recopier le code....)?
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="k">def</span> <span class="nf">carre</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>        <span class="n">forward</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a>        <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="k">def</span> <span class="nf">base</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a>    <span class="n">carre</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a>    <span class="n">forward</span><span class="p">(</span><span class="n">c</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a>    <span class="n">right</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="k">def</span> <span class="nf">trace</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13"></a>    <span class="k">if</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="p">:</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14"></a>        <span class="k">return</span> <span class="kc">None</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15"></a>    <span class="k">else</span> <span class="p">:</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16"></a>        <span class="n">base</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17"></a>        <span class="k">return</span> <span class="n">trace</span><span class="p">(</span><span class="n">c</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mf">0.5</span><span class="p">))</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18"></a>
+<a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="n">trace</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+</code></pre></div></p>
+</div>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Pied de page">
+      
+        
+        <a href="termnsi.html" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Accueil" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              Accueil
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../res_prem.html" class="md-footer__link md-footer__link--next" aria-label="Suivant: Ressources pour la classe de première" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              Ressources pour la classe de première
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copier dans le presse-papier", "clipboard.copied": "Copi\u00e9 dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}, "search": "../assets/javascripts/workers/search.361d90f1.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.289a2a4b.min.js"></script>
+      
+        <script src="../xtra/javascripts/mathjax-config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
