@@ -1,0 +1,938 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Marc TURRO">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
+    
+    
+      
+        <title>Passez la commande ! - Numérique et Sciences Informatiques</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bb3983ee.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#travail-sur-la-ligne-de-commande" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../index.html" title="Numérique et Sciences Informatiques" class="md-header__button md-logo" aria-label="Numérique et Sciences Informatiques" data-md-component="logo">
+      
+  <img src="../img/logoNSIsite.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Numérique et Sciences Informatiques
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Passez la commande !
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Effacer" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../index.html" class="md-tabs__link">
+      Accueil
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="premnsi.html" class="md-tabs__link md-tabs__link--active">
+        Première NSI
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../term/termnsi.html" class="md-tabs__link">
+        Terminale NSI
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../maths.md" class="md-tabs__link">
+      Un peu de maths aussi ...
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../res_prem.html" class="md-tabs__link">
+        Ressources
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Numérique et Sciences Informatiques" class="md-nav__button md-logo" aria-label="Numérique et Sciences Informatiques" data-md-component="logo">
+      
+  <img src="../img/logoNSIsite.png" alt="logo">
+
+    </a>
+    Numérique et Sciences Informatiques
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Accueil
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Première NSI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Première NSI" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Première NSI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="premnsi.html" class="md-nav__link">
+        accueil
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cours_de_reseaux.html" class="md-nav__link">
+        Réseaux informatiques
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="images_numeriques.html" class="md-nav__link">
+        Travail sur les images numériques
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Passez la commande !
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="index_tpbash.html" class="md-nav__link md-nav__link--active">
+        Passez la commande !
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#une-interface-graphique-qui-a-fait-le-succes-de-microsoft" class="md-nav__link">
+    Une interface graphique qui a fait le succès de microsoft
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passez-la-commande" class="md-nav__link">
+    Passez la commande!
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arborescence-des-systemes-windows" class="md-nav__link">
+    Arborescence des systèmes Windows
+  </a>
+  
+    <nav class="md-nav" aria-label="Arborescence des systèmes Windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lecteurs" class="md-nav__link">
+    Lecteurs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#organisation-des-dossiers-et-des-fichiers" class="md-nav__link">
+    Organisation des dossiers et des fichiers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chemin-absolu-et-relatif" class="md-nav__link">
+    Chemin absolu et relatif
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#naviguer-dans-larborescence-en-ligne-de-commandes" class="md-nav__link">
+    Naviguer dans l'arborescence en ligne de commandes
+  </a>
+  
+    <nav class="md-nav" aria-label="Naviguer dans l'arborescence en ligne de commandes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#des-commandes-de-bases" class="md-nav__link">
+    Des commandes de bases
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-variables-denvironnement" class="md-nav__link">
+    Les variables d'environnement
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-fichiers-de-commandebat" class="md-nav__link">
+    Les fichiers de commande(.bat)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Terminale NSI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Terminale NSI" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Terminale NSI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../term/termnsi.html" class="md-nav__link">
+        Accueil
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../term/recursivite.html" class="md-nav__link">
+        Récursivité
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maths.md" class="md-nav__link">
+        Un peu de maths aussi ...
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Ressources
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Ressources" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Ressources
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../res_prem.html" class="md-nav__link">
+        Ressources pour la classe de première
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../res_term.html" class="md-nav__link">
+        Ressources pour la classe de terminale
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#une-interface-graphique-qui-a-fait-le-succes-de-microsoft" class="md-nav__link">
+    Une interface graphique qui a fait le succès de microsoft
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passez-la-commande" class="md-nav__link">
+    Passez la commande!
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arborescence-des-systemes-windows" class="md-nav__link">
+    Arborescence des systèmes Windows
+  </a>
+  
+    <nav class="md-nav" aria-label="Arborescence des systèmes Windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lecteurs" class="md-nav__link">
+    Lecteurs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#organisation-des-dossiers-et-des-fichiers" class="md-nav__link">
+    Organisation des dossiers et des fichiers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chemin-absolu-et-relatif" class="md-nav__link">
+    Chemin absolu et relatif
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#naviguer-dans-larborescence-en-ligne-de-commandes" class="md-nav__link">
+    Naviguer dans l'arborescence en ligne de commandes
+  </a>
+  
+    <nav class="md-nav" aria-label="Naviguer dans l'arborescence en ligne de commandes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#des-commandes-de-bases" class="md-nav__link">
+    Des commandes de bases
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-variables-denvironnement" class="md-nav__link">
+    Les variables d'environnement
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-fichiers-de-commandebat" class="md-nav__link">
+    Les fichiers de commande(.bat)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+<h1 id="travail-sur-la-ligne-de-commande">Travail sur la ligne de commande<a class="headerlink" href="#travail-sur-la-ligne-de-commande" title="Permanent link">&para;</a></h1>
+<p>ou comment interagir avec le système d'exploitation sans utiliser son interface graphique</p>
+<p><img alt="image" class="center" src="img/sys.jpg" /></p>
+<h2 id="une-interface-graphique-qui-a-fait-le-succes-de-microsoft">Une interface graphique qui a fait le succès de microsoft<a class="headerlink" href="#une-interface-graphique-qui-a-fait-le-succes-de-microsoft" title="Permanent link">&para;</a></h2>
+<p>Microsoft est l'entreprise qui a développé les premiers systèmes d'exploitation proposant une interface graphique au début des années 1990. Avant cette date, il fallait possèder des connaissances techniques pour exploiter les ressources d'un ordinateur. Les systèmes Windows (95, NT, XP, ...) ont démocratisé l'utilisation des machines au point où tout le monde pouvait maintenant s'en acheter une pour son utilisation personnelle: c'est le début de l'ère des PC(personal computer).</p>
+<p>L'<strong>interface graphique</strong> proposée par les systèmes Windows est simple: il suffit de cliquer sur des <strong>icônes</strong> présentes sur le <strong>bureau</strong> pour lancer un programme!</p>
+<p>En revanche, on ne peut pas faire ce qui n'a pas été prévu: des tâches d'administration par exemple...</p>
+<h2 id="passez-la-commande">Passez la commande!<a class="headerlink" href="#passez-la-commande" title="Permanent link">&para;</a></h2>
+<p>On peut commander le système d'exploitation en utilisant des <strong>commandes</strong> ou des <strong>script</strong>. Pour cela, il faut passer en ligne de commande....</p>
+<div class="admonition info">
+<p class="admonition-title">Ouvrir l'invite de commandes</p>
+<ol>
+<li>Tapez <kbd>windows</kbd> + <kbd>R</kbd> puis <code>cmd</code> dans la fenêtre qui s'ouvre</li>
+<li>Vous devez obtenir quelque chose qui ressemble à ça: c'est <strong>l'invite de commande</strong> ou <strong>le prompt</strong>!
+<img alt="image" class="center" src="img/prompt.png" /></li>
+<li>Tapez <code>dir</code> puis la touche <kbd>Entree</kbd></li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<ol>
+<li>Tapez la commande <code>dir /?</code> dans le prompt. À quoi sert-elle?</li>
+<li>Affichez l'aide de la commande <code>copy</code></li>
+</ol>
+</div>
+<h2 id="arborescence-des-systemes-windows">Arborescence des systèmes Windows<a class="headerlink" href="#arborescence-des-systemes-windows" title="Permanent link">&para;</a></h2>
+<h3 id="lecteurs">Lecteurs<a class="headerlink" href="#lecteurs" title="Permanent link">&para;</a></h3>
+<p>Sous Windows, les différentes partitions du disque dur sont identifiées par des lettres majuscules:</p>
+<ul>
+<li>historiquement, la partition <code>système</code> contenant le système d'exploitation est <strong>C:</strong></li>
+<li>une bonne installation partitionne le disque dur en au moins de lecteur: un pour le système , l'autre pour les données. En cas de panne du système, on peut tout de même accèder aux données même si il faut formater la partition système.</li>
+<li>d'autres lecteurs( <strong>E:,F:,..</strong>) peuvent exister: lecteurs réseaux ou simplement une clé USB.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<ol>
+<li>Ouvrez l'explorateur de documents de votre ordinateur.</li>
+<li>Nommez les différents lecteurs que vous pouvez oberver</li>
+</ol>
+</div>
+<h3 id="organisation-des-dossiers-et-des-fichiers">Organisation des dossiers et des fichiers<a class="headerlink" href="#organisation-des-dossiers-et-des-fichiers" title="Permanent link">&para;</a></h3>
+<p>Les partitions contiennent des <strong>dossiers</strong> ou <strong>répertoires</strong> et des <strong>fichiers</strong>. Les dossiers peuvent aussi contenir des dossiers appelés <strong>sous-dossiers</strong>, qui contiennent eux-mêmes des dossiers et/ou des fichiers...</p>
+<p>Selon vos <strong>droits</strong> attribués lorsque vous vous identifiez, vous pouvez avoir des droits sur ces fichiers ou dossiers:</p>
+<ul>
+<li><strong>droit de lecture</strong>, vous pouvez lire <strong>sans</strong> modifier le contenu.</li>
+<li><strong>droit d'écriture</strong>, vous pouvez lire et modifier le contenu.</li>
+<li><strong>aucun droit</strong>, le dossier ou le fichier existe mais vous ne pouvez même pas le voir!</li>
+</ul>
+<p>D'autres droits existent que nous ne développerons pas ici.</p>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<p>Quels droits avez-vous sur les lecteurs de votre ordinateur?</p>
+</div>
+<h3 id="chemin-absolu-et-relatif">Chemin absolu et relatif<a class="headerlink" href="#chemin-absolu-et-relatif" title="Permanent link">&para;</a></h3>
+<p>Pour pointer vers une ressource(fichier ou dossier), on utilise son <strong>chemin</strong>. Il peut être:</p>
+<ul>
+<li><strong>absolu</strong>: le chemin commence par la lettre de la partition et donne le nom de tous les dossiers qu'il faut travaerser pour arriver à la ressource. Par exemple, le chemin absolu de ce fichier est: <code>C:\Users\Utilisateur\tpbash\docs\index.md</code></li>
+<li><strong>relatif</strong>: le chemin identifie le chemin à partir du répertoire courant. Par exemple, les images de cette page sont stockées dans un dossier <code>data</code> et le chemin qui pointe vers l'image ci-dessous qui se nomme <code>chemin.png</code> est <code>\data\chemin.png</code>:
+<img alt="image" class="center" src="img/chemin.png" /></li>
+</ul>
+<h2 id="naviguer-dans-larborescence-en-ligne-de-commandes">Naviguer dans l'arborescence en ligne de commandes<a class="headerlink" href="#naviguer-dans-larborescence-en-ligne-de-commandes" title="Permanent link">&para;</a></h2>
+<h3 id="des-commandes-de-bases">Des commandes de bases<a class="headerlink" href="#des-commandes-de-bases" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>dir</code> affiche le contenu du répertoire courant. Pour connaître les options de cette commande , vous pouvez taper <code>dir /?</code> pour afficher l'aide!</li>
+<li><code>cd nom_du_dossier</code>(change directory) permet de se déplacer dans le dossier <code>nom_du_dossier</code> si il existe!</li>
+<li><code>cd..</code> permet de remonter d'un niveau dans l'arborescence.</li>
+<li><code>mkdir</code>(make directory) crée un nouveau dossier dans le répertoire courant!</li>
+<li><code>copy</code> copie des fichiers ou des dossiers de la source vers la destination (tapez <code>copy /?</code> pour plus d'infos...)</li>
+<li><code>del</code>(delete) efface le fichier passé en argument...</li>
+</ul>
+<p>Le caractère * , appelé <strong>joker</strong>, remplace n'importe quel texte dans le nom d'un fichier. Par exemple, la commande:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>copy *.txt C:<span class="se">\b</span>ackup
+</code></pre></div>
+copie <strong>tous</strong> les fichiers portant l'extension <code>.txt</code> dans le dossier <code>backup</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<ol>
+<li>Ouvrez l'invite de commande.</li>
+<li>Dans le dossier <code>Mes documents</code>, créer un dossier <code>test</code> et un dossier <code>backup</code>.</li>
+<li>Allez ensuite dans ce dossier.</li>
+<li>Tapez la commande <code>notepad coucou.txt</code>. Normalement, le bloc notes s'ouvre avec un avertissement. Confirmez votre volonté de créer ce fichier et mettez y le contenu de votre choix.</li>
+<li>Fermez <code>notepad</code> par la combinaison de touches <kbd>Alt</kbd>+<kbd>F4</kbd></li>
+<li>Vérifier que le fichier <code>coucou.txt</code> existe bien dans le dossier test.</li>
+<li>Copier ce fichier dans le dossier <code>backup</code> et vérifier que la copie a fonctionné!</li>
+</ol>
+</div>
+<h2 id="les-variables-denvironnement">Les variables d'environnement<a class="headerlink" href="#les-variables-denvironnement" title="Permanent link">&para;</a></h2>
+<p>Comment dans la manipulation précédente, l'exécutable de <code>notepad</code> a t-il pu être lancé? Son seul appel suffit-il ? Bizarre...</p>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<p>En ligne de commande, tapez <code>firefox</code>. Que se passe t-il?</p>
+</div>
+<p>Les <strong>varaibles d'environnement</strong> sont des variables qui peuvent être appelées partout par tous les programmes. Elles stockent des informations considérées importantes commme:</p>
+<ul>
+<li>le nom de l'ordinateur, de l'utilisateur</li>
+<li>le chemin du répertoire <code>TEMP</code> contenant les fichiers temporaires</li>
+<li>la variable <code>PATH</code> contient le chemin d'exécutables qui peuvent être appelés partout dans les programmes</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<ol>
+<li>Ouvrez l'invite de commande.</li>
+<li>Tapez <code>PATH</code> et observez les chemins proposés</li>
+<li>Tapez <code>echo %USERNAME%</code>, pour afficher la valeur de la variable <code>USERNAME</code></li>
+</ol>
+</div>
+<h2 id="les-fichiers-de-commandebat">Les fichiers de commande(.bat)<a class="headerlink" href="#les-fichiers-de-commandebat" title="Permanent link">&para;</a></h2>
+<p>On souhaite souvent exécuter les mêmes tâches en ligne de commande. On peut alors regrouper les commandes dans un fichier qui sera directement lue par le système <code>DOS</code>: ce sont les fichiers dont l'extension est <code>.bat</code></p>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<ol>
+<li>En ligne de commande tapez: 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nb">echo</span>  Nous sommes le %date%, il est %time%
+</code></pre></div></li>
+<li>Ouvrez le bloc notes en tapant la commande <code>notepad</code>( si elle est au path...) puis recopiez le texte <code>echo  Nous sommes le %date%, il est %time%</code></li>
+<li><strong>Sauvegardez</strong> le fichier sous le nom <code>dateheure</code> avec l'extension <code>.bat</code>. Vous devriez voir apparaître un engrenage dans l'icône décrivant le fichier: <img alt="image" src="img/fichierbat.png" /></li>
+<li>Exécutez alors ce fichier par un double-clic. Que se passe t-il?</li>
+<li>Modifier le fichier en ajoutant une ligne avec l'instruction <code>pause</code>. Sauvegardez et exécutez à nouveau le fichier.</li>
+</ol>
+</div>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Pied de page">
+      
+        
+        <a href="images_numeriques.html" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Travail sur les images numériques" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              Travail sur les images numériques
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../term/termnsi.html" class="md-footer__link md-footer__link--next" aria-label="Suivant: Accueil" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              Accueil
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copier dans le presse-papier", "clipboard.copied": "Copi\u00e9 dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}, "search": "../assets/javascripts/workers/search.361d90f1.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.289a2a4b.min.js"></script>
+      
+        <script src="../xtra/javascripts/mathjax-config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
