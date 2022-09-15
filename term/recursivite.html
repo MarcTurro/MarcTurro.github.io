@@ -609,7 +609,7 @@
 <p class="admonition-title">À faire</p>
 <ol>
 <li>Copier et coller le code Python ci-dessous</li>
-<li>Testez pour plusieurs vaelurs simples de <span class="arithmatex">\(n\)</span></li>
+<li>Testez pour plusieurs valeurs simples de <span class="arithmatex">\(n\)</span></li>
 </ol>
 </div>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Donner un entier positif&quot;</span><span class="p">))</span>
@@ -623,7 +623,7 @@ Le code ci-dessus est <strong>impératif</strong> au sens où nous donnons des o
 <p class="admonition-title">À faire</p>
 <ol>
 <li>Transformer le code ci-dessus en une fonction <code>somme_entier</code> qui prend en paramètre le seul entier <span class="arithmatex">\(n\)</span> et qui retourne la somme recherchée.</li>
-<li>Ajouter des assertions à la fonction</li>
+<li>Ajouter des assertions à la fonction.</li>
 <li>Effectuer des tests unitaires (voir le cours...)</li>
 </ol>
 </div>
@@ -658,17 +658,19 @@ Le code ci-dessus est <strong>impératif</strong> au sens où nous donnons des o
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kn">import</span> <span class="nn">sys</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">getrecursionlimit</span><span class="p">())</span>
 </code></pre></div>
-<div class="admonition info">
-<p class="admonition-title">À savoir</p>
+<div class="admonition tldr">
+<p class="admonition-title">À retenir</p>
 <p>Lors de l’exécution d’un algorithme récursif, les appels successifs de la fonction sont stockés dans une pile, c’est <strong>la pile d’exécution</strong>.
 Plus précisément, la pile d’exécution est un emplacement mémoire destiné à stocker les paramètres, les variables locales ainsi que les adresses mémoires de retour des fonctions en cours d’exécution. </p>
 </div>
 <h1 id="vocabulaire">Vocabulaire<a class="headerlink" href="#vocabulaire" title="Permanent link">&para;</a></h1>
 <div class="admonition info">
 <p class="admonition-title">À savoir</p>
-<p>Une fonction <strong>récursive</strong> est une focntion qui s'appelle elle-même dans son exécution. Elle présente toujours:
-    - un <strong>cas d'arrêt</strong> correspondant au cas de base, l'équivalent de l'initialisation en mathématiques...
-    - un appel récursif <strong>décrémenté</strong>: ainsi après plusieurs appels, on se ramène au cas de base!</p>
+<p>Une fonction <strong>récursive</strong> est une fonction qui s'appelle elle-même dans son exécution. Elle présente toujours:</p>
+<ul>
+<li>un <strong>cas d'arrêt</strong> correspondant au cas de base, l'équivalent de l'initialisation en mathématiques...</li>
+<li>un appel récursif <strong>décrémenté</strong>: ainsi après plusieurs appels, on se ramène au cas de base!</li>
+</ul>
 </div>
 <h1 id="exercices">Exercices<a class="headerlink" href="#exercices" title="Permanent link">&para;</a></h1>
 <div class="admonition note">
@@ -706,7 +708,7 @@ Plus précisément, la pile d’exécution est un emplacement mémoire destiné 
 </div>
 <div class="admonition note">
 <p class="admonition-title">À faire</p>
-<p>Que dessine la fonction récursive suivante dans <code>turtle</code> (essayez de devinez au lieu de recopier le code....)?
+<p>Que dessine la fonction récursive suivante dans <code>turtle</code> (essayez de deviner au lieu de recopier le code....)?
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="k">def</span> <span class="nf">carre</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3"></a>    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
