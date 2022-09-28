@@ -545,8 +545,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#une-deuxieme-tentative" class="md-nav__link">
-    Une deuxième tentative!
+  <a href="#une-premiere-deuxieme-tentative" class="md-nav__link">
+    Une première deuxième tentative!
   </a>
   
 </li>
@@ -834,12 +834,12 @@
 
 <h1 id="structures-de-donnees-lineaires">Structures de données linéaires<a class="headerlink" href="#structures-de-donnees-lineaires" title="Permanent link">&para;</a></h1>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
-<p>Le programme Python possède un ensemble de <strong>types de base</strong> et de <strong>types structurés</strong> rencontrés en classe de première: entier (<code>int</code>), flottants (<code>float</code>), chaîne de caractères, tuple, liste ou encore dictionnaires...</p>
+<p>Le programme Python possède un ensemble de <strong>types de base</strong> et de <strong>types structurés</strong> rencontrées en classe de première: entier (<code>int</code>), flottants (<code>float</code>), chaîne de caractères, tuple, liste ou encore dictionnaires...</p>
 <p>Nous allons dans ce chapitre définir de nouveaux <strong>types abstraits</strong> , à partir de son <strong>interface</strong>, qui rassemble l'ensemble des opérations qui permettent de définir, de lire ou de modifier ces nouveaux objets.</p>
 <p>Dans la plus part des cas, on distinguera:</p>
 <ul>
 <li>les <strong>constructeurs</strong> qui crée la donnée</li>
-<li>les <strong><em>getters</em></strong> qui permettent d'obtenir des informations sur la structure</li>
+<li>les <strong><em>getters</em></strong> qui permettent d'obtenir des des informations sur la structure</li>
 <li>les <strong><em>setters</em></strong> qui permettent de modifier les caractéristiques de ces données</li>
 </ul>
 <p>On fera bien la distinction entre <strong>interface</strong> et <strong>implémentation</strong>: la première définit une opération, la seconde la code! Pour une même interface, il peut exister plusieurs implémentations comme nous allons le découvrir dans ce chapitre!</p>
@@ -884,8 +884,8 @@ Remarquez qu'on ne précise pas dans la dernière instruction où est inséré l
 <h3 id="comment-implementer-une-liste">Comment implémenter une liste?<a class="headerlink" href="#comment-implementer-une-liste" title="Permanent link">&para;</a></h3>
 <p>Deux choix principaux pour l'implémentation d'une liste:</p>
 <ul>
-<li>soit par un tableau (<code>array</code>) où les éléments sont consécutifs en mémoire: dans le langage C, la taille des tableaux est définie préalablement pour allouer la place en mémoire et faire en sorte que les éléments soient à des adresses voisines.</li>
-<li>soit par une liste chaînée: une liste est alors composée d'une tête et d'une queue! Les éléments d'une même liste peuvent être stockés n'importe où dans la mémoire...</li>
+<li>soit par un tableau (<code>array</code>) où les éléments sont consécutifs en mémoire: dans le langage C, la taille des tableaux est définie préalablement pour allouer la place en mémoire.</li>
+<li>soit par une liste chaînée: une liste est alors composée d'une tête et d'une queue!</li>
 </ul>
 <p>Une différence importante entre ces deux choix : dans un tableau, l’<strong>accès</strong> à un élément par son indice est rapide
 mais l’<strong>insertion</strong> est coûteuse et c’est le contraire pour les listes chaînées !</p>
@@ -894,7 +894,7 @@ mais l’<strong>insertion</strong> est coûteuse et c’est le contraire pour l
 <img alt="Un exemple de liste chaînée" src="../img/listechaine.png" />
 </center></p>
 <h3 id="une-premiere-tentative">Une première tentative...<a class="headerlink" href="#une-premiere-tentative" title="Permanent link">&para;</a></h3>
-<p>Allez soyons fous! Faisons le choix d'implémenter une liste chaînée par des listes (précisément par des listes python...)!🤔</p>
+<p>Allez soyons fous! Faisons le choix d'implémenter une liste chaînée par des listes!🤔</p>
 <p>Reprenons le tableau enrichi de l'interface sur les listes: </p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Interface</label><label for="__tabbed_1_2">Implémentation</label></div>
 <div class="tabbed-content">
@@ -977,8 +977,8 @@ mais l’<strong>insertion</strong> est coûteuse et c’est le contraire pour l
 </div>
 <p>Remarquez que la construction d'une liste chaînée est <strong>récursive</strong>!</p>
 <p>Comprenez que Python a sa propre interface pour les listes, celle que vous connaissez habituellement.</p>
-<h3 id="une-deuxieme-tentative">Une deuxième tentative!<a class="headerlink" href="#une-deuxieme-tentative" title="Permanent link">&para;</a></h3>
-<p>Puisque nous créeons de nouveaux objets définis par leur propriété et leur méthode, la <strong>programmation orientée objet</strong> semble prendre toute sa place ici.  L'objet nécessaire à la construcion de telles listes est définie par la classe <code>Cellule</code> proposée ci-dessous:</p>
+<h3 id="une-premiere-deuxieme-tentative">Une première deuxième tentative!<a class="headerlink" href="#une-premiere-deuxieme-tentative" title="Permanent link">&para;</a></h3>
+<p>Puisque nous créeons denouveaux objets définis par leur propriété et leur méthode, la <strong>programmation orientée objet</strong> semble prendre toute sa place ici.  L'objet nécessaire à la construcion de telle liste est définie par la classe <code>Cellule</code> proposée ci-dessous:</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="sd">Implantation de la classe “Cellule”</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="sd">Elle sera utilisée pour les listes, les piles et les files.</span>
@@ -1080,6 +1080,11 @@ caractérise l’emplacement pour ajouter ou retirer des éléments.</p>
 structure. On ajoute des nouvelles assiettes au sommet de la pile, et quand on veut en
 retirer une, on est obligé de prendre celle située au sommet.</p>
 <h3 id="interface-dune-pile">Interface d'une pile<a class="headerlink" href="#interface-dune-pile" title="Permanent link">&para;</a></h3>
+<p>Une pile est une collection de données. On appelle <strong>sommet</strong> le dernier élément ajouté
+à la pile, qui est aussi le seul élément auquel on peut accéder, ou qu’on peut retirer.
+Quand un élément est ajouté à la pile, il devient le nouveau sommet, et l’ancien
+sommet est alors son élément suivant. Quand un élément est retiré de la pile, le
+nouveau sommet est l’élément qui suivait le sommet avant le retrait.</p>
 <p>On peut définir au moins 6 primitives de cette struture de données:
 <center></p>
 <table>
@@ -1321,7 +1326,7 @@ la fois la tête et le bout de la file.</p>
 <td>retire l'élémént situé à la tête de la file F</td>
 </tr>
 <tr>
-<td><strong>affiche_tete(F)</strong></td>
+<td><strong>affiche_tete(PF)</strong></td>
 <td>affiche la tête de la file F <strong>sans</strong> la retirer</td>
 </tr>
 </tbody>
