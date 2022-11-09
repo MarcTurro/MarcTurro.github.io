@@ -15,7 +15,7 @@
     
     
       
-        <title>Jeu mastermind - Numérique et Sciences Informatiques</title>
+        <title>Test pyodide - Numérique et Sciences Informatiques</title>
       
     
     
@@ -97,7 +97,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#poser-des-conditions" class="md-skip">
+        <a href="#macro-rendering-error" class="md-skip">
           Aller au contenu
         </a>
       
@@ -131,7 +131,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Jeu mastermind
+              Test pyodide
             
           </span>
         </div>
@@ -186,13 +186,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../prem/premnsi.html" class="md-tabs__link">
+      <a href="premnsi.html" class="md-tabs__link md-tabs__link--active">
         Première NSI
       </a>
     </li>
@@ -309,12 +311,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -337,7 +341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prem/premnsi.html" class="md-nav__link">
+      <a href="premnsi.html" class="md-nav__link">
         Accueil
       </a>
     </li>
@@ -351,7 +355,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prem/cours_de_reseaux.html" class="md-nav__link">
+      <a href="cours_de_reseaux.html" class="md-nav__link">
         Réseaux informatiques
       </a>
     </li>
@@ -365,7 +369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prem/images_numeriques.html" class="md-nav__link">
+      <a href="images_numeriques.html" class="md-nav__link">
         Travail sur les images numériques
       </a>
     </li>
@@ -379,7 +383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prem/index_tpbash.html" class="md-nav__link">
+      <a href="index_tpbash.html" class="md-nav__link">
         Passez la commande !
       </a>
     </li>
@@ -393,7 +397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prem/frontend.html" class="md-nav__link">
+      <a href="frontend.html" class="md-nav__link">
         Développement Web
       </a>
     </li>
@@ -407,7 +411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prem/jscript.html" class="md-nav__link">
+      <a href="jscript.html" class="md-nav__link">
         Dynamisons le Web
       </a>
     </li>
@@ -419,11 +423,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../prem/testpyodide.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="testpyodide.html" class="md-nav__link md-nav__link--active">
         Test pyodide
       </a>
+      
     </li>
   
 
@@ -721,28 +735,24 @@
                   
 
 
-<h1 style = "color:white; font-size:400%;text-align:center; background-image:url(img/mn.jpg);">Mon projet sur le mastermind</h1>
-
-<h2 style = "color:Tomato; font-size:300%;text-align:center; background:linear-gradient(to right,#ffbe02a1 0px,#fd606aba 100%);">Introduction</h2>
-<p>Le mastermind est un jeu de société fort connu notamment des plus anciens...(et oui ! il fallait s'occuper...) 
-<center>
-<img alt="le jeu du mastermind" src="img/mastermin.png" />
-</center></p>
-<p>Le principe est simple: un joueur1 choisit une combinaison de quatre couleurs qu'il garde secret et son camarade, le joueur2,  a 10 coups pour la retrouver. À chaque proposition, le joueur1 indique au joueur 2 le nombre de:</p>
-<ul>
-<li>boules présentes dans sa combinaison (par la présence de petits pions blancs)</li>
-<li>boules placées au bont endroit sans indiquer lesquelles!(par la présence de petits pions noirs)</li>
-</ul>
-<p><center></p>
-<p><img alt="Principe du jeu" src="img/master_regle.png" /></p>
-<p></center></p>
-<p>On se propose de fabriquer une émulation du jeu afin de pouvoir jouer avec un ordinateur.</p>
-<h2 style = "color:Tomato; font-size:300%;text-align:center; background:linear-gradient(to right,#ffbe02a1 0px,#fd606aba 100%);">Programmation du jeu</h2>
-
-<h2 id="poser-des-conditions">Poser des conditions:<a class="headerlink" href="#poser-des-conditions" title="Permanent link">&para;</a></h2>
-<p>On va faire en sorte pour simplifier que le joueur1 doit proposer une combinaison de couleurs différentes: le joueur2 pourra néamoins proposer n'importe quelle proposition...
-En revanche, il ne pourra proposer que 10 coups!</p>
-<h2 id="jouer-en-console">Jouer en console:<a class="headerlink" href="#jouer-en-console" title="Permanent link">&para;</a></h2>
+<h1 id="macro-rendering-error"><em>Macro Rendering Error</em><a class="headerlink" href="#macro-rendering-error" title="Permanent link">&para;</a></h1>
+<p><strong>TypeError</strong>: argument of type 'NoneType' is not iterable</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Traceback (most recent call last):
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  File &quot;C:\Users\Utilisateur\AppData\Local\Programs\Thonny\lib\site-packages\mkdocs_macros\plugin.py&quot;, line 480, in render
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    return md_template.render(**page_variables)
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  File &quot;C:\Users\Utilisateur\AppData\Local\Programs\Thonny\lib\site-packages\jinja2\environment.py&quot;, line 1301, in render
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    self.environment.handle_exception()
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  File &quot;C:\Users\Utilisateur\AppData\Local\Programs\Thonny\lib\site-packages\jinja2\environment.py&quot;, line 936, in handle_exception
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    raise rewrite_traceback_stack(source=source)
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  File &quot;&lt;template&gt;&quot;, line 3, in top-level template code
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  File &quot;C:\Users\Utilisateur\site_nsi\main.py&quot;, line 175, in IDE
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    path_img = convert_url_to_utf8(env.variables.page.abs_url).split(&#39;/&#39;)[1]
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>  File &quot;C:\Users\Utilisateur\site_nsi\main.py&quot;, line 145, in convert_url_to_utf8
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    return unquote(nom, encoding=&#39;utf-8&#39;)
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>  File &quot;C:\Users\Utilisateur\AppData\Local\Programs\Thonny\lib\urllib\parse.py&quot;, line 656, in unquote
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    if &#39;%&#39; not in string:
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>TypeError: argument of type &#39;NoneType&#39; is not iterable
+</code></pre></div>
 
 
 
@@ -767,6 +777,44 @@ En revanche, il ne pourra proposer que 10 coups!</p>
       </main>
       
         <footer class="md-footer">
+  
+    
+      
+    
+    <nav class="md-footer__inner md-grid" aria-label="Pied de page" hidden>
+      
+        
+        <a href="jscript.html" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Dynamisons le Web" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              Dynamisons le Web
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../term/termnsi.html" class="md-footer__link md-footer__link--next" aria-label="Suivant: Accueil" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              Accueil
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
