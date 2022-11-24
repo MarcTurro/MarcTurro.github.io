@@ -10,14 +10,14 @@
         <meta name="author" content="Marc TURRO">
       
       
-        <link rel="canonical" href="https://marcturro.github.io/prem/index_tpbash.html">
+        <link rel="canonical" href="https://marcturro.github.io/prem/widget.html">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
     
     
       
-        <title>Passez la commande ! - Numérique et Sciences Informatiques</title>
+        <title>Création de widgets - Numérique et Sciences Informatiques</title>
       
     
     
@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#travail-sur-la-ligne-de-commande" class="md-skip">
+        <a href="#creation-de-widget-par-la-bibliotheque-tkinter" class="md-skip">
           Aller au contenu
         </a>
       
@@ -121,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Passez la commande !
+              Création de widgets
             
           </span>
         </div>
@@ -404,127 +404,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Passez la commande !
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="index_tpbash.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="index_tpbash.html" class="md-nav__link">
         Passez la commande !
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table des matières
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#une-interface-graphique-qui-a-fait-le-succes-de-microsoft" class="md-nav__link">
-    Une interface graphique qui a fait le succès de microsoft
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#passez-la-commande" class="md-nav__link">
-    Passez la commande!
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#arborescence-des-systemes-windows" class="md-nav__link">
-    Arborescence des systèmes Windows
-  </a>
-  
-    <nav class="md-nav" aria-label="Arborescence des systèmes Windows">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#lecteurs" class="md-nav__link">
-    Lecteurs
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#organisation-des-dossiers-et-des-fichiers" class="md-nav__link">
-    Organisation des dossiers et des fichiers
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#chemin-absolu-et-relatif" class="md-nav__link">
-    Chemin absolu et relatif
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#naviguer-dans-larborescence-en-ligne-de-commandes" class="md-nav__link">
-    Naviguer dans l'arborescence en ligne de commandes
-  </a>
-  
-    <nav class="md-nav" aria-label="Naviguer dans l'arborescence en ligne de commandes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#des-commandes-de-bases" class="md-nav__link">
-    Des commandes de bases
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#les-variables-denvironnement" class="md-nav__link">
-    Les variables d'environnement
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#les-fichiers-de-commandebat" class="md-nav__link">
-    Les fichiers de commande(.bat)
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -562,11 +446,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="widget.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="widget.html" class="md-nav__link md-nav__link--active">
         Création de widgets
       </a>
+      
     </li>
   
 
@@ -878,126 +772,167 @@
                   
 
 
-<h1 id="travail-sur-la-ligne-de-commande">Travail sur la ligne de commande<a class="headerlink" href="#travail-sur-la-ligne-de-commande" title="Permanent link">&para;</a></h1>
-<p>ou comment interagir avec le système d'exploitation sans utiliser son interface graphique</p>
-<p><img alt="image" class="center" src="img/sys.jpg" /></p>
-<h2 id="une-interface-graphique-qui-a-fait-le-succes-de-microsoft">Une interface graphique qui a fait le succès de microsoft<a class="headerlink" href="#une-interface-graphique-qui-a-fait-le-succes-de-microsoft" title="Permanent link">&para;</a></h2>
-<p>Microsoft est l'entreprise qui a développé les premiers systèmes d'exploitation proposant une interface graphique au début des années 1990. Avant cette date, il fallait possèder des connaissances techniques pour exploiter les ressources d'un ordinateur. Les systèmes Windows (95, NT, XP, ...) ont démocratisé l'utilisation des machines au point où tout le monde pouvait maintenant s'en acheter une pour son utilisation personnelle: c'est le début de l'ère des PC(personal computer).</p>
-<p>L'<strong>interface graphique</strong> proposée par les systèmes Windows est simple: il suffit de cliquer sur des <strong>icônes</strong> présentes sur le <strong>bureau</strong> pour lancer un programme!</p>
-<p>En revanche, on ne peut pas faire ce qui n'a pas été prévu: des tâches d'administration par exemple...</p>
-<h2 id="passez-la-commande">Passez la commande!<a class="headerlink" href="#passez-la-commande" title="Permanent link">&para;</a></h2>
-<p>On peut commander le système d'exploitation en utilisant des <strong>commandes</strong> ou des <strong>script</strong>. Pour cela, il faut passer en ligne de commande....</p>
-<div class="admonition info">
-<p class="admonition-title">Ouvrir l'invite de commandes</p>
-<ol>
-<li>Tapez <kbd>windows</kbd> + <kbd>R</kbd> puis <code>cmd</code> dans la fenêtre qui s'ouvre</li>
-<li>Vous devez obtenir quelque chose qui ressemble à ça: c'est <strong>l'invite de commande</strong> ou <strong>le prompt</strong>!
-<img alt="image" class="center" src="img/prompt.png" /></li>
-<li>Tapez <code>dir</code> puis la touche <kbd>Entree</kbd></li>
-</ol>
+<h1 id="creation-de-widget-par-la-bibliotheque-tkinter">CREATION DE WIDGET PAR LA BIBLIOTHEQUE TKINTER<a class="headerlink" href="#creation-de-widget-par-la-bibliotheque-tkinter" title="Permanent link">&para;</a></h1>
+<p>Il s'agit dans ce travail d'utiliser les constructeurs et les méthodes de la bibliothèques <code>Tkinter</code> afin de réaliser des interfaces graphiques (bouton, champ de saisie, échelle, label, fenêtre,...) et tout cela dans le langage <code>python</code>.</p>
+<p>L'apprentissage se résume à l'élaboration de la fenêtre ci-dessous qui donne la couleur obtenue dans le mélange des trois composantes <code>RGB</code>(Red Green Blue):</p>
+<p><center>
+<img alt="fenetre_a_realiser" src="img/interface_couleur.png" />
+</center></p>
+<div class="admonition example">
+<p class="admonition-title">Étape1: Construction de la fenêtre mère</p>
+<p>L'idée principale est de construire un conteneur principal, l'élément <strong>mère</strong> qui va contenir d'autres éléments <strong>filles</strong>. Le code Python est donné ci-après.</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">À faire</p>
-<ol>
-<li>Tapez la commande <code>dir /?</code> dans le prompt. À quoi sert-elle?</li>
-<li>Affichez l'aide de la commande <code>copy</code></li>
-</ol>
-</div>
-<h2 id="arborescence-des-systemes-windows">Arborescence des systèmes Windows<a class="headerlink" href="#arborescence-des-systemes-windows" title="Permanent link">&para;</a></h2>
-<h3 id="lecteurs">Lecteurs<a class="headerlink" href="#lecteurs" title="Permanent link">&para;</a></h3>
-<p>Sous Windows, les différentes partitions du disque dur sont identifiées par des lettres majuscules:</p>
-<ul>
-<li>historiquement, la partition <code>système</code> contenant le système d'exploitation est <strong>C:</strong></li>
-<li>une bonne installation partitionne le disque dur en au moins de lecteur: un pour le système , l'autre pour les données. En cas de panne du système, on peut tout de même accèder aux données même si il faut formater la partition système.</li>
-<li>d'autres lecteurs( <strong>E:,F:,..</strong>) peuvent exister: lecteurs réseaux ou simplement une clé USB.</li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">À faire</p>
-<ol>
-<li>Ouvrez l'explorateur de documents de votre ordinateur.</li>
-<li>Nommez les différents lecteurs que vous pouvez oberver</li>
-</ol>
-</div>
-<h3 id="organisation-des-dossiers-et-des-fichiers">Organisation des dossiers et des fichiers<a class="headerlink" href="#organisation-des-dossiers-et-des-fichiers" title="Permanent link">&para;</a></h3>
-<p>Les partitions contiennent des <strong>dossiers</strong> ou <strong>répertoires</strong> et des <strong>fichiers</strong>. Les dossiers peuvent aussi contenir des dossiers appelés <strong>sous-dossiers</strong>, qui contiennent eux-mêmes des dossiers et/ou des fichiers...</p>
-<p>Selon vos <strong>droits</strong> attribués lorsque vous vous identifiez, vous pouvez avoir des droits sur ces fichiers ou dossiers:</p>
-<ul>
-<li><strong>droit de lecture</strong>, vous pouvez lire <strong>sans</strong> modifier le contenu.</li>
-<li><strong>droit d'écriture</strong>, vous pouvez lire et modifier le contenu.</li>
-<li><strong>aucun droit</strong>, le dossier ou le fichier existe mais vous ne pouvez même pas le voir!</li>
-</ul>
-<p>D'autres droits existent que nous ne développerons pas ici.</p>
-<div class="admonition note">
-<p class="admonition-title">À faire</p>
-<p>Quels droits avez-vous sur les lecteurs de votre ordinateur?</p>
-</div>
-<h3 id="chemin-absolu-et-relatif">Chemin absolu et relatif<a class="headerlink" href="#chemin-absolu-et-relatif" title="Permanent link">&para;</a></h3>
-<p>Pour pointer vers une ressource(fichier ou dossier), on utilise son <strong>chemin</strong>. Il peut être:</p>
-<ul>
-<li><strong>absolu</strong>: le chemin commence par la lettre de la partition et donne le nom de tous les dossiers qu'il faut travaerser pour arriver à la ressource. Par exemple, le chemin absolu de ce fichier est: <code>C:\Users\Utilisateur\tpbash\docs\index.md</code></li>
-<li><strong>relatif</strong>: le chemin identifie le chemin à partir du répertoire courant. Par exemple, les images de cette page sont stockées dans un dossier <code>data</code> et le chemin qui pointe vers l'image ci-dessous qui se nomme <code>chemin.png</code> est <code>\data\chemin.png</code>:
-<img alt="image" class="center" src="img/chemin.png" /></li>
-</ul>
-<h2 id="naviguer-dans-larborescence-en-ligne-de-commandes">Naviguer dans l'arborescence en ligne de commandes<a class="headerlink" href="#naviguer-dans-larborescence-en-ligne-de-commandes" title="Permanent link">&para;</a></h2>
-<h3 id="des-commandes-de-bases">Des commandes de bases<a class="headerlink" href="#des-commandes-de-bases" title="Permanent link">&para;</a></h3>
-<ul>
-<li><code>dir</code> affiche le contenu du répertoire courant. Pour connaître les options de cette commande , vous pouvez taper <code>dir /?</code> pour afficher l'aide!</li>
-<li><code>cd nom_du_dossier</code>(change directory) permet de se déplacer dans le dossier <code>nom_du_dossier</code> si il existe!</li>
-<li><code>cd..</code> permet de remonter d'un niveau dans l'arborescence.</li>
-<li><code>mkdir</code>(make directory) crée un nouveau dossier dans le répertoire courant!</li>
-<li><code>copy</code> copie des fichiers ou des dossiers de la source vers la destination (tapez <code>copy /?</code> pour plus d'infos...)</li>
-<li><code>del</code>(delete) efface le fichier passé en argument...</li>
-</ul>
-<p>Le caractère * , appelé <strong>joker</strong>, remplace n'importe quel texte dans le nom d'un fichier. Par exemple, la commande:</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>copy *.txt C:<span class="se">\b</span>ackup
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">###################################################</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">fen</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">fen</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s2">&quot;Visualisation des couleurs&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">fen</span><span class="o">.</span><span class="n">resizable</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">fen</span><span class="o">.</span><span class="n">iconbitmap</span><span class="p">(</span><span class="s1">&#39;logoNSIsite.ico&#39;</span><span class="p">)</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1">###################################################</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1">######################CONSTRUCTEURS ################</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="c1">###################################################</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="n">fen</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
 </code></pre></div>
-copie <strong>tous</strong> les fichiers portant l'extension <code>.txt</code> dans le dossier <code>backup</code>.</p>
+<p>Le constructeur principal est l'élément <code>fen</code>: on lui applique des méthodes explicites qui changent son titre, la possibilité de redimensionner et l'icône de la fenêtre principale.Il y a d'autres possibilités que je vous laisse découvrir en toute autonomie...</p>
 <div class="admonition note">
-<p class="admonition-title">À faire</p>
+<p class="admonition-title">À faire: personnaliser sa fenêtre</p>
 <ol>
-<li>Ouvrez l'invite de commande.</li>
-<li>Dans le dossier <code>Mes documents</code>, créer un dossier <code>test</code> et un dossier <code>backup</code>.</li>
-<li>Allez ensuite dans ce dossier.</li>
-<li>Tapez la commande <code>notepad coucou.txt</code>. Normalement, le bloc notes s'ouvre avec un avertissement. Confirmez votre volonté de créer ce fichier et mettez y le contenu de votre choix.</li>
-<li>Fermez <code>notepad</code> par la combinaison de touches <kbd>Alt</kbd>+<kbd>F4</kbd></li>
-<li>Vérifier que le fichier <code>coucou.txt</code> existe bien dans le dossier test.</li>
-<li>Copier ce fichier dans le dossier <code>backup</code> et vérifier que la copie a fonctionné!</li>
+<li>Recopier le code précédent que vous enregistrez sous le nom <code>interface_couleur.py</code> dans un dossier <code>TP_interface_graphique</code></li>
+<li>Personnalisez votre fenêtre en changeant le titre et en trouvant un logo qui vous correspond. Attention ce logo doit être un fichier <code>.ico</code> et doit être situé à la racine de votre projet(ou alors dans un dossier dédié...)!</li>
 </ol>
 </div>
-<h2 id="les-variables-denvironnement">Les variables d'environnement<a class="headerlink" href="#les-variables-denvironnement" title="Permanent link">&para;</a></h2>
-<p>Comment dans la manipulation précédente, l'exécutable de <code>notepad</code> a t-il pu être lancé? Son seul appel suffit-il ? Bizarre...</p>
-<div class="admonition note">
-<p class="admonition-title">À faire</p>
-<p>En ligne de commande, tapez <code>firefox</code>. Que se passe t-il?</p>
+<p>Il existe de nombreuses façons de convertir une image au format <code>png</code> vers le format <code>ico</code>.</p>
+<div class="admonition example">
+<p class="admonition-title">Étape2: ajouter les éléments filles</p>
+<p>La fenêtre que nous devons réaliser contient plusieurs <strong>widgets</strong> (composants graphiques): un <strong>bouton</strong> pour valider, trois <strong>champs de saisies</strong> pour le choix des couleurs, et une zone de dessin, appelée <strong>canvas</strong> dont la couleur d'arrière plan (le <strong>bg</strong>) correspond aux choix faits dans les zones de saisies et une zone de texte, le <strong>label</strong> contenant le titre général de la fenêtre.</p>
 </div>
-<p>Les <strong>variables d'environnement</strong> sont des variables qui peuvent être appelées partout par tous les programmes. Elles stockent des informations considérées importantes commme:</p>
-<ul>
-<li>le nom de l'ordinateur, de l'utilisateur</li>
-<li>le chemin du répertoire <code>TEMP</code> contenant les fichiers temporaires</li>
-<li>la variable <code>PATH</code> contient le chemin d'exécutables qui peuvent être appelés partout dans les programmes</li>
-</ul>
+<p>On appelle les <strong>constructeurs</strong> correspondant pour la conception de ces widgets en les stockant dans des variables aux noms explicites. Les constructeurs sont par exemple <code>Label,Button</code> ou <code>Entry</code>...</p>
 <div class="admonition note">
-<p class="admonition-title">À faire</p>
+<p class="admonition-title">À faire: Ajouter les widgets</p>
 <ol>
-<li>Ouvrez l'invite de commande.</li>
-<li>Tapez <code>PATH</code> et observez les chemins proposés</li>
-<li>Tapez <code>echo %USERNAME%</code>, pour afficher la valeur de la variable <code>USERNAME</code></li>
+<li>Ajouter le code python suivant au programme précédent à l'endroit indiqué.</li>
+<li>Changer la couleur d'arrière plan du canvas</li>
+<li>On peut aussi exprimer la couleur en hexadécimal. Essayez l'instruction <code>bg= '#FF00FF'</code> puis une autre de votre choix.</li>
 </ol>
 </div>
-<h2 id="les-fichiers-de-commandebat">Les fichiers de commande(.bat)<a class="headerlink" href="#les-fichiers-de-commandebat" title="Permanent link">&para;</a></h2>
-<p>On souhaite souvent exécuter les mêmes tâches en ligne de commande. On peut alors regrouper les commandes dans un fichier qui sera directement lue par le système <code>DOS</code>: ce sont les fichiers dont l'extension est <code>.bat</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">######################CONSTRUCTEURS ###########################</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">text1</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">fen</span><span class="p">,</span> <span class="n">text</span> <span class="o">=</span><span class="s2">&quot; Choix des couleurs&quot;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="s2">&quot;arial 30&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">text1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">columnspan</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">btn1</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">fen</span><span class="p">,</span> <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;visualiser&quot;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">command</span> <span class="o">=</span> <span class="n">fen</span><span class="o">.</span><span class="n">destroy</span><span class="p">)</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">btn1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">columnspan</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">rou</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">fen</span><span class="p">)</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">rou</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">ver</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">fen</span><span class="p">)</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">ver</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="n">bleu</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">fen</span><span class="p">)</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="n">bleu</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="mi">4</span><span class="p">)</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="n">zone_couleur</span> <span class="o">=</span> <span class="n">Canvas</span><span class="p">(</span><span class="n">fen</span><span class="p">,</span> <span class="n">bg</span> <span class="o">=</span> <span class="s1">&#39;white&#39;</span><span class="p">)</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="n">zone_couleur</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">columnspan</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="c1">################################################################</span>
+</code></pre></div>
+<p>Vous remarquerez qu'à chaque fois qu'un élément est créé il est <strong>positionné</strong> par la méthode <strong>grid</strong> dans une grille virtuelle contenant des lignes et des colonnes. Par exemple, le <code>Label</code> nommé <code>text1</code> est positionné dans la <strong>première</strong> ligne (<code>row = 0</code>), dans la première <strong>colonne</strong>(<code>column = 0</code>) et s'<strong>étend</strong> sur 5 colonnes(<code>columnspan = 5</code>).</p>
+<p>Il existe plusieurs gestionnaires de positionnement mais nous utiliserons en général la méthode <code>grid</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title"> Attention!</p>
+<p>Si vous oubliez de positionner un widget, il ne sera pas pris en compte.</p>
+</div>
+<p>Tous les <strong>widgets</strong> créés ont des <strong>attributs</strong>: par exemple l'élément <code>btn1</code> est situé dans le conteneur parent <code>fen</code>, possède un attribut <code>text</code> de type chaîne de caractères, correspondant au texte affiché sur le bouton. L'attribut <code>command</code> désigne l'action à réaliser lorsque on appuie sur le bouton. Ici, l'appui sur le bouton détruit l'élément parent <code>fen</code> et donc aussi, tous ses fils et filles... donc tous les autres widgets. On changera cette fonction plus tard dans ce travail pour que l'action du bouton colore la partie <code>canvas</code>.</p>
+<div class="admonition example">
+<p class="admonition-title">Étape3: les variables globales</p>
+<p>Une variable <strong>globale</strong> est une variable qui peut être appelée partout dans le programme. Nous souhaiterions ici créer <strong>trois variables</strong> qui seront associer à la valeur saisie dans les champs prévus à cet effet. </p>
+</div>
+<p>Dans <code>tkinter</code>, les variables globales sont les <strong>variables de contrôle</strong>(voir <a href="http://tkinter.fdex.eu/doc/ctrvar.html">ici</a>): elles sont associées à la valeur ou au texte saisie dans les widgets qui le permettent!</p>
 <div class="admonition note">
-<p class="admonition-title">À faire</p>
+<p class="admonition-title">À faire: Ajouter des variables de contrôles</p>
 <ol>
-<li>En ligne de commande tapez: 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">echo</span>  Nous sommes le %date%, il est %time%
+<li>Ajouter le code <code>python</code> suivant juste après l'instruction <code>fen.iconbitmap</code>.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">r</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s1">&#39;12&#39;</span><span class="p">)</span>
 </code></pre></div></li>
-<li>Ouvrez le bloc notes en tapant la commande <code>notepad</code>( si elle est au path...) puis recopiez le texte <code>echo  Nous sommes le %date%, il est %time%</code></li>
-<li><strong>Sauvegardez</strong> le fichier sous le nom <code>dateheure</code> avec l'extension <code>.bat</code>. Vous devriez voir apparaître un engrenage dans l'icône décrivant le fichier: <img alt="image" src="img/fichierbat.png" /></li>
-<li>Exécutez alors ce fichier par un double-clic. Que se passe t-il?</li>
-<li>Modifier le fichier en ajoutant une ligne avec l'instruction <code>pause</code>. Sauvegardez et exécutez à nouveau le fichier.</li>
+<li>Modifier le constructeur <code>Entry</code> nommé <code>rou</code> en lui ajoutant l'attribut <code>textvariable = r</code> comme ceci:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">rou</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">fen</span><span class="p">,</span> <span class="n">textvariable</span> <span class="o">=</span> <span class="n">r</span><span class="p">)</span>
+</code></pre></div></li>
 </ol>
 </div>
+<p>Quelques explications! La variable <code>r</code> est une variable globale de stype <code>string</code>, initialisée à 12, associée à la valeur saisie dans l'entrée <code>rou</code>. </p>
+<p>Si vous proposez une valeur dans cette entrée elle sera alors affectée à la valeur de <code>r</code>. Cette association est possible grâce à l'attribut <code>textvariable</code> du constructeur <code>rou</code> auquel on a associé la variable <code>r</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">À faire: Compléter les variables de contrôles</p>
+<ol>
+<li>Créer les variables de contrôles <code>v</code> et <code>b</code>, de type chaîne de caractère, initialisée respectivement à 200 et 100.</li>
+<li>Ajouter les attributs <code>textvariable</code> aux entrées <code>ver</code> et <code>bleu</code> en leur affectant les variables précédemment définies.</li>
+</ol>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Étape4: Colorer le canvas</p>
+<p>La prochaine étape consiste à colorer le background du canvas <code>zone_couleur</code> avec la couleur définie à l'aide des valeurs des variables <code>r,v</code> et <code>b</code>.</p>
+</div>
+<p>C'est l'appui sur le bouton qui déclenchera l'action de coloriage.</p>
+<div class="admonition warning">
+<p class="admonition-title">Les couleurs acceptées</p>
+<p>L'attribut <code>bg</code> d'un canvas n'accepte des couleurs que sous deux formes:</p>
+<ul>
+<li>sous forme de nom comme <code>'white' , 'red', 'blue', ...</code></li>
+<li>sous forme hexadécimale <code>#FF00AA</code> par exemple</li>
+</ul>
+</div>
+<p>Mais problème! Les couleurs saisies sont décimales. Il faut donc construire un outil qui prend en entrée un triple comme <code>(12,200,100)</code> et le transforme en <code>'#0CC864</code>. </p>
+<p>Nous allons pour cela créer la fonction <code>rgb_10to16</code> qui prend en paramètre un tuple de trois couleurs et retourne une chaîne de caractères formatée et répondant à notre besoin.</p>
+<div class="admonition note">
+<p class="admonition-title">À faire: Ajouter une fonction</p>
+<ol>
+<li>Ajouter le code python suivant après la variable b:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">############# ACTIONS  ############################</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">def</span> <span class="nf">rgb_10to16</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="k">return</span> <span class="s2">&quot;#</span><span class="si">%.2x</span><span class="s2">&quot;</span> <span class="o">%</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="si">%.2x</span><span class="s2">&quot;</span> <span class="o">%</span><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="si">%.2x</span><span class="s2">&quot;</span> <span class="o">%</span><span class="n">t</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</code></pre></div></li>
+<li>Rappelez le nom de l'opération <code>+</code> pour les chaînes de caractères.</li>
+<li>Expliquer le rôle de l'instruction <code>.2x</code></li>
+<li>Justifier que cette fonction retourne une chaîne de caractères.</li>
+<li>Testez votre fonction en console sur des entrées simples comme <code>(255, 0, 0)</code></li>
+</ol>
+</div>
+<p>À ce stade, il reste l'étape qui consiste à colorer le canvas à l'appui sur le bouton <code>visualiser</code>...</p>
+<div class="admonition example">
+<p class="admonition-title">Étape5: Création de la fonction de coloriage</p>
+<p>Nous allons créer la fonction <code>colorer</code> qui:</p>
+<ul>
+<li>récupère la valeur décimale des trois entrées</li>
+<li>convertit le triplet en chaîne hexadécimale</li>
+<li>change la couleur du background du canvas en conséquence.</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title"> À faire: Compléter le code </p>
+<ol>
+<li>Ajouter la fonction suivante après la précédente:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">def</span> <span class="nf">colorer</span><span class="p">():</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="n">rouge</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="n">vert</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="n">bleu</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="n">zone_couleur</span><span class="p">[</span><span class="s1">&#39;bg&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">rgb_10to16</span><span class="p">((</span><span class="n">rouge</span><span class="p">,</span> <span class="n">vert</span><span class="p">,</span> <span class="n">bleu</span><span class="p">))</span>
+</code></pre></div></li>
+<li>Changer la valeur de l'attribut <code>command</code> du bouton <code>btn1</code> en lui donnant la valeur <code>colorer</code>(sans parenthèses...)</li>
+<li>Exécuter le code, tout devrait bien fonctionner!</li>
+</ol>
+</div>
+<p>Pour récupérer la valeur d'une variable globale (<code>r</code> par exemple), on lui applique la méthode <code>.get()</code>. Ainsi l'instruction <code>r.get()</code> contient la valeur de <code>r</code> mais prudence : cette instruction retourne une chaîne de caractères. On comprend mieux alors l'instruction <code>int</code> dans <code>int(r.get())</code> qui transforme la chaîne de caractères en entier...</p>
+<p>Enfin, l'instruction <code>zone_couleur['bg'] = rgb_10to16((rouge, vert, bleu))</code> redéfinit clairement l'attribut <code>'bg'</code> de <code>zone_couleur</code>! </p>
+<div class="admonition info">
+<p class="admonition-title">Pour information</p>
+<p>Nous n'avons pas justifier l'instruction <code>fen.mainloop()</code>: elle rend l'objet <code>fen</code> sensible aux événements extérieurs comme l'appui d'un clic de souris ou du clavier. Elle écoute en continue ce qui se passe autour de ses constructeurs. Dommage que cette fonction n'existe pas chez nos élèves 😊!</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title"> À faire:utiliser une échelle </p>
+<p>Au lieu de saisir les valeurs, on souhaite utiliser des échelles qui permettent à l'aide de curseur de choisir la valeur de la composante de rouge, de vert ou de bleu(voir ci-dessous...).</p>
+<p>Documentez-vous par exemple <a href="http://tkinter.fdex.eu/doc/scw.html">ici</a> et remplacez les entrées par trois échelles.</p>
+</div>
+<p><center>
+<img alt="fenetre_a_realiser" src="img/interface_couleur_scale.png" />
+</center></p>
 
 
 
@@ -1029,7 +964,7 @@ copie <strong>tous</strong> les fichiers portant l'extension <code>.txt</code> d
     <nav class="md-footer__inner md-grid" aria-label="Pied de page" hidden>
       
         
-        <a href="images_numeriques.html" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Travail sur les images numériques" rel="prev">
+        <a href="jscript.html" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Dynamisons le Web" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1038,20 +973,20 @@ copie <strong>tous</strong> les fichiers portant l'extension <code>.txt</code> d
               <span class="md-footer__direction">
                 Précédent
               </span>
-              Travail sur les images numériques
+              Dynamisons le Web
             </div>
           </div>
         </a>
       
       
         
-        <a href="frontend.html" class="md-footer__link md-footer__link--next" aria-label="Suivant: Développement Web" rel="next">
+        <a href="testpyodide.html" class="md-footer__link md-footer__link--next" aria-label="Suivant: Test pyodide" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Suivant
               </span>
-              Développement Web
+              Test pyodide
             </div>
           </div>
           <div class="md-footer__button md-icon">
