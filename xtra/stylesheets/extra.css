@@ -3,3 +3,26 @@
   border-width: 0;
   border-left-width: 4px;
 }
+
+h1 
+{
+    text-align: center;
+	border : 1px solid #339999;
+	background-color : #f7f7f7;
+    margin : 0 0 10px 30px; /* haut, droite, bas, gauche (respectivement) */
+    color : #cc6633;
+    font : 150% georgia, palatino, serif;
+    font-style : italic;
+}
+
+
+h2
+{
+    text-align: center;
+	border : 1px solid #1614a9;
+	background-color : #f7f7f7;
+    margin : 0 0 10px 30px; /* haut, droite, bas, gauche (respectivement) */
+    font : 120% georgia, palatino, serif;
+    font-style : italic;
+}
+
