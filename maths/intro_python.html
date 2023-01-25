@@ -10,14 +10,14 @@
         <meta name="author" content="Marc TURRO">
       
       
-        <link rel="canonical" href="https://marcturro.github.io/maths/variables.html">
+        <link rel="canonical" href="https://marcturro.github.io/maths/intro_python.html">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
     
     
       
-        <title>Les variables - Numérique et Sciences Informatiques</title>
+        <title>Prise en main - Numérique et Sciences Informatiques</title>
       
     
     
@@ -143,7 +143,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#des-variables-pour-comprendre" class="md-skip">
+        <a href="#je-fais-du-python-et-jaime-ca" class="md-skip">
           Aller au contenu
         </a>
       
@@ -177,7 +177,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Les variables
+              Prise en main
             
           </span>
         </div>
@@ -369,7 +369,9 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -733,21 +735,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="variables.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="variables.html" class="md-nav__link">
         Les variables
       </a>
-      
     </li>
   
 
@@ -813,12 +805,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_8" type="checkbox" id="__nav_5_8" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_8" type="checkbox" id="__nav_5_8" checked>
       
       
       
@@ -839,11 +833,120 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="intro_python.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Prise en main
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="intro_python.html" class="md-nav__link md-nav__link--active">
         Prise en main
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#un-premier-test" class="md-nav__link">
+    Un premier test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generer-du-hasard" class="md-nav__link">
+    Générer du hasard
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manipulations" class="md-nav__link">
+    Manipulations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repeter-des-instructions" class="md-nav__link">
+    Répéter des instructions:
+  </a>
+  
+    <nav class="md-nav" aria-label="Répéter des instructions:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-boucle-bornee-for" class="md-nav__link">
+    La boucle bornée for.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-boucle-non-bornee-while" class="md-nav__link">
+    La boucle non bornée while.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-listes-ou-les-tableaux" class="md-nav__link">
+    Les listes ou les tableaux...
+  </a>
+  
+    <nav class="md-nav" aria-label="Les listes ou les tableaux...">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generer-des-listes" class="md-nav__link">
+    Générer des listes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acceder-aux-elements-dune-liste" class="md-nav__link">
+    Accéder aux éléments d'une liste
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -969,184 +1072,221 @@
                   
 
 
-<h1 id="des-variables-pour-comprendre">Des variables pour comprendre<a class="headerlink" href="#des-variables-pour-comprendre" title="Permanent link">&para;</a></h1>
+<h1 id="je-fais-du-python-et-jaime-ca">Je fais du python et j'aime ça!<a class="headerlink" href="#je-fais-du-python-et-jaime-ca" title="Permanent link">&para;</a></h1>
 <div class="admonition info">
-<p class="admonition-title">De quoi s'agit-il?</p>
-<p>Un ordinateur est une grande commode composée de millions de tiroirs dans lesquels on peut stocker des chaussettes... ou plutôt des données!</p>
+<p class="admonition-title">Pour faire du python...</p>
+<p>il faut faire du python! Pour progresser il faut manipuler!</p>
 </div>
-<p>Je fais référence aux espaces de stockages des ordinateurs de la plus grande (le disque dur) à la plus petite (le registre), en passant par les mémoires vives par lesquelles transitent les informations.
-En informatique , tout est <strong>donnée numérique</strong>: les pages web, les images, les sons, les mels ,... et même les programmes sont des données stockées dans des variables contenant des valeurs de différents types. D'où notre obsession sur les <strong>variables</strong>...</p>
-<p>On verra comment des <em>algorithmes</em> puis des <em>programmes</em> peuvent changer l'état de ces variables...</p>
-<figure>
-<p><img alt="Image title" src="../img/commode.png" width="200" />
-  </p>
-<figcaption> En informatique, tout est nombre!!</figcaption>
-</figure>
-<h1 id="affectation-de-variables">Affectation de variables<a class="headerlink" href="#affectation-de-variables" title="Permanent link">&para;</a></h1>
-<p><code class="highlight"><span class="n">Python</span></code> est un langage informatique qui permet de donner des instructions. Par exemple, le code suivant:</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">b</span> <span class="o">=</span> <span class="mi">10</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-</code></pre></div>
-crée de façon manuelle (puisqu'on a les tapées...), <em>trois variables</em>  <code>a,b</code> et <code>c</code>. Sans trop de détails, vous venez simplement de réserver trois tiroirs de votre gigantesque commode, en leur donnant des noms et des valeurs.</p>
-<div class="admonition info">
-<p class="admonition-title"> Vocabulaire</p>
-<p>Lorsqu'on crée des variables et qu'on leur attribue des valeurs, on dit qu'on <strong>affecte</strong> une variable ou simplement que l'on a fait une  <strong>affectation</strong> de variables. On peut aussi parler d'<strong>initialisation</strong> de la variable quand pour la première fois, on affecte une valeur à une variable.</p>
-</div>
-<p>En <code>Python</code>, chaque variable a un <strong>type</strong> qui peut-être, un nombre entier ou à virgule (en <code>python</code>, on dit un <code>int</code> ou un <code>float</code>), un texte (en <code>python</code>, on dit un <code>string</code>) , une liste (en <code>python</code>, on dit une ... <code>list</code>) ou tout autre chose dont on ne parlera pas pour le moment...</p>
-<div class="admonition faq">
-<p class="admonition-title">Pourquoi stocker dans des variables???</p>
-<p>Tout simplement pour garder en mémoire(celle de l'ordi), les résultats obtenus ou calculés par un programme. Il suffit d'invoquer le nom de la variable pour retourver son contenu!</p>
-</div>
-<p>Un exemple! Le programme suivant calcule le prix <code>TTC</code> d'un article à partir du prix <code>HT</code> et de la valeur du taux d'imposition lié à la <code>TVA</code>. Vous remarquerez que les variables utilisées sont <code>implicites</code>: une variable qui désigne un prix sera appelée <code>prix</code> ou <code>p</code>, mais pas <code>x</code> !!</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">prix_HT</span> <span class="o">=</span> <span class="mi">200</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">taux</span> <span class="o">=</span> <span class="mf">1.196</span> <span class="c1">#pour une TVA a 19.6%</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">prix_HT</span> <span class="o">*</span> <span class="n">taux</span><span class="p">)</span>
-</code></pre></div>
-<p>Le programme calcule puis <strong>affiche</strong> le prix <code>TTC</code> dans la console <code>python</code>. Mais le résultat <strong>ne sera pas conservé</strong> en mémoire! On peut (doit?) remédier à cela en créant la variable <code>prix_TTC</code> et l'affecter comme suit:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">prix_TTC</span> <span class="o">=</span> <span class="n">prix_HT</span> <span class="o">*</span> <span class="n">taux</span>
-</code></pre></div>
-et faire ensuite afficher le contenu de cette varaible:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">prix_TTC</span><span class="p">)</span>
-</code></pre></div></p>
-<h1 id="les-operateurs-sur-les-differentes-variables">Les opérateurs sur les différentes variables<a class="headerlink" href="#les-operateurs-sur-les-differentes-variables" title="Permanent link">&para;</a></h1>
-<p>Il existe des <strong>opérateurs</strong> qui peuvent modifier l'état de ces variables. Outre les opérations mathématiques usuelles <span class="arithmatex">\((+, -, \times, \div)\)</span>, on aura l'occasion d'en découvrir d'autres.</p>
-<div class="admonition note">
-<p class="admonition-title">Exercice n°1: Donner la valeur des variables <code>a,b</code> et <code>c</code> à la suite de ces affectations.<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Code</label><label for="__tabbed_1_2">Solution</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">b</span> <span class="o">=</span> <span class="mi">10</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">+</span> <span class="mi">1</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="mi">2</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="n">c</span> <span class="o">=</span> <span class="n">c</span><span class="o">**</span><span class="mi">2</span>
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">b</span> <span class="o">=</span> <span class="mi">10</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="c1"># c vaut alors 12</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># b vaut 11</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="mi">2</span> <span class="c1"># a vaut 0</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="n">c</span> <span class="o">=</span> <span class="n">c</span><span class="o">**</span><span class="mi">2</span>  <span class="c1"># c vaut le carré de 12 soit 144</span>
-</code></pre></div>
-</div>
-</div>
-</div>
-</p>
-</div>
-<p>Il faut lire l'instruction <code>b = b + 1</code> ainsi : la nouvelle valeur de la variable <code>b</code> est égale à la valeur de l'ancienne à laquelle j'ajoute 1. Cette opération porte même un joli nom:</p>
-<div class="admonition info">
-<p class="admonition-title"> Vocabulaire</p>
-<p>L' opération qui consiste à faire évoluer une variable en lui ajoutant 1 s'appelle une <strong>incrémentation</strong>.</p>
-</div>
-<p>Cette opération d'incrémentation est très utilisée en <em>info</em>. </p>
-<div class="admonition note">
-<p class="admonition-title">Exercice n°2:<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Questions</label><label for="__tabbed_2_2">Réponses</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<ol>
-<li>Quelle instruction Python fait diminuer de 1 une variable <code>a</code> ?</li>
-<li>Cherchez le nom de cette instruction.</li>
-<li>Donnez le code qui incrémente une variable <code>compteur</code> de 5. </li>
-</ol>
-</div>
-<div class="tabbed-block">
-<ol>
-<li><code>a = a - 1 #attention dans ce cas il faut que</code>a <code>est été initialisée!</code></li>
-<li>C'est la <strong>décrémentation</strong>!</li>
-<li><code>compteur = compteur + 5</code></li>
-</ol>
-</div>
-</div>
-</div>
-</p>
-</div>
-<p>Il existe d'autres opérations que nous ne citerons pas pour le moment sauf celle du <strong>modulo</strong> car elle est très utilisée en informatique et est nouvelle pour la plupart des personnes qui lisent ces quelques lignes!</p>
-<div class="admonition info">
-<p class="admonition-title">le modulo ...</p>
-<p>Nous vivons tous les jours <strong>modulo 24</strong> : toutes les 24 heures, nous remettons les compteurs à zéro! 
-Travaillez avec des entiers <strong>modulo n</strong> où <strong>n</strong> est aussi un entier, consiste à compter à partir de zéro en remettant le compteur à zéro à partir du rang <code>n</code>.</p>
-</div>
-<p>Par exemple,</p>
+<p>Dans ce chapitre, vous trouverez des codes <code>python</code> que je vous demande de :</p>
 <ul>
-<li>en modulo 5: 0,1,2,3,4,0,1,2,3,...</li>
-<li>en modulo 2: 0,1,0,1,0,1,0,1,....</li>
+<li>manipuler et analyser</li>
+<li>modifier pour répondre à nos besoins</li>
 </ul>
-<p>Dans la première liste, à l'entier <code>7</code> correspond l'entier <code>2</code> lorsqu'on compte <code>modulo 5</code>: on dit alors que <code>7</code> est égal à <code>2</code> si on compte <code>modulo 5</code> et on écrit:</p>
-<ul>
-<li>en maths : <code>7 = 2 modulo 5</code> ou mieux ,<span class="arithmatex">\(7 \equiv 2 \pmod 5\)</span></li>
-<li>en <code>python</code>: <code>7%5</code> qui donne comme valeur <code>2</code></li>
-</ul>
-<p>On peut alors écrire les résultats suivants:</p>
-<div class="admonition example">
-<p class="admonition-title">des exemples de modulo...</p>
-<p><code>7%5 = 2, 10%3 = 1, 100%20 = 0, 17%3 = 2</code></p>
-</div>
-<p>Remarquez enfin qu'on nombre entier est pair si son <code>modulo 2</code> est... (à vous de finir la phrase!)</p>
-<p>On peut aussi jouer avec des lettres ou du texte, ce que nous appelons des variables de type <code>chaînes de caractères</code> ou simplement <code>string</code> en python.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">nom</span> <span class="o">=</span> <span class="s2">&quot;Alfred&quot;</span> 
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">club</span> <span class="o">=</span> <span class="s2">&quot;Madrid&quot;</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">age</span> <span class="o">=</span> <span class="s2">&quot;30&quot;</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">but</span> <span class="o">=</span> <span class="mi">26</span>
-</code></pre></div>
-Les variables de type <code>string</code> se déclare avec des <strong>quotes</strong>, doubles <code>" "</code> ou simples <code>' '</code> (la tradition veut que l'on utilise les simples pour un seul caractère...): les variables <code>nom, club</code> et <code>age</code> sont ainsi des chaînes de caractères. La variable <code>but</code> est en revanche un entier de type <code>int</code>.</p>
-<div class="admonition warning">
-<p class="admonition-title">Attention!</p>
-<p>Une variable a un <strong>type</strong>, défini dans la façon dont la variable a été déclarée! Des <strong>opérations</strong> existent selon le type de la variable.</p>
-</div>
-<p>On peut pour illustrer mes propos, utiliser les <strong>opérations</strong> mathématiques classiques sur les variables de type nombres (<code>int</code> ou <code>float</code>) mais pas sur les chaînes de caractères!</p>
-<p>La variable <code>age</code> n'est donc pas une variable de type <code>int</code> mais bien <code>string</code> car déclarée avec des <em>quotes</em>!</p>
-<details class="tip">
-<summary>Que peut-on faire avec des chaînes de caractères?</summary>
-<p>Les opérateurs sur ces objets sont des opérateurs de <strong>lecture</strong> et de <strong>concaténation</strong>. Mais il n'existe pas d'opérateur d'écriture qui modifierait la chaîne de caractères.</p>
-</details>
-<p>Cela signifie qu'une fois déclarée, une variable de type <code>string</code> ne peut plus être <strong>modifiée</strong>.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">nom</span> <span class="o">=</span> <span class="s2">&quot;Alfred&quot;</span> 
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">club</span> <span class="o">=</span> <span class="s2">&quot;Madrid&quot;</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">age</span> <span class="o">=</span> <span class="s2">&quot;30&quot;</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">but</span> <span class="o">=</span> <span class="mi">26</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">nom</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1">#affiche le premier caractère de la variable nom</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">club</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="c1">#affiche le caractère situé au rang 2 de la variable club</span>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="n">phrase_du_jour</span> <span class="o">=</span> <span class="n">nom</span> <span class="o">+</span> <span class="s2">&quot; a marqué &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">but</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; buts avec le club de &quot;</span> <span class="o">+</span> <span class="n">club</span> <span class="o">+</span> <span class="s2">&quot; à l âge de &quot;</span> <span class="o">+</span> <span class="n">age</span> <span class="o">+</span> <span class="s2">&quot;ans.&quot;</span>
-</code></pre></div>
-L'instruction <code>print</code> affiche la valeur de la variable. La variable <code>phrase_du_jour</code> est obtenue par la <strong>concaténation</strong> de plusieurs chaînes de caractètes. L'opérateur de concaténation est aussi le <span class="arithmatex">\(+\)</span> mais ne s'applique qu'aux chaînes de caractères! La variable <code>but</code> est <strong>transtypée</strong> pour passer d'un <code>int</code> à un <code>string</code>!
-On obtient alors:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">phrase_du_jour</span><span class="p">)</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">Alfred</span> <span class="n">a</span> <span class="n">marqué</span> <span class="mi">26</span> <span class="n">buts</span> <span class="n">avec</span> <span class="n">le</span> <span class="n">club</span> <span class="n">de</span> <span class="n">Madrid</span> <span class="n">à</span> <span class="n">l</span> <span class="n">âge</span> <span class="n">de</span> <span class="mi">30</span> <span class="n">ans</span><span class="o">.</span>
-</code></pre></div>
-<p>Attention en revanche, on ne peut pas concaténer une chaîne de caractères et un entier:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;buts marqués&quot;</span> <span class="o">+</span> <span class="n">but</span><span class="p">)</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="ne">TypeError</span><span class="p">:</span> <span class="n">unsupported</span> <span class="n">operand</span> <span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="o">+</span><span class="p">:</span> <span class="s1">&#39;int&#39;</span> <span class="ow">and</span> <span class="s1">&#39;str&#39;</span>
-</code></pre></div>
-<h1 id="le-coin-des-exercices">Le coin des exercices<a class="headerlink" href="#le-coin-des-exercices" title="Permanent link">&para;</a></h1>
+<p><code>Python</code> est un langage de haut niveau, proche du langage humain. Sans être un expert, on peut facilement comprendre et analyser un <strong>programme</strong> python .
+La création de code vient en dernier lieu, lorsque on s'est bien imprégné des routines pythonesque (grosso modo boucles et affectation...).</p>
+<p>La notion de <strong>fonction</strong> n'est pas aussi simple qu'on pourrait le croire et nécessite une étude particulière à voir <a href="" title="fonctions.md">ici</a></p>
+<h2 id="un-premier-test">Un premier test<a class="headerlink" href="#un-premier-test" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
 <p class="admonition-title">À faire</p>
 <ol>
-<li>
-<p>Donner les instructions <code>python</code> qui permettent:</p>
-<ul>
-<li>de créer une variable <code>h</code> et de lui affecter la valeur <code>10</code>.</li>
-<li>de créer une variable <code>p</code> et de lui affecter le texte <code>bonjour</code>.</li>
-<li>de créer une variable <code>prix</code> et de lui affecter la valeur <code>12.5</code></li>
-</ul>
-</li>
-<li>
-<p>Tapez ces instructions dans la console ci-dessous puis pour chaque variable faites affichez son type par l'instruction <code>print(type(var))</code> où <code>var</code> doit être remplacé par les noms des variables créés précédemment.</p>
-</li>
-<li>Donner les instructions <code>python</code> qui:<ul>
-<li>ajoute 10 à la variable <code>h</code> et socke le résultat dans <code>h</code>.</li>
-<li>concatène la variable <code>p</code> avec votre prénom stocke le résultat dans la variable <code>phrase</code>.</li>
-<li>multiplie la variable <code>prix</code> par <code>1.1</code> et stocke le résultat dans <code>prix</code></li>
-</ul>
-</li>
+<li>Ouvrez un IDLE comme Edupython  ou Thonny pour  y saisissez le code suivant dans la zône script:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">test</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># affectation de la variable à 10</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span><span class="c1">#une boucle permet de répéter une même (ou plusieurs) instruction: ici 5 fois</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">test</span> <span class="o">=</span> <span class="n">test</span> <span class="o">+</span> <span class="mi">2</span> <span class="c1">#incrementation de la variable test.</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">test</span><span class="p">)</span> <span class="c1">#affichage dans la console</span>
+</code></pre></div>
+Le résultat devrait s'afficher dans la <strong>console</strong>.</li>
+<li>Quelle différence avec le programme suivant?
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">test</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># affectation de la variable à 10</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span><span class="c1">#une boucle permet de répéter une même (ou plusieurs) instruction: ici 5 fois</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="n">test</span> <span class="o">=</span> <span class="n">test</span> <span class="o">+</span> <span class="mi">2</span> <span class="c1">#incrementation de la variable test.</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">test</span><span class="p">)</span> <span class="c1">#affichage dans la console</span>
+</code></pre></div></li>
 </ol>
 </div>
-<div onclick='start_term("id0")' id="fake_id0" class="py_mk_terminal_f"><label class="terminal"><span>>>> </span></label></div>
-<div id="id0" class="py_mk_hide"></div>
+<details class="tip">
+<summary>À retenir!</summary>
+<p>Le code s'écrit dans la zône script ou en console. Vous remarquerez dans les exemples précédents, la présence d'<code>espace</code> avant et après les signes d'opérations: il faudra respecter cette règle dorénavant.</p>
+<p>L'<strong>indentation</strong> permet de définir les blocs d'instructions dans les boucles ou les conditions.</p>
+</details>
+<h2 id="generer-du-hasard">Générer du hasard<a class="headerlink" href="#generer-du-hasard" title="Permanent link">&para;</a></h2>
+<p>Dans de nombreux cas, nous aurons besoin de simuler le hasard: plus précisément, certaines variables devront être affectées avec une valeur aléatoire. On distingue en général, les valeurs <strong>entières</strong> des valeurs <strong>décimales</strong>.</p>
+<p>Pour cela, il faut <strong>importer</strong> la bibliothèque qui génére les nombres aléatoires:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+</code></pre></div>
+Cette  instruction n'importe <strong>que</strong> la méthode <code>randint</code> : la bibliothèque <code>random</code> en contient d'autres que nous n'utiliserons pas ici!</p>
+<p>On considère le programme suivant:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">n</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">mon_choix</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;proposez un nombre&quot;</span><span class="p">))</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="n">mon_choix</span><span class="p">:</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;C&#39;est gagné&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="n">mon_choix</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;C&#39;est plus&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;C&#39;est moins&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">À faire : Utiliser le hasard</p>
+<ol>
+<li>Que fait l'instruction <code>randint(0, 100)</code></li>
+<li>Quelle est la différence entre les instructions <code>n = mon_choix</code> et <code>n == mon_choix</code>?</li>
+<li>À quoi sert le <code>int</code> devant le <code>input</code>?</li>
+<li>Commenter chaque instruction de ce code comme dans l'exemple test.</li>
+</ol>
+</div>
+<h2 id="manipulations">Manipulations<a class="headerlink" href="#manipulations" title="Permanent link">&para;</a></h2>
+<p>On donne le code suivant:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">#affecter des entiers</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">a</span> <span class="o">=</span> <span class="mi">15</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1">#affecter des flottants</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">b</span> <span class="o">=</span> <span class="mf">10.8</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1">#affecter des chaînes de caractères</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;c&#39;est cool&quot;</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="n">d</span> <span class="o">=</span> <span class="s2">&quot;c&#39;est génial&quot;</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="n">e</span> <span class="o">=</span> <span class="s2">&quot;c&#39;est nul&quot;</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="n">f</span> <span class="o">=</span> <span class="s2">&quot;maths&quot;</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="c1">#affecter des listes</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="n">g</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;HG&quot;</span><span class="p">,</span> <span class="s2">&quot;EPS&quot;</span><span class="p">,</span> <span class="s2">&quot;LV1&quot;</span><span class="p">,</span> <span class="s2">&quot;Philo&quot;</span><span class="p">]</span> <span class="c1">#je suis une liste de chaînes de caractères , des string!</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="c1">#affecter des autres trucs, inutiles dans notre contexte</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<p>Quels sont les types de variables utilisées ou déclarées dans le code précédent?</p>
+</div>
+<p>En général, on donne des noms explicites aux variables: ces noms dépendent bien entendu du contexte dans lequel elles sont utilisées.
+Par exemple, on appelle jamais <code>f</code> une variable de type <code>list</code>  mais plutôt <code>l</code> .</p>
+<p>Aussi, pourrait-on procéder ainsi:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">note</span> <span class="o">=</span> <span class="mi">15</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">moyenne</span> <span class="o">=</span> <span class="mf">10.8</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">discipline_majeure</span> <span class="o">=</span> <span class="s2">&quot;maths&quot;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">autres_disciplines</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;HG&quot;</span><span class="p">,</span> <span class="s2">&quot;EPS&quot;</span><span class="p">,</span> <span class="s2">&quot;LV1&quot;</span><span class="p">,</span> <span class="s2">&quot;Philo&quot;</span><span class="p">,</span> <span class="s2">&quot;Musique&quot;</span><span class="p">,</span> <span class="s2">&quot;Physique&quot;</span><span class="p">]</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">commentaires</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;c&#39;est cool&quot;</span><span class="p">,</span> <span class="s2">&quot;c&#39;est génial&quot;</span><span class="p">,</span> <span class="s2">&quot;c&#39;est nul&quot;</span><span class="p">,</span> <span class="s2">&quot;c&#39;est marrant&quot;</span><span class="p">]</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="n">note</span> <span class="o">=</span> <span class="n">note</span> <span class="o">+</span> <span class="mi">2</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">note</span><span class="p">)</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">discipline_majeure</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">autres_disciplines</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">autres_disciplines</span><span class="p">[</span><span class="mi">6</span><span class="p">])</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<ol>
+<li>Copiez et exécutez le code suivant. Un problème apparaît: pourquoi?</li>
+<li>Réglez le problème.</li>
+</ol>
+</div>
+<p>On peut améliorer l'affichage dans la console par des affichages dynamiques. Nous utilisons par exemple des <code>f-strings</code>:</p>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<ol>
+<li>Ajouter un code précédent, les instructions suivantes:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;J&#39;ai eu </span><span class="si">{</span><span class="n">note</span><span class="si">}</span><span class="s2"> en </span><span class="si">{</span><span class="n">discipline_majeure</span><span class="si">}</span><span class="s2"> &quot;</span><span class="p">)</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">listes_notes</span> <span class="o">=</span> <span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; J&#39;ai eu </span><span class="si">{</span><span class="n">listes_notes</span><span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">)]</span><span class="si">}</span><span class="s2"> en </span><span class="si">{</span><span class="n">autres_disciplines</span><span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]</span><span class="si">}</span><span class="s2"> et </span><span class="si">{</span><span class="n">commentaires</span><span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">)]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></li>
+<li>Exécutez plusieurs fois le code pour comprendre comment il fonctionne.</li>
+<li>Construire une <code>f-string</code>, qui donnerait par exemple:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="go">J&#39;aime la Philo parce que c&#39;est marrant</span>
+</code></pre></div></li>
+</ol>
+</div>
+<h2 id="repeter-des-instructions">Répéter des instructions:<a class="headerlink" href="#repeter-des-instructions" title="Permanent link">&para;</a></h2>
+<p>Il y a en général deux façons de répéter des instructions.</p>
+<h3 id="la-boucle-bornee-for">La boucle bornée <code>for</code>.<a class="headerlink" href="#la-boucle-bornee-for" title="Permanent link">&para;</a></h3>
+<p>Avec la boucle <code>for</code>, on peut choisir le nombre de fois où on répète l'instruction.</p>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<p>Ajoutez au code précédent les instructions suivantes et exécutez ce programme:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">autant_de_fois_que_tu_veux</span> <span class="o">=</span> <span class="mi">10</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">autant_de_fois_que_tu_veux</span><span class="p">):</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; J&#39;ai eu </span><span class="si">{</span><span class="n">listes_notes</span><span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">)]</span><span class="si">}</span><span class="s2"> en </span><span class="si">{</span><span class="n">autres_disciplines</span><span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></p>
+</div>
+<p>La variable <code>i</code> est appelée <strong>variable de boucle</strong>. L'instruction <code>for i in range(10)</code> affecte à <code>i</code> les valeurs 0 puis 1 puis 2,... jusqu'à 9: il y a bien alors 10 affectations, donc 10 répétitions. En fait à chaque que fois que la variable <code>i</code> prend une valeur, l'instruction de la boucle est exécutée...</p>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<p>Pour visualiser comme évolue la variable <code>i</code>, compléter le code précédent comme indiqué ci-après:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">autant_de_fois_que_tu_veux</span> <span class="o">=</span> <span class="mi">10</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">autant_de_fois_que_tu_veux</span><span class="p">):</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Note</span><span class="si">{</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="si">}</span><span class="s2">: J&#39;ai eu </span><span class="si">{</span><span class="n">listes_notes</span><span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">)]</span><span class="si">}</span><span class="s2"> en </span><span class="si">{</span><span class="n">autres_disciplines</span><span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></p>
+</div>
+<h3 id="la-boucle-non-bornee-while">La boucle non bornée <code>while</code>.<a class="headerlink" href="#la-boucle-non-bornee-while" title="Permanent link">&para;</a></h3>
+<p>Souvent, on ne sait pas <em>a priori</em> combien de boucles sont nécessaires pour obtenir un résultat. On utilise alors une boucle <code>while</code> qui permet de répéter des instructions <strong>tant que</strong> une condition est vérifiée.</p>
+<div class="admonition example">
+<p class="admonition-title">Un exemple</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">s</span> <span class="o">=</span> <span class="mi">0</span> 
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">cpt</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#pour compter le nombre d&#39;actions</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="k">while</span> <span class="n">s</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span><span class="c1"># la condition s &lt; 100 est vrai au départ: on rentre alors dans la boucle.</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="mi">6</span> <span class="c1"># s est incrémenté de 6</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    <span class="n">cpt</span> <span class="o">=</span> <span class="n">cpt</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1">#incrémentation de la variable cpt</span>
+</code></pre></div>
+</div>
+<details class="warning">
+<summary>Boucle infinie!</summary>
+<p>Une erreur classique consiste à créer des boucles infinies. Si la condition du <code>while</code> ne devient pas fausse dans l'exécution du programme, la boucle tourne à l'infini!</p>
+</details>
+<h2 id="les-listes-ou-les-tableaux">Les listes ou les tableaux...<a class="headerlink" href="#les-listes-ou-les-tableaux" title="Permanent link">&para;</a></h2>
+<p>Les variables de type <code>int</code> servent à conserver en mémoire des entiers alors que les <code>flottants</code> sont utilisés pour les nombres décimaux. Mais parfois, il faut garder en mémoire toute une série de valeur. On utilise pour cela des <strong>listes</strong>.</p>
+<h3 id="generer-des-listes">Générer des listes<a class="headerlink" href="#generer-des-listes" title="Permanent link">&para;</a></h3>
+<p>Pour construire des listes, on paut procéder de plusieurs façons, décrites dans l'exercice suivant.</p>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<ol>
+<li>Copiez le code suivant et exécutez-le:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">ma_liste_1</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># creation d&#39;une liste vide</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    <span class="n">ma_liste_1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="c1"># à chaque tour de boucle on ajoute à la fin de la liste le carré de i</span>
+</code></pre></div>
+Faites affichez dans la liste dans la console.</li>
+<li>Copiez et exécutez le code suivant:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">ma_liste_2</span> <span class="o">=</span> <span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="nb">range</span><span class="p">(</span><span class="mi">500</span><span class="p">)]</span><span class="c1"># cosntruction par compréhension de 500 entiers aléatoires entre 0 et 100</span>
+</code></pre></div></li>
+<li>Bien entendu, on peut construire une liste à la main mais c'est plus long et... peu conhérent avec les pratiques informatiques!
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">ma_liste_3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</code></pre></div>
+Faites affichez dans la liste dans la console.</li>
+</ol>
+</div>
+<h3 id="acceder-aux-elements-dune-liste">Accéder aux éléments d'une liste<a class="headerlink" href="#acceder-aux-elements-dune-liste" title="Permanent link">&para;</a></h3>
+<p>Une liste étant définie, on accède à ces éléments grâce à son <strong>indice</strong>: le premier est d'indice <code>0</code> et le dernier d'indice <code>len(ma_liste_1) - 1</code> où l'instruction <code>len(ma_liste_1)</code> retourne le nombre d'éléments de la liste. Le décalage entre le nombre d'éléments d'une liste et l'indice d'un élément est courant en mathématique et dû au fait que les indices commençent à 0!</p>
+<div class="admonition example">
+<p class="admonition-title">Routines habituelles</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">ma_liste_3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">ma_liste_3</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="c1"># affiche le premier élément de la liste (5 ici)</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">ma_liste_3</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span><span class="c1"># affiche l&#39;élément situé au rang 3 soit -1</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">ma_liste_3</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span><span class="c1"># erreur! il n&#39;y a pas d&#39;élément au rang 5.</span>
+</code></pre></div>
+Ces routines permettent l'accès à un élément de la liste. Mais on peut aussi utiliser une boucle pour afficher les éléments un par un...
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ma_liste_3</span><span class="p">)):</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">ma_liste_3</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</code></pre></div></p>
+</div>
+<p>Une liste est un objet <strong>mutable</strong>: on peut modifier son contenu.</p>
+<div class="admonition example">
+<p class="admonition-title">Modification d'un élément</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">ma_liste_2</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="mi">56</span> <span class="c1">#re-affectation de l&#39;élément d&#39;indice 10 de la liste ma_liste_2</span>
+</code></pre></div>
+</div>
+<p>Mieux encore! On peut modifier tous les éléments d'une liste en combinant les routines précédentes.</p>
+<div class="admonition example">
+<p class="admonition-title">Modifier tous les éléments d'une liste</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">)]</span><span class="c1"># liste de 50 entiers choisis au hasard</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ma_liste</span><span class="p">)):</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    <span class="n">ma_liste</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">ma_liste</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span> <span class="c1"># re-affectation de tous les éléments de la liste</span>
+</code></pre></div>
+</div>
+<h1 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h1>
+<div class="admonition tip">
+<p class="admonition-title"> À retenir</p>
+<p>Un langage informatique manipule des <strong>variables</strong> qui ont des <strong>types</strong> différents et des <strong>valeurs</strong> correspondantes : <code>int</code>, <code>float</code>, <code>str</code>, <code>list</code> sont les types que nous avons découverts dans ce travail. Sachez qu'il en existe bien d'autres.</p>
+<p>À chaque type correspond une façon (parfois plusieurs...) de les créer, les modifier ou les afficher. Il faut connaître ses routines dont les principales ont été présentées ci-dessus!</p>
+</div>
 
 
+
+  
 
 
 
@@ -1169,10 +1309,12 @@ On obtient alors:</p>
         <footer class="md-footer">
   
     
-    <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
+      
+    
+    <nav class="md-footer__inner md-grid" aria-label="Pied de page" hidden>
       
         
-        <a href="intro.html" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Pour débuter" rel="prev">
+        <a href="graphique.html" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Les graphiques" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1181,20 +1323,20 @@ On obtient alors:</p>
               <span class="md-footer__direction">
                 Précédent
               </span>
-              Pour débuter
+              Les graphiques
             </div>
           </div>
         </a>
       
       
         
-        <a href="listes.html" class="md-footer__link md-footer__link--next" aria-label="Suivant: Les listes" rel="next">
+        <a href="exercice_python.html" class="md-footer__link md-footer__link--next" aria-label="Suivant: Série d&#39;exercices" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Suivant
               </span>
-              Les listes
+              Série d'exercices
             </div>
           </div>
           <div class="md-footer__button md-icon">

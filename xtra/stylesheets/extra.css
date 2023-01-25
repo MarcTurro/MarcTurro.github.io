@@ -26,3 +26,10 @@ h2
     font-style : italic;
 }
 
+h3
+{
+    text-align: center;
+	margin : 0 0 10px 30px; /* haut, droite, bas, gauche (respectivement) */
+    font : 130% georgia, palatino, serif;
+    font-style : italic;
+}

@@ -10,14 +10,14 @@
         <meta name="author" content="Marc TURRO">
       
       
-        <link rel="canonical" href="https://marcturro.github.io/maths/listes.html">
+        <link rel="canonical" href="https://marcturro.github.io/maths/graphique.html">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
     
     
       
-        <title>Les listes - Numérique et Sciences Informatiques</title>
+        <title>Les graphiques - Numérique et Sciences Informatiques</title>
       
     
     
@@ -142,6 +142,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#faire-des-graphiques-avec-python" class="md-skip">
+          Aller au contenu
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -172,7 +177,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Les listes
+              Les graphiques
             
           </span>
         </div>
@@ -364,7 +369,9 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -742,19 +749,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="listes.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="listes.html" class="md-nav__link">
         Les listes
       </a>
-      
     </li>
   
 
@@ -792,11 +791,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="graphique.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="graphique.html" class="md-nav__link md-nav__link--active">
         Les graphiques
       </a>
+      
     </li>
   
 
@@ -962,15 +971,126 @@
                   
 
 
-  <h1>Les listes</h1>
+<h1 id="faire-des-graphiques-avec-python">Faire des graphiques avec Python<a class="headerlink" href="#faire-des-graphiques-avec-python" title="Permanent link">&para;</a></h1>
+<p>Pourquoi faire des graphiques? C'est une habitude pour visualiser une quantité de données:</p>
+<ul>
+<li>en physique, on réalise une expérience et on obtient des données dans un tableau que l'on exploite pour faire un graphique. </li>
+<li>en maths, pour déterminer la courbe représentative d'une fonction <span class="arithmatex">\(f\)</span>.</li>
+<li>en informatique, pour observer par exemple la répartition des niveaux de gris dans une image en noir et blanc.</li>
+<li>...</li>
+</ul>
+<p>Dans tous les cas, on utilisera la bibliothèque <code>matplotlib</code> qui offre tout un tas de possibilités pour faire un graphique.</p>
+<div class="admonition exemple">
+<p class="admonition-title">Niveau d'intensité</p>
+<p>Expérience faite en première NSI. On prend une photo en noir et blanc (plus précisément en niveau de gris...), celle présentée ci-dessous(<code>puppy.png</code>), et on compte les pixels d'intensité 0(noir), d'intensité 1,... et d'intensité 255. On stocke les résultats dans une liste.
+<center>
+<img alt="puppy" src="img/puppy.png" />
+</center>
+Le code suivant génère l'histogramme.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># import des bibliothèques nécessaires</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> <span class="c1"># pour les graphiques</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1"># pour générer des listes (np.arange)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1">#liste L obtenue en parcourant tous les pixels de l&#39;image puppy.png </span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># il y a 1 pixel d&#39;intensité 0(totalement noir), il y a 1 pixel d&#39;intensité 1</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># il y a 4 pixel d&#39;intensité 2, il y a 12 pixel d&#39;intensité 3, ... et 366 pixels d&#39;intensité 255(totalement blanc)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">121</span><span class="p">,</span> <span class="mi">137</span><span class="p">,</span> <span class="mi">155</span><span class="p">,</span> <span class="mi">148</span><span class="p">,</span> <span class="mi">162</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">228</span><span class="p">,</span> <span class="mi">264</span><span class="p">,</span> <span class="mi">275</span><span class="p">,</span> <span class="mi">290</span><span class="p">,</span> <span class="mi">213</span><span class="p">,</span> <span class="mi">283</span><span class="p">,</span> <span class="mi">351</span><span class="p">,</span> <span class="mi">343</span><span class="p">,</span> <span class="mi">363</span><span class="p">,</span> <span class="mi">394</span><span class="p">,</span> <span class="mi">381</span><span class="p">,</span> <span class="mi">333</span><span class="p">,</span> <span class="mi">323</span><span class="p">,</span> <span class="mi">394</span><span class="p">,</span> <span class="mi">453</span><span class="p">,</span> <span class="mi">422</span><span class="p">,</span> <span class="mi">424</span><span class="p">,</span> <span class="mi">397</span><span class="p">,</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="mi">404</span><span class="p">,</span> <span class="mi">390</span><span class="p">,</span> <span class="mi">368</span><span class="p">,</span> <span class="mi">451</span><span class="p">,</span> <span class="mi">369</span><span class="p">,</span> <span class="mi">453</span><span class="p">,</span> <span class="mi">469</span><span class="p">,</span> <span class="mi">457</span><span class="p">,</span> <span class="mi">454</span><span class="p">,</span> <span class="mi">434</span><span class="p">,</span> <span class="mi">428</span><span class="p">,</span> <span class="mi">449</span><span class="p">,</span> <span class="mi">447</span><span class="p">,</span> <span class="mi">449</span><span class="p">,</span> <span class="mi">433</span><span class="p">,</span> <span class="mi">489</span><span class="p">,</span> <span class="mi">449</span><span class="p">,</span> <span class="mi">495</span><span class="p">,</span> <span class="mi">467</span><span class="p">,</span> <span class="mi">455</span><span class="p">,</span> <span class="mi">501</span><span class="p">,</span> <span class="mi">462</span><span class="p">,</span> <span class="mi">499</span><span class="p">,</span> <span class="mi">453</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="mi">494</span><span class="p">,</span> <span class="mi">547</span><span class="p">,</span> <span class="mi">550</span><span class="p">,</span> <span class="mi">662</span><span class="p">,</span> <span class="mi">749</span><span class="p">,</span> <span class="mi">930</span><span class="p">,</span> <span class="mi">1119</span><span class="p">,</span> <span class="mi">1453</span><span class="p">,</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="mi">1281</span><span class="p">,</span> <span class="mi">1079</span><span class="p">,</span> <span class="mi">952</span><span class="p">,</span> <span class="mi">978</span><span class="p">,</span> <span class="mi">869</span><span class="p">,</span> <span class="mi">943</span><span class="p">,</span> <span class="mi">770</span><span class="p">,</span> <span class="mi">740</span><span class="p">,</span> <span class="mi">674</span><span class="p">,</span> <span class="mi">668</span><span class="p">,</span> <span class="mi">667</span><span class="p">,</span> <span class="mi">682</span><span class="p">,</span> <span class="mi">734</span><span class="p">,</span> <span class="mi">741</span><span class="p">,</span> <span class="mi">753</span><span class="p">,</span> <span class="mi">772</span><span class="p">,</span> <span class="mi">783</span><span class="p">,</span> <span class="mi">781</span><span class="p">,</span> <span class="mi">858</span><span class="p">,</span> <span class="mi">838</span><span class="p">,</span> <span class="mi">843</span><span class="p">,</span> <span class="mi">890</span><span class="p">,</span> <span class="mi">840</span><span class="p">,</span> <span class="mi">860</span><span class="p">,</span> <span class="mi">915</span><span class="p">,</span> <span class="mi">898</span><span class="p">,</span> <span class="mi">937</span><span class="p">,</span> <span class="mi">879</span><span class="p">,</span> <span class="mi">892</span><span class="p">,</span> <span class="mi">862</span><span class="p">,</span> <span class="mi">921</span><span class="p">,</span> <span class="mi">883</span><span class="p">,</span> <span class="mi">931</span><span class="p">,</span> 
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="mi">895</span><span class="p">,</span> <span class="mi">944</span><span class="p">,</span> <span class="mi">993</span><span class="p">,</span> <span class="mi">996</span><span class="p">,</span> <span class="mi">1006</span><span class="p">,</span> <span class="mi">1013</span><span class="p">,</span> <span class="mi">1071</span><span class="p">,</span> <span class="mi">1077</span><span class="p">,</span> <span class="mi">1105</span><span class="p">,</span> <span class="mi">1056</span><span class="p">,</span> <span class="mi">995</span><span class="p">,</span> <span class="mi">961</span><span class="p">,</span> <span class="mi">948</span><span class="p">,</span> <span class="mi">958</span><span class="p">,</span> <span class="mi">953</span><span class="p">,</span> <span class="mi">930</span><span class="p">,</span> <span class="mi">920</span><span class="p">,</span> <span class="mi">950</span><span class="p">,</span> <span class="mi">1034</span><span class="p">,</span> <span class="mi">1023</span><span class="p">,</span> <span class="mi">1108</span><span class="p">,</span> <span class="mi">1036</span><span class="p">,</span> <span class="mi">944</span><span class="p">,</span> <span class="mi">940</span><span class="p">,</span> <span class="mi">875</span><span class="p">,</span> <span class="mi">836</span><span class="p">,</span> <span class="mi">746</span><span class="p">,</span> <span class="mi">729</span><span class="p">,</span> <span class="mi">787</span><span class="p">,</span> <span class="mi">668</span><span class="p">,</span> <span class="mi">733</span><span class="p">,</span> <span class="mi">737</span><span class="p">,</span> 
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="mi">718</span><span class="p">,</span> <span class="mi">721</span><span class="p">,</span> <span class="mi">681</span><span class="p">,</span> <span class="mi">644</span><span class="p">,</span> <span class="mi">676</span><span class="p">,</span> <span class="mi">642</span><span class="p">,</span> <span class="mi">656</span><span class="p">,</span> <span class="mi">589</span><span class="p">,</span> <span class="mi">540</span><span class="p">,</span> <span class="mi">596</span><span class="p">,</span> <span class="mi">583</span><span class="p">,</span> <span class="mi">596</span><span class="p">,</span> <span class="mi">562</span><span class="p">,</span> <span class="mi">532</span><span class="p">,</span> <span class="mi">536</span><span class="p">,</span> <span class="mi">560</span><span class="p">,</span> <span class="mi">536</span><span class="p">,</span> <span class="mi">505</span><span class="p">,</span> <span class="mi">484</span><span class="p">,</span> <span class="mi">465</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">469</span><span class="p">,</span> <span class="mi">529</span><span class="p">,</span> <span class="mi">602</span><span class="p">,</span> <span class="mi">621</span><span class="p">,</span> <span class="mi">675</span><span class="p">,</span> <span class="mi">755</span><span class="p">,</span> <span class="mi">789</span><span class="p">,</span> <span class="mi">801</span><span class="p">,</span> <span class="mi">1104</span><span class="p">,</span> <span class="mi">1307</span><span class="p">,</span> <span class="mi">1299</span><span class="p">,</span> <span class="mi">1054</span><span class="p">,</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="mi">987</span><span class="p">,</span> <span class="mi">1086</span><span class="p">,</span> <span class="mi">1188</span><span class="p">,</span> <span class="mi">1239</span><span class="p">,</span> <span class="mi">1320</span><span class="p">,</span> <span class="mi">1533</span><span class="p">,</span> <span class="mi">1670</span><span class="p">,</span> <span class="mi">1679</span><span class="p">,</span> <span class="mi">1925</span><span class="p">,</span> <span class="mi">1646</span><span class="p">,</span> <span class="mi">1444</span><span class="p">,</span> <span class="mi">1310</span><span class="p">,</span> <span class="mi">1032</span><span class="p">,</span> <span class="mi">868</span><span class="p">,</span> <span class="mi">686</span><span class="p">,</span> <span class="mi">615</span><span class="p">,</span> <span class="mi">517</span><span class="p">,</span> <span class="mi">501</span><span class="p">,</span> <span class="mi">550</span><span class="p">,</span> <span class="mi">549</span><span class="p">,</span> <span class="mi">533</span><span class="p">,</span> <span class="mi">518</span><span class="p">,</span> <span class="mi">532</span><span class="p">,</span> <span class="mi">446</span><span class="p">,</span> <span class="mi">397</span><span class="p">,</span> <span class="mi">391</span><span class="p">,</span> <span class="mi">310</span><span class="p">,</span> <span class="mi">269</span><span class="p">,</span> <span class="mi">253</span><span class="p">,</span> <span class="mi">244</span><span class="p">,</span> <span class="mi">233</span><span class="p">,</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="mi">198</span><span class="p">,</span> <span class="mi">205</span><span class="p">,</span> <span class="mi">222</span><span class="p">,</span> <span class="mi">209</span><span class="p">,</span> <span class="mi">210</span><span class="p">,</span> <span class="mi">308</span><span class="p">,</span> <span class="mi">382</span><span class="p">,</span> <span class="mi">336</span><span class="p">,</span> <span class="mi">295</span><span class="p">,</span> <span class="mi">264</span><span class="p">,</span> <span class="mi">225</span><span class="p">,</span> <span class="mi">215</span><span class="p">,</span> <span class="mi">193</span><span class="p">,</span> <span class="mi">177</span><span class="p">,</span> <span class="mi">207</span><span class="p">,</span> <span class="mi">198</span><span class="p">,</span> <span class="mi">205</span><span class="p">,</span> <span class="mi">222</span><span class="p">,</span> <span class="mi">206</span><span class="p">,</span> <span class="mi">261</span><span class="p">,</span> <span class="mi">193</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">213</span><span class="p">,</span> <span class="mi">238</span><span class="p">,</span> <span class="mi">219</span><span class="p">,</span> <span class="mi">219</span><span class="p">,</span> <span class="mi">229</span><span class="p">,</span> <span class="mi">251</span><span class="p">,</span> <span class="mi">210</span><span class="p">,</span> <span class="mi">181</span><span class="p">,</span> <span class="mi">176</span><span class="p">,</span> <span class="mi">207</span><span class="p">,</span> <span class="mi">202</span><span class="p">,</span> 
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="mi">260</span><span class="p">,</span> <span class="mi">258</span><span class="p">,</span> <span class="mi">284</span><span class="p">,</span> <span class="mi">403</span><span class="p">,</span> <span class="mi">431</span><span class="p">,</span> <span class="mi">401</span><span class="p">,</span> <span class="mi">435</span><span class="p">,</span> <span class="mi">451</span><span class="p">,</span> <span class="mi">443</span><span class="p">,</span> <span class="mi">406</span><span class="p">,</span> <span class="mi">425</span><span class="p">,</span> <span class="mi">265</span><span class="p">,</span> <span class="mi">221</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">216</span><span class="p">,</span> <span class="mi">174</span><span class="p">,</span> <span class="mi">107</span><span class="p">,</span> <span class="mi">114</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">129</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">156</span><span class="p">,</span> <span class="mi">202</span><span class="p">,</span> <span class="mi">383</span><span class="p">,</span> <span class="mi">366</span><span class="p">]</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span> <span class="c1">#une figure et des axes</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span>  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">256</span><span class="p">)]</span> <span class="c1">#génération par compréhension de la liste x = [0,1,2,...,254,255]</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="n">y</span> <span class="o">=</span> <span class="n">L</span> <span class="c1">#liste ci-dessus</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;magenta&#39;</span><span class="p">,</span> <span class="n">edgecolor</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mf">0.7</span><span class="p">)</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="c1"># fait un histogramme avec en abscisse les valeurs de x et en ordonnée les valeurs de y</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="c1">#x et y doivent être de même dimension!!!!</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="n">xticks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>    <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2000</span><span class="p">),</span> <span class="n">yticks</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="c1"># options qui définissent les graduations des axes</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Nombre de pixels&#39;</span><span class="p">)</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Histogramme de l&#39;image puppy.png&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Intensité de gris&#39;</span><span class="p">)</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="n">img</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div></p>
+</div>
+<p>On obtient le joli graphique:
+<center>
+<img alt="histogramme" src="img/histo_puppy.png" />
+</center></p>
+<div class="admonition tip">
+<p class="admonition-title">À retenir</p>
+<p>Pour tracer un graphique quelconque, il faut en général une liste pour les abscisses et une pour les ordonnées. Attention, ces deux listes doivent avoir le même nombre d'éléments!</p>
+</div>
+<div class="admonition exemple">
+<p class="admonition-title">La courbe représentative d'une fonction mathématique</p>
+<p>Rien de plus simple! Il faut:</p>
+<ul>
+<li>une fonction <span class="arithmatex">\(f\)</span> définie sur un intervalle <span class="arithmatex">\(I\)</span></li>
+<li>une liste en abscisse</li>
+<li>une liste en ordonnée</li>
+</ul>
+<p>Puis on utilisera la méthode <code>.plot</code> à la place de <code>.bar</code> pour obtenir une courbe au lieu d'un histogramme...</p>
+</div>
+<p>Par exemple voici le code <code>python</code> pour construire la courbe représentative des fonctions <span class="arithmatex">\(\cos\)</span> et <span class="arithmatex">\(\sin\)</span> sur l'intervalle <span class="arithmatex">\(I=[0, 2\pi]\)</span>.</p>
+<div class="admonition exemple">
+<p class="admonition-title">Fonctions trigonométriques</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">####### import bibliothèques ###############</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kn">import</span> <span class="nn">math</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1">####### une figure et des axes ############</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1">###### valeurs extrêmes en X et Y #########</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">x_min</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">x_max</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="n">y_min</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="c1">#valeur minimale du cos et sin</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="n">y_max</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">#valeur maximale du cos et sin</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="c1">##### fonction cos et sin #################</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="k">def</span> <span class="nf">lesinus</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="k">def</span> <span class="nf">lecosinus</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="c1">##### génération de la liste des abscisses</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">start</span> <span class="o">=</span> <span class="n">x_min</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="n">x_max</span><span class="p">,</span> <span class="n">step</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">)</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="c1">#### limite horizontale du graphique ######</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">)</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="c1">#### limite verticale du graphique ########</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span><span class="p">)</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="c1">###### pour les grilles ###################</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="n">grid_x_ticks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="n">grid_y_ticks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">)</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="c1">###### pour les graduations</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">grid_x_ticks</span><span class="p">,</span> <span class="n">minor</span><span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">grid_y_ticks</span> <span class="p">,</span> <span class="n">minor</span><span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="c1">#### pour l&#39;affichage de la grille ########</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">)</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="c1">### construction des deux courbes</span>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="c1"># X est la première liste et lesinus(X) est la deuxième</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">lesinus</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span><span class="s1">&#39;cos&#39;</span><span class="p">)</span>
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">lecosinus</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span><span class="s1">&#39;sin&#39;</span><span class="p">)</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="c1">##### pour la légende #####################</span>
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$x$ &quot;</span><span class="p">)</span><span class="c1">#syntaxe latex</span>
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot; $\sin(x)$ et $\cos(x)$&quot;</span><span class="p">)</span><span class="c1">#syntaxe latex</span>
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a><span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Fonctions trigonométriques &quot;</span><span class="p">)</span>
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+</div>
+<p>On obtient le graphique suivant:</p>
+<p><center>
+<img alt="histogramme" src="img/fct_trigo.png" />
+</center></p>
 
-<figure>
-<p><img alt="Image title" src="../img/travaux.jpg" width="200" />
-  </p>
-<figcaption> Bientôt...</figcaption>
-</figure>
 
 
+  
 
 
 
@@ -993,10 +1113,12 @@
         <footer class="md-footer">
   
     
-    <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
+      
+    
+    <nav class="md-footer__inner md-grid" aria-label="Pied de page" hidden>
       
         
-        <a href="variables.html" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Les variables" rel="prev">
+        <a href="fonctions.html" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Les fonctions" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1005,20 +1127,20 @@
               <span class="md-footer__direction">
                 Précédent
               </span>
-              Les variables
+              Les fonctions
             </div>
           </div>
         </a>
       
       
         
-        <a href="boucles.html" class="md-footer__link md-footer__link--next" aria-label="Suivant: Les boucles" rel="next">
+        <a href="intro_python.html" class="md-footer__link md-footer__link--next" aria-label="Suivant: Prise en main" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Suivant
               </span>
-              Les boucles
+              Prise en main
             </div>
           </div>
           <div class="md-footer__button md-icon">

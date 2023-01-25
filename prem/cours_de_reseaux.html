@@ -797,6 +797,81 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maths/graphique.html" class="md-nav__link">
+        Les graphiques
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_8" type="checkbox" id="__nav_5_8" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_8">
+          Mathématiques en Terminale STI2D
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Mathématiques en Terminale STI2D" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_8">
+          <span class="md-nav__icon md-icon"></span>
+          Mathématiques en Terminale STI2D
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maths/intro_python.html" class="md-nav__link">
+        Prise en main
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maths/exercice_python.html" class="md-nav__link">
+        Série d'exercices
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -897,9 +972,10 @@
 
 
 <h1 id="travail-sur-les-reseaux-informatiques">Travail sur les réseaux informatiques<a class="headerlink" href="#travail-sur-les-reseaux-informatiques" title="Permanent link">&para;</a></h1>
-<p>Notre monde est connecté! Connecté par des interfaces simples(web /appli.) mais connecté au sens physique du terme. Dans une architecture classique de réseau, un ordinateur(le client) est relié par un câble, une fibre , une onde électromagnétique,... à un autre ordinateur(le serveur) qui lui fournit des services (pages web, messagerie, base de données,...) quasiment en continu. </p>
+<p>Notre monde est hyper-connecté! </p>
+<p>Connecté par des interfaces simples(web /appli.) mais surtout connecté au sens physique du terme. Dans une architecture classique de réseau, un ordinateur(le client) est relié par un câble, une fibre, une onde électromagnétique,... à un autre ordinateur(le serveur) qui lui fournit des services (pages web, messagerie, base de données,...) quasiment en continu. </p>
 <div class="admonition caution">
-<p class="admonition-title">Caution</p>
+<p class="admonition-title">Objectifs</p>
 <p>Ce cours précise sans trop de détails, le vocabulaire usuel des réseaux et les principes généraux de leur fonctionnement. Le travail se terminera par la simulation d'un réseau informatique et l'utilisation de bibliothèques <code>Python</code> pour communiquer entre deux ordinateurs d'une même salle.</p>
 </div>
 <h1 id="dabord-un-reseau-physique">D'abord , un réseau physique...<a class="headerlink" href="#dabord-un-reseau-physique" title="Permanent link">&para;</a></h1>
@@ -913,13 +989,15 @@
 </div>
 <p>Chez vous, la <strong>box</strong> est physiquement reliée au réseau téléphonique (ou fibre) par un câble: le reste du réseau y est souvent connecté en WIFI...
 Dans nos salles de NSI, les ordinateurs sont reliés grâce des câbles <strong>RJ45</strong> droits aux <strong>prises réseaux</strong> ,elles-mêmes reliées à <strong>une baie de brassage</strong>, puis à un <strong>switch</strong> et enfin au serveur de l'établissement...seul élément du réseau relié à internet!</p>
-<p>À une autre échelle, des câbles sous-marins ont même été déposés au fond des océans pour relier les continents européens et américains:</p>
-<p><img alt="Câble sous_marin" src="img/plan_cable.jpg" title="La France connectée aux autres pays" />.</p>
-<h1 id="le-reseau-internet">Le réseau internet<a class="headerlink" href="#le-reseau-internet" title="Permanent link">&para;</a></h1>
-<p>Il y a de nombreuses confusions: les gens emploient indifféremment les mots <strong>WEB</strong> et <strong>Internet</strong> alors qu'ils ne désignent pas la même chose.\
-Internet, c'est un immense regroupement de différents réseaux qui ont en commun des protocoles de communication: c'est donc un réseau <strong>physique</strong>, <strong>matériel</strong>.</p>
+<p>À une autre échelle, des câbles sous-marins ont même été déposés au fond des océans pour relier les continents européens et américains:
+<center>
+<img alt="Câble sous_marin" src="img/plan_cable.jpg" title="La France connectée aux autres pays" />.
+</center></p>
+<h2 id="le-reseau-internet">Le réseau internet<a class="headerlink" href="#le-reseau-internet" title="Permanent link">&para;</a></h2>
+<p>Il y a de nombreuses confusions: les gens emploient indifféremment les mots <strong>WEB</strong> et <strong>Internet</strong> alors qu'ils ne désignent pas la même chose.</p>
+<p><strong>Internet</strong>, c'est un immense regroupement de différents réseaux qui ont en commun des protocoles de communication: c'est donc un réseau <strong>physique</strong>, <strong>matériel</strong>.</p>
 <div class="admonition info">
-<p class="admonition-title">Pour information!</p>
+<p class="admonition-title">Un élève de NSI ne doit pas faire cette confusion!</p>
 <p>Le <strong>WEB</strong> est un service proposé sur ce réseau comme la messagerie ou le streaming: c'est une couche logicielle, immatérielle!</p>
 </div>
 <h2 id="historique">Historique<a class="headerlink" href="#historique" title="Permanent link">&para;</a></h2>
@@ -948,10 +1026,62 @@ Internet, c'est un immense regroupement de différents réseaux qui ont en commu
 <p><img alt="Box orange" src="img/interface_livebox.png" title="Page administration livebox" />
 </center></p>
 <h2 id="le-reseau-du-lycee">Le réseau du lycée<a class="headerlink" href="#le-reseau-du-lycee" title="Permanent link">&para;</a></h2>
-<p>C'est un peu la même chose que chez vous mais en plus grand( sachez qu'il y a plus de mille ordinateurs dans le lycée!). Les réseaux sont classés selon leur extension (PAN, LAN, MAN, WAN) selon une hiérarchie bien définie.</p>
-<p><center></p>
-<p><img alt="Reseaux mondiaux" src="img/LanWan.jpg" title="WanLan" />
+<p>C'est un peu la même chose que chez vous mais en plus grand( sachez qu'il y a plus de mille ordinateurs dans le lycée!). Les réseaux sont classés selon leur extension (PAN, LAN, MAN, WAN) dans une hiérarchie bien définie.</p>
+<p><center>
+<img alt="Reseaux mondiaux" src="img/LanWan.jpg" title="WanLan" />
 </center></p>
+<h1 id="un-reseau-logiciel">Un réseau logiciel<a class="headerlink" href="#un-reseau-logiciel" title="Permanent link">&para;</a></h1>
+<p>Internet est donc un réseau physique reliant finalement tous les ordinateurs entre eux. Mais comment se fait la communication? Comment les échanges d’informations se font-ils ? Pourquoi les informations ne se perdent pas dans ce réseau monstrueux? C’est une histoire de protocole...</p>
+<div class="admonition faq">
+<p class="admonition-title">Derrière le rideau...</p>
+<p>Je souhaite consulter un site WEB. Pour cela, j'utilise un navigateur dans lequel je saisis l'URL du site dans la barre d'adresse et miracle, les informations me parviennent! Mais que s'est-il réellement passé????</p>
+</div>
+<p>Il s'agit bien d'une communication entre deux ordinateurs:</p>
+<ul>
+<li>celui qui effectue la <strong>requête</strong>: c'est le <strong>client</strong>!</li>
+<li>celui qui reçoit la requête: c'est le <strong>serveur</strong>! </li>
+</ul>
+<p><center>
+<img alt="Communication entre deux ordinateurs" src="img/client_serveur.png" />
+</center></p>
+<p>Toutes les procédures de connexion sont <strong>transparentes</strong> aux yeux de l'utilisateur. Mais sachez qu'elles existent et qu'elles sont exécutées à une allure vertigineuse, en principe.</p>
+<div class="admonition faq">
+<p class="admonition-title">Vous souhaitez observer ce qui se passe lorsque vous solliciter une site web comme <em>www.lequipe.fr</em>?</p>
+<p>Facile, appuyer sur <kbd>F12</kbd> dans votre navigateur Firefox et visualisez dans l'onglet <code>reseau</code> les requêtes après validation de l'URL ci-dessus. </p>
+</div>
+<p><center>
+<img alt="site_lequipe" src="img/lequipe.png" />
+</center></p>
+<p>Le client envoie une requête <code>http</code>. On utilise ici la méthode <code>GET</code> pour obtenir une <strong>ressource</strong> du serveur distant: celle_ci est la racine () du site web. Vous pouvez consulter le contenu de la requête en cliquant sur la première ligne contenant le <code>GET</code>...</p>
+<p>Le serveur répond et fournit le code HTML de la première page. Vous remarquerez plusieurs requêtes(126 exactements) qui permettent de charger divers éléments (css, js, font,...)</p>
+<p>Vous remarquerez la présence de la méthode <code>POST</code> qui permet de transmettre des données au serveur dans le corps de la requête (des cookies ou équivalent sans doute ici...).</p>
+<div class="admonition faq">
+<p class="admonition-title"> Mais comment contacter le serveur qui héberge le site <em>www.lequipe.fr</em>?</p>
+<p>Lorsque vous utilisez votre smartphone pour appeler votre copain, c'est la connaissance de son numéro qui rend possible la communication. Sur internet , le même principe est reconduit.</p>
+</div>
+<p>Le serveur a une <strong>adresse IP publique</strong>: par exemple l'adresse d'un des serveurs de <code>google</code> est <code>216.58.214.163</code>. Vous ne me croyez pas! Tapez cette adresse dans la barre d'adresse d'un navigateur et vous verrez...</p>
+<div class="admonition faq">
+<p class="admonition-title">Mais suis-je obligez de connaître les adresses IP des millions de serveurs dans le monde?</p>
+<p>Et bien ,NON! Il suffit juste de connaître son <code>URL</code>, et encore... les moteurs de recherche nous envoient souvent vers le site recherché à partir d'un mot clé.</p>
+</div>
+<p>Un service dédié s'occupe alors d'associer à cette <code>URL</code> son adresse <code>IP</code>, bien conservée quelque part en France dans un serveur Racine( en fait il y en a plusieurs...). C'est le protocole <code>DNS</code>(Domain Name Service).</p>
+<div class="admonition tip">
+<p class="admonition-title"> J'ai compris!</p>
+<p>Pour contacter un serveur web par exemple, il faut connaître son adresse <code>IP</code> qu'un serveur <code>DNS</code> me livre. Mais le problème reste posé: comment contacter le serveur racine d'un DNS???</p>
+</div>
+<p>Les routeurs auquels sont nécessairement reliés votre machine, ont en mémoire les adresses IP de ces serveurs (parfois même ils se trouvent dans le cache de votre navigateur...).</p>
+<div class="admonition note">
+<p class="admonition-title">Les serveurs racines</p>
+<p>Les serveurs racines <code>DNS</code> sont gérés par douze organisations différentes : deux sont européennes, une japonaise et les neuf autres sont américaines.</p>
+</div>
+<p>Le schéma suivant montre que si vous ne possédez pas dans votre machine l'adresse <code>IP</code> du site que vous souhaitez solliciter, une première requête est effectuée sur un serveur racine(1). Puis le serveur <code>DNS</code> vous répond en vous fournissant l'adresse du serveur web(2). Vous pouvez alors contacter ce serveur(3) qui en retour vous donne le code <code>HTML</code>(4).</p>
+<p><center>
+<img alt="serveurDNS" src="img/serveurDNS.png" />
+</center></p>
+<div class="admonition tip">
+<p class="admonition-title"> J'ai compris!</p>
+<p>Un serveur = une adresse <code>IP</code>! Mais il y a des millions d'ordinateurs dans le monde. A t-on suffisamment d'adresse <code>IP</code> pour chacun?</p>
+</div>
 
 
 

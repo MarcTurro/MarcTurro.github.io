@@ -10,14 +10,14 @@
         <meta name="author" content="Marc TURRO">
       
       
-        <link rel="canonical" href="https://marcturro.github.io/maths/listes.html">
+        <link rel="canonical" href="https://marcturro.github.io/maths/exercice_python.html">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
     
     
       
-        <title>Les listes - Numérique et Sciences Informatiques</title>
+        <title>Série d'exercices - Numérique et Sciences Informatiques</title>
       
     
     
@@ -172,7 +172,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Les listes
+              Série d'exercices
             
           </span>
         </div>
@@ -364,7 +364,9 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -742,19 +744,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="listes.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="listes.html" class="md-nav__link">
         Les listes
       </a>
-      
     </li>
   
 
@@ -806,12 +800,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_8" type="checkbox" id="__nav_5_8" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_8" type="checkbox" id="__nav_5_8" checked>
       
       
       
@@ -846,11 +842,19 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="exercice_python.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="exercice_python.html" class="md-nav__link md-nav__link--active">
         Série d'exercices
       </a>
+      
     </li>
   
 
@@ -962,15 +966,88 @@
                   
 
 
-  <h1>Les listes</h1>
+  <h1>Série d'exercices</h1>
 
-<figure>
-<p><img alt="Image title" src="../img/travaux.jpg" width="200" />
-  </p>
-<figcaption> Bientôt...</figcaption>
-</figure>
+<p>Une série d'exercices à réaliser. Réflechissez à la structure algorithmique avant de passer au codage à proprement dit:</p>
+<ul>
+<li>de combien de variables ai-je besoin?</li>
+<li>de quel type de variable ai-je besoin?</li>
+<li>dois-je faire une boucle?</li>
+<li>y a t-il des conditions?</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">À faire: Manipuler des listes</p>
+<p>On considère une liste quelconque <code>L</code>.</p>
+<ol>
+<li>Donner l'instruction qui permet d'afficher le premier élément de la liste, le deuxième, le dernier.</li>
+<li>Donner les instructions qui permettent d'ajouter 1 à tous les éléments de la liste.</li>
+<li>Donner les instructions qui permettent de décaler d'un rang tous les éléments de la liste (le dernier revenant alors à la première position)</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">À faire: Manipulation de listes bis</p>
+<ol>
+<li>Construire un programme qui calcule la somme des éléments d'une liste. Par exemple:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="o">&gt;&gt;&gt;</span><span class="n">ma_liste1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span><span class="c1"># la somme vaut 1+5+6=12</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="o">&gt;&gt;&gt;</span><span class="n">ma_liste2</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span><span class="c1"># la somme vaut 0+1+2+...+98+100=5050</span>
+</code></pre></div></li>
+<li>Construire un programme qui calcule la somme des nombres pairs d'une liste d'entiers. Par exemple:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="o">&gt;&gt;&gt;</span><span class="n">ma_liste1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span><span class="c1"># la somme vaut 6</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="o">&gt;&gt;&gt;</span><span class="n">ma_liste2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span><span class="c1"># la somme vaut 2+4+6+8=20</span>
+</code></pre></div></li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">À faire: Simuler le nacer d'un dé</p>
+<p>On souhaite simuler plusieurs lancers d'un même dé.</p>
+<ol>
+<li>Donner l'instruction qui permet d'affecter à une variable <code>n</code>, un entier saisi au clavier.</li>
+<li>Donner l'instruction qui permet d'affecter à une variable <code>de</code> un nombre entier aléatoire entre 1 et 6.</li>
+<li>Donner les instructions <code>python</code> qui permettent de simuler <code>n</code> lancers d'un dé à six faces et de stocker les résultats dans une liste <code>resultat</code>.</li>
+<li>Plus dur! Donner les instructions <code>python</code> qui permettent de calculer la fréquence de sortie de chaque face lorsque on jette <code>n</code> fois un dé.</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">À faire: Course en folie!</p>
+<p>Léon et Peppa font une drôle de course qui consiste à parcourir six cases consécutives. Il lance un dé:</p>
+<ul>
+<li>si le dé affiche 6, Léon avance de 6 cases et gagne la course</li>
+<li>sinon Peppa avance d'une case.</li>
+</ul>
+<p>Le gagnant est celui qui arrive le premier sur la dernière case.</p>
+<ol>
+<li>Créer une série d'instructions qui permet de simuler cette course.</li>
+<li>Utiliser ces instructions pour déterminer la probabilité de gagner de chaque individu.</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">À faire: descente dichotomique</p>
+<p>Tout le monde connaît le jeu du juste prix qui consiste à trouver le bon prix par le jeu des questions réponses, <code>c'est plus!</code>, <code>c'est moins!</code>.</p>
+<ol>
+<li>Créer les instructions qui permettent:<ul>
+<li>de choisir un entier <code>alea</code> entre 1 et <code>n</code>.</li>
+<li>de proposer un entier <code>choix</code>.</li>
+<li>d'afficher la comparaison de ces deux entiers</li>
+<li>et de recommencer jusqu'à la bonne réponse.</li>
+</ul>
+</li>
+<li>Créer les mêmes instructions mais cette fois-ci, l'ordinateur joue tout seul (c'est lui qui propose un nouveau nombre à chaque fois !)</li>
+<li>Créer une nouvelle instruction qui compte le nombre de questions posées avant de trouver la bonne réponse</li>
+<li>Créer un graphique qui prend en abscisse le nombre <code>n</code>(choix maxi de <code>alea</code>) et le nombre minimum de questions posées pour retrouver l'entier <code>alea</code>(comme précédemment...)</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">À faire: redescente dichotomique</p>
+<p>On considère la fonction <span class="arithmatex">\(f\)</span> définie pour tout <span class="arithmatex">\(x\)</span> dans <span class="arithmatex">\(I = [0, 2]\)</span> par <span class="arithmatex">\(f(x)=x^2-2\)</span>.</p>
+<ol>
+<li>Justifier qu'il existe une valeur <span class="arithmatex">\(\alpha\)</span> dans <span class="arithmatex">\(I\)</span> telle que <span class="arithmatex">\(f(\alpha) = 0\)</span></li>
+<li>Proposer une suite d'instructions qui permet de donner une valeur approchée à <span class="arithmatex">\(10^{-8}\)</span> de <span class="arithmatex">\(\alpha\)</span>.</li>
+</ol>
+</div>
 
 
+
+  
 
 
 
@@ -993,10 +1070,12 @@
         <footer class="md-footer">
   
     
-    <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
+      
+    
+    <nav class="md-footer__inner md-grid" aria-label="Pied de page" hidden>
       
         
-        <a href="variables.html" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Les variables" rel="prev">
+        <a href="intro_python.html" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Prise en main" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1005,20 +1084,20 @@
               <span class="md-footer__direction">
                 Précédent
               </span>
-              Les variables
+              Prise en main
             </div>
           </div>
         </a>
       
       
         
-        <a href="boucles.html" class="md-footer__link md-footer__link--next" aria-label="Suivant: Les boucles" rel="next">
+        <a href="../ecolo/ecologie.html" class="md-footer__link md-footer__link--next" aria-label="Suivant: Impact environnemental" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Suivant
               </span>
-              Les boucles
+              Impact environnemental
             </div>
           </div>
           <div class="md-footer__button md-icon">
