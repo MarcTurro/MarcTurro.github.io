@@ -19,7 +19,7 @@ Dans ce chapitre, vous trouverez des codes ```python``` que je vous demande de :
 ```Python``` est un langage de haut niveau, proche du langage humain. Sans être un expert, on peut facilement comprendre et analyser un **programme** python .
 La création de code vient en dernier lieu, lorsque on s'est bien imprégné des routines pythonesque (grosso modo boucles et affectation...).
 
-La notion de **fonction** n'est pas aussi simple qu'on pourrait le croire et nécessite une étude particulière à voir [ici]("fonctions.md")
+La notion de **fonction** n'est pas aussi simple qu'on pourrait le croire et nécessite une étude particulière à voir [ici](fonctions.md)
 
 ## Un premier test
 !!!NOTE "À faire 1" 
