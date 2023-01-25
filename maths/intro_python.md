@@ -22,7 +22,7 @@ La création de code vient en dernier lieu, lorsque on s'est bien imprégné des
 La notion de **fonction** n'est pas aussi simple qu'on pourrait le croire et nécessite une étude particulière à voir [ici]("fonctions.md")
 
 ## Un premier test
-!!!NOTE "À faire" 
+!!!NOTE "À faire 1" 
     1. Ouvrez un IDLE comme Edupython  ou Thonny et saisissez le code suivant dans la zone script:
     ``` py 
     test = 10 # affectation de la variable à 10
@@ -70,7 +70,7 @@ else:
         print("C'est moins")
 ```
 
-!!! note  "À faire : Utiliser le hasard"
+!!! note  "À faire 2 : Utiliser le hasard"
     1. Que fait l'instruction ```randint(0, 100)```?
     2. Quelle est la différence entre les instructions ```n = mon_choix``` et ```n == mon_choix```?
     3. À quoi sert le ```int``` devant le ```input```?
@@ -96,7 +96,7 @@ g = ["HG", "EPS", "LV1", "Philo"] #je suis une liste de chaînes de caractères 
 #affecter des autres trucs, inutiles dans notre contexte
 ```
 
-!!!NOTE "À faire"
+!!!NOTE "À faire 3"
     Quels sont les types de variables utilisées ou déclarées dans le code précédent?
 
 En général, on donne des noms explicites aux variables: ces noms dépendent bien entendu du contexte dans lequel elles sont utilisées.
@@ -117,13 +117,13 @@ print(autres_disciplines[3])
 print(autres_disciplines[6])
 ```
 
-!!!NOTE "À faire"
+!!!NOTE "À faire 4"
     1. Copiez et exécutez le code suivant. Un problème apparaît: pourquoi?
     2. Réglez le problème.
 
 On peut améliorer l'affichage dans la console par des affichages dynamiques. Nous utilisons par exemple des ```f-strings```:
 
-!!!NOTE "À faire"
+!!!NOTE "À faire 5"
     1. Ajouter un code précédent, les instructions suivantes:
     ``` py
     print(f"J'ai eu {note} en {discipline_majeure} ")
@@ -145,7 +145,7 @@ Il y a en général deux façons de répéter des instructions.
 
 Avec la boucle ```for```, on peut choisir le nombre de fois où on répète l'instruction.
 
-!!!NOTE "À faire"
+!!!NOTE "À faire 6"
     Ajoutez au code précédent les instructions suivantes et exécutez ce programme:
     ``` py
     autant_de_fois_que_tu_veux = 10
@@ -155,7 +155,7 @@ Avec la boucle ```for```, on peut choisir le nombre de fois où on répète l'in
 
 La variable ```i``` est appelée **variable de boucle**. L'instruction ```for i in range(10)``` affecte à ```i``` les valeurs 0 puis 1 puis 2,... jusqu'à 9: il y a bien alors 10 affectations, donc 10 répétitions. En fait à chaque que fois que la variable ```i``` prend une valeur, l'instruction de la boucle est exécutée...
 
-!!!NOTE "À faire"
+!!!NOTE "À faire 7"
     Pour visualiser comme évolue la variable ```i```, compléter le code précédent comme indiqué ci-après:
     ``` py
     autant_de_fois_que_tu_veux = 10
@@ -187,7 +187,7 @@ Les variables de type ```int``` servent à conserver en mémoire des entiers alo
 
 Pour construire des listes, on peut procéder de plusieurs façons, décrites dans l'exercice suivant.
 
-!!! note "À faire"
+!!! note "À faire 8"
     1. Copiez le code suivant et exécutez-le:
     ``` py
     ma_liste_1 = [] # creation d'une liste vide
