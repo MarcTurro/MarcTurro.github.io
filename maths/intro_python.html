@@ -1084,12 +1084,12 @@
 </ul>
 <p><code>Python</code> est un langage de haut niveau, proche du langage humain. Sans être un expert, on peut facilement comprendre et analyser un <strong>programme</strong> python .
 La création de code vient en dernier lieu, lorsque on s'est bien imprégné des routines pythonesque (grosso modo boucles et affectation...).</p>
-<p>La notion de <strong>fonction</strong> n'est pas aussi simple qu'on pourrait le croire et nécessite une étude particulière à voir <a href="" title="fonctions.md">ici</a></p>
+<p>La notion de <strong>fonction</strong> n'est pas aussi simple qu'on pourrait le croire et nécessite une étude particulière à voir <a href="fonctions.html">ici</a></p>
 <h2 id="un-premier-test">Un premier test<a class="headerlink" href="#un-premier-test" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
-<p class="admonition-title">À faire</p>
+<p class="admonition-title">À faire 1</p>
 <ol>
-<li>Ouvrez un IDLE comme Edupython  ou Thonny pour  y saisissez le code suivant dans la zône script:
+<li>Ouvrez un IDLE comme Edupython  ou Thonny et saisissez le code suivant dans la zone script:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">test</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># affectation de la variable à 10</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span><span class="c1">#une boucle permet de répéter une même (ou plusieurs) instruction: ici 5 fois</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">test</span> <span class="o">=</span> <span class="n">test</span> <span class="o">+</span> <span class="mi">2</span> <span class="c1">#incrementation de la variable test.</span>
@@ -1106,7 +1106,7 @@ Le résultat devrait s'afficher dans la <strong>console</strong>.</li>
 </div>
 <details class="tip">
 <summary>À retenir!</summary>
-<p>Le code s'écrit dans la zône script ou en console. Vous remarquerez dans les exemples précédents, la présence d'<code>espace</code> avant et après les signes d'opérations: il faudra respecter cette règle dorénavant.</p>
+<p>Le code s'écrit dans la zone script ou en console. Vous remarquerez dans les exemples précédents, la présence d'<code>espace</code> avant et après les signes d'opérations: il faudra respecter cette règle dorénavant.</p>
 <p>L'<strong>indentation</strong> permet de définir les blocs d'instructions dans les boucles ou les conditions.</p>
 </details>
 <h2 id="generer-du-hasard">Générer du hasard<a class="headerlink" href="#generer-du-hasard" title="Permanent link">&para;</a></h2>
@@ -1127,9 +1127,9 @@ Cette  instruction n'importe <strong>que</strong> la méthode <code>randint</cod
 <a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;C&#39;est moins&quot;</span><span class="p">)</span>
 </code></pre></div>
 <div class="admonition note">
-<p class="admonition-title">À faire : Utiliser le hasard</p>
+<p class="admonition-title">À faire 2 : Utiliser le hasard</p>
 <ol>
-<li>Que fait l'instruction <code>randint(0, 100)</code></li>
+<li>Que fait l'instruction <code>randint(0, 100)</code>?</li>
 <li>Quelle est la différence entre les instructions <code>n = mon_choix</code> et <code>n == mon_choix</code>?</li>
 <li>À quoi sert le <code>int</code> devant le <code>input</code>?</li>
 <li>Commenter chaque instruction de ce code comme dans l'exemple test.</li>
@@ -1151,7 +1151,7 @@ Cette  instruction n'importe <strong>que</strong> la méthode <code>randint</cod
 <a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="c1">#affecter des autres trucs, inutiles dans notre contexte</span>
 </code></pre></div>
 <div class="admonition note">
-<p class="admonition-title">À faire</p>
+<p class="admonition-title">À faire 3</p>
 <p>Quels sont les types de variables utilisées ou déclarées dans le code précédent?</p>
 </div>
 <p>En général, on donne des noms explicites aux variables: ces noms dépendent bien entendu du contexte dans lequel elles sont utilisées.
@@ -1169,7 +1169,7 @@ Par exemple, on appelle jamais <code>f</code> une variable de type <code>list</c
 <a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">autres_disciplines</span><span class="p">[</span><span class="mi">6</span><span class="p">])</span>
 </code></pre></div>
 <div class="admonition note">
-<p class="admonition-title">À faire</p>
+<p class="admonition-title">À faire 4</p>
 <ol>
 <li>Copiez et exécutez le code suivant. Un problème apparaît: pourquoi?</li>
 <li>Réglez le problème.</li>
@@ -1177,7 +1177,7 @@ Par exemple, on appelle jamais <code>f</code> une variable de type <code>list</c
 </div>
 <p>On peut améliorer l'affichage dans la console par des affichages dynamiques. Nous utilisons par exemple des <code>f-strings</code>:</p>
 <div class="admonition note">
-<p class="admonition-title">À faire</p>
+<p class="admonition-title">À faire 5</p>
 <ol>
 <li>Ajouter un code précédent, les instructions suivantes:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;J&#39;ai eu </span><span class="si">{</span><span class="n">note</span><span class="si">}</span><span class="s2"> en </span><span class="si">{</span><span class="n">discipline_majeure</span><span class="si">}</span><span class="s2"> &quot;</span><span class="p">)</span>
@@ -1195,7 +1195,7 @@ Par exemple, on appelle jamais <code>f</code> une variable de type <code>list</c
 <h3 id="la-boucle-bornee-for">La boucle bornée <code>for</code>.<a class="headerlink" href="#la-boucle-bornee-for" title="Permanent link">&para;</a></h3>
 <p>Avec la boucle <code>for</code>, on peut choisir le nombre de fois où on répète l'instruction.</p>
 <div class="admonition note">
-<p class="admonition-title">À faire</p>
+<p class="admonition-title">À faire 6</p>
 <p>Ajoutez au code précédent les instructions suivantes et exécutez ce programme:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">autant_de_fois_que_tu_veux</span> <span class="o">=</span> <span class="mi">10</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">autant_de_fois_que_tu_veux</span><span class="p">):</span>
@@ -1204,7 +1204,7 @@ Par exemple, on appelle jamais <code>f</code> une variable de type <code>list</c
 </div>
 <p>La variable <code>i</code> est appelée <strong>variable de boucle</strong>. L'instruction <code>for i in range(10)</code> affecte à <code>i</code> les valeurs 0 puis 1 puis 2,... jusqu'à 9: il y a bien alors 10 affectations, donc 10 répétitions. En fait à chaque que fois que la variable <code>i</code> prend une valeur, l'instruction de la boucle est exécutée...</p>
 <div class="admonition note">
-<p class="admonition-title">À faire</p>
+<p class="admonition-title">À faire 7</p>
 <p>Pour visualiser comme évolue la variable <code>i</code>, compléter le code précédent comme indiqué ci-après:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">autant_de_fois_que_tu_veux</span> <span class="o">=</span> <span class="mi">10</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">autant_de_fois_que_tu_veux</span><span class="p">):</span>
@@ -1229,24 +1229,24 @@ Par exemple, on appelle jamais <code>f</code> une variable de type <code>list</c
 <h2 id="les-listes-ou-les-tableaux">Les listes ou les tableaux...<a class="headerlink" href="#les-listes-ou-les-tableaux" title="Permanent link">&para;</a></h2>
 <p>Les variables de type <code>int</code> servent à conserver en mémoire des entiers alors que les <code>flottants</code> sont utilisés pour les nombres décimaux. Mais parfois, il faut garder en mémoire toute une série de valeur. On utilise pour cela des <strong>listes</strong>.</p>
 <h3 id="generer-des-listes">Générer des listes<a class="headerlink" href="#generer-des-listes" title="Permanent link">&para;</a></h3>
-<p>Pour construire des listes, on paut procéder de plusieurs façons, décrites dans l'exercice suivant.</p>
+<p>Pour construire des listes, on peut procéder de plusieurs façons, décrites dans l'exercice suivant.</p>
 <div class="admonition note">
-<p class="admonition-title">À faire</p>
+<p class="admonition-title">À faire 8</p>
 <ol>
 <li>Copiez le code suivant et exécutez-le:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">ma_liste_1</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># creation d&#39;une liste vide</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    <span class="n">ma_liste_1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="c1"># à chaque tour de boucle on ajoute à la fin de la liste le carré de i</span>
 </code></pre></div>
-Faites affichez dans la liste dans la console.</li>
+Faites affichez la liste obtenue dans la console.</li>
 <li>Copiez et exécutez le code suivant:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">ma_liste_2</span> <span class="o">=</span> <span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="nb">range</span><span class="p">(</span><span class="mi">500</span><span class="p">)]</span><span class="c1"># cosntruction par compréhension de 500 entiers aléatoires entre 0 et 100</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">ma_liste_2</span> <span class="o">=</span> <span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="nb">range</span><span class="p">(</span><span class="mi">500</span><span class="p">)]</span><span class="c1"># construction par compréhension de 500 entiers aléatoires entre 0 et 100</span>
 </code></pre></div></li>
-<li>Bien entendu, on peut construire une liste à la main mais c'est plus long et... peu conhérent avec les pratiques informatiques!
+<li>Bien entendu, on peut construire une liste à la main mais c'est plus long et... peu cohérent avec les pratiques scientifiques et informatiques!
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">ma_liste_3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
 </code></pre></div>
-Faites affichez dans la liste dans la console.</li>
+Faites affichez la liste dans la console.</li>
 </ol>
 </div>
 <h3 id="acceder-aux-elements-dune-liste">Accéder aux éléments d'une liste<a class="headerlink" href="#acceder-aux-elements-dune-liste" title="Permanent link">&para;</a></h3>
