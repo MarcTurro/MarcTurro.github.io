@@ -33,7 +33,7 @@ Une série d'exercices à réaliser. Réflechissez à la structure algorithmique
     >>>ma_liste2 = [1, 2, 3, 4, 5, 6, 7, 8]# la somme vaut 2+4+6+8=20
     ```
   
-!!! note "À faire: Simuler le nacer d'un dé"
+!!! note "À faire: Simuler le lancer d'un dé"
     On souhaite simuler plusieurs lancers d'un même dé.
 
     1. Donner l'instruction qui permet d'affecter à une variable ```n```, un entier saisi au clavier.
@@ -42,12 +42,12 @@ Une série d'exercices à réaliser. Réflechissez à la structure algorithmique
     4. Plus dur! Donner les instructions ```python``` qui permettent de calculer la fréquence de sortie de chaque face lorsque on jette ```n``` fois un dé.
 
 !!! note "À faire: Course en folie!"
-    Léon et Peppa font une drôle de course qui consiste à parcourir six cases consécutives. Il lance un dé:
+    Léon et Peppa font une drôle de course qui consiste à parcourir six cases consécutives. Léon lance un dé:
 
-    - si le dé affiche 6, Léon avance de 6 cases et gagne la course
+    - si le dé affiche 6, il avance de 6 cases et gagne la course
     - sinon Peppa avance d'une case.
 
-    Le gagnant est celui qui arrive le premier sur la dernière case.
+    Le gagnant est celui qui arrive le premier sur la dernière case(la sixième...).
 
     1. Créer une série d'instructions qui permet de simuler cette course.
     2. Utiliser ces instructions pour déterminer la probabilité de gagner de chaque individu.
