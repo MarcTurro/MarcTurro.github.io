@@ -10,14 +10,14 @@
         <meta name="author" content="Marc TURRO">
       
       
-        <link rel="canonical" href="https://marcturro.github.io/term/complex_struc.html">
+        <link rel="canonical" href="https://marcturro.github.io/term/reseau_term.html">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
     
     
       
-        <title>Complexité des structures - Numérique et Sciences Informatiques</title>
+        <title>Rappel sur les réseaux informatiques - Numérique et Sciences Informatiques</title>
       
     
     
@@ -147,7 +147,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#complexite-des-structures-de-donnees-lineaires" class="md-skip">
+        <a href="#rappel-sur-les-reseaux" class="md-skip">
           Aller au contenu
         </a>
       
@@ -181,7 +181,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Complexité des structures
+              Rappel sur les réseaux informatiques
             
           </span>
         </div>
@@ -648,6 +648,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="complex_struc.html" class="md-nav__link">
+        Complexité des structures
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -659,83 +673,10 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Complexité des structures
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="complex_struc.html" class="md-nav__link md-nav__link--active">
-        Complexité des structures
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table des matières
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#definissons-nos-objets" class="md-nav__link">
-    Définissons nos objets!
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implementation-des-tableaux-en-memoire" class="md-nav__link">
-    Implémentation des tableaux en mémoire
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#avantages-et-inconvenients-de-cette-structure" class="md-nav__link">
-    Avantages et inconvénients de cette structure
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implementation-des-listes-chainees" class="md-nav__link">
-    Implémentation des listes chaînées
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#avantages-et-inconvenients-de-cette-structure_1" class="md-nav__link">
-    Avantages et inconvénients de cette structure
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="reseau_term.html" class="md-nav__link">
+      <a href="reseau_term.html" class="md-nav__link md-nav__link--active">
         Rappel sur les réseaux informatiques
       </a>
+      
     </li>
   
 
@@ -1063,178 +1004,254 @@
 
 
 <p><center></p>
-<h1 id="complexite-des-structures-de-donnees-lineaires">Complexité des structures de données linéaires<a class="headerlink" href="#complexite-des-structures-de-donnees-lineaires" title="Permanent link">&para;</a></h1>
+<h1 id="rappel-sur-les-reseaux">Rappel sur les réseaux<a class="headerlink" href="#rappel-sur-les-reseaux" title="Permanent link">&para;</a></h1>
 <p></center></p>
-<p><center></p>
-<h2 id="definissons-nos-objets">Définissons nos objets!<a class="headerlink" href="#definissons-nos-objets" title="Permanent link">&para;</a></h2>
-<p></center>
-En informatique, les <strong>listes</strong> et les <strong>tableaux</strong> sont des <em>structures de données abstraites</em> permettant de stocker de façon ordonnée des éléments.</p>
 <div class="admonition cite">
-<p class="admonition-title">Ce que dit Wikipédia sur les listes...</p>
-<p>En informatique, une liste est une structure de données permettant de regrouper des données de manière à pouvoir y accéder librement (contrairement aux files et aux piles, dont l'accès se fait respectivement en mode FIFO et LIFO).</p>
+<p class="admonition-title"> Les vidéos WhatsApp </p>
+<p>La taille maximale autorisée pour les pièces jointes (photos, vidéos ou messages vocaux) que vous recevez ou envoyez via WhatsApp est de 16 Mo sur tous les appareils.
+Sur la plupart des téléphones, cette taille comprend entre 90 secondes et 3 minutes de vidéo. La durée maximale de la vidéo varie en fonction de la qualité de l'appareil photo de votre téléphone. </p>
 </div>
-<p>Le célèbre site donne aussi les premières <strong>primitives</strong> qui opérent sur cette structure: Insertion, Suppression, Prédicat(la liste est-elle vide?), Dénombrement,...</p>
-<div class="admonition cite">
-<p class="admonition-title">Ce que dit Wikipédia sur les tableaux...</p>
-<p>En informatique, un tableau est une structure de données représentant une séquence finie d'éléments auxquels on peut accéder efficacement par leur position, ou indice, dans la séquence. C'est un type de conteneur que l'on retrouve dans un grand nombre de langages de programmation. </p>
-</div>
-<p>Le langage Python crée une ambiguité dans les définitions de ces deux types. En effet, parmi les listes, on peut distinguer de manière générale de deux types:
-<center></p>
-<ul>
-<li>les tableaux</li>
-<li>les listes chaînées</li>
-</ul>
-<p></center>
-Dans cette leçon, nous nous intéresserons à :
-<center></p>
-<ul>
-<li>la manière dont ces structures sont stockées en mémoire</li>
-<li>la complexité des opérations de bases(insertion, suppression, parcours,...) sur ces structures</li>
-</ul>
-<p></center>
-Nous finirons par définir la notion déjà connue de <strong>dictionnaire</strong> avec de nouvelles considérations...</p>
+<p>C'est devenu une pratique quotidienne voire horaire: envoyer un texto, un e-mail, un message vocal, une vidéo...</p>
+<p>Mais comment ça marche? Un texto c'est quelques kilooctets alors qu'un message vocal dépasse largement le mégaoctet et les vidéos c'est pire.</p>
+<p>Comment sont envoyées les données sur un réseau? Comment être sûr de les envoyer à la bonne personne? Comment s'assurer que toutes les données ont bien été transmises?</p>
+<p>Autant de questions qui trouvent leur réponses dans le programme de première mais avant de parler de <strong>routage</strong> (programme de terminale...), quelques rappels s'imposent!</p>
 <p><center></p>
-<h2 id="implementation-des-tableaux-en-memoire">Implémentation des tableaux en mémoire<a class="headerlink" href="#implementation-des-tableaux-en-memoire" title="Permanent link">&para;</a></h2>
-<p></center>
-Considérons le tableau de quatre éléments : <code>200, 3, 175, 8900</code> que nous souhaitons stocker en mémoire.
-Contrairement au langage Python où la manipulation est aisée, la déclaration des tableaux dans le langage <code>C</code> est plus rigoureuse:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">tab</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="c1">//declaration du tableau tab de 4 elements du même type int</span>
-</code></pre></div>
-<p>Chaque entier est codé sur 16 bits(ou 32), soit 2 octets: il faut donc réserver en mémoire 4 cases de 2 octets pour stocker ce tableau. En supposant que la mémoire d'un ordinateur est un long, très long, ruban de cases alors l'<strong>allocation</strong> en mémoire du tableau peut s'illustrer ainsi:</p>
-<p><center>
-<img alt="tabstatique" src="img/memoire_tab.png" />
+<h1 id="un-reseau-cest-dabord-physique">Un réseau c'est d'abord physique<a class="headerlink" href="#un-reseau-cest-dabord-physique" title="Permanent link">&para;</a></h1>
+<p></center></p>
+<p>Dans la notion de réseau informatique, on doit dissocier le réseau <strong>physique</strong> du réseau <strong>logiciel</strong>.</p>
+<div class="admonition tip">
+<p class="admonition-title">À retenir!</p>
+<p>Internet est un réseau matériel reliant tous les ordinateurs, smartphones, objets de l'internet(IoT),... entre eux. </p>
+</div>
+<p>Cette interconnexion se réalise par câbles(RJ45, fibre optique,...) ou par ondes (wifi, bluetooth, GSM, ...). Même les continents sont réliés entre eux par d'énormes câbles sous-marins....
+<center>
+<img alt="cable" src="img/cablesm.jpg" />
 </center></p>
-<p>Les cases vides modélisent des emplacements mémoires vides ou contenant d'autres données...
-L'adresse du tableau est <code>#A</code>(valeur hexadécimale sur deux octets) et c'est aussi celle de <code>tab[0]</code>. Celle de <code>tab[i]</code> est alors <code>#A+i*2</code>...</p>
-<p>Donc comme le précise le site <em>openclassrooms</em>:</p>
-<div class="admonition cite">
-<p class="admonition-title">Implémentation en mémoire des tableaux statiques</p>
-<ul>
-<li>Lorsqu'un tableau est créé, il prend un espace contigu en mémoire : les cases sont les unes à la suite des autres.</li>
-<li>Toutes les cases d'un tableau sont du même type. Ainsi, un tableau de <code>int</code> contiendra uniquement des <code>int</code>  , et pas autre chose.</li>
-</ul>
-</div>
-<p>Naturellement, il est donc interdit de créer un tableau dont la taille dépend de la valeur d'une variable: c'est ce que nous appelons une <strong>allocation dynamique</strong>, et c'est un peu ce que fait <code>Python</code> dans la gestion transparente de ses listes!</p>
 <p><center></p>
-<h2 id="avantages-et-inconvenients-de-cette-structure">Avantages et inconvénients de cette structure<a class="headerlink" href="#avantages-et-inconvenients-de-cette-structure" title="Permanent link">&para;</a></h2>
+<h2 id="un-exemple-de-reseau-physique">Un exemple de réseau physique<a class="headerlink" href="#un-exemple-de-reseau-physique" title="Permanent link">&para;</a></h2>
 <p></center></p>
-<p>L'accès à un élément du tableau se fait en <strong>temps constant</strong> : en d'autres termes, si <code>n</code> est la taille du tableau, l'accès ne dépend pas de <code>n</code>.</p>
-<p>Pour l'insertion d'un nouveau élément dans le tableau, il faut <strong>allouer</strong> un nouvel espace mémoire qui passe par la recopie de tous les éléments du tableau auquel on ajoute le nouveau. Cette opération dépend de la taille <code>n</code> du tableau et son temps d'exécution lui est proportionnel !</p>
 <div class="admonition info">
-<p class="admonition-title">Complexité des opérations sur un tableau statique</p>
-<p>L' accès à un élément d'un tableau statique est en <code>O(1)</code> et l'ajout est en <code>O(n)</code>.</p>
+<p class="admonition-title">Le réseau Renater</p>
+<p>Connecteur de savoirs, RENATER, Réseau National de télécommunications pour la Technologie l’Enseignement et la Recherche, est l’acteur de référence des infrastructures du numérique de la communauté enseignement recherche.</p>
+<p>Constitué en 1993, RENATER est un groupement d’intérêt public (GIP) qui assure la maîtrise d’ouvrage du réseau national de communications électroniques pour la technologie, l’enseignement et la recherche.</p>
+<p>Les membres de RENATER sont le ministère de l’Éducation nationale et de la jeunesse, le ministère  de l’Enseignement supérieur et de la Recherche, France Universités ainsi que des organismes de recherche, le CNRS, le CEA, Inria, le CNES, l’Inrae, l’Inserm, l’Onera, le Cirad, l’IRD et le BRGM.</p>
 </div>
-<p>Et d'après vous? Quelle est la complexité de la suppression d'un élément?</p>
-<p><center></p>
-<h2 id="implementation-des-listes-chainees">Implémentation des listes chaînées<a class="headerlink" href="#implementation-des-listes-chainees" title="Permanent link">&para;</a></h2>
-<p></center></p>
-<p>L'élément de base pour la création d'une <strong>liste chaînée</strong> est le <strong>maillon</strong> constitué de:</p>
-<ul>
-<li>sa <strong>valeur</strong> en premier</li>
-<li>un <strong>pointeur</strong> en second, qui désigne l'adresse mémoire du suivant dans la structure (adresse éventuellement nulle pour désigner le dernier!)</li>
-</ul>
 <p><center>
-<img alt="listeschainees" src="img/memoire_listes_chainees.png" />
+<img alt="RENATER" src="img/weathermap_france_v2.png" />
 </center></p>
-<p>La liste est ainsi chaînée par une succession de maillon chacun pointant vers le suivant, le dernier ayant un pointeur nul (<code>NULL</code>). Les valeurs de la liste ne sont plus stockées à des endroits contigus de la mémoire.</p>
-<p><center></p>
-<h2 id="avantages-et-inconvenients-de-cette-structure_1">Avantages et inconvénients de cette structure<a class="headerlink" href="#avantages-et-inconvenients-de-cette-structure_1" title="Permanent link">&para;</a></h2>
-<p></center></p>
-<p>Pour accéder à un élément quelconque de la liste, il n'y a pas de choix: il faut parcourir la liste à partir du premier. Ce parcours dépend évidemment de la taille <code>n</code> de la structure. La complexité de l'opération est proportionnelle à <code>n</code>.</p>
-<p>En revanche, l'insertion d'un élément est à opération constante. Le dessin ci-dessous montre les étapes d'insertion dans une liste chaînée:</p>
-<p><center>
-<img alt="listeschaineesinsert" src="img/memoire_lc_insertion.png" />
-</center></p>
-<p>L'algorithme lorsque qu'on souhaite insérer <code>-13</code> en deuxième position est:</p>
+<div class="admonition note">
+<p class="admonition-title">À faire:</p>
 <ol>
-<li>On détruit le pointeur de la première.</li>
-<li>On définit ce pointeur vers la valeur du maillon portant la valeur <code>-13</code>.</li>
-<li>On définit le pointeur du maillon inséré vers la valeur du suivant dans la chaîne.</li>
+<li>Tapez <kbd>windows</kbd> + <kbd>R</kbd> puis <code>cmd</code> dans la fenêtre qui s'ouvre.</li>
+<li>Tapez <code>tracert www.ac-bordeaux.fr</code> pour connaître la route qui conduit de votre ordinateur à celui qui héberge le site du rectorat. Vous verrez apparaître le réseau Renater. </li>
+<li>Choississez un autre site pour constater que les ordinateurs du lycée (Education Nationale...) sont tous reliés (via le serveur) au réseau RENATER.</li>
 </ol>
-<p>Ces trois opérations sont indépendantes de la taille de la liste chaînée: l'insertion se fait <strong>en temps constant</strong>.</p>
-<p>En résumé:
-<center></p>
+</div>
+<p>Attention, si vous effectuez la même manipulation de chez vous, ce réseau dédié n'apparaîtra évidemment pas!</p>
+<p><center></p>
+<h2 id="les-objets-dun-reseau">Les objets d'un réseau<a class="headerlink" href="#les-objets-dun-reseau" title="Permanent link">&para;</a></h2>
+<p></center></p>
+<ol>
+<li>
+<p>Le Hub (concentrateur):
+<center>
+<img alt="hub" src="img/hub.jpg" />
+</center>
+Permet de relier plusieurs machines entre elles. Complétement désuet car il ne gère pas les transmissions et les collisions.</p>
+</li>
+<li>
+<p>Le Switch(commutateur):
+<center>
+<img alt="hub" src="img/switch24.jpg" width="50%" />
+</center>
+Permet de relier plusieurs machines entre elles avec canal dédié pour chaque destinataire choisi...</p>
+</li>
+<li>
+<p>La passerelle et le routeur: </p>
+</li>
+</ol>
+<p>Votre box internet joue bien des rôles: en particulier celui de routeur et de passerelle, reliant votre réseau privé au réseau internet via les routeurs de votre FAI.
+<center>
+<img alt="box" src="img/box.jpg" />
+</center>
+4. Les connectiques</p>
+<p><center>
+<img alt="rj45" src="img/rj45.jpg" width="20%" />
+</center></p>
+<p>On ne saurait évoquer les réseaux physiques sans parler des câbles ou prises <strong>RJ45</strong> omniprésents: il existe d'autres types de connectiques notamment pour la fibre ou le téléphone...</p>
+<div class="admonition tip">
+<p class="admonition-title">À retenir</p>
+<p>Les switch sont des hub intelligents qui gérent les informations qu'ils recoivent: ils ne transmettent qu'à la machine concernée par le message contrairement aux hub qui diffusent largement. Les hub ne sont plus utilisés de nos jours dans les réseaux modernes.</p>
+</div>
+<p><center></p>
+<h1 id="un-reseau-cest-ensuite-logiciel-et-protocolaire">Un réseau c'est ensuite logiciel et protocolaire<a class="headerlink" href="#un-reseau-cest-ensuite-logiciel-et-protocolaire" title="Permanent link">&para;</a></h1>
+<p></center>
+Pour que deux ordinateurs puissent communiquer entre eux, il faut un ensemble de règles pré-définies:</p>
+<ul>
+<li>comment débuter le communication?</li>
+<li>comment envoyer au bon destinataire ?</li>
+<li>comment s'assurer que le message a été bien envoyé?</li>
+<li>...</li>
+</ul>
+<p>L'ensemble de ces règles est appelé <strong>protocole</strong>.</p>
+<div class="admonition tip">
+<p class="admonition-title"> À savoir:</p>
+<p>Un protocole définit de manière formelle et interopérable l'échange des informations entre ordinateurs.</p>
+</div>
+<p>Revenons à notre questionnement initial: je prends une photo et je l'envoie à mon ami. Que se passe t-il réellement?</p>
+<p>Le schéma suivant illustre les différentes étapes de la communication:</p>
+<div class="admonition col __60">
+<p class="admonition-title">Col</p>
 <table class="table">
 <thead>
 <tr>
-<th scope="col">Opérations</th>
-<th scope="col">Tableau statique</th>
-<th scope="col">Listes chaînées</th>
+<th align="left">Couche</th>
+<th align="left">Son rôle</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Accés à un élément</td>
-<td><code>O(1)</code></td>
-<td><code>O(n)</code></td>
+<td align="left">La <strong>couche application</strong></td>
+<td align="left">Elle génère des <strong>données</strong> : ici une image et certainement des métadonnées(qui envoie? à quelle heure?,...) et les livre à la couche suivante.</td>
 </tr>
 <tr>
-<td>Insertion ou suppression</td>
-<td><code>O(n)</code></td>
-<td><code>O(1)</code></td>
+<td align="left">La <strong>couche transport</strong></td>
+<td align="left">Elle découpe les données en petits paquets(1500octets environ...), les taggent par le <strong>port</strong> de l'application à l'origine de la communication puis les identifie par des informations chiffrées permettant dans le cas de <strong>TCP</strong> de reconstituer les données en bout de chaîne d'une part et de savoir si il manque des paquets d'autre part(voire illustration suivante)</td>
+</tr>
+<tr>
+<td align="left">La <strong>couche réseau</strong></td>
+<td align="left">Elle reçoit les paquets de la couche transport et appose les adresses <strong>IP</strong> de la source et de la destination sans se préocupper de leur contenu</td>
+</tr>
+<tr>
+<td align="left">La <strong>couche liaison</strong></td>
+<td align="left">Elle reçoit les données de la couche réseau et appose les adresses <strong>MAC</strong> de la source et de la destination</td>
 </tr>
 </tbody>
 </table>
-<p></center></p>
-<p>On pourrait évoquer la complexité d'autres opérations élémentaires comme l'ajout ou la suppression au début, à la fin,... ce que nous ferons en exercices.</p>
-<p>Nous pourrions aussi évoquer la notion de listes <strong>doublement</strong> chaînées constituées de maillon qui pointe vers les maillons suivants et précédents. En revanche, si elles améliorent la complexité de certaines opérations, elles contiennent plus d'informations, donc plus de mémoire!</p>
-<p>Enfin, même si le programme de NSI ne les évoque pas, les <strong>tableaux dynamiques</strong> sont des structures hybrides qui permettent de conserver la complexité en temps constant des tableaux statiques et de permettre l'insertion aussi en temps constant.</p>
-<p>Nous n'en dirons pas plus sur le sujet...</p>
-<p><center></p>
-<h1 id="les-dictionnaires">Les dictionnaires<a class="headerlink" href="#les-dictionnaires" title="Permanent link">&para;</a></h1>
-<p></center></p>
-<div class="admonition info">
-<p class="admonition-title">Une définition</p>
-<p>Un dictionnaire est un ensemble de clés/valeurs(<code>C/V</code>) dont les composantes sont appelées via un <strong>descripteur</strong> (la clé!) et non pas un indice.</p>
 </div>
-<p>Depuis la classe de première, nous connaissons les opérations de bases permises sur un dictionnaire et leur syntaxe en <code>python</code>:</p>
+<div class="admonition col __40">
+<p class="admonition-title">Col</p>
+<p><center>
+<img alt="modeleTCPIP" src="img/dessinModeleTCPIP.png" />
+</center></p>
+</div>
+<p>Le modèle est conçu en couche: chaque couche a son propre rôle et fournit des données à la couche suivante. Je vous popose ici une version simplifiée mais dans la réalité c'est beaucoup plus élaboré...</p>
+<div class="admonition tip">
+<p class="admonition-title"> Le modèle OSI(7 couches) et sa version simplifiée(4 couches)</p>
+<p><center>
+<img alt="osi" src="img/osi.png" width="50%" />
+</center></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title"> Un protocole de la couche de liaison : ETHERNET</p>
+<p>Inventé au début des années 70 par Xerox puis spécifié dans les années 80, il propose plusieurs variantes. C'est la première technologie LAN grand public pour faire communiquer des ordinateurs rattachés à un même « éther », c'est à dire, un milieu passif capable de transférer des données, comme un câble coaxial
+<center>
+<img alt="ethernet" src="img/Ethernet_Type.png" width="50%" />
+</center>
+De la théorie à la pratique: observez la <em>frame</em> capturée par Wireshark:
+<center>
+<img alt="trameethernet" src="img/tramether.png" width="50%" />
+</center>
+On retrouve:</p>
+<ul>
+<li>le modèle en couche</li>
+<li>la couche Ethernet avec les adresses MAC (maquillées ici)</li>
+<li>la couche IP qui fournit les adresses IP</li>
+<li>la couche Transport qui donne le port source de l'application (64423) vers le port destination (80) avec des informations</li>
+<li>la couche Application (http)</li>
+</ul>
+<p>C'est mon ordinateur( automatiquement) qui fait une requête <code>http</code> sur un serveur d'<code>avast</code>(anti-virus...)</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title"> À savoir</p>
+<p>Une adresse IP est une adresse <strong>logicielle</strong> attribuée en général automatiquement par un service DHCP.</p>
+<p>Une adresse MAC est une adresse <strong>physique</strong>, celle de la carte réseau d'un ordinateur, d'un routeur.</p>
+<p>La correspondance entre les deux adresses se fait par le protocole ARP.</p>
+</div>
+<p>Dans ce qui suit on se propose d'étudier plus précisément les deux protocoles populaires: TCP et IP.</p>
+<h2 id="la-couche-transport">La couche Transport<a class="headerlink" href="#la-couche-transport" title="Permanent link">&para;</a></h2>
+<p>La couche Transport repose sur les protocoles TCP voire UDP: elle assure la communications de bout en bout entre les programmes. Les <strong>segments</strong> sont taggués avec de nombreuses informations dont le <strong>port</strong> de l'application qui a demandé ses services( par exemple,le protocole <code>https</code> de la couche application utilise le port 443...).</p>
+<p>Le protocole <strong>TCP</strong> est dit en mode <strong>connecté</strong> et <strong>fiable</strong>: </p>
+<ul>
+<li>avant toute transmission de segment, le protocle commence par une <strong>poignée de main</strong>(acknowledgement) entre les deux acteurs de la communication( source(host1) et destination(host2))</li>
+<li>les segments envoyés sont numérotés de telle sorte que le destinataire sait si tous les segments ont été envoyés et redemandent la transmission le cas échéant.
+Donc à chaque envoie, il y a trois étapes illustrées par la figure ci-dessous.</li>
+</ul>
+<p><center>
+<img alt="acknow" src="img/acksyn.png" width="20%" />
+</center></p>
+<p>Le protocole <strong>UDP</strong> ne présente pas ses avantages: il envoie les segments sans se soucier de leur destin... Par exemple, dans le cas de la transmission de la voix sur IP, la perte occasionnelle d'un paquet est tolérable dans la mesure où il existe des mécanismes de substitution des données manquantes, par contre la rapidité de transmission est un critère primordial pour la qualité d'écoute. </p>
+<div class="admonition tip">
+<p class="admonition-title">À retenir:</p>
+<p>Le protocole <strong>TCP</strong> est beaucoup plus fiable mais moins rapide que le protocole <strong>UDP</strong></p>
+</div>
+<p>Des outils d'analyses de réseau comme <strong>Wireshark</strong> permet de visualiser dans le détails les échanges réalisés : </p>
+<p><img align="align" alt="wiresh" src="img/wireshark.png" width="100%" /></p>
+<p>Les croix rouges mettent en avant la poignée de main entre la source(mon ordi) et la destination (le serveur qui héberge le site <code>www.lequipe.fr</code>) dans le protocole <strong>TCP</strong>.</p>
+<p>Remarquez en vert, la requêtes DNS et sa réponse...</p>
+<h2 id="la-couche-reseau">La couche Réseau<a class="headerlink" href="#la-couche-reseau" title="Permanent link">&para;</a></h2>
+<p>Cette couche repose sur le protocole <strong>IP</strong> qui assure la communication de bout en bout entre deux machines qui ne sont pas connectés directement, c'est-à-dire situées dans des réseaux différents. Elle achemine les <strong>paquets</strong> (ou datagrammes) à travers le réseau Internet sans garantie (la garantie étant asurée par TCP...) mais avec robustesse(défaillance d'un routeur).</p>
+<p>Le protocole repose sur un <strong>adressage logique</strong> des machines dans le réseau indépendamment du réseau physique( Ethernet par exemple...): c'est <strong>l'adresse IP</strong>.</p>
+<div class="admonition tip">
+<p class="admonition-title">À savoir:</p>
+<p>Il y a <span class="arithmatex">\(2^{32}\)</span> adresses IP possibles, épuisées dès 2011! On se dirige petit à petit vers les adresses IPv6(128bits)</p>
+</div>
+<p>Il y a historiquement cinq <strong>classes</strong> d'adresse: certaines sont privées, d'autres publiques. Elles sont caractérisées par leur <strong>netId</strong> et leur <strong>hostId</strong>: plus le <strong>netId</strong> est petit plus le réseau est grand!</p>
 <p><center></p>
 <table class="table">
 <thead>
 <tr>
-<th scope="col">Opérations</th>
-<th scope="col">Code python</th>
+<th align="center"><strong>Classe</strong></th>
+<th align="center"><strong>NetId</strong></th>
+<th align="center"><strong>HostId</strong></th>
+<th align="right"><strong>Nombre de clients possibles</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Créer un dictionnaire vide</td>
-<td><code>d = []</code></td>
+<td align="center"><strong>A</strong></td>
+<td align="center">8</td>
+<td align="center">24</td>
+<td align="right"><span class="arithmatex">\(2^{24}-2\)</span></td>
 </tr>
 <tr>
-<td>Ajouter une association <code>c,v</code></td>
-<td><code>d["Maths"] = 18</code></td>
+<td align="center"><strong>B</strong></td>
+<td align="center">16</td>
+<td align="center">16</td>
+<td align="right"><span class="arithmatex">\(2^{16}-2\)</span></td>
 </tr>
 <tr>
-<td>Lire la valeur <code>v</code> d'une clé <code>c</code></td>
-<td><code>d["Maths"]</code></td>
+<td align="center"><strong>C</strong></td>
+<td align="center">24</td>
+<td align="center">8</td>
+<td align="right"><span class="arithmatex">\(2^{8}-2\)</span></td>
 </tr>
 </tbody>
 </table>
-<p></center></p>
-<p>Mais par exemple, il n'existe pas de <strong>primitive</strong> simple qui retourne la clé d'une valeur!
-L'implémentation du type dictionnaire doit permettre de réaliser ces trois opérations de base en temps d'exécution efficace. On cherche idéalement une complexité en <code>O(1)</code> pour la recherche, l'insertion ou la suppression. Comment faire?</p>
-<div class="admonition info">
-<p class="admonition-title">Le hachage</p>
-<p>Python a choisi les  <strong>tables de hachages</strong> pour cette implémentation.</p>
+<p></center>
+Cette notion est un peu désuette mais mérite d'être connue... Il existe aussi les classe <strong>D</strong> et <strong>E</strong> peu utilisées en ce qui nous concerne...
+!! warning " Pourquoi -2?"
+    Deux adresses sont généralement réservées: celle du réseau dont le NetId est à 0 et celle du broadcast dont le NetId est à 255</p>
+<p>Une <strong>adresse de broadcast</strong> sert à diffuser à l'ensemble des ordinateurs qui constituent le réseau.</p>
+<div class="admonition warning">
+<p class="admonition-title">Mais comment reconnaître <code>netId</code> et <code>hostId</code>?</p>
+<p>C'est le rôle du <strong>masque de sous-réseau</strong></p>
 </div>
-<p>Pour comprendre, il faut d'abord définir une <strong>fonction de hachage</strong>:</p>
-<div class="admonition cite">
-<p class="admonition-title">Ce que dit Wikipédia ...</p>
-<p>On nomme fonction de hachage, de l'anglais hash function (hash : pagaille, désordre, recouper et mélanger) par analogie avec la cuisine, une fonction particulière qui, à partir d'une donnée fournie en entrée, calcule une <strong>empreinte numérique</strong> servant à identifier rapidement la donnée initiale, au même titre qu'une signature pour identifier une personne.</p>
+<p>Le masque de sous-réseau est une adresse IP comme par exemple <code>255.255.255.0</code> qui en binaire donne l'horrible écriture :<code>11111111.11111111.11111111.00000000</code>!</p>
+<p>Un <code>ET logique</code> entre le masque et une adresse IP permet de connaître le <code>netId</code> donc le <code>hostId</code> de la machine:</p>
+<p><center>
+<img align="align" alt="masque" src="img/exemplemasque.png" width="80%" />
+</center></p>
+<p>On utilise ici l'adresse décimale pointée (CIDR) indiquant le nombre de bits à 1 dans l'adresse du masque de sous réseau.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Si l'adresse d'une machine est <code>192.168.1.121/19</code> cela signifie que l'adresse du masque est, en binaire <code>11111111.11111111.11100000.00000000</code>(<strong>19</strong> premiers bits à 1 et le reste à 0) soit en décimale, <code>255.255.224.0</code>.</p>
 </div>
-<p>Je reprends aussi les termes pertinents de l'encyclopédie :</p>
-<div class="admonition info">
-<p class="admonition-title">Rôle d'une fonction de haschage</p>
-<p>On peut voir une fonction de hachage comme un moyen de replier l'espace de données que l'on suppose potentiellement très grand et très peu rempli pour le faire entrer dans la mémoire de l'ordinateur.</p>
+<p>Certaines adresses sont vouées à des utilisations particulières:</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>L'adresse <code>127.0.0.1</code>(ou  simplement <code>::1</code>) est la boucle locale ou simplement <code>localhost</code>. On l'utilise par exemple si sur la même machine , vous installez un serveur Web et un client.</p>
 </div>
-<p>Le principe est d'utiliser les empreintes des clés comme indices des éléments de la table. Ces empreintes sont des nombres entiers obtenus en hachant la clé des objets à stocker, souvent une chaîne de caractères. On peut ensuite retrouver l'objet associé à une clé donnée : il suffit de hacher la clé pour obtenir une empreinte et de lire dans le tableau l'élément dont l'indice est cette empreinte.Au final, la complexité d’une insertion et d’une lecture dans une table de hachage sera « en
-moyenne » en <code>O(1)</code>.</p>
-<div class="admonition info">
-<p class="admonition-title">Les algorithme de hachage et les mots de passe</p>
-<p>Les mots de passe ne sont pas stockés en clair: c'est leur empreinte obtenu par un algorithme de hachage (<code>SHA-256</code> par exemple) qui est utilisé. Cet algorithme produit un <strong>condensat</strong> de 256 bits.</p>
-</div>
-<p>Mais, il faut être certain que la fonction de hachage choisit remplit bien son rôle: à chaque entrée, elle doit associer une empreinte numérique <strong>unique</strong>. On parle de <strong>collision</strong> si deux entrées différentes ont une empreinte numérique égale (en maths, on dirait que la fonction n'est pas injective...). La fonction de hachage du <code>SHA-256</code> a remplacé celle du <code>MD5</code> qui créait beaucoup de collision.</p>
 
 
 
@@ -1268,7 +1285,7 @@ moyenne » en <code>O(1)</code>.</p>
     <nav class="md-footer__inner md-grid" aria-label="Pied de page" hidden>
       
         
-        <a href="stalin.html" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Structure de données linéaires" rel="prev">
+        <a href="complex_struc.html" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Complexité des structures" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1277,20 +1294,20 @@ moyenne » en <code>O(1)</code>.</p>
               <span class="md-footer__direction">
                 Précédent
               </span>
-              Structure de données linéaires
+              Complexité des structures
             </div>
           </div>
         </a>
       
       
         
-        <a href="reseau_term.html" class="md-footer__link md-footer__link--next" aria-label="Suivant: Rappel sur les réseaux informatiques" rel="next">
+        <a href="routage.html" class="md-footer__link md-footer__link--next" aria-label="Suivant: Routage" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Suivant
               </span>
-              Rappel sur les réseaux informatiques
+              Routage
             </div>
           </div>
           <div class="md-footer__button md-icon">

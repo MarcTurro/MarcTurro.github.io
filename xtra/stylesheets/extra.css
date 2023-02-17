@@ -8,9 +8,7 @@ h1
 {
     text-align: center;
 	border : 1px solid #4051b5;
-	background-color : #f7f7f7;
     margin : 0 0 10px 30px; /* haut, droite, bas, gauche (respectivement) */
-    color : #cc6633;
     font : 150% georgia, palatino, serif;
     font-style : italic;
 }
@@ -20,7 +18,7 @@ h2
 {
     text-align: center;
 	border : 1px solid #4051b5;
-	background-color : #f7f7f7;
+	
     margin : 0 0 10px 30px; /* haut, droite, bas, gauche (respectivement) */
     font : 120% georgia, palatino, serif;
     font-style : italic;
