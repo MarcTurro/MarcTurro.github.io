@@ -767,13 +767,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#exercice" class="md-nav__link">
-    Exercice
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1314,42 +1307,6 @@ En gris, le chemin RIP. En bleu, l'OSPF.
 </p>
 
 <p>Cet algorithme, ici exécuté de manière manuelle, est bien sûr programmable. Et c'est donc grâce à lui que chaque routeur calcule la route la plus rapide pour acheminer les données qu'il reçoit.</p>
-<h3 id="exercice">Exercice<a class="headerlink" href="#exercice" title="Permanent link">&para;</a></h3>
-<p><em>(extrait du sujet 0)</em></p>
-<p>On considère le réseau suivant :
-<center>
-<img alt="image" class="center" src="img/ex3.png" width="40%" />
-</center></p>
-<p>On rappelle que le coût d’une liaison est donné par la formule suivante :</p>
-<div class="arithmatex">\[ \text{coût} = \frac{10^8}{d} \]</div>
-<p><strong>Question 1</strong></p>
-<ol>
-<li>Vérifier que le coût de la liaison entre les routeurs A et B est 0,01.</li>
-<li>La liaison entre le routeur B et D a un coût de 5. Quel est le débit de cette liaison ?</li>
-</ol>
-<p><strong>Question 2</strong></p>
-<p>Le routeur A doit transmettre un message au routeur G, en empruntant le chemin dont la somme des coûts sera la plus petite possible. Déterminer le chemin parcouru. On indiquera le raisonnement utilisé.</p>
-<details class="tip">
-<summary>Correction</summary>
-<p><strong>Q1</strong><br />
-1. <span class="arithmatex">\(\text{coût} = \dfrac{10^8}{10 \times 10^9}= \dfrac{10^8}{10^{10}}= 10^{-2}=0,01\)</span><br />
-2. <span class="arithmatex">\(5=\dfrac{10^8}{d}\)</span> donc <span class="arithmatex">\(d=\dfrac{10^8}{5}=20 \times 10^6\)</span> = 20 Mb/s</p>
-<p><strong>Q2</strong></p>
-<p>On peut y deviner le chemin de coût minimal entre A et G, qui est A-D-E-G (coût 1,011).<br />
-Pour le justifier, on peut (non obligatoire) faire un algorithme de Dijkstra :
-<img alt="image" class="center" src="img/corr_tab.png" /> </p>
-</details>
-<hr />
-<div class="admonition aide">
-<p class="admonition-title">Bibliographie</p>
-<ul>
-<li>Numérique et Sciences Informatiques, Terminale, T. BALABONSKI, S. CONCHON, J.-C. FILLIATRE, K. NGUYEN, éditions ELLIPSES.</li>
-<li>Prépabac NSI, Terminale, G. CONNAN, V. PETROV, G. ROZSAVOLGYI, L. SIGNAC, éditions HATIER.</li>
-<li>Site d'Olivier Lécluse <a href="https://www.lecluse.fr/nsi/NSI_T/archi/routage/">https://www.lecluse.fr/nsi/NSI_T/archi/routage/</a></li>
-<li>Surtout à Gilles Lassus pour son travail formidable...</li>
-</ul>
-</div>
-<hr />
 
 
 

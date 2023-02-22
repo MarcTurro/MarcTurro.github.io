@@ -1074,6 +1074,10 @@ Permet de relier plusieurs machines entre elles avec canal dédié pour chaque d
 <center>
 <img alt="box" src="img/box.jpg" />
 </center>
+Mais dans des réseaux d'entreprises, ce n'est pas la même histoire! Ci-après, une photo des routeurs et switch d'un réseau du lycée avec à côté le serveur:</p>
+<p><center>
+<img alt="serverur" src="img/serveur.png" width="50%" />
+</center>
 4. Les connectiques</p>
 <p><center>
 <img alt="rj45" src="img/rj45.jpg" width="20%" />
@@ -1229,9 +1233,11 @@ Donc à chaque envoie, il y a trois étapes illustrées par la figure ci-dessous
 </tbody>
 </table>
 <p></center>
-Cette notion est un peu désuette mais mérite d'être connue... Il existe aussi les classe <strong>D</strong> et <strong>E</strong> peu utilisées en ce qui nous concerne...
-!! warning " Pourquoi -2?"
-    Deux adresses sont généralement réservées: celle du réseau dont le NetId est à 0 et celle du broadcast dont le NetId est à 255</p>
+Cette notion est un peu désuette car manque de souplessse mais mérite d'être connue... Il existe aussi les classe <strong>D</strong> et <strong>E</strong> peu utilisées en ce qui nous concerne...</p>
+<div class="admonition warning">
+<p class="admonition-title"> Pourquoi -2?</p>
+<p>Deux adresses sont généralement réservées: celle du réseau dont le NetId est à 0 et celle du broadcast dont le NetId est à 255</p>
+</div>
 <p>Une <strong>adresse de broadcast</strong> sert à diffuser à l'ensemble des ordinateurs qui constituent le réseau.</p>
 <div class="admonition warning">
 <p class="admonition-title">Mais comment reconnaître <code>netId</code> et <code>hostId</code>?</p>
@@ -1243,15 +1249,21 @@ Cette notion est un peu désuette mais mérite d'être connue... Il existe aussi
 <img align="align" alt="masque" src="img/exemplemasque.png" width="80%" />
 </center></p>
 <p>On utilise ici l'adresse décimale pointée (CIDR) indiquant le nombre de bits à 1 dans l'adresse du masque de sous réseau.</p>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
+<div class="admonition exemple">
+<p class="admonition-title">Exemple</p>
 <p>Si l'adresse d'une machine est <code>192.168.1.121/19</code> cela signifie que l'adresse du masque est, en binaire <code>11111111.11111111.11100000.00000000</code>(<strong>19</strong> premiers bits à 1 et le reste à 0) soit en décimale, <code>255.255.224.0</code>.</p>
 </div>
 <p>Certaines adresses sont vouées à des utilisations particulières:</p>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>L'adresse <code>127.0.0.1</code>(ou  simplement <code>::1</code>) est la boucle locale ou simplement <code>localhost</code>. On l'utilise par exemple si sur la même machine , vous installez un serveur Web et un client.</p>
+<div class="admonition exemple">
+<p class="admonition-title">Exemple</p>
+<p>L'adresse <code>127.0.0.1</code>(ou  simplement <code>::1</code>) est la boucle locale ou simplement <code>localhost</code>. On l'utilise par exemple si sur la même machine, vous installez un serveur Web et un client.</p>
 </div>
+<p>En guise de conclusion, une vidéo de notre cher Charles Poulmaire sur les réseaux informatiques:</p>
+<p><center></p>
+<p align="center">
+<iframe width="790" height="372" src="https://www.lumni.fr/video/l-architecture-des-reseaux-et-les-protocoles-de-communications#containerType=serie&containerSlug=la-maison-lumni-lycee" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+<p></center></p>
 
 
 
