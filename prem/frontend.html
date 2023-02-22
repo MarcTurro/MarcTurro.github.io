@@ -1,1084 +1,471 @@
 
-<!doctype html>
-<html lang="fr" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-      
-        <meta name="author" content="Marc TURRO">
-      
-      
-        <link rel="canonical" href="https://marcturro.github.io/prem/frontend.html">
-      
-      <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
-    
-    
-      
-        <title>Développement Web - Numérique et Sciences Informatiques</title>
-      
-    
-    
-      <link rel="stylesheet" href="../assets/stylesheets/main.20d9efc8.min.css">
-      
-        
-        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
-        
-      
-      
-  
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-  
-  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M471.6 21.7c-21.9-21.9-57.3-21.9-79.2 0l-30.1 30 97.9 97.9 30.1-30.1c21.9-21.9 21.9-57.3 0-79.2l-18.7-18.6zm-299.2 220c-6.1 6.1-10.8 13.6-13.5 21.9l-29.6 88.8c-2.9 8.6-.6 18.1 5.8 24.6s15.9 8.7 24.6 5.8l88.8-29.6c8.2-2.8 15.7-7.4 21.9-13.5l167.3-167.4-98-98-167.3 167.4zM96 64c-53 0-96 43-96 96v256c0 53 43 96 96 96h256c53 0 96-43 96-96v-96c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H96z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-144c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M224 0c17.7 0 32 14.3 32 32v208h-64V32c0-17.7 14.3-32 32-32zm96 160c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32s-32-14.3-32-32v-64c0-17.7 14.3-32 32-32zm64 64c0-17.7 14.3-32 32-32s32 14.3 32 32v64c0 17.7-14.3 32-32 32s-32-14.3-32-32v-64zM93.3 51.2 175.9 240h-69.8L34.7 76.8c-7.1-16.2.3-35 16.5-42.1s35.1.3 42.1 16.5zm27 221.3-.2-.5H216c22.1 0 40 17.9 40 40s-17.9 40-40 40h-56c-8.8 0-16 7.2-16 16s7.2 16 16 16h56c39.8 0 72-32.2 72-72v-.6c9.4 5.4 20.3 8.6 32 8.6 13.2 0 25.4-4 35.6-10.8 8.7 24.9 32.5 42.8 60.4 42.8 11.7 0 22.6-3.1 32-8.6v8.6c0 88.4-71.6 160-160 160h-61.7c-42.4 0-83.1-16.9-113.1-46.9l-11.6-11.6C77.5 429.5 64 396.9 64 363v-27c0-32.7 24.6-59.7 56.3-63.5z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM288 352c0 17.7-14.3 32-32 32s-32-14.3-32-32 14.3-32 32-32 32 14.3 32 32z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM224 256c0 35.3-28.7 64-64 64s-64-28.7-64-64 28.7-64 64-64 64 28.7 64 64zm128 64c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 0c53 0 96 43 96 96v3.6c0 15.7-12.7 28.4-28.4 28.4H188.4c-15.7 0-28.4-12.7-28.4-28.4V96c0-53 43-96 96-96zM41.4 105.4c12.5-12.5 32.8-12.5 45.3 0l64 64c.7.7 1.3 1.4 1.9 2.1 14.2-7.3 30.4-11.4 47.5-11.4H312c17.1 0 33.2 4.1 47.5 11.4.6-.7 1.2-1.4 1.9-2.1l64-64c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3l-64 64c-.7.7-1.4 1.3-2.1 1.9 6.2 12 10.1 25.3 11.1 39.5H480c17.7 0 32 14.3 32 32s-14.3 32-32 32h-64c0 24.6-5.5 47.8-15.4 68.6 2.2 1.3 4.2 2.9 6 4.8l64 64c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0l-63.1-63.1c-24.5 21.8-55.8 36.2-90.3 39.6V240c0-8.8-7.2-16-16-16s-16 7.2-16 16v239.2c-34.5-3.4-65.8-17.8-90.3-39.6l-63 63c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l64-64c1.9-1.9 3.9-3.4 6-4.8C101.5 367.8 96 344.6 96 320H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h64.3c1.1-14.1 5-27.5 11.1-39.5-.7-.6-1.4-1.2-2.1-1.9l-64-64c-12.5-12.5-12.5-32.8 0-45.3z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
+<!DOCTYPE html>
 
-
-    
-    
-
+<html class="no-js" lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Marc TURRO" name="author"/>
+<link href="https://marcturro.github.io/prem/frontend.html" rel="canonical"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.4.0, mkdocs-material-8.5.6" name="generator"/>
+<title>Développement Web - Numérique et Sciences Informatiques</title>
+<link href="../assets/stylesheets/main.20d9efc8.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.cbb835fc.min.css" rel="stylesheet"/>
+<style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M471.6 21.7c-21.9-21.9-57.3-21.9-79.2 0l-30.1 30 97.9 97.9 30.1-30.1c21.9-21.9 21.9-57.3 0-79.2l-18.7-18.6zm-299.2 220c-6.1 6.1-10.8 13.6-13.5 21.9l-29.6 88.8c-2.9 8.6-.6 18.1 5.8 24.6s15.9 8.7 24.6 5.8l88.8-29.6c8.2-2.8 15.7-7.4 21.9-13.5l167.3-167.4-98-98-167.3 167.4zM96 64c-53 0-96 43-96 96v256c0 53 43 96 96 96h256c53 0 96-43 96-96v-96c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H96z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-144c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M224 0c17.7 0 32 14.3 32 32v208h-64V32c0-17.7 14.3-32 32-32zm96 160c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32s-32-14.3-32-32v-64c0-17.7 14.3-32 32-32zm64 64c0-17.7 14.3-32 32-32s32 14.3 32 32v64c0 17.7-14.3 32-32 32s-32-14.3-32-32v-64zM93.3 51.2 175.9 240h-69.8L34.7 76.8c-7.1-16.2.3-35 16.5-42.1s35.1.3 42.1 16.5zm27 221.3-.2-.5H216c22.1 0 40 17.9 40 40s-17.9 40-40 40h-56c-8.8 0-16 7.2-16 16s7.2 16 16 16h56c39.8 0 72-32.2 72-72v-.6c9.4 5.4 20.3 8.6 32 8.6 13.2 0 25.4-4 35.6-10.8 8.7 24.9 32.5 42.8 60.4 42.8 11.7 0 22.6-3.1 32-8.6v8.6c0 88.4-71.6 160-160 160h-61.7c-42.4 0-83.1-16.9-113.1-46.9l-11.6-11.6C77.5 429.5 64 396.9 64 363v-27c0-32.7 24.6-59.7 56.3-63.5z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM288 352c0 17.7-14.3 32-32 32s-32-14.3-32-32 14.3-32 32-32 32 14.3 32 32z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM224 256c0 35.3-28.7 64-64 64s-64-28.7-64-64 28.7-64 64-64 64 28.7 64 64zm128 64c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 0c53 0 96 43 96 96v3.6c0 15.7-12.7 28.4-28.4 28.4H188.4c-15.7 0-28.4-12.7-28.4-28.4V96c0-53 43-96 96-96zM41.4 105.4c12.5-12.5 32.8-12.5 45.3 0l64 64c.7.7 1.3 1.4 1.9 2.1 14.2-7.3 30.4-11.4 47.5-11.4H312c17.1 0 33.2 4.1 47.5 11.4.6-.7 1.2-1.4 1.9-2.1l64-64c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3l-64 64c-.7.7-1.4 1.3-2.1 1.9 6.2 12 10.1 25.3 11.1 39.5H480c17.7 0 32 14.3 32 32s-14.3 32-32 32h-64c0 24.6-5.5 47.8-15.4 68.6 2.2 1.3 4.2 2.9 6 4.8l64 64c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0l-63.1-63.1c-24.5 21.8-55.8 36.2-90.3 39.6V240c0-8.8-7.2-16-16-16s-16 7.2-16 16v239.2c-34.5-3.4-65.8-17.8-90.3-39.6l-63 63c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l64-64c1.9-1.9 3.9-3.4 6-4.8C101.5 367.8 96 344.6 96 320H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h64.3c1.1-14.1 5-27.5 11.1-39.5-.7-.6-1.4-1.2-2.1-1.9l-64-64c-12.5-12.5-12.5-32.8 0-45.3z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
 <!-- favicons -->
-<link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
-<link rel="icon" href="../assets/images/favicon_32x32.png" sizes="32x32">
-<link rel="icon" href="../assets/images/favicon_96x96.png" sizes="96x96">
-<link rel="icon" href="../assets/images/favicon_144x144.png" sizes="144x144">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/atom-one-light.min.css">
+<link href="../assets/images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="../assets/images/favicon_32x32.png" rel="icon" sizes="32x32"/>
+<link href="../assets/images/favicon_96x96.png" rel="icon" sizes="96x96"/>
+<link href="../assets/images/favicon_144x144.png" rel="icon" sizes="144x144"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/atom-one-light.min.css" rel="stylesheet"/>
 <!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>    
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.12.5/ace.js" type="text/javascript" charset="utf-8"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.12.5/ext-language_tools.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+<script charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.12.5/ace.js" type="text/javascript"></script>
+<script charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.12.5/ext-language_tools.min.js" type="text/javascript"></script>
 <script src="https://cdn.jsdelivr.net/pyodide/v0.21.3/full/pyodide.js"></script>
 <script src="https://cdn.jsdelivr.net/pyodide/v0.21.3/full/pyodide.asm.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/js-md5"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/js/jquery.terminal.min.js"></script>
-<link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/css/jquery.terminal.min.css" rel="stylesheet">
-<script src="../pyodide-mkdocs/interpreter.js"></script> 
-
-    
-      
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"IBM Plex Mono";--md-code-font:"Roboto Mono"}</style>
-      
-    
-    
-      <link rel="stylesheet" href="../xtra/stylesheets/extra.css">
-    
-      <link rel="stylesheet" href="../xtra/stylesheets/pyoditeur.css">
-    
-      <link rel="stylesheet" href="../xtra/stylesheets/ajustements.css">
-    
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-columns.css">
-    
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-admonitions.css">
-    
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-    
-      
-
-    
-    
-    
-
-<link rel="stylesheet" href="../pyodide-mkdocs/pyoditeur.css">
-
-
-<input id="ace_palette" autocomplete="off" class="md-toggle" data-ace-dark-mode="tomorrow_night_bright" data-ace-light-mode="crimson_editor" type="checkbox"></input>
-
-
-  </head>
-  
-  
-    
-    
-      
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
-  
-    
-    
-      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
-    
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-        
-        <a href="#le-web" class="md-skip">
+<link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/css/jquery.terminal.min.css" rel="stylesheet"/>
+<script src="../pyodide-mkdocs/interpreter.js"></script>
+<!-- Ajouter 17 february pour tables massilia-->
+<script defer="" src="../assets/javascripts/massilia.js"></script>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"IBM Plex Mono";--md-code-font:"Roboto Mono"}</style>
+<link href="../xtra/stylesheets/extra.css" rel="stylesheet"/>
+<link href="../xtra/stylesheets/pyoditeur.css" rel="stylesheet"/>
+<link href="../xtra/stylesheets/ajustements.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-columns.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-admonitions.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../pyodide-mkdocs/pyoditeur.css" rel="stylesheet"/>
+<input autocomplete="off" class="md-toggle" data-ace-dark-mode="tomorrow_night_bright" data-ace-light-mode="crimson_editor" id="ace_palette" type="checkbox"/>
+</head>
+<body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#le-web">
           Aller au contenu
         </a>
-      
-    </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-    
-      
-
-  
-
+</div>
+<div data-md-component="announce">
+</div>
 <header class="md-header md-header--lifted" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="En-tête">
-    <a href="../index.html" title="Numérique et Sciences Informatiques" class="md-header__button md-logo" aria-label="Numérique et Sciences Informatiques" data-md-component="logo">
-      
-  <img src="../img/logoNSIsite.png" alt="logo">
-
-    </a>
-    <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
-    </label>
-    <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
+<nav aria-label="En-tête" class="md-header__inner md-grid">
+<a aria-label="Numérique et Sciences Informatiques" class="md-header__button md-logo" data-md-component="logo" href="../index.html" title="Numérique et Sciences Informatiques">
+<img alt="logo" src="../img/logoNSIsite.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
             Numérique et Sciences Informatiques
           </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
             
               Développement Web
             
           </span>
-        </div>
-      </div>
-    </div>
-    
-      <form class="md-header__option" data-md-component="palette">
-        
-          
-          
-          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
-          
-            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
-            </label>
-          
-        
-          
-          
-          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
-          
-            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
-            </label>
-          
-        
-      </form>
-    
-    
-    
-      <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
-        
-        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
-        </button>
-      </nav>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="" data-md-color-media="" data-md-color-primary="" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="" data-md-color-media="" data-md-color-primary="" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Rechercher" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Rechercher" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Effacer" class="md-search__icon md-icon" tabindex="-1" title="Effacer" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
             Initialisation de la recherche
           </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
+<ol class="md-search-result__list"></ol>
 </div>
-    
-    
-  </nav>
-  
-    
-      
-<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-
-
-  <li class="md-tabs__item">
-    <a href="../index.html" class="md-tabs__link">
+</div>
+</div>
+</div>
+</div>
+</nav>
+<nav aria-label="Onglets" class="md-tabs" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../index.html">
       Accueil
     </a>
-  </li>
-
-      
-        
-  
-  
-    
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="premnsi.html" class="md-tabs__link md-tabs__link--active">
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="premnsi.html">
         Première NSI
       </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../term/termnsi.html" class="md-tabs__link">
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../term/termnsi.html">
         Terminale NSI
       </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  <li class="md-tabs__item">
-    <a href="../term/ep.html" class="md-tabs__link">
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../term/ep.html">
       Epreuve pratique NSI
     </a>
-  </li>
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../maths/index.html" class="md-tabs__link">
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../maths/index.html">
         Un peu de maths aussi ...
       </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  <li class="md-tabs__item">
-    <a href="../ecolo/ecologie.html" class="md-tabs__link">
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../ecolo/ecologie.html">
       Impact environnemental
     </a>
-  </li>
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../res_prem.html" class="md-tabs__link">
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../ressources.html">
         Ressources
       </a>
-    </li>
-  
-
-      
-    </ul>
-  </div>
+</li>
+</ul>
+</div>
 </nav>
-    
-  
 </header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              
-                
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-  
-
-
-  
-
-<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href="../index.html" title="Numérique et Sciences Informatiques" class="md-nav__button md-logo" aria-label="Numérique et Sciences Informatiques" data-md-component="logo">
-      
-  <img src="../img/logoNSIsite.png" alt="logo">
-
-    </a>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden="">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Numérique et Sciences Informatiques" class="md-nav__button md-logo" data-md-component="logo" href="../index.html" title="Numérique et Sciences Informatiques">
+<img alt="logo" src="../img/logoNSIsite.png"/>
+</a>
     Numérique et Sciences Informatiques
   </label>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../index.html" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../index.html">
         Accueil
       </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-    
-  
-  
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_2">
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2">
           Première NSI
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Première NSI" data-md-level="1">
-        <label class="md-nav__title" for="__nav_2">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Première NSI" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
           Première NSI
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="premnsi.html" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="premnsi.html">
         Accueil
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="index_tpbash.html" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="index_tpbash.html">
         Passez la commande !
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
           Développement Web
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="frontend.html" class="md-nav__link md-nav__link--active">
+</label>
+<a class="md-nav__link md-nav__link--active" href="frontend.html">
         Développement Web
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
+<nav aria-label="Table des matières" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
       Table des matières
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#quezaco" class="md-nav__link">
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#quezaco">
     Quézaco???
   </a>
-  
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#le-premier-langage-du-web-le-html" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#le-premier-langage-du-web-le-html">
     Le premier langage du WEB: le HTML
   </a>
-  
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#lire-ou-ecrire-il-faut-savoir" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lire-ou-ecrire-il-faut-savoir">
     Lire ou écrire? Il faut savoir!
   </a>
-  
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#la-w3c-schools" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#la-w3c-schools">
     La W3C schools
   </a>
-  
 </li>
-      
-    </ul>
-  
+</ul>
 </nav>
-      
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="jscript.html" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="jscript.html">
         Dynamisons le Web
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="widget.html" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="widget.html">
         Création de widgets
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="images_numeriques.html" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="images_numeriques.html">
         Travail sur les images numériques
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="cours_de_reseaux.html" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="cours_de_reseaux.html">
         Réseaux informatiques
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="testpyodide.html" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="testpyodide.html">
         IDE en ligne
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_3">
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3">
           Terminale NSI
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Terminale NSI" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Terminale NSI" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
           Terminale NSI
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../term/termnsi.html" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../term/termnsi.html">
         Accueil
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../term/recursivite.html" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../term/recursivite.html">
         Récursivité
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../term/interface.html" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../term/interface.html">
         Interface et implémentation
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../term/stalin.html" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../term/stalin.html">
         Structure de données linéaires
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../term/complex_struc.html" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../term/complex_struc.html">
         Complexité des structures
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../term/reseau_term.html" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../term/reseau_term.html">
         Rappel sur les réseaux informatiques
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../term/routage.html" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../term/routage.html">
         Routage
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../term/ep.html" class="md-nav__link">
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../term/ep.html">
         Epreuve pratique NSI
       </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_5">
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5">
           Un peu de maths aussi ...
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Un peu de maths aussi ..." data-md-level="1">
-        <label class="md-nav__title" for="__nav_5">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Un peu de maths aussi ..." class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
           Un peu de maths aussi ...
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../maths/index.html" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../maths/index.html">
         Accueil
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../maths/intro.html" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../maths/intro.html">
         Pour débuter
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../maths/variables.html" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../maths/variables.html">
         Les variables
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../maths/listes.html" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../maths/listes.html">
         Les listes
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../maths/boucles.html" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../maths/boucles.html">
         Les boucles
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../maths/fonctions.html" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../maths/fonctions.html">
         Les fonctions
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../maths/graphique.html" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../maths/graphique.html">
         Les graphiques
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_8" type="checkbox" id="__nav_5_8" checked>
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_5_8">
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_8" id="__nav_5_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_8">
           Mathématiques en Terminale STI2D
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Mathématiques en Terminale STI2D" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_8">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Mathématiques en Terminale STI2D" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_8">
+<span class="md-nav__icon md-icon"></span>
           Mathématiques en Terminale STI2D
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../maths/intro_python.html" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../maths/intro_python.html">
         Prise en main
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../maths/exercice_python.html" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../maths/exercice_python.html">
         Série d'exercices
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ecolo/ecologie.html" class="md-nav__link">
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ecolo/ecologie.html">
         Impact environnemental
       </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_7">
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7">
           Ressources
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Ressources" data-md-level="1">
-        <label class="md-nav__title" for="__nav_7">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Ressources" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
           Ressources
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../res_prem.html" class="md-nav__link">
-        Ressources pour la classe de première
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ressources.html">
+        Accueil
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../res_term.html" class="md-nav__link">
-        Ressources pour la classe de terminale
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../res_prem.html">
+        Programme Première NSI
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-  </ul>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../res_term.html">
+        Programme Terminale NSI
+      </a>
+</li>
+</ul>
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-          
-          
-            <div class="md-content" data-md-component="content">
-              <article class="md-content__inner md-typeset">
-                
-
-                  
-
-
-<h1 id="le-web">Le WEB<a class="headerlink" href="#le-web" title="Permanent link">&para;</a></h1>
-<h2 id="quezaco">Quézaco???<a class="headerlink" href="#quezaco" title="Permanent link">&para;</a></h2>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="le-web"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Le WEB<a class="headerlink" href="#le-web" title="Permanent link">¶</a></h1>
+<h2 id="quezaco"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Quézaco???<a class="headerlink" href="#quezaco" title="Permanent link">¶</a></h2>
 <p>Le WEB ou plus précisément le <strong>WorldWideWeb</strong> est un système hypertexte public fonctionnant sur l'<strong>internet</strong>. Il permet de consulter, avec un navigateur, des pages accessibles sur des sites.</p>
 <p>En 1989, <strong>Tim Berners-Lee</strong>  engagé au CERN de Genève, propose de développer un système organisé en toile, afin d'améliorer la diffusion des informations internes. En 1990, naît alors le premier serveur WEB: la première page existe toujours et vous pouvez la consulter <a href="http://info.cern.ch/hypertext/WWW/TheProject.html">ici</a>.</p>
-<h2 id="le-premier-langage-du-web-le-html">Le premier langage du WEB: le HTML<a class="headerlink" href="#le-premier-langage-du-web-le-html" title="Permanent link">&para;</a></h2>
+<h2 id="le-premier-langage-du-web-le-html"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> Le premier langage du WEB: le HTML<a class="headerlink" href="#le-premier-langage-du-web-le-html" title="Permanent link">¶</a></h2>
 <p>Le premier langage utilisé pour décrire le contenu d'une page web est le langage HTML(HyperTextMarkupLanguage). Ce n'est donc pas un <strong>langage de programmation</strong> mais un <strong>langage de description</strong> comme Latex par exemple...</p>
 <p>Il repose sur des <strong>balises</strong> et leurs <strong>attributs</strong> qui décrivent un contenu: titre, paragraphe, entête, images, liens,....
 Ci-dessous un exemple relativement simple d'une page web:</p>
 <div class="admonition example">
 <p class="admonition-title">Un exemple très simple de page web</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Le titre de ma première page <span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Cool! mon premier titre<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Il s&#39;agit ici d&#39;un paragraphe( balises p). <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span> Il faut savoir que les balises ont par défaut des attributs (qu&#39;on peut changer ensuite...). <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>Par exemple, une balise H1 propose un titre plus grand qu&#39;une balise H2 ou H3....<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span> 
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Le titre de ma première page <span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Cool! mon premier titre<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Il s'agit ici d'un paragraphe( balises p). <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span> Il faut savoir que les balises ont par défaut des attributs (qu'on peut changer ensuite...). <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a>Par exemple, une balise H1 propose un titre plus grand qu'une balise H2 ou H3....<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span> 
 </code></pre></div>
 </div>
-<h2 id="lire-ou-ecrire-il-faut-savoir">Lire ou écrire? Il faut savoir!<a class="headerlink" href="#lire-ou-ecrire-il-faut-savoir" title="Permanent link">&para;</a></h2>
+<h2 id="lire-ou-ecrire-il-faut-savoir"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Lire ou écrire? Il faut savoir!<a class="headerlink" href="#lire-ou-ecrire-il-faut-savoir" title="Permanent link">¶</a></h2>
 <p>On écrit du code HTML dans un <strong>éditeur</strong>( NotePad, visualCode, blocnote,...) et on le lit avec un <strong>navigateur</strong>. La manipulation habituelle est celle décrite dans l'exercice suivant:</p>
 <div class="admonition note">
 <p class="admonition-title">À faire: éditer du code et le lire</p>
@@ -1096,21 +483,21 @@ Ci-dessous un exemple relativement simple d'une page web:</p>
 <p class="admonition-title">À faire: modifier du code HTML</p>
 <ol>
 <li>Ajouter le code HTML suivant au fichier précédent entre les balises fermantes <code>&lt;\p&gt;</code> et <code>&lt;\body&gt;</code>.
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>C&#39;est mon deuxième titre<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Remarquez que le titre H2 est plus petit que celui de H1<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>C'est mon deuxième titre<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Remarquez que le titre H2 est plus petit que celui de H1<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </code></pre></div></li>
 <li>Lire le nouveau document pour observer les changements effectués.</li>
 </ol>
 </div>
 <p>Pour actualiser une page dans un navigateur, il suffit d'appuyer sur la touche  <kbd>F5</kbd> .</p>
-<h2 id="la-w3c-schools">La W3C schools<a class="headerlink" href="#la-w3c-schools" title="Permanent link">&para;</a></h2>
+<h2 id="la-w3c-schools"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> La W3C schools<a class="headerlink" href="#la-w3c-schools" title="Permanent link">¶</a></h2>
 <p>Le W3C est un consortium chargée de développer et maintenir les standards du WEB que sont les langages HTML,CSS,PHP, ... mais aussi le format d'image <strong>png</strong>(Portable Network Graphics) idéal pour les pages WEB. Il offre aussi la possibilité de valider votre code en vous indiquant si vous avez respecté les normes en vigueur.</p>
-<p><center></p>
-<p><img alt="le W3C" src="img/W3C.png" title="Le consortium W3C" />
-</center></p>
+<p><center></center></p>
+<p><img alt="le W3C" src="img/W3C.png" title="Le consortium W3C">
+</img></p>
 <p>Ce consortium propose une école d'apprentissage du code HTML et d'autres... c'est la <strong>W3schools!</strong> Vous trouverez le lien <a href="https://www.w3schools.com/html/default.asp">ici</a>.
 Les exercices qui suivent ont été inspirés par les exemples proposés dans cette école.</p>
-<h1 id="apprentissage-du-html">Apprentissage du HTML<a class="headerlink" href="#apprentissage-du-html" title="Permanent link">&para;</a></h1>
+<h1 id="apprentissage-du-html"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.</span> Apprentissage du HTML<a class="headerlink" href="#apprentissage-du-html" title="Permanent link">¶</a></h1>
 <p>Cette partie s'intéresse à la partie codage et vous donne au fur et à mesure de nouvelles fonctionnalités. Il faut donc à chaque étape <strong>modifier</strong> ou <strong>compléter</strong> son code HTML dans un logiciel d'édition et <strong>visualiser</strong> dans un navigateur, le résultat de vos modifications. N'oubliez pas d':</p>
 <ul>
 <li><strong>enregistrer</strong> votre fichier modifié (touches <kbd>ctrl</kbd>+<kbd>S</kbd>)</li>
@@ -1119,31 +506,31 @@ Les exercices qui suivent ont été inspirés par les exemples proposés dans ce
 <p>On utilisera comme point de départ, le code de la page web donné dans la partie précédente:</p>
 <div class="admonition example">
 <p class="admonition-title">Code simple que nous allons compléter</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Le titre de ma première page <span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Cool! mon premier titre<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Il s&#39;agit ici d&#39;un paragraphe( balises p). <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span> Il faut savoir que les balises ont par défaut des attributs (qu&#39;on peut changer ensuite...). <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>Par exemple, une balise H1 propose un titre plus grand qu&#39;une balise H2 ou H3....<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>C&#39;est mon deuxième titre<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Remarquez que le titre H2 est plus petit que celui de H1<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span> 
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Le titre de ma première page <span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Cool! mon premier titre<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<a href="#__codelineno-2-8" id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Il s'agit ici d'un paragraphe( balises p). <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span> Il faut savoir que les balises ont par défaut des attributs (qu'on peut changer ensuite...). <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+<a href="#__codelineno-2-9" id="__codelineno-2-9" name="__codelineno-2-9"></a>Par exemple, une balise H1 propose un titre plus grand qu'une balise H2 ou H3....<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a href="#__codelineno-2-10" id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>C'est mon deuxième titre<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<a href="#__codelineno-2-11" id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Remarquez que le titre H2 est plus petit que celui de H1<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a href="#__codelineno-2-12" id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<a href="#__codelineno-2-13" id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span> 
 </code></pre></div>
 </div>
-<h2 id="des-attributs-pour-formater-a-volonte">Des attributs pour formater à volonté...<a class="headerlink" href="#des-attributs-pour-formater-a-volonte" title="Permanent link">&para;</a></h2>
+<h2 id="des-attributs-pour-formater-a-volonte"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.1</span> Des attributs pour formater à volonté...<a class="headerlink" href="#des-attributs-pour-formater-a-volonte" title="Permanent link">¶</a></h2>
 <p>Toutes les balises ont par <strong>défaut</strong>, des attributs de couleur, de grosseur, de positionnement qui peuvent être modifiés. Quelques exemples sont proposés ici.</p>
 <div class="admonition note">
 <p class="admonition-title">À faire: ajouter des attributs aux balises</p>
 <ol>
 <li>Modifier la balise <em>body</em> comme ceci:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">&lt;</span><span class="nt">body</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;background-color:powderblue;&quot;</span> <span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">&lt;</span><span class="nt">body</span> <span class="na">style</span><span class="o">=</span><span class="s">"background-color:powderblue;"</span> <span class="p">&gt;</span>
 </code></pre></div></li>
 <li>Modifier la balise <em>H1</em>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">&lt;</span><span class="nt">h1</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color:Tomato; font-size:300%;text-align:center;&quot;</span>  <span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="p">&lt;</span><span class="nt">h1</span> <span class="na">style</span><span class="o">=</span><span class="s">"color:Tomato; font-size:300%;text-align:center;"</span>  <span class="p">&gt;</span>
 </code></pre></div></li>
 <li>Modifier la balise <em>H2</em> afin qu'elle soit aussi alignée au centre avec la couleur <code>MediumSeaGreen</code>.</li>
 <li>Enfin faites en sorte que les paragraphes soient centrés avec un fond de couleur que vous pouvez choisir parmi les possibilités offertes <a href="https://www.w3schools.com/html/html_colors.asp">ici</a></li>
@@ -1156,43 +543,43 @@ Les exercices qui suivent ont été inspirés par les exemples proposés dans ce
 <div class="admonition note">
 <p class="admonition-title">À faire: un style balaise!</p>
 <p>Essayez ce style sur les balise p:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">&lt;</span><span class="nt">p</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;background: linear-gradient(to right,#ffbe02a1 0px,#fd606aba 100%);</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="s">padding: 10px;</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="s">border-radius: 10px;&quot;</span> <span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="p">&lt;</span><span class="nt">p</span> <span class="na">style</span><span class="o">=</span><span class="s">"background: linear-gradient(to right,#ffbe02a1 0px,#fd606aba 100%);</span>
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="s">padding: 10px;</span>
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="s">border-radius: 10px;"</span> <span class="p">&gt;</span>
 </code></pre></div>
 C'est joli, non?</p>
 </div>
-<h2 id="des-commentaires-pour-comprendre">Des commentaires pour comprendre<a class="headerlink" href="#des-commentaires-pour-comprendre" title="Permanent link">&para;</a></h2>
+<h2 id="des-commentaires-pour-comprendre"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.2</span> Des commentaires pour comprendre<a class="headerlink" href="#des-commentaires-pour-comprendre" title="Permanent link">¶</a></h2>
 <p>Dans tout langage informatique, on peut (doit?) ajouter des commentaires qui permettent d'amener quelques explications aux choix effectués: ces lignes <strong>ne sont pas interprétées</strong> par le navigateur.</p>
 <div class="admonition example">
 <p class="admonition-title">Code simple que nous allons ccommenter</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="cm">&lt;!-- Les commentaires sont intégrés au code par ces balises--&gt;</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Le titre de ma première page <span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Cool! mon premier titre<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="cm">&lt;!-- bg en degradé vers la droite d&#39;une couleur vers une autre--&gt;</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="cm">&lt;!-- le padding est le rembourrage dans l&#39;élément mère--&gt;</span>
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="cm">&lt;!-- le rayon du coin de la pordure est de 10px--&gt;</span>
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="p">&lt;</span><span class="nt">p</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;background: linear-gradient(to right,#ffbe02a1 0px,#fd606aba 100%);</span>
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="s">padding: 10px;</span>
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="s">border-radius: 10px;&quot;</span> <span class="p">&gt;</span>
-<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>Il s&#39;agit ici d&#39;un paragraphe( balises p). <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span> Il faut savoir que les balises ont par défauts des attributs (qu&#39;on peut changer ensuite...). <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
-<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>Par exemple, une balise H1 propose un titre plus grand qu&#39;une balise H2 ou H3....<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span> 
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="cm">&lt;!-- Les commentaires sont intégrés au code par ces balises--&gt;</span>
+<a href="#__codelineno-6-5" id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Le titre de ma première page <span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<a href="#__codelineno-6-6" id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<a href="#__codelineno-6-7" id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<a href="#__codelineno-6-8" id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Cool! mon premier titre<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<a href="#__codelineno-6-9" id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="cm">&lt;!-- bg en degradé vers la droite d'une couleur vers une autre--&gt;</span>
+<a href="#__codelineno-6-10" id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="cm">&lt;!-- le padding est le rembourrage dans l'élément mère--&gt;</span>
+<a href="#__codelineno-6-11" id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="cm">&lt;!-- le rayon du coin de la pordure est de 10px--&gt;</span>
+<a href="#__codelineno-6-12" id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="p">&lt;</span><span class="nt">p</span> <span class="na">style</span><span class="o">=</span><span class="s">"background: linear-gradient(to right,#ffbe02a1 0px,#fd606aba 100%);</span>
+<a href="#__codelineno-6-13" id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="s">padding: 10px;</span>
+<a href="#__codelineno-6-14" id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="s">border-radius: 10px;"</span> <span class="p">&gt;</span>
+<a href="#__codelineno-6-15" id="__codelineno-6-15" name="__codelineno-6-15"></a>Il s'agit ici d'un paragraphe( balises p). <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span> Il faut savoir que les balises ont par défauts des attributs (qu'on peut changer ensuite...). <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+<a href="#__codelineno-6-16" id="__codelineno-6-16" name="__codelineno-6-16"></a>Par exemple, une balise H1 propose un titre plus grand qu'une balise H2 ou H3....<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a href="#__codelineno-6-17" id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<a href="#__codelineno-6-18" id="__codelineno-6-18" name="__codelineno-6-18"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span> 
 </code></pre></div>
 </div>
 <p>On peut aussi utiliser des balises de commentaires pour isoler une partie du code afin qu'elle ne soit pas lues par le navigateur.</p>
-<h2 id="inserer-des-liens-et-des-images">Insérer des liens et des images<a class="headerlink" href="#inserer-des-liens-et-des-images" title="Permanent link">&para;</a></h2>
+<h2 id="inserer-des-liens-et-des-images"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.3</span> Insérer des liens et des images<a class="headerlink" href="#inserer-des-liens-et-des-images" title="Permanent link">¶</a></h2>
 <p>Une page web contient souvent des images. Le code ci-dessous permet d'intégrer l'image du logo de la nsi du lycée à récuperer <a href="img/logoNSI.png">ici</a>.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;img/logoNSI.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;le logo de la NSI&quot;</span><span class="p">&gt;</span> 
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"img/logoNSI.png"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"le logo de la NSI"</span><span class="p">&gt;</span> 
 </code></pre></div>
 Si vous souhaitez insérer un lien vers un autre site sur un mot, une image, ... il faudra alors intégrer l'instruction suivante à votre code:</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://lyceedebaudre.net/&quot;</span><span class="p">&gt;</span>Le lycée<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> 
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://lyceedebaudre.net/"</span><span class="p">&gt;</span>Le lycée<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> 
 </code></pre></div>
 Le lien se trouve sur la phrase <em>le lycée</em>: en cliquant dessus vous êtes dirigé vers le site dont l'<strong>URL</strong> est passé en paramètre.</p>
 <div class="admonition note">
@@ -1209,58 +596,58 @@ Le lien se trouve sur la phrase <em>le lycée</em>: en cliquant dessus vous ête
 <p class="admonition-title">À faire:</p>
 <p>À quoi sert la balise <code>map</code>?</p>
 </div>
-<h2 id="un-tableau">Un tableau?<a class="headerlink" href="#un-tableau" title="Permanent link">&para;</a></h2>
+<h2 id="un-tableau"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.4</span> Un tableau?<a class="headerlink" href="#un-tableau" title="Permanent link">¶</a></h2>
 <p>Vous coulez insérer un tableau à votre code? Rien de plus simple (ou presque...).</p>
 <div class="admonition note">
 <p class="admonition-title">À faire: un simple tableau!</p>
 <ol>
 <li>Insérer ce code au vôtre
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Company<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Contact<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Country<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Alfreds Futterkiste<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Maria Anders<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Germany<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Centro comercial Moctezuma<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Francisco Chang<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Mexico<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Ernst Handel<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Roland Mendel<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Austria<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Island Trading<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a><span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Helen Bennett<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a><span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>UK<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a><span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a><span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a><span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Laughing Bacchus Winecellars<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a><span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Yoshi Tannamuri<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a><span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Canada<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a><span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a><span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a><span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Magazzini Alimentari Riuniti<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a><span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Giovanni Rovelli<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a><span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Italy<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a><span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a id="__codelineno-9-37" name="__codelineno-9-37" href="#__codelineno-9-37"></a><span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Company<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<a href="#__codelineno-9-4" id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Contact<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<a href="#__codelineno-9-5" id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Country<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<a href="#__codelineno-9-6" id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a href="#__codelineno-9-7" id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a href="#__codelineno-9-8" id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Alfreds Futterkiste<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a href="#__codelineno-9-9" id="__codelineno-9-9" name="__codelineno-9-9"></a><span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Maria Anders<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a href="#__codelineno-9-10" id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Germany<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a href="#__codelineno-9-11" id="__codelineno-9-11" name="__codelineno-9-11"></a><span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a href="#__codelineno-9-12" id="__codelineno-9-12" name="__codelineno-9-12"></a><span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a href="#__codelineno-9-13" id="__codelineno-9-13" name="__codelineno-9-13"></a><span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Centro comercial Moctezuma<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a href="#__codelineno-9-14" id="__codelineno-9-14" name="__codelineno-9-14"></a><span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Francisco Chang<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a href="#__codelineno-9-15" id="__codelineno-9-15" name="__codelineno-9-15"></a><span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Mexico<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a href="#__codelineno-9-16" id="__codelineno-9-16" name="__codelineno-9-16"></a><span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a href="#__codelineno-9-17" id="__codelineno-9-17" name="__codelineno-9-17"></a><span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a href="#__codelineno-9-18" id="__codelineno-9-18" name="__codelineno-9-18"></a><span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Ernst Handel<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a href="#__codelineno-9-19" id="__codelineno-9-19" name="__codelineno-9-19"></a><span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Roland Mendel<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a href="#__codelineno-9-20" id="__codelineno-9-20" name="__codelineno-9-20"></a><span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Austria<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a href="#__codelineno-9-21" id="__codelineno-9-21" name="__codelineno-9-21"></a><span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a href="#__codelineno-9-22" id="__codelineno-9-22" name="__codelineno-9-22"></a><span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a href="#__codelineno-9-23" id="__codelineno-9-23" name="__codelineno-9-23"></a><span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Island Trading<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a href="#__codelineno-9-24" id="__codelineno-9-24" name="__codelineno-9-24"></a><span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Helen Bennett<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a href="#__codelineno-9-25" id="__codelineno-9-25" name="__codelineno-9-25"></a><span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>UK<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a href="#__codelineno-9-26" id="__codelineno-9-26" name="__codelineno-9-26"></a><span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a href="#__codelineno-9-27" id="__codelineno-9-27" name="__codelineno-9-27"></a><span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a href="#__codelineno-9-28" id="__codelineno-9-28" name="__codelineno-9-28"></a><span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Laughing Bacchus Winecellars<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a href="#__codelineno-9-29" id="__codelineno-9-29" name="__codelineno-9-29"></a><span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Yoshi Tannamuri<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a href="#__codelineno-9-30" id="__codelineno-9-30" name="__codelineno-9-30"></a><span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Canada<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a href="#__codelineno-9-31" id="__codelineno-9-31" name="__codelineno-9-31"></a><span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a href="#__codelineno-9-32" id="__codelineno-9-32" name="__codelineno-9-32"></a><span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a href="#__codelineno-9-33" id="__codelineno-9-33" name="__codelineno-9-33"></a><span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Magazzini Alimentari Riuniti<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a href="#__codelineno-9-34" id="__codelineno-9-34" name="__codelineno-9-34"></a><span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Giovanni Rovelli<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a href="#__codelineno-9-35" id="__codelineno-9-35" name="__codelineno-9-35"></a><span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Italy<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a href="#__codelineno-9-36" id="__codelineno-9-36" name="__codelineno-9-36"></a><span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a href="#__codelineno-9-37" id="__codelineno-9-37" name="__codelineno-9-37"></a><span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
 </code></pre></div></li>
 <li>Vous souhaitez le rendre plus joli encore? Insérer les styles suivants aux balises concernées...
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">&lt;</span><span class="nt">table</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;font-family: arial, sans-serif;  border-collapse: collapse;  width: 100%;&quot;</span><span class="p">&gt;</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="p">&lt;</span><span class="nt">tr</span> <span class="na">style </span><span class="o">=</span> <span class="s">&quot;border: 1px solid #d80d0d; text-align: left;  padding: 8px; &quot;</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="p">&lt;</span><span class="nt">table</span> <span class="na">style</span><span class="o">=</span><span class="s">"font-family: arial, sans-serif;  border-collapse: collapse;  width: 100%;"</span><span class="p">&gt;</span>
+<a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="p">&lt;</span><span class="nt">tr</span> <span class="na">style </span><span class="o">=</span> <span class="s">"border: 1px solid #d80d0d; text-align: left;  padding: 8px; "</span><span class="p">&gt;</span>
 </code></pre></div></li>
 </ol>
 </div>
 <p>Remarquez comment il est pénible d'ajouter les attributs de style à toutes les balises concernées. Le paragraphe suivant permet de contourner ce problème!</p>
-<h2 id="stylee-la-balise">Stylée la balise!!<a class="headerlink" href="#stylee-la-balise" title="Permanent link">&para;</a></h2>
+<h2 id="stylee-la-balise"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.5</span> Stylée la balise!!<a class="headerlink" href="#stylee-la-balise" title="Permanent link">¶</a></h2>
 <p>Définir le style de chaque balise peut s'avérer fastidieux. Dans le tableau précédent il a fallu compléter toutes les balises <code>&lt;tr&gt;</code>, une par une... ce qui n'est pas très productif. Il existe une balise qui permet de rassembler tous les styles.</p>
 <div class="admonition tldr">
 <p class="admonition-title">À retenir!</p>
@@ -1270,30 +657,30 @@ Le lien se trouve sur la phrase <em>le lycée</em>: en cliquant dessus vous ête
 <div class="admonition note">
 <p class="admonition-title">À faire: regrouper les styles</p>
 <p>Recopier le code suivant entre les balises <code>head</code> et supprimer les tyles dans les balises.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Le titre de ma première page <span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span><span class="w"></span>
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">  </span><span class="nt">body</span><span class="w"> </span><span class="p">{</span><span class="k">background-color</span><span class="p">:</span><span class="kc">powderblue</span><span class="p">;}</span><span class="w"></span>
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">  </span><span class="nt">h1</span><span class="o">,</span><span class="nt">h2</span><span class="w"> </span><span class="p">{</span><span class="k">color</span><span class="p">:</span><span class="n">Tomato</span><span class="p">;</span><span class="w"> </span><span class="k">font-size</span><span class="p">:</span><span class="mi">300</span><span class="kt">%</span><span class="p">;</span><span class="k">text-align</span><span class="p">:</span><span class="kc">center</span><span class="p">;}</span><span class="w"></span>
-<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">  </span><span class="nt">p</span><span class="w"> </span><span class="p">{</span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="nb">linear-gradient</span><span class="p">(</span><span class="kc">to</span><span class="w"> </span><span class="kc">right</span><span class="p">,</span><span class="mh">#ffbe02</span><span class="n">a1</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="p">,</span><span class="mh">#fd606a</span><span class="n">ba</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">  </span><span class="nt">table</span><span class="w"> </span><span class="p">{</span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="n">arial</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span><span class="w">  </span><span class="k">border-collapse</span><span class="p">:</span><span class="w"> </span><span class="kc">collapse</span><span class="p">;</span><span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
-<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">  </span><span class="nt">tr</span><span class="w"> </span><span class="p">{</span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#d80d0d</span><span class="p">;</span><span class="w"> </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">left</span><span class="p">;</span><span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="kt">px</span><span class="p">;}</span><span class="w"></span>
-<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
-<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="p">&lt;</span><span class="nt">body</span> <span class="p">&gt;</span>
-<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="p">&lt;</span><span class="nt">h1</span> <span class="p">&gt;</span>Cool! mon premier titre<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="p">&lt;</span><span class="nt">p</span> <span class="p">&gt;</span>Il s&#39;agit ici d&#39;un paragraphe( balises p). <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span> Il faut savoir que les balises ont par défauts des attributs (qu&#39;on peut changer ensuite...). <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
-<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>Par exemple, une balise H1 propose un titre plus grand qu&#39;une balise H2 ou H3....<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>C&#39;est mon deuxième titre<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>...
-<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>...
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<a href="#__codelineno-11-4" id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Le titre de ma première page <span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<a href="#__codelineno-11-5" id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span><span class="w"></span>
+<a href="#__codelineno-11-6" id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="w">  </span><span class="nt">body</span><span class="w"> </span><span class="p">{</span><span class="k">background-color</span><span class="p">:</span><span class="kc">powderblue</span><span class="p">;}</span><span class="w"></span>
+<a href="#__codelineno-11-7" id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="w">  </span><span class="nt">h1</span><span class="o">,</span><span class="nt">h2</span><span class="w"> </span><span class="p">{</span><span class="k">color</span><span class="p">:</span><span class="n">Tomato</span><span class="p">;</span><span class="w"> </span><span class="k">font-size</span><span class="p">:</span><span class="mi">300</span><span class="kt">%</span><span class="p">;</span><span class="k">text-align</span><span class="p">:</span><span class="kc">center</span><span class="p">;}</span><span class="w"></span>
+<a href="#__codelineno-11-8" id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="w">  </span><span class="nt">p</span><span class="w"> </span><span class="p">{</span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="nb">linear-gradient</span><span class="p">(</span><span class="kc">to</span><span class="w"> </span><span class="kc">right</span><span class="p">,</span><span class="mh">#ffbe02</span><span class="n">a1</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="p">,</span><span class="mh">#fd606a</span><span class="n">ba</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">);</span><span class="w"></span>
+<a href="#__codelineno-11-9" id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<a href="#__codelineno-11-10" id="__codelineno-11-10" name="__codelineno-11-10"></a><span class="w">  </span><span class="nt">table</span><span class="w"> </span><span class="p">{</span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="n">arial</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span><span class="w">  </span><span class="k">border-collapse</span><span class="p">:</span><span class="w"> </span><span class="kc">collapse</span><span class="p">;</span><span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
+<a href="#__codelineno-11-11" id="__codelineno-11-11" name="__codelineno-11-11"></a><span class="w">  </span><span class="nt">tr</span><span class="w"> </span><span class="p">{</span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#d80d0d</span><span class="p">;</span><span class="w"> </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">left</span><span class="p">;</span><span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="kt">px</span><span class="p">;}</span><span class="w"></span>
+<a href="#__codelineno-11-12" id="__codelineno-11-12" name="__codelineno-11-12"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<a href="#__codelineno-11-13" id="__codelineno-11-13" name="__codelineno-11-13"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<a href="#__codelineno-11-14" id="__codelineno-11-14" name="__codelineno-11-14"></a><span class="p">&lt;</span><span class="nt">body</span> <span class="p">&gt;</span>
+<a href="#__codelineno-11-15" id="__codelineno-11-15" name="__codelineno-11-15"></a><span class="p">&lt;</span><span class="nt">h1</span> <span class="p">&gt;</span>Cool! mon premier titre<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<a href="#__codelineno-11-16" id="__codelineno-11-16" name="__codelineno-11-16"></a><span class="p">&lt;</span><span class="nt">p</span> <span class="p">&gt;</span>Il s'agit ici d'un paragraphe( balises p). <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span> Il faut savoir que les balises ont par défauts des attributs (qu'on peut changer ensuite...). <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+<a href="#__codelineno-11-17" id="__codelineno-11-17" name="__codelineno-11-17"></a>Par exemple, une balise H1 propose un titre plus grand qu'une balise H2 ou H3....<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a href="#__codelineno-11-18" id="__codelineno-11-18" name="__codelineno-11-18"></a><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>C'est mon deuxième titre<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<a href="#__codelineno-11-19" id="__codelineno-11-19" name="__codelineno-11-19"></a>...
+<a href="#__codelineno-11-20" id="__codelineno-11-20" name="__codelineno-11-20"></a>...
 </code></pre></div></p>
 </div>
 <p>Seul problème: les mêmes éléments ont le même style! Mais on peut contourner le problème en <em>taggant</em> certaines balises...</p>
-<h2 id="les-identifiants-nont-pas-la-classe">Les identifiants n'ont pas la classe!<a class="headerlink" href="#les-identifiants-nont-pas-la-classe" title="Permanent link">&para;</a></h2>
+<h2 id="les-identifiants-nont-pas-la-classe"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.6</span> Les identifiants n'ont pas la classe!<a class="headerlink" href="#les-identifiants-nont-pas-la-classe" title="Permanent link">¶</a></h2>
 <p>Comment faire si on veut distinguer le style de deux paragraphes par exemple? Le regroupement des styles entre les balises du même nom ne permet plus de personnaliser ces affichages. </p>
 <p>Pas de panique! Tout est prévu, il suffit de <strong>tagger</strong> les balises par des classes(<strong>class</strong>) ou des idendificateurs (<strong>id</strong>).</p>
 <p>Imaginons que nous souhaitions que les paragraphes définis pas le code précédent n'aient pas les mêmes couleurs. On va alors:</p>
@@ -1302,73 +689,73 @@ Le lien se trouve sur la phrase <em>le lycée</em>: en cliquant dessus vous ête
 <li>définir le style de la classe à l'intérieur de la balise <code>&lt;style&gt;</code></li>
 </ul>
 <p>Le code suivant devient alors...</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Le titre de ma première page <span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span><span class="w"></span>
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">        </span><span class="nt">body</span><span class="w"> </span><span class="p">{</span><span class="k">background-color</span><span class="p">:</span><span class="kc">powderblue</span><span class="p">;}</span><span class="w"></span>
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">        </span><span class="nt">h1</span><span class="o">,</span><span class="nt">h2</span><span class="w"> </span><span class="p">{</span><span class="k">color</span><span class="p">:</span><span class="n">Tomato</span><span class="p">;</span><span class="w"> </span><span class="k">font-size</span><span class="p">:</span><span class="mi">300</span><span class="kt">%</span><span class="p">;</span><span class="k">text-align</span><span class="p">:</span><span class="kc">center</span><span class="p">;}</span><span class="w"></span>
-<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">        </span><span class="nt">p</span><span class="w"> </span><span class="p">{</span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">        </span><span class="o">&lt;!</span><span class="nt">--</span><span class="w"> </span><span class="nt">premiere</span><span class="w"> </span><span class="nt">classe</span><span class="w"> </span><span class="nt">--</span><span class="o">&gt;</span><span class="w"></span>
-<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">        </span><span class="p">.</span><span class="nc">choix1</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">        </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="nb">linear-gradient</span><span class="p">(</span><span class="kc">to</span><span class="w"> </span><span class="kc">right</span><span class="p">,</span><span class="mh">#ffbe02</span><span class="n">a1</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="p">,</span><span class="mh">#fd606a</span><span class="n">ba</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">        </span><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="w">        </span><span class="o">&lt;!</span><span class="nt">--</span><span class="w"> </span><span class="nt">deuxieme</span><span class="w"> </span><span class="nt">classe</span><span class="o">:</span><span class="w"> </span><span class="nt">inversion</span><span class="w"> </span><span class="nt">du</span><span class="w"> </span><span class="nt">sens</span><span class="w"> </span><span class="nt">de</span><span class="w"> </span><span class="nt">degrade</span><span class="w"> </span><span class="nt">--</span><span class="o">&gt;</span><span class="w"></span>
-<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="w">        </span><span class="p">.</span><span class="nc">choix2</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="w">        </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="nb">linear-gradient</span><span class="p">(</span><span class="kc">to</span><span class="w"> </span><span class="kc">left</span><span class="p">,</span><span class="mh">#ffbe02</span><span class="n">a1</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="p">,</span><span class="mh">#fd606a</span><span class="n">ba</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="w">        </span><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="w">        </span><span class="nt">table</span><span class="w"> </span><span class="p">{</span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="n">arial</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span><span class="w">  </span><span class="k">border-collapse</span><span class="p">:</span><span class="w"> </span><span class="kc">collapse</span><span class="p">;</span><span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
-<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="w">        </span><span class="nt">tr</span><span class="w"> </span><span class="p">{</span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#d80d0d</span><span class="p">;</span><span class="w"> </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">left</span><span class="p">;</span><span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="kt">px</span><span class="p">;</span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#dddddd</span><span class="p">;}</span><span class="w"></span>
-<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
-<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a><span class="p">&lt;</span><span class="nt">body</span> <span class="p">&gt;</span>
-<a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a><span class="p">&lt;</span><span class="nt">h1</span>  <span class="p">&gt;</span>Cool! mon premier titre<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-<a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a><span class="cm">&lt;!--tag du premier paragraphe--&gt;</span>
-<a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a><span class="p">&lt;</span><span class="nt">p</span> <span class="na">class </span><span class="o">=</span> <span class="s">&quot;choix1&quot;</span> <span class="p">&gt;</span>Il s&#39;agit ici d&#39;un paragraphe( balises p). <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span> Il faut savoir que les balises ont par défauts des attributs (qu&#39;on peut changer ensuite...). <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
-<a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a>Par exemple, une balise H1 propose un titre plus grand qu&#39;une balise H2 ou H3....<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>C&#39;est mon deuxième titre<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-<a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a><span class="cm">&lt;!-- tag du deuxième paragraphe --&gt;</span>
-<a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a><span class="p">&lt;</span><span class="nt">p</span> <span class="na">class </span><span class="o">=</span> <span class="s">&quot;choix2&quot;</span> <span class="p">&gt;</span>Remarquez que le titre H2 est plus petit que celui de H1<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a><span class="p">&lt;</span><span class="nt">table</span> <span class="p">&gt;</span>
-<a id="__codelineno-12-30" name="__codelineno-12-30" href="#__codelineno-12-30"></a>    <span class="p">&lt;</span><span class="nt">tr</span> <span class="p">&gt;</span>
-<a id="__codelineno-12-31" name="__codelineno-12-31" href="#__codelineno-12-31"></a>        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Company<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
-<a id="__codelineno-12-32" name="__codelineno-12-32" href="#__codelineno-12-32"></a>        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Contact<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
-<a id="__codelineno-12-33" name="__codelineno-12-33" href="#__codelineno-12-33"></a>        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Country<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
-<a id="__codelineno-12-34" name="__codelineno-12-34" href="#__codelineno-12-34"></a>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a id="__codelineno-12-35" name="__codelineno-12-35" href="#__codelineno-12-35"></a>    <span class="p">&lt;</span><span class="nt">tr</span> <span class="p">&gt;</span>
-<a id="__codelineno-12-36" name="__codelineno-12-36" href="#__codelineno-12-36"></a>        <span class="p">&lt;</span><span class="nt">td</span> <span class="p">&gt;</span>Alfreds Futterkiste<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-12-37" name="__codelineno-12-37" href="#__codelineno-12-37"></a>        <span class="p">&lt;</span><span class="nt">td</span> <span class="p">&gt;</span>Maria Anders<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-12-38" name="__codelineno-12-38" href="#__codelineno-12-38"></a>        <span class="p">&lt;</span><span class="nt">td</span> <span class="p">&gt;</span>Germany<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-12-39" name="__codelineno-12-39" href="#__codelineno-12-39"></a>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a id="__codelineno-12-40" name="__codelineno-12-40" href="#__codelineno-12-40"></a>    <span class="p">&lt;</span><span class="nt">tr</span> <span class="p">&gt;</span>
-<a id="__codelineno-12-41" name="__codelineno-12-41" href="#__codelineno-12-41"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Centro comercial Moctezuma<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-12-42" name="__codelineno-12-42" href="#__codelineno-12-42"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Francisco Chang<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-12-43" name="__codelineno-12-43" href="#__codelineno-12-43"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Mexico<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-12-44" name="__codelineno-12-44" href="#__codelineno-12-44"></a>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a id="__codelineno-12-45" name="__codelineno-12-45" href="#__codelineno-12-45"></a>    <span class="p">&lt;</span><span class="nt">tr</span> <span class="p">&gt;</span>
-<a id="__codelineno-12-46" name="__codelineno-12-46" href="#__codelineno-12-46"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Ernst Handel<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-12-47" name="__codelineno-12-47" href="#__codelineno-12-47"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Roland Mendel<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-12-48" name="__codelineno-12-48" href="#__codelineno-12-48"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Austria<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-12-49" name="__codelineno-12-49" href="#__codelineno-12-49"></a>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a id="__codelineno-12-50" name="__codelineno-12-50" href="#__codelineno-12-50"></a>    <span class="p">&lt;</span><span class="nt">tr</span> <span class="p">&gt;</span>
-<a id="__codelineno-12-51" name="__codelineno-12-51" href="#__codelineno-12-51"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Island Trading<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-12-52" name="__codelineno-12-52" href="#__codelineno-12-52"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Helen Bennett<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-12-53" name="__codelineno-12-53" href="#__codelineno-12-53"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>UK<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-12-54" name="__codelineno-12-54" href="#__codelineno-12-54"></a>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a id="__codelineno-12-55" name="__codelineno-12-55" href="#__codelineno-12-55"></a>    <span class="p">&lt;</span><span class="nt">tr</span> <span class="p">&gt;</span>
-<a id="__codelineno-12-56" name="__codelineno-12-56" href="#__codelineno-12-56"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Laughing Bacchus Winecellars<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-12-57" name="__codelineno-12-57" href="#__codelineno-12-57"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Yoshi Tannamuri<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-12-58" name="__codelineno-12-58" href="#__codelineno-12-58"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Canada<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-12-59" name="__codelineno-12-59" href="#__codelineno-12-59"></a>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a id="__codelineno-12-60" name="__codelineno-12-60" href="#__codelineno-12-60"></a>    <span class="p">&lt;</span><span class="nt">tr</span> <span class="p">&gt;</span>
-<a id="__codelineno-12-61" name="__codelineno-12-61" href="#__codelineno-12-61"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Magazzini Alimentari Riuniti<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-12-62" name="__codelineno-12-62" href="#__codelineno-12-62"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Giovanni Rovelli<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-12-63" name="__codelineno-12-63" href="#__codelineno-12-63"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Italy<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-12-64" name="__codelineno-12-64" href="#__codelineno-12-64"></a>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a id="__codelineno-12-65" name="__codelineno-12-65" href="#__codelineno-12-65"></a>    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
-<a id="__codelineno-12-66" name="__codelineno-12-66" href="#__codelineno-12-66"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-12-67" name="__codelineno-12-67" href="#__codelineno-12-67"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span> 
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-3" id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-4" id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Le titre de ma première page <span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-5" id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span><span class="w"></span>
+<a href="#__codelineno-12-6" id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="w">        </span><span class="nt">body</span><span class="w"> </span><span class="p">{</span><span class="k">background-color</span><span class="p">:</span><span class="kc">powderblue</span><span class="p">;}</span><span class="w"></span>
+<a href="#__codelineno-12-7" id="__codelineno-12-7" name="__codelineno-12-7"></a><span class="w">        </span><span class="nt">h1</span><span class="o">,</span><span class="nt">h2</span><span class="w"> </span><span class="p">{</span><span class="k">color</span><span class="p">:</span><span class="n">Tomato</span><span class="p">;</span><span class="w"> </span><span class="k">font-size</span><span class="p">:</span><span class="mi">300</span><span class="kt">%</span><span class="p">;</span><span class="k">text-align</span><span class="p">:</span><span class="kc">center</span><span class="p">;}</span><span class="w"></span>
+<a href="#__codelineno-12-8" id="__codelineno-12-8" name="__codelineno-12-8"></a><span class="w">        </span><span class="nt">p</span><span class="w"> </span><span class="p">{</span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<a href="#__codelineno-12-9" id="__codelineno-12-9" name="__codelineno-12-9"></a><span class="w">        </span><span class="o">&lt;!</span><span class="nt">--</span><span class="w"> </span><span class="nt">premiere</span><span class="w"> </span><span class="nt">classe</span><span class="w"> </span><span class="nt">--</span><span class="o">&gt;</span><span class="w"></span>
+<a href="#__codelineno-12-10" id="__codelineno-12-10" name="__codelineno-12-10"></a><span class="w">        </span><span class="p">.</span><span class="nc">choix1</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a href="#__codelineno-12-11" id="__codelineno-12-11" name="__codelineno-12-11"></a><span class="w">        </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="nb">linear-gradient</span><span class="p">(</span><span class="kc">to</span><span class="w"> </span><span class="kc">right</span><span class="p">,</span><span class="mh">#ffbe02</span><span class="n">a1</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="p">,</span><span class="mh">#fd606a</span><span class="n">ba</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">);</span><span class="w"></span>
+<a href="#__codelineno-12-12" id="__codelineno-12-12" name="__codelineno-12-12"></a><span class="w">        </span><span class="p">}</span><span class="w"></span>
+<a href="#__codelineno-12-13" id="__codelineno-12-13" name="__codelineno-12-13"></a><span class="w">        </span><span class="o">&lt;!</span><span class="nt">--</span><span class="w"> </span><span class="nt">deuxieme</span><span class="w"> </span><span class="nt">classe</span><span class="o">:</span><span class="w"> </span><span class="nt">inversion</span><span class="w"> </span><span class="nt">du</span><span class="w"> </span><span class="nt">sens</span><span class="w"> </span><span class="nt">de</span><span class="w"> </span><span class="nt">degrade</span><span class="w"> </span><span class="nt">--</span><span class="o">&gt;</span><span class="w"></span>
+<a href="#__codelineno-12-14" id="__codelineno-12-14" name="__codelineno-12-14"></a><span class="w">        </span><span class="p">.</span><span class="nc">choix2</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a href="#__codelineno-12-15" id="__codelineno-12-15" name="__codelineno-12-15"></a><span class="w">        </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="nb">linear-gradient</span><span class="p">(</span><span class="kc">to</span><span class="w"> </span><span class="kc">left</span><span class="p">,</span><span class="mh">#ffbe02</span><span class="n">a1</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="p">,</span><span class="mh">#fd606a</span><span class="n">ba</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">);</span><span class="w"></span>
+<a href="#__codelineno-12-16" id="__codelineno-12-16" name="__codelineno-12-16"></a><span class="w">        </span><span class="p">}</span><span class="w"></span>
+<a href="#__codelineno-12-17" id="__codelineno-12-17" name="__codelineno-12-17"></a><span class="w">        </span><span class="nt">table</span><span class="w"> </span><span class="p">{</span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="n">arial</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span><span class="w">  </span><span class="k">border-collapse</span><span class="p">:</span><span class="w"> </span><span class="kc">collapse</span><span class="p">;</span><span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
+<a href="#__codelineno-12-18" id="__codelineno-12-18" name="__codelineno-12-18"></a><span class="w">        </span><span class="nt">tr</span><span class="w"> </span><span class="p">{</span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#d80d0d</span><span class="p">;</span><span class="w"> </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">left</span><span class="p">;</span><span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="kt">px</span><span class="p">;</span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#dddddd</span><span class="p">;}</span><span class="w"></span>
+<a href="#__codelineno-12-19" id="__codelineno-12-19" name="__codelineno-12-19"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-20" id="__codelineno-12-20" name="__codelineno-12-20"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-21" id="__codelineno-12-21" name="__codelineno-12-21"></a><span class="p">&lt;</span><span class="nt">body</span> <span class="p">&gt;</span>
+<a href="#__codelineno-12-22" id="__codelineno-12-22" name="__codelineno-12-22"></a><span class="p">&lt;</span><span class="nt">h1</span>  <span class="p">&gt;</span>Cool! mon premier titre<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-23" id="__codelineno-12-23" name="__codelineno-12-23"></a><span class="cm">&lt;!--tag du premier paragraphe--&gt;</span>
+<a href="#__codelineno-12-24" id="__codelineno-12-24" name="__codelineno-12-24"></a><span class="p">&lt;</span><span class="nt">p</span> <span class="na">class </span><span class="o">=</span> <span class="s">"choix1"</span> <span class="p">&gt;</span>Il s'agit ici d'un paragraphe( balises p). <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span> Il faut savoir que les balises ont par défauts des attributs (qu'on peut changer ensuite...). <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-25" id="__codelineno-12-25" name="__codelineno-12-25"></a>Par exemple, une balise H1 propose un titre plus grand qu'une balise H2 ou H3....<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-26" id="__codelineno-12-26" name="__codelineno-12-26"></a><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>C'est mon deuxième titre<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-27" id="__codelineno-12-27" name="__codelineno-12-27"></a><span class="cm">&lt;!-- tag du deuxième paragraphe --&gt;</span>
+<a href="#__codelineno-12-28" id="__codelineno-12-28" name="__codelineno-12-28"></a><span class="p">&lt;</span><span class="nt">p</span> <span class="na">class </span><span class="o">=</span> <span class="s">"choix2"</span> <span class="p">&gt;</span>Remarquez que le titre H2 est plus petit que celui de H1<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-29" id="__codelineno-12-29" name="__codelineno-12-29"></a><span class="p">&lt;</span><span class="nt">table</span> <span class="p">&gt;</span>
+<a href="#__codelineno-12-30" id="__codelineno-12-30" name="__codelineno-12-30"></a>    <span class="p">&lt;</span><span class="nt">tr</span> <span class="p">&gt;</span>
+<a href="#__codelineno-12-31" id="__codelineno-12-31" name="__codelineno-12-31"></a>        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Company<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-32" id="__codelineno-12-32" name="__codelineno-12-32"></a>        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Contact<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-33" id="__codelineno-12-33" name="__codelineno-12-33"></a>        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Country<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-34" id="__codelineno-12-34" name="__codelineno-12-34"></a>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-35" id="__codelineno-12-35" name="__codelineno-12-35"></a>    <span class="p">&lt;</span><span class="nt">tr</span> <span class="p">&gt;</span>
+<a href="#__codelineno-12-36" id="__codelineno-12-36" name="__codelineno-12-36"></a>        <span class="p">&lt;</span><span class="nt">td</span> <span class="p">&gt;</span>Alfreds Futterkiste<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-37" id="__codelineno-12-37" name="__codelineno-12-37"></a>        <span class="p">&lt;</span><span class="nt">td</span> <span class="p">&gt;</span>Maria Anders<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-38" id="__codelineno-12-38" name="__codelineno-12-38"></a>        <span class="p">&lt;</span><span class="nt">td</span> <span class="p">&gt;</span>Germany<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-39" id="__codelineno-12-39" name="__codelineno-12-39"></a>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-40" id="__codelineno-12-40" name="__codelineno-12-40"></a>    <span class="p">&lt;</span><span class="nt">tr</span> <span class="p">&gt;</span>
+<a href="#__codelineno-12-41" id="__codelineno-12-41" name="__codelineno-12-41"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Centro comercial Moctezuma<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-42" id="__codelineno-12-42" name="__codelineno-12-42"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Francisco Chang<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-43" id="__codelineno-12-43" name="__codelineno-12-43"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Mexico<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-44" id="__codelineno-12-44" name="__codelineno-12-44"></a>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-45" id="__codelineno-12-45" name="__codelineno-12-45"></a>    <span class="p">&lt;</span><span class="nt">tr</span> <span class="p">&gt;</span>
+<a href="#__codelineno-12-46" id="__codelineno-12-46" name="__codelineno-12-46"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Ernst Handel<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-47" id="__codelineno-12-47" name="__codelineno-12-47"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Roland Mendel<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-48" id="__codelineno-12-48" name="__codelineno-12-48"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Austria<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-49" id="__codelineno-12-49" name="__codelineno-12-49"></a>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-50" id="__codelineno-12-50" name="__codelineno-12-50"></a>    <span class="p">&lt;</span><span class="nt">tr</span> <span class="p">&gt;</span>
+<a href="#__codelineno-12-51" id="__codelineno-12-51" name="__codelineno-12-51"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Island Trading<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-52" id="__codelineno-12-52" name="__codelineno-12-52"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Helen Bennett<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-53" id="__codelineno-12-53" name="__codelineno-12-53"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>UK<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-54" id="__codelineno-12-54" name="__codelineno-12-54"></a>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-55" id="__codelineno-12-55" name="__codelineno-12-55"></a>    <span class="p">&lt;</span><span class="nt">tr</span> <span class="p">&gt;</span>
+<a href="#__codelineno-12-56" id="__codelineno-12-56" name="__codelineno-12-56"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Laughing Bacchus Winecellars<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-57" id="__codelineno-12-57" name="__codelineno-12-57"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Yoshi Tannamuri<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-58" id="__codelineno-12-58" name="__codelineno-12-58"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Canada<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-59" id="__codelineno-12-59" name="__codelineno-12-59"></a>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-60" id="__codelineno-12-60" name="__codelineno-12-60"></a>    <span class="p">&lt;</span><span class="nt">tr</span> <span class="p">&gt;</span>
+<a href="#__codelineno-12-61" id="__codelineno-12-61" name="__codelineno-12-61"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Magazzini Alimentari Riuniti<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-62" id="__codelineno-12-62" name="__codelineno-12-62"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Giovanni Rovelli<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-63" id="__codelineno-12-63" name="__codelineno-12-63"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Italy<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-64" id="__codelineno-12-64" name="__codelineno-12-64"></a>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-65" id="__codelineno-12-65" name="__codelineno-12-65"></a>    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-66" id="__codelineno-12-66" name="__codelineno-12-66"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<a href="#__codelineno-12-67" id="__codelineno-12-67" name="__codelineno-12-67"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span> 
 </code></pre></div>
 <p>Ainsi, les paragraphes ont-ils:</p>
 <ul>
@@ -1395,21 +782,21 @@ Le lien se trouve sur la phrase <em>le lycée</em>: en cliquant dessus vous ête
 <p>On va tagger la balise <code>&lt;h2&gt;</code> par un idendifiant. Pour cela suivre les instructions suivantes:</p>
 <ol>
 <li>Ajouter entre les balises <code>&lt;style&gt;</code>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>#montitre {
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>background-color: lightblue;
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>color: black;
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>padding: 40px;
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>text-align: center;
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>}
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a>#montitre {
+<a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a>background-color: lightblue;
+<a href="#__codelineno-13-3" id="__codelineno-13-3" name="__codelineno-13-3"></a>color: black;
+<a href="#__codelineno-13-4" id="__codelineno-13-4" name="__codelineno-13-4"></a>padding: 40px;
+<a href="#__codelineno-13-5" id="__codelineno-13-5" name="__codelineno-13-5"></a>text-align: center;
+<a href="#__codelineno-13-6" id="__codelineno-13-6" name="__codelineno-13-6"></a>}
 </code></pre></div></li>
 <li>Ajouter à la balise <code>&lt;h2&gt;</code> l'identifiant <code>id = "montitre"</code>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">&lt;</span><span class="nt">h2</span> <span class="na">id </span><span class="o">=</span> <span class="s">&quot;montitre&quot;</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="p">&lt;</span><span class="nt">h2</span> <span class="na">id </span><span class="o">=</span> <span class="s">"montitre"</span><span class="p">&gt;</span>
 </code></pre></div></li>
 <li>Proposez une nouvelle couleur pour cet identifiant.</li>
 </ol>
 </div>
 <p>C'est cool, non?</p>
-<h2 id="en-mode-professionnel">En mode professionnel!<a class="headerlink" href="#en-mode-professionnel" title="Permanent link">&para;</a></h2>
+<h2 id="en-mode-professionnel"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.7</span> En mode professionnel!<a class="headerlink" href="#en-mode-professionnel" title="Permanent link">¶</a></h2>
 <p>Jusqu'à présent, les styles de toutes les balises sont regroupés entre les balises éponymes. En programmation comme en langage de description, on préfère séparer le contenu(le fond!) de son apparence(la forme!). Aussi va t-on créer un fichier particulier, appelé <strong>feuille de style</strong> qui permettra de formater le contenu html. Ce fichier porte l'extension <strong>.css</strong> et regroupe tous les styles.</p>
 <div class="admonition note">
 <p class="admonition-title">À faire: créer une feuille de style</p>
@@ -1431,24 +818,24 @@ Le lien se trouve sur la phrase <em>le lycée</em>: en cliquant dessus vous ête
 <li>Enregistrez et vérifier que le chemin relatif ci-dessus est correct avant d'appeler votre professeur!</li>
 </ol>
 </div>
-<h1 id="des-trucs-originaux-maintenant">Des trucs originaux maintenant!<a class="headerlink" href="#des-trucs-originaux-maintenant" title="Permanent link">&para;</a></h1>
+<h1 id="des-trucs-originaux-maintenant"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.</span> Des trucs originaux maintenant!<a class="headerlink" href="#des-trucs-originaux-maintenant" title="Permanent link">¶</a></h1>
 <p>Quelques manipulations supplémentaires qui vous donneront une petite idée des possibilités offertes par le HTML, le CSS ou le Javascript...</p>
 <p>On peut par ce biais insérer des cartes OSM même si des problèmes de sécurité peuvent surgir...</p>
-<h2 id="du-code-pour-dynamiser-tout-cela">Du code pour dynamiser tout cela...<a class="headerlink" href="#du-code-pour-dynamiser-tout-cela" title="Permanent link">&para;</a></h2>
+<h2 id="du-code-pour-dynamiser-tout-cela"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.1</span> Du code pour dynamiser tout cela...<a class="headerlink" href="#du-code-pour-dynamiser-tout-cela" title="Permanent link">¶</a></h2>
 <p>Le code HTML formaté par le CSS est <strong>statique</strong>: il n'y a pas d'événements qui surviennent quelque soit l'action de l'utilisateur. On donne ici du code <code>javascript</code> qui va donner du <strong>dynamisme</strong> à notre code. Il s'agit ici d'exemples et nous aurons bientôt l'occasion d'étudier plus précisément ce langage de programmation!</p>
 <div class="admonition note">
 <p class="admonition-title">À faire: insertion de code javascript</p>
 <ol>
 <li>Insérer le code suivant en dessous du premier titre  <code>&lt;h1&gt;</code>.</li>
 <li>Enregistrez puis cliquez sur le bouton: la date du jour doit apparaître.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;document.getElementById(&#39;tag_para&#39;).innerHTML = Date()&quot;</span><span class="p">&gt;</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>Tu veux connaître l&#39;heure?<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;tag_para&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">"button"</span> <span class="na">onclick</span><span class="o">=</span><span class="s">"document.getElementById('tag_para').innerHTML = Date()"</span><span class="p">&gt;</span>
+<a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a>Tu veux connaître l'heure?<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<a href="#__codelineno-15-3" id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">"tag_para"</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </code></pre></div></li>
 <li>À quoi sert la méthode <code>getElementById</code></li>
 </ol>
 </div>
-<h2 id="inserer-une-video-ou-de-laudio">Insérer une vidéo ou de l'audio<a class="headerlink" href="#inserer-une-video-ou-de-laudio" title="Permanent link">&para;</a></h2>
+<h2 id="inserer-une-video-ou-de-laudio"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2</span> Insérer une vidéo ou de l'audio<a class="headerlink" href="#inserer-une-video-ou-de-laudio" title="Permanent link">¶</a></h2>
 <p>Beaucoup de sites proposent des vidéos à lire sur leur page d'accueil. À nous!</p>
 <div class="admonition note">
 <p class="admonition-title">À faire: insertion de vidéo</p>
@@ -1456,44 +843,44 @@ Le lien se trouve sur la phrase <em>le lycée</em>: en cliquant dessus vous ête
 <li>Récupérer la vidéo <a href="img/fleur.mp4">ici</a></li>
 <li>Créer un dossier video(sans accent 😉 ) à un endroit judicieux...</li>
 <li>Insérer la balise:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">&lt;</span><span class="nt">video</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;400&quot;</span> <span class="na">controls</span><span class="p">&gt;</span>
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;video/fleur.mp4&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;video/mp4&quot;</span><span class="p">&gt;</span>
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>Your browser does not support HTML video.
-<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="p">&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="p">&lt;</span><span class="nt">video</span> <span class="na">width</span><span class="o">=</span><span class="s">"400"</span> <span class="na">controls</span><span class="p">&gt;</span>
+<a href="#__codelineno-16-2" id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">"video/fleur.mp4"</span> <span class="na">type</span><span class="o">=</span><span class="s">"video/mp4"</span><span class="p">&gt;</span>
+<a href="#__codelineno-16-3" id="__codelineno-16-3" name="__codelineno-16-3"></a>Your browser does not support HTML video.
+<a href="#__codelineno-16-4" id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="p">&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
 </code></pre></div></li>
 </ol>
 </div>
-<h2 id="tes-ou">T'es où?<a class="headerlink" href="#tes-ou" title="Permanent link">&para;</a></h2>
+<h2 id="tes-ou"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.3</span> T'es où?<a class="headerlink" href="#tes-ou" title="Permanent link">¶</a></h2>
 <p>La géolocalisation est devenue une habitude pour les sites commarciaux. Intégrée au code HTML par des scripts <code>javascript</code>, le principe est simple.</p>
 <div class="admonition note">
 <p class="admonition-title">À faire: insertion de géolocalisation</p>
 <ol>
 <li>Insérer la balise dans le corps du document HTML:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Obtenir sa position par sa latitude et longitude<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="p">&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;getLocation()&quot;</span><span class="p">&gt;</span>Geolocalisez-moi!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;test&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Obtenir sa position par sa latitude et longitude<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a href="#__codelineno-17-2" id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="p">&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">"getLocation()"</span><span class="p">&gt;</span>Geolocalisez-moi!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<a href="#__codelineno-17-3" id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">"test"</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </code></pre></div></li>
 <li>Insérer les balises suivantes dans les balises d'entête <code>&lt;head&gt;</code>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="w"></span>
-<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="kd">var</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;test&quot;</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
-<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="kd">function</span><span class="w"> </span><span class="nx">getLocation</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">geolocation</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">    </span><span class="nx">navigator</span><span class="p">.</span><span class="nx">geolocation</span><span class="p">.</span><span class="nx">getCurrentPosition</span><span class="p">(</span><span class="nx">showPosition</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
-<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">    </span><span class="nx">x</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Geolocation is not supported by this browser.&quot;</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>
-<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="kd">function</span><span class="w"> </span><span class="nx">showPosition</span><span class="p">(</span><span class="nx">position</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="nx">x</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Latitude: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">position</span><span class="p">.</span><span class="nx">coords</span><span class="p">.</span><span class="nx">latitude</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
-<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="s2">&quot;&lt;br&gt;Longitude: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">position</span><span class="p">.</span><span class="nx">coords</span><span class="p">.</span><span class="nx">longitude</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="w"></span>
+<a href="#__codelineno-18-2" id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="kd">var</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"test"</span><span class="p">);</span><span class="w"></span>
+<a href="#__codelineno-18-3" id="__codelineno-18-3" name="__codelineno-18-3"></a>
+<a href="#__codelineno-18-4" id="__codelineno-18-4" name="__codelineno-18-4"></a><span class="kd">function</span><span class="w"> </span><span class="nx">getLocation</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a href="#__codelineno-18-5" id="__codelineno-18-5" name="__codelineno-18-5"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">geolocation</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a href="#__codelineno-18-6" id="__codelineno-18-6" name="__codelineno-18-6"></a><span class="w">    </span><span class="nx">navigator</span><span class="p">.</span><span class="nx">geolocation</span><span class="p">.</span><span class="nx">getCurrentPosition</span><span class="p">(</span><span class="nx">showPosition</span><span class="p">);</span><span class="w"></span>
+<a href="#__codelineno-18-7" id="__codelineno-18-7" name="__codelineno-18-7"></a><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<a href="#__codelineno-18-8" id="__codelineno-18-8" name="__codelineno-18-8"></a><span class="w">    </span><span class="nx">x</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Geolocation is not supported by this browser."</span><span class="p">;</span><span class="w"></span>
+<a href="#__codelineno-18-9" id="__codelineno-18-9" name="__codelineno-18-9"></a><span class="p">}</span><span class="w"></span>
+<a href="#__codelineno-18-10" id="__codelineno-18-10" name="__codelineno-18-10"></a><span class="p">}</span><span class="w"></span>
+<a href="#__codelineno-18-11" id="__codelineno-18-11" name="__codelineno-18-11"></a>
+<a href="#__codelineno-18-12" id="__codelineno-18-12" name="__codelineno-18-12"></a><span class="kd">function</span><span class="w"> </span><span class="nx">showPosition</span><span class="p">(</span><span class="nx">position</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a href="#__codelineno-18-13" id="__codelineno-18-13" name="__codelineno-18-13"></a><span class="nx">x</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Latitude: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">position</span><span class="p">.</span><span class="nx">coords</span><span class="p">.</span><span class="nx">latitude</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
+<a href="#__codelineno-18-14" id="__codelineno-18-14" name="__codelineno-18-14"></a><span class="s2">"&lt;br&gt;Longitude: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">position</span><span class="p">.</span><span class="nx">coords</span><span class="p">.</span><span class="nx">longitude</span><span class="p">;</span><span class="w"></span>
+<a href="#__codelineno-18-15" id="__codelineno-18-15" name="__codelineno-18-15"></a><span class="p">}</span><span class="w"></span>
+<a href="#__codelineno-18-16" id="__codelineno-18-16" name="__codelineno-18-16"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </code></pre></div></li>
 </ol>
 </div>
-<h2 id="prenons-de-laltitude">Prenons de l'altitude:<a class="headerlink" href="#prenons-de-laltitude" title="Permanent link">&para;</a></h2>
+<h2 id="prenons-de-laltitude"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.4</span> Prenons de l'altitude:<a class="headerlink" href="#prenons-de-laltitude" title="Permanent link">¶</a></h2>
 <p>La géolocalisation vous permet de vous situer sur une carte. Je vous propose ici une application amusante de ces dernières techniques. Nous utilisons des cartes gratuites open source <a href="https://leafletjs.com/">leaflet</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">À faire: récupérer du code</p>
@@ -1502,7 +889,7 @@ Le lien se trouve sur la phrase <em>le lycée</em>: en cliquant dessus vous ête
 <li>Ouvrez-le en lecture puis en écriture en essayant d'analyser le code utilisé.</li>
 </ol>
 </div>
-<h2 id="cherchez-son-style">Cherchez son style!<a class="headerlink" href="#cherchez-son-style" title="Permanent link">&para;</a></h2>
+<h2 id="cherchez-son-style"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.5</span> Cherchez son style!<a class="headerlink" href="#cherchez-son-style" title="Permanent link">¶</a></h2>
 <p>Les <strong>feuilles de style</strong> façonnent votre site web. Vous trouverez de nombreux exemples sur le WEB. Vous trouverez <a href="https://www.w3schools.com/w3css/default.asp">ici</a> les types développés par le W3C.</p>
 <div class="admonition note">
 <p class="admonition-title">À faire: récupérer du code et le personnaliser</p>
@@ -1511,114 +898,69 @@ Le lien se trouve sur la phrase <em>le lycée</em>: en cliquant dessus vous ête
 <li>Modifier le code pour faire quelque chose qui vous ressemble.</li>
 </ol>
 </div>
-
-
-
-  
-
-
-
-                
-<script src="../pyodide-mkdocs/ide.js"></script> 
+<script src="../pyodide-mkdocs/ide.js"></script>
 <!-- Massilia javascripts -->
-<script src="../js/massilia.js" defer></script>
-
-              </article>
-            </div>
-          
-          
-        </div>
-        
-          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+<massilia data=""></massilia>
+</article>
+</div>
+</div>
+<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
             Retour en haut de la page
           </a>
-        
-      </main>
-      
-        <footer class="md-footer">
-  
-    
-      
-    
-    <nav class="md-footer__inner md-grid" aria-label="Pied de page" hidden>
-      
-        
-        <a href="index_tpbash.html" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Passez la commande !" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
+</main>
+<footer class="md-footer">
+<nav aria-label="Pied de page" class="md-footer__inner md-grid" hidden="">
+<a aria-label="Précédent: Passez la commande !" class="md-footer__link md-footer__link--prev" href="index_tpbash.html" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
                 Précédent
               </span>
               Passez la commande !
             </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="jscript.html" class="md-footer__link md-footer__link--next" aria-label="Suivant: Dynamisons le Web" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
+</div>
+</a>
+<a aria-label="Suivant: Dynamisons le Web" class="md-footer__link md-footer__link--next" href="jscript.html" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
                 Suivant
               </span>
               Dynamisons le Web
             </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
-  
-  
 </div>
-      
-        <div class="md-social">
-  
-    
-    
-    <a href="mailto:marc.turro@ac-bordeaux.fr" target="_blank" rel="noopener" title="" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6l-126.3-52.5-40.1 74.5c-5.2 9.7-16.3 14.6-27 11.9S192 499 192 488v-96c0-5.3 1.8-10.5 5.1-14.7l165.3-212.6c2.5-7.1-6.5-14.3-13-8.4l-179 161.9-32 28.9c-9.2 8.3-22.3 10.6-33.8 5.8l-85-35.4C8.4 312.8.8 302.2.1 290s5.5-23.7 16.1-29.8l448-256c10.7-6.1 23.9-5.5 34 1.4z"/></svg>
-    </a>
-  
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
 </div>
-      
-    </div>
-  </div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+</div>
+<div class="md-social">
+<a class="md-social__link" href="mailto:marc.turro@ac-bordeaux.fr" rel="noopener" target="_blank" title="">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6l-126.3-52.5-40.1 74.5c-5.2 9.7-16.3 14.6-27 11.9S192 499 192 488v-96c0-5.3 1.8-10.5 5.1-14.7l165.3-212.6c2.5-7.1-6.5-14.3-13-8.4l-179 161.9-32 28.9c-9.2 8.3-22.3 10.6-33.8 5.8l-85-35.4C8.4 312.8.8 302.2.1 290s5.5-23.7 16.1-29.8l448-256c10.7-6.1 23.9-5.5 34 1.4z"></path></svg>
+</a>
+</div>
+</div>
+</div>
 </footer>
-      
-    </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
-    </div>
-    
-    <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "toc.integrate", "navigation.top"], "search": "../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
-    
-    
-      <script src="../assets/javascripts/bundle.078830c0.min.js"></script>
-      
-        <script src="../xtra/javascripts/mathjax-config.js"></script>
-      
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-      
-        <script src="../xtra/javascripts/interpreter.js"></script>
-      
-        <script src="../xtra/javascripts/config.js"></script>
-      
-        <script src="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/javascripts/massilia-admonitions.js"></script>
-      
-    
-  </body>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "toc.integrate", "navigation.top"], "search": "../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
+<script src="../assets/javascripts/bundle.078830c0.min.js"></script>
+<script src="../xtra/javascripts/mathjax-config.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="../xtra/javascripts/interpreter.js"></script>
+<script src="../xtra/javascripts/config.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/javascripts/massilia-admonitions.js"></script>
+</body>
 </html>

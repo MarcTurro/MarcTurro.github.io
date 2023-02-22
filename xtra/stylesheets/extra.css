@@ -20,7 +20,7 @@ h2
 	border : 1px solid #4051b5;
 	
     margin : 0 0 10px 30px; /* haut, droite, bas, gauche (respectivement) */
-    font : 120% georgia, palatino, serif;
+    font : 130% georgia, palatino, serif;
     font-style : italic;
 }
 
@@ -28,17 +28,31 @@ h3
 {
     text-align: center;
 	margin : 0 0 10px 30px; /* haut, droite, bas, gauche (respectivement) */
-    font : 130% georgia, palatino, serif;
+    font : 120% georgia, palatino, serif;
     font-style : italic;
 }
 
 table {
-border: medium solid #4051b5;
+        margin: auto;
+        border: medium solid #6495ed;
+		border-collapse: collapse;
+		width: 80%;
+		}
 
-}
-
+        
+        
 td, th {
-border: thin solid #6495ed;
-border-collapse: collapse;
-width: 25%;
+        border: thin solid #6495ed;
+        border-collapse: collapse;
+        width: 25%;
+        }
+
+
+
+
+
+/* Extra CSS for mkdocs-enumerate-headings-plugin */ 
+.enumerate-headings-plugin {
+  font : 120% georgia, palatino, serif;
+  filter: opacity(5%);
 }
