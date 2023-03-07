@@ -31,7 +31,7 @@
 <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/css/jquery.terminal.min.css" rel="stylesheet"/>
 <script src="../pyodide-mkdocs/interpreter.js"></script>
 <!-- Ajouter 17 february pour tables massilia-->
-<script defer="" src="../assets/javascripts/massilia.js"></script>
+<script defer="" src="../js/massilia.js"></script>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"IBM Plex Mono";--md-code-font:"Roboto Mono"}</style>
@@ -227,6 +227,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../prem/cours_de_reseaux.html">
         Réseaux informatiques
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../prem/traitement_donnees.html">
+        Traitement des données
       </a>
 </li>
 <li class="md-nav__item">
@@ -652,7 +657,7 @@ mais l’<strong>insertion</strong> est coûteuse et c’est le contraire pour l
 <h3 id="une-deuxieme-tentative"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.4</span> Une deuxième tentative!<a class="headerlink" href="#une-deuxieme-tentative" title="Permanent link">¶</a></h3>
 <p>Puisque nous créeons de nouveaux objets définis par leur propriété et leur méthode, la <strong>programmation orientée objet</strong> semble prendre toute sa place ici.  L'objet nécessaire à la construcion de telles listes est définie par la classe <code>Cellule</code> proposée ci-dessous:</p>
 <p><div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="sd">"""</span>
-<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="sd">Implantation de la classe “Cellule”</span>
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="sd">Implémentation de la classe “Cellule”</span>
 <a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="sd">Elle sera utilisée pour les listes, les piles et les files.</span>
 <a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="sd">"""</span>
 <a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="k">class</span> <span class="nc">Cellule</span><span class="p">()</span> <span class="p">:</span>

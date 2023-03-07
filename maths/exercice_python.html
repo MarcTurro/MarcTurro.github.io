@@ -31,7 +31,7 @@
 <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/css/jquery.terminal.min.css" rel="stylesheet"/>
 <script src="../pyodide-mkdocs/interpreter.js"></script>
 <!-- Ajouter 17 february pour tables massilia-->
-<script defer="" src="../assets/javascripts/massilia.js"></script>
+<script defer="" src="../js/massilia.js"></script>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"IBM Plex Mono";--md-code-font:"Roboto Mono"}</style>
@@ -224,6 +224,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../prem/cours_de_reseaux.html">
         Réseaux informatiques
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../prem/traitement_donnees.html">
+        Traitement des données
       </a>
 </li>
 <li class="md-nav__item">
@@ -432,13 +437,13 @@
 <a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="o">&gt;&gt;&gt;</span><span class="n">ma_liste2</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span><span class="c1"># la somme vaut 0+1+2+...+98+100=5050</span>
 </code></pre></div></li>
 <li>Construire un programme qui calcule la somme des nombres pairs d'une liste d'entiers. Par exemple:
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="o">&gt;&gt;&gt;</span><span class="n">ma_liste1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span><span class="c1"># la somme vaut 6</span>
-<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="o">&gt;&gt;&gt;</span><span class="n">ma_liste2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span><span class="c1"># la somme vaut 2+4+6+8=20</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="o">&gt;&gt;&gt;</span><span class="n">ma_liste1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span><span class="c1"># la somme vaut 7</span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="o">&gt;&gt;&gt;</span><span class="n">ma_liste2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span><span class="c1"># la somme vaut 1+3+5+7=16</span>
 </code></pre></div></li>
 </ol>
 </div>
 <div class="admonition note">
-<p class="admonition-title">À faire: Simuler le nacer d'un dé</p>
+<p class="admonition-title">À faire: Simuler le lancer d'un dé</p>
 <p>On souhaite simuler plusieurs lancers d'un même dé.</p>
 <ol>
 <li>Donner l'instruction qui permet d'affecter à une variable <code>n</code>, un entier saisi au clavier.</li>

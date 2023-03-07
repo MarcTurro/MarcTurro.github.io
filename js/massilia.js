@@ -3,8 +3,9 @@
 async function loadMassiliaModules() {
     // console.log("massilia-xtables PAGE LOADED");
     
-    await import('./massiliaAdmonitions.js');
+    
     await import('./massiliaImages.js');
+	await import('./massiliaAdmonitions.js');
     await import('./massiliaBadges.js');
     await import('./massiliaGraphviz.js');
     await import('./massiliaMermaid.js');
