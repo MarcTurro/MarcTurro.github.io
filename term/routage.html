@@ -640,6 +640,110 @@ En gris, le chemin RIP. En bleu, l'OSPF.
 <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="372" src="https://www.youtube.com/embed/rI-Rc7eF4iw" title="YouTube video player" width="790"></iframe>
 </p>
 <p>Cet algorithme, ici exécuté de manière manuelle, est bien sûr programmable. Et c'est donc grâce à lui que chaque routeur calcule la route la plus rapide pour acheminer les données qu'il reçoit.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Exercice d'application de l'algorithme de Dijkstra </p>
+<p>Donner le plus court chemin pour aller de E à F dans le graphe ci-dessous :
+<img alt="Graphe" class="center" src="img/graph.png" width="60%"/></p>
+<details class="tip">
+<summary>correction</summary>
+<table class="table">
+<thead>
+<tr>
+<th align="center">E</th>
+<th align="center">A</th>
+<th align="center">B</th>
+<th align="center">C</th>
+<th align="center">D</th>
+<th align="center">F</th>
+<th align="center">Choix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><strong>0</strong></td>
+<td align="center">--</td>
+<td align="center">--</td>
+<td align="center">--</td>
+<td align="center">--</td>
+<td align="center">--</td>
+<td align="center">E(0)</td>
+</tr>
+<tr>
+<td align="center">.</td>
+<td align="center">30vE</td>
+<td align="center">--</td>
+<td align="center">40vE</td>
+<td align="center"><strong>10vE</strong></td>
+<td align="center">--</td>
+<td align="center">D(10)</td>
+</tr>
+<tr>
+<td align="center">.</td>
+<td align="center"><strong>20vD</strong></td>
+<td align="center">--</td>
+<td align="center">40vE</td>
+<td align="center">.</td>
+<td align="center">80vD</td>
+<td align="center">A(20)</td>
+</tr>
+<tr>
+<td align="center">.</td>
+<td align="center">.</td>
+<td align="center">60vA</td>
+<td align="center"><strong>30vA</strong></td>
+<td align="center">.</td>
+<td align="center">80vD</td>
+<td align="center">C(30)</td>
+</tr>
+<tr>
+<td align="center">.</td>
+<td align="center">.</td>
+<td align="center"><strong>50vC</strong></td>
+<td align="center">.</td>
+<td align="center">.</td>
+<td align="center">80vD</td>
+<td align="center">B(50)</td>
+</tr>
+<tr>
+<td align="center">.</td>
+<td align="center">.</td>
+<td align="center">.</td>
+<td align="center">.</td>
+<td align="center">.</td>
+<td align="center"><strong>70vB</strong></td>
+<td align="center">F(70)</td>
+</tr>
+</tbody>
+</table>
+<p>Le meilleur trajet est donc E-D-A-C-B-F.<br/>
+<em>Attention ce trajet correspond à la colonne choix (dans l'ordre) mais c'est un hasard.</em></p>
+</details>
+</div>
+<h3 id="exercice"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2.4</span> Exercice<a class="headerlink" href="#exercice" title="Permanent link">¶</a></h3>
+<p><em>(extrait du sujet 0)</em></p>
+<p>On considère le réseau suivant :</p>
+<p><img alt="Réseau" class="center" src="img/ex3.png" width="40%"/></p>
+<p>On rappelle que le coût d’une liaison est donné par la formule suivante :</p>
+<div class="arithmatex">\[ \text{coût} = \frac{10^8}{d} \]</div>
+<p><strong>Question 1</strong></p>
+<ol>
+<li>Vérifier que le coût de la liaison entre les routeurs A et B est 0,01.</li>
+<li>La liaison entre le routeur B et D a un coût de 5. Quel est le débit de cette liaison ?</li>
+</ol>
+<p><strong>Question 2</strong></p>
+<p>Le routeur A doit transmettre un message au routeur G, en empruntant le chemin dont la somme des coûts sera la plus petite possible. Déterminer le chemin parcouru. On indiquera le raisonnement utilisé.</p>
+<details class="tip">
+<summary>Correction</summary>
+<p><strong>Q1</strong><br/>
+1. <span class="arithmatex">\(\text{coût} = \dfrac{10^8}{10 \times 10^9}= \dfrac{10^8}{10^{10}}= 10^{-2}=0,01\)</span><br/>
+2. <span class="arithmatex">\(5=\dfrac{10^8}{d}\)</span> donc <span class="arithmatex">\(d=\dfrac{10^8}{5}=20 \times 10^6\)</span> = 20 Mb/s</p>
+<p><strong>Q2</strong>
+Le graphe pondéré par les coûts est :
+<img alt="image" class="center" src="img/ex3_corr.png"/></p>
+<p>On peut y deviner le chemin de coût minimal entre A et G, qui est A-D-E-G (coût 1,011).<br/>
+Pour le justifier, on peut (non obligatoire) faire un algorithme de Dijkstra :
+<img alt="image" class="center" src="img/corr_tab.png"/> </p>
+</details>
 <script src="../pyodide-mkdocs/ide.js"></script>
 <!-- Massilia javascripts -->
 <massilia data=""></massilia>
