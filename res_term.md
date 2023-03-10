@@ -1,1 +1,0 @@
-#Ressources de la classe de Terminale
