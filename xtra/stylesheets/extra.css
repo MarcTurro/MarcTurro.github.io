@@ -16,35 +16,32 @@ h1
 
 h2
 {
-    text-align: center;
+    text-align: left;
 	border : 1px solid #4051b5;
-	
-    margin : 0 0 10px 30px; /* haut, droite, bas, gauche (respectivement) */
+	margin : 0 50px 10px 100px; /* haut, droite, bas, gauche (respectivement) */
     font : 130% georgia, palatino, serif;
-    font-style : italic;
+    font-style : normale;
 }
 
 h3
 {
-    text-align: center;
+    text-align: left;
 	margin : 0 0 10px 30px; /* haut, droite, bas, gauche (respectivement) */
     font : 120% georgia, palatino, serif;
-    font-style : italic;
+    font-style : oblique 40deg;
 }
 
 table {
         margin: auto;
-        border: medium solid #6495ed;
-		border-collapse: collapse;
+        
 		width: 80%;
 		}
 
         
         
 td, th {
-        border: thin solid #6495ed;
-        border-collapse: collapse;
-        width: 25%;
+        
+        
         }
 
 table.tabnsi {
