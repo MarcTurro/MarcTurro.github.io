@@ -1,4 +1,4 @@
-entete = "Pour comprendre, analyser et ensuite, utiliser la mÃ©thode split"
+entete = "Pour comprendre, analyser et ensuite, utiliser la méthode split"
 L1 = entete.split(',')
 print(L1)
 L2 = entete.split('e')
