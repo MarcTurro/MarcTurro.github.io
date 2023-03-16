@@ -441,8 +441,8 @@
 <a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="n">fen</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
 </code></pre></div>
 <p>Le constructeur principal est l'élément <code>fen</code>: on lui applique des méthodes explicites qui changent son titre, la possibilité de redimensionner et l'icône de la fenêtre principale.Il y a d'autres possibilités que je vous laisse découvrir en toute autonomie...</p>
-<div class="admonition note">
-<p class="admonition-title">À faire: personnaliser sa fenêtre</p>
+<div class="admonition exo">
+<p class="admonition-title">Personnaliser sa fenêtre</p>
 <ol>
 <li>Recopier le code précédent que vous enregistrez sous le nom <code>interface_couleur.py</code> dans un dossier <code>TP_interface_graphique</code></li>
 <li>Personnalisez votre fenêtre en changeant le titre et en trouvant un logo qui vous correspond. Attention ce logo doit être un fichier <code>.ico</code> et doit être situé à la racine de votre projet(ou alors dans un dossier dédié...)!</li>
@@ -454,8 +454,8 @@
 <p>La fenêtre que nous devons réaliser contient plusieurs <strong>widgets</strong> (composants graphiques): un <strong>bouton</strong> pour valider, trois <strong>champs de saisies</strong> pour le choix des couleurs, et une zone de dessin, appelée <strong>canvas</strong> dont la couleur d'arrière plan (le <strong>bg</strong>) correspond aux choix faits dans les zones de saisies et une zone de texte, le <strong>label</strong> contenant le titre général de la fenêtre.</p>
 </div>
 <p>On appelle les <strong>constructeurs</strong> correspondant pour la conception de ces widgets en les stockant dans des variables aux noms explicites. Les constructeurs sont par exemple <code>Label,Button</code> ou <code>Entry</code>...</p>
-<div class="admonition note">
-<p class="admonition-title">À faire: Ajouter les widgets</p>
+<div class="admonition exo">
+<p class="admonition-title"> Ajouter les widgets</p>
 <ol>
 <li>Ajouter le code python suivant au programme précédent à l'endroit indiqué.</li>
 <li>Changer la couleur d'arrière plan du canvas</li>
@@ -489,8 +489,8 @@
 <p>Une variable <strong>globale</strong> est une variable qui peut être appelée partout dans le programme. Nous souhaiterions ici créer <strong>trois variables</strong> qui seront associer à la valeur saisie dans les champs prévus à cet effet. </p>
 </div>
 <p>Dans <code>tkinter</code>, les variables globales sont les <strong>variables de contrôle</strong>(voir <a href="http://tkinter.fdex.eu/doc/ctrvar.html">ici</a>): elles sont associées à la valeur ou au texte saisie dans les widgets qui le permettent!</p>
-<div class="admonition note">
-<p class="admonition-title">À faire: Ajouter des variables de contrôles</p>
+<div class="admonition exo">
+<p class="admonition-title">Ajouter des variables de contrôles</p>
 <ol>
 <li>Ajouter le code <code>python</code> suivant juste après l'instruction <code>fen.iconbitmap</code>.
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">r</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s1">'12'</span><span class="p">)</span>
@@ -502,8 +502,8 @@
 </div>
 <p>Quelques explications! La variable <code>r</code> est une variable globale de stype <code>string</code>, initialisée à 12, associée à la valeur saisie dans l'entrée <code>rou</code>. </p>
 <p>Si vous proposez une valeur dans cette entrée elle sera alors affectée à la valeur de <code>r</code>. Cette association est possible grâce à l'attribut <code>textvariable</code> du constructeur <code>rou</code> auquel on a associé la variable <code>r</code>.</p>
-<div class="admonition note">
-<p class="admonition-title">À faire: Compléter les variables de contrôles</p>
+<div class="admonition exo">
+<p class="admonition-title">Compléter les variables de contrôles</p>
 <ol>
 <li>Créer les variables de contrôles <code>v</code> et <code>b</code>, de type chaîne de caractère, initialisée respectivement à 200 et 100.</li>
 <li>Ajouter les attributs <code>textvariable</code> aux entrées <code>ver</code> et <code>bleu</code> en leur affectant les variables précédemment définies.</li>
@@ -524,8 +524,8 @@
 </div>
 <p>Mais problème! Les couleurs saisies sont décimales. Il faut donc construire un outil qui prend en entrée un triplet comme <code>(12,200,100)</code> et le transforme en <code>'#0CC864'</code>. </p>
 <p>Nous allons pour cela créer la fonction <code>rgb_10to16</code> qui prend en paramètre un tuple de trois couleurs et retourne une chaîne de caractères formatée et répondant à notre besoin.</p>
-<div class="admonition note">
-<p class="admonition-title">À faire: Ajouter une fonction</p>
+<div class="admonition exo">
+<p class="admonition-title">Ajouter une fonction</p>
 <ol>
 <li>Ajouter le code python suivant après la variable b:
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1">############# ACTIONS  ############################</span>
@@ -548,8 +548,8 @@
 <li>change la couleur du background du canvas en conséquence.</li>
 </ul>
 </div>
-<div class="admonition note">
-<p class="admonition-title"> À faire: Compléter le code </p>
+<div class="admonition exo">
+<p class="admonition-title">Compléter le code </p>
 <ol>
 <li>Ajouter la fonction suivante après la précédente:
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">def</span> <span class="nf">colorer</span><span class="p">():</span>
@@ -568,8 +568,8 @@
 <p class="admonition-title">Pour information</p>
 <p>Nous n'avons pas justifier l'instruction <code>fen.mainloop()</code>: elle rend l'objet <code>fen</code> sensible aux événements extérieurs comme l'appui d'un clic de souris ou du clavier. Elle écoute en continue ce qui se passe autour de ses constructeurs. Dommage que cette fonction n'existe pas chez nos élèves 😊!</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title"> À faire:utiliser une échelle </p>
+<div class="admonition exo">
+<p class="admonition-title"> Utiliser une échelle </p>
 <p>Au lieu de saisir les valeurs, on souhaite utiliser des échelles qui permettent à l'aide de curseur de choisir la valeur de la composante de rouge, de vert ou de bleu(voir ci-dessous...).</p>
 <p>Documentez-vous par exemple <a href="http://tkinter.fdex.eu/doc/scw.html">ici</a> et remplacez les entrées par trois échelles.</p>
 </div>

@@ -491,8 +491,8 @@ Donc une image dans ce format pèse au moins 45 octets... </li>
 <p>Attention! les fichiers <strong>.jpeg</strong> ne sont pas à proprement dit des fichiers images mais des fichiers <strong>compressés</strong> d'une image. Souvent, on commet une confusion, pas bien grave au final!</p>
 </div>
 <p>Une image Portable Network Graphics (PNG) est un format ouvert, on peut donc explorer son contenu!</p>
-<div class="admonition note">
-<p class="admonition-title">À faire</p>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
 <ol>
 <li>Récupérer l'image <code>firefox.png</code> ( <a download="Firefox.png" href="../img/Firefox.png">Télécharger l'image</a>).</li>
 <li>Ouvrez l'image avec les routines Python habituelles, en mode lecture binaire et visualisez l'entête du fichier(le <strong>programme</strong> est donné juste après).</li>
@@ -509,8 +509,8 @@ Donc une image dans ce format pèse au moins 45 octets... </li>
 <a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="n">fichier_src</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
 En général, les images numériques sont des <strong>images matricielles</strong>, par opposition aux images <strong>vectorielles</strong> définies par des courbes mathématiques. Les fichiers <code>.svg</code> développés par le W3C, sont des images vectorielles très adaptées à la construction de logo, comme celui de Firefox, décomposable en éléments géométriques.</p>
-<div class="admonition note">
-<p class="admonition-title">À faire</p>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
 <ol>
 <li>Observez le logo Firefox défini sous <code>.svg</code> à cette <a href="https://upload.wikimedia.org/wikipedia/commons/2/28/Firefox_logo%2C_2017.svg?uselang=fr">adresse</a> et trouvez sa description <code>.svg</code> (clic droit-&gt; code source de la page).</li>
 <li>Zoomez(touche <code>Crtl + molette</code>).</li>
@@ -537,14 +537,14 @@ En général, les images numériques sont des <strong>images matricielles</stron
 <li><strong>écrire un pixel</strong>, définir sa couleur par la donnée d'un entier, d'un triplet ou un quadruplet selon le mode de représentation... </li>
 </ol>
 </div>
-<div class="admonition note">
-<p class="admonition-title">À faire</p>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
 <p>Dans une image couleur où chaque couleur est codée sur un octet, combien de couleurs différentes peut-on obtenir?</p>
 </div>
 <h2 id="enfin-du-python"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Enfin du Python!<a class="headerlink" href="#enfin-du-python" title="Permanent link">¶</a></h2>
 <p>Cette section propose de manipuler des images numériques à l'aide d'un bibliothèque Python appelée <strong>PIL</strong>.</p>
-<div class="admonition note">
-<p class="admonition-title">À faire</p>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
 <p>Installer la bibliothèque PILLOW dans Thonny(lors de l'import il faudra l'appeler sous sous ancien nom PIL...).</p>
 </div>
 <p>Il s'agit de traduire en Python l'idée de:</p>
@@ -573,8 +573,8 @@ En général, les images numériques sont des <strong>images matricielles</stron
 <p>L'objet <code>im</code> n'est pas une image mais un objet <strong>tampon</strong> sur lequel nous travaillerons avant de le fermer.</p>
 <h2 id="determiner-les-caracteristiques-de-limage"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> Déterminer les caractéristiques de l'image<a class="headerlink" href="#determiner-les-caracteristiques-de-limage" title="Permanent link">¶</a></h2>
 <p>Une image possède toujours une taille, un format et un mode de représentation (niveaux de gris, couleurs avec alpha éventuel).</p>
-<div class="admonition note">
-<p class="admonition-title">À faire</p>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
 <p>Quelles sont les caractéristiques de l'image <code>puppy.png</code>(mode, taille, format)?</p>
 </div>
 <h2 id="creation-dune-nouvelle-image"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6</span> Création d'une nouvelle image<a class="headerlink" href="#creation-dune-nouvelle-image" title="Permanent link">¶</a></h2>
@@ -584,8 +584,8 @@ En général, les images numériques sont des <strong>images matricielles</stron
 <a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="n">IM</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">"Images\img_new1.png"</span><span class="p">)</span><span class="c1">#pour créer l'image dans le dossier Images...</span>
 <a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="n">IM</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">À faire</p>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
 <p>Donner le mode et la taille de l'image créée précédemment</p>
 </div>
 <h2 id="lire-la-valeur-dintensite-dun-pixel"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.7</span> Lire la valeur d'intensité d'un pixel<a class="headerlink" href="#lire-la-valeur-dintensite-dun-pixel" title="Permanent link">¶</a></h2>
@@ -598,8 +598,8 @@ En général, les images numériques sont des <strong>images matricielles</stron
 <a href="#__codelineno-4-7" id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="n">im</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
 <p><strong>Attention</strong>, la méthode <code>getpixel</code> prend en paramètre un couple correspondant aux coordonnées <code>(colonne, ligne)</code> du pixel dans l'image: dans l'exemple, 20 ième colonne et 30ième ligne(il faut bien sûr s'assurer que ce pixel existe...) . Donc on ne tape pas <code>im.getpixel(20,30)</code> mais bien <code>im.getpixel((20,30))</code></p>
-<div class="admonition note">
-<p class="admonition-title">À faire</p>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
 <p>En s'utilisant le code précédent, </p>
 <ol>
 <li>donner l'intensité des pixels <span class="arithmatex">\((105,42)\)</span> de l'image <code>puppy.png</code>.</li>
@@ -620,8 +620,8 @@ La méthode <code>putpixel</code>s'applique à l'objet <code>IM</code> et prend 
 <p class="admonition-title">Par défaut...</p>
 <p>Lorsque vous créez une image, tous les pixels sont noirs par défaut. Donc à 0 sur tous les canaux!</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">À faire</p>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
 <ol>
 <li>Créez une image de largeur 500 et de hauteur 100, où tous les pixels de la ligne 50 sont rouges, les autres restant noirs...</li>
 <li>Créez une image de largeur 500 et de hauteur 100, où tous les pixels de la colonne 250 sont rouges, les autres restant noirs...</li>
@@ -669,60 +669,60 @@ Quelques informations sur le programme précédent:</p>
 <li><code>c</code> est la variable qui prend ses valeurs de 0 à <code>imInit.size[0] - 1</code> correspondant au numéro de chaque colonne de l'image</li>
 <li><code>l</code> est la variable qui prend ses valeurs de 0 à <code>imInit.size[1] - 1</code> correspondant au numéro de chaque ligne de l'image</li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">À faire</p>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
 <p>Construire de la même façon les images translatées de 10 pixels et de 255 pixels. Pensez à changer le nom de sauvegarde sinon vous écraserez les fichiers précédemment construits.</p>
 </div>
 <h1 id="le-coin-des-exercices"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.</span> Le coin des exercices<a class="headerlink" href="#le-coin-des-exercices" title="Permanent link">¶</a></h1>
 <p>En n'utilisant que les routines précédentes (il y  a des méthodes de la bibliothèque Pil qui permettent de réaliser directement les transformations demandées...), réalisez les exercices suivants.</p>
-<div class="admonition note">
-<p class="admonition-title">À faire</p>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
 <ol>
 <li>Créer une image en niveaux de gris de dimension 500 sur 100 pixels où chaque pixel a une intensité égale à un nombre aléatoire entre 0  et 255. On sauvegardera sous le nom <code>hasard.png</code> cette image.</li>
 <li>Créer une image en couleur de dimension 500 sur 100 pixels où chaque pixel a une intensité de rouge, de vert et de bleu est égale à un nombre aléatoire entre 0  et 255. On sauvegardera cette image sous le nom <code>hasardcouleur.png</code> .</li>
 </ol>
 </div>
-<div class="admonition note">
-<p class="admonition-title">À faire</p>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
 <p>Créer l'image <code>puppynegative.png</code> obtenu à partir de l'image <code>puppy.png</code> en transformant le pixel <code>p</code>en le pixel <code>255 - p</code>.</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">À faire</p>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
 <p>Créer une image de dimension 600(width) sur 400(height) pixels qui est le drapeau français.</p>
 <p>On sauvegardera cette image sous le nom <code>drapeau.png</code>.</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">À faire</p>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
 <p>Créer une image en niveaux de gris de dimension 500 sur 100 pixels où chaque pixel de ligne de rang pair est blanc et les autres noir. </p>
 <p>On sauvegardera cette image sous le nom <code>ligneblanche.png</code> .</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">À faire</p>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
 <p>L'image <code>Firefox.png</code> est une image couleur qui est donc la superposition de trois images: l'une contient les composantes de rouge, l'autre de vert et la dernière de bleu.</p>
 <p>Construire ces trois images que vous sauvegarderez sous le nom <code>filtreRougeFirefox.png</code>,....</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">À faire</p>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
 <p>Construire l'image obtenue par une symétrie verticale. On sauvegardera l'image sous le nom <code>puppyV.png</code>.
 Construire l'image obtenue par une symétrie horizontale.On sauvegardera l'image sous le nom <code>puppyH.png</code>.</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">À faire</p>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
 <p><strong>Effet de seuillage</strong>: L'idée est d'effectuer un seuillage sur l'image en construisant une nouvelle image selon le principe suivant: tous les pixels dont l'intensité est inférieure ou égal à 127 sont transformés en pixel d'intensité 0 et ceux d'intensité strictement supérieur à 127 transformés en pixel d'intensité 1.</p>
 <p>On sauvegardera l'image sous le nom <code>puppySeuil127.png</code>.</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">À faire</p>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
 <p>Même exercice que précédemment mais le choix du seuil <span class="arithmatex">\(s\)</span> est fait par l'utilisateur.</p>
 <p>On sauvegardera l'image sous le nom <code>puppySeuilS.png</code>.</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">À faire</p>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
 <p>Même exercice que précédemment mais <code>n</code> (un entier compris entre 2 et 25) seuils seront créés.</p>
 <p>On sauvegardera l'image sous le nom <code>puppyQuantificationN.png</code>.</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">À faire</p>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
 <p>À l'aide la bibliothèque <code>matplotlib</code>que vous connaissez déjà, construire l'histogramme des intensités de niveaux de gris de l'image <code>puppy.png</code>: en abscisse, on trouve une intensité <span class="arithmatex">\(i\)</span> de 0 à 255 et en ordonnée le nombre de pixels d'intensité <span class="arithmatex">\(i\)</span> dans l'image.</p>
 </div>
 <script src="../pyodide-mkdocs/ide.js"></script>

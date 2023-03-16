@@ -499,8 +499,8 @@
 <p>Le javascript agit sur les objets du DOM. Il les repère soit par le nom de leur balise soit par leur idendifiant (<strong>id</strong>) ou bien leur classe (<strong>class</strong>).</p>
 <h2 id="lexemple-de-base"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> L'exemple de base...<a class="headerlink" href="#lexemple-de-base" title="Permanent link">¶</a></h2>
 <p>Nous utiliserons le code HTML <a href="fichier/index.html">index.html</a> et la feuille de style <a href="fichier/style.css">style.css</a> qui va avec ...</p>
-<div class="admonition note">
-<p class="admonition-title">À faire: Construire son arborescence</p>
+<div class="admonition exo">
+<p class="admonition-title">Construire son arborescence</p>
 <ol>
 <li>Créer un dossier <code>WEBJS</code> contenant les dossiers <code>img, css</code> et <code>js</code>. Attention de bien respecter la <strong>casse</strong>!</li>
 <li>Téléchargez puis enregistrez le fichier <code>index.html</code>(clic droit-&gt;code  source de la page) à la racine du dossier <code>WEBJS</code> et le fichier <code>style.css</code> dans le dossier <code>css</code>.</li>
@@ -514,8 +514,8 @@
 <h1 id="et-cest-parti"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.</span> Et c'est parti!<a class="headerlink" href="#et-cest-parti" title="Permanent link">¶</a></h1>
 <p>Les exercices suivants n'ont rien d'original. Ils montrent seulement comment intégrer du code javascript dans un document HTML afin de répondre à des besoins spécifiques...</p>
 <h2 id="une-manipulation-simple"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.1</span> Une manipulation simple!<a class="headerlink" href="#une-manipulation-simple" title="Permanent link">¶</a></h2>
-<div class="admonition note">
-<p class="admonition-title">À faire: Mon premier js...</p>
+<div class="admonition exo">
+<p class="admonition-title">Mon premier js...</p>
 <ol>
 <li>Intégrer entre les balises <code>&lt;head&gt;</code> le code suivant:
   <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="o">&lt;</span><span class="nx">script</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">alert</span><span class="p">(</span><span class="s2">"Le JavaScript fonctionne maintenant!"</span><span class="p">)</span><span class="o">&lt;</span><span class="err">/script&gt;</span><span class="w"></span>
@@ -524,8 +524,8 @@
 </ol>
 </div>
 <p>Ce code est exécuté suite à un événement: le chargement de la page web. Mais on peut modifier cela!</p>
-<div class="admonition note">
-<p class="admonition-title">À faire: Mon deuxième js...</p>
+<div class="admonition exo">
+<p class="admonition-title">Mon deuxième js...</p>
 <ol>
 <li>Effacer les balises <code>&lt;script&gt;</code> précédente.</li>
 <li>Insérer dans le corps du document HTML juste après la balise <code>&lt;body&gt;</code>, le code suivant:
@@ -535,8 +535,8 @@
 </ol>
 </div>
 <p>On a déjà exposé dans un cours précédent notre volonté de séparer les codes selon leur utilisation: le css dans un dossier <code>css</code>, les images dans un dossier <code>img</code>,... Continuons ce rangement efficace en enregistrant le code javascript dans son dossier de destination <code>js</code>.</p>
-<div class="admonition note">
-<p class="admonition-title">À faire: Mon troisième js...</p>
+<div class="admonition exo">
+<p class="admonition-title">Mon troisième js...</p>
 <ol>
 <li>Avec notepad, ouvrer un nouveau document (language = javascript) que vous enregistrez sous le nom <code>monpremierjs.js</code> dans le dossier <code>js</code>.</li>
 <li>Copiez-y le code suivant:
@@ -568,8 +568,8 @@
 <p>Dans Firefox, tapez <kbd>F12</kbd> et vous verrez apparaître plusieurs onglets dont la console...</p>
 </div>
 <p>Pour imprimer dans la console, rien de plus simple!</p>
-<div class="admonition note">
-<p class="admonition-title">À faire: print dans la console...</p>
+<div class="admonition exo">
+<p class="admonition-title">Print dans la console...</p>
 <ol>
 <li>Ajouter à la fonction <code>ma_fonc_test()</code>, l'instruction suivante:
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">ma_fonc_test</span><span class="p">(){</span><span class="w"></span>
@@ -591,8 +591,8 @@
 <p>On se propose ici de créer de nouvelles fonctionnalités pour montrer ce dont javascript est capable de faire.</p>
 <h3 id="un-bouton-plus-style"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.3.1</span> Un bouton plus stylé!<a class="headerlink" href="#un-bouton-plus-style" title="Permanent link">¶</a></h3>
 <p>Notre bouton n'est pas très joli... modifions son style!</p>
-<div class="admonition note">
-<p class="admonition-title">À faire: en mode stylé!</p>
+<div class="admonition exo">
+<p class="admonition-title">En mode stylé!</p>
 <ol>
 <li>Dans le fichier <code>style.css</code>, ajouter le code suivant:
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>button {
@@ -618,8 +618,8 @@
 </ol>
 </div>
 <p>Pour centrer le bouton, nous allons utiliser une astuce qui consiste à la positionner dans une zone, un conteneur que nous allons centrer. Nous utiliserons alors les balises <code>&lt;div&gt;&lt;/div&gt;</code>.</p>
-<div class="admonition note">
-<p class="admonition-title">À faire: utiliser un conteneur</p>
+<div class="admonition exo">
+<p class="admonition-title">Utiliser un conteneur</p>
 <ol>
 <li>Ajouter les balises <code>&lt;div&gt;&lt;/div&gt;</code> taggées par la classe <code>b_haut</code> autour des balises <code>&lt;button&gt;</code>:
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class </span><span class="o">=</span> <span class="s">"b_haut"</span><span class="p">&gt;&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">"ma_fonc_test()"</span><span class="p">&gt;</span>Essai<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -642,8 +642,8 @@
 <li>changer leur bg</li>
 <li>associer l'étape 1 et 2 au clic du bouton.</li>
 </ol>
-<div class="admonition note">
-<p class="admonition-title">À faire: changer le bg</p>
+<div class="admonition exo">
+<p class="admonition-title">Changer le bg</p>
 <ol>
 <li>Compléter le fichier <code>monpremierjs.js</code>(inutile d'effacer son contenu existant) comme suit:
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">new_bg</span><span class="p">(){</span><span class="w"></span>
@@ -661,8 +661,8 @@
 </div>
 <p>L'affichage de la constante <code>elt</code> permet de connaître son type et son contenu. En fouillant un peu, on voit qu'il y a quatre paragraphes trouvés et on peut aussi explorer leurs attributs...</p>
 <p>Même si cela fonctionne, on peut faire beaucoup mieux en utilisant les classes ou les identificateurs.</p>
-<div class="admonition note">
-<p class="admonition-title">À faire: taguage général!</p>
+<div class="admonition exo">
+<p class="admonition-title">Taguage général!</p>
 <ol>
 <li>Taguer les balises <code>&lt;p&gt;</code> selon le principe suivant: la premier balise est <code>&lt;p id ="p1"&gt;</code>, la deuxième <code>&lt;p id ="p2"&gt;</code>, etc...</li>
 <li>Modifier la fonction js précédente:</li>
@@ -676,8 +676,8 @@
 3. Enregistrez et rafraîchissez.</p>
 </div>
 <p>On peut aussi changer d'autres styles que celui du background. Essayez par exemple les changements suivants:</p>
-<div class="admonition note">
-<p class="admonition-title">À faire: quelques changements sympas!</p>
+<div class="admonition exo">
+<p class="admonition-title">Quelques changements sympas!</p>
 <p>À ajouter dans le corps de la fonction précédente (entre les accolades sinon cela ne fonctionnera pas...)
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"p1"</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">visibility</span><span class="o">=</span><span class="s1">'hidden'</span><span class="p">;</span><span class="w"></span>
 <a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"p2"</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">border</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"dashed red"</span><span class="p">;</span><span class="w"></span>
@@ -693,7 +693,7 @@
 <li>si on tague par une <code>classe</code> alors la recherche se fait par l'instruction <code>document.getElementByClassName(nom_class)</code></li>
 </ul>
 </div>
-<div class="admonition note">
+<div class="admonition exo">
 <p class="admonition-title">Exercice de synthèse</p>
 <p>Supprimez le premier bouton du document HTML puis:</p>
 <ul>
@@ -704,8 +704,8 @@
 </div>
 <h3 id="creation-de-nouveaux-objets-dans-le-dom"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.3.3</span> Création de nouveaux objets dans le DOM<a class="headerlink" href="#creation-de-nouveaux-objets-dans-le-dom" title="Permanent link">¶</a></h3>
 <p>Le javascript permet aussi de modifier ou créer du contenant dans le document HTML himself!</p>
-<div class="admonition note">
-<p class="admonition-title">À faire: modifier un fils...</p>
+<div class="admonition exo">
+<p class="admonition-title">Modifier un fils...</p>
 <ol>
 <li>Insérer après la balise <code>&lt;body&gt;</code>, le code HTML suivant:
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class </span><span class="o">=</span> <span class="s">"b_haut"</span><span class="p">&gt;&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">"ma_fonc_bonjour()"</span><span class="p">&gt;</span>Essai<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -726,16 +726,16 @@ Cela crée le bouton que nous avions effacé à l'exercice précédent et un par
 <p class="admonition-title">En résumé!</p>
 <p>La méthode <code>.innerTHML</code> permet de modifier le contenu d'une balise HTML</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">À faire:Utiliser la méthode <code>.innerTHML</code></p>
+<div class="admonition exo">
+<p class="admonition-title">Utiliser la méthode <code>.innerTHML</code></p>
 <ol>
 <li>Taguer le premier titre <code>&lt;h1&gt;</code> par <code>id = premiertitre</code>.</li>
 <li>Compléter la fonction précédente pour que ce titre change en <code>Qu'est ce que le Javascript?</code></li>
 </ol>
 </div>
 <p>L'affichage de l'heure est dynamique mais invariant: quiconque appuie sur le bouton verra le même message. Ne peut-on pas personnaliser cet affichage?</p>
-<div class="admonition note">
-<p class="admonition-title">À faire: ouvrir une fenêtre de saisie</p>
+<div class="admonition exo">
+<p class="admonition-title">Ouvrir une fenêtre de saisie</p>
 <ol>
 <li>Dans le fichier <code>monscript.js</code>, ajoutez le code suivant:
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">debut</span><span class="p">(){</span><span class="w"></span>
@@ -743,15 +743,15 @@ Cela crée le bouton que nous avions effacé à l'exercice précédent et un par
 <a href="#__codelineno-15-3" id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"nom"</span><span class="p">).</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"C'est parti!, "</span><span class="o">+</span><span class="w"> </span><span class="nx">nom</span><span class="p">;</span><span class="w"></span>
 <a href="#__codelineno-15-4" id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div></li>
-<li>Changer l' <code>id</code> du paragraphe <code>&lt;p&gt;</code> de <code>demo</code> en <code>nom</code>.</li>
+<li>Changer l'<code>id</code> du paragraphe <code>&lt;p&gt;</code> de <code>demo</code> en <code>nom</code>.</li>
 <li>Enfin, associer au clic de bouton la bonne fonction:
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="p">&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">"ma_fonc_bonjour()"</span><span class="p">&gt;</span>
 </code></pre></div></li>
 </ol>
 </div>
 <p>Autre possibilité: insérer une zone de saisie au sein du document HTML. </p>
-<div class="admonition note">
-<p class="admonition-title">À faire: insérer une zone de saisie</p>
+<div class="admonition exo">
+<p class="admonition-title">Insérer une zone de saisie</p>
 <ol>
 <li>Ajouter le code HTML suivant sous le premier paragraphe(celui où <code>id = nom</code>):
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="p">&lt;</span><span class="nt">h1</span> <span class="p">&gt;</span> Donner votre âge  <span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
@@ -777,8 +777,9 @@ Cela crée le bouton que nous avions effacé à l'exercice précédent et un par
 </code></pre></div></li>
 </ol>
 </div>
-<p>Les exemples précédents montrent des usages répandus du javascript: modification du DOM, interaction avec l'utilisateur, ... Bien entendu les possibilités sont vastes mais on peut déjà faire beaucoup de chose...</p>
-<div class="admonition note">
+<p>Les exemples précédents montrent des usages répandus du javascript: modification du DOM, interaction avec l'utilisateur, ... et bien d'autres choses que vous découvrirez dans votre vie de développeur!</p>
+<p>Bien entendu les possibilités sont vastes mais on peut déjà faire beaucoup de choses avec les quelques routines ci-dessus.</p>
+<div class="admonition exo">
 <p class="admonition-title">Exercice de synthèse</p>
 <ol>
 <li>Construire une page web qui permet de saisir deux nombres et d'afficher leur somme.</li>

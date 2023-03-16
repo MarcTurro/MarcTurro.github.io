@@ -435,7 +435,7 @@
 Dans nos salles de NSI, les ordinateurs sont reliés grâce des câbles <strong>RJ45</strong> droits aux <strong>prises réseaux</strong> ,elles-mêmes reliées à <strong>une baie de brassage</strong>, puis à un <strong>switch</strong> et enfin au serveur de l'établissement...seul élément du réseau relié à internet!</p>
 <p>À une autre échelle, des câbles sous-marins ont même été déposés au fond des océans pour relier les continents européens et américains:
 <center>
-<img alt="Câble sous_marin" src="img/plan_cable.jpg" title="La France connectée aux autres pays">.
+<img alt="Câble sous_marin" src="img/plan_cable.jpg" title="La France connectée aux autres pays" width="50%">
 </img></center></p>
 <h2 id="le-reseau-internet"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.1</span> Le réseau internet<a class="headerlink" href="#le-reseau-internet" title="Permanent link">¶</a></h2>
 <p>Il y a de nombreuses confusions: les gens emploient indifféremment les mots <strong>WEB</strong> et <strong>Internet</strong> alors qu'ils ne désignent pas la même chose.</p>
@@ -456,7 +456,7 @@ Dans nos salles de NSI, les ordinateurs sont reliés grâce des câbles <strong>
 <h2 id="le-reseau-domostique-de-base"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.3</span> Le réseau domostique de base!<a class="headerlink" href="#le-reseau-domostique-de-base" title="Permanent link">¶</a></h2>
 <p>Depuis 1990 et le début du WEB, les services rendus sur internet n'ont cessé d'évoluer. Les français se sont équipés en conséquences.</p>
 <p><center></center></p>
-<p><img alt="Evolution" src="img/evolution_internet.png" title="Evolution des équipements dans les foyers"/>
+<p><img alt="Evolution" src="img/evolution_internet.png" title="Evolution des équipements dans les foyers" width="30%"/>
 </p>
 <p>Le point névralgique de votre réseau est votre <strong>box internet</strong>:les principaux fournisseurs d'accès se disputent le marché(Orange, SFR, Free, Bouygues,...). Votre box a de super pouvoirs: </p>
 <ul>
@@ -467,12 +467,12 @@ Dans nos salles de NSI, les ordinateurs sont reliés grâce des câbles <strong>
 <p>D'autres services sont assurés par votre box comme le NAT, DNS ou le pare feu mais nous n'en dirons pas plus ici...</p>
 <p>Vous pouvez même communiquer avec votre box <strong>Orange</strong>  de n'importe quel navigateur situé sur un ordinateur de votre réseau. Dans la barre d'adresse, saisissez <strong>192.168.1.1</strong> et la page d'administration apparaît(il faut tout de même saisir le mot de passe administrateur...):
 <center></center></p>
-<p><img alt="Box orange" src="img/interface_livebox.png" title="Page administration livebox"/>
+<p><img alt="Box orange" src="img/interface_livebox.png" title="Page administration livebox" width="50%"/>
 </p>
 <h2 id="le-reseau-du-lycee"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.4</span> Le réseau du lycée<a class="headerlink" href="#le-reseau-du-lycee" title="Permanent link">¶</a></h2>
 <p>C'est un peu la même chose que chez vous mais en plus grand( sachez qu'il y a plus de mille ordinateurs dans le lycée!). Les réseaux sont classés selon leur extension (PAN, LAN, MAN, WAN) dans une hiérarchie bien définie.</p>
 <p><center>
-<img alt="Reseaux mondiaux" src="img/LanWan.jpg" title="WanLan"/>
+<img alt="Reseaux mondiaux" src="img/LanWan.jpg" title="WanLan" width="25%"/>
 </center></p>
 <h1 id="un-reseau-logiciel"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.</span> Un réseau logiciel<a class="headerlink" href="#un-reseau-logiciel" title="Permanent link">¶</a></h1>
 <p>Internet est donc un réseau physique reliant finalement tous les ordinateurs entre eux. Mais comment se fait la communication? Comment les échanges d’informations se font-ils ? Pourquoi les informations ne se perdent pas dans ce réseau monstrueux? C’est une histoire de protocole...</p>
@@ -497,16 +497,16 @@ Dans nos salles de NSI, les ordinateurs sont reliés grâce des câbles <strong>
 <img alt="site_lequipe" src="img/lequipe.png"/>
 </center></p>
 <p>Le client envoie une requête <code>http</code>. On utilise ici la méthode <code>GET</code> pour obtenir une <strong>ressource</strong> du serveur distant: celle_ci est la racine () du site web. Vous pouvez consulter le contenu de la requête en cliquant sur la première ligne contenant le <code>GET</code>...</p>
-<p>Le serveur répond et fournit le code HTML de la première page. Vous remarquerez plusieurs requêtes(126 exactements) qui permettent de charger divers éléments (css, js, font,...)</p>
+<p>Le serveur répond et fournit le code HTML de la première page. Plusieurs requêtes(126 exactements) permettent de charger divers éléments (css, js, font,...)</p>
 <p>Vous remarquerez la présence de la méthode <code>POST</code> qui permet de transmettre des données au serveur dans le corps de la requête (des cookies ou équivalent sans doute ici...).</p>
 <div class="admonition faq">
 <p class="admonition-title"> Mais comment contacter le serveur qui héberge le site <em>www.lequipe.fr</em>?</p>
-<p>Lorsque vous utilisez votre smartphone pour appeler votre copain, c'est la connaissance de son numéro qui rend possible la communication. Sur internet , le même principe est reconduit.</p>
+<p>Lorsque vous utilisez votre smartphone pour appeler votre copain, c'est la connaissance de son numéro qui rend possible la communication (même si vous ne le connaissez pas votre machine l'a en mémoire!). Sur internet , le même principe est reconduit.</p>
 </div>
 <p>Le serveur a une <strong>adresse IP publique</strong>: par exemple l'adresse d'un des serveurs de <code>google</code> est <code>216.58.214.163</code>. Vous ne me croyez pas! Tapez cette adresse dans la barre d'adresse d'un navigateur et vous verrez...</p>
 <div class="admonition faq">
 <p class="admonition-title">Mais suis-je obligez de connaître les adresses IP des millions de serveurs dans le monde?</p>
-<p>Et bien ,NON! Il suffit juste de connaître son <code>URL</code>, et encore... les moteurs de recherche nous envoient souvent vers le site recherché à partir d'un mot clé.</p>
+<p>Et bien, NON! Il suffit juste de connaître son <code>URL</code>, et encore... les moteurs de recherche nous envoient souvent vers le site recherché à partir d'un mot clé.</p>
 </div>
 <p>Un service dédié s'occupe alors d'associer à cette <code>URL</code> son adresse <code>IP</code>, bien conservée quelque part en France dans un serveur Racine( en fait il y en a plusieurs...). C'est le protocole <code>DNS</code>(Domain Name Service).</p>
 <div class="admonition tip">
@@ -525,6 +525,73 @@ Dans nos salles de NSI, les ordinateurs sont reliés grâce des câbles <strong>
 <div class="admonition tip">
 <p class="admonition-title"> J'ai compris!</p>
 <p>Un serveur = une adresse <code>IP</code>! Mais il y a des millions d'ordinateurs dans le monde. A t-on suffisamment d'adresse <code>IP</code> pour chacun?</p>
+</div>
+<p>Le protocole <strong>IP</strong> repose sur un <strong>adressage logique</strong> des machines dans le réseau indépendamment du réseau physique( Ethernet par exemple...): c'est <strong>l'adresse IP</strong>.</p>
+<div class="admonition tip">
+<p class="admonition-title">À savoir:</p>
+<p>Il y a <span class="arithmatex">\(2^{32}\)</span> adresses IP possibles, épuisées dès 2011! On se dirige petit à petit vers les adresses IPv6(128bits)</p>
+</div>
+<p>Il y a historiquement cinq <strong>classes</strong> d'adresses: certaines sont privées, d'autres publiques. Elles sont caractérisées par leur <strong>NetId</strong> et leur <strong>HostId</strong>: plus le <strong>NetId</strong> est petit plus le réseau est grand!</p>
+<table class="table">
+<thead>
+<tr>
+<th align="center"><strong>Classe</strong></th>
+<th align="center"><strong>NetId</strong></th>
+<th align="center"><strong>HostId</strong></th>
+<th align="right"><strong>Nombre de clients possibles</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><strong>A</strong></td>
+<td align="center">8</td>
+<td align="center">24</td>
+<td align="right"><span class="arithmatex">\(2^{24}-2\)</span></td>
+</tr>
+<tr>
+<td align="center"><strong>B</strong></td>
+<td align="center">16</td>
+<td align="center">16</td>
+<td align="right"><span class="arithmatex">\(2^{16}-2\)</span></td>
+</tr>
+<tr>
+<td align="center"><strong>C</strong></td>
+<td align="center">24</td>
+<td align="center">8</td>
+<td align="right"><span class="arithmatex">\(2^{8}-2\)</span></td>
+</tr>
+<tr>
+<td align="center">{: .tabnsi :}</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="right"></td>
+</tr>
+</tbody>
+</table>
+<p>Cette notion est un peu désuette car manque de souplessse mais mérite d'être connue... Il existe aussi les classe <strong>D</strong> et <strong>E</strong> peu utilisées en ce qui nous concerne...</p>
+<div class="admonition warning">
+<p class="admonition-title"> Pourquoi -2?</p>
+<p>Deux adresses sont généralement réservées: celle du réseau dont le <code>NetId</code> est à 0 et celle du broadcast dont le <code>NetId</code> est à 255</p>
+</div>
+<p>Une <strong>adresse de broadcast</strong> sert à diffuser à l'ensemble des ordinateurs qui constituent le réseau.</p>
+<div class="admonition warning">
+<p class="admonition-title">Mais comment reconnaître <code>NetId</code> et <code>HostId</code>?</p>
+<p>C'est le rôle du <strong>masque de sous-réseau</strong></p>
+</div>
+<p>Le masque de sous-réseau est une adresse IP comme par exemple <code>255.255.255.0</code> qui en binaire donne l'horrible écriture :<code>11111111.11111111.11111111.00000000</code>!</p>
+<p>Un <code>ET logique</code> entre le masque et une adresse IP permet de connaître le <code>NetId</code> donc le <code>HostId</code> de la machine:</p>
+<p><center>
+<img align="align" alt="masque" src="img/exemplemasque.png" width="80%"/>
+</center></p>
+<p>On utilise ici l'adresse décimale pointée (CIDR) indiquant le nombre de bits à 1 dans l'adresse du masque de sous réseau.</p>
+<div class="admonition exemple">
+<p class="admonition-title">Exemple</p>
+<p>Si l'adresse d'une machine est <code>192.168.1.121/19</code> cela signifie que l'adresse du masque est, en binaire <code>11111111.11111111.11100000.00000000</code>(<strong>19</strong> premiers bits à 1 et le reste à 0) soit en décimale, <code>255.255.224.0</code>.</p>
+</div>
+<p>Certaines adresses sont vouées à des utilisations particulières:</p>
+<div class="admonition exemple">
+<p class="admonition-title">Exemple</p>
+<p>L'adresse <code>127.0.0.1</code>(ou  simplement <code>::1</code>) est la boucle locale ou simplement <code>localhost</code>. On l'utilise par exemple si sur la même machine, vous installez un serveur Web et un client.</p>
 </div>
 <script src="../pyodide-mkdocs/ide.js"></script>
 <!-- Massilia javascripts -->
