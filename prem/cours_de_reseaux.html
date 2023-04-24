@@ -474,6 +474,15 @@ Dans nos salles de NSI, les ordinateurs sont reliés grâce des câbles <strong>
 <p><center>
 <img alt="Reseaux mondiaux" src="img/LanWan.jpg" title="WanLan" width="25%"/>
 </center></p>
+<div class="admonition abstract">
+<p class="admonition-title">Synthèse</p>
+<p>Internet est un réseau physique reliant tous les ordinateurs entre eux. Ancêtre d'ARPANET(1969), il a nettement évolué depuis 1990 et l'apparition du WEB, l'un des services proposés sur ce réseau(la messagerie, le streaming ou le transfert de fichiers en sont d'autres).</p>
+<p>Le Local Area Network est l'architecture classique d'un réseau domestique. La box propose plusieurs services. Entres autres:</p>
+<ul>
+<li>DHCP: elle attribue automatiquement une adresse IP à une machine souhaitant se connecter à son réseau.</li>
+<li>Passerelle: Elle assure le transfert des informations de votre réseau vers le réseau Internet</li>
+</ul>
+</div>
 <h1 id="un-reseau-logiciel"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.</span> Un réseau logiciel<a class="headerlink" href="#un-reseau-logiciel" title="Permanent link">¶</a></h1>
 <p>Internet est donc un réseau physique reliant finalement tous les ordinateurs entre eux. Mais comment se fait la communication? Comment les échanges d’informations se font-ils ? Pourquoi les informations ne se perdent pas dans ce réseau monstrueux? C’est une histoire de protocole...</p>
 <div class="admonition faq">
@@ -527,6 +536,10 @@ Dans nos salles de NSI, les ordinateurs sont reliés grâce des câbles <strong>
 <p>Un serveur = une adresse <code>IP</code>! Mais il y a des millions d'ordinateurs dans le monde. A t-on suffisamment d'adresse <code>IP</code> pour chacun?</p>
 </div>
 <p>Le protocole <strong>IP</strong> repose sur un <strong>adressage logique</strong> des machines dans le réseau indépendamment du réseau physique( Ethernet par exemple...): c'est <strong>l'adresse IP</strong>.</p>
+<p>En fait le problème mérite d’être posé... D’abord , c’est quoi une adresse IP ? C’est une succession de quatre octets
+donnés sous forme décimale comme 192.172.20.24. Il y a donc <span class="arithmatex">\(2^{32} = 4 294 967 296\)</span> adresses ! C’est beaucoup et peu
+à la fois. Il y a 3750 lycées en France et presque 1000 ordinateurs par lycée soit 3 750 000 ordinateurs, rien que dans
+les lycées !</p>
 <div class="admonition tip">
 <p class="admonition-title">À savoir:</p>
 <p>Il y a <span class="arithmatex">\(2^{32}\)</span> adresses IP possibles, épuisées dès 2011! On se dirige petit à petit vers les adresses IPv6(128bits)</p>
@@ -580,9 +593,42 @@ Dans nos salles de NSI, les ordinateurs sont reliés grâce des câbles <strong>
 </div>
 <p>Le masque de sous-réseau est une adresse IP comme par exemple <code>255.255.255.0</code> qui en binaire donne l'horrible écriture :<code>11111111.11111111.11111111.00000000</code>!</p>
 <p>Un <code>ET logique</code> entre le masque et une adresse IP permet de connaître le <code>NetId</code> donc le <code>HostId</code> de la machine:</p>
-<p><center>
-<img align="align" alt="masque" src="img/exemplemasque.png" width="80%"/>
-</center></p>
+<table class="table">
+<thead>
+<tr>
+<th align="center"><strong>NOM</strong></th>
+<th align="center"><strong>Adresse IP décimale</strong></th>
+<th align="center"><strong>Adresse IP binaire</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><strong>Address</strong></td>
+<td align="center">192.168.10.7/24</td>
+<td align="center">11000000.10101000.0001010.0000111</td>
+</tr>
+<tr>
+<td align="center"><strong>Netmask</strong></td>
+<td align="center">255.255.255.0/24</td>
+<td align="center">11111111.11111111.11111111.00000000</td>
+</tr>
+<tr>
+<td align="center"><strong>Network</strong></td>
+<td align="center">192.168.10.0/24</td>
+<td align="center">11000000.10101000.0001010.0000000</td>
+</tr>
+<tr>
+<td align="center"><strong>Broadcast</strong></td>
+<td align="center">192.168.10.255/24</td>
+<td align="center">11000000.10101000.0001010.11111111</td>
+</tr>
+<tr>
+<td align="center">{: .tabnsi :}</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
 <p>On utilise ici l'adresse décimale pointée (CIDR) indiquant le nombre de bits à 1 dans l'adresse du masque de sous réseau.</p>
 <div class="admonition exemple">
 <p class="admonition-title">Exemple</p>
@@ -593,6 +639,58 @@ Dans nos salles de NSI, les ordinateurs sont reliés grâce des câbles <strong>
 <p class="admonition-title">Exemple</p>
 <p>L'adresse <code>127.0.0.1</code>(ou  simplement <code>::1</code>) est la boucle locale ou simplement <code>localhost</code>. On l'utilise par exemple si sur la même machine, vous installez un serveur Web et un client.</p>
 </div>
+<div class="admonition abstract">
+<p class="admonition-title">Synthèse</p>
+<p>Les machines reliées à un réseau ont obligatoirement une adresse IP composée de quatre octets en Ipv4.</p>
+<p>Un adresse IP se compose d'un NetId(identifiant réseau) et d'un HostId(identifiant de l'hôte dans le réseau) déterminés par le masque de sous-réseau(voir exercice).
+Deux machines qui n'ont pas le même NetId ne peuvent pas communiquer directement.</p>
+<p>Il y a des adresses <strong>privées</strong>(non utilisables sur internet) et d'autres <strong>publiques</strong>(pour les machines de l'internet). Il y a en tout <span class="arithmatex">\(256^4=4294967296\)</span> adresses possibles en v4 ce qui n'est pas suffisant pour adresser toutes les machines au monde (d'où le passage progressif vers v6).</p>
+</div>
+<h1 id="piles-de-protocoles"><span class="enumerate-headings-plugin enumerate-heading-plugin">4.</span> Piles de protocoles<a class="headerlink" href="#piles-de-protocoles" title="Permanent link">¶</a></h1>
+<p>L'envoie de données sur un réseau repose sur le principe d'<strong>encapsulation</strong>. Chaque <strong>couche</strong> de la pile des protocoles joue son rôle et offre son travail à la couche suivante.</p>
+<p>La vidéo suivante de notre cher Charles Poulmaire présente bien le procédé:<a href="https://www.lumni.fr/video/l-architecture-des-reseaux-et-les-protocoles-de-communications#containerType=serie&amp;containerSlug=la-maison-lumni-lycee">ici</a></p>
+<h2 id="le-modele-en-couches"><span class="enumerate-headings-plugin enumerate-heading-plugin">4.1</span> Le modèle en couches<a class="headerlink" href="#le-modele-en-couches" title="Permanent link">¶</a></h2>
+<p>Le modèle OSI décrit et uniformise les pratiques dès lors qu'un service réseau est sollicité. Conçu en 1970, il décrit sept couches réparties en deux groupes:</p>
+<p><center>
+<img alt="Modèle OSI" src="img/modeleOSI.png" width="50%"/>
+(source: wikipédia)
+</center></p>
+<p>Mais on lui préfère un modèle simplifié qui met en avant deux protocoles dont il faut connaître les rôles et qui font l'objet du paragraphe suivant.</p>
+<p><center>
+<img alt="Modèle TCP/IP" src="img/modeleTCP.png" width="50%"/>
+(source: wikipédia)
+</center></p>
+<h2 id="le-modele-tcpip"><span class="enumerate-headings-plugin enumerate-heading-plugin">4.2</span> Le modèle TCP/IP<a class="headerlink" href="#le-modele-tcpip" title="Permanent link">¶</a></h2>
+<p>La vidéo de Charles Poulmaire décrit parafaitement le rôle de ces deux protocoles:</p>
+<div class="admonition note">
+<p class="admonition-title">Le protocole TCP</p>
+<ul>
+<li>le mode TCP est en mode <strong>connecté</strong>: dans ce mode les machines source et destination s'accordent avant toute transmission par ce qu'on appelle une <strong>poignée de main</strong>(acknowledgement). On pourra oberver cette synchronisation dans les TP.</li>
+<li>le mode TCP est en mode <strong>fiable</strong>:Il découpe les données(data) proposées par la couche application en Datagramme en les numérotant de telle façon qu'il est possible de reconstituer les données à la réception de ces datagrammes et de savoir aussi si il en manque.</li>
+</ul>
+</div>
+<p><center>
+<img alt="poignée de main" src="img/3hand.gif" width="50%"/></center></p>
+<p></p>
+<div class="admonition tip">
+<p class="admonition-title">À savoir</p>
+<p>Le protocole TCP est un protocole de la couche Transport. Il existe aussi le protocole UDP qui n'offre pas la même efficacité. Certes, il découpe les données en paquet qu'il propose ensuite à la prochaine couche mais <strong>sans</strong> se soucier de leur devenir!</p>
+<p>Il est par exemple utilisé pour envoyer des images obtenues par une webcam dans un lieu public. S'il manque quelques pixels ce n'est pas si grave! Et avantage, la transmission est plus rapide car il n'y a pas d'accusé de réception!</p>
+</div>
+<p>La couche Transport (TCP ou UDP) livre donc à la couche suivante, la couche Internet, des segments ou datagrammes qui ne connaissent pas encore leur destination...</p>
+<div class="admonition note">
+<p class="admonition-title">Le protocole IP</p>
+<p>Ce protocole reçoit des segments et s'assure qu'ils sont envoyés à la bonne destination. Il tague tous les paquets reçus par les adresses IP source et destination. À la question <em>comment le protocole IP connaît-il l'adresse IP du destinataire?</em>, une première réponse a été donnée précédemment: le protocole DNS assure cette fonctionnalité. Mais ce n'est pas aussi simple que cela...</p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Synthèse</p>
+<p>Les règles prédéfinies qui permettent à des machines de communiquer entre elles s'appellent des <strong>protocoles</strong>. Le modèle OSI et sa version simplifiée <strong>TCP/IP</strong> montre le principe de modèle en couches et celui d'<strong>encapsulation</strong>: la couche <strong>application</strong> génère des données qu'elle livre à la couche <strong>Transport</strong>, puis à la couche <strong>Internet</strong> pour enfin accèder au <strong>réseau</strong>.</p>
+<p><strong>TCP</strong> est un protocole de la couche Transport: il a pour but d'assurer la livraison fiable et sans erreur des données qu'il a préalablement découpé en segments. Il fonctionne en mode connecté: l'établissement de la connexion se fait en trois temps (sync, sync/ack,ack ). UDP est aussi un protocole de cette couche mais n'assur aucune garantie dans la livraison des données.</p>
+<p><strong>IP</strong> est un protocole de la couche Internet: il adresse tous les datagrammes proposés par la couche Transport des adresses Ip source et destination.</p>
+</div>
+<p><center>
+<img alt="encapsulation" src="img/encapsulation.png" width="50%"/></center></p>
+<p></p>
 <script src="../pyodide-mkdocs/ide.js"></script>
 <!-- Massilia javascripts -->
 <massilia data=""></massilia>
