@@ -50,6 +50,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#des-types-pas-tres-clairs">
+          Aller au contenu
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -412,12 +415,86 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Les listes</h1>
-<figure>
-<p><img alt="Image title" src="../img/travaux.jpg" width="200">
-</img></p>
-<figcaption> Bientôt...</figcaption>
-</figure>
+<h1 id="des-types-pas-tres-clairs"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Des types pas très clairs!<a class="headerlink" href="#des-types-pas-tres-clairs" title="Permanent link">¶</a></h1>
+<p>Les variables ont des <strong>types</strong>. Leur création affecte une <strong>valeur</strong> dont le type peut-être à la louche:</p>
+<ul>
+<li>un nombre: un <code>int</code> ou un <code>float</code> . Pour faire simple, soit on affecte un nombre entier soit un nombre décimal( il existe d'autres types dont nous ne parlerons pas ici)</li>
+<li>une chaîne de caractères ou <strong>string</strong> pour faire court. C'est un texte contenu dans une chaîne qui se déclare entre deux quotes (<strong>" ...""</strong>).</li>
+</ul>
+<p>Ces deux types sont incortournables.</p>
+<div class="admonition question">
+<p class="admonition-title">Pourquoi est-ce essentiel de connaître le type de la variable?</p>
+<p>Des méthodes sont permises selon le type de variables. Par exemple, on peut appliquer la méthode <code>upper</code> à une chaîne de caractères mais pas à un nombre.</p>
+</div>
+<p>En plus les effets des opérations peuvent changer selon le type de la variable. Par exemple, le symbole <strong>+</strong> est le symbole d'addition naturelle pour les varaibles de types nombres et le symbole de <strong>concaténation</strong> pour les chaînes de carcatères:</p>
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">nbre1</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1">#type int</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">nbre2</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1">#type int</span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">phrase1</span> <span class="o">=</span> <span class="s2">"bon"</span> <span class="c1">#type str</span>
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">phrase2</span> <span class="o">=</span> <span class="s2">"jour"</span> <span class="c1">#type str</span>
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="n">nbre</span> <span class="o">=</span> <span class="n">nbre1</span> <span class="o">+</span> <span class="n">nbre2</span> <span class="c1">#nbre vaut 15</span>
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="n">phrase</span> <span class="o">=</span> <span class="n">phrase1</span> <span class="o">+</span> <span class="n">phrase2</span> <span class="c1">#phrase vaut "bonjour"</span>
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="n">phrase</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="c1">#phrase vaut alors "BONJOUR"</span>
+</code></pre></div>
+Mais ces deux types ne suffisent pas en général pour répondre à tous nos besoins. En particulier, le besoin de conserver dans une seule variable, plusieurs valeurs obtenues par exemple par simulation, est important. Nous allons définir une variable particulière appelée <strong>liste</strong>.</p>
+<h1 id="un-tableau-une-liste"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.</span> Un tableau , une liste.<a class="headerlink" href="#un-tableau-une-liste" title="Permanent link">¶</a></h1>
+<div class="admonition info">
+<p class="admonition-title">De quoi s'agit-il?</p>
+<p>Une liste est une séquence ordonnée de valeurs dont l'accès se fait par son indice.</p>
+</div>
+<p>Voici par exemple un tableau classique de nombres:</p>
+<p><center>
+<img alt="" src="img/tabliste.png" width="30%">
+</img></center></p>
+<p>Appelons <code>T</code> ce tableau, cette liste. Alors:</p>
+<ul>
+<li>la valeur situé au rang 0 de <code>T</code> est 10</li>
+<li>la valeur situé au rang 1 de <code>T</code> est 2</li>
+<li>la valeur situé au rang 2 de <code>T</code> est 8</li>
+<li>la valeur situé au rang 6 de <code>T</code> n'existe pas !</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Comment déclarer un tableau, une liste en Python?</p>
+<p>Une liste en python se déclare par des crochets.</p>
+</div>
+<p>Par exemple, pour notre tableau précédent:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">T</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">205</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Tableau ou liste</p>
+<p>Le langage Python appelle les tableaux <strong>liste</strong> et crée une confusion dans ce qu'est réellement un tableau en informatique. </p>
+</div>
+<p>Comme les différents types de variables évoquées en préambule, il existe des méthodes propores aux listes que nous allons présenter ici.</p>
+<div class="admonition info">
+<p class="admonition-title">Accès aux éléments de la liste(opération de lecture)</p>
+<p>On peut accèder aux valeurs des éléments de la liste par la connaissance de son rang, son indice.</p>
+</div>
+<p>Ainsi:</p>
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">T</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">205</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># affiche le premier élément de la liste T, soit 10</span>
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span> <span class="c1"># affiche le cinquième élément de la liste T, soit 0</span>
+</code></pre></div>
+Attention, si le tableau contient <code>n</code> éléments, les indices vont alors de 0(le premier) à <code>n-1</code>(le dernier). Si vous donnez un indice en dehors de cette plage vous, retourverez la fameuse exception levée par python:
+<center>
+<img alt="" src="img/indexout.png" width="50%">
+</img></center></p>
+<div class="admonition info">
+<p class="admonition-title">Modification des éléments de la liste(opération d'écriture')</p>
+<p>On peut modifier les valeurs des éléments de la liste par la connaissance de son rang, son indice en réaffectant la valeur souhaitée.</p>
+</div>
+<p>Ainsi:</p>
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="n">T</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">205</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1">#modifie la première valeur du tableau</span>
+<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">T</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="c1">#la seconde valeur devient la troisième!</span>
+</code></pre></div>
+Rappelons au passage qu'on peut aussi accèder aux éléments d'une chaîne de caractères mais qu'on ne peut pas la modifier: on dit que cet objet est <strong>non mutable</strong>.</p>
+<div class="admonition info">
+<p class="admonition-title">Ajout d'un élément à la liste(opération d'écriture')</p>
+<p>On peut <strong>ajouter</strong> une valeur à la fin d'un tableau( à sa droite...) par la méthode <code>append()</code>.</p>
+</div>
+<p>Par exemple, ajoutons la valeur 100 au tableau initial <code>py T</code>:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="n">T</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">205</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="n">T</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="c1"># la liste est alors [10, 2, 8, 205, -1, 0, 100]</span>
+</code></pre></div>
 <script src="../pyodide-mkdocs/ide.js"></script>
 <!-- Massilia javascripts -->
 <massilia data=""></massilia>

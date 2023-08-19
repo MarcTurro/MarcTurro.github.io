@@ -504,7 +504,7 @@
 <center>
 <img alt="image" class="center" src="img/prompt.png">
 </img></center></li>
-<li>Tapez <code>dir</code> puis la touche <kbd>Entree</kbd></li>
+<li>Tapez <code>dir</code> puis la touche <kbd>Entree</kbd>. À quoi sert cette instruction?</li>
 </ol>
 </div>
 <div class="admonition exo">
@@ -525,7 +525,7 @@
 <div class="admonition note">
 <p class="admonition-title">À faire</p>
 <ol>
-<li>Ouvrez l'explorateur de documents de votre ordinateur.</li>
+<li>Ouvrez l'explorateur de documents de votre ordinateur(combinaison <kbd>windows</kbd> + <kbd>E</kbd>).</li>
 <li>Nommez les différents lecteurs que vous pouvez oberver</li>
 </ol>
 </div>
@@ -545,8 +545,8 @@
 <h3 id="chemin-absolu-et-relatif"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.3</span> Chemin absolu et relatif<a class="headerlink" href="#chemin-absolu-et-relatif" title="Permanent link">¶</a></h3>
 <p>Pour désigner ou pointer vers une ressource(fichier ou dossier), on utilise son <strong>chemin</strong>. Il peut être:</p>
 <ul>
-<li><strong>absolu</strong>: le chemin commence par la lettre de la partition et donne le nom de tous les dossiers qu'il faut travaerser pour arriver à la ressource. Par exemple, le chemin absolu de ce fichier est: <code>C:\Users\Utilisateur\tpbash\docs\index.md</code></li>
-<li><strong>relatif</strong>: le chemin identifie le chemin à partir du répertoire courant. Par exemple, les images de cette page sont stockées dans un dossier <code>data</code> et le chemin qui pointe vers l'image ci-dessous qui se nomme <code>chemin.png</code> est <code>\data\chemin.png</code>:
+<li><strong>absolu</strong>: le chemin commence par la lettre de la partition et donne le nom de tous les dossiers qu'il faut traverser pour arriver à la ressource. Par exemple, le chemin absolu de ce fichier est: <code>C:\Users\Utilisateur\tpbash\docs\index_tpbash.md</code></li>
+<li><strong>relatif</strong>: le chemin identifie le chemin à partir du répertoire courant. Par exemple, les images de cette page sont stockées dans un dossier <code>img</code> et le chemin qui pointe vers l'image ci-dessous qui se nomme <code>chemin.png</code> est <code>\img\chemin.png</code>:
 <center>
 <img alt="image" class="center" src="img/chemin.png"/>
 </center></li>
@@ -569,12 +569,12 @@ copie <strong>tous</strong> les fichiers portant l'extension <code>.txt</code> d
 <p class="admonition-title">À faire</p>
 <ol>
 <li>Ouvrez l'invite de commande.</li>
-<li>Dans le dossier <code>Mes documents</code>, créer un dossier <code>test</code> et un dossier <code>backup</code>.</li>
-<li>Allez ensuite dans ce dossier <code>test</code>.</li>
+<li>Dans le dossier <code>Mes documents</code>, créer un dossier <code>test</code> et un dossier <code>backup</code>(commande <code>mkdir</code>).</li>
+<li>Allez ensuite dans ce dossier <code>test</code> avec la commande <code>cd</code>.</li>
 <li>Tapez la commande <code>notepad coucou.txt</code>. Normalement, le bloc notes s'ouvre avec un avertissement. Confirmez votre volonté de créer ce fichier et mettez y le contenu de votre choix.</li>
 <li>Fermez <code>notepad</code> par la combinaison de touches <kbd>Alt</kbd>+<kbd>F4</kbd></li>
-<li>Vérifier que le fichier <code>coucou.txt</code> existe bien dans le dossier test.</li>
-<li>En ligne de commande, avec les instructions ci-dessus, copier ce fichier dans le dossier <code>backup</code> et vérifier que la copie a fonctionné!</li>
+<li>Vérifier que le fichier <code>coucou.txt</code> existe bien dans le dossier test(commande <code>dir</code>).</li>
+<li>En ligne de commande, avec les instructions ci-dessus, copier ce fichier dans le dossier <code>backup</code> et vérifier que la copie a fonctionné! Attention les instructions changent en fonction du dossier dans lequel vous lancez l'instruction!</li>
 </ol>
 </div>
 <h2 id="les-variables-denvironnement"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> Les variables d'environnement<a class="headerlink" href="#les-variables-denvironnement" title="Permanent link">¶</a></h2>
@@ -600,7 +600,7 @@ copie <strong>tous</strong> les fichiers portant l'extension <code>.txt</code> d
 <h2 id="les-fichiers-de-commandebat"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6</span> Les fichiers de commande(.bat)<a class="headerlink" href="#les-fichiers-de-commandebat" title="Permanent link">¶</a></h2>
 <p>On souhaite souvent exécuter les mêmes tâches en ligne de commande. On peut alors regrouper les commandes dans un fichier qui sera directement lu par le système <code>DOS</code>: ce sont par exemple, les fichiers dont l'extension est <code>.bat</code></p>
 <div class="admonition exo">
-<p class="admonition-title">Exo</p>
+<p class="admonition-title">Création</p>
 <ol>
 <li>En ligne de commande tapez: 
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nb">echo</span>  Nous sommes le %date%, il est %time%
@@ -613,6 +613,29 @@ copie <strong>tous</strong> les fichiers portant l'extension <code>.txt</code> d
 <li>Exécutez alors ce fichier par un double-clic. Que se passe t-il?</li>
 <li>Modifier le fichier en ajoutant une ligne avec l'instruction <code>pause</code>. Sauvegardez et exécutez à nouveau le fichier.</li>
 </ol>
+</div>
+<div class="admonition exo">
+<p class="admonition-title">Affichage personnalisée</p>
+<p>La commande <code>dir</code> sans argument permet d'afficher le contenu du dossier dans lequel elle est lancée. Nous allons créer ici un script <code>affiche.bat</code> qui prend en argument une extension de fichier (pdf, doc, txt, ...) et affiche les fichiers de cette extension contenu dans le dossier dans lequel il est exécuté.
+1. Recopier les lignes suivantes dans un fichier que vous sauvegarderez à la racine du disque système sous le nom <code>affiche.bat</code>.
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>@echo off
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>cls
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>IF EXIST *.%1 <span class="o">(</span>
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a>dir *.%1
+<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="o">)</span> ELSE <span class="o">(</span>
+<a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a>ECHO pas de fichier de ce <span class="nb">type</span>
+<a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="o">)</span>
+<a href="#__codelineno-2-8" id="__codelineno-2-8" name="__codelineno-2-8"></a>pause
+</code></pre></div>
+2. Commenter ces instructions avec la commande <code>rem</code>.
+3. Ouvrez la ligne de commande et tapez:
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>C:<span class="se">\&gt;</span>affiche txt
+</code></pre></div>
+4. Modifier le script précédent en ajoutant la source dans laquelle vous souhaitez afficher les fichiers.Il faudra pour cela créer un nouveau paramètre...</p>
+</div>
+<div class="admonition exo">
+<p class="admonition-title">Création de script de sauvegarde</p>
+<p>Vous avez téléchargé un tas de fichier depuis le navigateur de votre ordinateur. Écrire un script qui lorsque vous l'exécutez effectue une copie des fichiers <code>pdf</code> nouvellement téléchargés vers un dossier <code>sauvegardepdf</code> contenu dans le dossier <code>Mes Documents</code>. Ce script sera lancé depuis le dossier <code>script</code> situé à la racine du disque <code>C</code> et portera le nom de explicite de votre choix.</p>
 </div>
 <script src="../pyodide-mkdocs/ide.js"></script>
 <!-- Massilia javascripts -->
