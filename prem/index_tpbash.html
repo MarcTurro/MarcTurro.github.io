@@ -275,6 +275,11 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="frontend.html">
+        Développement Web
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -581,8 +586,9 @@ copie <strong>tous</strong> les fichiers portant l'extension <code>.txt</code> d
 </div>
 <div class="admonition exo">
 <p class="admonition-title">Affichage personnalisée</p>
-<p>La commande <code>dir</code> sans argument permet d'afficher le contenu du dossier dans lequel elle est lancée. Nous allons créer ici un script <code>affiche.bat</code> qui prend en argument une extension de fichier (pdf, doc, txt, ...) et affiche les fichiers de cette extension contenu dans le dossier dans lequel il est exécuté.
-1. Recopier les lignes suivantes dans un fichier que vous sauvegarderez à la racine du disque système sous le nom <code>affiche.bat</code>.
+<p>La commande <code>dir</code> sans argument permet d'afficher le contenu du dossier dans lequel elle est lancée. Nous allons créer ici un script <code>affiche.bat</code> qui prend en argument une extension de fichier (pdf, doc, txt, ...) et affiche les fichiers de cette extension contenu dans le dossier dans lequel il est exécuté.</p>
+<ol>
+<li>Recopier les lignes suivantes dans un fichier que vous sauvegarderez à la racine du disque système sous le nom <code>affiche.bat</code>.
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>@echo off
 <a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>cls
 <a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>IF EXIST *.%1 <span class="o">(</span>
@@ -591,12 +597,13 @@ copie <strong>tous</strong> les fichiers portant l'extension <code>.txt</code> d
 <a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a>ECHO pas de fichier de ce <span class="nb">type</span>
 <a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="o">)</span>
 <a href="#__codelineno-2-8" id="__codelineno-2-8" name="__codelineno-2-8"></a>pause
-</code></pre></div>
-2. Commenter ces instructions avec la commande <code>rem</code>.
-3. Ouvrez la ligne de commande et tapez:
+</code></pre></div></li>
+<li>Commenter ces instructions avec la commande <code>rem</code>.</li>
+<li>Ouvrez la ligne de commande et tapez:
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>C:<span class="se">\&gt;</span>affiche txt
-</code></pre></div>
-4. Modifier le script précédent en ajoutant la source dans laquelle vous souhaitez afficher les fichiers.Il faudra pour cela créer un nouveau paramètre...</p>
+</code></pre></div></li>
+<li>Modifier le script précédent en ajoutant la source dans laquelle vous souhaitez afficher les fichiers.Il faudra pour cela créer un nouveau paramètre...</li>
+</ol>
 </div>
 <div class="admonition exo">
 <p class="admonition-title">Création de script de sauvegarde</p>
@@ -628,13 +635,13 @@ copie <strong>tous</strong> les fichiers portant l'extension <code>.txt</code> d
             </div>
 </div>
 </a>
-<a aria-label="Suivant: Accueil" class="md-footer__link md-footer__link--next" href="../term/termnsi.html" rel="next">
+<a aria-label="Suivant: Développement Web" class="md-footer__link md-footer__link--next" href="frontend.html" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Suivant
               </span>
-              Accueil
+              Développement Web
             </div>
 </div>
 <div class="md-footer__button md-icon">
