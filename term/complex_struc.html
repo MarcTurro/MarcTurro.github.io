@@ -482,7 +482,7 @@ L'adresse du tableau est <code>#A</code>(valeur hexadécimale sur deux octets) e
 <p>Pour l'insertion d'un nouveau élément dans le tableau, il faut <strong>allouer</strong> un nouvel espace mémoire qui passe par la recopie de tous les éléments du tableau auquel on ajoute le nouveau. Cette opération dépend de la taille <code>n</code> du tableau et son temps d'exécution lui est proportionnel !</p>
 <div class="admonition info">
 <p class="admonition-title">Complexité des opérations sur un tableau statique</p>
-<p>L' accès à un élément d'un tableau statique est en <code>O(1)</code> et l'ajout est en <code>O(n)</code>.</p>
+<p>L'accès à un élément d'un tableau statique est en <code>O(1)</code> et l'ajout est en <code>O(n)</code>.</p>
 </div>
 <p>Et d'après vous? Quelle est la complexité de la suppression d'un élément?</p>
 <p><center></center></p>
@@ -512,14 +512,13 @@ L'adresse du tableau est <code>#A</code>(valeur hexadécimale sur deux octets) e
 <li>On définit le pointeur du maillon inséré vers la valeur du suivant dans la chaîne.</li>
 </ol>
 <p>Ces trois opérations sont indépendantes de la taille de la liste chaînée: l'insertion se fait <strong>en temps constant</strong>.</p>
-<p>En résumé:
-<center></center></p>
+<p>En résumé:</p>
 <table class="table">
 <thead>
 <tr>
-<th scope="col">Opérations</th>
-<th scope="col">Tableau statique</th>
-<th scope="col">Listes chaînées</th>
+<th scope="col"><strong>Opérations</strong></th>
+<th scope="col"><strong>Tableau statique</strong></th>
+<th scope="col"><strong>Listes chaînées</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -533,9 +532,13 @@ L'adresse du tableau est <code>#A</code>(valeur hexadécimale sur deux octets) e
 <td><code>O(n)</code></td>
 <td><code>O(1)</code></td>
 </tr>
+<tr>
+<td>{: .tabnsi :}</td>
+<td></td>
+<td></td>
+</tr>
 </tbody>
 </table>
-<p></p>
 <p>On pourrait évoquer la complexité d'autres opérations élémentaires comme l'ajout ou la suppression au début, à la fin,... ce que nous ferons en exercices.</p>
 <p>Nous pourrions aussi évoquer la notion de listes <strong>doublement</strong> chaînées constituées de maillon qui pointe vers les maillons suivants et précédents. En revanche, si elles améliorent la complexité de certaines opérations, elles contiennent plus d'informations, donc plus de mémoire!</p>
 <p>Enfin, même si le programme de NSI ne les évoque pas, les <strong>tableaux dynamiques</strong> sont des structures hybrides qui permettent de conserver la complexité en temps constant des tableaux statiques et de permettre l'insertion aussi en temps constant.</p>

@@ -52,7 +52,14 @@ table.tabnsi {
 	font : 100% arial, palatino, serif;
     font-style : normal;
 }
-
+table.tabnsi_long {
+	margin: auto;
+    border: medium solid #6495ed;
+	border-collapse: collapse;
+	width: 100%;
+	font : 100% arial, palatino, serif;
+    font-style : normal;
+}
 
 
 /* Extra CSS for mkdocs-enumerate-headings-plugin */ 

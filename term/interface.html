@@ -166,7 +166,7 @@
 <div class="md-container" data-md-component="container">
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
-<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden="">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
@@ -420,26 +420,124 @@
 </div>
 <p>Dès que la structure est déclarée, il est nécessaire alors de définir les <strong>méthodes</strong> qui agissent sur ces objets : c'est <strong>l'interface</strong>  qui permet entre autres, de créer la structure, de la modifier, d'afficher son  contenu voire de la supprimer...</p>
 <div class="admonition example">
-<p class="admonition-title"> L'interface des listes Python</p>
-<p>En fouillant un peu dans la documentation <a href="https://devdocs.io/python~3.10/">ici</a>, il semblerait que les listes <code>Python</code> soit des tableaux (array). L'interface des listes est celle des séquences : par exemple, la méthode <code>len</code> s'applique non seulement aux listes mais aussi aux tuples et aux chaînes de caractères...</p>
+<p class="admonition-title"> Création d'une nouvelle interface</p>
+<p>On se propose de définir ici une nouvelle structure de données: les polynômes!
+En mathématiques, les polynômes sont des objets qui s'écrivent commme combinaison de monômes, de la forme <span class="arithmatex">\(a_n\times x^n\)</span>. Par exemple, <span class="arithmatex">\(P(x)=2x^4-5x^2+x-3\)</span> est un polynôme de degré 4.
+Nous allons définir toute une interface en commençant par réfléchir par <strong>l'implémentation</strong> de cette structure: comment allons-nous représenter, on dit implémenter, les polynômes en informatique!!?</p>
 </div>
-<p><img alt="Interface liste" src="../img/interface_list.png">
-<img alt="Interface sequence" src="../img/interface_sequence.png"/></img></p>
-<p>Donc, si il existe des méthodes qui agissent sur les structures de données, on ne sait pas nécessairement comment elles sont codées. La méthode <code>reverse</code> des listes est simple à comprendre: elle renverse les indices de la liste! Mais de quelle façon?</p>
-<p>Mieux, la méthode <code>sort</code> trie les listes: mais quel algorithme est utilisé pour cela?</p>
+<p>Nous allons choisir de le réprésenter par une liste Python de telle façon que:</p>
+<ol>
+<li>le coefficient <span class="arithmatex">\(a_n\)</span> du polynôme <span class="arithmatex">\(P\)</span> se trouve au rang <span class="arithmatex">\(n\)</span> de la liste.</li>
+<li>la longueur de la liste est égale au degré du polynôme plus 1!</li>
+</ol>
+<p>Ainsi, le polynôme <span class="arithmatex">\(P(x)=2x^4-5x^2+x-3\)</span> est-il représenté par la liste Python <code>P = [-3, 1, -5, 0, 2]</code>!</p>
+<p>Nous allons maintenant définir une <strong>interface</strong> pour cette structure de données.</p>
+<!--
+En fouillant un peu dans la documentation [ici](https://devdocs.io/python~3.10/), il semblerait que les listes ```Python ``` soit des tableaux (array). L'interface des listes est celle des séquences : par exemple, la méthode ```len ``` s'applique non seulement aux listes mais aussi aux tuples et aux chaînes de caractères...
+![Interface liste](../img/interface_list.png)
+![Interface sequence](../img/interface_sequence.png)
+
+Donc, si il existe des méthodes qui agissent sur les structures de données, on ne sait pas nécessairement comment elles sont codées. La méthode ```reverse ``` des listes est simple à comprendre: elle renverse les indices de la liste! Mais de quelle façon?
+
+ Mieux, la méthode ```sort ``` trie les listes: mais quel algorithme est utilisé pour cela? L'interface propose des méthodes sans savoir nécessairement comment elles sont codées.
+-->
 <div class="admonition tldr">
 <p class="admonition-title">Une interface</p>
 <p>Un ensemble d'informations qui permet de décrire une structure de données ainsi que les méthodes qui agissent sur ces données</p>
 </div>
+<p>Une première proposition.</p>
+<table class="table">
+<thead>
+<tr>
+<th align="center"><strong>Interface</strong></th>
+<th align="left"><strong>Instructions</strong></th>
+<th align="left"><strong>Commentaires</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Création d'un polynôme de degré <span class="arithmatex">\(n\)</span></td>
+<td align="left"><code>create_pol(n)</code></td>
+<td align="left">Retourne une liste. Par défaut tous les coefficients sont égaux à 0</td>
+</tr>
+<tr>
+<td align="center">Affiche le degré du polynome <code>P</code></td>
+<td align="left"><code>degre(P)</code></td>
+<td align="left">Retourne un entier. Il faut que <code>P</code> existe</td>
+</tr>
+<tr>
+<td align="center">Ajout du coefficient <span class="arithmatex">\(a_n\)</span> au polynome <code>P</code></td>
+<td align="left"><code>ajout_coeff(P, valeur, n)</code></td>
+<td align="left">Retourne une liste. Il faut que <code>P</code> existe</td>
+</tr>
+<tr>
+<td align="center">Accès aux éléments du polynôme</td>
+<td align="left"><code>affiche_coeff(P, rang)</code></td>
+<td align="left">Retourne un nombre.</td>
+</tr>
+<tr>
+<td align="center">{: .tabnsi_long :}</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
 <div class="admonition note">
 <p class="admonition-title">À faire</p>
-<p>Les bibliothèques Python ont subi une attaque informatique et la méthode <code>reverse</code> des listes a été définitivement perdue. Écrire une fonction <code>revers_new</code> qui pour une liste donnée retourne la liste dans l'autre sens...</p>
+<p>Quelles sont les instrutions qui permettent d'implémenter le polynôme <span class="arithmatex">\(P(x)=2x^4-5x^2+x-3\)</span>?</p>
+</div>
+<p>On peut <strong>enrichir l'interface</strong> en créant de nouvelles fonctionnalités, méthodes:</p>
+<table class="table">
+<thead>
+<tr>
+<th align="center"><strong>Interface</strong></th>
+<th align="left"><strong>Instructions</strong></th>
+<th align="left"><strong>Commentaires</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Évaluation de P pour une valeur de <span class="arithmatex">\(x=val\)</span></td>
+<td align="left"><code>eval_pol(P, val)</code></td>
+<td align="left">Retourne une valeur égale à <span class="arithmatex">\(P(val)\)</span>.</td>
+</tr>
+<tr>
+<td align="center">Somme de deux polynômes</td>
+<td align="left"><code>somme(p1, p2)</code></td>
+<td align="left">Retourne une liste.</td>
+</tr>
+<tr>
+<td align="center">Produit de deux polynômes</td>
+<td align="left"><code>produit(p1, p2)</code></td>
+<td align="left">Retourne une liste. Il faut que <code>P</code> existe</td>
+</tr>
+<tr>
+<td align="center">{: .tabnsi_long :}</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<ol>
+<li>Implémenter les deux polynômes <span class="arithmatex">\(P_1(x)=5x-3\)</span> et <span class="arithmatex">\(P_2(x)=8x^3-5x^2+1\)</span> avec les méthodes précédentes.</li>
+<li>Créer les polynômes <span class="arithmatex">\(P\)</span> et <span class="arithmatex">\(S\)</span> égaux respectivement à la somme et au produit de <span class="arithmatex">\(P_1\)</span> et <span class="arithmatex">\(P_2\)</span>.</li>
+</ol>
 </div>
 <p>La façon dont sont codées les méthodes présentées dans les interfaces, sont a priori invisibles aux yeux de l'utilisateur: on parle d'<strong>implémentation</strong> d'une méthode lorsqu'on découvre comment est programmée la méthode. Pour une même méthode, il peut exister alors plusieurs implémentations...</p>
 <div class="admonition tldr">
 <p class="admonition-title">En résumé...</p>
 <p>L'<strong>interface</strong> est la partie visible pour qui veut utiliser ce type de données. Elle précise comment utiliser la structure de données sans se préoccuper de la façon dont les choses ont été programmées, c'est-à-dire <strong>son implémentation</strong>.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">À faire: Implémenter l'interface</p>
+<ol>
+<li>Implémenter les méthodes précédentes dans un <strong>paradigme fonctionnel</strong>.</li>
+<li>Implémenter les méthodes précédentes dans un <strong>paradigme de programmation orienté objet</strong>.</li>
+</ol>
+</div>
+<p>Nous pourrions aussi envisager d'implémenter les polynômes par un dictionnaire où les clés seraient les coefficients et leur valeur, leur rang.</p>
 <h2 id="apibirth-day"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> API...birth day!<a class="headerlink" href="#apibirth-day" title="Permanent link">¶</a></h2>
 <p>Une autre interface bien utile, une API!</p>
 <div class="admonition tdlr">
@@ -468,11 +566,11 @@ Pour pouvoir l'utiliser il faut utiliser un jeton (Token) fourni lors de l'inscr
 </div>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">requests</span>
 <a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>
-<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">url</span><span class="o">=</span><span class="s2">"http://api.openweathermap.org/data/2.5/weather?q=agen&amp;appid=4370f9449a4ab35020f78dffcc0fe303"</span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">url</span> <span class="o">=</span> <span class="s2">"http://api.openweathermap.org/data/2.5/weather?q=agen&amp;appid=4370f9449a4ab35020f78dffcc0fe303"</span>
 <a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">content</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="n">data</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 <a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="n">t</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">'main'</span><span class="p">][</span><span class="s1">'temp'</span><span class="p">]</span>
-<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"La témpérature est de </span><span class="si">{}</span><span class="s2"> degrés C"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="mf">273.15</span><span class="p">))</span>
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"La témpérature est de </span><span class="si">{}</span><span class="s2"> degrés C"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">t</span> <span class="o">-</span> <span class="mf">273.15</span><span class="p">))</span>
 </code></pre></div>
 <p>On peut aussi effectuer des requêtes en Javascript et modifier ainsi le contenu d'une page web. Ci-dessous, une fonction utilisant une API donnant la position de la station spatiale ISS utilisant des promesses...</p>
 <p><div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">marequete</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -493,14 +591,11 @@ Concrètement, une API est constituée d’une bibliothèque logicielle, d’un 
 web et d’une description qui spécifie comment les clients peuvent interagir avec la
 plateforme logicielle qui fournit les données, appelée aussi <strong>fournisseur</strong>.</p>
 <h2 id="un-peu-de-manipulation"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Un peu de manipulation<a class="headerlink" href="#un-peu-de-manipulation" title="Permanent link">¶</a></h2>
-<div class="admonition note">
-<p class="admonition-title">À faire</p>
-<p>Comment utiliser une API dans une page WEB?</p>
-<ol>
-<li>Récupérer la page d'accueil du site <a href="../fichier/index.html">ici</a></li>
-<li>Explorez le code de la page.</li>
-</ol>
-</div>
+<!--!!! note "À faire"
+    Comment utiliser une API dans une page WEB?
+
+    1. Récupérer la page d'accueil du site [ici](../fichier/index.html)
+    2. Explorez le code de la page.-->
 <p>De nombreuses API disposent d’un <strong>wrapper</strong> Python : c’est un module Python qui
 permet d’interroger la base de données du fournisseur de façon simplifiée, sans avoir
 à écrire les requêtes Web, ni à interpréter les réponses. Celles-ci sont généralement
@@ -532,15 +627,17 @@ dictionnaires, facilement manipulables.</p>
 <a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="kn">import</span> <span class="nn">webbrowser</span>
 <a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="c1"># importation du sous-module MarsRovers du module nasaapi</span>
 <a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="kn">from</span> <span class="nn">nasaapi</span> <span class="kn">import</span> <span class="n">MarsRovers</span>
-<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="c1"># initialisation de la connexion avec l’API et création de l’ob-jet rovers</span>
+<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="c1"># initialisation de la connexion avec l’API et création de l’objet rovers</span>
 <a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="n">rovers</span> <span class="o">=</span> <span class="n">MarsRovers</span><span class="p">(</span><span class="err">«</span> <span class="n">coller</span> <span class="n">ici</span> <span class="n">la</span> <span class="n">clé</span> <span class="n">API</span> <span class="n">NASA</span> <span class="err">»</span><span class="p">,</span><span class="err">«</span> <span class="n">ici</span> <span class="n">le</span> <span class="n">jour</span><span class="err">»</span> <span class="p">,</span> <span class="err">«</span> <span class="n">NAV</span><span class="o">-</span><span class="n">CAM</span> <span class="err">»</span><span class="p">)</span>
-<a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="c1"># récupération des données de Curiosity (dictionnaire)</span>
-<a href="#__codelineno-2-8" id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="n">cur</span> <span class="o">=</span> <span class="n">rovers</span><span class="o">.</span><span class="n">curiosity</span><span class="p">()</span>
-<a href="#__codelineno-2-9" id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">cur</span><span class="p">)</span>
-<a href="#__codelineno-2-10" id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="c1"># accès à l’URL de la quatrième photo</span>
-<a href="#__codelineno-2-11" id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="n">url_photo</span> <span class="o">=</span> <span class="err">«</span> <span class="n">compléter</span> <span class="n">ici</span><span class="err">»</span>
-<a href="#__codelineno-2-12" id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="c1"># envoi de l’URL dans le navigateur</span>
-<a href="#__codelineno-2-13" id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="n">webbrowser</span><span class="o">.</span><span class="n">open_new_tab</span><span class="p">(</span><span class="n">url_photo</span><span class="p">)</span>
+<a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="c1"># par exemple rovers = MarsRovers("DEMO_KEY", sols = 1000 , camera = 'fhaz')</span>
+<a href="#__codelineno-2-8" id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="c1"># récupération des données de Curiosity (dictionnaire)</span>
+<a href="#__codelineno-2-9" id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="n">cur</span> <span class="o">=</span> <span class="n">rovers</span><span class="o">.</span><span class="n">curiosity</span><span class="p">()</span>
+<a href="#__codelineno-2-10" id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">cur</span><span class="p">)</span>
+<a href="#__codelineno-2-11" id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="c1"># accès à l’URL de la quatrième photo</span>
+<a href="#__codelineno-2-12" id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="c1"># l'URL est contenu dans la variable cur. À vous de l'y extraire.</span>
+<a href="#__codelineno-2-13" id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="n">url_photo</span> <span class="o">=</span> <span class="err">«</span> <span class="n">compléter</span> <span class="n">ici</span><span class="err">»</span>
+<a href="#__codelineno-2-14" id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="c1"># envoi de l’URL dans le navigateur</span>
+<a href="#__codelineno-2-15" id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="n">webbrowser</span><span class="o">.</span><span class="n">open_new_tab</span><span class="p">(</span><span class="n">url_photo</span><span class="p">)</span>
 </code></pre></div>
 <script src="../pyodide-mkdocs/ide.js"></script>
 <!-- Massilia javascripts -->
