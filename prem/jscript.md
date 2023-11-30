@@ -283,7 +283,7 @@ L'affichage de l'heure est dynamique mais invariant: quiconque appuie sur le bou
     2. Changer l' ```id``` du paragraphe ```<p>``` de ```demo``` en ```nom```.
     3. Enfin, associer au clic de bouton la bonne fonction:
     ``` HTML
-    <button onclick="ma_fonc_bonjour()">
+    <button onclick="debut()">
     ```
 
 
