@@ -214,6 +214,11 @@
         Dynamisons le Web
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../prem/widget.html">
+        Création de widgets
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -742,7 +747,7 @@ caractérise l’emplacement pour ajouter ou retirer des éléments.</p>
 structure. On ajoute des nouvelles assiettes au sommet de la pile, et quand on veut en
 retirer une, on est obligé de prendre celle située au sommet.</p>
 <h3 id="interface-dune-pile"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.2</span> Interface d'une pile<a class="headerlink" href="#interface-dune-pile" title="Permanent link">¶</a></h3>
-<p>On peut définir au moins 6 primitives de cette struture de données:</p>
+<p>On peut définir au moins 6 primitives de cette structure de données:</p>
 <table class="table">
 <thead>
 <tr>
@@ -870,7 +875,7 @@ On appelle cela <strong>un effet de bord</strong>!</p>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="kn">from</span> <span class="nn">Cellule</span> <span class="kn">import</span> <span class="n">Cellule</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="kn">from</span> <span class="nn">cel</span> <span class="kn">import</span> <span class="n">Cellule</span>
 <a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="k">class</span> <span class="nc">Pile</span> <span class="p">:</span>
 <a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="p">:</span>
 <a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a>        <span class="sd">"""</span>
@@ -1000,10 +1005,10 @@ la fois la tête et le bout de la file.</p>
 <li>modéliser une file d'attente dan sun cas plus général...</li>
 </ul>
 <h3 id="implementer-une-file"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.3</span> Implémenter une file<a class="headerlink" href="#implementer-une-file" title="Permanent link">¶</a></h3>
-<p>Toujours deux implémentations possibles même si on en découvrira bien d'autres...</p>
+<p>La différence entre une pile et une file se trouve dans l'accès aux éléments. Du coup, il est facile de modifier les implémentations des piles pour trouver celles des files...</p>
 <details class="example">
 <summary>La classe File...</summary>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="k">class</span> <span class="nc">Cellule</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="k">class</span> <span class="nc">Cellule</span><span class="p">():</span>
 <a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a>
 <a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">succ</span><span class="p">):</span>
 <a href="#__codelineno-7-4" id="__codelineno-7-4" name="__codelineno-7-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">element</span> <span class="o">=</span> <span class="n">element</span>
@@ -1021,7 +1026,7 @@ la fois la tête et le bout de la file.</p>
 <a href="#__codelineno-7-16" id="__codelineno-7-16" name="__codelineno-7-16"></a>    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <a href="#__codelineno-7-17" id="__codelineno-7-17" name="__codelineno-7-17"></a>        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">element</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'|'</span>
 <a href="#__codelineno-7-18" id="__codelineno-7-18" name="__codelineno-7-18"></a>
-<a href="#__codelineno-7-19" id="__codelineno-7-19" name="__codelineno-7-19"></a><span class="k">class</span> <span class="nc">File</span><span class="p">:</span>
+<a href="#__codelineno-7-19" id="__codelineno-7-19" name="__codelineno-7-19"></a><span class="k">class</span> <span class="nc">File</span><span class="p">():</span>
 <a href="#__codelineno-7-20" id="__codelineno-7-20" name="__codelineno-7-20"></a>
 <a href="#__codelineno-7-21" id="__codelineno-7-21" name="__codelineno-7-21"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <a href="#__codelineno-7-22" id="__codelineno-7-22" name="__codelineno-7-22"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">tete</span> <span class="o">=</span> <span class="kc">None</span>
