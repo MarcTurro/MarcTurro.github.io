@@ -9,7 +9,8 @@
   
   /* Extra CSS for mkdocs-enumerate-headings-plugin */ 
   .enumerate-headings-plugin {
-    filter: opacity(35%);
+    font : 120% georgia, palatino, serif;
+    
   }
   
   .wrapper_h {

@@ -7,9 +7,8 @@
 h1 
 {
     text-align: center;
-	border : 1px solid #4051b5;
     margin : 0 0 10px 30px; /* haut, droite, bas, gauche (respectivement) */
-    font : 150% georgia, palatino, serif;
+    font : 200% georgia, palatino, serif;
     font-style : italic;
 }
 
@@ -17,9 +16,9 @@ h1
 h2
 {
     text-align: left;
-	border : 1px solid #4051b5;
+
 	margin : 0 50px 10px 100px; /* haut, droite, bas, gauche (respectivement) */
-    font : 130% georgia, palatino, serif;
+    font : 150% georgia, palatino, serif;
     font-style : normale;
 }
 
@@ -62,8 +61,3 @@ table.tabnsi_long {
 }
 
 
-/* Extra CSS for mkdocs-enumerate-headings-plugin */ 
-.enumerate-headings-plugin {
-  font : 120% georgia, palatino, serif;
-  filter: opacity(5%);
-}

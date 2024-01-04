@@ -1,0 +1,746 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Marc TURRO" name="author"/>
+<link href="https://marcturro.github.io/prem/interface_graphique.html" rel="canonical"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.4.0, mkdocs-material-8.5.6" name="generator"/>
+<title>Interface graphique en Python - Numérique et Sciences Informatiques</title>
+<link href="../assets/stylesheets/main.20d9efc8.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.cbb835fc.min.css" rel="stylesheet"/>
+<style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M471.6 21.7c-21.9-21.9-57.3-21.9-79.2 0l-30.1 30 97.9 97.9 30.1-30.1c21.9-21.9 21.9-57.3 0-79.2l-18.7-18.6zm-299.2 220c-6.1 6.1-10.8 13.6-13.5 21.9l-29.6 88.8c-2.9 8.6-.6 18.1 5.8 24.6s15.9 8.7 24.6 5.8l88.8-29.6c8.2-2.8 15.7-7.4 21.9-13.5l167.3-167.4-98-98-167.3 167.4zM96 64c-53 0-96 43-96 96v256c0 53 43 96 96 96h256c53 0 96-43 96-96v-96c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H96z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-144c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M224 0c17.7 0 32 14.3 32 32v208h-64V32c0-17.7 14.3-32 32-32zm96 160c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32s-32-14.3-32-32v-64c0-17.7 14.3-32 32-32zm64 64c0-17.7 14.3-32 32-32s32 14.3 32 32v64c0 17.7-14.3 32-32 32s-32-14.3-32-32v-64zM93.3 51.2 175.9 240h-69.8L34.7 76.8c-7.1-16.2.3-35 16.5-42.1s35.1.3 42.1 16.5zm27 221.3-.2-.5H216c22.1 0 40 17.9 40 40s-17.9 40-40 40h-56c-8.8 0-16 7.2-16 16s7.2 16 16 16h56c39.8 0 72-32.2 72-72v-.6c9.4 5.4 20.3 8.6 32 8.6 13.2 0 25.4-4 35.6-10.8 8.7 24.9 32.5 42.8 60.4 42.8 11.7 0 22.6-3.1 32-8.6v8.6c0 88.4-71.6 160-160 160h-61.7c-42.4 0-83.1-16.9-113.1-46.9l-11.6-11.6C77.5 429.5 64 396.9 64 363v-27c0-32.7 24.6-59.7 56.3-63.5z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM288 352c0 17.7-14.3 32-32 32s-32-14.3-32-32 14.3-32 32-32 32 14.3 32 32z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM224 256c0 35.3-28.7 64-64 64s-64-28.7-64-64 28.7-64 64-64 64 28.7 64 64zm128 64c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 0c53 0 96 43 96 96v3.6c0 15.7-12.7 28.4-28.4 28.4H188.4c-15.7 0-28.4-12.7-28.4-28.4V96c0-53 43-96 96-96zM41.4 105.4c12.5-12.5 32.8-12.5 45.3 0l64 64c.7.7 1.3 1.4 1.9 2.1 14.2-7.3 30.4-11.4 47.5-11.4H312c17.1 0 33.2 4.1 47.5 11.4.6-.7 1.2-1.4 1.9-2.1l64-64c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3l-64 64c-.7.7-1.4 1.3-2.1 1.9 6.2 12 10.1 25.3 11.1 39.5H480c17.7 0 32 14.3 32 32s-14.3 32-32 32h-64c0 24.6-5.5 47.8-15.4 68.6 2.2 1.3 4.2 2.9 6 4.8l64 64c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0l-63.1-63.1c-24.5 21.8-55.8 36.2-90.3 39.6V240c0-8.8-7.2-16-16-16s-16 7.2-16 16v239.2c-34.5-3.4-65.8-17.8-90.3-39.6l-63 63c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l64-64c1.9-1.9 3.9-3.4 6-4.8C101.5 367.8 96 344.6 96 320H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h64.3c1.1-14.1 5-27.5 11.1-39.5-.7-.6-1.4-1.2-2.1-1.9l-64-64c-12.5-12.5-12.5-32.8 0-45.3z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
+<!-- favicons -->
+<link href="../assets/images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="../assets/images/favicon_32x32.png" rel="icon" sizes="32x32"/>
+<link href="../assets/images/favicon_96x96.png" rel="icon" sizes="96x96"/>
+<link href="../assets/images/favicon_144x144.png" rel="icon" sizes="144x144"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/atom-one-light.min.css" rel="stylesheet"/>
+<!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+<script charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.12.5/ace.js" type="text/javascript"></script>
+<script charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.12.5/ext-language_tools.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.21.3/full/pyodide.js"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.21.3/full/pyodide.asm.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-md5"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/js/jquery.terminal.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/css/jquery.terminal.min.css" rel="stylesheet"/>
+<script src="../pyodide-mkdocs/interpreter.js"></script>
+<!-- Ajouter 17 february pour tables massilia-->
+<script defer="" src="../js/massilia.js"></script>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"IBM Plex Mono";--md-code-font:"Roboto Mono"}</style>
+<link href="../xtra/stylesheets/extra.css" rel="stylesheet"/>
+<link href="../xtra/stylesheets/pyoditeur.css" rel="stylesheet"/>
+<link href="../xtra/stylesheets/ajustements.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-columns.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-admonitions.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../pyodide-mkdocs/pyoditeur.css" rel="stylesheet"/>
+<input autocomplete="off" class="md-toggle" data-ace-dark-mode="tomorrow_night_bright" data-ace-light-mode="crimson_editor" id="ace_palette" type="checkbox"/>
+</head>
+<body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#sortir-de-la-console">
+          Aller au contenu
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--lifted" data-md-component="header">
+<nav aria-label="En-tête" class="md-header__inner md-grid">
+<a aria-label="Numérique et Sciences Informatiques" class="md-header__button md-logo" data-md-component="logo" href="../index.html" title="Numérique et Sciences Informatiques">
+<img alt="logo" src="../img/logoNSIsite.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Numérique et Sciences Informatiques
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Interface graphique en Python
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="" data-md-color-media="" data-md-color-primary="" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="" data-md-color-media="" data-md-color-primary="" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Rechercher" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Rechercher" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Effacer" class="md-search__icon md-icon" tabindex="-1" title="Effacer" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<nav aria-label="Onglets" class="md-tabs" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../index.html">
+      Accueil
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="premnsi.html">
+        Première NSI
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../term/termnsi.html">
+        Terminale NSI
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../term/ep.html">
+      Epreuve pratique NSI
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../maths/index.html">
+        Un peu de maths aussi ...
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../ecolo/ecologie.html">
+      Impact environnemental
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../ressources.html">
+        Ressources
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden="">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Numérique et Sciences Informatiques" class="md-nav__button md-logo" data-md-component="logo" href="../index.html" title="Numérique et Sciences Informatiques">
+<img alt="logo" src="../img/logoNSIsite.png"/>
+</a>
+    Numérique et Sciences Informatiques
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../index.html">
+        Accueil
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2">
+          Première NSI
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Première NSI" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Première NSI
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="premnsi.html">
+        Accueil
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="index_tpbash.html">
+        Passez la commande !
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="frontend.html">
+        Développement Web
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="jscript.html">
+        Dynamisons le Web
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="widget.html">
+        Création de widgets
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<a class="md-nav__link md-nav__link--active" href="interface_graphique.html">
+        Interface graphique en Python
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="animation_canvas.html">
+        Animation dans un canvas
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="images_numeriques.html">
+        Travail sur les images numériques
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="traitement_donnees.html">
+        Traitement des données
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3">
+          Terminale NSI
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Terminale NSI" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          Terminale NSI
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../term/termnsi.html">
+        Accueil
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../term/recursivite.html">
+        Récursivité
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../term/interface.html">
+        Interface et implémentation
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../term/stalin.html">
+        Structure de données linéaires
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../term/complex_struc.html">
+        Complexité des structures
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../term/reseau_term.html">
+        Rappel sur les réseaux informatiques
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../term/routage.html">
+        Routage
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../term/ep.html">
+        Epreuve pratique NSI
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5">
+          Un peu de maths aussi ...
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Un peu de maths aussi ..." class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+          Un peu de maths aussi ...
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../maths/index.html">
+        Accueil
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../maths/intro.html">
+        Pour débuter
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../maths/variables.html">
+        Les variables
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../maths/listes.html">
+        Les listes
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../maths/boucles.html">
+        Les boucles
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../maths/fonctions.html">
+        Les fonctions
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../maths/graphique.html">
+        Les graphiques
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_8" id="__nav_5_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_8">
+          Mathématiques en Terminale STI2D
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Mathématiques en Terminale STI2D" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_8">
+<span class="md-nav__icon md-icon"></span>
+          Mathématiques en Terminale STI2D
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../maths/intro_python.html">
+        Prise en main
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../maths/exercice_python.html">
+        Série d'exercices
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ecolo/ecologie.html">
+        Impact environnemental
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7">
+          Ressources
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Ressources" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+          Ressources
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ressources.html">
+        Accueil
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../res_prem.html">
+        Programme Première NSI
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../res_term.html">
+        Programme Terminale NSI
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="sortir-de-la-console"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Sortir de la console<a class="headerlink" href="#sortir-de-la-console" title="Permanent link">¶</a></h1>
+<p>Nous avons vu comment construire une interface graphique donnant les différentes combinaisons possibles des composantes RGB.
+Le travail suivant permet en autonomie la création puis la gestion d’interfaces graphiques (fenêtre, boutons,
+labels,...) qui donne une véritable Interface Homme-Machine (IHM).</p>
+<p>Nous ainsi allons créer une interface qui permet de construire des cercles et des carrés de différentes couleurs dans une zone de dessin.
+Dans une seconde partie nous créerons des animations pour dynamiser tout cela.</p>
+<p>Tout cela dans un seul objectif: créer des jeux!</p>
+<h1 id="notre-interface-graphique"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.</span> Notre interface graphique<a class="headerlink" href="#notre-interface-graphique" title="Permanent link">¶</a></h1>
+<h2 id="analyse-de-notre-interface"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.1</span> Analyse de notre interface<a class="headerlink" href="#analyse-de-notre-interface" title="Permanent link">¶</a></h2>
+<p><center>
+<img alt="fenetre_a_realiser" src="img/exemple_tk.png" width="50%">
+</img></center></p>
+<div class="admonition example">
+<p class="admonition-title">Exemple d'interface graphique</p>
+<p>Dans cette interface vous trouverez:</p>
+<ul>
+<li>une zone de commandes contenant les diverses commandes (boutons, échelles, entrée,...)</li>
+<li>une zone de dessin, le canvas.</li>
+</ul>
+<p>Achevée, elle permettra de construire des cercles ou des carrés dans le canvas, définis dans leur forme et couleur par les valeurs des différents boutons de commandes...</p>
+</div>
+<p>Vous trouverez ci-dessous, une partie du code qui permet sa construction et que vous devrez compléter tout au long de ce travail:</p>
+<details>
+<summary>Code à copier</summary>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1">#################################   ZONE FONCTIONS     ###########################</span>
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="c1">##################################################################################</span>
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="c1">############### CONSTRUCTION DES OBJETS DANS LA FENETRE ##########################</span>
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="c1">##################################################################################</span>
+<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="n">fen</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
+<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="n">fen</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s2">"Les objets graphiques"</span><span class="p">)</span>
+<a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="n">fen</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s1">'1000x600+100+100'</span><span class="p">)</span>
+<a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="n">fen</span><span class="o">.</span><span class="n">resizable</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="c1">#widthxheight+bordecran</span>
+<a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="c1">##################################################################################</span>
+<a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="n">ZoneDessin</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">fen</span><span class="p">,</span> <span class="n">borderwidth</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">relief</span> <span class="o">=</span> <span class="n">RIDGE</span><span class="p">)</span>
+<a href="#__codelineno-0-15" id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="n">ZoneDessin</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<a href="#__codelineno-0-16" id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="c1">##################################################################################</span>
+<a href="#__codelineno-0-17" id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="n">Can</span> <span class="o">=</span> <span class="n">Canvas</span><span class="p">(</span><span class="n">ZoneDessin</span><span class="p">,</span> <span class="n">bg</span> <span class="o">=</span> <span class="s1">'grey'</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">800</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">580</span><span class="p">)</span>
+<a href="#__codelineno-0-18" id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="n">Can</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<a href="#__codelineno-0-19" id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="c1">###################################################################################</span>
+<a href="#__codelineno-0-20" id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="n">ZoneOptions</span> <span class="o">=</span> <span class="n">LabelFrame</span><span class="p">(</span><span class="n">fen</span><span class="p">,</span> <span class="n">borderwidth</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">text</span> <span class="o">=</span> <span class="s1">'Options'</span><span class="p">,</span> <span class="n">labelanchor</span> <span class="o">=</span> <span class="s1">'n'</span><span class="p">,</span>
+<a href="#__codelineno-0-21" id="__codelineno-0-21" name="__codelineno-0-21"></a>                        <span class="n">relief</span> <span class="o">=</span> <span class="n">RIDGE</span><span class="p">,</span>
+<a href="#__codelineno-0-22" id="__codelineno-0-22" name="__codelineno-0-22"></a>                        <span class="n">width</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">580</span><span class="p">)</span>
+<a href="#__codelineno-0-23" id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="n">ZoneOptions</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<a href="#__codelineno-0-24" id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="n">ZoneOptions</span><span class="o">.</span><span class="n">grid_propagate</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<a href="#__codelineno-0-25" id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="c1">###################################################################################</span>
+<a href="#__codelineno-0-26" id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="n">BouDebut</span> <span class="o">=</span> <span class="n">Button</span> <span class="p">(</span><span class="n">ZoneOptions</span><span class="p">,</span> <span class="n">text</span> <span class="o">=</span> <span class="s1">'Construire'</span><span class="p">,</span> <span class="n">command</span> <span class="o">=</span> <span class="n">fen</span><span class="o">.</span><span class="n">destroy</span><span class="p">)</span>
+<a href="#__codelineno-0-27" id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="n">BouDebut</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pady</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span><span class="n">columnspan</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+<a href="#__codelineno-0-28" id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="c1">###################################################################################</span>
+<a href="#__codelineno-0-29" id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="n">EchelleRayon</span> <span class="o">=</span> <span class="n">Scale</span><span class="p">(</span><span class="n">ZoneOptions</span><span class="p">,</span> <span class="n">orient</span> <span class="o">=</span> <span class="s1">'horizontal'</span><span class="p">,</span> <span class="n">from_</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<a href="#__codelineno-0-30" id="__codelineno-0-30" name="__codelineno-0-30"></a>    <span class="n">to</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">resolution</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">tickinterval</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">length</span> <span class="o">=</span> <span class="mi">190</span><span class="p">,</span>
+<a href="#__codelineno-0-31" id="__codelineno-0-31" name="__codelineno-0-31"></a>    <span class="n">label</span> <span class="o">=</span> <span class="s1">'Dimension du cercle ou du carre'</span><span class="p">)</span>
+<a href="#__codelineno-0-32" id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="n">EchelleRayon</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="n">columnspan</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+<a href="#__codelineno-0-33" id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="c1">#---------------------------------------------------------------------------------#</span>
+<a href="#__codelineno-0-34" id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="c1">#################INSERER DESSOUS LES AUTRES CONSTRUCTEURS    #####################</span>
+<a href="#__codelineno-0-35" id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="c1">#---------------------------------------------------------------------------------#</span>
+<a href="#__codelineno-0-36" id="__codelineno-0-36" name="__codelineno-0-36"></a>
+<a href="#__codelineno-0-37" id="__codelineno-0-37" name="__codelineno-0-37"></a>
+<a href="#__codelineno-0-38" id="__codelineno-0-38" name="__codelineno-0-38"></a><span class="c1">################ NE RIEN METTRE EN DESSOUS DE CETTE LIGNE  ########################</span>
+<a href="#__codelineno-0-39" id="__codelineno-0-39" name="__codelineno-0-39"></a><span class="n">fen</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</code></pre></div>
+</details>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
+<p>Copier ce code et enregistrez-le dans un nouveau fichier que vous nommerez <code>interface_graphique.py</code></p>
+</div>
+<h2 id="analyse-du-code"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.2</span> Analyse du code<a class="headerlink" href="#analyse-du-code" title="Permanent link">¶</a></h2>
+<p>Pour construire une interface graphique, on fait appel à des <strong>constructeurs</strong>: <code>Frame, Scale, Button</code> en sont des exemples. Chaque constructeur est défini dans un élément <strong>parent</strong> et possède des attributs <strong>obligatoires</strong> ou <strong>optionnels</strong> qui lui sont propres.</p>
+<div class="admonition note">
+<p class="admonition-title">À savoir...</p>
+<p>Le premier constructeur appelé est <code>Tk()</code> qui construit la fenêtre, appelée <code>fen</code> ici. Ce constructeur possède les attributs <code>title, geometry</code> ou encore <code>resizable</code>et sûrement bien d'autres.</p>
+</div>
+<p>Remarquez que le constructeur <code>Scale</code> pour faire des curseurs contient beaucoup plus d'attributs...</p>
+<div class="admonition abstract">
+<p class="admonition-title">En résumé...</p>
+<p><img alt="" src="img/button.png" width="60%"/></p>
+</div>
+<p>Et si vous voulez connaître tous les attributs du constructeur <code>Button</code>, il suffit de se documenter:
+<center>
+<img alt="classbutton" src="img/classbutton.png" width="50%"/>
+</center></p>
+<div class="admonition info">
+<p class="admonition-title">Pour se documenter</p>
+<p>Vous trouverez <a href="https://profjahier.github.io/html/NSI/tkinter/doc_EFlorent_allegee/index-2.html">ici</a>  ou <a href="http://pascal.ortiz.free.fr/contents/tkinter/tkinter/tkinter.pdf">là</a> de quoi vous documentez sur les différents widgets que vous pouvez utiliser.</p>
+</div>
+<h2 id="le-gestionnaire-de-positionnement"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.3</span> Le gestionnaire de positionnement<a class="headerlink" href="#le-gestionnaire-de-positionnement" title="Permanent link">¶</a></h2>
+<p>Il ne suffit pas de créer les éléments graphiques ; il faut aussi les placer dans leur conteneur. D’ailleurs, les
+différents widgets n’apparaîtront pas s’ils ne sont pas placés !</p>
+<p>Il existe plusieurs façons de positionner des objets mais nous n'utiliserons que le gestionnaire  <code>grid</code>, qui permet de placer les objets dans une grille virtuelle, préalablement réfléchie...</p>
+<div class="admonition attention">
+<p class="admonition-title">Positionnement relatif</p>
+<p>Les objets (widgets) sont positionnés dans leur parent respectif et direct. Le canvas <code>Can</code> est positionné dans la <code>ZoneDessin</code> et le bouton <code>Boudebut</code> dans la <code>ZoneOptions</code>!</p>
+</div>
+<p>Il est donc important de bien concevoir son projet avant de le réaliser!</p>
+<h1 id="enrichissons-notre-interface"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.</span> Enrichissons notre interface!<a class="headerlink" href="#enrichissons-notre-interface" title="Permanent link">¶</a></h1>
+<p>Nous allons compléter le code proposé ci-dessus afin d'enrichir l'interface par d'autres widgets et voir comment on peut dessiner dans le canvas (zone dédié au dessin...).</p>
+<h2 id="commande-pour-dessiner-dans-le-canvas"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.1</span> Commande pour dessiner dans le canvas...<a class="headerlink" href="#commande-pour-dessiner-dans-le-canvas" title="Permanent link">¶</a></h2>
+<p>Un canvas est une zone destinée à contenir des dessins ou autres figures complexes (et même des
+images...). Par exemple pour créer un cercle rouge dans le canvas <code>Can</code> , il faut utiliser le constructeur :</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">x</span> <span class="o">=</span> <span class="mi">400</span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="n">y</span> <span class="o">=</span> <span class="mi">300</span>
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="n">r</span> <span class="o">=</span> <span class="mi">50</span> 
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="n">Can</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s1">'red'</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
+<ol>
+<li>Insérer ce code dans la zone d'insertion et vous devriez voir apparaître un cercle rouge dans le canvas.</li>
+<li>Créer un autre cercle de couleur verte dont les coordonnées du centre sont <code>225</code> et <code>458</code> de rayon <code>200</code></li>
+</ol>
+</div>
+<p>Pour dessiner un rectangle rose de largeur <code>l</code>, de hauteur <code>h</code> centré au point de coordonnées <code>(x,y)</code>, il suffit d'utiliser le constructeur:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">Can</span><span class="o">.</span><span class="n">create_rectangle</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">l</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">h</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">l</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">h</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s1">'pink'</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
+<p>Créer dans le canvas, un rectangle bleu centré en <code>(500, 140)</code> de largeur <code>100</code> et de hauteur <code>60</code>.</p>
+</div>
+<p>Il existe d'autres constructeurs pour insérer du texte par exemple (<code>create_text()</code>) ou des polygones plus complexes (<code>create_polygon()</code>) mais intéressons nous à la façon d'intégrer une image!</p>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
+<ol>
+<li>Récupérer l'image <code>pacman.png</code>(<a download="pacman.png" href="../img/pacman.png">ici</a>).</li>
+<li>Supprimer les cercles et les rectangles puis insérer le code suivant pour afficher l'image au milieu du canvas:
+    <div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="n">img</span> <span class="o">=</span> <span class="n">PhotoImage</span><span class="p">(</span><span class="n">file</span> <span class="o">=</span> <span class="s2">"pacman.png"</span><span class="p">)</span>
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="n">Can</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">290</span><span class="p">,</span> <span class="n">image</span> <span class="o">=</span> <span class="n">img</span><span class="p">)</span>
+</code></pre></div></li>
+</ol>
+</div>
+<h2 id="associer-la-valeur-des-widget-a-la-construction-dune-figure-elementaire"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2</span> Associer la valeur des widget à la construction d'une figure élémentaire...<a class="headerlink" href="#associer-la-valeur-des-widget-a-la-construction-dune-figure-elementaire" title="Permanent link">¶</a></h2>
+<p>Dans cette partie, on souhaite construire des cercles ou des rectangles dont les dimensions sont données par la valeur des quelques widgets présents...</p>
+<p>Par exemple, récupérer la valeur donnée par le curseur et construire le cercle dont le rayon est cette valeur. On utilise pour cela une <strong>variable de contrôle</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">À savoir...</p>
+<p>Une variable de contrôle est une variable gobale associée à un widget et sa valeur peut être récupérée partout dans le programme.</p>
+</div>
+<p>Le code suivant permet de définir une variable de contrôle de type <code>Int</code>.</p>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
+<ol>
+<li>Ajouter le code suivant juste avant le constructeur <code>EchelleRayon</code>:
+    <div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="n">valeur_curseur</span> <span class="o">=</span> <span class="n">IntVar</span><span class="p">(</span><span class="n">ZoneOptions</span><span class="p">)</span>
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="n">valeur_curseur</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div></li>
+<li>Ajouter au constructeur <code>EchelleRayon</code> l'attribut <code>variable = valeur_curseur</code>.</li>
+</ol>
+</div>
+<p>Nous allons maintenant associer au bouton la commande qui permet de dessiner un cercle dans le canvas. Pour cela, nous allons définir la fonction <code>cercle</code> qui sera appelée à l'appui sur le bouton.</p>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
+<ol>
+<li>Ajouter dans la zone dédiée aux fonctions, le code suivant:
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">def</span> <span class="nf">cercle</span><span class="p">():</span>
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">800</span><span class="p">),</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">580</span><span class="p">)</span>
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>    <span class="n">r</span> <span class="o">=</span> <span class="n">valeur_curseur</span><span class="o">.</span><span class="n">get</span><span class="p">()</span><span class="c1">#permet de récupérer la valeur de la variable valeur_curseur et la stocker dans la variable r</span>
+<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a>    <span class="n">Can</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s1">'red'</span><span class="p">)</span>
+</code></pre></div></li>
+<li>Changer l'attibut <code>command</code> du bouton, en lui attibuant la valeur <code>cercle</code>.</li>
+<li>Modifier la valeur du curseur et tester la construction pour constater que le rayon du cercle change.</li>
+</ol>
+</div>
+<p>Nous allons maintenant créer de nouveaux widgets pour :</p>
+<ul>
+<li>choisir la couleur(menu déroulant dont le constructuer se nomme <code>OptionMenu</code>  )</li>
+<li>choisir la forme(menu déroulant dont le constructeur se nomme <code>OptionMenu</code>  )</li>
+<li>saisir la valeur du côté du carré (zone de saisir dont le constructeur se nomme <code>Entry</code>  )</li>
+<li>donner des indications (texte dont le constructeur se nomme <code>Label</code> )</li>
+</ul>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
+<p>Réaliser la construction des widgets ci-dessus ainsi que les variables de contrôles nécessaires. Je rappelle le lien vers l'aide (voir <a href="https://profjahier.github.io/html/NSI/tkinter/doc_EFlorent_allegee/index-2.html">ici</a>)</p>
+</div>
+<h1 id="et-la-souris-mainenant"><span class="enumerate-headings-plugin enumerate-heading-plugin">4.</span> Et la souris mainenant!<a class="headerlink" href="#et-la-souris-mainenant" title="Permanent link">¶</a></h1>
+<p>Nouvel objectif: dessiner dans le canvas une forme (carré ou cercle) aux coordonnées données par le clic de souris dans le canvas.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>L'appel de la fonction <code>cercle</code> va maintenant être réalisé par un événement extérieur (du type clavier ou souris). Il faut donc l'indiquer à la fonction en lui ajouatnt le paramètre <code>event</code> ou plus simplement <code>evt</code></p>
+</div>
+<p>La méthode <code>fen.mainloop()</code> en fin de programme permet d'écouter les événements extérieurs...</p>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
+<ol>
+<li>Changer la fonction cercle comme suit:
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">def</span> <span class="nf">cercle</span><span class="p">(</span><span class="n">evt</span><span class="p">):</span>
+<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a>        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">evt</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">evt</span><span class="o">.</span><span class="n">y</span>
+<a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a>        <span class="n">r</span> <span class="o">=</span> <span class="n">valeur_curseur</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+<a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a>        <span class="n">Can</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s1">'red'</span><span class="p">)</span>
+</code></pre></div></li>
+<li>Ajouter enfin le code suivant juste avant l'instruction <code>fen.mainloop()</code> :
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="n">Can</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">"&lt;Button-1&gt;"</span><span class="p">,</span> <span class="n">cercle</span><span class="p">)</span>
+</code></pre></div></li>
+</ol>
+</div>
+<p>Vous comprendrez que:</p>
+<ul>
+<li>les coordonnées du clic de souris est récupérer par les instructions <code>etv.x</code>  et <code>evt.y</code> .</li>
+<li>la dernière instruction établit un <strong>lien</strong> entre le clic sur le bouton gauche de la souris (<code>Button-1</code> ) et la fonction <code>cercle</code> sur le canvas.</li>
+</ul>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
+<p>Modifier les codes afin de construire un objet au clic de souris dans le canvas dont les formes, les couleurs et les dimensions sont données par les différents widgets.</p>
+</div>
+<h1 id="pilotage-au-clavier"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.</span> Pilotage au clavier<a class="headerlink" href="#pilotage-au-clavier" title="Permanent link">¶</a></h1>
+<p>Dans le paragraphe précédent, nous avons vu comment intéragir avec le clic de souris. Je vous propose ici de piloter un objet au clavier à l'aide des flèches directionnelles.</p>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
+<p>Récupérer le code ci-dessous et enregistrez le fichier sous le nom <code>pilotage_cercle.py</code></p>
+</div>
+<details>
+<summary>Code à copier</summary>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
+<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="c1">#######################      VARIABLES      ##########################################</span>
+<a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">400</span> <span class="c1">#défini les coordonnées initiales de l'objet</span>
+<a href="#__codelineno-8-4" id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="n">r</span> <span class="o">=</span> <span class="mi">25</span><span class="c1"># défini le rayon initial</span>
+<a href="#__codelineno-8-5" id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="n">couleur</span> <span class="o">=</span> <span class="s1">'red'</span>
+<a href="#__codelineno-8-6" id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="c1">#########################        FONCTIONS     #######################################</span>
+<a href="#__codelineno-8-7" id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="k">def</span> <span class="nf">bouge_balle</span><span class="p">(</span><span class="n">evt</span><span class="p">):</span>
+<a href="#__codelineno-8-8" id="__codelineno-8-8" name="__codelineno-8-8"></a>    <span class="k">global</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">r</span>
+<a href="#__codelineno-8-9" id="__codelineno-8-9" name="__codelineno-8-9"></a>    <span class="n">touche</span> <span class="o">=</span> <span class="n">evt</span><span class="o">.</span><span class="n">keysym</span>
+<a href="#__codelineno-8-10" id="__codelineno-8-10" name="__codelineno-8-10"></a>    <span class="k">if</span> <span class="n">touche</span> <span class="o">==</span> <span class="s2">"Left"</span><span class="p">:</span>
+<a href="#__codelineno-8-11" id="__codelineno-8-11" name="__codelineno-8-11"></a>        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">2</span>
+<a href="#__codelineno-8-12" id="__codelineno-8-12" name="__codelineno-8-12"></a>        <span class="n">can</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="n">baballe</span><span class="p">,</span> <span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span>
+<a href="#__codelineno-8-13" id="__codelineno-8-13" name="__codelineno-8-13"></a>    <span class="k">elif</span> <span class="n">touche</span> <span class="o">==</span> <span class="s2">"Right"</span><span class="p">:</span>
+<a href="#__codelineno-8-14" id="__codelineno-8-14" name="__codelineno-8-14"></a>        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+<a href="#__codelineno-8-15" id="__codelineno-8-15" name="__codelineno-8-15"></a>        <span class="n">can</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="n">baballe</span><span class="p">,</span> <span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span>
+<a href="#__codelineno-8-16" id="__codelineno-8-16" name="__codelineno-8-16"></a>    <span class="k">elif</span> <span class="n">touche</span> <span class="o">==</span> <span class="s2">"Up"</span><span class="p">:</span>
+<a href="#__codelineno-8-17" id="__codelineno-8-17" name="__codelineno-8-17"></a>        <span class="k">pass</span>
+<a href="#__codelineno-8-18" id="__codelineno-8-18" name="__codelineno-8-18"></a>    <span class="k">elif</span> <span class="n">touche</span> <span class="o">==</span> <span class="s2">"Down"</span><span class="p">:</span>
+<a href="#__codelineno-8-19" id="__codelineno-8-19" name="__codelineno-8-19"></a>        <span class="k">pass</span>
+<a href="#__codelineno-8-20" id="__codelineno-8-20" name="__codelineno-8-20"></a><span class="c1">######################          CONSTRUCTEURS      ###################################</span>
+<a href="#__codelineno-8-21" id="__codelineno-8-21" name="__codelineno-8-21"></a><span class="n">fen</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
+<a href="#__codelineno-8-22" id="__codelineno-8-22" name="__codelineno-8-22"></a><span class="n">fen</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s2">"Pilotage au clavier dans un canvas"</span><span class="p">)</span>
+<a href="#__codelineno-8-23" id="__codelineno-8-23" name="__codelineno-8-23"></a><span class="n">fen</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s1">'800x800+100+100'</span><span class="p">)</span>
+<a href="#__codelineno-8-24" id="__codelineno-8-24" name="__codelineno-8-24"></a><span class="n">fen</span><span class="o">.</span><span class="n">resizable</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<a href="#__codelineno-8-25" id="__codelineno-8-25" name="__codelineno-8-25"></a><span class="c1">######################################################################################</span>
+<a href="#__codelineno-8-26" id="__codelineno-8-26" name="__codelineno-8-26"></a><span class="n">can</span> <span class="o">=</span> <span class="n">Canvas</span><span class="p">(</span><span class="n">fen</span><span class="p">,</span> <span class="n">bg</span> <span class="o">=</span> <span class="s1">'white'</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">800</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">800</span><span class="p">)</span>
+<a href="#__codelineno-8-27" id="__codelineno-8-27" name="__codelineno-8-27"></a><span class="n">can</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<a href="#__codelineno-8-28" id="__codelineno-8-28" name="__codelineno-8-28"></a><span class="c1">######################################################################################</span>
+<a href="#__codelineno-8-29" id="__codelineno-8-29" name="__codelineno-8-29"></a><span class="n">baballe</span> <span class="o">=</span> <span class="n">can</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s2">"red"</span><span class="p">)</span>
+<a href="#__codelineno-8-30" id="__codelineno-8-30" name="__codelineno-8-30"></a><span class="c1">######################################################################################</span>
+<a href="#__codelineno-8-31" id="__codelineno-8-31" name="__codelineno-8-31"></a><span class="n">fen</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">"&lt;Key&gt;"</span><span class="p">,</span> <span class="n">bouge_balle</span><span class="p">)</span>
+<a href="#__codelineno-8-32" id="__codelineno-8-32" name="__codelineno-8-32"></a><span class="n">fen</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</code></pre></div>
+</details>
+<p>Vous devriez être en mesure de piloter la balle rouge vers la gauche ou la droite. Quelques élémenys qui méritent notre attention:</p>
+<ul>
+<li>l'instruction <code>fen.bind("&lt;Key&gt;", bouge_balle)</code> établit une <strong>lien</strong> entre l'action au clavier et la fonction <code>bouge_balle</code>;</li>
+<li>l'instruction <code>touche = evt.keysym</code> permet d'affecter à la variable <code>touche</code> la valeur de la touche enfoncée au clavier;</li>
+<li>l'instruction <code>can.coords(baballe,...)</code> change les coordonnées de l'objet <code>baballe</code>(qui existe!) dans le canvas <code>can</code>.</li>
+</ul>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
+<p>Changer les instructions <code>pass</code> de la fonction <code>bouge_balle</code> pour piloter vers le haut et vers le bas la balle rouge.</p>
+</div>
+<p>Pour terminer ce travail, on se propose de faire évoluer la couleur la balle en appuyant sur les touches <code>b</code> pour la couleur bleu, <code>r</code> pour le rouge  et <code>n</code> pour le noir.</p>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
+<p>Ajouter deux cas à la fonction <code>bouge_balle</code> pour modifier la couleur de la balle</p>
+</div>
+<p>Il faudra sans doute reconfigurer la balle...</p>
+<script src="../pyodide-mkdocs/ide.js"></script>
+<!-- Massilia javascripts -->
+<massilia data=""></massilia>
+</article>
+</div>
+</div>
+<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            Retour en haut de la page
+          </a>
+</main>
+<footer class="md-footer">
+<nav aria-label="Pied de page" class="md-footer__inner md-grid" hidden="">
+<a aria-label="Précédent: Création de widgets" class="md-footer__link md-footer__link--prev" href="widget.html" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Précédent
+              </span>
+              Création de widgets
+            </div>
+</div>
+</a>
+<a aria-label="Suivant: Animation dans un canvas" class="md-footer__link md-footer__link--next" href="animation_canvas.html" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Suivant
+              </span>
+              Animation dans un canvas
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+</div>
+<div class="md-social">
+<a class="md-social__link" href="mailto:marc.turro@ac-bordeaux.fr" rel="noopener" target="_blank" title="">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6l-126.3-52.5-40.1 74.5c-5.2 9.7-16.3 14.6-27 11.9S192 499 192 488v-96c0-5.3 1.8-10.5 5.1-14.7l165.3-212.6c2.5-7.1-6.5-14.3-13-8.4l-179 161.9-32 28.9c-9.2 8.3-22.3 10.6-33.8 5.8l-85-35.4C8.4 312.8.8 302.2.1 290s5.5-23.7 16.1-29.8l448-256c10.7-6.1 23.9-5.5 34 1.4z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "toc.integrate", "navigation.top"], "search": "../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
+<script src="../assets/javascripts/bundle.078830c0.min.js"></script>
+<script src="../xtra/javascripts/mathjax-config.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="../xtra/javascripts/interpreter.js"></script>
+<script src="../xtra/javascripts/config.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/javascripts/massilia-admonitions.js"></script>
+</body>
+</html>
