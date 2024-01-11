@@ -534,20 +534,20 @@ images...). Par exemple pour créer un cercle rouge dans le canvas <code>Can</co
 </code></pre></div>
 <div class="admonition exo">
 <p class="admonition-title">Exo</p>
-<p>Créer dans le canvas, un rectangle bleu centré en <code>(500, 140)</code> de largeur <code>100</code> et de hauteur <code>60</code>.</p>
+<p>Créer dans le canvas, un rectangle bleu centré en <code>(500, 140)</code> de largeur <code>100</code> et de hauteur <code>60</code>. N'oubliez pas de créer les variables <code>x, y</code> et <code>l,h</code>!</p>
 </div>
 <p>Il existe d'autres constructeurs pour insérer du texte par exemple (<code>create_text()</code>) ou des polygones plus complexes (<code>create_polygon()</code>) mais intéressons nous à la façon d'intégrer une image!</p>
 <div class="admonition exo">
 <p class="admonition-title">Exo</p>
 <ol>
-<li>Récupérer l'image <code>pacman.png</code>(<a download="pacman.png" href="../img/pacman.png">ici</a>).</li>
+<li>Récupérer l'image <code>pacman.png</code>(<a download="pacman.png" href="./img/pacman.png">ici</a>).</li>
 <li>Supprimer les cercles et les rectangles puis insérer le code suivant pour afficher l'image au milieu du canvas:
     <div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="n">img</span> <span class="o">=</span> <span class="n">PhotoImage</span><span class="p">(</span><span class="n">file</span> <span class="o">=</span> <span class="s2">"pacman.png"</span><span class="p">)</span>
 <a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="n">Can</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">290</span><span class="p">,</span> <span class="n">image</span> <span class="o">=</span> <span class="n">img</span><span class="p">)</span>
 </code></pre></div></li>
 </ol>
 </div>
-<h2 id="associer-la-valeur-des-widget-a-la-construction-dune-figure-elementaire"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2</span> Associer la valeur des widget à la construction d'une figure élémentaire...<a class="headerlink" href="#associer-la-valeur-des-widget-a-la-construction-dune-figure-elementaire" title="Permanent link">¶</a></h2>
+<h2 id="associer-la-valeur-des-widgets-a-la-construction-dune-figure-elementaire"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2</span> Associer la valeur des widgets à la construction d'une figure élémentaire...<a class="headerlink" href="#associer-la-valeur-des-widgets-a-la-construction-dune-figure-elementaire" title="Permanent link">¶</a></h2>
 <p>Dans cette partie, on souhaite construire des cercles ou des rectangles dont les dimensions sont données par la valeur des quelques widgets présents...</p>
 <p>Par exemple, récupérer la valeur donnée par le curseur et construire le cercle dont le rayon est cette valeur. On utilise pour cela une <strong>variable de contrôle</strong>.</p>
 <div class="admonition note">
@@ -594,7 +594,7 @@ images...). Par exemple pour créer un cercle rouge dans le canvas <code>Can</co
 <p>Nouvel objectif: dessiner dans le canvas une forme (carré ou cercle) aux coordonnées données par le clic de souris dans le canvas.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>L'appel de la fonction <code>cercle</code> va maintenant être réalisé par un événement extérieur (du type clavier ou souris). Il faut donc l'indiquer à la fonction en lui ajouatnt le paramètre <code>event</code> ou plus simplement <code>evt</code></p>
+<p>L'appel de la fonction <code>cercle</code> va maintenant être réalisé par un événement extérieur (du type clavier ou souris). Il faut donc l'indiquer à la fonction en lui ajoutant le paramètre <code>event</code> ou plus simplement <code>evt</code></p>
 </div>
 <p>La méthode <code>fen.mainloop()</code> en fin de programme permet d'écouter les événements extérieurs...</p>
 <div class="admonition exo">
