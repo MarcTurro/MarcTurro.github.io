@@ -166,7 +166,7 @@
 <div class="md-container" data-md-component="container">
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
-<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden="">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
@@ -354,8 +354,8 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#interface-dune-pile_1">
-    Interface d'une pile
+<a class="md-nav__link" href="#interface-dune-file">
+    Interface d'une file
   </a>
 </li>
 <li class="md-nav__item">
@@ -372,6 +372,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="complex_struc.html">
         Complexité des structures
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="recherche.html">
+        Recherche textuelle
       </a>
 </li>
 <li class="md-nav__item">
@@ -516,7 +521,7 @@
 <p>On fera bien la distinction entre <strong>interface</strong> et <strong>implémentation</strong>: la première définit une opération, la seconde la code! Pour une même interface, il peut exister plusieurs implémentations comme nous allons le découvrir dans ce chapitre!</p>
 <h2 id="les-listes"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> Les listes<a class="headerlink" href="#les-listes" title="Permanent link">¶</a></h2>
 <h3 id="presentation"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.1</span> Présentation !<a class="headerlink" href="#presentation" title="Permanent link">¶</a></h3>
-<div class="admonition note">
+<div class="admonition tldr">
 <p class="admonition-title">Le type abstrait Liste</p>
 <p>Une <strong>liste</strong> est une séquence ordonnée d'éléments.</p>
 </div>
@@ -674,7 +679,9 @@ mais l’<strong>insertion</strong> est coûteuse et c’est le contraire pour l
 <a href="#__codelineno-3-19" id="__codelineno-3-19" name="__codelineno-3-19"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">suivant</span> <span class="o">=</span> <span class="n">suivant</span>
 </code></pre></div>
 Les attributs sont optionnels par défaut. Voici maintenant une implémentation possible de listes chaînées avec ce constructeur:</p>
-<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kn">from</span> <span class="nn">cel</span> <span class="kn">import</span> <span class="n">Cellule</span>
+<details>
+<summary>Code à recopier</summary>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kn">from</span> <span class="nn">cel</span> <span class="kn">import</span> <span class="n">Cellule</span>
 <a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="k">class</span> <span class="nc">Liste</span><span class="p">()</span> <span class="p">:</span>
 <a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="p">:</span>
 <a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a>        <span class="sd">"""</span>
@@ -727,9 +734,10 @@ Les attributs sont optionnels par défaut. Voici maintenant une implémentation 
 <a href="#__codelineno-4-51" id="__codelineno-4-51" name="__codelineno-4-51"></a>            <span class="n">c</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">suivant</span>
 <a href="#__codelineno-4-52" id="__codelineno-4-52" name="__codelineno-4-52"></a>        <span class="k">return</span> <span class="n">l</span>
 </code></pre></div>
-On peut alors créer de nouvelles listes avec cette nouvelle implémentation.</p>
-<div class="admonition note">
-<p class="admonition-title">À faire</p>
+</details>
+<p>On peut alors créer de nouvelles listes avec cette nouvelle implémentation.</p>
+<div class="admonition exercice">
+<p class="admonition-title">Exercice</p>
 <ol>
 <li>Créer la liste ordonnée  <code>3,2,1,0</code> avec la classe précédente.</li>
 <li>Créer une liste de 20 nombres aléatoires compris entre 0 et 100.</li>
@@ -737,8 +745,8 @@ On peut alors créer de nouvelles listes avec cette nouvelle implémentation.</p
 </ol>
 </div>
 <p>On veut enrichir la structure par de nouvelles méthodes.</p>
-<div class="admonition note">
-<p class="admonition-title">À faire</p>
+<div class="admonition exercice">
+<p class="admonition-title">Exercice</p>
 <ol>
 <li>Définir la méthode <code>__len__(self)</code> qui retourne la longueur de la liste.</li>
 <li>Définir la méthode <code>__getitem__(self, position)</code> qui permet d'accéder à l'élément situé à la position <code>position</code> de la liste si celui-ci existe!</li>
@@ -746,8 +754,8 @@ On peut alors créer de nouvelles listes avec cette nouvelle implémentation.</p
 </ol>
 </div>
 <p>On peut envisager une multitude d'implémentation selon le choix du développeur même si les primitives de l'interface <code>liste</code> ne changent pas vraiment... Nous retrouverons cette idée dans la partie exercice...</p>
-<div class="admonition note">
-<p class="admonition-title">À faire</p>
+<div class="admonition exercice">
+<p class="admonition-title">Exercice</p>
 <p>Implémenter la fonction qui permet d'insérer dans la liste chaînée ci-dessus, un élément à une position quelconque...</p>
 </div>
 <h2 id="les-piles"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Les piles<a class="headerlink" href="#les-piles" title="Permanent link">¶</a></h2>
@@ -824,7 +832,9 @@ On appelle cela <strong>un effet de bord</strong>!</p>
 <li>...</li>
 </ul>
 <h3 id="implementer-une-pile"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.3</span> Implémenter une pile<a class="headerlink" href="#implementer-une-pile" title="Permanent link">¶</a></h3>
-<p>On peut à peu près tout imaginer pour implémenter la struture de pile... je vous en propose deux ici!</p>
+<p>On peut à peu près tout imaginer pour implémenter la structure de pile... je vous en propose deux ici!</p>
+<details>
+<summary>Deux implémentations possibles</summary>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">paradigme fonctionnel</label><label for="__tabbed_3_2">paradigme orienté objet</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -952,14 +962,15 @@ On appelle cela <strong>un effet de bord</strong>!</p>
 </div>
 </div>
 </input></input></div>
+</details>
 <h2 id="les-files"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> Les files<a class="headerlink" href="#les-files" title="Permanent link">¶</a></h2>
 <p><center>
 <img alt="une file" src="../img/file.jpg"/>
 </center></p>
 <h3 id="presentation_2"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.1</span> Présentation<a class="headerlink" href="#presentation_2" title="Permanent link">¶</a></h3>
 <p>La file, comme la pile ou la liste, permet de stocker des données et d’y accéder. La différence se
-situe au niveau de l’ajout et du retrait d’éléments.
-On parle de mode <strong>FIFO</strong> (First in, First out, donc, premier arrivé, premier sorti), c’est-à-
+situe au niveau de l’ajout et du retrait d’éléments.</p>
+<p>On parle de mode <strong>FIFO</strong> (First in, First out, donc, premier arrivé, premier sorti), c’est-à-
 dire que le premier élément ayant été ajouté à la structure sera le prochain élément
 auquel on accèdera. Les derniers éléments ajoutés devront « attendre » que tous les
 éléments ayant été ajoutés avant eux soient sortis de la file. Contrairement aux listes,
@@ -972,7 +983,7 @@ Pour gérer cette contrainte, la pile est caractérisée par deux « emplacement
 <p>On peut s’imaginer une file d’attente, dans un cinéma par exemple. Les premières
 personnes à pouvoir acheter leur place sont les premières arrivées, et les nouveaux
 arrivants se placent au bout de la file.</p>
-<h3 id="interface-dune-pile_1"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.2</span> Interface d'une pile<a class="headerlink" href="#interface-dune-pile_1" title="Permanent link">¶</a></h3>
+<h3 id="interface-dune-file"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.2</span> Interface d'une file<a class="headerlink" href="#interface-dune-file" title="Permanent link">¶</a></h3>
 <p>Une file est une collection de données. On appelle <strong>tête</strong> de file le premier élément de
 la structure et <strong>queue</strong> de la file le dernier élément. Quand un élément est ajouté à la file,
 on l’ajoute en queue de file et il devient la nouvelle queue de la file. Quand un élément est retiré

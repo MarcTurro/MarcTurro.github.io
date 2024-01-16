@@ -1,4 +1,5 @@
 /* https://pustelto.com/blog/optimizing-css-for-faster-page-loads/ */
+
 :root{
   --main-color : 87, 147, 240;
   --main-theme : rgb(var(--main-color));
@@ -9,7 +10,7 @@
 
 /* Extra CSS for mkdocs-enumerate-headings-plugin */ 
 .enumerate-headings-plugin {
-  filter: opacity(35%);
+  color:black;
 }
 
 div.py_mk_ide .wrapper {

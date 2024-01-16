@@ -281,6 +281,11 @@
       </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../term/recherche.html">
+        Recherche textuelle
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../term/reseau_term.html">
         Rappel sur les réseaux informatiques
       </a>
@@ -486,8 +491,8 @@ Dans une seconde partie nous créerons des animations pour dynamiser tout cela.<
 </div>
 <h2 id="analyse-du-code"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.2</span> Analyse du code<a class="headerlink" href="#analyse-du-code" title="Permanent link">¶</a></h2>
 <p>Pour construire une interface graphique, on fait appel à des <strong>constructeurs</strong>: <code>Frame, Scale, Button</code> en sont des exemples. Chaque constructeur est défini dans un élément <strong>parent</strong> et possède des attributs <strong>obligatoires</strong> ou <strong>optionnels</strong> qui lui sont propres.</p>
-<div class="admonition note">
-<p class="admonition-title">À savoir...</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
 <p>Le premier constructeur appelé est <code>Tk()</code> qui construit la fenêtre, appelée <code>fen</code> ici. Ce constructeur possède les attributs <code>title, geometry</code> ou encore <code>resizable</code>et sûrement bien d'autres.</p>
 </div>
 <p>Remarquez que le constructeur <code>Scale</code> pour faire des curseurs contient beaucoup plus d'attributs...</p>
@@ -550,8 +555,8 @@ images...). Par exemple pour créer un cercle rouge dans le canvas <code>Can</co
 <h2 id="associer-la-valeur-des-widgets-a-la-construction-dune-figure-elementaire"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2</span> Associer la valeur des widgets à la construction d'une figure élémentaire...<a class="headerlink" href="#associer-la-valeur-des-widgets-a-la-construction-dune-figure-elementaire" title="Permanent link">¶</a></h2>
 <p>Dans cette partie, on souhaite construire des cercles ou des rectangles dont les dimensions sont données par la valeur des quelques widgets présents...</p>
 <p>Par exemple, récupérer la valeur donnée par le curseur et construire le cercle dont le rayon est cette valeur. On utilise pour cela une <strong>variable de contrôle</strong>.</p>
-<div class="admonition note">
-<p class="admonition-title">À savoir...</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
 <p>Une variable de contrôle est une variable gobale associée à un widget et sa valeur peut être récupérée partout dans le programme.</p>
 </div>
 <p>Le code suivant permet de définir une variable de contrôle de type <code>Int</code>.</p>
@@ -592,8 +597,8 @@ images...). Par exemple pour créer un cercle rouge dans le canvas <code>Can</co
 </div>
 <h1 id="et-la-souris-mainenant"><span class="enumerate-headings-plugin enumerate-heading-plugin">4.</span> Et la souris mainenant!<a class="headerlink" href="#et-la-souris-mainenant" title="Permanent link">¶</a></h1>
 <p>Nouvel objectif: dessiner dans le canvas une forme (carré ou cercle) aux coordonnées données par le clic de souris dans le canvas.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
 <p>L'appel de la fonction <code>cercle</code> va maintenant être réalisé par un événement extérieur (du type clavier ou souris). Il faut donc l'indiquer à la fonction en lui ajoutant le paramètre <code>event</code> ou plus simplement <code>evt</code></p>
 </div>
 <p>La méthode <code>fen.mainloop()</code> en fin de programme permet d'écouter les événements extérieurs...</p>
@@ -613,7 +618,7 @@ images...). Par exemple pour créer un cercle rouge dans le canvas <code>Can</co
 </div>
 <p>Vous comprendrez que:</p>
 <ul>
-<li>les coordonnées du clic de souris est récupérer par les instructions <code>etv.x</code>  et <code>evt.y</code> .</li>
+<li>les coordonnées du clic de souris sont récupérées par les instructions <code>etv.x</code>  et <code>evt.y</code> .</li>
 <li>la dernière instruction établit un <strong>lien</strong> entre le clic sur le bouton gauche de la souris (<code>Button-1</code> ) et la fonction <code>cercle</code> sur le canvas.</li>
 </ul>
 <div class="admonition exo">
@@ -662,7 +667,7 @@ images...). Par exemple pour créer un cercle rouge dans le canvas <code>Can</co
 <a href="#__codelineno-8-32" id="__codelineno-8-32" name="__codelineno-8-32"></a><span class="n">fen</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
 </code></pre></div>
 </details>
-<p>Vous devriez être en mesure de piloter la balle rouge vers la gauche ou la droite. Quelques élémenys qui méritent notre attention:</p>
+<p>Vous devriez être en mesure de piloter la balle rouge vers la gauche ou la droite. Quelques éléments qui méritent notre attention:</p>
 <ul>
 <li>l'instruction <code>fen.bind("&lt;Key&gt;", bouge_balle)</code> établit une <strong>lien</strong> entre l'action au clavier et la fonction <code>bouge_balle</code>;</li>
 <li>l'instruction <code>touche = evt.keysym</code> permet d'affecter à la variable <code>touche</code> la valeur de la touche enfoncée au clavier;</li>

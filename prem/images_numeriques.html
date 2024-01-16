@@ -265,11 +265,6 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#determiner-les-caracteristiques-de-limage">
-    Déterminer les caractéristiques de l'image
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#creation-dune-nouvelle-image">
     Création d'une nouvelle image
   </a>
@@ -335,6 +330,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../term/complex_struc.html">
         Complexité des structures
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../term/recherche.html">
+        Recherche textuelle
       </a>
 </li>
 <li class="md-nav__item">
@@ -485,8 +485,13 @@
 Donc une image dans ce format pèse au moins 45 octets... </li>
 </ul>
 <p>Le chunk IHDR donne entre autres les informations sur la largeur, la hauteur de l'image. Nous y reviendrons plus tard en disséquant une image pour explorer ses entrailles ...</p>
-<p>Rappelons que <strong>l'extension</strong> du fichier précise notamment sa nature. Le cas du format <strong>.png</strong> est important: standard développé par le W3C( comme Html, Css ou Javascript...), il est particulièrement adapté pour publier des images sur des sites internet. Il trouve ses origines dans la volonté de concurrencer le fichier compressé <strong>.gif</strong>, dont le propriétaire réclamait les droits d'utilisations.</p>
-<div class="admonition caution">
+<p>Rappelons que:</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><strong>L'extension</strong> d'un fichier précise notamment sa nature. </p>
+</div>
+<p>Le cas du format <strong>.png</strong> est important: standard développé par le W3C( comme Html, Css ou Javascript...), il est particulièrement adapté pour publier des images sur des sites internet. Il trouve ses origines dans la volonté de concurrencer le fichier compressé <strong>.gif</strong>, dont le propriétaire réclamait les droits d'utilisations.</p>
+<div class="admonition info">
 <p class="admonition-title">le format jpeg</p>
 <p>Attention! les fichiers <strong>.jpeg</strong> ne sont pas à proprement dit des fichiers images mais des fichiers <strong>compressés</strong> d'une image. Souvent, on commet une confusion, pas bien grave au final!</p>
 </div>
@@ -512,7 +517,7 @@ En général, les images numériques sont des <strong>images matricielles</stron
 <div class="admonition exo">
 <p class="admonition-title">Exo</p>
 <ol>
-<li>Observez le logo Firefox défini sous <code>.svg</code> à cette <a href="https://upload.wikimedia.org/wikipedia/commons/2/28/Firefox_logo%2C_2017.svg?uselang=fr">adresse</a> et trouvez sa description <code>.svg</code> (clic droit-&gt; code source de la page).</li>
+<li>Observez le logo Firefox défini sous <code>.svg</code> à cette <a href="https://upload.wikimedia.org/wikipedia/commons/2/28/Firefox_logo%2C_2017.svg?uselang=fr"><strong>adresse</strong></a> et trouvez sa description <code>.svg</code> (clic droit-&gt; code source de la page).</li>
 <li>Zoomez(touche <code>Crtl + molette</code>).</li>
 <li>Ouvrez le fichier <a href="../img/Firefox.png"><strong>firefox.png</strong></a> dans le navigateur Firefox(cliquez sur le lien précédent...). Zoomez et comparez avec la manipulation précédente.</li>
 <li>Quelle différence entre une image matricielle et vectorielle?</li>
@@ -545,7 +550,7 @@ En général, les images numériques sont des <strong>images matricielles</stron
 <p>Cette section propose de manipuler des images numériques à l'aide d'un bibliothèque Python appelée <strong>PIL</strong>.</p>
 <div class="admonition exo">
 <p class="admonition-title">Exo</p>
-<p>Installer la bibliothèque PILLOW dans Thonny(lors de l'import il faudra l'appeler sous sous ancien nom PIL...).</p>
+<p>Installer la bibliothèque PILLOW dans Thonny(lors de l'import il faudra l'appeler sous son ancien nom PIL...).</p>
 </div>
 <p>Il s'agit de traduire en Python l'idée de:</p>
 <div class="admonition tip">
@@ -559,10 +564,14 @@ En général, les images numériques sont des <strong>images matricielles</stron
 </ol>
 </div>
 <p>Pour illustrer les commandes python répondant à ces besoins, nous allons utiliser la photo <code>puppy.png</code> ( <a download="puppy.png" href="img/puppy.png">Télécharger ici</a>).
-<strong>Attention</strong> tous les programmes doivent avoir en en-tête, l'import des bibliothèques:</p>
+<strong>Attention</strong> tous les programmes doivent avoir en en-tête, l'import de la bibliothèque:</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
 </code></pre></div>
 <h2 id="ouvrir-une-image-et-lire-des-informations"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> Ouvrir une image et lire des informations<a class="headerlink" href="#ouvrir-une-image-et-lire-des-informations" title="Permanent link">¶</a></h2>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
+<p>Copier le code suivant et sauvegardez sous le nom <code>lecture_inform.py</code></p>
+</div>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
 <a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="c1">#Ouverture de l'image existante, le chemin relatif doit être donné à partir de votre fichier!</span>
 <a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="n">im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">"Images\puppy.png"</span><span class="p">)</span><span class="c1">#pour ma part je mets les images dans un dossier Images</span>
@@ -571,24 +580,28 @@ En général, les images numériques sont des <strong>images matricielles</stron
 <a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="n">im</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
 <p>L'objet <code>im</code> n'est pas une image mais un objet <strong>tampon</strong> sur lequel nous travaillerons avant de le fermer.</p>
-<h2 id="determiner-les-caracteristiques-de-limage"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> Déterminer les caractéristiques de l'image<a class="headerlink" href="#determiner-les-caracteristiques-de-limage" title="Permanent link">¶</a></h2>
 <p>Une image possède toujours une taille, un format et un mode de représentation (niveaux de gris, couleurs avec alpha éventuel).</p>
 <div class="admonition exo">
 <p class="admonition-title">Exo</p>
 <p>Quelles sont les caractéristiques de l'image <code>puppy.png</code>(mode, taille, format)?</p>
 </div>
-<h2 id="creation-dune-nouvelle-image"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6</span> Création d'une nouvelle image<a class="headerlink" href="#creation-dune-nouvelle-image" title="Permanent link">¶</a></h2>
+<h2 id="creation-dune-nouvelle-image"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> Création d'une nouvelle image<a class="headerlink" href="#creation-dune-nouvelle-image" title="Permanent link">¶</a></h2>
+<p>Nous allons créer une image en niveaux de gris (mode <code>L</code>)
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
 <a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="c1">#Ouverture d'une nouvelle image</span>
-<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="n">IM</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">'L'</span><span class="p">,</span> <span class="p">(</span><span class="mi">750</span><span class="p">,</span><span class="mi">200</span><span class="p">))</span>
+<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="n">IM</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">'L'</span><span class="p">,</span> <span class="p">(</span><span class="mi">750</span><span class="p">,</span><span class="mi">200</span><span class="p">))</span><span class="c1"># en mode L pour niveaux de gris</span>
 <a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="n">IM</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">"Images\img_new1.png"</span><span class="p">)</span><span class="c1">#pour créer l'image dans le dossier Images...</span>
 <a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="n">IM</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre></div>
+</code></pre></div></p>
 <div class="admonition exo">
 <p class="admonition-title">Exo</p>
-<p>Donner le mode et la taille de l'image créée précédemment</p>
+<ol>
+<li>Recopier le code précédent</li>
+<li>Donner le mode et la taille de l'image créée précédemment.</li>
+</ol>
 </div>
-<h2 id="lire-la-valeur-dintensite-dun-pixel"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.7</span> Lire la valeur d'intensité d'un pixel<a class="headerlink" href="#lire-la-valeur-dintensite-dun-pixel" title="Permanent link">¶</a></h2>
+<h2 id="lire-la-valeur-dintensite-dun-pixel"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6</span> Lire la valeur d'intensité d'un pixel<a class="headerlink" href="#lire-la-valeur-dintensite-dun-pixel" title="Permanent link">¶</a></h2>
+<p>Le code suivant permet de lire sur l'image <code>puppy</code>, la valeur d'intensité du pixel situé à la colonne <code>20</code> et la ligne <code>30</code>.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
 <a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="c1">#Ouverture de l'image existante</span>
 <a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="c1">#Le chemin relatif doit être donné</span>
@@ -606,7 +619,7 @@ En général, les images numériques sont des <strong>images matricielles</stron
 <li>quelles sont les coordonnées du dernier pixel de l'image(en bas à droite).Donnez son intensité</li>
 </ol>
 </div>
-<h2 id="ecrire-lintensite-dun-pixel"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.8</span> Écrire l'intensité d'un pixel<a class="headerlink" href="#ecrire-lintensite-dun-pixel" title="Permanent link">¶</a></h2>
+<h2 id="ecrire-lintensite-dun-pixel"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.7</span> Écrire l'intensité d'un pixel<a class="headerlink" href="#ecrire-lintensite-dun-pixel" title="Permanent link">¶</a></h2>
 <p>On rappelle qu'on entend par écrire un pixel, définir sa valeur d'intensité!
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
 <a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="c1">#Ouverture d'une nouvelle image</span>
@@ -628,7 +641,7 @@ La méthode <code>putpixel</code>s'applique à l'objet <code>IM</code> et prend 
 <li>Créez une image de largeur 500 et de hauteur 500, où tous les pixels des diagonales sont rouges, les autres restant noirs...</li>
 </ol>
 </div>
-<h2 id="parcourir-une-image-pixel-par-pixel"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.9</span> Parcourir une image pixel par pixel<a class="headerlink" href="#parcourir-une-image-pixel-par-pixel" title="Permanent link">¶</a></h2>
+<h2 id="parcourir-une-image-pixel-par-pixel"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.8</span> Parcourir une image pixel par pixel<a class="headerlink" href="#parcourir-une-image-pixel-par-pixel" title="Permanent link">¶</a></h2>
 <p>Pour parcourir une image pixel par pixel, on va utiliser une double boucle: l'une pour parcourir les lignes, l'autre  pour parcourir les colonnes.</p>
 <div class="admonition tip">
 <p class="admonition-title">Algorithme à suivre</p>

@@ -166,7 +166,7 @@
 <div class="md-container" data-md-component="container">
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
-<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden="">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
@@ -300,6 +300,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="complex_struc.html">
         Complexité des structures
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="recherche.html">
+        Recherche textuelle
       </a>
 </li>
 <li class="md-nav__item">
@@ -441,8 +446,8 @@
 <h2 id="un-exemple-comment-calculer-la-somme-des-n-premiers-entiers-consecutifs"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Un exemple: comment calculer la somme des n premiers entiers consécutifs?<a class="headerlink" href="#un-exemple-comment-calculer-la-somme-des-n-premiers-entiers-consecutifs" title="Permanent link">¶</a></h2>
 <p>Il s'agit de calculer la somme (dite de Gauss...)  </p>
 <div class="arithmatex">\[ S = 1 + 2 + 3 + 4 + ... +  n-1 + n \]</div>
-<div class="admonition note">
-<p class="admonition-title">À faire</p>
+<div class="admonition exercice">
+<p class="admonition-title">Exercice</p>
 <ol>
 <li>Copier et coller le code Python ci-dessous</li>
 <li>Testez pour plusieurs valeurs simples de <span class="arithmatex">\(n\)</span></li>
@@ -455,8 +460,8 @@
 <a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"La somme des </span><span class="si">{}</span><span class="s2"> premiers entiers est </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">S</span><span class="p">))</span>
 </code></pre></div>
 Le code ci-dessus est <strong>impératif</strong> au sens où nous donnons des ordres que l'ordinateur exécute ligne par ligne.</p>
-<div class="admonition note">
-<p class="admonition-title">À faire</p>
+<div class="admonition exercice">
+<p class="admonition-title">Exercice</p>
 <ol>
 <li>Transformer le code ci-dessus en une fonction <code>somme_entier</code> qui prend en paramètre le seul entier <span class="arithmatex">\(n\)</span> et qui retourne la somme recherchée.</li>
 <li>Ajouter des assertions à la fonction.</li>
@@ -480,8 +485,8 @@ Le code ci-dessus est <strong>impératif</strong> au sens où nous donnons des o
 <a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a>        <span class="k">return</span> <span class="n">somme_rec</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">n</span>
 </code></pre></div>
 <h2 id="visualiser-la-pile-dexecution-dun-appel-recursif"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> Visualiser la pile d'exécution d'un appel récursif<a class="headerlink" href="#visualiser-la-pile-dexecution-dun-appel-recursif" title="Permanent link">¶</a></h2>
-<div class="admonition note">
-<p class="admonition-title">À faire</p>
+<div class="admonition exercice">
+<p class="admonition-title">Exercice</p>
 <ol>
 <li>Allez sur le site <a href="https://pythontutor.com/render.html#mode=edit">python tutor</a> et recopier le code de la fonction récursive dans la zone d'édition.</li>
 <li>Exécutez <code>somme_rec(5)</code> et visualisez les différents appels.</li>
@@ -509,8 +514,8 @@ Plus précisément, la pile d’exécution est un emplacement mémoire destiné 
 </ul>
 </div>
 <h1 id="exercices"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.</span> Exercices<a class="headerlink" href="#exercices" title="Permanent link">¶</a></h1>
-<div class="admonition note">
-<p class="admonition-title">À faire</p>
+<div class="admonition exercice">
+<p class="admonition-title">Exercice</p>
 <p>La factorielle d'un entier n, notée <span class="arithmatex">\(n!\)</span> est égale à : <span class="arithmatex">\(n!=1\times 2 \times 3 \times...\times (n-1) \times n\)</span> si <span class="arithmatex">\(n&gt;0\)</span> et égal à 1 si <span class="arithmatex">\(n=0\)</span>.</p>
 <ol>
 <li>Écrire la fonction <strong>facto_simple(n)</strong> qui prend en paramètre un entier <span class="arithmatex">\(n\)</span> et qui renvoie la factorielle de <span class="arithmatex">\(n\)</span>.</li>
@@ -518,8 +523,8 @@ Plus précisément, la pile d’exécution est un emplacement mémoire destiné 
 </ol>
 <p>On posera des assertions puis des tests dans ces fonctions pour vérifier leur comportement.</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">À faire</p>
+<div class="admonition exercice">
+<p class="admonition-title">Exercice</p>
 <p>On rappelle que <span class="arithmatex">\(x^n=x\times x \times x....\times x\)</span>, <span class="arithmatex">\(n\)</span> fois où <span class="arithmatex">\(x\)</span> est un réel quelconque et <span class="arithmatex">\(n\)</span> un entier.</p>
 <ol>
 <li>Écrire la fonction <strong>puissance_recu(n,x)</strong> qui prend en paramètres l'entier <span class="arithmatex">\(n\)</span> et le réel <span class="arithmatex">\(x\)</span>.</li>
@@ -535,15 +540,15 @@ Plus précisément, la pile d’exécution est un emplacement mémoire destiné 
 \right.\]</div>
 <p>Écrire la fonction <strong>puissance_mieux(n, x)</strong> avec cette définition et comparer le temps d'exécution de ces deux fonctions. On utilisera le module <code>timeit</code> pour cela...</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">À faire</p>
+<div class="admonition exercice">
+<p class="admonition-title">Exercice</p>
 <ol>
 <li>Écrire une fonction nommée <code>reverse(phrase)</code>qui prend en paramètre la chaîne de caractère <code>phrase</code>  et qui la renvoie à l'envers...</li>
 <li>Écrire la version récursive de cette fonction.</li>
 </ol>
 </div>
-<div class="admonition note">
-<p class="admonition-title">À faire</p>
+<div class="admonition exercice">
+<p class="admonition-title">Exercice</p>
 <p>Que dessine la fonction récursive suivante dans <code>turtle</code> (essayez de deviner au lieu de recopier le code....)?
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
 <a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="k">def</span> <span class="nf">carre</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>

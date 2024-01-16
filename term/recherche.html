@@ -6,10 +6,10 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Marc TURRO" name="author"/>
-<link href="https://marcturro.github.io/term/interface.html" rel="canonical"/>
+<link href="https://marcturro.github.io/term/recherche.html" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.0, mkdocs-material-8.5.6" name="generator"/>
-<title>Interface et implémentation - Numérique et Sciences Informatiques</title>
+<title>Recherche textuelle - Numérique et Sciences Informatiques</title>
 <link href="../assets/stylesheets/main.20d9efc8.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.cbb835fc.min.css" rel="stylesheet"/>
 <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M471.6 21.7c-21.9-21.9-57.3-21.9-79.2 0l-30.1 30 97.9 97.9 30.1-30.1c21.9-21.9 21.9-57.3 0-79.2l-18.7-18.6zm-299.2 220c-6.1 6.1-10.8 13.6-13.5 21.9l-29.6 88.8c-2.9 8.6-.6 18.1 5.8 24.6s15.9 8.7 24.6 5.8l88.8-29.6c8.2-2.8 15.7-7.4 21.9-13.5l167.3-167.4-98-98-167.3 167.4zM96 64c-53 0-96 43-96 96v256c0 53 43 96 96 96h256c53 0 96-43 96-96v-96c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H96z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-144c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M224 0c17.7 0 32 14.3 32 32v208h-64V32c0-17.7 14.3-32 32-32zm96 160c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32s-32-14.3-32-32v-64c0-17.7 14.3-32 32-32zm64 64c0-17.7 14.3-32 32-32s32 14.3 32 32v64c0 17.7-14.3 32-32 32s-32-14.3-32-32v-64zM93.3 51.2 175.9 240h-69.8L34.7 76.8c-7.1-16.2.3-35 16.5-42.1s35.1.3 42.1 16.5zm27 221.3-.2-.5H216c22.1 0 40 17.9 40 40s-17.9 40-40 40h-56c-8.8 0-16 7.2-16 16s7.2 16 16 16h56c39.8 0 72-32.2 72-72v-.6c9.4 5.4 20.3 8.6 32 8.6 13.2 0 25.4-4 35.6-10.8 8.7 24.9 32.5 42.8 60.4 42.8 11.7 0 22.6-3.1 32-8.6v8.6c0 88.4-71.6 160-160 160h-61.7c-42.4 0-83.1-16.9-113.1-46.9l-11.6-11.6C77.5 429.5 64 396.9 64 363v-27c0-32.7 24.6-59.7 56.3-63.5z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM288 352c0 17.7-14.3 32-32 32s-32-14.3-32-32 14.3-32 32-32 32 14.3 32 32z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM224 256c0 35.3-28.7 64-64 64s-64-28.7-64-64 28.7-64 64-64 64 28.7 64 64zm128 64c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 0c53 0 96 43 96 96v3.6c0 15.7-12.7 28.4-28.4 28.4H188.4c-15.7 0-28.4-12.7-28.4-28.4V96c0-53 43-96 96-96zM41.4 105.4c12.5-12.5 32.8-12.5 45.3 0l64 64c.7.7 1.3 1.4 1.9 2.1 14.2-7.3 30.4-11.4 47.5-11.4H312c17.1 0 33.2 4.1 47.5 11.4.6-.7 1.2-1.4 1.9-2.1l64-64c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3l-64 64c-.7.7-1.4 1.3-2.1 1.9 6.2 12 10.1 25.3 11.1 39.5H480c17.7 0 32 14.3 32 32s-14.3 32-32 32h-64c0 24.6-5.5 47.8-15.4 68.6 2.2 1.3 4.2 2.9 6 4.8l64 64c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0l-63.1-63.1c-24.5 21.8-55.8 36.2-90.3 39.6V240c0-8.8-7.2-16-16-16s-16 7.2-16 16v239.2c-34.5-3.4-65.8-17.8-90.3-39.6l-63 63c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l64-64c1.9-1.9 3.9-3.4 6-4.8C101.5 367.8 96 344.6 96 320H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h64.3c1.1-14.1 5-27.5 11.1-39.5-.7-.6-1.4-1.2-2.1-1.9l-64-64c-12.5-12.5-12.5-32.8 0-45.3z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
@@ -50,7 +50,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#interface-et-implementation">
+<a class="md-skip" href="#recherche-dun-motif-dans-un-texte">
           Aller au contenu
         </a>
 </div>
@@ -74,7 +74,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Interface et implémentation
+              Recherche textuelle
             
           </span>
 </div>
@@ -264,38 +264,10 @@
         Récursivité
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          Interface et implémentation
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="interface.html">
+<li class="md-nav__item">
+<a class="md-nav__link" href="interface.html">
         Interface et implémentation
       </a>
-<nav aria-label="Table des matières" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table des matières
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#principe">
-    Principe
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#apibirth-day">
-    API...birth day!
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#un-peu-de-manipulation">
-    Un peu de manipulation
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="stalin.html">
@@ -307,10 +279,33 @@
         Complexité des structures
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="recherche.html">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Recherche textuelle
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="recherche.html">
         Recherche textuelle
       </a>
+<nav aria-label="Table des matières" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#motivation">
+    Motivation
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#retour-en-classe-de-premiere-nsi">
+    Retour en classe de première NSI
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="reseau_term.html">
@@ -447,231 +442,78 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="interface-et-implementation"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Interface et implémentation<a class="headerlink" href="#interface-et-implementation" title="Permanent link">¶</a></h1>
-<h2 id="principe"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Principe<a class="headerlink" href="#principe" title="Permanent link">¶</a></h2>
-<div class="admonition tldr">
-<p class="admonition-title">Une structure de données ?</p>
-<p>Une structure de données est une collection, une organisation de données en vue de leur utilisation: les listes, les tuples ou les dictionnaires <code>Python</code> sont des exemples de structures.</p>
+<h1 id="recherche-dun-motif-dans-un-texte"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Recherche d'un motif dans un texte<a class="headerlink" href="#recherche-dun-motif-dans-un-texte" title="Permanent link">¶</a></h1>
+<h2 id="motivation"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Motivation<a class="headerlink" href="#motivation" title="Permanent link">¶</a></h2>
+<p>Il existe un raccourci clavier universel, <kbd>Ctrl</kbd> + <kbd>F</kbd> , qui permet la recherche d'un mot dans un texte, dans une page web ou tout autre document...</p>
+<p><center>
+<img alt="" src="img/crtlF.png" width="70%">
+</img></center></p>
+<p>Derrière cette combinaison de touche se cache des algorithmes efficaces que nous allons en partie découvrir dans ce cours...</p>
+<div class="admonition question">
+<p class="admonition-title">Comment ça marche?</p>
+<p>Comment rechercher un mot (nous dirons un motif...) dans un texte bien plus grand que le motif recherché?</p>
 </div>
-<p>Dès que la structure est déclarée, il est nécessaire alors de définir les <strong>méthodes</strong> qui agissent sur ces objets : c'est <strong>l'interface</strong>  qui permet entre autres, de créer la structure, de la modifier, d'afficher son  contenu voire de la supprimer...</p>
-<div class="admonition example">
-<p class="admonition-title"> Création d'une nouvelle interface</p>
-<p>On se propose de définir ici une nouvelle structure de données: les polynômes!
-En mathématiques, les polynômes sont des objets qui s'écrivent commme combinaison de monômes, de la forme <span class="arithmatex">\(a_n\times x^n\)</span>. Par exemple, <span class="arithmatex">\(P(x)=2x^4-5x^2+x-3\)</span> est un polynôme de degré 4.
-Nous allons définir toute une interface en commençant par réfléchir par <strong>l'implémentation</strong> de cette structure: comment allons-nous représenter, on dit implémenter, les polynômes en informatique!!?</p>
-</div>
-<p>Nous allons choisir de le réprésenter par une liste Python de telle façon que:</p>
-<ol>
-<li>le coefficient <span class="arithmatex">\(a_n\)</span> du polynôme <span class="arithmatex">\(P\)</span> se trouve au rang <span class="arithmatex">\(n\)</span> de la liste.</li>
-<li>la longueur de la liste est égale au degré du polynôme plus 1!</li>
-</ol>
-<p>Ainsi, le polynôme <span class="arithmatex">\(P(x)=2x^4-5x^2+x-3\)</span> est-il représenté par la liste Python <code>P = [-3, 1, -5, 0, 2]</code>!</p>
-<p>Nous allons maintenant définir une <strong>interface</strong> pour cette structure de données.</p>
 <!--
-En fouillant un peu dans la documentation [ici](https://devdocs.io/python~3.10/), il semblerait que les listes ```Python ``` soit des tableaux (array). L'interface des listes est celle des séquences : par exemple, la méthode ```len ``` s'applique non seulement aux listes mais aussi aux tuples et aux chaînes de caractères...
-![Interface liste](../img/interface_list.png)
-![Interface sequence](../img/interface_sequence.png)
+## Comprendre le problème
 
-Donc, si il existe des méthodes qui agissent sur les structures de données, on ne sait pas nécessairement comment elles sont codées. La méthode ```reverse ``` des listes est simple à comprendre: elle renverse les indices de la liste! Mais de quelle façon?
+Dans cette partie nous allons prendre l'exemple d'une séquence ADN.
 
- Mieux, la méthode ```sort ``` trie les listes: mais quel algorithme est utilisé pour cela? L'interface propose des méthodes sans savoir nécessairement comment elles sont codées.
+Comme vous devez le savoir, l'information génétique présente dans nos cellules est portée par notre ADN. Les molécules ADN sont, entre autres, composées de bases azotées avec des noms : 
+Adénine (représenté par un A), Thymine (représenté par un T), Guanine (représenté par un G) et Cytosine (représenté par un C).
+
+L'information portée par notre ADN est donc représentée (modélisée) par de très longues chaines de caractères, composées des lettres A, T, G et C.
+Voici un exemple très courts: CTATTCAGGTACATCAG...
+
+Il est donc nécessaire pour les généticiens de détecter la présence de certains enchainements de bases azotées. La plupart du temps il s'agit de triplets. 
+!!! question
+    Par exemple est-il possible de trouver le triplet GGT dans le brin d'ADN cité ci-dessus ? et si oui à quelle position ?
+
+<center>
+![](img/sequenceadn.png){width=70%}
+</center>
+
 -->
-<div class="admonition tldr">
-<p class="admonition-title">Une interface</p>
-<p>Un ensemble d'informations qui permet de décrire une structure de données ainsi que les méthodes qui agissent sur ces données</p>
-</div>
-<p>Une première proposition.</p>
-<table class="table">
-<thead>
-<tr>
-<th align="center"><strong>Interface</strong></th>
-<th align="left"><strong>Instructions</strong></th>
-<th align="left"><strong>Commentaires</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">Création d'un polynôme de degré <span class="arithmatex">\(n\)</span></td>
-<td align="left"><code>create_pol(n)</code></td>
-<td align="left">Retourne une liste. Par défaut tous les coefficients sont égaux à 0</td>
-</tr>
-<tr>
-<td align="center">Affiche le degré du polynome <code>P</code></td>
-<td align="left"><code>degre(P)</code></td>
-<td align="left">Retourne un entier. Il faut que <code>P</code> existe</td>
-</tr>
-<tr>
-<td align="center">Ajout du coefficient <span class="arithmatex">\(a_n\)</span> au polynome <code>P</code></td>
-<td align="left"><code>ajout_coeff(P, valeur, n)</code></td>
-<td align="left">Retourne une liste. Il faut que <code>P</code> existe</td>
-</tr>
-<tr>
-<td align="center">Accès aux éléments du polynôme</td>
-<td align="left"><code>affiche_coeff(P, rang)</code></td>
-<td align="left">Retourne un nombre.</td>
-</tr>
-<tr>
-<td align="center">{: .tabnsi_long :}</td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-</tbody>
-</table>
-<div class="admonition exercice">
-<p class="admonition-title">Exercice</p>
-<p>Quelles sont les instrutions qui permettent d'implémenter le polynôme <span class="arithmatex">\(P(x)=2x^4-5x^2+x-3\)</span>?</p>
-</div>
-<p>On peut <strong>enrichir l'interface</strong> en créant de nouvelles fonctionnalités, méthodes:</p>
-<table class="table">
-<thead>
-<tr>
-<th align="center"><strong>Interface</strong></th>
-<th align="left"><strong>Instructions</strong></th>
-<th align="left"><strong>Commentaires</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">Évaluation de P pour une valeur de <span class="arithmatex">\(x=val\)</span></td>
-<td align="left"><code>eval_pol(P, val)</code></td>
-<td align="left">Retourne une valeur égale à <span class="arithmatex">\(P(val)\)</span>.</td>
-</tr>
-<tr>
-<td align="center">Somme de deux polynômes</td>
-<td align="left"><code>somme(p1, p2)</code></td>
-<td align="left">Retourne une liste.</td>
-</tr>
-<tr>
-<td align="center">Produit de deux polynômes</td>
-<td align="left"><code>produit(p1, p2)</code></td>
-<td align="left">Retourne une liste. Il faut que <code>P</code> existe</td>
-</tr>
-<tr>
-<td align="center">{: .tabnsi_long :}</td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-</tbody>
-</table>
-<div class="admonition exercice">
-<p class="admonition-title">Exercice</p>
-<ol>
-<li>Implémenter les deux polynômes <span class="arithmatex">\(P_1(x)=5x-3\)</span> et <span class="arithmatex">\(P_2(x)=8x^3-5x^2+1\)</span> avec les méthodes précédentes.</li>
-<li>Créer les polynômes <span class="arithmatex">\(P\)</span> et <span class="arithmatex">\(S\)</span> égaux respectivement à la somme et au produit de <span class="arithmatex">\(P_1\)</span> et <span class="arithmatex">\(P_2\)</span>.</li>
-</ol>
-</div>
-<p>La façon dont sont codées les méthodes présentées dans les interfaces, sont a priori invisibles aux yeux de l'utilisateur: on parle d'<strong>implémentation</strong> d'une méthode lorsqu'on découvre comment est programmée la méthode. Pour une même méthode, il peut exister alors plusieurs implémentations...</p>
-<div class="admonition tldr">
-<p class="admonition-title">En résumé...</p>
-<p>L'<strong>interface</strong> est la partie visible pour qui veut utiliser ce type de données. Elle précise comment utiliser la structure de données sans se préoccuper de la façon dont les choses ont été programmées, c'est-à-dire <strong>son implémentation</strong>.</p>
-</div>
-<div class="admonition exercice">
-<p class="admonition-title">Implémenter l'interface</p>
-<p>Nous allons implémenter une interface sur les polynômes dans un <strong>paradigme fonctionnel</strong>. Pour cela suivez le lien <a href="fichier/implementation_polynomes.pdf">ici</a>.</p>
-</div>
-<p>Il est aussi possible d'implémenter dans un <strong>paradigme orienté objet</strong> mais comprenez que l'interface ne changera pas!</p>
-<p>Nous pourrions aussi envisager d'implémenter les polynômes par un dictionnaire où les clés seraient les coefficients et leur valeur, leur rang.</p>
-<h2 id="apibirth-day"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> API...birth day!<a class="headerlink" href="#apibirth-day" title="Permanent link">¶</a></h2>
-<p>Une autre interface bien utile, une API!</p>
-<div class="admonition tldr">
-<p class="admonition-title">C'est quoi une API?</p>
-<p>Une API (Application Programming Interface), ou interface de programmation, est un
-ensemble normalisé de briques logicielles grâce auxquelles un système informatique
-offre des services à d’autres systèmes. Quand nous consultons la météo sur notre
-smartphone, il utilise l’API du service météo en question. La plupart des applications
-mobiles sont conçues autour d’une ou plusieurs API.</p>
-</div>
-<p>L’objectif d’une API est de fournir des fonctionnalités, sans révéler le fonctionnement
-interne de l’application qui fournit les données. C’est en cela qu’on dit qu’une API est
-en façade : on ne voit pas l’intérieur du bâtiment</p>
-<div class="admonition example">
-<p class="admonition-title">Un exemple d'API météo</p>
-<p>Le site <a href="https://openweathermap.org/api">ici</a> de openweather offre une api pour des informations sur la météo de votre ville.
-Pour pouvoir l'utiliser il faut utiliser un jeton (Token) fourni lors de l'inscription. Bien que le service soit gratuit, il existe de nombreuses options payantes.</p>
-</div>
-<div class="admonition exercice">
-<p class="admonition-title">Exercice</p>
-<p>Effectuer la requete ci-dessous dans un script python.</p>
-<ol>
-<li>Quelle est la nature de la variable <code>data</code>? </li>
-<li>Modifiez le code pour obtenir la vitesse du vent et sa direction.</li>
-</ol>
-</div>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">requests</span>
-<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>
-<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">url</span> <span class="o">=</span> <span class="s2">"http://api.openweathermap.org/data/2.5/weather?q=agen&amp;appid=4370f9449a4ab35020f78dffcc0fe303"</span>
-<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">content</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="n">data</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="n">t</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">'main'</span><span class="p">][</span><span class="s1">'temp'</span><span class="p">]</span>
-<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"La témpérature est de </span><span class="si">{}</span><span class="s2"> degrés C"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">t</span> <span class="o">-</span> <span class="mf">273.15</span><span class="p">))</span>
+<h2 id="retour-en-classe-de-premiere-nsi"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> Retour en classe de première NSI<a class="headerlink" href="#retour-en-classe-de-premiere-nsi" title="Permanent link">¶</a></h2>
+<p>L'opérateur <code>in</code> permet de tester la présence d'un élément dans un itérable. En particulier, on peut l'utiliser pour rechercher un motif dans une chaîne.</p>
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">phrase_de_test</span> <span class="o">=</span> <span class="s2">"Une phrase qui dit n'importe quoi, juste pour tester la présence de quoi "</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">test</span> <span class="o">=</span> <span class="s1">'quoi'</span> <span class="ow">in</span> <span class="n">phrase_de_test</span>
 </code></pre></div>
-<p>On peut aussi effectuer des requêtes en Javascript et modifier ainsi le contenu d'une page web. Ci-dessous, une fonction utilisant une API donnant la position de la station spatiale ISS utilisant des promesses... voir <a href="http://open-notify.org/Open-Notify-API/ISS-Location-Now/">ici</a> pour la spécification de cette API.</p>
-<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">marequete</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="nx">fetch</span><span class="p">(</span><span class="s2">"http://api.open-notify.org/iss-now.json"</span><span class="p">)</span><span class="w"></span>
-<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">        </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span><span class="w"></span>
-<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">        </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="w"></span>
-<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">            </span><span class="kd">function</span><span class="w"> </span><span class="nx">isspos</span><span class="p">(</span><span class="nx">jsonobj</span><span class="p">){</span><span class="w"></span>
-<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a>
-<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">                </span><span class="kd">var</span><span class="w"> </span><span class="nx">lat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">jsonobj</span><span class="p">[</span><span class="s1">'iss_position'</span><span class="p">][</span><span class="s1">'latitude'</span><span class="p">];</span><span class="w"></span>
-<a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">                </span><span class="kd">var</span><span class="w"> </span><span class="nx">lon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">jsonobj</span><span class="p">[</span><span class="s1">'iss_position'</span><span class="p">][</span><span class="s1">'longitude'</span><span class="p">];</span><span class="w"></span>
-<a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">                </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"latitude"</span><span class="p">).</span><span class="nx">innerText</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="nx">lat</span><span class="p">;</span><span class="w"></span>
-<a href="#__codelineno-1-10" id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">                </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"longitude"</span><span class="p">).</span><span class="nx">innerText</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="nx">lon</span><span class="p">;</span><span class="w"></span>
-<a href="#__codelineno-1-11" id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">            </span><span class="p">}</span><span class="w"></span>
-<a href="#__codelineno-1-12" id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">        </span><span class="p">)</span><span class="w"></span>
-<a href="#__codelineno-1-13" id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="p">}</span><span class="w"></span>
+La variable <code>test</code> est de type <strong>booléen</strong>: elle retourne <code>True</code> car le motif <code>quoi</code> est présent dans le texte <code>phrase_de_test</code>.</p>
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="o">&gt;&gt;&gt;</span><span class="nb">print</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kc">True</span>
 </code></pre></div>
-Concrètement, une API est constituée d’une bibliothèque logicielle, d’un service
-web et d’une description qui spécifie comment les clients peuvent interagir avec la
-plateforme logicielle qui fournit les données, appelée aussi <strong>fournisseur</strong>.</p>
-<h2 id="un-peu-de-manipulation"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Un peu de manipulation<a class="headerlink" href="#un-peu-de-manipulation" title="Permanent link">¶</a></h2>
-<!--!!! note "À faire"
-    Comment utiliser une API dans une page WEB?
-
-    1. Récupérer la page d'accueil du site [ici](../fichier/index.html)
-    2. Explorez le code de la page.-->
-<p>De nombreuses API disposent d’un <strong>wrapper</strong> Python : c’est un module Python qui
-permet d’interroger la base de données du fournisseur de façon simplifiée, sans avoir
-à écrire les requêtes Web, ni à interpréter les réponses. Celles-ci sont généralement
-écrites au format JSON, qui est un format d’échange de données, au même titre
-que le XML. À partir de ces réponses, le wrapper Python génère des listes ou des
-dictionnaires, facilement manipulables.</p>
-<div class="admonition exercice">
-<p class="admonition-title">Exercice</p>
-<p>On va utiliser l'API Mars Rover Photos disponible à cette <a href="https://api.nasa.gov/">adresse</a> .</p>
-<ol>
-<li>Générer une clé d'authentification (il existe une clé de démo DEMO_KEY mais qui donne un accès limité...)</li>
-<li>Installer le wrapper Python <code>nasaapi</code>(comme un simple module...) ou <code>python-nasa-api</code> documenté <a href="https://pypi.org/project/python-nasa-api/">ici</a></li>
-<li>Cherchez comment obtenir l'URL de la première photo que le rover Curiosity a prise le 50ième jour martien, avec sa caméra arrière nommée <strong>Rear Hazard Avoidance Camera</strong> ou simplement <strong>RHAZ</strong>. </li>
-<li>Copier /collez cette URL dans un navigateur WEB pour visualiser cette photo.</li>
-<li>
-<p>À l'aide des données reçues du rover Curioity, donnez:</p>
+Néanmoins, cet opérateur ne teste que la présence du motif <code>quoi</code> dans la chaîne de caractères <code>phrase_de_test</code> et en particulier, il ne précise pas combien de fois il a été trouvé et encore moins où il a été trouvé!</p>
+<p>L'instruction <code>help("")</code> dans une console Python affiche des méthodes de la classe <code>string</code>: la méthode <code>count</code> et <code>find</code> semblent intéressantes...</p>
+<div class="admonition info">
+<p class="admonition-title">Les méthodes find et count</p>
 <ul>
-<li>Id de curiosity</li>
-<li>Sa date de lancement</li>
-<li>Sa date d'atterissage sur Mars</li>
+<li>La méthode <code>count</code> compte le nombre d'occurrences du motif recherché dans le texte de référence.</li>
+<li>La méthode <code>find</code> retourne le plus petit index du texte auquel se trouve le motif et retourne -1 sinon..</li>
 </ul>
-</li>
-<li>
-<p>Utiliser le module <code>webbrowser</code> pour afficher directement les photos trouvées.</p>
-</li>
+</div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">phrase_de_test</span> <span class="o">=</span> <span class="s2">"Une phrase qui dit n'importe quoi, juste pour tester la présence de quoi "</span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">cpt</span> <span class="o">=</span> <span class="n">phrase_de_test</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">'quoi'</span><span class="p">)</span>
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="n">rang</span> <span class="o">=</span> <span class="n">phrase_de_test</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">'quoi'</span><span class="p">)</span>
+</code></pre></div>
+<p>La variable <code>cpt</code> vaut alors 2 et la variable <code>rang</code> vaut 29!</p>
+<div class="admonition exercice">
+<p class="admonition-title">Exercice</p>
+<p>On considère un motif <code>M</code> et un texte <code>T</code>. L'objectif est la création d'un programme qui renvoie tous les index de <code>T</code> où se situent <code>M</code> en cas de détection de <code>M</code> dans <code>T</code>, en utilisant seulement les méthodes <code>count,find</code> rappelées ci-dessus.</p>
+<p>Écrire une fonction <code>recherche_mot</code> qui prend en paramètres <code>M</code> et <code>T</code> qui retourne la liste des index définis ci-dessus ou une liste vide si <code>M</code> n'est pas dans <code>T</code>.</p>
+</div>
+<p>Tester votre fonction sur des exemples très simples.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Le site <a href="http://www.gutenberg.org/browse/languages/fr">Gutenberg</a> contient de nombreux ouvrages libres de droit.</p>
+</div>
+<div class="admonition exercice">
+<p class="admonition-title">Exercice</p>
+<ol>
+<li>Télécharger sur le site Gutenberg, le roman Les trois mousquetaires d'Alexandre Dumas sous le format <code>txt</code> avec l'encodage <code>UTF-8</code>.</li>
+<li>Ouvrez le fichier en lecture par la méthode <code>fichier = open('troismousquetaires.txt','r', encoding = 'UTF-8')</code>.</li>
+<li>Athos, Porthos et  Aramis sont les trois mousquetaires et d'Artagnan le personnage principal: qui des trois mousquetaires a été le plus cité dans le roman?</li>
 </ol>
 </div>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1"># importation du module webbrowser</span>
-<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="kn">import</span> <span class="nn">webbrowser</span>
-<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="c1"># importation du sous-module MarsRovers du module nasaapi</span>
-<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="kn">from</span> <span class="nn">nasaapi</span> <span class="kn">import</span> <span class="n">MarsRovers</span>
-<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="c1"># initialisation de la connexion avec l’API et création de l’objet rovers</span>
-<a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="n">rovers</span> <span class="o">=</span> <span class="n">MarsRovers</span><span class="p">(</span><span class="err">«</span> <span class="n">coller</span> <span class="n">ici</span> <span class="n">la</span> <span class="n">clé</span> <span class="n">API</span> <span class="n">NASA</span> <span class="err">»</span><span class="p">,</span><span class="err">«</span> <span class="n">ici</span> <span class="n">le</span> <span class="n">jour</span><span class="err">»</span> <span class="p">,</span> <span class="err">«</span> <span class="n">NAV</span><span class="o">-</span><span class="n">CAM</span> <span class="err">»</span><span class="p">)</span>
-<a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="c1"># par exemple rovers = MarsRovers("DEMO_KEY", sols = 1000 , camera = 'fhaz')</span>
-<a href="#__codelineno-2-8" id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="c1"># récupération des données de Curiosity (dictionnaire)</span>
-<a href="#__codelineno-2-9" id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="n">cur</span> <span class="o">=</span> <span class="n">rovers</span><span class="o">.</span><span class="n">curiosity</span><span class="p">()</span>
-<a href="#__codelineno-2-10" id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">cur</span><span class="p">)</span>
-<a href="#__codelineno-2-11" id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="c1"># accès à l’URL de la quatrième photo</span>
-<a href="#__codelineno-2-12" id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="c1"># l'URL est contenu dans la variable cur. À vous de l'y extraire.</span>
-<a href="#__codelineno-2-13" id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="n">url_photo</span> <span class="o">=</span> <span class="err">«</span> <span class="n">compléter</span> <span class="n">ici</span><span class="err">»</span>
-<a href="#__codelineno-2-14" id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="c1"># envoi de l’URL dans le navigateur</span>
-<a href="#__codelineno-2-15" id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="n">webbrowser</span><span class="o">.</span><span class="n">open_new_tab</span><span class="p">(</span><span class="n">url_photo</span><span class="p">)</span>
-</code></pre></div>
 <script src="../pyodide-mkdocs/ide.js"></script>
 <!-- Massilia javascripts -->
 <massilia data=""></massilia>
@@ -685,7 +527,7 @@ dictionnaires, facilement manipulables.</p>
 </main>
 <footer class="md-footer">
 <nav aria-label="Pied de page" class="md-footer__inner md-grid" hidden="">
-<a aria-label="Précédent: Récursivité" class="md-footer__link md-footer__link--prev" href="recursivite.html" rel="prev">
+<a aria-label="Précédent: Complexité des structures" class="md-footer__link md-footer__link--prev" href="complex_struc.html" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -694,17 +536,17 @@ dictionnaires, facilement manipulables.</p>
 <span class="md-footer__direction">
                 Précédent
               </span>
-              Récursivité
+              Complexité des structures
             </div>
 </div>
 </a>
-<a aria-label="Suivant: Structure de données linéaires" class="md-footer__link md-footer__link--next" href="stalin.html" rel="next">
+<a aria-label="Suivant: Rappel sur les réseaux informatiques" class="md-footer__link md-footer__link--next" href="reseau_term.html" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Suivant
               </span>
-              Structure de données linéaires
+              Rappel sur les réseaux informatiques
             </div>
 </div>
 <div class="md-footer__button md-icon">

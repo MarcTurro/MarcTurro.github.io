@@ -281,6 +281,11 @@
       </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../term/recherche.html">
+        Recherche textuelle
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../term/reseau_term.html">
         Rappel sur les réseaux informatiques
       </a>
@@ -417,9 +422,8 @@
 <article class="md-content__inner md-typeset">
 <h1 id="introduction"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Introduction:<a class="headerlink" href="#introduction" title="Permanent link">¶</a></h1>
 <p><center></center></p>
-<canvas height="200" id="canvas1" width="200"></canvas>
-<canvas height="200" id="c" width="200"></canvas>
-<canvas height="200" id="canvas2" width="200"></canvas>
+<canvas height="200" id="canvas1" width="300"></canvas>
+<canvas height="200" id="canvas2" width="300"></canvas>
 <style type="text/css">
       canvas {
         margin-left:150px;
@@ -445,7 +449,7 @@ dirY="inc";
 function fonc(){
 t=setTimeout("fonc()",10);
 cont.fillStyle="#FFF";
-cont.fillRect(0,0,200,200);
+cont.fillRect(0,0,300,200);
 cont.fillStyle="#E70";
 cont.beginPath();
 cont.arc(x,y,25,0,2*Math.PI);
@@ -461,7 +465,7 @@ if(dirX=="dec")
 if(dirY=="dec")
     y-=5;
 
-if(x>=200-20){
+if(x>=300-20){
     dirX="dec";
 }
 if(y>=200-20){
@@ -608,14 +612,13 @@ dans un second temps... </p>
 <a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">800</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">580</span><span class="p">)</span>
 <a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>    <span class="n">r</span> <span class="o">=</span> <span class="n">valeur</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
 <a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>    <span class="n">Can</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">coul</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a>    <span class="n">Can</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="n">cercle</span><span class="p">)</span>
+<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a>    <span class="n">Can</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">cercle</span><span class="p">)</span><span class="c1">#Appel recursif de la fonction cercle</span>
 </code></pre></div></p>
 <p>Cette fonction est dite <strong>récursive</strong> car elle s'appelle elle-même toutes les 100ms. Donc si aucun événement ne l'arrête, elle boucle à l'infini!</p>
 <div class="admonition exo">
 <p class="admonition-title">Exo</p>
 <p>Associer cette fonction au bouton <code>BouDebut</code> et tester!</p>
 </div>
-<h2 id="une-premiere-astuce-avec-un-compteur"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2</span> Une première astuce avec un compteur<a class="headerlink" href="#une-premiere-astuce-avec-un-compteur" title="Permanent link">¶</a></h2>
 <p>Il ne suffit pas de lancer une animation, il faut aussi la maîtriser : en particulier,</p>
 <ul>
 <li>comment arrêter l'animation ?</li>
@@ -623,11 +626,12 @@ dans un second temps... </p>
 </ul>
 <p>En effet, la fonction <code>after</code> crée un appel récursif et perpétuel de la fonction <code>cercle()</code> ; il n’y donc aucune raison
 que la construction s’achève...</p>
+<h2 id="une-premiere-astuce-avec-un-compteur"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2</span> Une première astuce avec un compteur<a class="headerlink" href="#une-premiere-astuce-avec-un-compteur" title="Permanent link">¶</a></h2>
 <p>Pour répondre à notre problématique, nous allons utiliser encore des <strong>variables globales</strong>. Il faut comprendre qu’une
 variable crée au sein d’une fonction n’existe que dans cette fonction ; on dit que la variable est <strong>locale</strong>. En particulier, elle n’est
 donc pas visible en dehors de la fonction.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
 <p>Une <strong>variable globale</strong> est déclarée dans le corps de programme et est initialisée. Pour qu’une fonction puisse modifier
 son état, il faut la déclarer <strong>globale</strong> dans la fonction comme le montre l’exemple suivant:</p>
 </div>
@@ -676,19 +680,18 @@ variable globale, nommée <strong>flag</strong>, qui contrôle le déroulement d
 <a href="#__codelineno-3-10" id="__codelineno-3-10" name="__codelineno-3-10"></a>    <span class="k">global</span> <span class="n">flag</span>
 <a href="#__codelineno-3-11" id="__codelineno-3-11" name="__codelineno-3-11"></a>    <span class="n">flag</span> <span class="o">=</span> <span class="mi">0</span>
 <a href="#__codelineno-3-12" id="__codelineno-3-12" name="__codelineno-3-12"></a>
-<a href="#__codelineno-3-13" id="__codelineno-3-13" name="__codelineno-3-13"></a>
-<a href="#__codelineno-3-14" id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="k">def</span> <span class="nf">cercle</span><span class="p">():</span>
-<a href="#__codelineno-3-15" id="__codelineno-3-15" name="__codelineno-3-15"></a>    <span class="k">global</span> <span class="n">flag</span>
-<a href="#__codelineno-3-16" id="__codelineno-3-16" name="__codelineno-3-16"></a>    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">800</span><span class="p">),</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">580</span><span class="p">)</span>
-<a href="#__codelineno-3-17" id="__codelineno-3-17" name="__codelineno-3-17"></a>    <span class="n">r</span> <span class="o">=</span> <span class="n">valeur</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-<a href="#__codelineno-3-18" id="__codelineno-3-18" name="__codelineno-3-18"></a>    <span class="n">Can</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">coul</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-<a href="#__codelineno-3-19" id="__codelineno-3-19" name="__codelineno-3-19"></a>    <span class="k">if</span> <span class="n">flag</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c1">#si flag passe à 0, l'animation s'arrête</span>
-<a href="#__codelineno-3-20" id="__codelineno-3-20" name="__codelineno-3-20"></a>        <span class="n">Can</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="n">cercle</span><span class="p">)</span>
+<a href="#__codelineno-3-13" id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="k">def</span> <span class="nf">cercle</span><span class="p">():</span>
+<a href="#__codelineno-3-14" id="__codelineno-3-14" name="__codelineno-3-14"></a>    <span class="k">global</span> <span class="n">flag</span>
+<a href="#__codelineno-3-15" id="__codelineno-3-15" name="__codelineno-3-15"></a>    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">800</span><span class="p">),</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">580</span><span class="p">)</span>
+<a href="#__codelineno-3-16" id="__codelineno-3-16" name="__codelineno-3-16"></a>    <span class="n">r</span> <span class="o">=</span> <span class="n">valeur</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+<a href="#__codelineno-3-17" id="__codelineno-3-17" name="__codelineno-3-17"></a>    <span class="n">Can</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">coul</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+<a href="#__codelineno-3-18" id="__codelineno-3-18" name="__codelineno-3-18"></a>    <span class="k">if</span> <span class="n">flag</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c1">#si flag passe à 0, l'animation s'arrête</span>
+<a href="#__codelineno-3-19" id="__codelineno-3-19" name="__codelineno-3-19"></a>        <span class="n">Can</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="n">cercle</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="une-animation-simple-avec-la-methode-coords"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.4</span> Une animation simple avec la méthode <code>coords</code>.<a class="headerlink" href="#une-animation-simple-avec-la-methode-coords" title="Permanent link">¶</a></h2>
 <p>Nous allons maintenant pour finir, faire évoluer une balle rouge dans le canvas à l'aide de la méthode <code>coords</code>que nous avons déjà rencontrée dans un travail précédent.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
 <p>La méthode <code>coords</code> permet de rédéfinir les coordonnées d'un objet (déjà créé) dans un canvas.</p>
 </div>
 <div class="admonition exo">
@@ -724,11 +727,11 @@ variable globale, nommée <strong>flag</strong>, qui contrôle le déroulement d
 <a href="#__codelineno-4-27" id="__codelineno-4-27" name="__codelineno-4-27"></a><span class="k">def</span> <span class="nf">efface</span><span class="p">():</span>
 <a href="#__codelineno-4-28" id="__codelineno-4-28" name="__codelineno-4-28"></a>    <span class="n">Can</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">ALL</span><span class="p">)</span>
 </code></pre></div>
-<p>Vous allez maintenant devoir améliorer ce code pour répondre aux défis proposés dans l'exerice suivant:</p>
+<p>Vous allez maintenant devoir améliorer ce code pour répondre aux défis proposés dans l'exercice suivant:</p>
 <div class="admonition exo">
 <p class="admonition-title">Exo</p>
 <ol>
-<li>La balle revient au début de la ligne quand elle arrive à la fin de celle-ci.</li>
+<li>La balle revient au début de la ligne quand elle arrive à la fin de celle-ci(voir comment utiliser le modulo...).</li>
 <li>La balle rebondit.</li>
 <li>La balle part au milieu du canvas dans une direction choisit aléatoirement.</li>
 <li>La balle rebondit sur tous les côtés!</li>

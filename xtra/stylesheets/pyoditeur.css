@@ -8,8 +8,9 @@
   
   
   /* Extra CSS for mkdocs-enumerate-headings-plugin */ 
-  .enumerate-headings-plugin {
+  .enumerate-headings-plugin .enumerate-heading-plugin {
     font : 120% georgia, palatino, serif;
+    color: black;
     
   }
   

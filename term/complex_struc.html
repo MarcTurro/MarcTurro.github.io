@@ -166,7 +166,7 @@
 <div class="md-container" data-md-component="container">
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
-<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden="">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
@@ -310,12 +310,17 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#avantages-et-inconvenients-de-cette-structure_1">
-    Avantages et inconvénients de cette structure
+<a class="md-nav__link" href="#complexites-des-operations">
+    Complexités des opérations
   </a>
 </li>
 </ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="recherche.html">
+        Recherche textuelle
+      </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="reseau_term.html">
@@ -510,7 +515,7 @@ L'adresse du tableau est <code>#A</code>(valeur hexadécimale sur deux octets) e
 <p></p>
 <p>L'accès à un élément du tableau se fait en <strong>temps constant</strong> : en d'autres termes, si <code>n</code> est la taille du tableau, l'accès ne dépend pas de <code>n</code>.</p>
 <p>Pour l'insertion d'un nouveau élément dans le tableau, il faut <strong>allouer</strong> un nouvel espace mémoire qui passe par la recopie de tous les éléments du tableau auquel on ajoute le nouveau. Cette opération dépend de la taille <code>n</code> du tableau et son temps d'exécution lui est proportionnel !</p>
-<div class="admonition info">
+<div class="admonition tldr">
 <p class="admonition-title">Complexité des opérations sur un tableau statique</p>
 <p>L'accès à un élément d'un tableau statique est en <code>O(1)</code> et l'ajout est en <code>O(n)</code>.</p>
 </div>
@@ -528,7 +533,7 @@ L'adresse du tableau est <code>#A</code>(valeur hexadécimale sur deux octets) e
 </img></center></p>
 <p>La liste est ainsi chaînée par une succession de maillon chacun pointant vers le suivant, le dernier ayant un pointeur nul (<code>NULL</code>). Les valeurs de la liste ne sont plus stockées à des endroits contigus de la mémoire.</p>
 <p><center></center></p>
-<h2 id="avantages-et-inconvenients-de-cette-structure_1"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> Avantages et inconvénients de cette structure<a class="headerlink" href="#avantages-et-inconvenients-de-cette-structure_1" title="Permanent link">¶</a></h2>
+<h2 id="complexites-des-operations"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> Complexités des opérations<a class="headerlink" href="#complexites-des-operations" title="Permanent link">¶</a></h2>
 <p></p>
 <p>Pour accéder à un élément quelconque de la liste, il n'y a pas de choix: il faut parcourir la liste à partir du premier. Ce parcours dépend évidemment de la taille <code>n</code> de la structure. La complexité de l'opération est proportionnelle à <code>n</code>.</p>
 <p>En revanche, l'insertion d'un élément est à opération constante. Le dessin ci-dessous montre les étapes d'insertion dans une liste chaînée:</p>
@@ -576,12 +581,11 @@ L'adresse du tableau est <code>#A</code>(valeur hexadécimale sur deux octets) e
 <p><center></center></p>
 <h1 id="les-dictionnaires"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.</span> Les dictionnaires<a class="headerlink" href="#les-dictionnaires" title="Permanent link">¶</a></h1>
 <p></p>
-<div class="admonition info">
+<div class="admonition tldr">
 <p class="admonition-title">Une définition</p>
 <p>Un dictionnaire est un ensemble de clés/valeurs(<code>C/V</code>) dont les composantes sont appelées via un <strong>descripteur</strong> (la clé!) et non pas un indice.</p>
 </div>
 <p>Depuis la classe de première, nous connaissons les opérations de bases permises sur un dictionnaire et leur syntaxe en <code>python</code>:</p>
-<p><center></center></p>
 <table class="table">
 <thead>
 <tr>
@@ -602,12 +606,15 @@ L'adresse du tableau est <code>#A</code>(valeur hexadécimale sur deux octets) e
 <td>Lire la valeur <code>v</code> d'une clé <code>c</code></td>
 <td><code>d["Maths"]</code></td>
 </tr>
+<tr>
+<td>{: .tabnsi :}</td>
+<td></td>
+</tr>
 </tbody>
 </table>
-<p></p>
 <p>Mais par exemple, il n'existe pas de <strong>primitive</strong> simple qui retourne la clé d'une valeur!
 L'implémentation du type dictionnaire doit permettre de réaliser ces trois opérations de base en temps d'exécution efficace. On cherche idéalement une complexité en <code>O(1)</code> pour la recherche, l'insertion ou la suppression. Comment faire?</p>
-<div class="admonition info">
+<div class="admonition tldr">
 <p class="admonition-title">Le hachage</p>
 <p>Python a choisi les  <strong>tables de hachages</strong> pour cette implémentation.</p>
 </div>
@@ -617,8 +624,8 @@ L'implémentation du type dictionnaire doit permettre de réaliser ces trois op�
 <p>On nomme fonction de hachage, de l'anglais hash function (hash : pagaille, désordre, recouper et mélanger) par analogie avec la cuisine, une fonction particulière qui, à partir d'une donnée fournie en entrée, calcule une <strong>empreinte numérique</strong> servant à identifier rapidement la donnée initiale, au même titre qu'une signature pour identifier une personne.</p>
 </div>
 <p>Je reprends aussi les termes pertinents de l'encyclopédie :</p>
-<div class="admonition info">
-<p class="admonition-title">Rôle d'une fonction de haschage</p>
+<div class="admonition tldr">
+<p class="admonition-title">Rôle d'une fonction de hachage</p>
 <p>On peut voir une fonction de hachage comme un moyen de replier l'espace de données que l'on suppose potentiellement très grand et très peu rempli pour le faire entrer dans la mémoire de l'ordinateur.</p>
 </div>
 <p>Le principe est d'utiliser les empreintes des clés comme indices des éléments de la table. Ces empreintes sont des nombres entiers obtenus en hachant la clé des objets à stocker, souvent une chaîne de caractères. On peut ensuite retrouver l'objet associé à une clé donnée : il suffit de hacher la clé pour obtenir une empreinte et de lire dans le tableau l'élément dont l'indice est cette empreinte.Au final, la complexité d’une insertion et d’une lecture dans une table de hachage sera « en
@@ -654,13 +661,13 @@ moyenne » en <code>O(1)</code>.</p>
             </div>
 </div>
 </a>
-<a aria-label="Suivant: Rappel sur les réseaux informatiques" class="md-footer__link md-footer__link--next" href="reseau_term.html" rel="next">
+<a aria-label="Suivant: Recherche textuelle" class="md-footer__link md-footer__link--next" href="recherche.html" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Suivant
               </span>
-              Rappel sur les réseaux informatiques
+              Recherche textuelle
             </div>
 </div>
 <div class="md-footer__button md-icon">

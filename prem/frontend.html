@@ -313,6 +313,11 @@
       </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../term/recherche.html">
+        Recherche textuelle
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../term/reseau_term.html">
         Rappel sur les réseaux informatiques
       </a>
@@ -449,7 +454,10 @@
 <article class="md-content__inner md-typeset">
 <h1 id="le-web"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Le WEB<a class="headerlink" href="#le-web" title="Permanent link">¶</a></h1>
 <h2 id="quezaco"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Quézaco???<a class="headerlink" href="#quezaco" title="Permanent link">¶</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
 <p>Le WEB ou plus précisément le <strong>WorldWideWeb</strong> est un système hypertexte public fonctionnant sur l'<strong>internet</strong>. Il permet de consulter, avec un navigateur, des pages accessibles sur des sites.</p>
+</div>
 <p>En 1989, <strong>Tim Berners-Lee</strong>  engagé au CERN de Genève, propose de développer un système organisé en toile, afin d'améliorer la diffusion des informations internes. En 1990, naît alors le premier serveur WEB: la première page existe toujours et vous pouvez la consulter <a href="http://info.cern.ch/hypertext/WWW/TheProject.html">ici</a>.</p>
 <h2 id="le-premier-langage-du-web-le-html"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> Le premier langage du WEB: le HTML<a class="headerlink" href="#le-premier-langage-du-web-le-html" title="Permanent link">¶</a></h2>
 <p>Le premier langage utilisé pour décrire le contenu d'une page web est le langage HTML(HyperTextMarkupLanguage). Ce n'est donc pas un <strong>langage de programmation</strong> mais un <strong>langage de description</strong> comme Latex par exemple...</p>
@@ -478,7 +486,7 @@ Ci-dessous un exemple relativement simple d'une page web:</p>
 <li>Choisir un éditeur de texte (Notepad ou Visual Studio Code  est idéal... mais le blocnote suffirait!)</li>
 <li>Recopier le code HTML précédent et sauvegardez ce fichier sous le nom <strong>index</strong> avec l'<strong>extension HTML</strong> . En général, les logiciels d'édition utilisés permettent de le faire assez facilement...</li>
 <li>Vous venez alors de créer le fichier <strong>index.html</strong> qui s'ouvre par <strong>défaut</strong> avec un navigateur. Double-cliquez sur ce fichier: un navigateur doit s'ouvrir et afficher le contenu de la page web.</li>
-<li>En observant le site sur le navigateur, à quoi sert la balise <em>br</em>?</li>
+<li>En observant le site sur le navigateur, à quoi sert la balise <code>br</code>?</li>
 <li>Fermez ensuite le logiciel que vous avez utilisé pour éditer le code HTML. </li>
 </ol>
 </div>
@@ -498,7 +506,7 @@ Ci-dessous un exemple relativement simple d'une page web:</p>
 <h2 id="la-w3c-schools"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> La W3C schools<a class="headerlink" href="#la-w3c-schools" title="Permanent link">¶</a></h2>
 <p>Le W3C est un consortium chargée de développer et maintenir les standards du WEB que sont les langages HTML,CSS,PHP, ... mais aussi le format d'image <strong>png</strong>(Portable Network Graphics) idéal pour les pages WEB. Il offre aussi la possibilité de valider votre code en vous indiquant si vous avez respecté les normes en vigueur.</p>
 <p><center></center></p>
-<p><img alt="le W3C" src="img/W3C.png" title="Le consortium W3C">
+<p><img alt="" src="img/W3C.png" title="Le consortium W3C" width="70%">
 </img></p>
 <p>Ce consortium propose une école d'apprentissage du code HTML et d'autres... c'est la <strong>W3schools!</strong> Vous trouverez le lien <a href="https://www.w3schools.com/html/default.asp">ici</a>.
 Les exercices qui suivent ont été inspirés par les exemples proposés dans cette école.</p>
@@ -528,8 +536,8 @@ Les exercices qui suivent ont été inspirés par les exemples proposés dans ce
 </div>
 <h2 id="des-attributs-pour-formater-a-volonte"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.1</span> Des attributs pour formater à volonté...<a class="headerlink" href="#des-attributs-pour-formater-a-volonte" title="Permanent link">¶</a></h2>
 <p>Toutes les balises ont par <strong>défaut</strong>, des attributs de couleur, de grosseur, de positionnement qui peuvent être modifiés. Quelques exemples sont proposés ici.</p>
-<div class="admonition note">
-<p class="admonition-title">À faire: ajouter des attributs aux balises</p>
+<div class="admonition exo">
+<p class="admonition-title">Ajouter des attributs aux balises</p>
 <ol>
 <li>Modifier la balise <em>body</em> comme ceci:
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">&lt;</span><span class="nt">body</span> <span class="na">style</span><span class="o">=</span><span class="s">"background-color:powderblue;"</span> <span class="p">&gt;</span>
@@ -586,11 +594,11 @@ C'est joli, non?</p>
 Si vous souhaitez insérer un lien vers un autre site sur un mot, une image, ... il faudra alors intégrer l'instruction suivante à votre code:</p>
 <p><div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://lyceedebaudre.net/"</span><span class="p">&gt;</span>Le lycée<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> 
 </code></pre></div>
-Le lien se trouve sur la phrase <em>le lycée</em>: en cliquant dessus vous êtes dirigé vers le site dont l'<strong>URL</strong> est passé en paramètre.</p>
+Le lien se trouve sur la phrase <code>le lycée</code>: en cliquant dessus vous êtes dirigé vers le site dont l'<strong>URL</strong> est passé en paramètre.</p>
 <div class="admonition exo">
 <p class="admonition-title">Insérer une image et un lien vers un autre site</p>
 <ol>
-<li>Créer un dossier <em>img</em> situé au même niveau d'arborescence que votre fichier <em>index.html</em> et placez-y l'image du logo.</li>
+<li>Créer un dossier <code>img</code> situé au même niveau d'arborescence que votre fichier <code>index.html</code> et placez-y l'image du logo.</li>
 <li>Insérer l'image dans votre code et visualisez que tout fonctionne bien dans le navigateur.</li>
 <li>Le chemin de la source est-il absolu? relatif?</li>
 <li>Insérer un lien vers ce <a href="https://www.w3schools.com/">site</a> dans votre code où vous le souhaitez !</li>
@@ -602,7 +610,7 @@ Le lien se trouve sur la phrase <em>le lycée</em>: en cliquant dessus vous ête
 <p>À quoi sert la balise <code>map</code>?</p>
 </div>
 <h2 id="un-tableau"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.4</span> Un tableau?<a class="headerlink" href="#un-tableau" title="Permanent link">¶</a></h2>
-<p>Vous coulez insérer un tableau à votre code? Rien de plus simple (ou presque...).</p>
+<p>Vous souhaitez insérer un tableau à votre code? Rien de plus simple (ou presque...).</p>
 <div class="admonition exo">
 <p class="admonition-title">Un simple tableau!</p>
 <ol>
@@ -661,7 +669,7 @@ Le lien se trouve sur la phrase <em>le lycée</em>: en cliquant dessus vous ête
 <p>Ainsi tous les styles sont-ils définis au départ: le code s'en trouve largement simplifié...</p>
 <div class="admonition exo">
 <p class="admonition-title">Regrouper les styles</p>
-<p>Recopier le code suivant entre les balises <code>head</code> et supprimer les styles dans les balises.
+<p>Recopier le code suivant entre les balises <code>head</code> et <strong>supprimer</strong> les styles dans les balises.
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
 <a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
@@ -838,7 +846,7 @@ Le lien se trouve sur la phrase <em>le lycée</em>: en cliquant dessus vous ête
 <a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a>Tu veux connaître l'heure?<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 <a href="#__codelineno-15-3" id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">"tag_para"</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </code></pre></div></li>
-<li>À quoi sert la méthode <code>getElementById</code></li>
+<li>À quoi sert la méthode <code>getElementById</code>?</li>
 </ol>
 </div>
 <h2 id="inserer-une-video-ou-de-laudio"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2</span> Insérer une vidéo ou de l'audio<a class="headerlink" href="#inserer-une-video-ou-de-laudio" title="Permanent link">¶</a></h2>
@@ -857,7 +865,7 @@ Le lien se trouve sur la phrase <em>le lycée</em>: en cliquant dessus vous ête
 </ol>
 </div>
 <h2 id="tes-ou"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.3</span> T'es où?<a class="headerlink" href="#tes-ou" title="Permanent link">¶</a></h2>
-<p>La géolocalisation est devenue une habitude pour les sites commarciaux. Intégrée au code HTML par des scripts <code>javascript</code>, le principe est simple.</p>
+<p>La géolocalisation est devenue une habitude pour les sites commerciaux. Intégrée au code HTML par des scripts <code>javascript</code>, le principe est simple.</p>
 <div class="admonition exo">
 <p class="admonition-title">Insertion de géolocalisation</p>
 <ol>
