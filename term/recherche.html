@@ -368,7 +368,7 @@
 <p><center>
 <img alt="" src="img/crtlF.png" width="70%">
 </img></center></p>
-<p>Derrière cette combinaison de touche se cache des algorithmes efficaces que nous allons en partie découvrir dans ce cours...</p>
+<p>Derrière cette combinaison de touche se cachent des algorithmes efficaces que nous allons en partie découvrir dans ce cours...</p>
 <div class="admonition question">
 <p class="admonition-title">Comment ça marche?</p>
 <p>Comment rechercher un mot (nous dirons un motif...) dans un texte bien plus grand que le motif recherché?</p>
@@ -411,14 +411,14 @@ Néanmoins, cet opérateur ne teste que la présence du motif <code>quoi</code> 
 <li>La méthode <code>find</code> retourne le plus petit index du texte auquel se trouve le motif et retourne -1 sinon..</li>
 </ul>
 </div>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">phrase_de_test</span> <span class="o">=</span> <span class="s2">"Une phrase qui dit n'importe quoi, juste pour tester la présence de quoi "</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">phrase_de_test</span> <span class="o">=</span> <span class="s2">"une phrase qui dit n'importe quoi, juste pour tester la présence de quoi "</span>
 <a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">cpt</span> <span class="o">=</span> <span class="n">phrase_de_test</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">'quoi'</span><span class="p">)</span>
 <a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="n">rang</span> <span class="o">=</span> <span class="n">phrase_de_test</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">'quoi'</span><span class="p">)</span>
 </code></pre></div>
 <p>La variable <code>cpt</code> vaut alors 2 et la variable <code>rang</code> vaut 29!</p>
+<p>On considère un motif <code>M</code> et un texte <code>T</code>. L'objectif est la création d'un programme qui renvoie tous les index de <code>T</code> où se situent <code>M</code> en cas de détection de <code>M</code> dans <code>T</code>, en utilisant seulement les méthodes <code>count,find</code> rappelées ci-dessus.</p>
 <div class="admonition exercice">
 <p class="admonition-title">Exercice</p>
-<p>On considère un motif <code>M</code> et un texte <code>T</code>. L'objectif est la création d'un programme qui renvoie tous les index de <code>T</code> où se situent <code>M</code> en cas de détection de <code>M</code> dans <code>T</code>, en utilisant seulement les méthodes <code>count,find</code> rappelées ci-dessus.</p>
 <p>Écrire une fonction <code>recherche_mot</code> qui prend en paramètres <code>M</code> et <code>T</code> qui retourne la liste des index définis ci-dessus ou une liste vide si <code>M</code> n'est pas dans <code>T</code>.</p>
 </div>
 <p>Tester votre fonction sur des exemples très simples.</p>
@@ -433,6 +433,92 @@ Néanmoins, cet opérateur ne teste que la présence du motif <code>quoi</code> 
 <li>Ouvrez le fichier en lecture par la méthode <code>fichier = open('troismousquetaires.txt','r', encoding = 'UTF-8')</code>.</li>
 <li>Athos, Porthos et  Aramis sont les trois mousquetaires et d'Artagnan le personnage principal: qui des trois mousquetaires a été le plus cité dans le roman?</li>
 </ol>
+</div>
+<h1 id="un-algorithme-de-recherche-simple"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.</span> Un algorithme de recherche simple:<a class="headerlink" href="#un-algorithme-de-recherche-simple" title="Permanent link">¶</a></h1>
+<h2 id="lalgorithme-naif"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.1</span> L'algorithme naïf:<a class="headerlink" href="#lalgorithme-naif" title="Permanent link">¶</a></h2>
+<p>Pour éviter d'utiliser les méthodes <code>count</code> et <code>find</code>, on va reprendre l'idée de comparer lettre par lettre, motif et texte, pour voir si il y a correspondance. Voici la proposition d'un algorithme qu'on appellera <strong>naïf</strong>:</p>
+<p><gif-player play="" speed="1" src="./img/gif_naive.gif" style="display: inline-block; position: relative; overflow: hidden; width: 945px; height:118px;"></gif-player></p>
+<p><em>Vous pouvez contrôler le déroulement de l'animation en la survolant avec la souris.</em></p>
+<p>On décale de 1 à chaque fois le motif pour voir la correspondance dans le texte...</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">def</span> <span class="nf">recherche_naive</span><span class="p">(</span><span class="n">texte</span><span class="p">,</span> <span class="n">motif</span><span class="p">):</span>
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>    <span class="sd">"""</span>
+<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="sd">    renvoie la liste des indices (éventuellement vide) des occurrences de</span>
+<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="sd">    de la chaîne motif dans la chaîne texte.</span>
+<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="sd">    """</span>
+<a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a>    <span class="n">indices</span> <span class="o">=</span> <span class="p">[]</span>
+<a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a>    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<a href="#__codelineno-3-8" id="__codelineno-3-8" name="__codelineno-3-8"></a>    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">texte</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">):</span>
+<a href="#__codelineno-3-9" id="__codelineno-3-9" name="__codelineno-3-9"></a>        <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
+<a href="#__codelineno-3-10" id="__codelineno-3-10" name="__codelineno-3-10"></a>        <span class="k">while</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> <span class="ow">and</span> <span class="n">texte</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">k</span><span class="p">]</span> <span class="o">==</span> <span class="n">motif</span><span class="p">[</span><span class="n">k</span><span class="p">]:</span>
+<a href="#__codelineno-3-11" id="__codelineno-3-11" name="__codelineno-3-11"></a>            <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+<a href="#__codelineno-3-12" id="__codelineno-3-12" name="__codelineno-3-12"></a>        <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">):</span>
+<a href="#__codelineno-3-13" id="__codelineno-3-13" name="__codelineno-3-13"></a>            <span class="n">indices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<a href="#__codelineno-3-14" id="__codelineno-3-14" name="__codelineno-3-14"></a>        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<a href="#__codelineno-3-15" id="__codelineno-3-15" name="__codelineno-3-15"></a>
+<a href="#__codelineno-3-16" id="__codelineno-3-16" name="__codelineno-3-16"></a>    <span class="k">return</span> <span class="n">indices</span>
+</code></pre></div>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
+<ol>
+<li>Tester cette fonction sur des exemples simples.</li>
+<li>Tester cette fonction sur le roman et les trois mousquetaires</li>
+<li>À l'aide du module <code>time</code>, mesurer le temps de recherche de chaque mousquetaire. Que remarquez-vous?</li>
+</ol>
+</div>
+<h2 id="complexite-de-loperation"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.2</span> Complexité de l'opération:<a class="headerlink" href="#complexite-de-loperation" title="Permanent link">¶</a></h2>
+<p>On détermine la complexité dans le pire des cas de cet algorithme, en déterminant le <strong>nombre de comparaisons</strong> de lettres. On appelle <code>n</code> (respectivement <code>m</code>), le nombre de caractères du texte (respectivement du motif).</p>
+<div class="admonition exercice">
+<p class="admonition-title">Exercice</p>
+<ol>
+<li>Quel est le pire des cas?</li>
+<li>Déterminer en fonction de <code>n</code> et <code>m</code> la complexité de cet algorithme.</li>
+</ol>
+</div>
+<h2 id="simplication-de-lalgorithme-naif"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.3</span> Simplication de l'algorithme naïf<a class="headerlink" href="#simplication-de-lalgorithme-naif" title="Permanent link">¶</a></h2>
+<p>En général, on se contente de savoir si un motif est dans un texte ou non.</p>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
+<p>Modifier la fonction <code>recherche_naive</code> pour qu'elle retourne le booléen <code>True</code> dès qu'elle trouve le motif dans le texte et <code>False</code> sinon.</p>
+</div>
+<h1 id="vers-un-algorithme-de-recherche-efficace"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.</span> Vers un algorithme de recherche efficace:<a class="headerlink" href="#vers-un-algorithme-de-recherche-efficace" title="Permanent link">¶</a></h1>
+<h2 id="une-premiere-etape"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.1</span> Une première étape:<a class="headerlink" href="#une-premiere-etape" title="Permanent link">¶</a></h2>
+<p>Pour comparer la présence du motif dans le texte, nous avons comparé la premier lettre du motif, puis éventuellement la seconde, etc... Nous allons changer de stratégie!</p>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
+<p>Re-écrire l'algorithme de recherche naïve mais en démarrant de la fin du <strong>motif</strong> et non du début. La comparaison se fera alors de droite à gauche!</p>
+</div>
+<h2 id="lalgorithme-de-boyer-moore-version-simplifee-de-horspol"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2</span> L'algorithme de Boyer-Moore, version simplifée de Horspol:<a class="headerlink" href="#lalgorithme-de-boyer-moore-version-simplifee-de-horspol" title="Permanent link">¶</a></h2>
+<p>L'idée est de décaler le motif vers la droite d'une valeur qui n'est pas toujours 1.</p>
+<p><gif-player play="" speed="1" src="./img/gif_BM.gif" style="display: inline-block; position: relative; overflow: hidden; width: 945px; height:118px;"></gif-player></p>
+<p>On va d'abord coder une fonction <code>dico_lettres</code> qui renvoie un dictionnaire associant à chaque lettre de <code>mot</code> (paramètre d'entrée) son dernier rang dans le <code>mot</code>. On exclut la dernière lettre, qui poserait un problème lors du décalage (on décalerait de 0...) </p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">def</span> <span class="nf">dico_lettres</span><span class="p">(</span><span class="n">mot</span><span class="p">):</span>
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>    <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mot</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a>        <span class="n">d</span><span class="p">[</span><span class="n">mot</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">i</span>
+<a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a>    <span class="k">return</span> <span class="n">d</span>
+<a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a>
+<a href="#__codelineno-4-7" id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="k">def</span> <span class="nf">boyer_moore</span><span class="p">(</span><span class="n">texte</span><span class="p">,</span> <span class="n">motif</span><span class="p">):</span>
+<a href="#__codelineno-4-8" id="__codelineno-4-8" name="__codelineno-4-8"></a>    <span class="n">dico</span> <span class="o">=</span> <span class="n">dico_lettres</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span>
+<a href="#__codelineno-4-9" id="__codelineno-4-9" name="__codelineno-4-9"></a>    <span class="n">indices</span> <span class="o">=</span> <span class="p">[]</span>
+<a href="#__codelineno-4-10" id="__codelineno-4-10" name="__codelineno-4-10"></a>    <span class="n">i</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+<a href="#__codelineno-4-11" id="__codelineno-4-11" name="__codelineno-4-11"></a>    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">texte</span><span class="p">):</span>
+<a href="#__codelineno-4-12" id="__codelineno-4-12" name="__codelineno-4-12"></a>        <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
+<a href="#__codelineno-4-13" id="__codelineno-4-13" name="__codelineno-4-13"></a>        <span class="k">while</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> <span class="ow">and</span> <span class="n">motif</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">k</span><span class="p">]</span> <span class="o">==</span> <span class="n">texte</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">k</span><span class="p">]:</span> 
+<a href="#__codelineno-4-14" id="__codelineno-4-14" name="__codelineno-4-14"></a>            <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+<a href="#__codelineno-4-15" id="__codelineno-4-15" name="__codelineno-4-15"></a>        <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">):</span> 
+<a href="#__codelineno-4-16" id="__codelineno-4-16" name="__codelineno-4-16"></a>            <span class="n">indices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<a href="#__codelineno-4-17" id="__codelineno-4-17" name="__codelineno-4-17"></a>            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span> 
+<a href="#__codelineno-4-18" id="__codelineno-4-18" name="__codelineno-4-18"></a>        <span class="k">else</span><span class="p">:</span>
+<a href="#__codelineno-4-19" id="__codelineno-4-19" name="__codelineno-4-19"></a>            <span class="k">if</span> <span class="n">texte</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">k</span><span class="p">]</span> <span class="ow">in</span> <span class="n">dico</span><span class="p">:</span> 
+<a href="#__codelineno-4-20" id="__codelineno-4-20" name="__codelineno-4-20"></a>                <span class="n">i</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="n">k</span>  <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> <span class="o">-</span> <span class="n">dico</span><span class="p">[</span><span class="n">texte</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">k</span><span class="p">]]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> 
+<a href="#__codelineno-4-21" id="__codelineno-4-21" name="__codelineno-4-21"></a>            <span class="k">else</span><span class="p">:</span>
+<a href="#__codelineno-4-22" id="__codelineno-4-22" name="__codelineno-4-22"></a>                <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="n">k</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> 
+<a href="#__codelineno-4-23" id="__codelineno-4-23" name="__codelineno-4-23"></a>
+<a href="#__codelineno-4-24" id="__codelineno-4-24" name="__codelineno-4-24"></a>    <span class="k">return</span> <span class="n">indices</span>
+</code></pre></div>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
+<p>Reprendre les tests effectués sur le roman avec la fonction précédente et comparez les résultats.</p>
 </div>
 <script src="../pyodide-mkdocs/ide.js"></script>
 <!-- Massilia javascripts -->
@@ -497,6 +583,8 @@ Néanmoins, cet opérateur ne teste que la présence du motif <code>quoi</code> 
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="../xtra/javascripts/interpreter.js"></script>
 <script src="../xtra/javascripts/config.js"></script>
+<script src="../xtra/gifplayer/gif-player.es6.js"></script>
+<script src="../xtra/webcomponentsjs/webcomponents-loader.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/javascripts/massilia-admonitions.js"></script>
 </body>
 </html>
