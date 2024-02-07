@@ -409,7 +409,7 @@
 <p class="admonition-title">Info</p>
 <p><strong>L'extension</strong> d'un fichier précise notamment sa nature. </p>
 </div>
-<p>La spécification donne les inforamtions suivantes:</p>
+<p>La spécification donne les informations suivantes:</p>
 <ul>
 <li>leur signature: 8 octets</li>
 <li>le chunk <code>IHDR</code> pour l'en-tête : 13 octets</li>
@@ -420,7 +420,7 @@ Donc une image dans ce format pèse au moins 45 octets... </li>
 </ul>
 <p>Le chunk IHDR donne entre autres les informations sur la largeur, la hauteur de l'image. Nous y reviendrons plus tard en disséquant une image pour explorer ses entrailles ...</p>
 <div class="admonition info">
-<p class="admonition-title">Un format hyper connu :le format jpeg</p>
+<p class="admonition-title">Un format hyper connu : le format jpeg</p>
 <p>Attention! les fichiers <strong>.jpeg</strong> ne sont pas à proprement dit des fichiers images mais des fichiers <strong>compressés</strong> d'une image. Souvent, on commet une confusion, pas bien grave au final!</p>
 </div>
 <p>Une image Portable Network Graphics (PNG) est un format ouvert, on peut donc explorer son contenu!</p>
@@ -489,7 +489,7 @@ Donc une image dans ce format pèse au moins 45 octets... </li>
 <p class="admonition-title">Exo</p>
 <p>Installer la bibliothèque PILLOW dans Thonny(lors de l'import il faudra l'appeler sous son ancien nom PIL...).</p>
 </div>
-<p>Il s'agit de traduire en Python l'idée de:</p>
+<p>Il s'agit de traduire en Python certaines manipulations.</p>
 <div class="admonition tip">
 <p class="admonition-title">Les routines !</p>
 <p>Vous allez apprendre à:</p>
@@ -530,25 +530,25 @@ Donc une image dans ce format pèse au moins 45 octets... </li>
 </ol>
 </div>
 <h2 id="creation-dune-nouvelle-image"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.2</span> Création d'une nouvelle image<a class="headerlink" href="#creation-dune-nouvelle-image" title="Permanent link">¶</a></h2>
-<p>Nous allons créer une image d'abord en niveaux de gris (mode <code>L</code>)</p>
+<p>Nous allons créer une image de taille <code>750</code>(width) par <code>200</code>(height) d'abord en niveaux de gris (mode <code>L</code>)</p>
 <div class="admonition note inline end">
 <p class="admonition-title">À savoir!</p>
 <p>Remarquez que la taille est donnée sous la forme d'un tuple.</p>
 </div>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
 <a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="c1">#Creation d'une nouvelle image en niveaux de gris</span>
-<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="n">IM</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">'L'</span><span class="p">,</span> <span class="p">(</span><span class="mi">750</span><span class="p">,</span><span class="mi">200</span><span class="p">))</span><span class="c1"># en mode L pour niveaux de gris</span>
+<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="n">IM</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">'L'</span><span class="p">,</span> <span class="p">(</span><span class="mi">750</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span><span class="c1"># en mode L pour niveaux de gris</span>
 <a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="n">IM</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">"Images\img_gris1.png"</span><span class="p">)</span><span class="c1">#pour créer l'image dans le dossier Images...</span>
 <a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="n">IM</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
-<p>Pour la création d'une image en couleur, seul le mode change (mode <code>RGB</code>):</p>
+<p>Pour la création d'une image de taille <code>750</code> par <code>200</code> en couleur, seul le mode change (mode <code>RGB</code>):</p>
 <div class="admonition note inline end">
 <p class="admonition-title">À savoir!</p>
 <p>Par défaut et quel que soit le mode, tous les pixels de l'image sont noirs!</p>
 </div>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
 <a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="c1">#Creation d'une nouvelle image en couleur</span>
-<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="n">IM</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">'RGB'</span><span class="p">,</span> <span class="p">(</span><span class="mi">750</span><span class="p">,</span><span class="mi">200</span><span class="p">))</span><span class="c1"># en mode RGB pour la couleur</span>
+<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="n">IM</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">'RGB'</span><span class="p">,</span> <span class="p">(</span><span class="mi">750</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span><span class="c1"># en mode RGB pour la couleur</span>
 <a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="n">IM</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">"Images\img_coul.png"</span><span class="p">)</span><span class="c1">#pour créer l'image dans le dossier Images...</span>
 <a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="n">IM</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
@@ -567,8 +567,8 @@ Donc une image dans ce format pèse au moins 45 octets... </li>
 <p class="admonition-title">Exo</p>
 <p>En s'utilisant le code précédent, </p>
 <ol>
-<li>donner l'intensité des pixels <span class="arithmatex">\((105,42)\)</span> de l'image <code>puppy.png</code>.</li>
-<li>quelles sont les coordonnées du dernier pixel de l'image(en bas à droite).Donnez son intensité</li>
+<li>donner l'intensité des pixels <code>(105,42)</code> de l'image <code>puppy.png</code>.</li>
+<li>quelles sont les coordonnées du dernier pixel de l'image(en bas à droite). Donnez son intensité</li>
 </ol>
 </div>
 <h2 id="ecrire-lintensite-dun-pixel"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.4</span> Écrire l'intensité d'un pixel<a class="headerlink" href="#ecrire-lintensite-dun-pixel" title="Permanent link">¶</a></h2>
@@ -632,7 +632,7 @@ Par exemple, créeons une image en couleur de taille <code>(500, 500)</code> don
 <p><center>
 <img alt="" src="img/matImage.png" width="50%"/>
 </center></p>
-<p>Pour illustrer mes propos, construisons une image destination à partir d'une image source en ajoutant la valeur 100 à chaque intensité du pixel d'origine. Nous allons travailler <strong>modulo 256</strong> pour rester dans la plage <span class="arithmatex">\([0;255]\)</span>.</p>
+<p>Pour illustrer mes propos, construisons une image destination à partir d'une image source en ajoutant la valeur 100 à chaque intensité du pixel d'origine. Nous allons travailler <strong>modulo 256</strong> pour rester dans la plage <code>[0;255]</code>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Algorithme à suivre</p>
 <ol>
@@ -685,7 +685,11 @@ Quelques informations sur le programme précédent:</p>
 </div>
 <div class="admonition exo">
 <p class="admonition-title">Exo</p>
-<p>Créer l'image <code>puppynegative.png</code> obtenu à partir de l'image <code>puppy.png</code> en transformant le pixel <code>p</code>en le pixel <code>255 - p</code>.</p>
+<p>Créer une image de largeur 256( la largeur n'est pas choisie au hasard) et de hauteur quelconque, en niveaux de gris telle que tous les pixels de la colonne <code>i</code> aient une intensité égale à <code>i</code>.</p>
+</div>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
+<p>Créer l'image <code>puppynegative.png</code> obtenu à partir de l'image <code>puppy.png</code> en transformant le pixel d'intensité <code>p</code>en le pixel d'intensité <code>255 - p</code>.</p>
 </div>
 <div class="admonition exo">
 <p class="admonition-title">Exo</p>
