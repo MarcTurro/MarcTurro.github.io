@@ -10,21 +10,21 @@
         <meta name="author" content="Marc TURRO">
       
       
-        <link rel="canonical" href="https://marcturro.github.io/res_prem.html">
+        <link rel="canonical" href="https://marcturro.github.io/prem/logiques.html">
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
     
     
       
-        <title>Programme Première NSI - Numérique et Sciences Informatiques</title>
+        <title>Architecture des ordinateurs - Numérique et Sciences Informatiques</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.20d9efc8.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.20d9efc8.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.cbb835fc.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
         
       
       
@@ -74,10 +74,10 @@
     
 
 <!-- favicons -->
-<link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
-<link rel="icon" href="./assets/images/favicon_32x32.png" sizes="32x32">
-<link rel="icon" href="./assets/images/favicon_96x96.png" sizes="96x96">
-<link rel="icon" href="./assets/images/favicon_144x144.png" sizes="144x144">
+<link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="../assets/images/favicon_32x32.png" sizes="32x32">
+<link rel="icon" href="../assets/images/favicon_96x96.png" sizes="96x96">
+<link rel="icon" href="../assets/images/favicon_144x144.png" sizes="144x144">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/atom-one-light.min.css">
 <!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>    
@@ -89,9 +89,9 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/js/jquery.terminal.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/css/jquery.terminal.min.css" rel="stylesheet">
-<script src="./pyodide-mkdocs/interpreter.js"></script> 
+<script src="../pyodide-mkdocs/interpreter.js"></script> 
 <!-- Ajouter 17 february pour tables massilia-->
-<script src="./js/massilia.js" defer></script>
+<script src="../js/massilia.js" defer></script>
 
     
       
@@ -103,17 +103,17 @@
       
     
     
-      <link rel="stylesheet" href="xtra/stylesheets/extra.css">
+      <link rel="stylesheet" href="../xtra/stylesheets/extra.css">
     
-      <link rel="stylesheet" href="xtra/stylesheets/pyoditeur.css">
+      <link rel="stylesheet" href="../xtra/stylesheets/pyoditeur.css">
     
-      <link rel="stylesheet" href="xtra/stylesheets/ajustements.css">
+      <link rel="stylesheet" href="../xtra/stylesheets/ajustements.css">
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-columns.css">
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-admonitions.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -121,7 +121,7 @@
     
     
 
-<link rel="stylesheet" href="./pyodide-mkdocs/pyoditeur.css">
+<link rel="stylesheet" href="../pyodide-mkdocs/pyoditeur.css">
 
 
 <input id="ace_palette" autocomplete="off" class="md-toggle" data-ace-dark-mode="tomorrow_night_bright" data-ace-light-mode="crimson_editor" type="checkbox"></input>
@@ -148,6 +148,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#architecture-des-ordinateurs" class="md-skip">
+          Aller au contenu
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -158,9 +163,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="En-tête">
-    <a href="index.html" title="Numérique et Sciences Informatiques" class="md-header__button md-logo" aria-label="Numérique et Sciences Informatiques" data-md-component="logo">
+    <a href="../index.html" title="Numérique et Sciences Informatiques" class="md-header__button md-logo" aria-label="Numérique et Sciences Informatiques" data-md-component="logo">
       
-  <img src="img/logoNSIsite.png" alt="logo">
+  <img src="../img/logoNSIsite.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -176,7 +181,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Programme Première NSI
+              Architecture des ordinateurs
             
           </span>
         </div>
@@ -261,7 +266,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="index.html" class="md-tabs__link">
+    <a href="../index.html" class="md-tabs__link">
       Accueil
     </a>
   </li>
@@ -276,7 +281,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="prem/premnsi.html" class="md-tabs__link">
+      <a href="premnsi.html" class="md-tabs__link">
         Première NSI
       </a>
     </li>
@@ -292,7 +297,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="term/termnsi.html" class="md-tabs__link">
+      <a href="../term/termnsi.html" class="md-tabs__link">
         Terminale NSI
       </a>
     </li>
@@ -305,7 +310,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="term/ep.html" class="md-tabs__link">
+    <a href="../term/ep.html" class="md-tabs__link">
       Epreuve pratique NSI
     </a>
   </li>
@@ -317,7 +322,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="ecolo/ecologie.html" class="md-tabs__link">
+    <a href="../ecolo/ecologie.html" class="md-tabs__link">
       Impact environnemental
     </a>
   </li>
@@ -326,15 +331,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="ressources.html" class="md-tabs__link md-tabs__link--active">
+      <a href="../ressources.html" class="md-tabs__link">
         Ressources
       </a>
     </li>
@@ -352,7 +355,9 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -362,9 +367,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="index.html" title="Numérique et Sciences Informatiques" class="md-nav__button md-logo" aria-label="Numérique et Sciences Informatiques" data-md-component="logo">
+    <a href="../index.html" title="Numérique et Sciences Informatiques" class="md-nav__button md-logo" aria-label="Numérique et Sciences Informatiques" data-md-component="logo">
       
-  <img src="img/logoNSIsite.png" alt="logo">
+  <img src="../img/logoNSIsite.png" alt="logo">
 
     </a>
     Numérique et Sciences Informatiques
@@ -380,7 +385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="index.html" class="md-nav__link">
+      <a href="../index.html" class="md-nav__link">
         Accueil
       </a>
     </li>
@@ -421,7 +426,7 @@
   
   
     <li class="md-nav__item">
-      <a href="prem/premnsi.html" class="md-nav__link">
+      <a href="premnsi.html" class="md-nav__link">
         Accueil
       </a>
     </li>
@@ -435,7 +440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="prem/index_tpbash.html" class="md-nav__link">
+      <a href="index_tpbash.html" class="md-nav__link">
         Passez la commande !
       </a>
     </li>
@@ -449,7 +454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="prem/frontend.html" class="md-nav__link">
+      <a href="frontend.html" class="md-nav__link">
         Développement Web
       </a>
     </li>
@@ -463,7 +468,7 @@
   
   
     <li class="md-nav__item">
-      <a href="prem/jscript.html" class="md-nav__link">
+      <a href="jscript.html" class="md-nav__link">
         Dynamisons le Web
       </a>
     </li>
@@ -477,7 +482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="prem/widget.html" class="md-nav__link">
+      <a href="widget.html" class="md-nav__link">
         Création de widgets
       </a>
     </li>
@@ -491,7 +496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="prem/interface_graphique.html" class="md-nav__link">
+      <a href="interface_graphique.html" class="md-nav__link">
         Interface graphique en Python
       </a>
     </li>
@@ -505,7 +510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="prem/animation_canvas.html" class="md-nav__link">
+      <a href="animation_canvas.html" class="md-nav__link">
         Animation dans un canvas
       </a>
     </li>
@@ -519,7 +524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="prem/images_numeriques.html" class="md-nav__link">
+      <a href="images_numeriques.html" class="md-nav__link">
         Travail sur les images numériques
       </a>
     </li>
@@ -533,7 +538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="prem/traitement_donnees.html" class="md-nav__link">
+      <a href="traitement_donnees.html" class="md-nav__link">
         Traitement des données
       </a>
     </li>
@@ -547,7 +552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="prem/dauphin.html" class="md-nav__link">
+      <a href="dauphin.html" class="md-nav__link">
         Programmer un microprocesseur
       </a>
     </li>
@@ -595,7 +600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="term/termnsi.html" class="md-nav__link">
+      <a href="../term/termnsi.html" class="md-nav__link">
         Accueil
       </a>
     </li>
@@ -609,7 +614,7 @@
   
   
     <li class="md-nav__item">
-      <a href="term/recursivite.html" class="md-nav__link">
+      <a href="../term/recursivite.html" class="md-nav__link">
         Récursivité
       </a>
     </li>
@@ -623,7 +628,7 @@
   
   
     <li class="md-nav__item">
-      <a href="term/interface.html" class="md-nav__link">
+      <a href="../term/interface.html" class="md-nav__link">
         Interface et implémentation
       </a>
     </li>
@@ -637,7 +642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="term/stalin.html" class="md-nav__link">
+      <a href="../term/stalin.html" class="md-nav__link">
         Structure de données linéaires
       </a>
     </li>
@@ -651,7 +656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="term/complex_struc.html" class="md-nav__link">
+      <a href="../term/complex_struc.html" class="md-nav__link">
         Complexité des structures
       </a>
     </li>
@@ -665,7 +670,7 @@
   
   
     <li class="md-nav__item">
-      <a href="term/recherche.html" class="md-nav__link">
+      <a href="../term/recherche.html" class="md-nav__link">
         Recherche textuelle
       </a>
     </li>
@@ -679,7 +684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="term/reseau_term.html" class="md-nav__link">
+      <a href="../term/reseau_term.html" class="md-nav__link">
         Rappel sur les réseaux informatiques
       </a>
     </li>
@@ -693,7 +698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="term/routage.html" class="md-nav__link">
+      <a href="../term/routage.html" class="md-nav__link">
         Routage
       </a>
     </li>
@@ -715,7 +720,7 @@
   
   
     <li class="md-nav__item">
-      <a href="term/ep.html" class="md-nav__link">
+      <a href="../term/ep.html" class="md-nav__link">
         Epreuve pratique NSI
       </a>
     </li>
@@ -730,7 +735,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ecolo/ecologie.html" class="md-nav__link">
+      <a href="../ecolo/ecologie.html" class="md-nav__link">
         Impact environnemental
       </a>
     </li>
@@ -743,14 +748,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
       
       
       
@@ -773,7 +776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ressources.html" class="md-nav__link">
+      <a href="../ressources.html" class="md-nav__link">
         Accueil
       </a>
     </li>
@@ -785,19 +788,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="res_prem.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../res_prem.html" class="md-nav__link">
         Programme Première NSI
       </a>
-      
     </li>
   
 
@@ -809,7 +804,7 @@
   
   
     <li class="md-nav__item">
-      <a href="res_term.html" class="md-nav__link">
+      <a href="../res_term.html" class="md-nav__link">
         Programme Terminale NSI
       </a>
     </li>
@@ -831,7 +826,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -840,6 +837,58 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#comment-la-magie-opere" class="md-nav__link">
+    Comment la magie opère?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lelement-de-base" class="md-nav__link">
+    L'élément de base
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-portes-logiques" class="md-nav__link">
+    Les portes logiques
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#un-additionneur" class="md-nav__link">
+    Un additionneur
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cpu" class="md-nav__link">
+    CPU
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture-de-von-neuman" class="md-nav__link">
+    Architecture de Von Neuman
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -855,19 +904,37 @@
                   
 
 
-  <h1>Programme Première NSI</h1>
+<h1 id="architecture-des-ordinateurs">Architecture des ordinateurs<a class="headerlink" href="#architecture-des-ordinateurs" title="Permanent link">&para;</a></h1>
+<p>L'architecture des ordinateurs consiste à décrire les couches physiques constituant nos ordinateurs.</p>
+<p>Nous avons l'habitude d'utiliser au quotidien des <strong>logiciels</strong>, situés dans les <strong>couches hautes</strong> mais rarement on s'intéresse aux couches basses, celles qui décrit le fonctionnement intrinsèque du processeur et de ses mémoires. C'est en partie, avec modestie, ce que nous allons tenter d'expliquer dans ce travail...</p>
+<h2 id="comment-la-magie-opere">Comment la magie opère?<a class="headerlink" href="#comment-la-magie-opere" title="Permanent link">&para;</a></h2>
+<p>Les ordinateurs sont des machines proposant des interfaces graphiques simples d'utilisation et l'action combinée du clavier et de la souris permet d'obtenir les résultats demandés...</p>
+<p>Il est peu commun de les concevoir comme des grands manipulateurs de bits! Pourtant, c'est la réalité : un <strong>processeur</strong> ne manipule que des valeurs binaires et cette complexité est complétement occultée par le système! </p>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Que se passe t-il réellement au sein de l'ordinateur lorsque je sollicite ses services?</p>
+</div>
+<p>Décrire complétement le processus qui de la manipulation de nombres binaires, conduit à l'affichage d'une image sur votre écran, est un objectif audacieux voire impossible. Mais tentons tout de même quelques éléments de réponses.</p>
+<div class="admonition info">
+<p class="admonition-title"> Les opérations de bases</p>
+<p>Un ordinateur (disons plutôt le processeur...) ne sait réaliser qu'un nombre limité de tâches: essentiellement des opérations arithmétiques...</p>
+</div>
+<p>Les premiers ordinateurs n'étaient que de <strong>super calculateurs</strong> , champion du calcul.</p>
+<h2 id="lelement-de-base">L'élément de base<a class="headerlink" href="#lelement-de-base" title="Permanent link">&para;</a></h2>
+<p>L'élément de base pour construire l'<strong>arithmétique des processeurs</strong> est le <strong>transistor</strong>.</p>
+<h2 id="les-portes-logiques">Les portes logiques<a class="headerlink" href="#les-portes-logiques" title="Permanent link">&para;</a></h2>
+<h2 id="un-additionneur">Un additionneur<a class="headerlink" href="#un-additionneur" title="Permanent link">&para;</a></h2>
+<h2 id="cpu">CPU<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h2>
+<h2 id="architecture-de-von-neuman">Architecture de Von Neuman<a class="headerlink" href="#architecture-de-von-neuman" title="Permanent link">&para;</a></h2>
 
-<ul>
-<li>Programme de la classe de  <a href="https://eduscol.education.fr/document/30007/download">Première NSI</a></li>
-<li>Documents d'accompagnement <a href="https://eduscol.education.fr/2068/programmes-et-ressources-en-numerique-et-sciences-informatiques-voie-g">ici</a></li>
-</ul>
 
 
+  
 
 
 
                 
-<script src="./pyodide-mkdocs/ide.js"></script> 
+<script src="../pyodide-mkdocs/ide.js"></script> 
 <!-- Massilia javascripts -->
 <massilia data=""></massilia>
 
@@ -885,42 +952,6 @@
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
-      
-        
-        <a href="ressources.html" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Accueil" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Précédent
-              </span>
-              Accueil
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="res_term.html" class="md-footer__link md-footer__link--next" aria-label="Suivant: Programme Terminale NSI" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Suivant
-              </span>
-              Programme Terminale NSI
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -948,24 +979,24 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["header.autohide", "navigation.tabs", "navigation.expand", "toc.follow", "navigation.top"], "search": "assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.tabs", "navigation.expand", "toc.follow", "navigation.top"], "search": "../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.078830c0.min.js"></script>
+      <script src="../assets/javascripts/bundle.078830c0.min.js"></script>
       
-        <script src="xtra/javascripts/mathjax-config.js"></script>
+        <script src="../xtra/javascripts/mathjax-config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="xtra/javascripts/interpreter.js"></script>
+        <script src="../xtra/javascripts/interpreter.js"></script>
       
-        <script src="xtra/javascripts/config.js"></script>
+        <script src="../xtra/javascripts/config.js"></script>
       
-        <script src="xtra/gifplayer/gif-player.es6.js"></script>
+        <script src="../xtra/gifplayer/gif-player.es6.js"></script>
       
-        <script src="xtra/webcomponentsjs/webcomponents-loader.js"></script>
+        <script src="../xtra/webcomponentsjs/webcomponents-loader.js"></script>
       
         <script src="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/javascripts/massilia-admonitions.js"></script>
       

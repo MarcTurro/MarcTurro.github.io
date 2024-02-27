@@ -6,10 +6,10 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Marc TURRO" name="author"/>
-<link href="https://marcturro.github.io/term/recursivite.html" rel="canonical"/>
+<link href="https://marcturro.github.io/prem/dauphin.html" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.0, mkdocs-material-8.5.6" name="generator"/>
-<title>Récursivité - Numérique et Sciences Informatiques</title>
+<title>Programmer un microprocesseur - Numérique et Sciences Informatiques</title>
 <link href="../assets/stylesheets/main.20d9efc8.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.cbb835fc.min.css" rel="stylesheet"/>
 <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M471.6 21.7c-21.9-21.9-57.3-21.9-79.2 0l-30.1 30 97.9 97.9 30.1-30.1c21.9-21.9 21.9-57.3 0-79.2l-18.7-18.6zm-299.2 220c-6.1 6.1-10.8 13.6-13.5 21.9l-29.6 88.8c-2.9 8.6-.6 18.1 5.8 24.6s15.9 8.7 24.6 5.8l88.8-29.6c8.2-2.8 15.7-7.4 21.9-13.5l167.3-167.4-98-98-167.3 167.4zM96 64c-53 0-96 43-96 96v256c0 53 43 96 96 96h256c53 0 96-43 96-96v-96c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H96z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-144c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M224 0c17.7 0 32 14.3 32 32v208h-64V32c0-17.7 14.3-32 32-32zm96 160c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32s-32-14.3-32-32v-64c0-17.7 14.3-32 32-32zm64 64c0-17.7 14.3-32 32-32s32 14.3 32 32v64c0 17.7-14.3 32-32 32s-32-14.3-32-32v-64zM93.3 51.2 175.9 240h-69.8L34.7 76.8c-7.1-16.2.3-35 16.5-42.1s35.1.3 42.1 16.5zm27 221.3-.2-.5H216c22.1 0 40 17.9 40 40s-17.9 40-40 40h-56c-8.8 0-16 7.2-16 16s7.2 16 16 16h56c39.8 0 72-32.2 72-72v-.6c9.4 5.4 20.3 8.6 32 8.6 13.2 0 25.4-4 35.6-10.8 8.7 24.9 32.5 42.8 60.4 42.8 11.7 0 22.6-3.1 32-8.6v8.6c0 88.4-71.6 160-160 160h-61.7c-42.4 0-83.1-16.9-113.1-46.9l-11.6-11.6C77.5 429.5 64 396.9 64 363v-27c0-32.7 24.6-59.7 56.3-63.5z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM288 352c0 17.7-14.3 32-32 32s-32-14.3-32-32 14.3-32 32-32 32 14.3 32 32z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM224 256c0 35.3-28.7 64-64 64s-64-28.7-64-64 28.7-64 64-64 64 28.7 64 64zm128 64c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 0c53 0 96 43 96 96v3.6c0 15.7-12.7 28.4-28.4 28.4H188.4c-15.7 0-28.4-12.7-28.4-28.4V96c0-53 43-96 96-96zM41.4 105.4c12.5-12.5 32.8-12.5 45.3 0l64 64c.7.7 1.3 1.4 1.9 2.1 14.2-7.3 30.4-11.4 47.5-11.4H312c17.1 0 33.2 4.1 47.5 11.4.6-.7 1.2-1.4 1.9-2.1l64-64c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3l-64 64c-.7.7-1.4 1.3-2.1 1.9 6.2 12 10.1 25.3 11.1 39.5H480c17.7 0 32 14.3 32 32s-14.3 32-32 32h-64c0 24.6-5.5 47.8-15.4 68.6 2.2 1.3 4.2 2.9 6 4.8l64 64c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0l-63.1-63.1c-24.5 21.8-55.8 36.2-90.3 39.6V240c0-8.8-7.2-16-16-16s-16 7.2-16 16v239.2c-34.5-3.4-65.8-17.8-90.3-39.6l-63 63c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l64-64c1.9-1.9 3.9-3.4 6-4.8C101.5 367.8 96 344.6 96 320H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h64.3c1.1-14.1 5-27.5 11.1-39.5-.7-.6-1.4-1.2-2.1-1.9l-64-64c-12.5-12.5-12.5-32.8 0-45.3z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
@@ -50,7 +50,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#fonctions-recursives">1. 
+<a class="md-skip" href="#comprendre-les-microprocesseurs">1. 
           Aller au contenu
         </a>
 </div>
@@ -74,7 +74,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Récursivité
+              Programmer un microprocesseur
             
           </span>
 </div>
@@ -132,17 +132,17 @@
     </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../prem/premnsi.html">
+<a class="md-tabs__link md-tabs__link--active" href="premnsi.html">
         Première NSI
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="termnsi.html">
+<a class="md-tabs__link" href="../term/termnsi.html">
         Terminale NSI
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="ep.html">
+<a class="md-tabs__link" href="../term/ep.html">
       Epreuve pratique NSI
     </a>
 </li>
@@ -161,7 +161,7 @@
 </nav>
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
-<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden="">
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
@@ -177,8 +177,8 @@
         Accueil
       </a>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2">
           Première NSI
           <span class="md-nav__icon md-icon"></span>
@@ -190,60 +190,83 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../prem/premnsi.html">
+<a class="md-nav__link" href="premnsi.html">
         Accueil
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../prem/index_tpbash.html">
+<a class="md-nav__link" href="index_tpbash.html">
         Passez la commande !
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../prem/frontend.html">
+<a class="md-nav__link" href="frontend.html">
         Développement Web
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../prem/jscript.html">
+<a class="md-nav__link" href="jscript.html">
         Dynamisons le Web
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../prem/widget.html">
+<a class="md-nav__link" href="widget.html">
         Création de widgets
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../prem/interface_graphique.html">
+<a class="md-nav__link" href="interface_graphique.html">
         Interface graphique en Python
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../prem/animation_canvas.html">
+<a class="md-nav__link" href="animation_canvas.html">
         Animation dans un canvas
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../prem/images_numeriques.html">
+<a class="md-nav__link" href="images_numeriques.html">
         Travail sur les images numériques
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../prem/traitement_donnees.html">
+<a class="md-nav__link" href="traitement_donnees.html">
         Traitement des données
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../prem/dauphin.html">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Programmer un microprocesseur
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="dauphin.html">
         Programmer un microprocesseur
       </a>
+<nav aria-label="Table des matières" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introduction">1.1 
+    Introduction
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#le-dauphin">1.2 
+    Le Dauphin
+  </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3">
           Terminale NSI
           <span class="md-nav__icon md-icon"></span>
@@ -255,65 +278,42 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="termnsi.html">
+<a class="md-nav__link" href="../term/termnsi.html">
         Accueil
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          Récursivité
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="recursivite.html">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../term/recursivite.html">
         Récursivité
       </a>
-<nav aria-label="Table des matières" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table des matières
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#un-exemple-comment-calculer-la-somme-des-n-premiers-entiers-consecutifs">1.1 
-    Un exemple: comment calculer la somme des n premiers entiers consécutifs?
-  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#visualiser-la-pile-dexecution-dun-appel-recursif">1.2 
-    Visualiser la pile d'exécution d'un appel récursif
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="interface.html">
+<a class="md-nav__link" href="../term/interface.html">
         Interface et implémentation
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="stalin.html">
+<a class="md-nav__link" href="../term/stalin.html">
         Structure de données linéaires
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="complex_struc.html">
+<a class="md-nav__link" href="../term/complex_struc.html">
         Complexité des structures
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="recherche.html">
+<a class="md-nav__link" href="../term/recherche.html">
         Recherche textuelle
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="reseau_term.html">
+<a class="md-nav__link" href="../term/reseau_term.html">
         Rappel sur les réseaux informatiques
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="routage.html">
+<a class="md-nav__link" href="../term/routage.html">
         Routage
       </a>
 </li>
@@ -321,7 +321,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="ep.html">
+<a class="md-nav__link" href="../term/ep.html">
         Epreuve pratique NSI
       </a>
 </li>
@@ -365,7 +365,7 @@
 </div>
 </div>
 </div>
-<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden="">
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table des matières" class="md-nav md-nav--secondary">
@@ -375,13 +375,13 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#un-exemple-comment-calculer-la-somme-des-n-premiers-entiers-consecutifs">1.1 
-    Un exemple: comment calculer la somme des n premiers entiers consécutifs?
+<a class="md-nav__link" href="#introduction">1.1 
+    Introduction
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#visualiser-la-pile-dexecution-dun-appel-recursif">1.2 
-    Visualiser la pile d'exécution d'un appel récursif
+<a class="md-nav__link" href="#le-dauphin">1.2 
+    Le Dauphin
   </a>
 </li>
 </ul>
@@ -391,134 +391,161 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="fonctions-recursives"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Fonctions récursives<a class="headerlink" href="#fonctions-recursives" title="Permanent link">¶</a></h1>
-<h2 id="un-exemple-comment-calculer-la-somme-des-n-premiers-entiers-consecutifs"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Un exemple: comment calculer la somme des n premiers entiers consécutifs?<a class="headerlink" href="#un-exemple-comment-calculer-la-somme-des-n-premiers-entiers-consecutifs" title="Permanent link">¶</a></h2>
-<p>Il s'agit de calculer la somme (dite de Gauss...)  </p>
-<div class="arithmatex">\[ S = 1 + 2 + 3 + 4 + ... +  n-1 + n \]</div>
-<div class="admonition exercice">
-<p class="admonition-title">Exercice</p>
-<ol>
-<li>Copier et coller le code Python ci-dessous</li>
-<li>Testez pour plusieurs valeurs simples de <span class="arithmatex">\(n\)</span></li>
-</ol>
-</div>
-<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Donner un entier positif"</span><span class="p">))</span>
-<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">S</span> <span class="o">=</span> <span class="mi">0</span>
-<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>    <span class="n">S</span> <span class="o">=</span> <span class="n">S</span> <span class="o">+</span> <span class="n">i</span>
-<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"La somme des </span><span class="si">{}</span><span class="s2"> premiers entiers est </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">S</span><span class="p">))</span>
-</code></pre></div>
-Le code ci-dessus est <strong>impératif</strong> au sens où nous donnons des ordres que l'ordinateur exécute ligne par ligne.</p>
-<div class="admonition exercice">
-<p class="admonition-title">Exercice</p>
-<ol>
-<li>Transformer le code ci-dessus en une fonction <code>somme_entier</code> qui prend en paramètre le seul entier <span class="arithmatex">\(n\)</span> et qui retourne la somme recherchée.</li>
-<li>Ajouter des assertions à la fonction.</li>
-<li>Effectuer des tests unitaires (voir le cours...)</li>
-</ol>
-</div>
-<p>Posons la notation <span class="arithmatex">\(S_n\)</span> pour indiquer la somme <span class="arithmatex">\(1 + 2 + 3 + 4 + ... +  n-1 + n\)</span>. Remarquons alors ceci:</p>
-<div class="arithmatex">\[S_n=1 + 2 + 3 + 4 + ... +  n-1 + n =S_{n -1} + n\]</div>
-<p>Autrement dit, le calcul de <span class="arithmatex">\(S_n\)</span> est récurrent et la traduction python de cette relation donne:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">somme_rect</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">=</span> <span class="n">somme_rect</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">n</span>
-</code></pre></div>
-<div class="admonition warning">
-<p class="admonition-title">Mais attention!</p>
-<p>La relation précédente n'est valable que pour <span class="arithmatex">\(n\geq 1\)</span> et à la condition qu'elle soit aussi <strong>initialisée</strong>: si on déclare que <code>somme_rec(0) = 0</code>, on peut alors calculer <code>somme_rec(1),somme_rec(2),...</code></p>
-</div>
-<p>Au final, nous obtenons la version <strong>récursive</strong> de la fonction précédente:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">def</span> <span class="nf">somme_rec</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>        <span class="k">return</span> <span class="mi">0</span>
-<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a>    <span class="k">else</span><span class="p">:</span>
-<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a>        <span class="k">return</span> <span class="n">somme_rec</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">n</span>
-</code></pre></div>
-<h2 id="visualiser-la-pile-dexecution-dun-appel-recursif"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> Visualiser la pile d'exécution d'un appel récursif<a class="headerlink" href="#visualiser-la-pile-dexecution-dun-appel-recursif" title="Permanent link">¶</a></h2>
-<div class="admonition exercice">
-<p class="admonition-title">Exercice</p>
-<ol>
-<li>Allez sur le site <a href="https://pythontutor.com/render.html#mode=edit">python tutor</a> et recopier le code de la fonction récursive dans la zone d'édition.</li>
-<li>Exécutez <code>somme_rec(5)</code> et visualisez les différents appels.</li>
-<li>Même consigne avec <code>somme_rec(50)</code>.</li>
-<li>Quel pourrait être le problème des fonctions récursives? </li>
-</ol>
-</div>
-<p>Il existe de nombreuses situations algorithmiques qui justifient l'appel d'une fonction récursive. Cependant le nombre d'appel dans la pile est souvent limitée pour des raisons évidentes de sécurité puisque la zone mémoire qui stocke tous les appels peut très vite augmentée...</p>
-<p>Dans Thonny, on peut connaître le nombre maximum d'appel:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kn">import</span> <span class="nn">sys</span>
-<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">getrecursionlimit</span><span class="p">())</span>
-</code></pre></div>
-<div class="admonition tldr">
-<p class="admonition-title">À retenir</p>
-<p>Lors de l’exécution d’un algorithme récursif, les appels successifs de la fonction sont stockés dans une pile, c’est <strong>la pile d’exécution</strong>.
-Plus précisément, la pile d’exécution est un emplacement mémoire destiné à stocker les paramètres, les variables locales ainsi que les adresses mémoires de retour des fonctions en cours d’exécution. </p>
-</div>
-<h1 id="vocabulaire"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.</span> Vocabulaire<a class="headerlink" href="#vocabulaire" title="Permanent link">¶</a></h1>
-<div class="admonition info">
-<p class="admonition-title">À savoir</p>
-<p>Une fonction <strong>récursive</strong> est une fonction qui s'appelle elle-même dans son exécution. Elle présente toujours:</p>
+<h1 id="comprendre-les-microprocesseurs"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Comprendre les microprocesseurs<a class="headerlink" href="#comprendre-les-microprocesseurs" title="Permanent link">¶</a></h1>
+<h2 id="introduction"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Introduction<a class="headerlink" href="#introduction" title="Permanent link">¶</a></h2>
+<p>Au début de l'informatique, les ordinateurs étaient de gros calculateurs composés de fils, de boutons, de tubes à vide et d'un tas de mécanismes bizarres...</p>
+<p><center>
+<img alt="image" src="img/eniac.jpg" width="40%">
+</img></center>
+L'ENIAC(photo ci-dessus) est naît en 1943 de la volonté du gouvernement Américain de programmer des tables de valeurs de tirs balistiques.</p>
+<p>En 1971, Intel conçoit le premier <strong>microprosseur</strong>, le 4004 puis le 8008, qui va révolutionner l'architecture des ordinateurs. Cette miniaturisation va permettre:</p>
 <ul>
-<li>un <strong>cas d'arrêt</strong> correspondant au cas de base, l'équivalent de l'initialisation en mathématiques...</li>
-<li>un appel récursif <strong>décrémenté</strong>: ainsi après plusieurs appels, on se ramène au cas de base!</li>
+<li>d'augmenter les vitesse de fonctionnement;</li>
+<li>de réduire les coûts et diminuer la consommation</li>
+<li>de créer des ordinateurs plus petits</li>
+</ul>
+<p>Pour comprendre comment fonctionnent ces architectures, nous allons utiliser le simulateur Dauphin développé en 1977 par le professeur Jean Daniel Nicoud. Il permet de simuler le fonctionnement rudimentaire d'un ordinateur démuni de <strong>logiciels</strong> et même de <strong>système d'exploitation</strong>.</p>
+<h2 id="le-dauphin"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> Le Dauphin<a class="headerlink" href="#le-dauphin" title="Permanent link">¶</a></h2>
+<p><img align="right" alt="" src="img/dauphin.png" width="40%"> 
+À l'ouverture du dauphin, vous observerez ceci:</img></p>
+<ol>
+<li>Icônes classiques</li>
+<li>Choix des panneaux</li>
+<li>Démarrer ou stopper le processeur</li>
+<li>Choix de la vitesse (horloge)</li>
+<li>Choix du mode </li>
+<li>Commentaires éventuels</li>
+<li>Résumé des instructions</li>
+<li>Clavier et écrans</li>
+</ol>
+<h1 id="premiere-manipulation"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.</span> Première manipulation<a class="headerlink" href="#premiere-manipulation" title="Permanent link">¶</a></h1>
+<h2 id="les-bus"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.1</span> Les bus<a class="headerlink" href="#les-bus" title="Permanent link">¶</a></h2>
+<p>Vous remarquerez très vite les deux panneaux centraux du simulateur qui contiennent les <strong>bus d'adresses</strong> et les <strong>bus de données</strong>.</p>
+<div class="admonition info">
+<p class="admonition-title">Les bus</p>
+<ul>
+<li>Les bus d'adresses servent à déterminer l'adresse des mémoires où nous allons écrire ou lire des données</li>
+<li>Les bus de données servent à écrire une information à l'adresse indiquée par le ... bus d'adresses!</li>
 </ul>
 </div>
-<h1 id="exercices"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.</span> Exercices<a class="headerlink" href="#exercices" title="Permanent link">¶</a></h1>
-<div class="admonition exercice">
-<p class="admonition-title">Exercice</p>
-<p>La factorielle d'un entier n, notée <span class="arithmatex">\(n!\)</span> est égale à : <span class="arithmatex">\(n!=1\times 2 \times 3 \times...\times (n-1) \times n\)</span> si <span class="arithmatex">\(n&gt;0\)</span> et égal à 1 si <span class="arithmatex">\(n=0\)</span>.</p>
-<ol>
-<li>Écrire la fonction <strong>facto_simple(n)</strong> qui prend en paramètre un entier <span class="arithmatex">\(n\)</span> et qui renvoie la factorielle de <span class="arithmatex">\(n\)</span>.</li>
-<li>Écrire la fonction <strong>récursive</strong> facto_recu(n) qui prend en paramètre un entier <span class="arithmatex">\(n\)</span> et qui renvoie la factorielle de <span class="arithmatex">\(n\)</span>.</li>
-</ol>
-<p>On posera des assertions puis des tests dans ces fonctions pour vérifier leur comportement.</p>
+<p>Les données sont des valeurs données sous un format <strong>hexadécimal</strong>. Un manipulation pour comprendre...</p>
+<div class="admonition quote">
+<p class="admonition-title">Nombre hexadécimal</p>
+<p>Pour désigner qu'un nombre est hexadécimal on le préfixe les caractères <strong>0x</strong>.</p>
 </div>
+<p>Ainsi le nombre <code>0x2F</code> est-il hexadécimal et vaut <code>47</code> en décimal et <code>00101111</code> en binaire (sur un octet).</p>
 <div class="admonition exercice">
-<p class="admonition-title">Exercice</p>
-<p>On rappelle que <span class="arithmatex">\(x^n=x\times x \times x....\times x\)</span>, <span class="arithmatex">\(n\)</span> fois où <span class="arithmatex">\(x\)</span> est un réel quelconque et <span class="arithmatex">\(n\)</span> un entier.</p>
+<p class="admonition-title">Écrire une donnée</p>
 <ol>
-<li>Écrire la fonction <strong>puissance_recu(n,x)</strong> qui prend en paramètres l'entier <span class="arithmatex">\(n\)</span> et le réel <span class="arithmatex">\(x\)</span>.</li>
-<li>On peut améliorer cette dernière fonction en considérant la définition ci-dessous:</li>
-</ol>
-<div class="arithmatex">\[\textrm{puissance}(x , n) = 
-\left\{
-      \begin{array}{c c}
-        x &amp; \textrm{si } n = 1 \\
-        \textrm{puissance}(x^2 , n/2) &amp; \textrm{si } n \textrm{ est pair}\\
-        x \times \textrm{puissance}(x^2 , (n - 1)/2) &amp; \textrm{si } n \textrm{ est impair}\\
-      \end{array}
-\right.\]</div>
-<p>Écrire la fonction <strong>puissance_mieux(n, x)</strong> avec cette définition et comparer le temps d'exécution de ces deux fonctions. On utilisera le module <code>timeit</code> pour cela...</p>
-</div>
-<div class="admonition exercice">
-<p class="admonition-title">Exercice</p>
-<ol>
-<li>Écrire une fonction nommée <code>reverse(phrase)</code>qui prend en paramètre la chaîne de caractère <code>phrase</code>  et qui la renvoie à l'envers...</li>
-<li>Écrire la version récursive de cette fonction.</li>
+<li>Dans le bus d'adresse, sélectionner l'adresse <code>0x0D2</code>(aide: en binaire c'est <code>0000 1101 0010</code>).</li>
+<li>Dans le bus de données, sélectionner l'adresse <code>0x17</code>(aide: en binaire c'est <code>0001 0111</code>).</li>
+<li>Appuyer sur le bouton <code>W</code>(write) pour écrire la donnée <code>0x17</code> à l'adresse <code>0x0D2</code>.</li>
 </ol>
 </div>
+<p><img align="right" alt="" src="img/commode.png" width="20%"/> 
+La mémoire des ordinateurs peut être considérée comme une grande commode contenant une quantité énorme de tiroirs. Pour accéder à ces tiroirs, on utilise son <strong>adresse</strong> donnée sous forme hexadécimale. Et dans ces tiroirs, on stocke une information, une <strong>donnée</strong> sous la forme d'un nombre hexadécimal.</p>
 <div class="admonition exercice">
 <p class="admonition-title">Exercice</p>
-<p>Que dessine la fonction récursive suivante dans <code>turtle</code> (essayez de deviner au lieu de recopier le code....)?
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
-<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="k">def</span> <span class="nf">carre</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
-<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
-<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a>        <span class="n">forward</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
-<a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a>        <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-<a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a>
-<a href="#__codelineno-4-7" id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="k">def</span> <span class="nf">base</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
-<a href="#__codelineno-4-8" id="__codelineno-4-8" name="__codelineno-4-8"></a>    <span class="n">carre</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
-<a href="#__codelineno-4-9" id="__codelineno-4-9" name="__codelineno-4-9"></a>    <span class="n">forward</span><span class="p">(</span><span class="n">c</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
-<a href="#__codelineno-4-10" id="__codelineno-4-10" name="__codelineno-4-10"></a>    <span class="n">right</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
-<a href="#__codelineno-4-11" id="__codelineno-4-11" name="__codelineno-4-11"></a>
-<a href="#__codelineno-4-12" id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="k">def</span> <span class="nf">trace</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
-<a href="#__codelineno-4-13" id="__codelineno-4-13" name="__codelineno-4-13"></a>    <span class="k">if</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="p">:</span>
-<a href="#__codelineno-4-14" id="__codelineno-4-14" name="__codelineno-4-14"></a>        <span class="k">return</span> <span class="kc">None</span>
-<a href="#__codelineno-4-15" id="__codelineno-4-15" name="__codelineno-4-15"></a>    <span class="k">else</span> <span class="p">:</span>
-<a href="#__codelineno-4-16" id="__codelineno-4-16" name="__codelineno-4-16"></a>        <span class="n">base</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
-<a href="#__codelineno-4-17" id="__codelineno-4-17" name="__codelineno-4-17"></a>        <span class="k">return</span> <span class="n">trace</span><span class="p">(</span><span class="n">c</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mf">0.5</span><span class="p">))</span>
-<a href="#__codelineno-4-18" id="__codelineno-4-18" name="__codelineno-4-18"></a>
-<a href="#__codelineno-4-19" id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="n">trace</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
-</code></pre></div></p>
+<p>Le bus d'adresse contient 12 bits et le bus de données 8.
+1. Combien d'adresses possède le simulateur dauphin?
+2. Combien de données différentes peut-on écrire à une adresse?</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">La mémoire du dauphin</p>
+<p>Les adresses mémoires du dauphin vont de <code>0x000</code> à <code>0x7FF</code>(<code>0111 1111 1111</code> en binaire).</p>
+</div>
+<p>On verra que les bus d'adresses permettent d'accéder à des endroits particuliers comme la mémoire, mais aussi les périphériques(écran par exemple..)</p>
+<h2 id="lire-ou-ecrire"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.2</span> Lire ou écrire<a class="headerlink" href="#lire-ou-ecrire" title="Permanent link">¶</a></h2>
+<div class="admonition exercice">
+<p class="admonition-title">Vous avez bien compris?</p>
+<p>Écrire la donnée <code>0x25</code> à l'adresse <code>0x0D3</code></p>
+</div>
+<p>Comprenez bien que vous érivez une donnée dans un tiroir spécifique. Si vous souhaitez <strong>lire</strong> une valeur, il faut sélectionner le bus d'adresse et appuyer sur la touche <code>R</code>(comme Read...).</p>
+<div class="admonition exercice">
+<p class="admonition-title">Lire une valeur</p>
+<p>Lisez la valeur au bus d'adresse <code>0x0D2</code>.</p>
+</div>
+<h1 id="acceder-aux-peripheriques"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.</span> Accéder aux périphériques<a class="headerlink" href="#acceder-aux-peripheriques" title="Permanent link">¶</a></h1>
+<p>Pour communiquer avec un ordinateur, on a besoin de:</p>
+<ul>
+<li>périphériques d'<strong>entrées</strong> pour lui donner des informations: le clavier en est un bon exemple.</li>
+<li>périphériques de <strong>sorties</strong> pour qu'il nous donne des informations: l'écran est l'exemple parfait.</li>
+</ul>
+<p>Cette liste n'est pas exhaustive mais suffisante pour communiquer avec la machine... Le dauphin dispose de trois périphériques rudimentaires:</p>
+<ul>
+<li>un clavier ou des flèches directionnelles</li>
+<li>deux écrans de sorties (écran à segments ou bitmap)</li>
+</ul>
+<p><img alt="" src="img/periph_dauphin.png" width="60%"/> </p>
+<p>Pour accéder aux périphériques, il faut connaître leurs adresses. Le tableau suivant donne déjà les premières informations:</p>
+<table class="table">
+<thead>
+<tr>
+<th align="center"><strong>Adresses</strong></th>
+<th align="center"><strong>Désignation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>0x000</code> à <code>0x7FF</code></td>
+<td align="center">Mémoire vive</td>
+</tr>
+<tr>
+<td align="center"><code>0x800</code> à <code>0xBFF</code></td>
+<td align="center">Mémoire Morte</td>
+</tr>
+<tr>
+<td align="center"><code>0xC00</code> à <code>0xC0F</code></td>
+<td align="center">Périphériques</td>
+</tr>
+<tr>
+<td align="center"><code>0xC80</code> à <code>0xCDF</code></td>
+<td align="center">Ecran Display</td>
+</tr>
+<tr>
+<td align="center">{: .tabnsi :}</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="lecran-aux-7-segments"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.1</span> L'écran aux 7 segments.<a class="headerlink" href="#lecran-aux-7-segments" title="Permanent link">¶</a></h2>
+<p>L'écran contient quatre afficheurs identiques auxquels on peut accéder par les adresses hexadécimales <code>0xC00, 0xC01, 0xC02, 0xC03</code>:</p>
+<p><img alt="" src="img/afficheur.png" width="40%"/> </p>
+<p>Chaque bit de <strong>données</strong> permet l'allumage ou non d'un segment. Ainsi si vous voulez écrire le nombre 2 sur le troisième afficheur, il faut:</p>
+<ol>
+<li>Sélectionner le bon bus d'adresse : <code>0xC02</code></li>
+<li>Mettre à 1 les bits de rang <code>0,2,3,5,6</code> à 1</li>
+<li>Ne pas oublier d'appuyer sur le bouton <code>W</code> pour écrire les valeurs!</li>
+</ol>
+<p><img alt="" src="img/afficheur2.png" width="40%"/> </p>
+<div class="admonition exercice">
+<p class="admonition-title">Exercice</p>
+<p>Ecrire l'année en cours dans l'écran à segments</p>
+</div>
+<h2 id="lecran-bitmap"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2</span> L'écran Bitmap<a class="headerlink" href="#lecran-bitmap" title="Permanent link">¶</a></h2>
+<p>Pour afficher dans l'écran Bitmap, le principe reste le même: il faut allumer le bon pixel! Pour cela il faut connaître leur adresse.</p>
+<div class="admonition info">
+<p class="admonition-title">L'écran Bitmap</p>
+<p>Les adresses <code>0xC80</code> à <code>0xCDF</code> permettent d'accéder aux <code>32x24=768</code> pixels de l'écran.</p>
+</div>
+<p><img alt="alt &gt;" src="img/bitmap.png" width="40%"/> </p>
+<div class="admonition exercice">
+<p class="admonition-title">Exercice</p>
+<p>Allumer les deux lignes du haut et du bas de l'écran Bitmap</p>
+</div>
+<h2 id="le-clavier-du-dauphin"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.3</span> Le clavier du dauphin<a class="headerlink" href="#le-clavier-du-dauphin" title="Permanent link">¶</a></h2>
+<p>Pour communiquer avec le clavier numérique du <strong>dauphin</strong>, il faut lire à l'adresse <code>0xC07</code>.</p>
+<div class="admonition quote">
+<p class="admonition-title">Quote</p>
+<p>Cela n'a aucun sens de d'écrire à cette adresse car il s'agit d'un périphérique d'entrée!</p>
+</div>
+<div class="admonition exercice">
+<p class="admonition-title">Utiliser le clavier du dauphin</p>
+<ol>
+<li>Saisissez le bus d'adresse <code>0xC07</code>.</li>
+<li>Appuyez sur le <strong>6</strong> du clavier du dauphin.</li>
+<li>Appuyer deux fois sur le bouton <code>R</code> pour lire la valeur (deux fois car dauphin utilise une mémoire tampon pour sauvegarder la touche enfoncée).</li>
+</ol>
 </div>
 <script src="../pyodide-mkdocs/ide.js"></script>
 <!-- Massilia javascripts -->
@@ -533,7 +560,7 @@ Plus précisément, la pile d’exécution est un emplacement mémoire destiné 
 </main>
 <footer class="md-footer">
 <nav aria-label="Pied de page" class="md-footer__inner md-grid" hidden="">
-<a aria-label="Précédent: Accueil" class="md-footer__link md-footer__link--prev" href="termnsi.html" rel="prev">
+<a aria-label="Précédent: Traitement des données" class="md-footer__link md-footer__link--prev" href="traitement_donnees.html" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -542,17 +569,17 @@ Plus précisément, la pile d’exécution est un emplacement mémoire destiné 
 <span class="md-footer__direction">
                 Précédent
               </span>
-              Accueil
+              Traitement des données
             </div>
 </div>
 </a>
-<a aria-label="Suivant: Interface et implémentation" class="md-footer__link md-footer__link--next" href="interface.html" rel="next">
+<a aria-label="Suivant: Accueil" class="md-footer__link md-footer__link--next" href="../term/termnsi.html" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Suivant
               </span>
-              Interface et implémentation
+              Accueil
             </div>
 </div>
 <div class="md-footer__button md-icon">
