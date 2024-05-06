@@ -855,9 +855,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#qcm" class="md-nav__link">
+  <a href="#python-et-linterface-reseau" class="md-nav__link">
     <span class="md-ellipsis">
-      QCM
+      Python et l'interface réseau
     </span>
   </a>
   
@@ -1402,9 +1402,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#qcm" class="md-nav__link">
+  <a href="#python-et-linterface-reseau" class="md-nav__link">
     <span class="md-ellipsis">
-      QCM
+      Python et l'interface réseau
     </span>
   </a>
   
@@ -1731,7 +1731,6 @@ Deux machines qui n'ont pas le même NetId ne peuvent pas communiquer directemen
 (source: wikipédia)
 </center></p>
 <h2 id="le-modele-tcpip">Le modèle TCP/IP<a class="headerlink" href="#le-modele-tcpip" title="Permanent link">&para;</a></h2>
-<p>La vidéo de Charles Poulmaire décrit parafaitement le rôle de ces deux protocoles:</p>
 <div class="admonition info">
 <p class="admonition-title">Le protocole TCP</p>
 <ul>
@@ -1761,121 +1760,65 @@ Deux machines qui n'ont pas le même NetId ne peuvent pas communiquer directemen
 <p><center>
 <img alt="encapsulation" src="img/encapsulation.png" width="50%" /></p>
 <p></center></p>
-<h2 id="qcm">QCM<a class="headerlink" href="#qcm" title="Permanent link">&para;</a></h2>
-<div class="admonition fabquestion">
-<p class="admonition-title"><strong>1.</strong> Laquelle de ces propositions est une adresse IP v4 valide ?</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Réponses</label><label for="__tabbed_1_2">Correction</label></div>
+<h2 id="python-et-linterface-reseau">Python et l'interface réseau<a class="headerlink" href="#python-et-linterface-reseau" title="Permanent link">&para;</a></h2>
+<p>On peut créer une architecture client/serveur en Python avec les codes suivants:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Client</label><label for="__tabbed_1_2">Serveur</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> a) 4E:15:67:E3:11:17</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> b) 212.53.98.120</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> c) 256.53.98.120</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> d) 53.98.120</li>
-</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">#------------------------------------------------------#</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1">#               CREATION DU CLIENT                     #</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">#------------------------------------------------------#</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="kn">import</span> <span class="nn">socket</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">adresseIP</span> <span class="o">=</span> <span class="s2">&quot;         &quot;</span><span class="c1"># mettre ici l&#39;adresse IP de la machine</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># qui contient le serveur</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">port</span> <span class="o">=</span> <span class="mi">5000</span><span class="c1"># Connection sur le port 50000</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="n">client</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">((</span><span class="n">adresseIP</span><span class="p">,</span> <span class="n">port</span><span class="p">))</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="n">client</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;Salut Serveur&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="n">reponse</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="c1">#operation bloquante</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="nb">print</span><span class="p">(</span><span class="n">reponse</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="n">client</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
 </div>
 <div class="tabbed-block">
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> a) <del>4E:15:67:E3:11:17</del> </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> b) <mark>212.53.98.120</mark> </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> c) <del>256.53.98.120</del> </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> d) <del>53.98.120</del> </li>
-</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">#------------------------------------------------------------#</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1">#              CREATION DU SERVEUR                           #</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1">#------------------------------------------------------------#</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="kn">import</span> <span class="nn">socket</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="n">serveur</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">serveur</span><span class="o">.</span><span class="n">bind</span><span class="p">((</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mi">5000</span><span class="p">))</span>    <span class="c1"># Écoute sur le port 50000</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="n">serveur</span><span class="o">.</span><span class="n">listen</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    <span class="n">client</span><span class="p">,</span> <span class="n">adress</span> <span class="o">=</span> <span class="n">serveur</span><span class="o">.</span><span class="n">accept</span><span class="p">()</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Client connecté. Adresse &quot;</span> <span class="o">+</span> <span class="n">adress</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    <span class="n">requete</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>  <span class="c1"># en attente du message du client</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>    <span class="c1"># cette operation est bloquante!</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">requete</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>    <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Bonjour, je suis le serveur.&quot;</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>    <span class="n">client</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span><span class="c1">#envoi au client connecte le message</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="n">serveur</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
 </div>
 </div>
 </div>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
+<p>Par groupe de deux, utiliser ces deux programmes pour communiquer dans la console Python. L'un joue le rôle de serveur, l'autre de client.</p>
 </div>
-<div class="admonition fabquestion">
-<p class="admonition-title"><strong>2.</strong> Laquelle de ces propositions est une adresse MAC valide ?</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Réponses</label><label for="__tabbed_2_2">Correction</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> a) 04:D3:B0:7E:71:A6</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> b) 04:D3:B0:7E:71</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> c) 04:D3:B0:7E:71:G6</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> d) 125.212.31.53</li>
-</ul>
+<p>Vous aurez sûrement remarqué que certaines méthodes sont <strong>bloquantes</strong>: par exemple, on ne peut pas reposer une question tant que le client n'a pas répondu. De plus, les codes proposés ne permettent pas une discussion perpétuelle.</p>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
+<p>Modifier les programmes précédents pour permettre une discussion sans fin. On pourra signifier au serveur la fin de la discussion s'il reçoit le message <code>FIN</code>.</p>
 </div>
-<div class="tabbed-block">
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> a) <mark>04:D3:B0:7E:71:A6</mark> </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> b) <del>04:D3:B0:7E:71</del> </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> c) <del>04:D3:B0:7E:71:G6</del> </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> d) <del>125.212.31.53</del> </li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="admonition fabquestion">
-<p class="admonition-title"><strong>3.</strong> Quelle est l'utilité de la commande <code>ping</code> ?</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Réponses</label><label for="__tabbed_3_2">Correction</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> a) Obtenir la route suivie par un paquet sur un réseau informatique</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> b) Obtenir l'adresse MAC de la machine sur laquelle on exécute cette commande.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> c) Mesurer  les performances d'une machine distante.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> d) Tester si une machine distante est accessible.</li>
-</ul>
-</div>
-<div class="tabbed-block">
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> a) <del>Obtenir la route suivie par un paquet sur un réseau informatique</del> </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> b) <del>Obtenir l'adresse MAC de la machine sur laquelle on exécute cette commande.</del> </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> c) <del>Mesurer  les performances d'une machine distante.</del> </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> d) <mark>Tester si une machine distante est accessible.</mark> </li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="admonition fabquestion">
-<p class="admonition-title"><strong>4.</strong> Le protocole du bit alterné permet :</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Réponses</label><label for="__tabbed_4_2">Correction</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> a) de chiffrer les communications sur un réseau</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> b) de corriger les problèmes de perte de paquet lors de transmissions sur un réseau</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> c) d'accélerer les communications sur un réseau</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> d) de fiabiliser totalement les communications sur un réseau</li>
-</ul>
-</div>
-<div class="tabbed-block">
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> a) <del>de chiffrer les communications sur un réseau</del> </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> b) <mark>de corriger les problèmes de perte de paquet lors de transmissions sur un réseau</mark> </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> c) <del>d'accélerer les communications sur un réseau</del> </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> d) <del>de fiabiliser totalement les communications sur un réseau</del> </li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="admonition fabquestion">
-<p class="admonition-title"><strong>5.</strong> Par rapport à un envoi en continu, quel est l'un des avantages de l'envoi de données par paquets dans un réseau ?</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Réponses</label><label for="__tabbed_5_2">Correction</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> a) Les données vont plus vite lorsqu'elles sont par paquets.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> b) Les données sont plus sécurisées lorsqu'elles sont par paquets</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> c) En cas de panne temporaire sur le réseau, seul les paquets concernés doivent être émis de nouveau.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> d) Il n'y a pas davantage, l'envoi en continu est toujours préférable.</li>
-</ul>
-</div>
-<div class="tabbed-block">
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> a) <del>Les données vont plus vite lorsqu'elles sont par paquets.</del> </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> b) <del>Les données sont plus sécurisées lorsqu'elles sont par paquets</del> </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> c) <mark>En cas de panne temporaire sur le réseau, seul les paquets concernés doivent être émis de nouveau.</mark> </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> d) <del>Il n'y a pas davantage, l'envoi en continu est toujours préférable.</del> </li>
-</ul>
-</div>
-</div>
-</div>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
+<p>À l'aide des routines précédentes, écrire un code qui permet au client d'envoyer au serveur un couple de nombres sous la forme d'un tuple et le serveur répond en renvoyant au client la somme des deux nombres.</p>
 </div>
 
 
