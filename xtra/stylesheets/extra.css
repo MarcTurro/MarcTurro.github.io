@@ -23,7 +23,7 @@
   }
   
 .md-typeset h1 
-{   color: black;
+{   color: darkred;
     text-align: center;
     margin : 0 0 10px 30px; /* haut, droite, bas, gauche (respectivement) */
     font : 200% georgia, palatino, serif;
@@ -32,7 +32,7 @@
 
 
 .md-typeset h2
-{
+{	color: darkred;
     text-align: left;
 	margin : 0px 0px 10px 10px; /* haut, droite, bas, gauche (respectivement) */
     font : 150% georgia, palatino, serif;
