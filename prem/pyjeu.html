@@ -78,11 +78,10 @@
 
       
     
+<!-- Massilia javascripts -->
+    <script defer src="../js/massilia.js"></script>
+
 <!-- favicons -->
-<link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
-<link rel="icon" href="../assets/images/favicon_32x32.png" sizes="32x32">
-<link rel="icon" href="../assets/images/favicon_96x96.png" sizes="96x96">
-<link rel="icon" href="../assets/images/favicon_144x144.png" sizes="144x144">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/atom-one-light.min.css">
 <!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>    
@@ -94,9 +93,8 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/js/jquery.terminal.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/css/jquery.terminal.min.css" rel="stylesheet">
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="../pyodide-mkdocs/interpreter.js"></script> 
-<!-- Ajouter 17 february pour tables massilia-->
-<script src="../js/massilia.js" defer></script>
 
     
       
@@ -114,9 +112,9 @@
     
       <link rel="stylesheet" href="../xtra/stylesheets/ajustements.css">
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-columns.css">
+      <link rel="stylesheet" href="../xtra/stylesheets/massilia-columns.css">
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-admonitions.css">
+      <link rel="stylesheet" href="../xtra/stylesheets/massilia-admonitions.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -125,6 +123,7 @@
     
     
     
+<script src="../pyodide-mkdocs/ide.js"></script> 
 
 <link rel="stylesheet" href="../pyodide-mkdocs/pyoditeur.css">
 
@@ -1047,15 +1046,15 @@
 <p>Comme dans tout projet Python, il faut importer des bibliothèque nécessaires:</p>
 <div class="admonition note">
 <p class="admonition-title">Import du module</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">pygame</span><span class="o">,</span> <span class="nn">sys</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kn">from</span> <span class="nn">pygame.locals</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">pygame</span><span class="o">,</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">pygame.locals</span> <span class="kn">import</span> <span class="o">*</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <p>Tous les projets utilisant Pygame contiennent ces imports.</p>
 <div class="admonition note">
 <p class="admonition-title">Initialisation du Jeu</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <p>La fonction <code>init()</code> initialise le moteur du jeu. Elle aussi reste obligatoire</p>
@@ -1063,17 +1062,17 @@
 <p>La boucle de jeu est l'endroit où tous les événements du jeu se produisent, se mettent à jour et sont affichés à l'écran. </p>
 <div class="admonition note">
 <p class="admonition-title">La boucle de Jeu</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
-<span class="normal"><a href="#__codelineno-2-2">2</a></span>
-<span class="normal"><a href="#__codelineno-2-3">3</a></span>
-<span class="normal"><a href="#__codelineno-2-4">4</a></span>
-<span class="normal"><a href="#__codelineno-2-5">5</a></span>
-<span class="normal"><a href="#__codelineno-2-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>                             <span class="c1">#boucle infinie</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>    <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>    <span class="c1">#pour tous les événements</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a>        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">QUIT</span><span class="p">:</span>          <span class="c1">#si l&#39;événement quit est déclenché</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a>            <span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a>            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>                  <span class="c1">#fin du jeu</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a>    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>                             <span class="c1">#boucle infinie</span>
+    <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>    <span class="c1">#pour tous les événements</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">QUIT</span><span class="p">:</span>          <span class="c1">#si l&#39;événement quit est déclenché</span>
+            <span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>                  <span class="c1">#fin du jeu</span>
+    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <p>Une fois la configuration initiale et l'initialisation des variables terminées, la boucle de jeu commence là où le programme continue de boucler encore et encore jusqu'à ce qu'un événement de type QUIT se produise.</p>
@@ -1082,77 +1081,77 @@
 <p>Pour chaque jeu, il faut créer une fenêtre de dimension donnée:</p>
 <div class="admonition note">
 <p class="admonition-title">Création de la fenêtre</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">screen</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="mi">700</span><span class="p">,</span> <span class="mi">600</span><span class="p">))</span>  <span class="c1"># largeur: 700 pixels hauteur: 600 pixels</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">icon</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;logoNSI.png&quot;</span><span class="p">)</span>       <span class="c1"># charger une nouvelle image comme icone</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_icon</span><span class="p">(</span><span class="n">icon</span><span class="p">)</span>                 <span class="c1">#changer l&#39;icone</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s2">&quot;Puissance 4&quot;</span><span class="p">)</span>     <span class="c1">#changer le titre</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">screen</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="mi">700</span><span class="p">,</span> <span class="mi">600</span><span class="p">))</span>  <span class="c1"># largeur: 700 pixels hauteur: 600 pixels</span>
+<span class="n">icon</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;logoNSI.png&quot;</span><span class="p">)</span>       <span class="c1"># charger une nouvelle image comme icone</span>
+
+<span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_icon</span><span class="p">(</span><span class="n">icon</span><span class="p">)</span>                 <span class="c1">#changer l&#39;icone</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s2">&quot;Puissance 4&quot;</span><span class="p">)</span>     <span class="c1">#changer le titre</span>
 </code></pre></div>
 </div>
 <p>La fenêtre a par défaut un icône et un titre que j'ai changé ici. </p>
 <p>Je vais créer deux constantes <code>BLEU</code> et <code>WHITE</code> pour colorer le background d'une part et les emplacements des jetons d'autre part:</p>
 <div class="admonition note">
 <p class="admonition-title">Création des couleurs</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">BLEU</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>      
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">WHITE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">JAUNE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">ROUGE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">BLEU</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>      
+<span class="n">WHITE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+<span class="n">JAUNE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">ROUGE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </code></pre></div>
 </div>
 <p>À ce stade, le code complet est donc:</p>
 <details class="note">
 <summary>Code complet</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-5-10">10</a></span>
-<span class="normal"><a href="#__codelineno-5-11">11</a></span>
-<span class="normal"><a href="#__codelineno-5-12">12</a></span>
-<span class="normal"><a href="#__codelineno-5-13">13</a></span>
-<span class="normal"><a href="#__codelineno-5-14">14</a></span>
-<span class="normal"><a href="#__codelineno-5-15">15</a></span>
-<span class="normal"><a href="#__codelineno-5-16">16</a></span>
-<span class="normal"><a href="#__codelineno-5-17">17</a></span>
-<span class="normal"><a href="#__codelineno-5-18">18</a></span>
-<span class="normal"><a href="#__codelineno-5-19">19</a></span>
-<span class="normal"><a href="#__codelineno-5-20">20</a></span>
-<span class="normal"><a href="#__codelineno-5-21">21</a></span>
-<span class="normal"><a href="#__codelineno-5-22">22</a></span>
-<span class="normal"><a href="#__codelineno-5-23">23</a></span>
-<span class="normal"><a href="#__codelineno-5-24">24</a></span>
-<span class="normal"><a href="#__codelineno-5-25">25</a></span>
-<span class="normal"><a href="#__codelineno-5-26">26</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kn">import</span> <span class="nn">pygame</span><span class="o">,</span> <span class="nn">sys</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="kn">from</span> <span class="nn">pygame.locals</span> <span class="kn">import</span> <span class="o">*</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a>
-<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="c1">#----- CONSTANTE DU JEU --------------------#</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="n">BLEU</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="n">WHITE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="n">JAUNE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="n">ROUGE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="c1"># ----- INITIALISATION CONSTRUCTEURS-------------------  #</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<a id="__codelineno-5-11" name="__codelineno-5-11"></a>
-<a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="n">screen</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">(</span> <span class="p">(</span><span class="mi">700</span><span class="p">,</span> <span class="mi">600</span><span class="p">))</span>
-<a id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="n">icon</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;logoNSI.png&quot;</span><span class="p">)</span>
-<a id="__codelineno-5-14" name="__codelineno-5-14"></a>
-<a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_icon</span><span class="p">(</span><span class="n">icon</span><span class="p">)</span>
-<a id="__codelineno-5-16" name="__codelineno-5-16"></a><span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s2">&quot;Puissance 4&quot;</span><span class="p">)</span>
-<a id="__codelineno-5-17" name="__codelineno-5-17"></a>
-<a id="__codelineno-5-18" name="__codelineno-5-18"></a><span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">BLEU</span><span class="p">)</span>
-<a id="__codelineno-5-19" name="__codelineno-5-19"></a>
-<a id="__codelineno-5-20" name="__codelineno-5-20"></a><span class="c1">#  ---------- BOUCLES  DE JEU----------------  #</span>
-<a id="__codelineno-5-21" name="__codelineno-5-21"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>                             <span class="c1">#boucle infinie</span>
-<a id="__codelineno-5-22" name="__codelineno-5-22"></a>    <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>    <span class="c1">#pour tous les événements</span>
-<a id="__codelineno-5-23" name="__codelineno-5-23"></a>        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">QUIT</span><span class="p">:</span>          <span class="c1">#si l&#39;événement quit est déclenché</span>
-<a id="__codelineno-5-24" name="__codelineno-5-24"></a>            <span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
-<a id="__codelineno-5-25" name="__codelineno-5-25"></a>            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>                  <span class="c1">#fin du jeu</span>
-<a id="__codelineno-5-26" name="__codelineno-5-26"></a>    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">pygame</span><span class="o">,</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">pygame.locals</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1">#----- CONSTANTE DU JEU --------------------#</span>
+<span class="n">BLEU</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+<span class="n">WHITE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+<span class="n">JAUNE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">ROUGE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="c1"># ----- INITIALISATION CONSTRUCTEURS-------------------  #</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+
+<span class="n">screen</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">(</span> <span class="p">(</span><span class="mi">700</span><span class="p">,</span> <span class="mi">600</span><span class="p">))</span>
+<span class="n">icon</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;logoNSI.png&quot;</span><span class="p">)</span>
+
+<span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_icon</span><span class="p">(</span><span class="n">icon</span><span class="p">)</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s2">&quot;Puissance 4&quot;</span><span class="p">)</span>
+
+<span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">BLEU</span><span class="p">)</span>
+
+<span class="c1">#  ---------- BOUCLES  DE JEU----------------  #</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>                             <span class="c1">#boucle infinie</span>
+    <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>    <span class="c1">#pour tous les événements</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">QUIT</span><span class="p">:</span>          <span class="c1">#si l&#39;événement quit est déclenché</span>
+            <span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>                  <span class="c1">#fin du jeu</span>
+    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
 </details>
 <div class="admonition exo">
@@ -1165,7 +1164,7 @@
 <p>Pour déssiner un cercle dans Pygame, il faut utiliser la commande <code>pygame.draw.circle()</code> qui prend en paramètres l'endroit où on le construit, la couleur, les coordonnées du centre et le rayon. On obtient:</p>
 <div class="admonition note">
 <p class="admonition-title">Premier emplacement</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">WHITE</span><span class="p">,</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="mi">40</span><span class="p">)</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">WHITE</span><span class="p">,</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="mi">40</span><span class="p">)</span>
 </code></pre></div>
 </div>
 <p>Pour construire les autres emplacements, nous pourrions le faire à la main: il y aurait autant d'instructions <code>pygame.draw.circle()</code> que de jetons, soit 42. Il y a certainement mieux à faire...</p>
@@ -1180,8 +1179,8 @@
 <p class="admonition-title">Col</p>
 <div class="admonition note">
 <p class="admonition-title">Première ligne</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">WHITE</span><span class="p">,</span> <span class="p">(</span><span class="mi">50</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="mi">40</span><span class="p">)</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span>
+    <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">WHITE</span><span class="p">,</span> <span class="p">(</span><span class="mi">50</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="mi">40</span><span class="p">)</span>
 </code></pre></div>
 </div>
 </div>
@@ -1196,9 +1195,9 @@
 <p class="admonition-title">Col</p>
 <div class="admonition note">
 <p class="admonition-title">Construction des emplacements</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>        <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">WHITE</span><span class="p">,</span> <span class="p">(</span><span class="mi">50</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="mi">50</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="n">j</span><span class="p">),</span> <span class="mi">40</span><span class="p">)</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">WHITE</span><span class="p">,</span> <span class="p">(</span><span class="mi">50</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="mi">50</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="n">j</span><span class="p">),</span> <span class="mi">40</span><span class="p">)</span>
 </code></pre></div>
 </div>
 </div>
@@ -1228,21 +1227,21 @@
 <div class="admonition exo">
 <p class="admonition-title">Code à modifier</p>
 <p>Modifier la boucle d'événements du précédent code pour obtenir ceci:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>                         <span class="c1">#boucle infinie</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>    <span class="c1">#pour tous les événements</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">QUIT</span><span class="p">:</span>          <span class="c1">#si l&#39;événement quit est déclenché</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>        <span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>                  <span class="c1">#fin du jeu</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">MOUSEBUTTONDOWN</span><span class="p">:</span> <span class="c1"># si clic de souris</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">)</span>                     <span class="c1">#alors affichage des coordonnées dans la console</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>                         <span class="c1">#boucle infinie</span>
+<span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>    <span class="c1">#pour tous les événements</span>
+    <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">QUIT</span><span class="p">:</span>          <span class="c1">#si l&#39;événement quit est déclenché</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>                  <span class="c1">#fin du jeu</span>
+    <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">MOUSEBUTTONDOWN</span><span class="p">:</span> <span class="c1"># si clic de souris</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">)</span>                     <span class="c1">#alors affichage des coordonnées dans la console</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
 </code></pre></div></p>
 </div>
 <p>On peut donc finalement tracer un jeton jaune ou rouge au clic de souris en ajoutant l'instruction suivante:</p>
 <div class="admonition exo">
 <p class="admonition-title">Code à compléter</p>
 <p>Ajouter dans le <code>if</code> précédent, après le <code>print</code>, l'instruction suivante:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">JAUNE</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">JAUNE</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
 </code></pre></div></p>
 </div>
 <p>Bon, on se rapproche mais quelque chose ne va pas!</p>
@@ -1277,57 +1276,57 @@
 <p>On peut donc réduire les instructions suivantes par une boucle qui commencerait par <code>for i in range(7):</code> car on répète <code>7</code>fois.  Remarquons enfin que le <strong>remplaçant</strong>
 est la moyenne des deux bornes de l'intervalle.</p>
 <p>Je vais donc créer une fonction Python, nommée <code>cible</code> qui prend en paramètre un <strong>entier</strong>(l'abscisse ou l'ordonnée du clic de souris) et qui retourne l'une des valeurs précédentes.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">def</span> <span class="nf">cible</span><span class="p">(</span><span class="n">valeur</span><span class="p">):</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>        <span class="k">if</span> <span class="mi">100</span><span class="o">*</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">valeur</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>            <span class="n">valeur</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">i</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span><span class="o">//</span><span class="mi">2</span>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    <span class="k">return</span> <span class="n">valeur</span>
+<p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">cible</span><span class="p">(</span><span class="n">valeur</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span>
+        <span class="k">if</span> <span class="mi">100</span><span class="o">*</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">valeur</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">valeur</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">i</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span><span class="o">//</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="n">valeur</span>
 </code></pre></div>
 J'appelle ensuite cette fonction dans la construction des disques jaunes. </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">JAUNE</span><span class="p">,</span> <span class="p">(</span><span class="n">cible</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">cible</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">])),</span> <span class="mi">40</span><span class="p">)</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">JAUNE</span><span class="p">,</span> <span class="p">(</span><span class="n">cible</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">cible</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">])),</span> <span class="mi">40</span><span class="p">)</span>
 </code></pre></div>
 <p>Voici le code:</p>
 <details class="exo">
 <summary>Utiliser une fonction</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kn">import</span> <span class="nn">pygame</span><span class="o">,</span> <span class="nn">sys</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="kn">from</span> <span class="nn">pygame.locals</span> <span class="kn">import</span> <span class="o">*</span>
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="c1">#----- CONSTANTE DU JEU --------------------#</span>
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="n">BLEU</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="n">WHITE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="n">ROUGE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="n">JAUNE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>
-<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="c1"># ----- INITIALISATION -------------------  #</span>
-<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>
-<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="n">screen</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">(</span> <span class="p">(</span><span class="mi">700</span><span class="p">,</span> <span class="mi">600</span><span class="p">))</span>
-<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="n">icon</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;logoNSI.png&quot;</span><span class="p">)</span>
-<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>
-<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_icon</span><span class="p">(</span><span class="n">icon</span><span class="p">)</span>
-<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s2">&quot;Puissance 4&quot;</span><span class="p">)</span>
-<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>
-<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a><span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">BLEU</span><span class="p">)</span>
-<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a><span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
-<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span>
-<a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a>        <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">WHITE</span><span class="p">,</span> <span class="p">(</span><span class="mi">50</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="mi">50</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="n">j</span><span class="p">),</span> <span class="mi">40</span><span class="p">)</span>
-<a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a><span class="c1">#  ---     FONCTIONS    -----------         #</span>
-<a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a><span class="k">def</span> <span class="nf">cible</span><span class="p">(</span><span class="n">valeur</span><span class="p">):</span>
-<a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span>
-<a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a>        <span class="k">if</span> <span class="mi">100</span><span class="o">*</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">valeur</span> <span class="o">&lt;</span><span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-<a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a>            <span class="n">valeur</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">i</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span><span class="o">//</span><span class="mi">2</span>
-<a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a>    <span class="k">return</span> <span class="n">valeur</span>
-<a id="__codelineno-13-29" name="__codelineno-13-29" href="#__codelineno-13-29"></a>
-<a id="__codelineno-13-30" name="__codelineno-13-30" href="#__codelineno-13-30"></a><span class="c1">#  ----------------------------------------  #</span>
-<a id="__codelineno-13-31" name="__codelineno-13-31" href="#__codelineno-13-31"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>                             <span class="c1">#boucle infinie</span>
-<a id="__codelineno-13-32" name="__codelineno-13-32" href="#__codelineno-13-32"></a>    <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>    <span class="c1">#pour tous les événements</span>
-<a id="__codelineno-13-33" name="__codelineno-13-33" href="#__codelineno-13-33"></a>        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">QUIT</span><span class="p">:</span>          <span class="c1">#si l&#39;événement quit est déclenché</span>
-<a id="__codelineno-13-34" name="__codelineno-13-34" href="#__codelineno-13-34"></a>            <span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
-<a id="__codelineno-13-35" name="__codelineno-13-35" href="#__codelineno-13-35"></a>            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>                  <span class="c1">#fin du jeu</span>
-<a id="__codelineno-13-36" name="__codelineno-13-36" href="#__codelineno-13-36"></a>        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">MOUSEBUTTONDOWN</span><span class="p">:</span>
-<a id="__codelineno-13-37" name="__codelineno-13-37" href="#__codelineno-13-37"></a>            <span class="nb">print</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">)</span>
-<a id="__codelineno-13-38" name="__codelineno-13-38" href="#__codelineno-13-38"></a>            <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">JAUNE</span><span class="p">,</span> <span class="p">(</span><span class="n">cible</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">cible</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">])),</span> <span class="mi">40</span><span class="p">)</span>
-<a id="__codelineno-13-39" name="__codelineno-13-39" href="#__codelineno-13-39"></a>    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">import</span> <span class="nn">pygame</span><span class="o">,</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">pygame.locals</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1">#----- CONSTANTE DU JEU --------------------#</span>
+<span class="n">BLEU</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+<span class="n">WHITE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+<span class="n">ROUGE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">JAUNE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># ----- INITIALISATION -------------------  #</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+
+<span class="n">screen</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">(</span> <span class="p">(</span><span class="mi">700</span><span class="p">,</span> <span class="mi">600</span><span class="p">))</span>
+<span class="n">icon</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;logoNSI.png&quot;</span><span class="p">)</span>
+
+<span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_icon</span><span class="p">(</span><span class="n">icon</span><span class="p">)</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s2">&quot;Puissance 4&quot;</span><span class="p">)</span>
+
+<span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">BLEU</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">WHITE</span><span class="p">,</span> <span class="p">(</span><span class="mi">50</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="mi">50</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="n">j</span><span class="p">),</span> <span class="mi">40</span><span class="p">)</span>
+<span class="c1">#  ---     FONCTIONS    -----------         #</span>
+<span class="k">def</span> <span class="nf">cible</span><span class="p">(</span><span class="n">valeur</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span>
+        <span class="k">if</span> <span class="mi">100</span><span class="o">*</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">valeur</span> <span class="o">&lt;</span><span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">valeur</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">i</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span><span class="o">//</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="n">valeur</span>
+
+<span class="c1">#  ----------------------------------------  #</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>                             <span class="c1">#boucle infinie</span>
+    <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>    <span class="c1">#pour tous les événements</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">QUIT</span><span class="p">:</span>          <span class="c1">#si l&#39;événement quit est déclenché</span>
+            <span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>                  <span class="c1">#fin du jeu</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">MOUSEBUTTONDOWN</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">)</span>
+            <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">JAUNE</span><span class="p">,</span> <span class="p">(</span><span class="n">cible</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">cible</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">])),</span> <span class="mi">40</span><span class="p">)</span>
+    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
 </code></pre></div>
 </details>
 <p>C'est mieux mais ce n'est pas encore gagné...</p>
@@ -1336,10 +1335,10 @@ J'appelle ensuite cette fonction dans la construction des disques jaunes. </p>
 <p>Il faudrait que le jeton soit au milieu et <strong>au plus bas</strong> de la colonne dans laquelle je clique pour simuler la gravité...</p>
 </div>
 <p>Il me faudrait une <strong>mémoire</strong> qui retient le nombre de disque construit dans chaque colonne. Pour cela, je vais utiliser une liste <code>mem</code> de 7 éléments( car 7 colonnes)initialisés à 0.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">mem</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">mem</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
 </code></pre></div>
 ou mieux, liste construite par compréhension:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">mem</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">)]</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">mem</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">)]</span>
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Astuce</p>
@@ -1348,7 +1347,7 @@ ou mieux, liste construite par compréhension:</p>
 <p>Voici alors l'état de la liste après quelques coups joués:</p>
 <div class="admonition col __70">
 <p class="admonition-title">Col</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">mem</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">mem</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
 </code></pre></div>
 </div>
 <div class="admonition col __30">
@@ -1358,8 +1357,8 @@ ou mieux, liste construite par compréhension:</p>
 </center></p>
 </div>
 <p>Cette liste me sert à déterminer <strong>les ordonnées</strong> des jetons jaunes (ou rouges).
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">JAUNE</span><span class="p">,</span> <span class="p">(</span><span class="n">cible</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="mi">550</span> <span class="o">-</span> <span class="n">mem</span><span class="p">[</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="mi">100</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="p">),</span> <span class="mi">40</span><span class="p">)</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="n">mem</span><span class="p">[</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="mi">100</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+    <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">JAUNE</span><span class="p">,</span> <span class="p">(</span><span class="n">cible</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="mi">550</span> <span class="o">-</span> <span class="n">mem</span><span class="p">[</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="mi">100</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="p">),</span> <span class="mi">40</span><span class="p">)</span>
+<span class="n">mem</span><span class="p">[</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="mi">100</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
 </code></pre></div></p>
 <p>Code pas facile à comprendre mais tentons tout de même une explication.</p>
 <ul>
@@ -1374,47 +1373,47 @@ ou mieux, liste construite par compréhension:</p>
 <p>Re-voici le code complet pour l'instant:</p>
 <details class="info">
 <summary>Code complet</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kn">import</span> <span class="nn">pygame</span><span class="o">,</span> <span class="nn">sys</span>
-<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="kn">from</span> <span class="nn">pygame.locals</span> <span class="kn">import</span> <span class="o">*</span>
-<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
-<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="c1">#----- CONSTANTE DU JEU --------------------#</span>
-<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="n">BLEU</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
-<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="n">WHITE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
-<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="n">ROUGE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="n">JAUNE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="n">mem</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">)]</span>
-<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>
-<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="c1"># ----- INITIALISATION -------------------  #</span>
-<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>
-<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="n">screen</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">(</span> <span class="p">(</span><span class="mi">700</span><span class="p">,</span> <span class="mi">600</span><span class="p">))</span>
-<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="n">icon</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;logoNSI.png&quot;</span><span class="p">)</span>
-<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a>
-<a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a><span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_icon</span><span class="p">(</span><span class="n">icon</span><span class="p">)</span>
-<a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a><span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s2">&quot;Puissance 4&quot;</span><span class="p">)</span>
-<a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a>
-<a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a><span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">BLEU</span><span class="p">)</span>
-<a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a><span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
-<a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span>
-<a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a>        <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">WHITE</span><span class="p">,</span> <span class="p">(</span><span class="mi">50</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="mi">50</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="n">j</span><span class="p">),</span> <span class="mi">40</span><span class="p">)</span>
-<a id="__codelineno-18-24" name="__codelineno-18-24" href="#__codelineno-18-24"></a><span class="c1">#  ---     FONCTIONS    -----------         #</span>
-<a id="__codelineno-18-25" name="__codelineno-18-25" href="#__codelineno-18-25"></a><span class="k">def</span> <span class="nf">cible</span><span class="p">(</span><span class="n">valeur</span><span class="p">):</span>
-<a id="__codelineno-18-26" name="__codelineno-18-26" href="#__codelineno-18-26"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span>
-<a id="__codelineno-18-27" name="__codelineno-18-27" href="#__codelineno-18-27"></a>        <span class="k">if</span> <span class="mi">100</span><span class="o">*</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">valeur</span> <span class="o">&lt;</span><span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-<a id="__codelineno-18-28" name="__codelineno-18-28" href="#__codelineno-18-28"></a>            <span class="n">valeur</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">i</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span><span class="o">//</span><span class="mi">2</span>
-<a id="__codelineno-18-29" name="__codelineno-18-29" href="#__codelineno-18-29"></a>    <span class="k">return</span> <span class="n">valeur</span>
-<a id="__codelineno-18-30" name="__codelineno-18-30" href="#__codelineno-18-30"></a>
-<a id="__codelineno-18-31" name="__codelineno-18-31" href="#__codelineno-18-31"></a><span class="c1">#  ----------------------------------------  #</span>
-<a id="__codelineno-18-32" name="__codelineno-18-32" href="#__codelineno-18-32"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>                             <span class="c1">#boucle infinie</span>
-<a id="__codelineno-18-33" name="__codelineno-18-33" href="#__codelineno-18-33"></a>    <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>    <span class="c1">#pour tous les événements</span>
-<a id="__codelineno-18-34" name="__codelineno-18-34" href="#__codelineno-18-34"></a>        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">QUIT</span><span class="p">:</span>          <span class="c1">#si l&#39;événement quit est déclenché</span>
-<a id="__codelineno-18-35" name="__codelineno-18-35" href="#__codelineno-18-35"></a>            <span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
-<a id="__codelineno-18-36" name="__codelineno-18-36" href="#__codelineno-18-36"></a>            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>                  <span class="c1">#fin du jeu</span>
-<a id="__codelineno-18-37" name="__codelineno-18-37" href="#__codelineno-18-37"></a>        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">MOUSEBUTTONDOWN</span><span class="p">:</span>
-<a id="__codelineno-18-38" name="__codelineno-18-38" href="#__codelineno-18-38"></a>            <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">JAUNE</span><span class="p">,</span> <span class="p">(</span><span class="n">cible</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="mi">550</span> <span class="o">-</span> <span class="n">mem</span><span class="p">[</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="mi">100</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="p">),</span> <span class="mi">40</span><span class="p">)</span>
-<a id="__codelineno-18-39" name="__codelineno-18-39" href="#__codelineno-18-39"></a>            <span class="n">mem</span><span class="p">[</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="mi">100</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
-<a id="__codelineno-18-40" name="__codelineno-18-40" href="#__codelineno-18-40"></a>            <span class="nb">print</span><span class="p">(</span><span class="n">mem</span><span class="p">)</span>
-<a id="__codelineno-18-41" name="__codelineno-18-41" href="#__codelineno-18-41"></a>    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">import</span> <span class="nn">pygame</span><span class="o">,</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">pygame.locals</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1">#----- CONSTANTE DU JEU --------------------#</span>
+<span class="n">BLEU</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+<span class="n">WHITE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+<span class="n">ROUGE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">JAUNE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">mem</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">)]</span>
+
+<span class="c1"># ----- INITIALISATION -------------------  #</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+
+<span class="n">screen</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">(</span> <span class="p">(</span><span class="mi">700</span><span class="p">,</span> <span class="mi">600</span><span class="p">))</span>
+<span class="n">icon</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;logoNSI.png&quot;</span><span class="p">)</span>
+
+<span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_icon</span><span class="p">(</span><span class="n">icon</span><span class="p">)</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s2">&quot;Puissance 4&quot;</span><span class="p">)</span>
+
+<span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">BLEU</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">WHITE</span><span class="p">,</span> <span class="p">(</span><span class="mi">50</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="mi">50</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="n">j</span><span class="p">),</span> <span class="mi">40</span><span class="p">)</span>
+<span class="c1">#  ---     FONCTIONS    -----------         #</span>
+<span class="k">def</span> <span class="nf">cible</span><span class="p">(</span><span class="n">valeur</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span>
+        <span class="k">if</span> <span class="mi">100</span><span class="o">*</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">valeur</span> <span class="o">&lt;</span><span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">valeur</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">i</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span><span class="o">//</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="n">valeur</span>
+
+<span class="c1">#  ----------------------------------------  #</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>                             <span class="c1">#boucle infinie</span>
+    <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>    <span class="c1">#pour tous les événements</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">QUIT</span><span class="p">:</span>          <span class="c1">#si l&#39;événement quit est déclenché</span>
+            <span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>                  <span class="c1">#fin du jeu</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">MOUSEBUTTONDOWN</span><span class="p">:</span>
+            <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">JAUNE</span><span class="p">,</span> <span class="p">(</span><span class="n">cible</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="mi">550</span> <span class="o">-</span> <span class="n">mem</span><span class="p">[</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="mi">100</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="p">),</span> <span class="mi">40</span><span class="p">)</span>
+            <span class="n">mem</span><span class="p">[</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="mi">100</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">mem</span><span class="p">)</span>
+    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
 </code></pre></div>
 </details>
 <h2 id="alternance-des-couleurs">Alternance des couleurs<a class="headerlink" href="#alternance-des-couleurs" title="Permanent link">&para;</a></h2>
@@ -1424,11 +1423,11 @@ ou mieux, liste construite par compréhension:</p>
 <p>Je crée une variable <code>tour</code> initialisée à <code>0</code> et incrémentée à chaque placement d'un jeton.</p>
 </div>
 <p>Si la valeur de la variable est <strong>paire</strong> alors la couleur sera <code>JAUNE</code>. Sinon elle sera <code>ROUGE</code>. Voici mon code:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">if</span> <span class="n">tour</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>    <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">JAUNE</span><span class="p">,</span> <span class="p">(</span><span class="n">cible</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="mi">550</span> <span class="o">-</span> <span class="n">mem</span><span class="p">[</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="mi">100</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="p">),</span> <span class="mi">40</span><span class="p">)</span>
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>    <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">ROUGE</span><span class="p">,</span> <span class="p">(</span><span class="n">cible</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="mi">550</span> <span class="o">-</span> <span class="n">mem</span><span class="p">[</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="mi">100</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="p">),</span> <span class="mi">40</span><span class="p">)</span>
-<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="n">tour</span> <span class="o">+=</span> <span class="mi">1</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">if</span> <span class="n">tour</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">JAUNE</span><span class="p">,</span> <span class="p">(</span><span class="n">cible</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="mi">550</span> <span class="o">-</span> <span class="n">mem</span><span class="p">[</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="mi">100</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="p">),</span> <span class="mi">40</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">ROUGE</span><span class="p">,</span> <span class="p">(</span><span class="n">cible</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="mi">550</span> <span class="o">-</span> <span class="n">mem</span><span class="p">[</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="mi">100</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="p">),</span> <span class="mi">40</span><span class="p">)</span>
+<span class="n">tour</span> <span class="o">+=</span> <span class="mi">1</span>
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Astuce</p>
@@ -1452,40 +1451,40 @@ ou mieux, liste construite par compréhension:</p>
 <p>Il faut une structure pour conserver les coordonnées des jetons, pour les JAUNES comme pour les ROUGES.</p>
 </div>
 <p>Nous allons donc créer naturellement deux listes <code>place_jeton_jaune</code> et <code>place_jeton_rouge</code> de coordonnées, qui seront complétées à chaque construction d'un jeton.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">place_jeton_jaune</span> <span class="o">=</span> <span class="p">[]</span>
-<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="n">place_jeton_rouge</span> <span class="o">=</span> <span class="p">[]</span>
+<p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">place_jeton_jaune</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">place_jeton_rouge</span> <span class="o">=</span> <span class="p">[]</span>
 </code></pre></div>
 Les listes sont évidemment vide au départ! À chaque construction on ajoute les coordonnées du centre du jeton:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">cible</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="mi">550</span> <span class="o">-</span> <span class="n">mem</span><span class="p">[</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="mi">100</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span>
-<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="k">if</span> <span class="n">tour</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>    <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">JAUNE</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="mi">40</span><span class="p">)</span>
-<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>    <span class="n">place_jeton_jaune</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
-<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>    <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">ROUGE</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="mi">40</span><span class="p">)</span>
-<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>    <span class="n">place_jeton_rouge</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">cible</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="mi">550</span> <span class="o">-</span> <span class="n">mem</span><span class="p">[</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="mi">100</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span>
+<span class="k">if</span> <span class="n">tour</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">JAUNE</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="mi">40</span><span class="p">)</span>
+    <span class="n">place_jeton_jaune</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">ROUGE</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="mi">40</span><span class="p">)</span>
+    <span class="n">place_jeton_rouge</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
 </code></pre></div>
 <h3 id="gain-vertical">Gain vertical<a class="headerlink" href="#gain-vertical" title="Permanent link">&para;</a></h3>
 <p>Un jeton étant placé, il suffit de tester si il y en a un en dessous, puis un autre puis un autre. Voici mon code:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c1">#exemple pour les jaunes</span>
-<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="n">gain</span> <span class="o">=</span> <span class="mi">0</span>
-<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">cible</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="mi">550</span> <span class="o">-</span> <span class="n">mem</span><span class="p">[</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="mi">100</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span>
-<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="ow">in</span> <span class="n">place_jeton_jaune</span><span class="p">:</span>
-<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>        <span class="n">gain</span> <span class="o">+=</span> <span class="mi">1</span>
-<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>    <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>        <span class="k">break</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="c1">#exemple pour les jaunes</span>
+<span class="n">gain</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">cible</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="mi">550</span> <span class="o">-</span> <span class="n">mem</span><span class="p">[</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="mi">100</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="ow">in</span> <span class="n">place_jeton_jaune</span><span class="p">:</span>
+        <span class="n">gain</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">break</span>
 </code></pre></div>
 <p>Le <code>break</code> casse la boucle: si il n'y a pas de jeton en dessous, inutile de continuer la boucle pour tester d'autres cas. En revanche, si à la fin de la boucle la variable <code>gain</code> vaut <code>3</code> alors c'est gagné!</p>
 <h3 id="gain-horizontal">Gain horizontal<a class="headerlink" href="#gain-horizontal" title="Permanent link">&para;</a></h3>
 <p>Un jeton étant positionné, il faut regarder à sa droite et éventuellement à sa gauche si il devient le quatrième jeton d'un alignement. Voici le code:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="c1">#exemple pour les jaunes</span>
-<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="n">gain</span> <span class="o">=</span> <span class="mi">0</span>
-<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">cible</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="mi">550</span> <span class="o">-</span> <span class="n">mem</span><span class="p">[</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="mi">100</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span>
-<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">y</span><span class="p">)</span> <span class="ow">in</span> <span class="n">place_jeton_jaune</span><span class="p">:</span>
-<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>        <span class="n">gain</span> <span class="o">+=</span> <span class="mi">1</span>
-<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">y</span><span class="p">):</span>
-<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>        <span class="n">gain</span> <span class="o">+=</span> <span class="mi">1</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="c1">#exemple pour les jaunes</span>
+<span class="n">gain</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">cible</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="mi">550</span> <span class="o">-</span> <span class="n">mem</span><span class="p">[</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="mi">100</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">y</span><span class="p">)</span> <span class="ow">in</span> <span class="n">place_jeton_jaune</span><span class="p">:</span>
+        <span class="n">gain</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">y</span><span class="p">):</span>
+        <span class="n">gain</span> <span class="o">+=</span> <span class="mi">1</span>
 </code></pre></div>
 
 
@@ -1550,11 +1549,9 @@ Les listes sont évidemment vide au départ! À chaque construction on ajoute le
     
       <script src="../assets/javascripts/bundle.dd8806f2.min.js"></script>
       
-        <script src="../xtra/javascripts/mathjax-config.js"></script>
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../xtra/javascripts/mathjax.js"></script>
       
         <script src="../xtra/javascripts/interpreter.js"></script>
       

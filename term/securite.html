@@ -82,11 +82,10 @@
 
       
     
+<!-- Massilia javascripts -->
+    <script defer src="../js/massilia.js"></script>
+
 <!-- favicons -->
-<link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
-<link rel="icon" href="../assets/images/favicon_32x32.png" sizes="32x32">
-<link rel="icon" href="../assets/images/favicon_96x96.png" sizes="96x96">
-<link rel="icon" href="../assets/images/favicon_144x144.png" sizes="144x144">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/atom-one-light.min.css">
 <!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>    
@@ -98,9 +97,8 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/js/jquery.terminal.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/css/jquery.terminal.min.css" rel="stylesheet">
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="../pyodide-mkdocs/interpreter.js"></script> 
-<!-- Ajouter 17 february pour tables massilia-->
-<script src="../js/massilia.js" defer></script>
 
     
       
@@ -118,9 +116,9 @@
     
       <link rel="stylesheet" href="../xtra/stylesheets/ajustements.css">
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-columns.css">
+      <link rel="stylesheet" href="../xtra/stylesheets/massilia-columns.css">
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-admonitions.css">
+      <link rel="stylesheet" href="../xtra/stylesheets/massilia-admonitions.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -129,6 +127,7 @@
     
     
     
+<script src="../pyodide-mkdocs/ide.js"></script> 
 
 <link rel="stylesheet" href="../pyodide-mkdocs/pyoditeur.css">
 
@@ -1157,19 +1156,19 @@ Vous trouverez plus loin dans ce cours, la manière de visualiser un trafic rés
 <p>Consiste à décaler de quatre rangs les lettres de l'alphabet.</p>
 </div>
 <p>La fonction <code>Python</code> suivante permet de coder une chaîne de caractères selon ce principe. On a choisi deux paramètres: la chaîne de caractères et la clé, 4 par défaut...</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span> <span class="nf">chiffrement_cesar</span><span class="p">(</span><span class="n">texte_a_chiffrer</span><span class="p">,</span> <span class="n">cle</span> <span class="o">=</span> <span class="mi">4</span><span class="p">):</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39;texte_a_chiffrer ne contient que des minuscules, sans accent.</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="sd">    Les espaces et les signes de ponctuation sont recopiés.</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="sd">    Retourne un string</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="sd">    &#39;&#39;&#39;</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="n">MESSAGE</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="c1">#declaration chaine vide</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="k">for</span> <span class="n">let</span> <span class="ow">in</span> <span class="n">message</span><span class="p">:</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        <span class="k">if</span> <span class="nb">ord</span><span class="p">(</span><span class="n">let</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">96</span> <span class="ow">and</span> <span class="nb">ord</span><span class="p">(</span><span class="n">let</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">123</span><span class="p">:</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>            <span class="n">LET</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">((</span> <span class="nb">ord</span><span class="p">(</span><span class="n">let</span><span class="p">)</span> <span class="o">-</span> <span class="mi">97</span> <span class="o">+</span> <span class="n">cle</span><span class="p">)</span><span class="o">%</span><span class="mi">26</span> <span class="o">+</span> <span class="mi">97</span><span class="p">)</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>            <span class="n">LET</span> <span class="o">=</span> <span class="n">let</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        <span class="n">MESSAGE</span> <span class="o">=</span> <span class="n">MESSAGE</span> <span class="o">+</span> <span class="n">LET</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    <span class="k">return</span> <span class="n">MESSAGE</span>
+<p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">chiffrement_cesar</span><span class="p">(</span><span class="n">texte_a_chiffrer</span><span class="p">,</span> <span class="n">cle</span> <span class="o">=</span> <span class="mi">4</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;texte_a_chiffrer ne contient que des minuscules, sans accent.</span>
+<span class="sd">    Les espaces et les signes de ponctuation sont recopiés.</span>
+<span class="sd">    Retourne un string</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">MESSAGE</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="c1">#declaration chaine vide</span>
+    <span class="k">for</span> <span class="n">let</span> <span class="ow">in</span> <span class="n">message</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">ord</span><span class="p">(</span><span class="n">let</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">96</span> <span class="ow">and</span> <span class="nb">ord</span><span class="p">(</span><span class="n">let</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">123</span><span class="p">:</span>
+            <span class="n">LET</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">((</span> <span class="nb">ord</span><span class="p">(</span><span class="n">let</span><span class="p">)</span> <span class="o">-</span> <span class="mi">97</span> <span class="o">+</span> <span class="n">cle</span><span class="p">)</span><span class="o">%</span><span class="mi">26</span> <span class="o">+</span> <span class="mi">97</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">LET</span> <span class="o">=</span> <span class="n">let</span>
+        <span class="n">MESSAGE</span> <span class="o">=</span> <span class="n">MESSAGE</span> <span class="o">+</span> <span class="n">LET</span>
+    <span class="k">return</span> <span class="n">MESSAGE</span>
 </code></pre></div>
 Ce chiffrement fait apparaître quelques limites intéressants:</p>
 <ul>
@@ -1180,36 +1179,36 @@ Ce chiffrement fait apparaître quelques limites intéressants:</p>
 <p>Les fonctions Python suivantes permettent cette analyse fréquentielle:</p>
 <details class="tip">
 <summary>Code Python</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span> <span class="nf">freq_lettre</span><span class="p">(</span><span class="n">texte</span><span class="p">,</span> <span class="n">let</span><span class="p">):</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="sd">    parameters:</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="sd">    -----------------</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="sd">    texte: string</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="sd">    let: caractere</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="sd">    returns</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="sd">    -----------------</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="sd">    float frequence de let dans texte</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    <span class="n">cpt</span> <span class="o">=</span> <span class="mi">0</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    <span class="k">for</span> <span class="n">carac</span> <span class="ow">in</span> <span class="n">texte</span><span class="p">:</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>        <span class="k">if</span> <span class="n">carac</span> <span class="o">==</span> <span class="n">let</span><span class="p">:</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>            <span class="n">cpt</span> <span class="o">+=</span> <span class="mi">1</span>
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>    <span class="k">return</span> <span class="n">cpt</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">texte</span><span class="p">)</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="k">def</span> <span class="nf">freq_lettre_texte</span><span class="p">(</span><span class="n">fichier_src</span><span class="p">):</span>
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="sd">    parameters:</span>
-<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="sd">    -----------------</span>
-<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="sd">    fichier_src: string</span>
-<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="sd">    returns</span>
-<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="sd">    -----------------</span>
-<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="sd">    liste des frequences des minus dans texte</span>
-<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>    <span class="n">minus</span> <span class="o">=</span> <span class="p">[</span><span class="nb">chr</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">97</span><span class="p">,</span><span class="mi">123</span><span class="p">)]</span>
-<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>    <span class="n">liste_freq</span> <span class="o">=</span> <span class="p">[]</span>
-<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>    <span class="k">for</span> <span class="n">elt</span> <span class="ow">in</span> <span class="n">minus</span><span class="p">:</span>
-<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>        <span class="n">liste_freq</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">freq_lettre</span><span class="p">(</span><span class="n">fichier_src</span><span class="p">,</span> <span class="n">elt</span><span class="p">))</span>
-<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>    <span class="k">return</span> <span class="n">liste_freq</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">freq_lettre</span><span class="p">(</span><span class="n">texte</span><span class="p">,</span> <span class="n">let</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    parameters:</span>
+<span class="sd">    -----------------</span>
+<span class="sd">    texte: string</span>
+<span class="sd">    let: caractere</span>
+<span class="sd">    returns</span>
+<span class="sd">    -----------------</span>
+<span class="sd">    float frequence de let dans texte</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">cpt</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">carac</span> <span class="ow">in</span> <span class="n">texte</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">carac</span> <span class="o">==</span> <span class="n">let</span><span class="p">:</span>
+            <span class="n">cpt</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">cpt</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">texte</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">freq_lettre_texte</span><span class="p">(</span><span class="n">fichier_src</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    parameters:</span>
+<span class="sd">    -----------------</span>
+<span class="sd">    fichier_src: string</span>
+<span class="sd">    returns</span>
+<span class="sd">    -----------------</span>
+<span class="sd">    liste des frequences des minus dans texte</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">minus</span> <span class="o">=</span> <span class="p">[</span><span class="nb">chr</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">97</span><span class="p">,</span><span class="mi">123</span><span class="p">)]</span>
+    <span class="n">liste_freq</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">elt</span> <span class="ow">in</span> <span class="n">minus</span><span class="p">:</span>
+        <span class="n">liste_freq</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">freq_lettre</span><span class="p">(</span><span class="n">fichier_src</span><span class="p">,</span> <span class="n">elt</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">liste_freq</span>
 </code></pre></div>
 </details>
 <p>Le chiffrement de Cesar est un exemple de <strong>chiffrement symétrique</strong> dans lequel la même clé est utilisée pour coder ou décoder un message. Ce chiffrement n'a plus aucun intérêt si ce n'est un objectif pédagogique...</p>
@@ -1409,11 +1408,9 @@ On se contentera de minuscules sans espaces.</p>
     
       <script src="../assets/javascripts/bundle.dd8806f2.min.js"></script>
       
-        <script src="../xtra/javascripts/mathjax-config.js"></script>
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../xtra/javascripts/mathjax.js"></script>
       
         <script src="../xtra/javascripts/interpreter.js"></script>
       

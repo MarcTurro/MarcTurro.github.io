@@ -1,7 +1,7 @@
 /* License: GNU GPLv3+, Rodrigo Schwencke (Copyleft) */
 
 window.addEventListener('load', function() {
-  // console.log("massilia-admonitions PAGE LOADED");
+  console.log("massilia-admonitions PAGE LOADED");
 
 var replaceBy = {
   "definition": "Définition ",
@@ -125,13 +125,14 @@ for (let i = 0; i < nbPy; i++) {
 // Exercices
 var exRendering = ["Ex", "Exo", "Exercice"];
 var admonitionEx = toAdmonitionClassString(exRendering);
+console.log("test:", admonitionEx);
 var ex = document.querySelectorAll(admonitionEx);
 var nbEx = ex.length;
 for (let i = 0; i < nbEx; i++) {
   if (exRendering.includes(ex[i].firstElementChild.innerHTML)) {
-    ex[i].firstElementChild.innerHTML = replaceBy["exercice"]+(i+1)+".";
+    ex[i].firstElementChild.innerHTML = replaceBy["exercice"]+(i+1)+":";
   } else {
-    ex[i].firstElementChild.innerHTML = replaceBy["exercice"]+(i+1)+". "+ex[i].firstElementChild.innerHTML
+    ex[i].firstElementChild.innerHTML = replaceBy["exercice"]+(i+1)+": "+ex[i].firstElementChild.innerHTML
   }
 }
 

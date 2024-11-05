@@ -78,11 +78,10 @@
 
       
     
+<!-- Massilia javascripts -->
+    <script defer src="../js/massilia.js"></script>
+
 <!-- favicons -->
-<link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
-<link rel="icon" href="../assets/images/favicon_32x32.png" sizes="32x32">
-<link rel="icon" href="../assets/images/favicon_96x96.png" sizes="96x96">
-<link rel="icon" href="../assets/images/favicon_144x144.png" sizes="144x144">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/atom-one-light.min.css">
 <!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>    
@@ -94,9 +93,8 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/js/jquery.terminal.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/css/jquery.terminal.min.css" rel="stylesheet">
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="../pyodide-mkdocs/interpreter.js"></script> 
-<!-- Ajouter 17 february pour tables massilia-->
-<script src="../js/massilia.js" defer></script>
 
     
       
@@ -114,9 +112,9 @@
     
       <link rel="stylesheet" href="../xtra/stylesheets/ajustements.css">
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-columns.css">
+      <link rel="stylesheet" href="../xtra/stylesheets/massilia-columns.css">
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-admonitions.css">
+      <link rel="stylesheet" href="../xtra/stylesheets/massilia-admonitions.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -125,6 +123,7 @@
     
     
     
+<script src="../pyodide-mkdocs/ide.js"></script> 
 
 <link rel="stylesheet" href="../pyodide-mkdocs/pyoditeur.css">
 
@@ -1061,45 +1060,45 @@ Dans une seconde partie nous créerons des animations pour dynamiser tout cela.<
 <p>Vous trouverez ci-dessous, une partie du code qui permet sa construction et que vous devrez compléter tout au long de ce travail:</p>
 <details>
 <summary>Code à copier</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">#---------------------   ZONE FONCTIONS     -------------------------------------#</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1">#--------------------------------------------------------------------------------#</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1">#                CONSTRUCTION DES OBJETS DANS LA FENETRE                         #</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1">#--------------------------------------------------------------------------------#</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">fen</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">fen</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s2">&quot;Les objets graphiques&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">fen</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s1">&#39;1000x600+100+100&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="n">fen</span><span class="o">.</span><span class="n">resizable</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="c1">#widthxheight+bordecran</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="c1">#--------------------------------------------------------------------------------#</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="n">ZoneDessin</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">fen</span><span class="p">,</span> <span class="n">borderwidth</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">relief</span> <span class="o">=</span> <span class="n">RIDGE</span><span class="p">)</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="n">ZoneDessin</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="c1">#--------------------------------------------------------------------------------#</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="n">Can</span> <span class="o">=</span> <span class="n">Canvas</span><span class="p">(</span><span class="n">ZoneDessin</span><span class="p">,</span> <span class="n">bg</span> <span class="o">=</span> <span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">800</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">580</span><span class="p">)</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="n">Can</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="c1">#--------------------------------------------------------------------------------#</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="n">ZoneOptions</span> <span class="o">=</span> <span class="n">LabelFrame</span><span class="p">(</span><span class="n">fen</span><span class="p">,</span> <span class="n">borderwidth</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Options&#39;</span><span class="p">,</span> <span class="n">labelanchor</span> <span class="o">=</span> <span class="s1">&#39;n&#39;</span><span class="p">,</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>                        <span class="n">relief</span> <span class="o">=</span> <span class="n">RIDGE</span><span class="p">,</span>
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>                        <span class="n">width</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">580</span><span class="p">)</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="n">ZoneOptions</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="n">ZoneOptions</span><span class="o">.</span><span class="n">grid_propagate</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="c1">#--------------------------------------------------------------------------------#</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="n">BouDebut</span> <span class="o">=</span> <span class="n">Button</span> <span class="p">(</span><span class="n">ZoneOptions</span><span class="p">,</span> <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Construire&#39;</span><span class="p">,</span> <span class="n">command</span> <span class="o">=</span> <span class="n">fen</span><span class="o">.</span><span class="n">destroy</span><span class="p">)</span>
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="n">BouDebut</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pady</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span><span class="n">columnspan</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="c1">#--------------------------------------------------------------------------------#</span>
-<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="n">EchelleRayon</span> <span class="o">=</span> <span class="n">Scale</span><span class="p">(</span><span class="n">ZoneOptions</span><span class="p">,</span> <span class="n">orient</span> <span class="o">=</span> <span class="s1">&#39;horizontal&#39;</span><span class="p">,</span> <span class="n">from_</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>    <span class="n">to</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">resolution</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">tickinterval</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">length</span> <span class="o">=</span> <span class="mi">190</span><span class="p">,</span>
-<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>    <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Dimension du cercle ou du carre&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="n">EchelleRayon</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="n">columnspan</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
-<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="c1">#---------------------------------------------------------------------------------#</span>
-<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="c1">#                INSERER DESSOUS LES AUTRES CONSTRUCTEURS                         #</span>
-<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="c1">#---------------------------------------------------------------------------------#</span>
-<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>
-<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>
-<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="c1">#----------    NE RIEN METTRE EN DESSOUS DE CETTE LIGNE    -----------------------#</span>
-<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="n">fen</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<span class="c1">#---------------------   ZONE FONCTIONS     -------------------------------------#</span>
+
+<span class="c1">#--------------------------------------------------------------------------------#</span>
+<span class="c1">#                CONSTRUCTION DES OBJETS DANS LA FENETRE                         #</span>
+<span class="c1">#--------------------------------------------------------------------------------#</span>
+<span class="n">fen</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
+<span class="n">fen</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s2">&quot;Les objets graphiques&quot;</span><span class="p">)</span>
+<span class="n">fen</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s1">&#39;1000x600+100+100&#39;</span><span class="p">)</span>
+<span class="n">fen</span><span class="o">.</span><span class="n">resizable</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="c1">#widthxheight+bordecran</span>
+<span class="c1">#--------------------------------------------------------------------------------#</span>
+<span class="n">ZoneDessin</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">fen</span><span class="p">,</span> <span class="n">borderwidth</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">relief</span> <span class="o">=</span> <span class="n">RIDGE</span><span class="p">)</span>
+<span class="n">ZoneDessin</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="c1">#--------------------------------------------------------------------------------#</span>
+<span class="n">Can</span> <span class="o">=</span> <span class="n">Canvas</span><span class="p">(</span><span class="n">ZoneDessin</span><span class="p">,</span> <span class="n">bg</span> <span class="o">=</span> <span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">800</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">580</span><span class="p">)</span>
+<span class="n">Can</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="c1">#--------------------------------------------------------------------------------#</span>
+<span class="n">ZoneOptions</span> <span class="o">=</span> <span class="n">LabelFrame</span><span class="p">(</span><span class="n">fen</span><span class="p">,</span> <span class="n">borderwidth</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Options&#39;</span><span class="p">,</span> <span class="n">labelanchor</span> <span class="o">=</span> <span class="s1">&#39;n&#39;</span><span class="p">,</span>
+                        <span class="n">relief</span> <span class="o">=</span> <span class="n">RIDGE</span><span class="p">,</span>
+                        <span class="n">width</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">580</span><span class="p">)</span>
+<span class="n">ZoneOptions</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">ZoneOptions</span><span class="o">.</span><span class="n">grid_propagate</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1">#--------------------------------------------------------------------------------#</span>
+<span class="n">BouDebut</span> <span class="o">=</span> <span class="n">Button</span> <span class="p">(</span><span class="n">ZoneOptions</span><span class="p">,</span> <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Construire&#39;</span><span class="p">,</span> <span class="n">command</span> <span class="o">=</span> <span class="n">fen</span><span class="o">.</span><span class="n">destroy</span><span class="p">)</span>
+<span class="n">BouDebut</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pady</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span><span class="n">columnspan</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1">#--------------------------------------------------------------------------------#</span>
+<span class="n">EchelleRayon</span> <span class="o">=</span> <span class="n">Scale</span><span class="p">(</span><span class="n">ZoneOptions</span><span class="p">,</span> <span class="n">orient</span> <span class="o">=</span> <span class="s1">&#39;horizontal&#39;</span><span class="p">,</span> <span class="n">from_</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">to</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">resolution</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">tickinterval</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">length</span> <span class="o">=</span> <span class="mi">190</span><span class="p">,</span>
+    <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Dimension du cercle ou du carre&#39;</span><span class="p">)</span>
+<span class="n">EchelleRayon</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="n">columnspan</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1">#---------------------------------------------------------------------------------#</span>
+<span class="c1">#                INSERER DESSOUS LES AUTRES CONSTRUCTEURS                         #</span>
+<span class="c1">#---------------------------------------------------------------------------------#</span>
+
+
+<span class="c1">#----------    NE RIEN METTRE EN DESSOUS DE CETTE LIGNE    -----------------------#</span>
+<span class="n">fen</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
 </code></pre></div>
 </details>
 <div class="admonition exo">
@@ -1139,10 +1138,10 @@ différents widgets n’apparaîtront pas s’ils ne sont pas placés !</p>
 <h2 id="commande-pour-dessiner-dans-le-canvas">Commande pour dessiner dans le canvas...<a class="headerlink" href="#commande-pour-dessiner-dans-le-canvas" title="Permanent link">&para;</a></h2>
 <p>Un canvas est une zone destinée à contenir des dessins ou autres figures complexes (et même des
 images...). Par exemple pour créer un cercle rouge dans le canvas <code>Can</code> , il faut utiliser le constructeur :</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">x</span> <span class="o">=</span> <span class="mi">400</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">y</span> <span class="o">=</span> <span class="mi">300</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">r</span> <span class="o">=</span> <span class="mi">50</span> 
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">Can</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="mi">400</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mi">50</span> 
+<span class="n">Can</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span>
 </code></pre></div>
 <div class="admonition exo">
 <p class="admonition-title">Exo</p>
@@ -1152,7 +1151,7 @@ images...). Par exemple pour créer un cercle rouge dans le canvas <code>Can</co
 </ol>
 </div>
 <p>Pour dessiner un rectangle rose de largeur <code>l</code>, de hauteur <code>h</code> centré au point de coordonnées <code>(x,y)</code>, il suffit d'utiliser le constructeur:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">Can</span><span class="o">.</span><span class="n">create_rectangle</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">l</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">h</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">l</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">h</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s1">&#39;pink&#39;</span><span class="p">)</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">Can</span><span class="o">.</span><span class="n">create_rectangle</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">l</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">h</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">l</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">h</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s1">&#39;pink&#39;</span><span class="p">)</span>
 </code></pre></div>
 <div class="admonition exo">
 <p class="admonition-title">Exo</p>
@@ -1164,8 +1163,8 @@ images...). Par exemple pour créer un cercle rouge dans le canvas <code>Can</co
 <ol>
 <li>Récupérer l'image <code>pacman.png</code>(<a href="./img/pacman.png"   download="pacman.png">ici</a>).</li>
 <li>Supprimer les cercles et les rectangles puis insérer le code suivant pour afficher l'image au milieu du canvas:
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">img</span> <span class="o">=</span> <span class="n">PhotoImage</span><span class="p">(</span><span class="n">file</span> <span class="o">=</span> <span class="s2">&quot;pacman.png&quot;</span><span class="p">)</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">Can</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">290</span><span class="p">,</span> <span class="n">image</span> <span class="o">=</span> <span class="n">img</span><span class="p">)</span>
+    <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">img</span> <span class="o">=</span> <span class="n">PhotoImage</span><span class="p">(</span><span class="n">file</span> <span class="o">=</span> <span class="s2">&quot;pacman.png&quot;</span><span class="p">)</span>
+<span class="n">Can</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">290</span><span class="p">,</span> <span class="n">image</span> <span class="o">=</span> <span class="n">img</span><span class="p">)</span>
 </code></pre></div></li>
 </ol>
 </div>
@@ -1181,8 +1180,8 @@ images...). Par exemple pour créer un cercle rouge dans le canvas <code>Can</co
 <p class="admonition-title">Exo</p>
 <ol>
 <li>Ajouter le code suivant juste avant le constructeur <code>EchelleRayon</code>:
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">valeur_curseur</span> <span class="o">=</span> <span class="n">IntVar</span><span class="p">(</span><span class="n">ZoneOptions</span><span class="p">)</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">valeur_curseur</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">valeur_curseur</span> <span class="o">=</span> <span class="n">IntVar</span><span class="p">(</span><span class="n">ZoneOptions</span><span class="p">)</span>
+<span class="n">valeur_curseur</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </code></pre></div></li>
 <li>Ajouter au constructeur <code>EchelleRayon</code> l'attribut <code>variable = valeur_curseur</code>.</li>
 </ol>
@@ -1192,10 +1191,10 @@ images...). Par exemple pour créer un cercle rouge dans le canvas <code>Can</co
 <p class="admonition-title">Exo</p>
 <ol>
 <li>Ajouter dans la zone dédiée aux fonctions, le code suivant:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">def</span> <span class="nf">cercle</span><span class="p">():</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">800</span><span class="p">),</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">580</span><span class="p">)</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="n">r</span> <span class="o">=</span> <span class="n">valeur_curseur</span><span class="o">.</span><span class="n">get</span><span class="p">()</span><span class="c1">#permet de récupérer la valeur de la variable valeur_curseur et la stocker dans la variable r</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="n">Can</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">cercle</span><span class="p">():</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">800</span><span class="p">),</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">580</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">valeur_curseur</span><span class="o">.</span><span class="n">get</span><span class="p">()</span><span class="c1">#permet de récupérer la valeur de la variable valeur_curseur et la stocker dans la variable r</span>
+    <span class="n">Can</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span>
 </code></pre></div></li>
 <li>Changer l'attibut <code>command</code> du bouton, en lui attibuant la valeur <code>cercle</code>.</li>
 <li>Modifier la valeur du curseur et tester la construction pour constater que le rayon du cercle change.</li>
@@ -1223,13 +1222,13 @@ images...). Par exemple pour créer un cercle rouge dans le canvas <code>Can</co
 <p class="admonition-title">Exo</p>
 <ol>
 <li>Changer la fonction cercle comme suit:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">def</span> <span class="nf">cercle</span><span class="p">(</span><span class="n">evt</span><span class="p">):</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">evt</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">evt</span><span class="o">.</span><span class="n">y</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>        <span class="n">r</span> <span class="o">=</span> <span class="n">valeur_curseur</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>        <span class="n">Can</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">cercle</span><span class="p">(</span><span class="n">evt</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">evt</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">evt</span><span class="o">.</span><span class="n">y</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">valeur_curseur</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+        <span class="n">Can</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span>
 </code></pre></div></li>
 <li>Ajouter enfin le code suivant juste avant l'instruction <code>fen.mainloop()</code> :
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">Can</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;Button-1&gt;&quot;</span><span class="p">,</span> <span class="n">cercle</span><span class="p">)</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">Can</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;Button-1&gt;&quot;</span><span class="p">,</span> <span class="n">cercle</span><span class="p">)</span>
 </code></pre></div></li>
 </ol>
 </div>
@@ -1250,38 +1249,38 @@ images...). Par exemple pour créer un cercle rouge dans le canvas <code>Can</co
 </div>
 <details>
 <summary>Code à copier</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="c1">#######################      VARIABLES      ##########################################</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">400</span> <span class="c1">#défini les coordonnées initiales de l&#39;objet</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">r</span> <span class="o">=</span> <span class="mi">25</span><span class="c1"># défini le rayon initial</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="n">couleur</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="c1">#########################        FONCTIONS     #######################################</span>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="k">def</span> <span class="nf">bouge_balle</span><span class="p">(</span><span class="n">evt</span><span class="p">):</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    <span class="k">global</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">r</span>
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>    <span class="n">touche</span> <span class="o">=</span> <span class="n">evt</span><span class="o">.</span><span class="n">keysym</span>
-<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>    <span class="k">if</span> <span class="n">touche</span> <span class="o">==</span> <span class="s2">&quot;Left&quot;</span><span class="p">:</span>
-<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">2</span>
-<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>        <span class="n">can</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="n">baballe</span><span class="p">,</span> <span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span>
-<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>    <span class="k">elif</span> <span class="n">touche</span> <span class="o">==</span> <span class="s2">&quot;Right&quot;</span><span class="p">:</span>
-<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
-<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>        <span class="n">can</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="n">baballe</span><span class="p">,</span> <span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span>
-<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>    <span class="k">elif</span> <span class="n">touche</span> <span class="o">==</span> <span class="s2">&quot;Up&quot;</span><span class="p">:</span>
-<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>        <span class="k">pass</span>
-<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>    <span class="k">elif</span> <span class="n">touche</span> <span class="o">==</span> <span class="s2">&quot;Down&quot;</span><span class="p">:</span>
-<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>        <span class="k">pass</span>
-<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="c1">######################          CONSTRUCTEURS      ###################################</span>
-<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="n">fen</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
-<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="n">fen</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s2">&quot;Pilotage au clavier dans un canvas&quot;</span><span class="p">)</span>
-<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="n">fen</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s1">&#39;800x800+100+100&#39;</span><span class="p">)</span>
-<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="n">fen</span><span class="o">.</span><span class="n">resizable</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
-<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="c1">######################################################################################</span>
-<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a><span class="n">can</span> <span class="o">=</span> <span class="n">Canvas</span><span class="p">(</span><span class="n">fen</span><span class="p">,</span> <span class="n">bg</span> <span class="o">=</span> <span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">800</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">800</span><span class="p">)</span>
-<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="n">can</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
-<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a><span class="c1">######################################################################################</span>
-<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a><span class="n">baballe</span> <span class="o">=</span> <span class="n">can</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
-<a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a><span class="c1">######################################################################################</span>
-<a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a><span class="n">fen</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;Key&gt;&quot;</span><span class="p">,</span> <span class="n">bouge_balle</span><span class="p">)</span>
-<a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a><span class="n">fen</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="c1">#######################      VARIABLES      ##########################################</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">400</span> <span class="c1">#défini les coordonnées initiales de l&#39;objet</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mi">25</span><span class="c1"># défini le rayon initial</span>
+<span class="n">couleur</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span>
+<span class="c1">#########################        FONCTIONS     #######################################</span>
+<span class="k">def</span> <span class="nf">bouge_balle</span><span class="p">(</span><span class="n">evt</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">r</span>
+    <span class="n">touche</span> <span class="o">=</span> <span class="n">evt</span><span class="o">.</span><span class="n">keysym</span>
+    <span class="k">if</span> <span class="n">touche</span> <span class="o">==</span> <span class="s2">&quot;Left&quot;</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">2</span>
+        <span class="n">can</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="n">baballe</span><span class="p">,</span> <span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">touche</span> <span class="o">==</span> <span class="s2">&quot;Right&quot;</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+        <span class="n">can</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="n">baballe</span><span class="p">,</span> <span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">touche</span> <span class="o">==</span> <span class="s2">&quot;Up&quot;</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="k">elif</span> <span class="n">touche</span> <span class="o">==</span> <span class="s2">&quot;Down&quot;</span><span class="p">:</span>
+        <span class="k">pass</span>
+<span class="c1">######################          CONSTRUCTEURS      ###################################</span>
+<span class="n">fen</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
+<span class="n">fen</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s2">&quot;Pilotage au clavier dans un canvas&quot;</span><span class="p">)</span>
+<span class="n">fen</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s1">&#39;800x800+100+100&#39;</span><span class="p">)</span>
+<span class="n">fen</span><span class="o">.</span><span class="n">resizable</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="c1">######################################################################################</span>
+<span class="n">can</span> <span class="o">=</span> <span class="n">Canvas</span><span class="p">(</span><span class="n">fen</span><span class="p">,</span> <span class="n">bg</span> <span class="o">=</span> <span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">800</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">800</span><span class="p">)</span>
+<span class="n">can</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="c1">######################################################################################</span>
+<span class="n">baballe</span> <span class="o">=</span> <span class="n">can</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="c1">######################################################################################</span>
+<span class="n">fen</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;Key&gt;&quot;</span><span class="p">,</span> <span class="n">bouge_balle</span><span class="p">)</span>
+<span class="n">fen</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
 </code></pre></div>
 </details>
 <p>Vous devriez être en mesure de piloter la balle rouge vers la gauche ou la droite. Quelques éléments qui méritent notre attention:</p>
@@ -1363,11 +1362,9 @@ images...). Par exemple pour créer un cercle rouge dans le canvas <code>Can</co
     
       <script src="../assets/javascripts/bundle.dd8806f2.min.js"></script>
       
-        <script src="../xtra/javascripts/mathjax-config.js"></script>
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../xtra/javascripts/mathjax.js"></script>
       
         <script src="../xtra/javascripts/interpreter.js"></script>
       

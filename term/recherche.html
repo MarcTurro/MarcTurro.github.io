@@ -82,11 +82,10 @@
 
       
     
+<!-- Massilia javascripts -->
+    <script defer src="../js/massilia.js"></script>
+
 <!-- favicons -->
-<link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
-<link rel="icon" href="../assets/images/favicon_32x32.png" sizes="32x32">
-<link rel="icon" href="../assets/images/favicon_96x96.png" sizes="96x96">
-<link rel="icon" href="../assets/images/favicon_144x144.png" sizes="144x144">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/atom-one-light.min.css">
 <!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>    
@@ -98,9 +97,8 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/js/jquery.terminal.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/css/jquery.terminal.min.css" rel="stylesheet">
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="../pyodide-mkdocs/interpreter.js"></script> 
-<!-- Ajouter 17 february pour tables massilia-->
-<script src="../js/massilia.js" defer></script>
 
     
       
@@ -118,9 +116,9 @@
     
       <link rel="stylesheet" href="../xtra/stylesheets/ajustements.css">
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-columns.css">
+      <link rel="stylesheet" href="../xtra/stylesheets/massilia-columns.css">
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-admonitions.css">
+      <link rel="stylesheet" href="../xtra/stylesheets/massilia-admonitions.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -129,6 +127,7 @@
     
     
     
+<script src="../pyodide-mkdocs/ide.js"></script> 
 
 <link rel="stylesheet" href="../pyodide-mkdocs/pyoditeur.css">
 
@@ -1175,12 +1174,12 @@ Il est donc nécessaire pour les généticiens de détecter la présence de cert
 -->
 <h2 id="retour-en-classe-de-premiere-nsi">Retour en classe de première NSI<a class="headerlink" href="#retour-en-classe-de-premiere-nsi" title="Permanent link">&para;</a></h2>
 <p>L'opérateur <code>in</code> permet de tester la présence d'un élément dans un itérable. En particulier, on peut l'utiliser pour rechercher un motif dans une chaîne.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">phrase_de_test</span> <span class="o">=</span> <span class="s2">&quot;Une phrase qui dit n&#39;importe quoi, juste pour tester la présence de quoi &quot;</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">test</span> <span class="o">=</span> <span class="s1">&#39;quoi&#39;</span> <span class="ow">in</span> <span class="n">phrase_de_test</span>
+<p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">phrase_de_test</span> <span class="o">=</span> <span class="s2">&quot;Une phrase qui dit n&#39;importe quoi, juste pour tester la présence de quoi &quot;</span>
+<span class="n">test</span> <span class="o">=</span> <span class="s1">&#39;quoi&#39;</span> <span class="ow">in</span> <span class="n">phrase_de_test</span>
 </code></pre></div>
 La variable <code>test</code> est de type <strong>booléen</strong>: elle retourne <code>True</code> car le motif <code>quoi</code> est présent dans le texte <code>phrase_de_test</code>.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="o">&gt;&gt;&gt;</span><span class="nb">print</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kc">True</span>
+<p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span><span class="nb">print</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>
+<span class="kc">True</span>
 </code></pre></div>
 Néanmoins, cet opérateur ne teste que la présence du motif <code>quoi</code> dans la chaîne de caractères <code>phrase_de_test</code> et en particulier, il ne précise pas combien de fois il a été trouvé et encore moins où il a été trouvé!</p>
 <p>L'instruction <code>help("")</code> dans une console Python affiche des méthodes de la classe <code>string</code>: la méthode <code>count</code> et <code>find</code> semblent intéressantes...</p>
@@ -1191,9 +1190,9 @@ Néanmoins, cet opérateur ne teste que la présence du motif <code>quoi</code> 
 <li>La méthode <code>find</code> retourne le plus petit index du texte auquel se trouve le motif et retourne -1 sinon..</li>
 </ul>
 </div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">phrase_de_test</span> <span class="o">=</span> <span class="s2">&quot;une phrase qui dit n&#39;importe quoi, juste pour tester la présence de quoi &quot;</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">cpt</span> <span class="o">=</span> <span class="n">phrase_de_test</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;quoi&#39;</span><span class="p">)</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">rang</span> <span class="o">=</span> <span class="n">phrase_de_test</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;quoi&#39;</span><span class="p">)</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">phrase_de_test</span> <span class="o">=</span> <span class="s2">&quot;une phrase qui dit n&#39;importe quoi, juste pour tester la présence de quoi &quot;</span>
+<span class="n">cpt</span> <span class="o">=</span> <span class="n">phrase_de_test</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;quoi&#39;</span><span class="p">)</span>
+<span class="n">rang</span> <span class="o">=</span> <span class="n">phrase_de_test</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;quoi&#39;</span><span class="p">)</span>
 </code></pre></div>
 <p>La variable <code>cpt</code> vaut alors 2 et la variable <code>rang</code> vaut 29!</p>
 <p>On considère un motif <code>M</code> et un texte <code>T</code>. L'objectif est la création d'un programme qui renvoie tous les index de <code>T</code> où se situent <code>M</code> en cas de détection de <code>M</code> dans <code>T</code>, en utilisant seulement les méthodes <code>count,find</code> rappelées ci-dessus.</p>
@@ -1219,22 +1218,22 @@ Néanmoins, cet opérateur ne teste que la présence du motif <code>quoi</code> 
 <p><gif-player src="./img/gif_naive.gif" speed="1" play="" style= "display: inline-block; position: relative; overflow: hidden; width: 945px; height:118px;"></gif-player></p>
 <p><em>Vous pouvez contrôler le déroulement de l'animation en la survolant avec la souris.</em></p>
 <p>On décale de 1 à chaque fois le motif pour voir la correspondance dans le texte...</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">def</span> <span class="nf">recherche_naive</span><span class="p">(</span><span class="n">texte</span><span class="p">,</span> <span class="n">motif</span><span class="p">):</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="sd">    renvoie la liste des indices (éventuellement vide) des occurrences de</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="sd">    de la chaîne motif dans la chaîne texte.</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="n">indices</span> <span class="o">=</span> <span class="p">[]</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">texte</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">):</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>        <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>        <span class="k">while</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> <span class="ow">and</span> <span class="n">texte</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">k</span><span class="p">]</span> <span class="o">==</span> <span class="n">motif</span><span class="p">[</span><span class="n">k</span><span class="p">]:</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>            <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>        <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">):</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>            <span class="n">indices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>    <span class="k">return</span> <span class="n">indices</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">recherche_naive</span><span class="p">(</span><span class="n">texte</span><span class="p">,</span> <span class="n">motif</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    renvoie la liste des indices (éventuellement vide) des occurrences de</span>
+<span class="sd">    de la chaîne motif dans la chaîne texte.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">indices</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">texte</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">):</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> <span class="ow">and</span> <span class="n">texte</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">k</span><span class="p">]</span> <span class="o">==</span> <span class="n">motif</span><span class="p">[</span><span class="n">k</span><span class="p">]:</span>
+            <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">):</span>
+            <span class="n">indices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="n">indices</span>
 </code></pre></div>
 <div class="admonition exercice">
 <p class="admonition-title">Exercice</p>
@@ -1268,30 +1267,30 @@ Néanmoins, cet opérateur ne teste que la présence du motif <code>quoi</code> 
 <p>L'idée est de décaler le motif vers la droite d'une valeur qui n'est pas toujours 1.</p>
 <p><gif-player src="./img/gif_BM.gif" speed="1" play="" style= "display: inline-block; position: relative; overflow: hidden; width: 945px; height:118px;"></gif-player></p>
 <p>On va d'abord coder une fonction <code>dico_lettres</code> qui renvoie un dictionnaire associant à chaque lettre de <code>mot</code> (paramètre d'entrée) son dernier rang dans le <code>mot</code>. On exclut la dernière lettre, qui poserait un problème lors du décalage (on décalerait de 0...) </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">def</span> <span class="nf">dico_lettres</span><span class="p">(</span><span class="n">mot</span><span class="p">):</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mot</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>        <span class="n">d</span><span class="p">[</span><span class="n">mot</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">i</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="k">return</span> <span class="n">d</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="k">def</span> <span class="nf">boyer_moore</span><span class="p">(</span><span class="n">texte</span><span class="p">,</span> <span class="n">motif</span><span class="p">):</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    <span class="n">dico</span> <span class="o">=</span> <span class="n">dico_lettres</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    <span class="n">indices</span> <span class="o">=</span> <span class="p">[]</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    <span class="n">i</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">texte</span><span class="p">):</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>        <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>        <span class="k">while</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> <span class="ow">and</span> <span class="n">motif</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">k</span><span class="p">]</span> <span class="o">==</span> <span class="n">texte</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">k</span><span class="p">]:</span> 
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>            <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>        <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">):</span> 
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>            <span class="n">indices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span> 
-<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>        <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>            <span class="k">if</span> <span class="n">texte</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">k</span><span class="p">]</span> <span class="ow">in</span> <span class="n">dico</span><span class="p">:</span> 
-<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>                <span class="n">i</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="n">k</span>  <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> <span class="o">-</span> <span class="n">dico</span><span class="p">[</span><span class="n">texte</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">k</span><span class="p">]]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> 
-<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>            <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>                <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="n">k</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> 
-<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>
-<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>    <span class="k">return</span> <span class="n">indices</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">dico_lettres</span><span class="p">(</span><span class="n">mot</span><span class="p">):</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mot</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">d</span><span class="p">[</span><span class="n">mot</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">i</span>
+    <span class="k">return</span> <span class="n">d</span>
+
+<span class="k">def</span> <span class="nf">boyer_moore</span><span class="p">(</span><span class="n">texte</span><span class="p">,</span> <span class="n">motif</span><span class="p">):</span>
+    <span class="n">dico</span> <span class="o">=</span> <span class="n">dico_lettres</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span>
+    <span class="n">indices</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">texte</span><span class="p">):</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> <span class="ow">and</span> <span class="n">motif</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">k</span><span class="p">]</span> <span class="o">==</span> <span class="n">texte</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">k</span><span class="p">]:</span> 
+            <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">):</span> 
+            <span class="n">indices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span> 
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">texte</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">k</span><span class="p">]</span> <span class="ow">in</span> <span class="n">dico</span><span class="p">:</span> 
+                <span class="n">i</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="n">k</span>  <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> <span class="o">-</span> <span class="n">dico</span><span class="p">[</span><span class="n">texte</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">k</span><span class="p">]]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> 
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="n">k</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> 
+
+    <span class="k">return</span> <span class="n">indices</span>
 </code></pre></div>
 <div class="admonition exo">
 <p class="admonition-title">Exo</p>
@@ -1365,11 +1364,9 @@ Néanmoins, cet opérateur ne teste que la présence du motif <code>quoi</code> 
     
       <script src="../assets/javascripts/bundle.dd8806f2.min.js"></script>
       
-        <script src="../xtra/javascripts/mathjax-config.js"></script>
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../xtra/javascripts/mathjax.js"></script>
       
         <script src="../xtra/javascripts/interpreter.js"></script>
       

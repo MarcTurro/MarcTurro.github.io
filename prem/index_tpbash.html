@@ -82,11 +82,10 @@
 
       
     
+<!-- Massilia javascripts -->
+    <script defer src="../js/massilia.js"></script>
+
 <!-- favicons -->
-<link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
-<link rel="icon" href="../assets/images/favicon_32x32.png" sizes="32x32">
-<link rel="icon" href="../assets/images/favicon_96x96.png" sizes="96x96">
-<link rel="icon" href="../assets/images/favicon_144x144.png" sizes="144x144">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/atom-one-light.min.css">
 <!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>    
@@ -98,9 +97,8 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/js/jquery.terminal.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/css/jquery.terminal.min.css" rel="stylesheet">
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="../pyodide-mkdocs/interpreter.js"></script> 
-<!-- Ajouter 17 february pour tables massilia-->
-<script src="../js/massilia.js" defer></script>
 
     
       
@@ -118,9 +116,9 @@
     
       <link rel="stylesheet" href="../xtra/stylesheets/ajustements.css">
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-columns.css">
+      <link rel="stylesheet" href="../xtra/stylesheets/massilia-columns.css">
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-admonitions.css">
+      <link rel="stylesheet" href="../xtra/stylesheets/massilia-admonitions.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -129,6 +127,7 @@
     
     
     
+<script src="../pyodide-mkdocs/ide.js"></script> 
 
 <link rel="stylesheet" href="../pyodide-mkdocs/pyoditeur.css">
 
@@ -1267,7 +1266,7 @@
 <li><code>del</code>(delete) efface le fichier passé en argument...</li>
 </ul>
 <p>Le caractère * , appelé <strong>joker</strong>, remplace n'importe quel texte dans le nom d'un fichier. Par exemple, la commande:</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>copy<span class="w"> </span>*.txt<span class="w"> </span>C:<span class="se">\b</span>ackup
+<p><div class="highlight"><span class="filename">Bash</span><pre><span></span><code>copy<span class="w"> </span>*.txt<span class="w"> </span>C:<span class="se">\b</span>ackup
 </code></pre></div>
 copie <strong>tous</strong> les fichiers portant l'extension <code>.txt</code> dans le dossier <code>backup</code> situé à la <strong>racine</strong> du lecteur C.</p>
 <div class="admonition exo">
@@ -1309,9 +1308,9 @@ copie <strong>tous</strong> les fichiers portant l'extension <code>.txt</code> d
 <ol>
 <li>En ligne de commande tapez: <code>echo  Nous sommes le %date%, il est %time%</code></li>
 <li>Ouvrez le bloc notes en tapant la commande <code>notepad</code>( si elle est au <code>path</code>...) puis copiez les instructions :
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>@echo<span class="w"> </span>off
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">echo</span><span class="w">  </span>Nous<span class="w"> </span>sommes<span class="w"> </span>le<span class="w"> </span>%date%,<span class="w"> </span>il<span class="w"> </span>est<span class="w"> </span>%time%
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>pause
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>@echo<span class="w"> </span>off
+<span class="nb">echo</span><span class="w">  </span>Nous<span class="w"> </span>sommes<span class="w"> </span>le<span class="w"> </span>%date%,<span class="w"> </span>il<span class="w"> </span>est<span class="w"> </span>%time%
+pause
 </code></pre></div></li>
 <li><strong>Sauvegardez</strong> le fichier sous le nom <code>dateheure</code> avec l'extension <code>.bat</code>. Vous devriez voir apparaître un engrenage dans l'icône décrivant le fichier: 
 <center>
@@ -1326,18 +1325,18 @@ copie <strong>tous</strong> les fichiers portant l'extension <code>.txt</code> d
 <p>La commande <code>dir</code> sans argument permet d'afficher le contenu du dossier dans lequel elle est lancée. Nous allons créer ici un script <code>affiche.bat</code> qui prend en argument une extension de fichier (pdf, doc, txt, ...) et affiche les fichiers de cette extension contenu dans le dossier dans lequel il est exécuté.</p>
 <ol>
 <li>Recopier les lignes suivantes dans un fichier que vous sauvegarderez à la racine du disque système sous le nom <code>affiche.bat</code>.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>@echo<span class="w"> </span>off
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>cls
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>IF<span class="w"> </span>EXIST<span class="w"> </span>*.%1<span class="w"> </span><span class="o">(</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>dir<span class="w"> </span>*.%1
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="o">)</span><span class="w"> </span>ELSE<span class="w"> </span><span class="o">(</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>ECHO<span class="w"> </span>pas<span class="w"> </span>de<span class="w"> </span>fichier<span class="w"> </span>de<span class="w"> </span>ce<span class="w"> </span><span class="nb">type</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="o">)</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>pause
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>@echo<span class="w"> </span>off
+cls
+IF<span class="w"> </span>EXIST<span class="w"> </span>*.%1<span class="w"> </span><span class="o">(</span>
+dir<span class="w"> </span>*.%1
+<span class="o">)</span><span class="w"> </span>ELSE<span class="w"> </span><span class="o">(</span>
+ECHO<span class="w"> </span>pas<span class="w"> </span>de<span class="w"> </span>fichier<span class="w"> </span>de<span class="w"> </span>ce<span class="w"> </span><span class="nb">type</span>
+<span class="o">)</span>
+pause
 </code></pre></div></li>
 <li>Commenter ces instructions avec la commande <code>rem</code>.</li>
 <li>Ouvrez la ligne de commande et tapez:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>C:<span class="se">\&gt;</span>affiche<span class="w"> </span>txt
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>C:<span class="se">\&gt;</span>affiche<span class="w"> </span>txt
 </code></pre></div></li>
 <li>Modifier le script précédent en ajoutant la source dans laquelle vous souhaitez afficher les fichiers.Il faudra pour cela créer un nouveau paramètre...</li>
 </ol>
@@ -1345,56 +1344,56 @@ copie <strong>tous</strong> les fichiers portant l'extension <code>.txt</code> d
 <details class="exo">
 <summary>Affichage des données de votre PC</summary>
 <p>Enregistrez le fichier suivant sous le nom <code>info.bat</code> puis exécutez-le.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>@echo<span class="w"> </span>off
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>title<span class="w"> </span>Advanced<span class="w"> </span>System<span class="w"> </span>Information*
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>color<span class="w"> </span>0a
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>cls
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="nb">echo</span><span class="w"> </span>Advanced<span class="w"> </span>System<span class="w"> </span>Information
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="nb">echo</span><span class="w"> </span><span class="o">==========================</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>echo.
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>::<span class="w"> </span>Affichage<span class="w"> </span>des<span class="w"> </span>informations<span class="w"> </span>du<span class="w"> </span>système
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>systeminfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>find<span class="w"> </span><span class="s2">&quot;OS Name&quot;</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>systeminfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>find<span class="w"> </span><span class="s2">&quot;OS Version&quot;</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>systeminfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>find<span class="w"> </span><span class="s2">&quot;System Manufacturer&quot;</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>systeminfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>find<span class="w"> </span><span class="s2">&quot;System Model&quot;</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>::<span class="w"> </span>Informations<span class="w"> </span>sur<span class="w"> </span>le<span class="w"> </span>processeur
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>echo.
-<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="nb">echo</span><span class="w"> </span>Processor<span class="w"> </span>Information:
-<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>wmic<span class="w"> </span>cpu<span class="w"> </span>get<span class="w"> </span>caption
-<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>wmic<span class="w"> </span>cpu<span class="w"> </span>get<span class="w"> </span>maxclockspeed
-<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>
-<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>::<span class="w"> </span>Informations<span class="w"> </span>sur<span class="w"> </span>la<span class="w"> </span>mémoire
-<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>echo.
-<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="nb">echo</span><span class="w"> </span>Memory<span class="w"> </span>Information:
-<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>wmic<span class="w"> </span>memorychip<span class="w"> </span>get<span class="w"> </span>capacity
-<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>wmic<span class="w"> </span>memorychip<span class="w"> </span>get<span class="w"> </span>speed
-<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>
-<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>::<span class="w"> </span>Informations<span class="w"> </span>sur<span class="w"> </span>le<span class="w"> </span>disque<span class="w"> </span>dur
-<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>echo.
-<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="nb">echo</span><span class="w"> </span>Hard<span class="w"> </span>Drive<span class="w"> </span>Information:
-<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>wmic<span class="w"> </span>diskdrive<span class="w"> </span>get<span class="w"> </span>caption
-<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>wmic<span class="w"> </span>diskdrive<span class="w"> </span>get<span class="w"> </span>size
-<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a>
-<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>::<span class="w"> </span>Affichage<span class="w"> </span>des<span class="w"> </span>informations<span class="w"> </span>réseau
-<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a>echo.
-<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a><span class="nb">echo</span><span class="w"> </span>Network<span class="w"> </span>Information:
-<a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a>ipconfig<span class="w"> </span><span class="p">|</span><span class="w"> </span>find<span class="w"> </span><span class="s2">&quot;IPv4 Address&quot;</span>
-<a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a>
-<a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a>::<span class="w"> </span>Informations<span class="w"> </span>sur<span class="w"> </span>les<span class="w"> </span>utilisateurs<span class="w"> </span>connectés
-<a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a>echo.
-<a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a><span class="nb">echo</span><span class="w"> </span>Logged-In<span class="w"> </span>Users:
-<a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a>query<span class="w"> </span>user
-<a id="__codelineno-4-43" name="__codelineno-4-43" href="#__codelineno-4-43"></a>
-<a id="__codelineno-4-44" name="__codelineno-4-44" href="#__codelineno-4-44"></a>::<span class="w"> </span>Informations<span class="w"> </span>sur<span class="w"> </span>la<span class="w"> </span>batterie<span class="w"> </span><span class="o">(</span>si<span class="w"> </span>un<span class="w"> </span>ordinateur<span class="w"> </span>portable<span class="o">)</span>
-<a id="__codelineno-4-45" name="__codelineno-4-45" href="#__codelineno-4-45"></a>echo.
-<a id="__codelineno-4-46" name="__codelineno-4-46" href="#__codelineno-4-46"></a><span class="nb">echo</span><span class="w"> </span>Battery<span class="w"> </span>Information:
-<a id="__codelineno-4-47" name="__codelineno-4-47" href="#__codelineno-4-47"></a>wmic<span class="w"> </span>path<span class="w"> </span>Win32_Battery<span class="w"> </span>get<span class="w"> </span>EstimatedChargeRemaining
-<a id="__codelineno-4-48" name="__codelineno-4-48" href="#__codelineno-4-48"></a>
-<a id="__codelineno-4-49" name="__codelineno-4-49" href="#__codelineno-4-49"></a>::<span class="w"> </span>Attendre<span class="w"> </span>avant<span class="w"> </span>de<span class="w"> </span>fermer<span class="w"> </span>la<span class="w"> </span>console
-<a id="__codelineno-4-50" name="__codelineno-4-50" href="#__codelineno-4-50"></a>pause
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>@echo<span class="w"> </span>off
+title<span class="w"> </span>Advanced<span class="w"> </span>System<span class="w"> </span>Information*
+color<span class="w"> </span>0a
+cls
+
+<span class="nb">echo</span><span class="w"> </span>Advanced<span class="w"> </span>System<span class="w"> </span>Information
+<span class="nb">echo</span><span class="w"> </span><span class="o">==========================</span>
+echo.
+
+::<span class="w"> </span>Affichage<span class="w"> </span>des<span class="w"> </span>informations<span class="w"> </span>du<span class="w"> </span>système
+systeminfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>find<span class="w"> </span><span class="s2">&quot;OS Name&quot;</span>
+systeminfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>find<span class="w"> </span><span class="s2">&quot;OS Version&quot;</span>
+systeminfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>find<span class="w"> </span><span class="s2">&quot;System Manufacturer&quot;</span>
+systeminfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>find<span class="w"> </span><span class="s2">&quot;System Model&quot;</span>
+
+::<span class="w"> </span>Informations<span class="w"> </span>sur<span class="w"> </span>le<span class="w"> </span>processeur
+echo.
+<span class="nb">echo</span><span class="w"> </span>Processor<span class="w"> </span>Information:
+wmic<span class="w"> </span>cpu<span class="w"> </span>get<span class="w"> </span>caption
+wmic<span class="w"> </span>cpu<span class="w"> </span>get<span class="w"> </span>maxclockspeed
+
+::<span class="w"> </span>Informations<span class="w"> </span>sur<span class="w"> </span>la<span class="w"> </span>mémoire
+echo.
+<span class="nb">echo</span><span class="w"> </span>Memory<span class="w"> </span>Information:
+wmic<span class="w"> </span>memorychip<span class="w"> </span>get<span class="w"> </span>capacity
+wmic<span class="w"> </span>memorychip<span class="w"> </span>get<span class="w"> </span>speed
+
+::<span class="w"> </span>Informations<span class="w"> </span>sur<span class="w"> </span>le<span class="w"> </span>disque<span class="w"> </span>dur
+echo.
+<span class="nb">echo</span><span class="w"> </span>Hard<span class="w"> </span>Drive<span class="w"> </span>Information:
+wmic<span class="w"> </span>diskdrive<span class="w"> </span>get<span class="w"> </span>caption
+wmic<span class="w"> </span>diskdrive<span class="w"> </span>get<span class="w"> </span>size
+
+::<span class="w"> </span>Affichage<span class="w"> </span>des<span class="w"> </span>informations<span class="w"> </span>réseau
+echo.
+<span class="nb">echo</span><span class="w"> </span>Network<span class="w"> </span>Information:
+ipconfig<span class="w"> </span><span class="p">|</span><span class="w"> </span>find<span class="w"> </span><span class="s2">&quot;IPv4 Address&quot;</span>
+
+::<span class="w"> </span>Informations<span class="w"> </span>sur<span class="w"> </span>les<span class="w"> </span>utilisateurs<span class="w"> </span>connectés
+echo.
+<span class="nb">echo</span><span class="w"> </span>Logged-In<span class="w"> </span>Users:
+query<span class="w"> </span>user
+
+::<span class="w"> </span>Informations<span class="w"> </span>sur<span class="w"> </span>la<span class="w"> </span>batterie<span class="w"> </span><span class="o">(</span>si<span class="w"> </span>un<span class="w"> </span>ordinateur<span class="w"> </span>portable<span class="o">)</span>
+echo.
+<span class="nb">echo</span><span class="w"> </span>Battery<span class="w"> </span>Information:
+wmic<span class="w"> </span>path<span class="w"> </span>Win32_Battery<span class="w"> </span>get<span class="w"> </span>EstimatedChargeRemaining
+
+::<span class="w"> </span>Attendre<span class="w"> </span>avant<span class="w"> </span>de<span class="w"> </span>fermer<span class="w"> </span>la<span class="w"> </span>console
+pause
 </code></pre></div>
 </details>
 <div class="admonition exo">
@@ -1469,11 +1468,9 @@ copie <strong>tous</strong> les fichiers portant l'extension <code>.txt</code> d
     
       <script src="../assets/javascripts/bundle.dd8806f2.min.js"></script>
       
-        <script src="../xtra/javascripts/mathjax-config.js"></script>
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../xtra/javascripts/mathjax.js"></script>
       
         <script src="../xtra/javascripts/interpreter.js"></script>
       

@@ -78,11 +78,10 @@
 
       
     
+<!-- Massilia javascripts -->
+    <script defer src="../js/massilia.js"></script>
+
 <!-- favicons -->
-<link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
-<link rel="icon" href="../assets/images/favicon_32x32.png" sizes="32x32">
-<link rel="icon" href="../assets/images/favicon_96x96.png" sizes="96x96">
-<link rel="icon" href="../assets/images/favicon_144x144.png" sizes="144x144">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/atom-one-light.min.css">
 <!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>    
@@ -94,9 +93,8 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/js/jquery.terminal.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/css/jquery.terminal.min.css" rel="stylesheet">
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="../pyodide-mkdocs/interpreter.js"></script> 
-<!-- Ajouter 17 february pour tables massilia-->
-<script src="../js/massilia.js" defer></script>
 
     
       
@@ -114,9 +112,9 @@
     
       <link rel="stylesheet" href="../xtra/stylesheets/ajustements.css">
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-columns.css">
+      <link rel="stylesheet" href="../xtra/stylesheets/massilia-columns.css">
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-admonitions.css">
+      <link rel="stylesheet" href="../xtra/stylesheets/massilia-admonitions.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -125,6 +123,7 @@
     
     
     
+<script src="../pyodide-mkdocs/ide.js"></script> 
 
 <link rel="stylesheet" href="../pyodide-mkdocs/pyoditeur.css">
 
@@ -1105,10 +1104,10 @@ Vous remarquerez plusieurs choses:</p>
 <ol>
 <li>Ouvrez Edupython ou Thonny et installer le module <code>request</code> au besoin.</li>
 <li>Copiez le code suivant:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">requests</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">reponse</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://www.parcoursup.fr/&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">reponse</span><span class="o">.</span><span class="n">headers</span><span class="p">)</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">reponse</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://www.parcoursup.fr/&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">reponse</span><span class="o">.</span><span class="n">headers</span><span class="p">)</span>
 </code></pre></div>
 La méthode <code>headers</code> permet d'afficher les entêtes de la réponse et pas son contenu.</li>
 <li>Vous obtenez une réponse sous la forme d'un dictionnaire. Écrire un script python simple qui permet de lister l'ensemble des clés.</li>
@@ -1122,21 +1121,21 @@ La méthode <code>headers</code> permet d'afficher les entêtes de la réponse e
 <p><strong>JavaScript Object Notation (JSON)</strong> est un format de données textuel dérivé de la notation des objets du langage JavaScript.</p>
 </div>
 <p>Un exemple de fichier <em>json</em>: remarquez que cela ressemble étrangement aux dictionnaires en Python!
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nx">mes_courses</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">{</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="s2">&quot;fruits&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;kiwis&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">      </span><span class="s2">&quot;mangues&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">      </span><span class="s2">&quot;pommes&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;panier&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">True</span><span class="w"> </span><span class="p">}</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="p">],</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="s2">&quot;legumes&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">      </span><span class="s2">&quot;patates&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;amandine&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">      </span><span class="s2">&quot;poireaux&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">False</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="s2">&quot;viandes&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;poisson&quot;</span><span class="p">,</span><span class="s2">&quot;poulet&quot;</span><span class="p">,</span><span class="s2">&quot;boeuf&quot;</span><span class="p">]</span>
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w"> </span><span class="p">}</span>
+<div class="highlight"><span class="filename">JavaScript</span><pre><span></span><code><span class="nx">mes_courses</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+<span class="p">{</span>
+<span class="w">  </span><span class="s2">&quot;fruits&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;kiwis&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;mangues&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;pommes&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;panier&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">True</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="s2">&quot;legumes&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="s2">&quot;patates&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;amandine&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;poireaux&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">False</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="s2">&quot;viandes&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;poisson&quot;</span><span class="p">,</span><span class="s2">&quot;poulet&quot;</span><span class="p">,</span><span class="s2">&quot;boeuf&quot;</span><span class="p">]</span>
+<span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 Il existe aussi le standard <code>XML</code> qui permet l'échande de données d'un logiciel à un autre: les QCM de pronote utilisent ce standard! </p>
 <figure>
@@ -1144,7 +1143,7 @@ Il existe aussi le standard <code>XML</code> qui permet l'échande de données d
 <img alt="XML" src="img/formatXML.png" width="40%" />
 </center></p>
 <figcaption>
-<div class="highlight"><pre><span></span><code>Exemple de fichiers XML (ici un QCM de Pronote)
+<div class="highlight"><span class="filename">📋 Texte</span><pre><span></span><code>Exemple de fichiers XML (ici un QCM de Pronote)
 </code></pre></div>
 </figcaption>
 </figure>
@@ -1164,15 +1163,15 @@ Il existe aussi le standard <code>XML</code> qui permet l'échande de données d
 <p class="admonition-title">Exo</p>
 <ol>
 <li>Recopiez le code suivant et testez-le:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="sd">&quot;&quot;&quot;Ce fichier effectue une requete sur un serveur web dont  l url est donne ci-dessous</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="sd">les donnees recues sont formatees en json</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="kn">import</span> <span class="nn">requests</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://geo.api.gouv.fr/communes?codePostal=47240&amp;fields=nom,lon,lat,population&amp;format=json&amp;geometry=centre&quot;</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="c1">#contenu de la reponse</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span> <span class="c1">#formatage en json</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="sd">&quot;&quot;&quot;Ce fichier effectue une requete sur un serveur web dont  l url est donne ci-dessous</span>
+<span class="sd">les donnees recues sont formatees en json</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://geo.api.gouv.fr/communes?codePostal=47240&amp;fields=nom,lon,lat,population&amp;format=json&amp;geometry=centre&quot;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="c1">#contenu de la reponse</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span> <span class="c1">#formatage en json</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </code></pre></div></li>
 <li>Modifier l'URL afin de faire une requête pour obtenir seulement la population de la ville de Bordeaux.</li>
 <li>Allez <a href="https://adresse.data.gouv.fr/api-doc/adresse">ici</a> pour savoir comment faire une requête pour obtenir des informations sur l'adresse "10 rue Victor Hugo"</li>
@@ -1184,15 +1183,15 @@ Il existe aussi le standard <code>XML</code> qui permet l'échande de données d
 <ol>
 <li>Allez à cette adresse <a href="https://home.openweathermap.org/users/sign_up">ici</a> pour vous inscrire à l'API. Vous recevrez ensuite un token, une <code>API_KEY</code> sur votre email fourni lors de l'inscription.</li>
 <li>Effectuez ensuite une requête sur l'API en remplaçant dans le code suivant l'<code>API_KEY</code> par votre clé!
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span> <span class="nn">requests</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://api.openweathermap.org/data/2.5/weather?q=agen&amp;appid=API_KEY&quot;</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">content</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">data</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://api.openweathermap.org/data/2.5/weather?q=agen&amp;appid=API_KEY&quot;</span>
+<span class="n">content</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </code></pre></div></li>
 <li>Complétez le code avec les deux lignes suivantes afin d'afficher dans la console la température actuelle à AGEN.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">t</span> <span class="o">=</span> <span class="o">.....</span><span class="c1"># À compléter pour que t soit la température.</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La témpérature est de </span><span class="si">{}</span><span class="s2"> degrés C&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">t</span> <span class="o">-</span> <span class="mf">273.15</span><span class="p">))</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">t</span> <span class="o">=</span> <span class="o">.....</span><span class="c1"># À compléter pour que t soit la température.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La témpérature est de </span><span class="si">{}</span><span class="s2"> degrés C&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">t</span> <span class="o">-</span> <span class="mf">273.15</span><span class="p">))</span>
 </code></pre></div></li>
 </ol>
 </div>
@@ -1223,9 +1222,9 @@ Il existe aussi le standard <code>XML</code> qui permet l'échande de données d
 <li>Que fait l'instruction <code>console.log(data);</code>?</li>
 <li>Quelle instruction permet de récupérer la température de la ville? </li>
 <li>Expliquer les instructions:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">cityName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;h2&quot;</span><span class="p">);</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nx">cityName</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;resp&quot;</span><span class="p">).</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">cityName</span><span class="p">);</span>
+<div class="highlight"><span class="filename">JavaScript</span><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">cityName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;h2&quot;</span><span class="p">);</span>
+<span class="nx">cityName</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;resp&quot;</span><span class="p">).</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">cityName</span><span class="p">);</span>
 </code></pre></div></li>
 </ol>
 </div>
@@ -1247,15 +1246,15 @@ Il existe aussi le standard <code>XML</code> qui permet l'échande de données d
 <li>Ce tableau décrit le temps qu'il fait et donne le code de l'icône associée. Quel est cette description, ce code?</li>
 <li>Allez  <a href="https://openweathermap.org/weather-conditions">ici</a> pour visualiser tous les icônes possibles.</li>
 <li>Compléter puis ajouter au fichier <code>js</code> le bout de code suivant:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">descriptionCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;h2&quot;</span><span class="p">);</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nx">descriptionCode</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">weather</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">description</span><span class="p">;</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="kd">var</span><span class="w"> </span><span class="nx">iconCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.............;</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="kd">var</span><span class="w"> </span><span class="nx">iconUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;http://openweathermap.org/img/w/&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">iconCode</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;.png&quot;</span><span class="p">;</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="kd">var</span><span class="w"> </span><span class="nx">icon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;img&quot;</span><span class="p">);</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="nx">icon</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s2">&quot;src&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">.........);</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;resp&quot;</span><span class="p">).</span><span class="nx">appendChild</span><span class="p">(............);</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;resp&quot;</span><span class="p">).</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">descriptionCode</span><span class="p">);</span>
+<div class="highlight"><span class="filename">JavaScript</span><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">descriptionCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;h2&quot;</span><span class="p">);</span>
+<span class="nx">descriptionCode</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">weather</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">description</span><span class="p">;</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">iconCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.............;</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">iconUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;http://openweathermap.org/img/w/&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">iconCode</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;.png&quot;</span><span class="p">;</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">icon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;img&quot;</span><span class="p">);</span>
+<span class="nx">icon</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s2">&quot;src&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">.........);</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;resp&quot;</span><span class="p">).</span><span class="nx">appendChild</span><span class="p">(............);</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;resp&quot;</span><span class="p">).</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">descriptionCode</span><span class="p">);</span>
 </code></pre></div></li>
 <li>Finaliser le travail en construisant l'interface proposée ci-dessous.</li>
 </ol>
@@ -1284,10 +1283,10 @@ Il existe aussi le standard <code>XML</code> qui permet l'échande de données d
 </ol>
 </div>
 <p>Nous avons rappelons les routines <code>python</code> qui permettent d'ouvrir, de créer, de lire ou d'écrire sur un fichier.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">source</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;radars.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="c1">#ouverture en lecture du fichier radars.csv</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">entete</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">entete</span><span class="p">)</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">destination</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;new_file.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span><span class="c1"># crée un nouveau fichier csv en écriture</span>
+<p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">source</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;radars.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="c1">#ouverture en lecture du fichier radars.csv</span>
+<span class="n">entete</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">entete</span><span class="p">)</span>
+<span class="n">destination</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;new_file.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span><span class="c1"># crée un nouveau fichier csv en écriture</span>
 </code></pre></div>
  La méthode <code>readline()</code> appliquée à l'objet <code>source</code> permet de lire la première ligne du fichier: ici cette ligne est stockée dans la variable <code>entete</code>. En rappelant cette instruction, vous pourrez alors lire la seconde ligne, et ainsi de suite.</p>
 <div class="admonition exo">
@@ -1315,20 +1314,20 @@ Il existe aussi le standard <code>XML</code> qui permet l'échande de données d
 <ol>
 <li>Compléter puis exécuter le fichier python suivant afin qu'il réalise le voeu précédent.</li>
 </ol>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># fichier à enregistrer au même endroit que le fichier radars.csv</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">source</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;radars.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">source47</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;radars47.csv&quot;</span><span class="p">,</span><span class="o">.....</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">entete</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="n">source47</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;emplacement, latitude, longitude, type de radars</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="n">enregistrement</span> <span class="o">=</span> <span class="o">..................</span>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="k">while</span> <span class="n">enregistrement</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    <span class="n">liste</span> <span class="o">=</span> <span class="n">enregistrement</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>    <span class="k">if</span> <span class="n">liste</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="o">.......</span><span class="p">:</span>
-<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>        <span class="n">source47</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">liste</span><span class="p">[</span><span class="o">.....</span><span class="p">]</span><span class="si">}</span><span class="s2">, float(</span><span class="si">{</span><span class="n">liste</span><span class="p">[</span><span class="o">.....</span><span class="p">])</span><span class="si">}</span><span class="s2">, float(</span><span class="si">{</span><span class="n">liste</span><span class="p">[</span><span class="o">.....</span><span class="p">]</span><span class="si">}</span><span class="s2">), </span><span class="si">{</span><span class="n">liste</span><span class="p">[</span><span class="o">.....</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>    <span class="n">enregistrement</span> <span class="o">=</span> <span class="o">...............</span>
-<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
-<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="n">source</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="n">source47</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="c1"># fichier à enregistrer au même endroit que le fichier radars.csv</span>
+<span class="n">source</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;radars.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+<span class="n">source47</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;radars47.csv&quot;</span><span class="p">,</span><span class="o">.....</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+<span class="n">entete</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="n">source47</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;emplacement, latitude, longitude, type de radars</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">enregistrement</span> <span class="o">=</span> <span class="o">..................</span>
+<span class="k">while</span> <span class="n">enregistrement</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+    <span class="n">liste</span> <span class="o">=</span> <span class="n">enregistrement</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">liste</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="o">.......</span><span class="p">:</span>
+        <span class="n">source47</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">liste</span><span class="p">[</span><span class="o">.....</span><span class="p">]</span><span class="si">}</span><span class="s2">, float(</span><span class="si">{</span><span class="n">liste</span><span class="p">[</span><span class="o">.....</span><span class="p">])</span><span class="si">}</span><span class="s2">, float(</span><span class="si">{</span><span class="n">liste</span><span class="p">[</span><span class="o">.....</span><span class="p">]</span><span class="si">}</span><span class="s2">), </span><span class="si">{</span><span class="n">liste</span><span class="p">[</span><span class="o">.....</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">enregistrement</span> <span class="o">=</span> <span class="o">...............</span>
+
+<span class="n">source</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">source47</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
 2. Vérifier avec le bloc note que le fichier <code>radars47.csv</code> contient bien les données demandées.</p>
 </div>
@@ -1359,11 +1358,11 @@ Il existe aussi le standard <code>XML</code> qui permet l'échande de données d
 <img alt="carte_test" src="img/carte_test.png" width="30%" />
 </center></p>
 <p>Retour à nos radars du 47! L'objectif est de créer une carte du Lot-et-Garonne contenant les marques de tous les radars. L'algorithme de construction ressemble alors à cela:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nv">Créer</span> <span class="nv">carte</span> <span class="nv">du</span> <span class="nv">Lot</span> <span class="nv">et</span> <span class="nv">Garonne</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">Pour </span><span class="nv">chaque</span> <span class="nv">élément</span> <span class="nv">radar</span> <span class="nv">du</span> <span class="nv">fichier</span> <span class="nv">radar47</span><span class="err">.</span><span class="nv">csv</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    <span class="nv">Créer</span> <span class="nv">le</span> <span class="nv">marqueur</span> <span class="nv">au</span> <span class="nv">coordonnées</span> <span class="nv">du</span> <span class="nv">radar</span> <span class="p">,</span> <span class="nv">popup</span><span class="err">=</span> <span class="k">type </span><span class="nv">de</span> <span class="nv">radar</span><span class="p">,</span> <span class="nv">tooltip</span><span class="err">=</span> <span class="nv">Nom</span> <span class="nv">du</span> <span class="nv">lieu</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="nv">Sauvegarder</span> <span class="nv">la</span> <span class="nv">carte</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="nb">Afficher </span><span class="nv">la</span> <span class="nv">carte</span>
+<div class="highlight"><span class="filename">Pseudocode</span><pre><span></span><code><span class="nv">Créer</span> <span class="nv">carte</span> <span class="nv">du</span> <span class="nv">Lot</span> <span class="nv">et</span> <span class="nv">Garonne</span>
+<span class="k">Pour </span><span class="nv">chaque</span> <span class="nv">élément</span> <span class="nv">radar</span> <span class="nv">du</span> <span class="nv">fichier</span> <span class="nv">radar47</span><span class="err">.</span><span class="nv">csv</span>
+    <span class="nv">Créer</span> <span class="nv">le</span> <span class="nv">marqueur</span> <span class="nv">au</span> <span class="nv">coordonnées</span> <span class="nv">du</span> <span class="nv">radar</span> <span class="p">,</span> <span class="nv">popup</span><span class="err">=</span> <span class="k">type </span><span class="nv">de</span> <span class="nv">radar</span><span class="p">,</span> <span class="nv">tooltip</span><span class="err">=</span> <span class="nv">Nom</span> <span class="nv">du</span> <span class="nv">lieu</span>
+<span class="nv">Sauvegarder</span> <span class="nv">la</span> <span class="nv">carte</span>
+<span class="nb">Afficher </span><span class="nv">la</span> <span class="nv">carte</span>
 </code></pre></div>
 <div class="admonition exo">
 <p class="admonition-title">Exo</p>
@@ -1441,11 +1440,9 @@ Il existe aussi le standard <code>XML</code> qui permet l'échande de données d
     
       <script src="../assets/javascripts/bundle.dd8806f2.min.js"></script>
       
-        <script src="../xtra/javascripts/mathjax-config.js"></script>
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../xtra/javascripts/mathjax.js"></script>
       
         <script src="../xtra/javascripts/interpreter.js"></script>
       

@@ -78,11 +78,10 @@
 
       
     
+<!-- Massilia javascripts -->
+    <script defer src="../js/massilia.js"></script>
+
 <!-- favicons -->
-<link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
-<link rel="icon" href="../assets/images/favicon_32x32.png" sizes="32x32">
-<link rel="icon" href="../assets/images/favicon_96x96.png" sizes="96x96">
-<link rel="icon" href="../assets/images/favicon_144x144.png" sizes="144x144">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/atom-one-light.min.css">
 <!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>    
@@ -94,9 +93,8 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/js/jquery.terminal.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/css/jquery.terminal.min.css" rel="stylesheet">
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="../pyodide-mkdocs/interpreter.js"></script> 
-<!-- Ajouter 17 february pour tables massilia-->
-<script src="../js/massilia.js" defer></script>
 
     
       
@@ -114,9 +112,9 @@
     
       <link rel="stylesheet" href="../xtra/stylesheets/ajustements.css">
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-columns.css">
+      <link rel="stylesheet" href="../xtra/stylesheets/massilia-columns.css">
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-admonitions.css">
+      <link rel="stylesheet" href="../xtra/stylesheets/massilia-admonitions.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -125,6 +123,7 @@
     
     
     
+<script src="../pyodide-mkdocs/ide.js"></script> 
 
 <link rel="stylesheet" href="../pyodide-mkdocs/pyoditeur.css">
 
@@ -1164,63 +1163,63 @@ récupérer la valeur à tout moment ;</li>
 </div>
 <details>
 <summary>Code à copier</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">###################################################VARIABLES  ###############################</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">ListeCouleurs</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;maroon&#39;</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">]</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1">#############################################################################################</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1">######################################## DECLARATION DES FONCTIONS ##########################</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="k">def</span> <span class="nf">cercle</span><span class="p">():</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">800</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">580</span><span class="p">)</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="n">r</span> <span class="o">=</span> <span class="n">valeur</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="n">Can</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">coul</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="n">Can</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">cercle</span><span class="p">)</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="k">def</span> <span class="nf">efface</span><span class="p">():</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    <span class="n">Can</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">ALL</span><span class="p">)</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="c1">##############################################################################################</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="c1">##############################################################################################</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="c1">############### CONSTRUCTION DES OBJETS DANS LA FEN ##########################################</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="c1">##############################################################################################</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="n">fen</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="n">fen</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s2">&quot;Animation dans un canvas&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="n">fen</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s1">&#39;1000x600+100+100&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="n">fen</span><span class="o">.</span><span class="n">resizable</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="c1">#widthxheight+bordecran</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="c1">##############################################################################################</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="n">ZoneDessin</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">fen</span><span class="p">,</span> <span class="n">borderwidth</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">relief</span> <span class="o">=</span> <span class="n">RIDGE</span><span class="p">)</span>
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="n">ZoneDessin</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="c1">##############################################################################################</span>
-<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="n">Can</span> <span class="o">=</span> <span class="n">Canvas</span><span class="p">(</span><span class="n">ZoneDessin</span><span class="p">,</span> <span class="n">bg</span> <span class="o">=</span> <span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">800</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">580</span><span class="p">)</span>
-<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="n">Can</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
-<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="c1">##############################################################################################</span>
-<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="n">ZoneOptions</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">fen</span><span class="p">,</span> <span class="n">borderwidth</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span><span class="n">width</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">580</span><span class="p">)</span>
-<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="n">ZoneOptions</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
-<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="n">ZoneOptions</span><span class="o">.</span><span class="n">grid_propagate</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="c1">##############################################################################################</span>
-<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="n">BouDebut</span> <span class="o">=</span> <span class="n">Button</span> <span class="p">(</span> <span class="n">ZoneOptions</span><span class="p">,</span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Débuter la construction&#39;</span><span class="p">,</span> <span class="n">command</span> <span class="o">=</span> <span class="n">fen</span><span class="o">.</span><span class="n">destroy</span><span class="p">)</span>
-<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="n">BouDebut</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">pady</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span><span class="n">columnspan</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
-<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="n">BouFin</span> <span class="o">=</span> <span class="n">Button</span> <span class="p">(</span> <span class="n">ZoneOptions</span><span class="p">,</span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Stopper la construction&#39;</span><span class="p">,</span> <span class="n">command</span> <span class="o">=</span> <span class="n">fen</span><span class="o">.</span><span class="n">destroy</span><span class="p">)</span>
-<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="n">BouFin</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">pady</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span><span class="n">columnspan</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
-<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="n">BouEfface</span> <span class="o">=</span> <span class="n">Button</span> <span class="p">(</span> <span class="n">ZoneOptions</span><span class="p">,</span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Effacer&#39;</span><span class="p">,</span> <span class="n">command</span> <span class="o">=</span> <span class="n">fen</span><span class="o">.</span><span class="n">destroy</span><span class="p">)</span>
-<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="n">BouEfface</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pady</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span><span class="n">columnspan</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
-<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>
-<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="c1">##############################################################################################</span>
-<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="n">valeur</span> <span class="o">=</span> <span class="n">IntVar</span><span class="p">(</span><span class="n">ZoneOptions</span><span class="p">)</span>
-<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="n">valeur</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="n">EchelleRayon</span> <span class="o">=</span> <span class="n">Scale</span><span class="p">(</span><span class="n">ZoneOptions</span><span class="p">,</span> <span class="n">orient</span> <span class="o">=</span> <span class="s1">&#39;horizontal&#39;</span><span class="p">,</span> <span class="n">from_</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>    <span class="n">to</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">resolution</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">tickinterval</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">length</span> <span class="o">=</span> <span class="mi">190</span><span class="p">,</span>
-<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>    <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Dimension du cercle ou du carre&#39;</span><span class="p">,</span> <span class="n">variable</span> <span class="o">=</span> <span class="n">valeur</span><span class="p">)</span>
-<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a><span class="n">EchelleRayon</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">columnspan</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
-<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a><span class="c1">##############################################################################################</span>
-<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a><span class="n">coul</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">(</span><span class="n">ZoneOptions</span><span class="p">)</span>
-<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a><span class="n">coul</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">ListeCouleurs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a><span class="n">ChoixCoul</span> <span class="o">=</span> <span class="n">OptionMenu</span><span class="p">(</span><span class="n">ZoneOptions</span><span class="p">,</span> <span class="n">coul</span><span class="p">,</span> <span class="o">*</span><span class="n">ListeCouleurs</span><span class="p">)</span>
-<a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a><span class="n">ChoixCoul</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pady</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
-<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a><span class="c1">##############################################################################################</span>
-<a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a><span class="c1">##############################################################################################</span>
-<a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a><span class="n">fen</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<span class="c1">###################################################VARIABLES  ###############################</span>
+<span class="n">ListeCouleurs</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;maroon&#39;</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">]</span>
+<span class="c1">#############################################################################################</span>
+<span class="c1">######################################## DECLARATION DES FONCTIONS ##########################</span>
+<span class="k">def</span> <span class="nf">cercle</span><span class="p">():</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">800</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">580</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">valeur</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+    <span class="n">Can</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">coul</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="n">Can</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">cercle</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">efface</span><span class="p">():</span>
+    <span class="n">Can</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">ALL</span><span class="p">)</span>
+
+<span class="c1">##############################################################################################</span>
+<span class="c1">##############################################################################################</span>
+<span class="c1">############### CONSTRUCTION DES OBJETS DANS LA FEN ##########################################</span>
+<span class="c1">##############################################################################################</span>
+<span class="n">fen</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
+<span class="n">fen</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s2">&quot;Animation dans un canvas&quot;</span><span class="p">)</span>
+<span class="n">fen</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s1">&#39;1000x600+100+100&#39;</span><span class="p">)</span>
+<span class="n">fen</span><span class="o">.</span><span class="n">resizable</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="c1">#widthxheight+bordecran</span>
+<span class="c1">##############################################################################################</span>
+<span class="n">ZoneDessin</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">fen</span><span class="p">,</span> <span class="n">borderwidth</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">relief</span> <span class="o">=</span> <span class="n">RIDGE</span><span class="p">)</span>
+<span class="n">ZoneDessin</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="c1">##############################################################################################</span>
+<span class="n">Can</span> <span class="o">=</span> <span class="n">Canvas</span><span class="p">(</span><span class="n">ZoneDessin</span><span class="p">,</span> <span class="n">bg</span> <span class="o">=</span> <span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">800</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">580</span><span class="p">)</span>
+<span class="n">Can</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="c1">##############################################################################################</span>
+<span class="n">ZoneOptions</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">fen</span><span class="p">,</span> <span class="n">borderwidth</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span><span class="n">width</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">580</span><span class="p">)</span>
+<span class="n">ZoneOptions</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">ZoneOptions</span><span class="o">.</span><span class="n">grid_propagate</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1">##############################################################################################</span>
+<span class="n">BouDebut</span> <span class="o">=</span> <span class="n">Button</span> <span class="p">(</span> <span class="n">ZoneOptions</span><span class="p">,</span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Débuter la construction&#39;</span><span class="p">,</span> <span class="n">command</span> <span class="o">=</span> <span class="n">fen</span><span class="o">.</span><span class="n">destroy</span><span class="p">)</span>
+<span class="n">BouDebut</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">pady</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span><span class="n">columnspan</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">BouFin</span> <span class="o">=</span> <span class="n">Button</span> <span class="p">(</span> <span class="n">ZoneOptions</span><span class="p">,</span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Stopper la construction&#39;</span><span class="p">,</span> <span class="n">command</span> <span class="o">=</span> <span class="n">fen</span><span class="o">.</span><span class="n">destroy</span><span class="p">)</span>
+<span class="n">BouFin</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">pady</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span><span class="n">columnspan</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">BouEfface</span> <span class="o">=</span> <span class="n">Button</span> <span class="p">(</span> <span class="n">ZoneOptions</span><span class="p">,</span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Effacer&#39;</span><span class="p">,</span> <span class="n">command</span> <span class="o">=</span> <span class="n">fen</span><span class="o">.</span><span class="n">destroy</span><span class="p">)</span>
+<span class="n">BouEfface</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pady</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span><span class="n">columnspan</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1">##############################################################################################</span>
+<span class="n">valeur</span> <span class="o">=</span> <span class="n">IntVar</span><span class="p">(</span><span class="n">ZoneOptions</span><span class="p">)</span>
+<span class="n">valeur</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">EchelleRayon</span> <span class="o">=</span> <span class="n">Scale</span><span class="p">(</span><span class="n">ZoneOptions</span><span class="p">,</span> <span class="n">orient</span> <span class="o">=</span> <span class="s1">&#39;horizontal&#39;</span><span class="p">,</span> <span class="n">from_</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">to</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">resolution</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">tickinterval</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">length</span> <span class="o">=</span> <span class="mi">190</span><span class="p">,</span>
+    <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Dimension du cercle ou du carre&#39;</span><span class="p">,</span> <span class="n">variable</span> <span class="o">=</span> <span class="n">valeur</span><span class="p">)</span>
+<span class="n">EchelleRayon</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">columnspan</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1">##############################################################################################</span>
+<span class="n">coul</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">(</span><span class="n">ZoneOptions</span><span class="p">)</span>
+<span class="n">coul</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">ListeCouleurs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">ChoixCoul</span> <span class="o">=</span> <span class="n">OptionMenu</span><span class="p">(</span><span class="n">ZoneOptions</span><span class="p">,</span> <span class="n">coul</span><span class="p">,</span> <span class="o">*</span><span class="n">ListeCouleurs</span><span class="p">)</span>
+<span class="n">ChoixCoul</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pady</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
+<span class="c1">##############################################################################################</span>
+<span class="c1">##############################################################################################</span>
+<span class="n">fen</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
 </code></pre></div>
 </details>
 <h1 id="quest-ce-quune-animation">Qu'est ce qu'une animation?<a class="headerlink" href="#quest-ce-quune-animation" title="Permanent link">&para;</a></h1>
@@ -1231,11 +1230,11 @@ dans un second temps... </p>
 <h1 id="creer-et-controler-lanimation">Créer et contrôler l'animation:<a class="headerlink" href="#creer-et-controler-lanimation" title="Permanent link">&para;</a></h1>
 <h2 id="la-fonction-after">La fonction <code>after(...)</code>.<a class="headerlink" href="#la-fonction-after" title="Permanent link">&para;</a></h2>
 <p>Voici le code d'une nouvelle fonction <code>cercle</code>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span> <span class="nf">cercle</span><span class="p">():</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">800</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">580</span><span class="p">)</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="n">r</span> <span class="o">=</span> <span class="n">valeur</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="n">Can</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">coul</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="n">Can</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">cercle</span><span class="p">)</span><span class="c1">#Appel recursif de la fonction cercle</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">cercle</span><span class="p">():</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">800</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">580</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">valeur</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+    <span class="n">Can</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">coul</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="n">Can</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">cercle</span><span class="p">)</span><span class="c1">#Appel recursif de la fonction cercle</span>
 </code></pre></div></p>
 <p>Cette fonction est dite <strong>récursive</strong> car elle s'appelle elle-même toutes les 100ms. Donc si aucun événement ne l'arrête, elle boucle à l'infini!</p>
 <div class="admonition exo">
@@ -1258,16 +1257,16 @@ donc pas visible en dehors de la fonction.</p>
 <p>Une <strong>variable globale</strong> est déclarée dans le corps de programme et est initialisée. Pour qu’une fonction puisse modifier
 son état, il faut la déclarer <strong>globale</strong> dans la fonction comme le montre l’exemple suivant:</p>
 </div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">compteur</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#je suis une variable globale</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1">#################### DECLARATION DES FONCTIONS ###################</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">def</span> <span class="nf">cercle</span><span class="p">():</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="k">global</span> <span class="n">compteur</span> <span class="c1">#variable définie en dehors de la fonction</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">800</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">580</span><span class="p">)</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="n">r</span> <span class="o">=</span> <span class="n">valeur</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="k">if</span> <span class="n">compteur</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">:</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>        <span class="n">compteur</span> <span class="o">+=</span> <span class="mi">1</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        <span class="n">Can</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">coul</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>        <span class="n">Can</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="n">cercle</span><span class="p">)</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">compteur</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#je suis une variable globale</span>
+<span class="c1">#################### DECLARATION DES FONCTIONS ###################</span>
+<span class="k">def</span> <span class="nf">cercle</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">compteur</span> <span class="c1">#variable définie en dehors de la fonction</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">800</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">580</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">valeur</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">compteur</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">:</span>
+        <span class="n">compteur</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">Can</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">coul</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+        <span class="n">Can</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="n">cercle</span><span class="p">)</span>
 </code></pre></div>
 <div class="admonition exo">
 <p class="admonition-title">Exo</p>
@@ -1291,25 +1290,25 @@ variable globale, nommée <strong>flag</strong>, qui contrôle le déroulement d
 <li>Associer à chaque bouton, la commande qu'il permet d'activer.</li>
 </ol>
 </div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">flag</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#je suis globale</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1">######################################## DECLARATION DES FONCTIONS ##########################</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">def</span> <span class="nf">demarrer</span><span class="p">():</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="k">global</span> <span class="n">flag</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="k">if</span> <span class="n">flag</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span><span class="c1">#comparaison</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        <span class="n">flag</span> <span class="o">=</span> <span class="mi">1</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>        <span class="n">cercle</span><span class="p">()</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="k">def</span> <span class="nf">stopper</span><span class="p">():</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    <span class="k">global</span> <span class="n">flag</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    <span class="n">flag</span> <span class="o">=</span> <span class="mi">0</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="k">def</span> <span class="nf">cercle</span><span class="p">():</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>    <span class="k">global</span> <span class="n">flag</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">800</span><span class="p">),</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">580</span><span class="p">)</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>    <span class="n">r</span> <span class="o">=</span> <span class="n">valeur</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>    <span class="n">Can</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">coul</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>    <span class="k">if</span> <span class="n">flag</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c1">#si flag passe à 0, l&#39;animation s&#39;arrête</span>
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>        <span class="n">Can</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="n">cercle</span><span class="p">)</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">flag</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#je suis globale</span>
+<span class="c1">######################################## DECLARATION DES FONCTIONS ##########################</span>
+<span class="k">def</span> <span class="nf">demarrer</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">flag</span>
+    <span class="k">if</span> <span class="n">flag</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span><span class="c1">#comparaison</span>
+        <span class="n">flag</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">cercle</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">stopper</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">flag</span>
+    <span class="n">flag</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">def</span> <span class="nf">cercle</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">flag</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">800</span><span class="p">),</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">580</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">valeur</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+    <span class="n">Can</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">coul</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="k">if</span> <span class="n">flag</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c1">#si flag passe à 0, l&#39;animation s&#39;arrête</span>
+        <span class="n">Can</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="n">cercle</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="une-animation-simple-avec-la-methode-coords">Une animation simple avec la méthode <code>coords</code>.<a class="headerlink" href="#une-animation-simple-avec-la-methode-coords" title="Permanent link">&para;</a></h2>
 <p>Nous allons maintenant pour finir, faire évoluer une balle rouge dans le canvas à l'aide de la méthode <code>coords</code>que nous avons déjà rencontrée dans un travail précédent.</p>
@@ -1321,34 +1320,34 @@ variable globale, nommée <strong>flag</strong>, qui contrôle le déroulement d
 <p class="admonition-title">Exo</p>
 <p>Modifiez le code précédent en y ajoutant les éléments suivants.</p>
 </div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">flag</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#je suis globale</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">580</span><span class="p">)</span> <span class="c1">#nous aussi</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1">######################################## DECLARATION DES FONCTIONS ##########################</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">def</span> <span class="nf">demarrer</span><span class="p">():</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="k">global</span> <span class="n">flag</span><span class="p">,</span> <span class="n">balle</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="n">r</span> <span class="o">=</span> <span class="n">valeur</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    <span class="k">if</span> <span class="n">flag</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span><span class="c1">#comparaison</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>        <span class="n">flag</span> <span class="o">=</span> <span class="mi">1</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>        <span class="n">balle</span> <span class="o">=</span> <span class="n">Can</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">coul</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>        <span class="n">bouge</span><span class="p">()</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="k">def</span> <span class="nf">stopper</span><span class="p">():</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    <span class="k">global</span> <span class="n">flag</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>    <span class="n">flag</span> <span class="o">=</span> <span class="mi">0</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>    <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>    <span class="n">y</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">580</span><span class="p">)</span>
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>
-<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>
-<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="k">def</span> <span class="nf">bouge</span><span class="p">():</span>
-<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>    <span class="k">global</span> <span class="n">flag</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">balle</span>
-<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>    <span class="n">r</span> <span class="o">=</span> <span class="n">valeur</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>    <span class="k">if</span> <span class="n">flag</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c1">#si flag passe à 0, l&#39;animation s&#39;arrête</span>
-<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
-<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>        <span class="n">Can</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="n">balle</span><span class="p">,</span> <span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span>
-<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>        <span class="n">Can</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">bouge</span><span class="p">)</span>
-<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>
-<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="k">def</span> <span class="nf">efface</span><span class="p">():</span>
-<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>    <span class="n">Can</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">ALL</span><span class="p">)</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">flag</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#je suis globale</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">580</span><span class="p">)</span> <span class="c1">#nous aussi</span>
+<span class="c1">######################################## DECLARATION DES FONCTIONS ##########################</span>
+<span class="k">def</span> <span class="nf">demarrer</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">flag</span><span class="p">,</span> <span class="n">balle</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">valeur</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">flag</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span><span class="c1">#comparaison</span>
+        <span class="n">flag</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">balle</span> <span class="o">=</span> <span class="n">Can</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">coul</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+        <span class="n">bouge</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">stopper</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">flag</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+    <span class="n">flag</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">580</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">bouge</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">flag</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">balle</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">valeur</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">flag</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c1">#si flag passe à 0, l&#39;animation s&#39;arrête</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+        <span class="n">Can</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="n">balle</span><span class="p">,</span> <span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span>
+        <span class="n">Can</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">bouge</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">efface</span><span class="p">():</span>
+    <span class="n">Can</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">ALL</span><span class="p">)</span>
 </code></pre></div>
 <p>Vous allez maintenant devoir améliorer ce code pour répondre aux défis proposés dans l'exercice suivant:</p>
 <div class="admonition exo">
@@ -1442,11 +1441,9 @@ variable globale, nommée <strong>flag</strong>, qui contrôle le déroulement d
     
       <script src="../assets/javascripts/bundle.dd8806f2.min.js"></script>
       
-        <script src="../xtra/javascripts/mathjax-config.js"></script>
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../xtra/javascripts/mathjax.js"></script>
       
         <script src="../xtra/javascripts/interpreter.js"></script>
       

@@ -82,11 +82,10 @@
 
       
     
+<!-- Massilia javascripts -->
+    <script defer src="../js/massilia.js"></script>
+
 <!-- favicons -->
-<link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
-<link rel="icon" href="../assets/images/favicon_32x32.png" sizes="32x32">
-<link rel="icon" href="../assets/images/favicon_96x96.png" sizes="96x96">
-<link rel="icon" href="../assets/images/favicon_144x144.png" sizes="144x144">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/atom-one-light.min.css">
 <!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>    
@@ -98,9 +97,8 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/js/jquery.terminal.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/css/jquery.terminal.min.css" rel="stylesheet">
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="../pyodide-mkdocs/interpreter.js"></script> 
-<!-- Ajouter 17 february pour tables massilia-->
-<script src="../js/massilia.js" defer></script>
 
     
       
@@ -118,9 +116,9 @@
     
       <link rel="stylesheet" href="../xtra/stylesheets/ajustements.css">
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-columns.css">
+      <link rel="stylesheet" href="../xtra/stylesheets/massilia-columns.css">
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-admonitions.css">
+      <link rel="stylesheet" href="../xtra/stylesheets/massilia-admonitions.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -129,6 +127,7 @@
     
     
     
+<script src="../pyodide-mkdocs/ide.js"></script> 
 
 <link rel="stylesheet" href="../pyodide-mkdocs/pyoditeur.css">
 
@@ -1122,17 +1121,17 @@
 <p>Maintenant que vous savez saisir du code Python, copiez et exécutez le code suivant.</p>
 <div class="admonition note">
 <p class="admonition-title">Premier essai !</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span>
-<span class="normal"><a href="#__codelineno-0-4">4</a></span>
-<span class="normal"><a href="#__codelineno-0-5">5</a></span>
-<span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">forward</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>  <span class="c1">#avance de 120 pixels</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>      <span class="c1">#tourne à gauche(sens contraire des aiguilles) de 90°</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">color</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>  <span class="c1">#change la couleur en rouge (noir par défaut)</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="n">forward</span><span class="p">(</span><span class="mi">80</span><span class="p">)</span>   <span class="c1">#avance de 80 pixels</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="n">exitonclick</span><span class="p">()</span> <span class="c1">#ferme la fenêtre au clic de souris</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>  <span class="c1">#avance de 120 pixels</span>
+<span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>      <span class="c1">#tourne à gauche(sens contraire des aiguilles) de 90°</span>
+<span class="n">color</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>  <span class="c1">#change la couleur en rouge (noir par défaut)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">80</span><span class="p">)</span>   <span class="c1">#avance de 80 pixels</span>
+<span class="n">exitonclick</span><span class="p">()</span> <span class="c1">#ferme la fenêtre au clic de souris</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <p>Bon ce n'est pas génial mais ce n'est que le début!</p>
@@ -1230,25 +1229,25 @@
 <div class="admonition exo">
 <p class="admonition-title">Exo</p>
 <p>Copier le code suivant et exécutez-le!
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-1-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="n">speed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>      <span class="c1">#vitesse maximale</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="n">color</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>  <span class="c1">#change la couleur en rouge (noir par défaut)</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="n">fd</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>  <span class="c1">#avance de 200 pixels</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="n">lt</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>     <span class="c1">#tourne à gauche(sens contraire des aiguilles) de 120°</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="n">fd</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>  <span class="c1">#avance de 200 pixels</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="n">lt</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>     <span class="c1">#tourne à gauche(sens contraire des aiguilles) de 120°</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="n">fd</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>  <span class="c1">#avance de 200 pixels</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="n">lt</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>     <span class="c1">#tourne à gauche(sens contraire des aiguilles) de 120°</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="n">exitonclick</span><span class="p">()</span> <span class="c1">#ferme la fenêtre au clic de souris</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">speed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>      <span class="c1">#vitesse maximale</span>
+<span class="n">color</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>  <span class="c1">#change la couleur en rouge (noir par défaut)</span>
+<span class="n">fd</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>  <span class="c1">#avance de 200 pixels</span>
+<span class="n">lt</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>     <span class="c1">#tourne à gauche(sens contraire des aiguilles) de 120°</span>
+<span class="n">fd</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>  <span class="c1">#avance de 200 pixels</span>
+<span class="n">lt</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>     <span class="c1">#tourne à gauche(sens contraire des aiguilles) de 120°</span>
+<span class="n">fd</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>  <span class="c1">#avance de 200 pixels</span>
+<span class="n">lt</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>     <span class="c1">#tourne à gauche(sens contraire des aiguilles) de 120°</span>
+<span class="n">exitonclick</span><span class="p">()</span> <span class="c1">#ferme la fenêtre au clic de souris</span>
 </code></pre></div></td></tr></table></div></p>
 </div>
 <p>Remarquez que le tracé commence toujours <strong>par défaut</strong> au centre du canvas. Le programme sert à construire un triangle équlatéral de couleur rouge et de côté <code>200</code>.</p>
@@ -1267,27 +1266,27 @@
 <div class="admonition exo">
 <p class="admonition-title">Exo</p>
 <p>Modifier le code comme suit:
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-2-10">10</a></span>
-<span class="normal"><a href="#__codelineno-2-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">speed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>      <span class="c1">#vitesse maximale</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="n">color</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>  <span class="c1">#change la couleur en rouge (noir par défaut)</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="n">cote</span> <span class="o">=</span> <span class="mi">125</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="n">fd</span><span class="p">(</span><span class="n">cote</span><span class="p">)</span>  <span class="c1">#avance de cote pixels</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="n">lt</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>     <span class="c1">#tourne à gauche(sens contraire des aiguilles) de 120°</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="n">fd</span><span class="p">(</span><span class="n">cote</span><span class="p">)</span>  <span class="c1">#avance de cote pixels</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="n">lt</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>     <span class="c1">#tourne à gauche(sens contraire des aiguilles) de 120°</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="n">fd</span><span class="p">(</span><span class="n">cote</span><span class="p">)</span>  <span class="c1">#avance de cote pixels</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="n">lt</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>     <span class="c1">#tourne à gauche(sens contraire des aiguilles) de 120°</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="n">exitonclick</span><span class="p">()</span> <span class="c1">#ferme la fenêtre au clic de souris</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">speed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>      <span class="c1">#vitesse maximale</span>
+<span class="n">color</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>  <span class="c1">#change la couleur en rouge (noir par défaut)</span>
+<span class="n">cote</span> <span class="o">=</span> <span class="mi">125</span>
+<span class="n">fd</span><span class="p">(</span><span class="n">cote</span><span class="p">)</span>  <span class="c1">#avance de cote pixels</span>
+<span class="n">lt</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>     <span class="c1">#tourne à gauche(sens contraire des aiguilles) de 120°</span>
+<span class="n">fd</span><span class="p">(</span><span class="n">cote</span><span class="p">)</span>  <span class="c1">#avance de cote pixels</span>
+<span class="n">lt</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>     <span class="c1">#tourne à gauche(sens contraire des aiguilles) de 120°</span>
+<span class="n">fd</span><span class="p">(</span><span class="n">cote</span><span class="p">)</span>  <span class="c1">#avance de cote pixels</span>
+<span class="n">lt</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>     <span class="c1">#tourne à gauche(sens contraire des aiguilles) de 120°</span>
+<span class="n">exitonclick</span><span class="p">()</span> <span class="c1">#ferme la fenêtre au clic de souris</span>
 </code></pre></div></td></tr></table></div></p>
 </div>
 <p>Il suffit alors de changer la <strong>valeur</strong> de la variable <code>cote</code> pour modifier la taille du triangle.</p>
@@ -1300,23 +1299,23 @@
 <div class="admonition exo">
 <p class="admonition-title">Exo</p>
 <p>Modifier le code comme suit:
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
-<span class="normal"><a href="#__codelineno-3-2">2</a></span>
-<span class="normal"><a href="#__codelineno-3-3">3</a></span>
-<span class="normal"><a href="#__codelineno-3-4">4</a></span>
-<span class="normal"><a href="#__codelineno-3-5">5</a></span>
-<span class="normal"><a href="#__codelineno-3-6">6</a></span>
-<span class="normal"><a href="#__codelineno-3-7">7</a></span>
-<span class="normal"><a href="#__codelineno-3-8">8</a></span>
-<span class="normal"><a href="#__codelineno-3-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="n">speed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>      <span class="c1">#vitesse maximale</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="n">color</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>  <span class="c1">#change la couleur en rouge (noir par défaut)</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="n">cote</span> <span class="o">=</span> <span class="mi">125</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span> <span class="c1">#boucle qui permet de répéter 3 fois les instructions suivantes</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a>    <span class="n">fd</span><span class="p">(</span><span class="n">cote</span><span class="p">)</span>  <span class="c1">#avance de cote pixels</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7"></a>    <span class="n">lt</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>   <span class="c1">#tourne à gauche(sens contraire des aiguilles) de 120°</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8"></a>
-<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="n">exitonclick</span><span class="p">()</span> <span class="c1">#ferme la fenêtre au clic de souris</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">speed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>      <span class="c1">#vitesse maximale</span>
+<span class="n">color</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>  <span class="c1">#change la couleur en rouge (noir par défaut)</span>
+<span class="n">cote</span> <span class="o">=</span> <span class="mi">125</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span> <span class="c1">#boucle qui permet de répéter 3 fois les instructions suivantes</span>
+    <span class="n">fd</span><span class="p">(</span><span class="n">cote</span><span class="p">)</span>  <span class="c1">#avance de cote pixels</span>
+    <span class="n">lt</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>   <span class="c1">#tourne à gauche(sens contraire des aiguilles) de 120°</span>
+
+<span class="n">exitonclick</span><span class="p">()</span> <span class="c1">#ferme la fenêtre au clic de souris</span>
 </code></pre></div></td></tr></table></div></p>
 </div>
 <p>La boucle <code>for</code> permet de répéter trois fois (<code>range(3)</code>) ,le bloc d'instructions des lignes <code>6</code> et <code>7</code>: remarquez que c'est encore l'<strong>indentation</strong> qui permet d'identifier le bloc à répéter.</p>
@@ -1326,25 +1325,25 @@
 </div>
 <div class="admonition exemple">
 <p class="admonition-title">Exemple</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-4-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="n">speed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>           <span class="c1">#vitesse maximale</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="n">fillcolor</span><span class="p">(</span><span class="s1">&#39;gold&#39;</span><span class="p">)</span>  <span class="c1">#change la couleur de remplissage en gold (noir par défaut)</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="n">cote</span> <span class="o">=</span> <span class="mi">125</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="n">begin_fill</span><span class="p">()</span>       <span class="c1">#debut du coloriage d&#39;une forme fermée</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7"></a>    <span class="n">fd</span><span class="p">(</span><span class="n">cote</span><span class="p">)</span>       <span class="c1">#avance de cote pixels</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8"></a>    <span class="n">lt</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>        <span class="c1">#tourne à gauche(sens contraire des aiguilles) de 120°</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="n">end_fill</span><span class="p">()</span>         <span class="c1">#fin du coloriage</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="n">exitonclick</span><span class="p">()</span>      <span class="c1">#ferme la fenêtre au clic de souris</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">speed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>           <span class="c1">#vitesse maximale</span>
+<span class="n">fillcolor</span><span class="p">(</span><span class="s1">&#39;gold&#39;</span><span class="p">)</span>  <span class="c1">#change la couleur de remplissage en gold (noir par défaut)</span>
+<span class="n">cote</span> <span class="o">=</span> <span class="mi">125</span>
+<span class="n">begin_fill</span><span class="p">()</span>       <span class="c1">#debut du coloriage d&#39;une forme fermée</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">fd</span><span class="p">(</span><span class="n">cote</span><span class="p">)</span>       <span class="c1">#avance de cote pixels</span>
+    <span class="n">lt</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>        <span class="c1">#tourne à gauche(sens contraire des aiguilles) de 120°</span>
+<span class="n">end_fill</span><span class="p">()</span>         <span class="c1">#fin du coloriage</span>
+<span class="n">exitonclick</span><span class="p">()</span>      <span class="c1">#ferme la fenêtre au clic de souris</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="admonition exo">
@@ -1367,29 +1366,29 @@
 <p>Par exemple, nous allons définir la fonction <code>tri</code> qui trace des triangles: elle a besoin de connaître la longueur d'un côté (et événtuellement d'autres choses) qui devient un <strong>paramètre formel</strong> de cette fonction. Voici le code:</p>
 <div class="admonition exemple">
 <p class="admonition-title">Exemple</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-5-10">10</a></span>
-<span class="normal"><a href="#__codelineno-5-11">11</a></span>
-<span class="normal"><a href="#__codelineno-5-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="n">speed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>           <span class="c1">#vitesse maximale</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a>
-<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="k">def</span> <span class="nf">tri</span><span class="p">(</span><span class="n">long</span><span class="p">):</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5"></a>    <span class="n">fillcolor</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6"></a>    <span class="n">begin_fill</span><span class="p">()</span>       
-<a id="__codelineno-5-7" name="__codelineno-5-7"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8"></a>        <span class="n">fd</span><span class="p">(</span><span class="n">long</span><span class="p">)</span>       
-<a id="__codelineno-5-9" name="__codelineno-5-9"></a>        <span class="n">lt</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>        
-<a id="__codelineno-5-10" name="__codelineno-5-10"></a>    <span class="n">end_fill</span><span class="p">()</span>         
-<a id="__codelineno-5-11" name="__codelineno-5-11"></a>
-<a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="n">exitonclick</span><span class="p">()</span>      
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">speed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>           <span class="c1">#vitesse maximale</span>
+
+<span class="k">def</span> <span class="nf">tri</span><span class="p">(</span><span class="n">long</span><span class="p">):</span>
+    <span class="n">fillcolor</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+    <span class="n">begin_fill</span><span class="p">()</span>       
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="n">fd</span><span class="p">(</span><span class="n">long</span><span class="p">)</span>       
+        <span class="n">lt</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>        
+    <span class="n">end_fill</span><span class="p">()</span>         
+
+<span class="n">exitonclick</span><span class="p">()</span>      
 </code></pre></div></td></tr></table></div>
 </div>
 <p>Une fonction se déclare avec la particule <code>def</code> suivi de son nom <code>tri</code> et de ses (éventuels) paramètres formels, <code>long</code> ici.</p>
@@ -1414,33 +1413,33 @@
 <p>On peut ajouter des <strong>paramètres</strong> à la fonction, par exemple en choisissant sa couleur.</p>
 <div class="admonition exemple">
 <p class="admonition-title">Exemple</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-6-10">10</a></span>
-<span class="normal"><a href="#__codelineno-6-11">11</a></span>
-<span class="normal"><a href="#__codelineno-6-12">12</a></span>
-<span class="normal"><a href="#__codelineno-6-13">13</a></span>
-<span class="normal"><a href="#__codelineno-6-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="n">speed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>           <span class="c1">#vitesse maximale</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3"></a>
-<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="k">def</span> <span class="nf">tri</span><span class="p">(</span><span class="n">long</span><span class="p">,</span> <span class="n">couleur</span><span class="p">):</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5"></a>    <span class="n">fillcolor</span><span class="p">(</span><span class="n">couleur</span><span class="p">)</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6"></a>    <span class="n">begin_fill</span><span class="p">()</span>       
-<a id="__codelineno-6-7" name="__codelineno-6-7"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8"></a>        <span class="n">fd</span><span class="p">(</span><span class="n">long</span><span class="p">)</span>       
-<a id="__codelineno-6-9" name="__codelineno-6-9"></a>        <span class="n">lt</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>        
-<a id="__codelineno-6-10" name="__codelineno-6-10"></a>    <span class="n">end_fill</span><span class="p">()</span>         
-<a id="__codelineno-6-11" name="__codelineno-6-11"></a>
-<a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="n">tri</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">)</span>
-<a id="__codelineno-6-13" name="__codelineno-6-13"></a>
-<a id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="n">exitonclick</span><span class="p">()</span>      
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">speed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>           <span class="c1">#vitesse maximale</span>
+
+<span class="k">def</span> <span class="nf">tri</span><span class="p">(</span><span class="n">long</span><span class="p">,</span> <span class="n">couleur</span><span class="p">):</span>
+    <span class="n">fillcolor</span><span class="p">(</span><span class="n">couleur</span><span class="p">)</span>
+    <span class="n">begin_fill</span><span class="p">()</span>       
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="n">fd</span><span class="p">(</span><span class="n">long</span><span class="p">)</span>       
+        <span class="n">lt</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>        
+    <span class="n">end_fill</span><span class="p">()</span>         
+
+<span class="n">tri</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">)</span>
+
+<span class="n">exitonclick</span><span class="p">()</span>      
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="admonition col __70">
@@ -1478,45 +1477,45 @@
 <p class="admonition-title">Exo</p>
 <ol>
 <li>Copier et exécutez le code suivant:
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-7-10">10</a></span>
-<span class="normal"><a href="#__codelineno-7-11">11</a></span>
-<span class="normal"><a href="#__codelineno-7-12">12</a></span>
-<span class="normal"><a href="#__codelineno-7-13">13</a></span>
-<span class="normal"><a href="#__codelineno-7-14">14</a></span>
-<span class="normal"><a href="#__codelineno-7-15">15</a></span>
-<span class="normal"><a href="#__codelineno-7-16">16</a></span>
-<span class="normal"><a href="#__codelineno-7-17">17</a></span>
-<span class="normal"><a href="#__codelineno-7-18">18</a></span>
-<span class="normal"><a href="#__codelineno-7-19">19</a></span>
-<span class="normal"><a href="#__codelineno-7-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="n">speed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>           <span class="c1">#vitesse maximale</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3"></a>
-<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="k">def</span> <span class="nf">tri</span><span class="p">(</span><span class="n">long</span><span class="p">,</span> <span class="n">couleur</span><span class="p">):</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5"></a>    <span class="n">fillcolor</span><span class="p">(</span><span class="n">couleur</span><span class="p">)</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6"></a>    <span class="n">begin_fill</span><span class="p">()</span>       
-<a id="__codelineno-7-7" name="__codelineno-7-7"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-<a id="__codelineno-7-8" name="__codelineno-7-8"></a>        <span class="n">fd</span><span class="p">(</span><span class="n">long</span><span class="p">)</span>       
-<a id="__codelineno-7-9" name="__codelineno-7-9"></a>        <span class="n">lt</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>        
-<a id="__codelineno-7-10" name="__codelineno-7-10"></a>    <span class="n">end_fill</span><span class="p">()</span>         
-<a id="__codelineno-7-11" name="__codelineno-7-11"></a>
-<a id="__codelineno-7-12" name="__codelineno-7-12"></a>
-<a id="__codelineno-7-13" name="__codelineno-7-13"></a><span class="k">def</span> <span class="nf">joli_dessin</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">long</span><span class="p">,</span> <span class="n">couleur</span><span class="p">):</span>
-<a id="__codelineno-7-14" name="__codelineno-7-14"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<a id="__codelineno-7-15" name="__codelineno-7-15"></a>        <span class="n">tri</span><span class="p">(</span><span class="n">long</span><span class="p">,</span> <span class="n">couleur</span><span class="p">)</span>
-<a id="__codelineno-7-16" name="__codelineno-7-16"></a>        <span class="n">long</span> <span class="o">=</span> <span class="n">long</span> <span class="o">+</span> <span class="mi">5</span>
-<a id="__codelineno-7-17" name="__codelineno-7-17"></a>        <span class="n">lt</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<a id="__codelineno-7-18" name="__codelineno-7-18"></a>
-<a id="__codelineno-7-19" name="__codelineno-7-19"></a><span class="n">joli_dessin</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;magenta&#39;</span> <span class="p">)</span>
-<a id="__codelineno-7-20" name="__codelineno-7-20"></a><span class="n">exitonclick</span><span class="p">()</span>      
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">speed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>           <span class="c1">#vitesse maximale</span>
+
+<span class="k">def</span> <span class="nf">tri</span><span class="p">(</span><span class="n">long</span><span class="p">,</span> <span class="n">couleur</span><span class="p">):</span>
+    <span class="n">fillcolor</span><span class="p">(</span><span class="n">couleur</span><span class="p">)</span>
+    <span class="n">begin_fill</span><span class="p">()</span>       
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="n">fd</span><span class="p">(</span><span class="n">long</span><span class="p">)</span>       
+        <span class="n">lt</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>        
+    <span class="n">end_fill</span><span class="p">()</span>         
+
+
+<span class="k">def</span> <span class="nf">joli_dessin</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">long</span><span class="p">,</span> <span class="n">couleur</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">tri</span><span class="p">(</span><span class="n">long</span><span class="p">,</span> <span class="n">couleur</span><span class="p">)</span>
+        <span class="n">long</span> <span class="o">=</span> <span class="n">long</span> <span class="o">+</span> <span class="mi">5</span>
+        <span class="n">lt</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">joli_dessin</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;magenta&#39;</span> <span class="p">)</span>
+<span class="n">exitonclick</span><span class="p">()</span>      
 </code></pre></div></td></tr></table></div></li>
 <li>Utiliser la fonction <code>joli_dessin</code> avec de nouveaux paramètres. </li>
 </ol>
@@ -1536,53 +1535,53 @@
 <div class="admonition exo">
 <p class="admonition-title">Exo</p>
 <p>Copier et exécutez le code suivant. Attention à vos yeux!
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-8-10">10</a></span>
-<span class="normal"><a href="#__codelineno-8-11">11</a></span>
-<span class="normal"><a href="#__codelineno-8-12">12</a></span>
-<span class="normal"><a href="#__codelineno-8-13">13</a></span>
-<span class="normal"><a href="#__codelineno-8-14">14</a></span>
-<span class="normal"><a href="#__codelineno-8-15">15</a></span>
-<span class="normal"><a href="#__codelineno-8-16">16</a></span>
-<span class="normal"><a href="#__codelineno-8-17">17</a></span>
-<span class="normal"><a href="#__codelineno-8-18">18</a></span>
-<span class="normal"><a href="#__codelineno-8-19">19</a></span>
-<span class="normal"><a href="#__codelineno-8-20">20</a></span>
-<span class="normal"><a href="#__codelineno-8-21">21</a></span>
-<span class="normal"><a href="#__codelineno-8-22">22</a></span>
-<span class="normal"><a href="#__codelineno-8-23">23</a></span>
-<span class="normal"><a href="#__codelineno-8-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>             <span class="c1">#import des modules nécessaires</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3"></a>
-<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="n">speed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>                         <span class="c1">#vitesse maximale</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="n">colormode</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>                   <span class="c1">#mode de coloration en RVB</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6"></a>
-<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="k">def</span> <span class="nf">tri</span><span class="p">(</span><span class="n">long</span><span class="p">,</span> <span class="n">couleur</span><span class="p">):</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8"></a>    <span class="n">fillcolor</span><span class="p">(</span><span class="n">couleur</span><span class="p">)</span>
-<a id="__codelineno-8-9" name="__codelineno-8-9"></a>    <span class="n">begin_fill</span><span class="p">()</span>       
-<a id="__codelineno-8-10" name="__codelineno-8-10"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-<a id="__codelineno-8-11" name="__codelineno-8-11"></a>        <span class="n">fd</span><span class="p">(</span><span class="n">long</span><span class="p">)</span>       
-<a id="__codelineno-8-12" name="__codelineno-8-12"></a>        <span class="n">lt</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>        
-<a id="__codelineno-8-13" name="__codelineno-8-13"></a>    <span class="n">end_fill</span><span class="p">()</span>         
-<a id="__codelineno-8-14" name="__codelineno-8-14"></a>
-<a id="__codelineno-8-15" name="__codelineno-8-15"></a>
-<a id="__codelineno-8-16" name="__codelineno-8-16"></a><span class="k">def</span> <span class="nf">joli_dessin</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">long</span><span class="p">):</span>
-<a id="__codelineno-8-17" name="__codelineno-8-17"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<a id="__codelineno-8-18" name="__codelineno-8-18"></a>        <span class="n">couleur</span> <span class="o">=</span> <span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
-<a id="__codelineno-8-19" name="__codelineno-8-19"></a>        <span class="n">tri</span><span class="p">(</span><span class="n">long</span><span class="p">,</span> <span class="n">couleur</span><span class="p">)</span>
-<a id="__codelineno-8-20" name="__codelineno-8-20"></a>        <span class="n">long</span> <span class="o">=</span> <span class="n">long</span> <span class="o">+</span> <span class="mi">5</span>
-<a id="__codelineno-8-21" name="__codelineno-8-21"></a>        <span class="n">lt</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<a id="__codelineno-8-22" name="__codelineno-8-22"></a>
-<a id="__codelineno-8-23" name="__codelineno-8-23"></a><span class="n">joli_dessin</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
-<a id="__codelineno-8-24" name="__codelineno-8-24"></a><span class="n">exitonclick</span><span class="p">()</span>      
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>             <span class="c1">#import des modules nécessaires</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="n">speed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>                         <span class="c1">#vitesse maximale</span>
+<span class="n">colormode</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>                   <span class="c1">#mode de coloration en RVB</span>
+
+<span class="k">def</span> <span class="nf">tri</span><span class="p">(</span><span class="n">long</span><span class="p">,</span> <span class="n">couleur</span><span class="p">):</span>
+    <span class="n">fillcolor</span><span class="p">(</span><span class="n">couleur</span><span class="p">)</span>
+    <span class="n">begin_fill</span><span class="p">()</span>       
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="n">fd</span><span class="p">(</span><span class="n">long</span><span class="p">)</span>       
+        <span class="n">lt</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>        
+    <span class="n">end_fill</span><span class="p">()</span>         
+
+
+<span class="k">def</span> <span class="nf">joli_dessin</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">long</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">couleur</span> <span class="o">=</span> <span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
+        <span class="n">tri</span><span class="p">(</span><span class="n">long</span><span class="p">,</span> <span class="n">couleur</span><span class="p">)</span>
+        <span class="n">long</span> <span class="o">=</span> <span class="n">long</span> <span class="o">+</span> <span class="mi">5</span>
+        <span class="n">lt</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">joli_dessin</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">exitonclick</span><span class="p">()</span>      
 </code></pre></div></td></tr></table></div></p>
 </div>
 <p>Remarquez que <code>couleur</code> n'est plus un paramètre de la fonction <code>joli_dessin</code> car le choix de sa valeur n'est plus de notre responsabilité!</p>
@@ -1590,89 +1589,89 @@
 <p>Voici quelques exemples de possibilités du module <code>Turtle</code>. Parfois simple souvent plus compliqué, n'hésitez pas à trafiquer le code ... et si vous ne comprenez pas tout ce n'est pas grave!</p>
 <div class="admonition exemple">
 <p class="admonition-title">Un beau soleil</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">speed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Nombre de côtés (au moins 3)&quot;</span><span class="p">))</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">hideturtle</span><span class="p">()</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="n">pencolor</span><span class="p">(</span><span class="s2">&quot;yellow&quot;</span><span class="p">)</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="n">bgcolor</span><span class="p">(</span><span class="s2">&quot;orange&quot;</span><span class="p">)</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>    <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span> <span class="c1"># on va tracer vers le bas</span>
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>    <span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># on trace un trait de longueur 100</span>
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>    <span class="n">back</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># on trace à reculons</span>
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>    <span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>    <span class="n">circle</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">360</span><span class="o">/</span><span class="n">n</span><span class="p">)</span> 
-<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>
-<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="n">mainloop</span><span class="p">()</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">speed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Nombre de côtés (au moins 3)&quot;</span><span class="p">))</span>
+<span class="n">hideturtle</span><span class="p">()</span>
+<span class="n">pencolor</span><span class="p">(</span><span class="s2">&quot;yellow&quot;</span><span class="p">)</span>
+<span class="n">bgcolor</span><span class="p">(</span><span class="s2">&quot;orange&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span> <span class="c1"># on va tracer vers le bas</span>
+    <span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># on trace un trait de longueur 100</span>
+    <span class="n">back</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># on trace à reculons</span>
+    <span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+    <span class="n">circle</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">360</span><span class="o">/</span><span class="n">n</span><span class="p">)</span> 
+
+<span class="n">mainloop</span><span class="p">()</span>
 </code></pre></div>
 </div>
 <div class="admonition exemple">
 <p class="admonition-title">Cercle pysché</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="o">*</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">speed</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="n">up</span><span class="p">()</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="n">back</span><span class="p">(</span><span class="mi">450</span><span class="p">)</span>
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="n">down</span><span class="p">()</span>
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;yellow&quot;</span><span class="p">,</span><span class="s2">&quot;cyan&quot;</span><span class="p">,</span><span class="s2">&quot;purple&quot;</span><span class="p">,</span><span class="s2">&quot;turquoise&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="s2">&quot;orange&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;lime&quot;</span><span class="p">,</span><span class="s2">&quot;indianred&quot;</span><span class="p">,</span><span class="s2">&quot;gold&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="s2">&quot;chartreuse&quot;</span><span class="p">,</span><span class="s2">&quot;aquamarine&quot;</span><span class="p">,</span><span class="s2">&quot;indigo&quot;</span><span class="p">,</span><span class="s2">&quot;violet&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="s2">&quot;chocolate&quot;</span><span class="p">,</span><span class="s2">&quot;tan&quot;</span><span class="p">,</span><span class="s2">&quot;plum&quot;</span><span class="p">]</span>
-<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="n">rayon</span> <span class="o">=</span> <span class="mi">5</span>
-<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="n">nb</span> <span class="o">=</span> <span class="mi">50</span>
-<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nb</span><span class="p">):</span>
-<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>    <span class="n">fillcolor</span><span class="p">(</span><span class="n">choice</span><span class="p">(</span><span class="n">colors</span><span class="p">))</span>
-<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>    <span class="n">begin_fill</span><span class="p">()</span>
-<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>    <span class="n">circle</span><span class="p">(</span><span class="mi">250</span> <span class="o">-</span> <span class="n">rayon</span><span class="o">*</span><span class="n">i</span><span class="p">)</span>
-<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>    <span class="n">end_fill</span><span class="p">()</span>
-<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>    <span class="n">hideturtle</span><span class="p">()</span>
-<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="n">exitonclick</span><span class="p">()</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">speed</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">up</span><span class="p">()</span>
+<span class="n">back</span><span class="p">(</span><span class="mi">450</span><span class="p">)</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">down</span><span class="p">()</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;yellow&quot;</span><span class="p">,</span><span class="s2">&quot;cyan&quot;</span><span class="p">,</span><span class="s2">&quot;purple&quot;</span><span class="p">,</span><span class="s2">&quot;turquoise&quot;</span><span class="p">,</span>
+<span class="s2">&quot;orange&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;lime&quot;</span><span class="p">,</span><span class="s2">&quot;indianred&quot;</span><span class="p">,</span><span class="s2">&quot;gold&quot;</span><span class="p">,</span>
+<span class="s2">&quot;chartreuse&quot;</span><span class="p">,</span><span class="s2">&quot;aquamarine&quot;</span><span class="p">,</span><span class="s2">&quot;indigo&quot;</span><span class="p">,</span><span class="s2">&quot;violet&quot;</span><span class="p">,</span>
+<span class="s2">&quot;chocolate&quot;</span><span class="p">,</span><span class="s2">&quot;tan&quot;</span><span class="p">,</span><span class="s2">&quot;plum&quot;</span><span class="p">]</span>
+<span class="n">rayon</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">nb</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nb</span><span class="p">):</span>
+    <span class="n">fillcolor</span><span class="p">(</span><span class="n">choice</span><span class="p">(</span><span class="n">colors</span><span class="p">))</span>
+    <span class="n">begin_fill</span><span class="p">()</span>
+    <span class="n">circle</span><span class="p">(</span><span class="mi">250</span> <span class="o">-</span> <span class="n">rayon</span><span class="o">*</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">end_fill</span><span class="p">()</span>
+    <span class="n">hideturtle</span><span class="p">()</span>
+<span class="n">exitonclick</span><span class="p">()</span>
 </code></pre></div>
 </div>
 <div class="admonition exemple">
 <p class="admonition-title">Spirale</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">pencolor</span><span class="p">(</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="n">speed</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">90</span><span class="p">):</span>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>        <span class="n">forward</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">i</span><span class="p">)</span>
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>        <span class="n">right</span><span class="p">(</span><span class="mf">89.5</span><span class="p">)</span>
-<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
-<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="n">exitonclick</span><span class="p">()</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">pencolor</span><span class="p">(</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+<span class="n">speed</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">90</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+        <span class="n">forward</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">right</span><span class="p">(</span><span class="mf">89.5</span><span class="p">)</span>
+
+<span class="n">exitonclick</span><span class="p">()</span>
 </code></pre></div>
 </div>
 <div class="admonition exemple">
 <p class="admonition-title">Arbre</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">speed</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="n">angle</span> <span class="o">=</span> <span class="mi">30</span>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="n">color</span><span class="p">(</span><span class="s2">&quot;darkred&quot;</span><span class="p">)</span>
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="k">def</span> <span class="nf">arbre</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">longueur</span> <span class="p">):</span>
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>        <span class="n">color</span><span class="p">(</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
-<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>        <span class="n">forward</span><span class="p">(</span><span class="n">longueur</span><span class="p">)</span>
-<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>        <span class="n">backward</span><span class="p">(</span><span class="n">longueur</span><span class="p">)</span>
-<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>        <span class="n">color</span><span class="p">(</span><span class="s2">&quot;darkred&quot;</span><span class="p">)</span>
-<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>    <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>        <span class="n">width</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>        <span class="n">forward</span><span class="p">(</span><span class="n">longueur</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
-<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>        <span class="n">left</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
-<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>        <span class="n">arbre</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">longueur</span> <span class="o">/</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
-<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>        <span class="n">right</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span> <span class="n">angle</span><span class="p">)</span>
-<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>        <span class="n">arbre</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">longueur</span> <span class="o">/</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
-<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>        <span class="n">left</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
-<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>        <span class="n">backward</span><span class="p">(</span><span class="n">longueur</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
-<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="n">hideturtle</span> <span class="p">()</span>
-<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a><span class="n">up</span><span class="p">()</span>
-<a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-<a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a><span class="n">forward</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
-<a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a><span class="n">left</span> <span class="p">(</span><span class="mi">180</span><span class="p">)</span>
-<a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a><span class="n">down</span><span class="p">()</span>
-<a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a><span class="n">arbre</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">700</span><span class="p">)</span>
-<a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a>
-<a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a><span class="n">exitonclick</span><span class="p">()</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">speed</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">angle</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">color</span><span class="p">(</span><span class="s2">&quot;darkred&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">arbre</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">longueur</span> <span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">color</span><span class="p">(</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
+        <span class="n">forward</span><span class="p">(</span><span class="n">longueur</span><span class="p">)</span>
+        <span class="n">backward</span><span class="p">(</span><span class="n">longueur</span><span class="p">)</span>
+        <span class="n">color</span><span class="p">(</span><span class="s2">&quot;darkred&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">width</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="n">forward</span><span class="p">(</span><span class="n">longueur</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="n">left</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+        <span class="n">arbre</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">longueur</span> <span class="o">/</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">right</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span> <span class="n">angle</span><span class="p">)</span>
+        <span class="n">arbre</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">longueur</span> <span class="o">/</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">left</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+        <span class="n">backward</span><span class="p">(</span><span class="n">longueur</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">hideturtle</span> <span class="p">()</span>
+<span class="n">up</span><span class="p">()</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">left</span> <span class="p">(</span><span class="mi">180</span><span class="p">)</span>
+<span class="n">down</span><span class="p">()</span>
+<span class="n">arbre</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">700</span><span class="p">)</span>
+
+<span class="n">exitonclick</span><span class="p">()</span>
 </code></pre></div>
 </div>
 
@@ -1743,11 +1742,9 @@
     
       <script src="../assets/javascripts/bundle.dd8806f2.min.js"></script>
       
-        <script src="../xtra/javascripts/mathjax-config.js"></script>
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../xtra/javascripts/mathjax.js"></script>
       
         <script src="../xtra/javascripts/interpreter.js"></script>
       

@@ -6,7 +6,7 @@ var color = htmlColors;
 window.addEventListener('load', function() {
     // console.log("massilia-badges PAGE LOADED");
 
-    // let conf = getConfOptions();
+    let conf = getConfOptions();
     // console.log("conf=", conf);
 
     /* ====================================================================== */

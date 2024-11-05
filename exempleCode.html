@@ -78,11 +78,10 @@
 
       
     
+<!-- Massilia javascripts -->
+    <script defer src="./js/massilia.js"></script>
+
 <!-- favicons -->
-<link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
-<link rel="icon" href="./assets/images/favicon_32x32.png" sizes="32x32">
-<link rel="icon" href="./assets/images/favicon_96x96.png" sizes="96x96">
-<link rel="icon" href="./assets/images/favicon_144x144.png" sizes="144x144">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/atom-one-light.min.css">
 <!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>    
@@ -94,9 +93,8 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/js/jquery.terminal.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/css/jquery.terminal.min.css" rel="stylesheet">
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="./pyodide-mkdocs/interpreter.js"></script> 
-<!-- Ajouter 17 february pour tables massilia-->
-<script src="./js/massilia.js" defer></script>
 
     
       
@@ -114,9 +112,9 @@
     
       <link rel="stylesheet" href="xtra/stylesheets/ajustements.css">
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-columns.css">
+      <link rel="stylesheet" href="xtra/stylesheets/massilia-columns.css">
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-admonitions.css">
+      <link rel="stylesheet" href="xtra/stylesheets/massilia-admonitions.css">
     
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -125,6 +123,7 @@
     
     
     
+<script src="./pyodide-mkdocs/ide.js"></script> 
 
 <link rel="stylesheet" href="./pyodide-mkdocs/pyoditeur.css">
 
@@ -1053,7 +1052,7 @@ nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
 massa, nec semper lorem quam in massa.</p>
 </div>
 <p class="annotate">Code pour faire des annotations, (1) consectetur adipiscing elit.</p>
-<div class="highlight"><pre><span></span><code>1.  :man_raising_hand: I&#39;m an annotation! I can contain `code`, __formatted
+<div class="highlight"><span class="filename">📋 Texte</span><pre><span></span><code>1.  :man_raising_hand: I&#39;m an annotation! I can contain `code`, __formatted
 text__, images, ... basically anything that can be expressed in Markdown.
 </code></pre></div>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Tab 1</label><label for="__tabbed_1_2">Tab 2</label></div>
@@ -1068,13 +1067,13 @@ text__, images, ... basically anything that can be expressed in Markdown.
 </div>
 </div>
 <p>J'ai compris! (1){.annotate }</p>
-<div class="highlight"><pre><span></span><code>1.  :woman_raising_hand: I&#39;m an annotation as well!
+<div class="highlight"><span class="filename">📋 Texte</span><pre><span></span><code>1.  :woman_raising_hand: I&#39;m an annotation as well!
 </code></pre></div>
-<div class="highlight"><span class="filename">bubble_sort.py</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span> <span class="nf">bubble_sort</span><span class="p">(</span><span class="n">items</span><span class="p">):</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)):</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">):</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>            <span class="k">if</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]:</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>                <span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+<div class="highlight"><span class="filename">bubble_sort.py</span><pre><span></span><code><span class="k">def</span> <span class="nf">bubble_sort</span><span class="p">(</span><span class="n">items</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]:</span>
+                <span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
 </code></pre></div>
 <h1 id="terminale-nsi">terminale NSI<a class="headerlink" href="#terminale-nsi" title="Permanent link">&para;</a></h1>
 <div class="admonition note">
@@ -1098,7 +1097,7 @@ text__, images, ... basically anything that can be expressed in Markdown.
 <p>Dangerous certain consequences of an action.</p>
 </div>
 <h2 id="programme-de-la-classe_1">Programme de la classe<a class="headerlink" href="#programme-de-la-classe_1" title="Permanent link">&para;</a></h2>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
 </code></pre></div>
 The <code class="highlight"><span class="nb">range</span><span class="p">()</span></code> function is used to generate a sequence of numbers.</p>
 <h2 id="project-layout_1">Project layout<a class="headerlink" href="#project-layout_1" title="Permanent link">&para;</a></h2>
@@ -1216,11 +1215,9 @@ The <code class="highlight"><span class="nb">range</span><span class="p">()</spa
     
       <script src="assets/javascripts/bundle.dd8806f2.min.js"></script>
       
-        <script src="xtra/javascripts/mathjax-config.js"></script>
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="xtra/javascripts/mathjax.js"></script>
       
         <script src="xtra/javascripts/interpreter.js"></script>
       

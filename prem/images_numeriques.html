@@ -78,11 +78,10 @@
 
       
     
+<!-- Massilia javascripts -->
+    <script defer src="../js/massilia.js"></script>
+
 <!-- favicons -->
-<link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
-<link rel="icon" href="../assets/images/favicon_32x32.png" sizes="32x32">
-<link rel="icon" href="../assets/images/favicon_96x96.png" sizes="96x96">
-<link rel="icon" href="../assets/images/favicon_144x144.png" sizes="144x144">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/atom-one-light.min.css">
 <!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>    
@@ -94,9 +93,8 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/js/jquery.terminal.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/css/jquery.terminal.min.css" rel="stylesheet">
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="../pyodide-mkdocs/interpreter.js"></script> 
-<!-- Ajouter 17 february pour tables massilia-->
-<script src="../js/massilia.js" defer></script>
 
     
       
@@ -114,9 +112,9 @@
     
       <link rel="stylesheet" href="../xtra/stylesheets/ajustements.css">
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-columns.css">
+      <link rel="stylesheet" href="../xtra/stylesheets/massilia-columns.css">
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-admonitions.css">
+      <link rel="stylesheet" href="../xtra/stylesheets/massilia-admonitions.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -125,6 +123,7 @@
     
     
     
+<script src="../pyodide-mkdocs/ide.js"></script> 
 
 <link rel="stylesheet" href="../pyodide-mkdocs/pyoditeur.css">
 
@@ -1098,13 +1097,13 @@
 <li>Ouvrez l'image  <strong>firefox.png</strong> et vérifier qu'elle a la même signature(ils commencent tous par la même série d'octets qui est leur signature...).Affichez la liste des octets dans votre console.Donnez cette signature.</li>
 </ol>
 </div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">#Rappel sur les ouvertures en lecture ou ecritures de fichiers</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">fichier_src</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;........&quot;</span><span class="p">,</span><span class="s2">&quot;rb&quot;</span><span class="p">)</span><span class="c1">#Completer avec le chemin relatif vers l&#39;image</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">#l&#39;ouverture en mode rb ouvre le fichier en binaire (octet...)</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">listeOctet</span> <span class="o">=</span> <span class="p">[</span><span class="n">elt</span> <span class="k">for</span> <span class="n">elt</span> <span class="ow">in</span> <span class="n">fichier_src</span><span class="o">.</span><span class="n">read</span><span class="p">()]</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">listeOctet</span><span class="p">))</span><span class="c1">#affiche la longueur de la liste, le nombre d&#39;octets en fait!</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">listeOctet</span><span class="p">[:</span><span class="mi">100</span><span class="p">])</span><span class="c1"># affiche seulement les 100 premiers octets sinon...</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">fichier_src</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="c1">#Rappel sur les ouvertures en lecture ou ecritures de fichiers</span>
+<span class="n">fichier_src</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;........&quot;</span><span class="p">,</span><span class="s2">&quot;rb&quot;</span><span class="p">)</span><span class="c1">#Completer avec le chemin relatif vers l&#39;image</span>
+<span class="c1">#l&#39;ouverture en mode rb ouvre le fichier en binaire (octet...)</span>
+<span class="n">listeOctet</span> <span class="o">=</span> <span class="p">[</span><span class="n">elt</span> <span class="k">for</span> <span class="n">elt</span> <span class="ow">in</span> <span class="n">fichier_src</span><span class="o">.</span><span class="n">read</span><span class="p">()]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">listeOctet</span><span class="p">))</span><span class="c1">#affiche la longueur de la liste, le nombre d&#39;octets en fait!</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">listeOctet</span><span class="p">[:</span><span class="mi">100</span><span class="p">])</span><span class="c1"># affiche seulement les 100 premiers octets sinon...</span>
+<span class="n">fichier_src</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
 <p>Vous devriez obtenir ceci:
 <center>
@@ -1170,19 +1169,19 @@
 <div class="admonition warning">
 <p class="admonition-title">ATTENTION</p>
 <p>Tous les programmes doivent avoir en en-tête, l'import de la bibliothèque:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
 </code></pre></div>
 </div>
 <h3 id="ouvrir-une-image-et-lire-des-informations">Ouvrir une image et lire des informations<a class="headerlink" href="#ouvrir-une-image-et-lire-des-informations" title="Permanent link">&para;</a></h3>
 <div class="admonition exo">
 <p class="admonition-title">Exo</p>
 <p>Copier le code suivant et sauvegardez sous le nom <code>lecture_inform.py</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1">#Ouverture de l&#39;image existante, le chemin relatif doit être donné à partir de votre fichier!</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;Images\puppy.png&quot;</span><span class="p">)</span><span class="c1">#pour ma part je mets les images dans un dossier Images</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1">#On peut connaître les informations suivantes</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">im</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span><span class="n">im</span><span class="o">.</span><span class="n">size</span><span class="p">,</span><span class="n">im</span><span class="o">.</span><span class="n">format</span><span class="p">)</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="n">im</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="c1">#Ouverture de l&#39;image existante, le chemin relatif doit être donné à partir de votre fichier!</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;Images\puppy.png&quot;</span><span class="p">)</span><span class="c1">#pour ma part je mets les images dans un dossier Images</span>
+<span class="c1">#On peut connaître les informations suivantes</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">im</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span><span class="n">im</span><span class="o">.</span><span class="n">size</span><span class="p">,</span><span class="n">im</span><span class="o">.</span><span class="n">format</span><span class="p">)</span>
+<span class="n">im</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
 </div>
 <p>L'objet <code>im</code> n'est pas une image mais un objet <strong>tampon</strong> sur lequel nous travaillerons avant de le fermer.</p>
@@ -1200,32 +1199,32 @@
 <p class="admonition-title">À savoir!</p>
 <p>Remarquez que la taille est donnée sous la forme d'un tuple.</p>
 </div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1">#Creation d&#39;une nouvelle image en niveaux de gris</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">IM</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">750</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span><span class="c1"># en mode L pour niveaux de gris</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">IM</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;Images\img_gris1.png&quot;</span><span class="p">)</span><span class="c1">#pour créer l&#39;image dans le dossier Images...</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">IM</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="c1">#Creation d&#39;une nouvelle image en niveaux de gris</span>
+<span class="n">IM</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">750</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span><span class="c1"># en mode L pour niveaux de gris</span>
+<span class="n">IM</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;Images\img_gris1.png&quot;</span><span class="p">)</span><span class="c1">#pour créer l&#39;image dans le dossier Images...</span>
+<span class="n">IM</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
 <p>Pour la création d'une image de taille <code>750</code> par <code>200</code> en couleur, seul le mode change (mode <code>RGB</code>):</p>
 <div class="admonition note inline end">
 <p class="admonition-title">À savoir!</p>
 <p>Par défaut et quel que soit le mode, tous les pixels de l'image sont noirs!</p>
 </div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1">#Creation d&#39;une nouvelle image en couleur</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">IM</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;RGB&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">750</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span><span class="c1"># en mode RGB pour la couleur</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">IM</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;Images\img_coul.png&quot;</span><span class="p">)</span><span class="c1">#pour créer l&#39;image dans le dossier Images...</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">IM</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="c1">#Creation d&#39;une nouvelle image en couleur</span>
+<span class="n">IM</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;RGB&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">750</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span><span class="c1"># en mode RGB pour la couleur</span>
+<span class="n">IM</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;Images\img_coul.png&quot;</span><span class="p">)</span><span class="c1">#pour créer l&#39;image dans le dossier Images...</span>
+<span class="n">IM</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
 <h3 id="lire-la-valeur-dintensite-dun-pixel">Lire la valeur d'intensité d'un pixel<a class="headerlink" href="#lire-la-valeur-dintensite-dun-pixel" title="Permanent link">&para;</a></h3>
 <p>Le code suivant permet de lire sur l'image <code>puppy</code>, la valeur d'intensité du pixel situé à la colonne <code>20</code> et la ligne <code>30</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1">#Ouverture de l&#39;image existante</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1">#Le chemin relatif doit être donné</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;Images\puppy.png&quot;</span><span class="p">)</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">pix</span> <span class="o">=</span> <span class="n">im</span><span class="o">.</span><span class="n">getpixel</span><span class="p">((</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">pix</span><span class="p">)</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="n">im</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="c1">#Ouverture de l&#39;image existante</span>
+<span class="c1">#Le chemin relatif doit être donné</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;Images\puppy.png&quot;</span><span class="p">)</span>
+<span class="n">pix</span> <span class="o">=</span> <span class="n">im</span><span class="o">.</span><span class="n">getpixel</span><span class="p">((</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pix</span><span class="p">)</span>
+<span class="n">im</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
 <p><strong>Attention</strong>, la méthode <code>getpixel</code> prend en paramètre un tuple correspondant aux coordonnées <code>(colonne, ligne)</code> du pixel dans l'image: dans l'exemple, 20 ième colonne et 30ième ligne(il faut bien sûr s'assurer que ce pixel existe...) . Donc on ne tape pas <code>im.getpixel(20,30)</code> mais bien <code>im.getpixel((20,30))</code></p>
 <div class="admonition exo">
@@ -1238,12 +1237,12 @@
 </div>
 <h3 id="ecrire-lintensite-dun-pixel">Écrire l'intensité d'un pixel<a class="headerlink" href="#ecrire-lintensite-dun-pixel" title="Permanent link">&para;</a></h3>
 <p>On rappelle qu'on entend par écrire un pixel, définir sa valeur d'intensité!
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1">#Ouverture d&#39;une nouvelle image</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">IM</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">750</span><span class="p">,</span><span class="mi">200</span><span class="p">))</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">IM</span><span class="o">.</span><span class="n">putpixel</span><span class="p">((</span><span class="mi">425</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="mi">150</span><span class="p">)</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="n">IM</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;Images\img_gris2.png&quot;</span><span class="p">)</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="n">IM</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="c1">#Ouverture d&#39;une nouvelle image</span>
+<span class="n">IM</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">750</span><span class="p">,</span><span class="mi">200</span><span class="p">))</span>
+<span class="n">IM</span><span class="o">.</span><span class="n">putpixel</span><span class="p">((</span><span class="mi">425</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="mi">150</span><span class="p">)</span>
+<span class="n">IM</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;Images\img_gris2.png&quot;</span><span class="p">)</span>
+<span class="n">IM</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
 La méthode <code>putpixel</code>s'applique à l'objet <code>IM</code> et prend en paramètres l'endroit où l'on veut écrire <code>(c,l)</code>(425 et 100 dans notre exemple) et la valeur d'intensité <code>p</code>(150 dans l'exemple). Attention dans le cas d'une image couleur l'intensité est un triplet <code>(r,g,b)</code> voire <code>(r,g,b,a)</code>. </p>
 <div class="admonition info">
@@ -1253,31 +1252,31 @@ La méthode <code>putpixel</code>s'applique à l'objet <code>IM</code> et prend 
 <h3 id="parcourir-une-image-pixel-par-pixel">Parcourir une image pixel par pixel<a class="headerlink" href="#parcourir-une-image-pixel-par-pixel" title="Permanent link">&para;</a></h3>
 <p>Le code précédent permet de définir l'intensité d'<strong>un</strong> pixel. Mais comment agir sur <strong>tous</strong> les pixels d'une image?</p>
 <p>Pour parcourir une image pixel par pixel, on va utiliser une double boucle: l'une pour parcourir les lignes, l'autre  pour parcourir les colonnes.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1">#Ouverture de l&#39;image</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">imInit</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;Images\puppy.png&quot;</span><span class="p">)</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1">#La double boucle permet de parcourir l&#39;image de haut en bas de gauche à droite </span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">imInit</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span><span class="c1">#l comme ligne</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">imInit</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span><span class="c1">#c comme colone</span>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>        <span class="n">pix</span> <span class="o">=</span> <span class="n">imInit</span><span class="o">.</span><span class="n">getpixel</span><span class="p">((</span><span class="n">c</span><span class="p">,</span><span class="n">l</span><span class="p">))</span><span class="c1"># getpixel capture la valeur de couleur du pixel (c, l)</span>
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">pix</span><span class="p">)</span>
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="n">imInit</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="c1">#Ouverture de l&#39;image</span>
+<span class="n">imInit</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;Images\puppy.png&quot;</span><span class="p">)</span>
+<span class="c1">#La double boucle permet de parcourir l&#39;image de haut en bas de gauche à droite </span>
+<span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">imInit</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span><span class="c1">#l comme ligne</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">imInit</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span><span class="c1">#c comme colone</span>
+        <span class="n">pix</span> <span class="o">=</span> <span class="n">imInit</span><span class="o">.</span><span class="n">getpixel</span><span class="p">((</span><span class="n">c</span><span class="p">,</span><span class="n">l</span><span class="p">))</span><span class="c1"># getpixel capture la valeur de couleur du pixel (c, l)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">pix</span><span class="p">)</span>
+<span class="n">imInit</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
 Ce programme fait afficher la valeur d'intensité de tous les pixels de l'image: donc <strong>ne l'exécutez pas!</strong></p>
 <p>Dans tous les exercices, on utilisera ces deux boucles pour lire ou écrire sur une image.
 Par exemple, créeons une image en couleur de taille <code>(500, 500)</code> dont tous les pixels sont blancs sauf ceux de la ligne 250 qui sont rouges:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="c1">#Ouverture d&#39;une nouvelle image</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">img_new</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;RGB&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">))</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1">#La double boucle permet de parcourir l&#39;image de haut en bas de gauche à droite </span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">img_new</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span><span class="c1">#l comme ligne</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">img_new</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span><span class="c1">#c comme colone</span>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>        <span class="k">if</span> <span class="n">l</span> <span class="o">==</span> <span class="mi">250</span><span class="p">:</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>            <span class="n">img_new</span><span class="o">.</span><span class="n">putpixel</span><span class="p">((</span><span class="n">c</span><span class="p">,</span> <span class="n">l</span><span class="p">),</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span><span class="c1"># composante de rouge à la ligne 250</span>
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>        <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>            <span class="n">img_new</span><span class="o">.</span><span class="n">putpixel</span><span class="p">((</span><span class="n">c</span><span class="p">,</span> <span class="n">l</span><span class="p">),</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span><span class="c1"># composante de blanc sinon</span>
-<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="n">img_new</span><span class="o">.</span><span class="n">show</span><span class="p">()</span><span class="c1">#pour montrer l&#39;image</span>
-<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="n">img_new</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="c1">#Ouverture d&#39;une nouvelle image</span>
+<span class="n">img_new</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;RGB&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">))</span>
+<span class="c1">#La double boucle permet de parcourir l&#39;image de haut en bas de gauche à droite </span>
+<span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">img_new</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span><span class="c1">#l comme ligne</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">img_new</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span><span class="c1">#c comme colone</span>
+        <span class="k">if</span> <span class="n">l</span> <span class="o">==</span> <span class="mi">250</span><span class="p">:</span>
+            <span class="n">img_new</span><span class="o">.</span><span class="n">putpixel</span><span class="p">((</span><span class="n">c</span><span class="p">,</span> <span class="n">l</span><span class="p">),</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span><span class="c1"># composante de rouge à la ligne 250</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">img_new</span><span class="o">.</span><span class="n">putpixel</span><span class="p">((</span><span class="n">c</span><span class="p">,</span> <span class="n">l</span><span class="p">),</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span><span class="c1"># composante de blanc sinon</span>
+<span class="n">img_new</span><span class="o">.</span><span class="n">show</span><span class="p">()</span><span class="c1">#pour montrer l&#39;image</span>
+<span class="n">img_new</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
 <div class="admonition exo">
 <p class="admonition-title">Exo</p>
@@ -1309,22 +1308,22 @@ Par exemple, créeons une image en couleur de taille <code>(500, 500)</code> don
 </ol>
 </div>
 <p>L'implémentation de l'algorithme précédent donne en Python, le programme suivant:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="c1">#ETAPE 1:</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">imInit</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;Images\puppy.png&quot;</span><span class="p">)</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1">#ETAPE 2:</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="n">ImFin</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">imInit</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span> <span class="n">imInit</span><span class="o">.</span><span class="n">size</span><span class="p">)</span> 
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">imInit</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span><span class="c1">#l comme ligne</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">imInit</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span><span class="c1">#c comme colone</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>        <span class="c1">#ETAPE 3</span>
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>        <span class="n">pix</span> <span class="o">=</span> <span class="n">imInit</span><span class="o">.</span><span class="n">getpixel</span><span class="p">((</span><span class="n">c</span><span class="p">,</span><span class="n">l</span><span class="p">))</span><span class="c1"># getpixel capture la valeur de couleur du pixel (x,y)</span>
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>        <span class="c1">#ETAPE 4</span>
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>        <span class="n">ImFin</span><span class="o">.</span><span class="n">putpixel</span><span class="p">((</span><span class="n">c</span><span class="p">,</span><span class="n">l</span><span class="p">),</span> <span class="p">(</span><span class="n">pix</span> <span class="o">+</span> <span class="mi">100</span><span class="p">)</span><span class="o">%</span><span class="mi">256</span><span class="p">)</span><span class="c1">#putpixel colore le pixel (x,y) de l&#39;image IM avec la valeur de (pix + 100)%256</span>
-<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="n">ImFin</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="c1">#ETAPE 5</span>
-<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="n">ImFin</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;Images\ImageTranslate100.png&quot;</span><span class="p">)</span>
-<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="n">imInit</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="n">ImFin</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="c1">#ETAPE 1:</span>
+<span class="n">imInit</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;Images\puppy.png&quot;</span><span class="p">)</span>
+<span class="c1">#ETAPE 2:</span>
+<span class="n">ImFin</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">imInit</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span> <span class="n">imInit</span><span class="o">.</span><span class="n">size</span><span class="p">)</span> 
+<span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">imInit</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span><span class="c1">#l comme ligne</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">imInit</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span><span class="c1">#c comme colone</span>
+        <span class="c1">#ETAPE 3</span>
+        <span class="n">pix</span> <span class="o">=</span> <span class="n">imInit</span><span class="o">.</span><span class="n">getpixel</span><span class="p">((</span><span class="n">c</span><span class="p">,</span><span class="n">l</span><span class="p">))</span><span class="c1"># getpixel capture la valeur de couleur du pixel (x,y)</span>
+        <span class="c1">#ETAPE 4</span>
+        <span class="n">ImFin</span><span class="o">.</span><span class="n">putpixel</span><span class="p">((</span><span class="n">c</span><span class="p">,</span><span class="n">l</span><span class="p">),</span> <span class="p">(</span><span class="n">pix</span> <span class="o">+</span> <span class="mi">100</span><span class="p">)</span><span class="o">%</span><span class="mi">256</span><span class="p">)</span><span class="c1">#putpixel colore le pixel (x,y) de l&#39;image IM avec la valeur de (pix + 100)%256</span>
+<span class="n">ImFin</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1">#ETAPE 5</span>
+<span class="n">ImFin</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;Images\ImageTranslate100.png&quot;</span><span class="p">)</span>
+<span class="n">imInit</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">ImFin</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
 Quelques informations sur le programme précédent:</p>
 <ul>
@@ -1463,11 +1462,9 @@ Construire l'image obtenue par une symétrie horizontale.On sauvegardera l'image
     
       <script src="../assets/javascripts/bundle.dd8806f2.min.js"></script>
       
-        <script src="../xtra/javascripts/mathjax-config.js"></script>
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../xtra/javascripts/mathjax.js"></script>
       
         <script src="../xtra/javascripts/interpreter.js"></script>
       

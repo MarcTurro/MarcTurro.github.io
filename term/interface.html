@@ -82,11 +82,10 @@
 
       
     
+<!-- Massilia javascripts -->
+    <script defer src="../js/massilia.js"></script>
+
 <!-- favicons -->
-<link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
-<link rel="icon" href="../assets/images/favicon_32x32.png" sizes="32x32">
-<link rel="icon" href="../assets/images/favicon_96x96.png" sizes="96x96">
-<link rel="icon" href="../assets/images/favicon_144x144.png" sizes="144x144">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/atom-one-light.min.css">
 <!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>    
@@ -98,9 +97,8 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/js/jquery.terminal.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/css/jquery.terminal.min.css" rel="stylesheet">
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="../pyodide-mkdocs/interpreter.js"></script> 
-<!-- Ajouter 17 february pour tables massilia-->
-<script src="../js/massilia.js" defer></script>
 
     
       
@@ -118,9 +116,9 @@
     
       <link rel="stylesheet" href="../xtra/stylesheets/ajustements.css">
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-columns.css">
+      <link rel="stylesheet" href="../xtra/stylesheets/massilia-columns.css">
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-admonitions.css">
+      <link rel="stylesheet" href="../xtra/stylesheets/massilia-admonitions.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -129,6 +127,7 @@
     
     
     
+<script src="../pyodide-mkdocs/ide.js"></script> 
 
 <link rel="stylesheet" href="../pyodide-mkdocs/pyoditeur.css">
 
@@ -1265,28 +1264,28 @@ Pour pouvoir l'utiliser il faut utiliser un jeton (Token) fourni lors de l'inscr
 <li>Modifiez le code pour obtenir la vitesse du vent et sa direction.</li>
 </ol>
 </div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">requests</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://api.openweathermap.org/data/2.5/weather?q=agen&amp;appid=4370f9449a4ab35020f78dffcc0fe303&quot;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">content</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">data</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">t</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;main&#39;</span><span class="p">][</span><span class="s1">&#39;temp&#39;</span><span class="p">]</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La témpérature est de </span><span class="si">{temp:.2f}</span><span class="s2"> degrés C&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">temp</span> <span class="o">=</span> <span class="n">t</span> <span class="o">-</span> <span class="mf">273.15</span><span class="p">))</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://api.openweathermap.org/data/2.5/weather?q=agen&amp;appid=4370f9449a4ab35020f78dffcc0fe303&quot;</span>
+<span class="n">content</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;main&#39;</span><span class="p">][</span><span class="s1">&#39;temp&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La témpérature est de </span><span class="si">{temp:.2f}</span><span class="s2"> degrés C&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">temp</span> <span class="o">=</span> <span class="n">t</span> <span class="o">-</span> <span class="mf">273.15</span><span class="p">))</span>
 </code></pre></div>
 <p>On peut aussi effectuer des requêtes en Javascript et modifier ainsi le contenu d'une page web. Ci-dessous, une fonction utilisant une API donnant la position de la station spatiale ISS utilisant des promesses... voir <a href="http://open-notify.org/Open-Notify-API/ISS-Location-Now/">ici</a> pour la spécification de cette API.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">marequete</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;http://api.open-notify.org/iss-now.json&quot;</span><span class="p">)</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">        </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">        </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">            </span><span class="kd">function</span><span class="w"> </span><span class="nx">isspos</span><span class="p">(</span><span class="nx">jsonobj</span><span class="p">){</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">                </span><span class="kd">var</span><span class="w"> </span><span class="nx">lat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">jsonobj</span><span class="p">[</span><span class="s1">&#39;iss_position&#39;</span><span class="p">][</span><span class="s1">&#39;latitude&#39;</span><span class="p">];</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">                </span><span class="kd">var</span><span class="w"> </span><span class="nx">lon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">jsonobj</span><span class="p">[</span><span class="s1">&#39;iss_position&#39;</span><span class="p">][</span><span class="s1">&#39;longitude&#39;</span><span class="p">];</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">                </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;latitude&quot;</span><span class="p">).</span><span class="nx">innerText</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="nx">lat</span><span class="p">;</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">                </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;longitude&quot;</span><span class="p">).</span><span class="nx">innerText</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="nx">lon</span><span class="p">;</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">            </span><span class="p">}</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">        </span><span class="p">)</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="p">}</span>
+<p><div class="highlight"><span class="filename">JavaScript</span><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">marequete</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;http://api.open-notify.org/iss-now.json&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
+<span class="w">        </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span>
+<span class="w">            </span><span class="kd">function</span><span class="w"> </span><span class="nx">isspos</span><span class="p">(</span><span class="nx">jsonobj</span><span class="p">){</span>
+
+<span class="w">                </span><span class="kd">var</span><span class="w"> </span><span class="nx">lat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">jsonobj</span><span class="p">[</span><span class="s1">&#39;iss_position&#39;</span><span class="p">][</span><span class="s1">&#39;latitude&#39;</span><span class="p">];</span>
+<span class="w">                </span><span class="kd">var</span><span class="w"> </span><span class="nx">lon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">jsonobj</span><span class="p">[</span><span class="s1">&#39;iss_position&#39;</span><span class="p">][</span><span class="s1">&#39;longitude&#39;</span><span class="p">];</span>
+<span class="w">                </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;latitude&quot;</span><span class="p">).</span><span class="nx">innerText</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="nx">lat</span><span class="p">;</span>
+<span class="w">                </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;longitude&quot;</span><span class="p">).</span><span class="nx">innerText</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="nx">lon</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">)</span>
+<span class="p">}</span>
 </code></pre></div>
 Concrètement, une API est constituée d’une bibliothèque logicielle, d’un service
 web et d’une description qui spécifie comment les clients peuvent interagir avec la
@@ -1325,21 +1324,21 @@ dictionnaires, facilement manipulables.</p>
 </li>
 </ol>
 </div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># importation du module webbrowser</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">import</span> <span class="nn">webbrowser</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># importation du sous-module MarsRovers du module nasaapi</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="kn">from</span> <span class="nn">nasaapi</span> <span class="kn">import</span> <span class="n">MarsRovers</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1"># initialisation de la connexion avec l’API et création de l’objet rovers</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="n">rovers</span> <span class="o">=</span> <span class="n">MarsRovers</span><span class="p">(</span><span class="err">«</span> <span class="n">coller</span> <span class="n">ici</span> <span class="n">la</span> <span class="n">clé</span> <span class="n">API</span> <span class="n">NASA</span> <span class="err">»</span><span class="p">,</span><span class="err">«</span> <span class="n">ici</span> <span class="n">le</span> <span class="n">jour</span><span class="err">»</span> <span class="p">,</span> <span class="err">«</span> <span class="n">NAV</span><span class="o">-</span><span class="n">CAM</span> <span class="err">»</span><span class="p">)</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># par exemple rovers = MarsRovers(&quot;DEMO_KEY&quot;, sols = 1000 , camera = &#39;fhaz&#39;)</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1"># récupération des données de Curiosity (dictionnaire)</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="n">cur</span> <span class="o">=</span> <span class="n">rovers</span><span class="o">.</span><span class="n">curiosity</span><span class="p">()</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">cur</span><span class="p">)</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="c1"># accès à l’URL de la quatrième photo</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="c1"># l&#39;URL est contenu dans la variable cur. À vous de l&#39;y extraire.</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="n">url_photo</span> <span class="o">=</span> <span class="err">«</span> <span class="n">compléter</span> <span class="n">ici</span><span class="err">»</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="c1"># envoi de l’URL dans le navigateur</span>
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="n">webbrowser</span><span class="o">.</span><span class="n">open_new_tab</span><span class="p">(</span><span class="n">url_photo</span><span class="p">)</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="c1"># importation du module webbrowser</span>
+<span class="kn">import</span> <span class="nn">webbrowser</span>
+<span class="c1"># importation du sous-module MarsRovers du module nasaapi</span>
+<span class="kn">from</span> <span class="nn">nasaapi</span> <span class="kn">import</span> <span class="n">MarsRovers</span>
+<span class="c1"># initialisation de la connexion avec l’API et création de l’objet rovers</span>
+<span class="n">rovers</span> <span class="o">=</span> <span class="n">MarsRovers</span><span class="p">(</span><span class="err">«</span> <span class="n">coller</span> <span class="n">ici</span> <span class="n">la</span> <span class="n">clé</span> <span class="n">API</span> <span class="n">NASA</span> <span class="err">»</span><span class="p">,</span><span class="err">«</span> <span class="n">ici</span> <span class="n">le</span> <span class="n">jour</span><span class="err">»</span> <span class="p">,</span> <span class="err">«</span> <span class="n">NAV</span><span class="o">-</span><span class="n">CAM</span> <span class="err">»</span><span class="p">)</span>
+<span class="c1"># par exemple rovers = MarsRovers(&quot;DEMO_KEY&quot;, sols = 1000 , camera = &#39;fhaz&#39;)</span>
+<span class="c1"># récupération des données de Curiosity (dictionnaire)</span>
+<span class="n">cur</span> <span class="o">=</span> <span class="n">rovers</span><span class="o">.</span><span class="n">curiosity</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cur</span><span class="p">)</span>
+<span class="c1"># accès à l’URL de la quatrième photo</span>
+<span class="c1"># l&#39;URL est contenu dans la variable cur. À vous de l&#39;y extraire.</span>
+<span class="n">url_photo</span> <span class="o">=</span> <span class="err">«</span> <span class="n">compléter</span> <span class="n">ici</span><span class="err">»</span>
+<span class="c1"># envoi de l’URL dans le navigateur</span>
+<span class="n">webbrowser</span><span class="o">.</span><span class="n">open_new_tab</span><span class="p">(</span><span class="n">url_photo</span><span class="p">)</span>
 </code></pre></div>
 
 
@@ -1409,11 +1408,9 @@ dictionnaires, facilement manipulables.</p>
     
       <script src="../assets/javascripts/bundle.dd8806f2.min.js"></script>
       
-        <script src="../xtra/javascripts/mathjax-config.js"></script>
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../xtra/javascripts/mathjax.js"></script>
       
         <script src="../xtra/javascripts/interpreter.js"></script>
       

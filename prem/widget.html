@@ -82,11 +82,10 @@
 
       
     
+<!-- Massilia javascripts -->
+    <script defer src="../js/massilia.js"></script>
+
 <!-- favicons -->
-<link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
-<link rel="icon" href="../assets/images/favicon_32x32.png" sizes="32x32">
-<link rel="icon" href="../assets/images/favicon_96x96.png" sizes="96x96">
-<link rel="icon" href="../assets/images/favicon_144x144.png" sizes="144x144">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/atom-one-light.min.css">
 <!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>    
@@ -98,9 +97,8 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/js/jquery.terminal.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/css/jquery.terminal.min.css" rel="stylesheet">
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="../pyodide-mkdocs/interpreter.js"></script> 
-<!-- Ajouter 17 february pour tables massilia-->
-<script src="../js/massilia.js" defer></script>
 
     
       
@@ -118,9 +116,9 @@
     
       <link rel="stylesheet" href="../xtra/stylesheets/ajustements.css">
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-columns.css">
+      <link rel="stylesheet" href="../xtra/stylesheets/massilia-columns.css">
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-admonitions.css">
+      <link rel="stylesheet" href="../xtra/stylesheets/massilia-admonitions.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -129,6 +127,7 @@
     
     
     
+<script src="../pyodide-mkdocs/ide.js"></script> 
 
 <link rel="stylesheet" href="../pyodide-mkdocs/pyoditeur.css">
 
@@ -1062,20 +1061,20 @@
 <p class="admonition-title">Étape1: Construction de la fenêtre mère</p>
 <p>L'idée principale est de construire un conteneur principal, l'élément <strong>mère</strong> qui va contenir d'autres éléments <strong>filles</strong>. Le code Python est donné ci-après.</p>
 </div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">#--------  fenetre mere          ----------------#</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">fen</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">fen</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s2">&quot;Visualisation des couleurs&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">fen</span><span class="o">.</span><span class="n">resizable</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">fen</span><span class="o">.</span><span class="n">iconbitmap</span><span class="p">(</span><span class="s1">&#39;logoNSIsite.ico&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1">#------------------------------------------------#</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1">#-----------   CONSTRUCTEURS          -----------#</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="c1">#------------------------------------------------#</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="n">fen</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1">#--------  fenetre mere          ----------------#</span>
+<span class="n">fen</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
+<span class="n">fen</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s2">&quot;Visualisation des couleurs&quot;</span><span class="p">)</span>
+<span class="n">fen</span><span class="o">.</span><span class="n">resizable</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">fen</span><span class="o">.</span><span class="n">iconbitmap</span><span class="p">(</span><span class="s1">&#39;logoNSIsite.ico&#39;</span><span class="p">)</span>
+<span class="c1">#------------------------------------------------#</span>
+<span class="c1">#-----------   CONSTRUCTEURS          -----------#</span>
+
+
+
+<span class="c1">#------------------------------------------------#</span>
+<span class="n">fen</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
 </code></pre></div>
 <p>Le constructeur principal est l'élément <code>fen</code>: on lui applique des méthodes explicites qui changent son titre, la possibilité de redimensionner et l'icône de la fenêtre principale.Il y a d'autres possibilités que je vous laisse découvrir en toute autonomie...</p>
 <div class="admonition exo">
@@ -1099,20 +1098,20 @@
 <li>On peut aussi exprimer la couleur en hexadécimal. Essayez l'instruction <code>bg= '#FF00FF'</code> puis une autre de votre choix.</li>
 </ol>
 </div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">#-----------   CONSTRUCTEURS          -----------#</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">text1</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">fen</span><span class="p">,</span> <span class="n">text</span> <span class="o">=</span><span class="s2">&quot; Choix des couleurs&quot;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="s2">&quot;arial 30&quot;</span><span class="p">)</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">text1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">columnspan</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">btn1</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">fen</span><span class="p">,</span> <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;visualiser&quot;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">command</span> <span class="o">=</span> <span class="n">fen</span><span class="o">.</span><span class="n">destroy</span><span class="p">)</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">btn1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">columnspan</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">rou</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">fen</span><span class="p">)</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">rou</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">ver</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">fen</span><span class="p">)</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">ver</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="n">bleu</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">fen</span><span class="p">)</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="n">bleu</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="mi">4</span><span class="p">)</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="n">zone_couleur</span> <span class="o">=</span> <span class="n">Canvas</span><span class="p">(</span><span class="n">fen</span><span class="p">,</span> <span class="n">bg</span> <span class="o">=</span> <span class="s1">&#39;white&#39;</span><span class="p">)</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="n">zone_couleur</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">columnspan</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="c1">#------------------------------------------------#</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="c1">#-----------   CONSTRUCTEURS          -----------#</span>
+<span class="n">text1</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">fen</span><span class="p">,</span> <span class="n">text</span> <span class="o">=</span><span class="s2">&quot; Choix des couleurs&quot;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="s2">&quot;arial 30&quot;</span><span class="p">)</span>
+<span class="n">text1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">columnspan</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">btn1</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">fen</span><span class="p">,</span> <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;visualiser&quot;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">command</span> <span class="o">=</span> <span class="n">fen</span><span class="o">.</span><span class="n">destroy</span><span class="p">)</span>
+<span class="n">btn1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">columnspan</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">rou</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">fen</span><span class="p">)</span>
+<span class="n">rou</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">ver</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">fen</span><span class="p">)</span>
+<span class="n">ver</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">bleu</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">fen</span><span class="p">)</span>
+<span class="n">bleu</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">zone_couleur</span> <span class="o">=</span> <span class="n">Canvas</span><span class="p">(</span><span class="n">fen</span><span class="p">,</span> <span class="n">bg</span> <span class="o">=</span> <span class="s1">&#39;white&#39;</span><span class="p">)</span>
+<span class="n">zone_couleur</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">columnspan</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
+<span class="c1">#------------------------------------------------#</span>
 </code></pre></div>
 <p>Vous remarquerez qu'à chaque fois qu'un élément est créé il est <strong>positionné</strong> par la méthode <strong>grid</strong> dans une grille virtuelle contenant des lignes et des colonnes. Par exemple, le <code>Label</code> nommé <code>text1</code> est positionné dans la <strong>première</strong> ligne (<code>row = 0</code>), dans la première <strong>colonne</strong>(<code>column = 0</code>) et s'<strong>étend</strong> sur 5 colonnes(<code>columnspan = 5</code>).</p>
 <p>Il existe plusieurs gestionnaires de positionnement mais nous utiliserons en général la méthode <code>grid</code>.</p>
@@ -1130,10 +1129,10 @@
 <p class="admonition-title">Ajouter des variables de contrôles</p>
 <ol>
 <li>Ajouter le code <code>python</code> suivant juste après l'instruction <code>fen.iconbitmap</code>.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">r</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s1">&#39;12&#39;</span><span class="p">)</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">r</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s1">&#39;12&#39;</span><span class="p">)</span>
 </code></pre></div></li>
 <li>Modifier le constructeur <code>Entry</code> nommé <code>rou</code> en lui ajoutant l'attribut <code>textvariable = r</code> comme ceci:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">rou</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">fen</span><span class="p">,</span> <span class="n">textvariable</span> <span class="o">=</span> <span class="n">r</span><span class="p">)</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">rou</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">fen</span><span class="p">,</span> <span class="n">textvariable</span> <span class="o">=</span> <span class="n">r</span><span class="p">)</span>
 </code></pre></div></li>
 </ol>
 </div>
@@ -1165,9 +1164,9 @@
 <p class="admonition-title">Ajouter une fonction</p>
 <ol>
 <li>Ajouter le code python suivant après la variable b:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">#------  FONCTIONS    --------------------------#</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">def</span> <span class="nf">rgb_10to16</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="k">return</span> <span class="s2">&quot;#</span><span class="si">%.2x</span><span class="s2">&quot;</span> <span class="o">%</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="si">%.2x</span><span class="s2">&quot;</span> <span class="o">%</span><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="si">%.2x</span><span class="s2">&quot;</span> <span class="o">%</span><span class="n">t</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="c1">#------  FONCTIONS    --------------------------#</span>
+<span class="k">def</span> <span class="nf">rgb_10to16</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s2">&quot;#</span><span class="si">%.2x</span><span class="s2">&quot;</span> <span class="o">%</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="si">%.2x</span><span class="s2">&quot;</span> <span class="o">%</span><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="si">%.2x</span><span class="s2">&quot;</span> <span class="o">%</span><span class="n">t</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 </code></pre></div></li>
 <li>Rappelez le nom de l'opération <code>+</code> pour les chaînes de caractères.</li>
 <li>Expliquer le rôle de l'instruction <code>.2x</code></li>
@@ -1189,11 +1188,11 @@
 <p class="admonition-title">Compléter le code </p>
 <ol>
 <li>Ajouter la fonction suivante après la précédente:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">def</span> <span class="nf">colorer</span><span class="p">():</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="n">rouge</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="n">vert</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="n">bleu</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="n">zone_couleur</span><span class="p">[</span><span class="s1">&#39;bg&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">rgb_10to16</span><span class="p">((</span><span class="n">rouge</span><span class="p">,</span> <span class="n">vert</span><span class="p">,</span> <span class="n">bleu</span><span class="p">))</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">colorer</span><span class="p">():</span>
+    <span class="n">rouge</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="n">vert</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="n">bleu</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="n">zone_couleur</span><span class="p">[</span><span class="s1">&#39;bg&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">rgb_10to16</span><span class="p">((</span><span class="n">rouge</span><span class="p">,</span> <span class="n">vert</span><span class="p">,</span> <span class="n">bleu</span><span class="p">))</span>
 </code></pre></div></li>
 <li>Changer la valeur de l'attribut <code>command</code> du bouton <code>btn1</code> en lui donnant la valeur <code>colorer</code>(sans parenthèses...)</li>
 <li>Exécuter le code, tout devrait bien fonctionner!</li>
@@ -1281,11 +1280,9 @@
     
       <script src="../assets/javascripts/bundle.dd8806f2.min.js"></script>
       
-        <script src="../xtra/javascripts/mathjax-config.js"></script>
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../xtra/javascripts/mathjax.js"></script>
       
         <script src="../xtra/javascripts/interpreter.js"></script>
       

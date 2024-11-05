@@ -82,11 +82,10 @@
 
       
     
+<!-- Massilia javascripts -->
+    <script defer src="../js/massilia.js"></script>
+
 <!-- favicons -->
-<link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
-<link rel="icon" href="../assets/images/favicon_32x32.png" sizes="32x32">
-<link rel="icon" href="../assets/images/favicon_96x96.png" sizes="96x96">
-<link rel="icon" href="../assets/images/favicon_144x144.png" sizes="144x144">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/atom-one-light.min.css">
 <!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>    
@@ -98,9 +97,8 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/js/jquery.terminal.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/css/jquery.terminal.min.css" rel="stylesheet">
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="../pyodide-mkdocs/interpreter.js"></script> 
-<!-- Ajouter 17 february pour tables massilia-->
-<script src="../js/massilia.js" defer></script>
 
     
       
@@ -118,9 +116,9 @@
     
       <link rel="stylesheet" href="../xtra/stylesheets/ajustements.css">
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-columns.css">
+      <link rel="stylesheet" href="../xtra/stylesheets/massilia-columns.css">
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-admonitions.css">
+      <link rel="stylesheet" href="../xtra/stylesheets/massilia-admonitions.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -129,6 +127,7 @@
     
     
     
+<script src="../pyodide-mkdocs/ide.js"></script> 
 
 <link rel="stylesheet" href="../pyodide-mkdocs/pyoditeur.css">
 
@@ -1223,7 +1222,7 @@
 <p class="admonition-title">Mon premier js...</p>
 <ol>
 <li>Intégrer entre les balises <code>&lt;head&gt;</code> le code suivant:
-  <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="o">&lt;</span><span class="nx">script</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Le JavaScript fonctionne maintenant!&quot;</span><span class="p">)</span><span class="o">&lt;</span><span class="err">/script&gt;</span>
+  <div class="highlight"><span class="filename">JavaScript</span><pre><span></span><code><span class="o">&lt;</span><span class="nx">script</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Le JavaScript fonctionne maintenant!&quot;</span><span class="p">)</span><span class="o">&lt;</span><span class="err">/script&gt;</span>
 </code></pre></div></li>
 <li>Enregistrez votre fichier HTML et rafraîchissez le navigateur afin de voir apparaître l'effet attendu.</li>
 </ol>
@@ -1234,7 +1233,7 @@
 <ol>
 <li>Effacer les balises <code>&lt;script&gt;</code> précédente.</li>
 <li>Insérer dans le corps du document HTML juste après la balise <code>&lt;body&gt;</code>, le code suivant:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;alert(&#39;Ça marche aussi comme cela! &#39;) &quot;</span><span class="p">&gt;</span>Appuyez ici!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<div class="highlight"><span class="filename">HTML</span><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;alert(&#39;Ça marche aussi comme cela! &#39;) &quot;</span><span class="p">&gt;</span>Appuyez ici!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 </code></pre></div></li>
 <li>Enregistrez et rafraîchissez!</li>
 </ol>
@@ -1245,16 +1244,16 @@
 <ol>
 <li>Avec <code>notepad</code>, ouvrer un nouveau document (language = javascript) que vous enregistrez sous le nom <code>monpremierjs.js</code> dans le dossier <code>js</code>.</li>
 <li>Copiez-y le code suivant:
-  <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">ma_fonc_test</span><span class="p">(){</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">window</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;C&#39;est encore mieux de faire ainsi!!&quot;</span><span class="p">);</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">}</span>
+  <div class="highlight"><span class="filename">JavaScript</span><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">ma_fonc_test</span><span class="p">(){</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;C&#39;est encore mieux de faire ainsi!!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre></div></li>
 </ol>
 <p>3.Il faut maintenant indiquer au document courant où se situe le code javascript. Insérer alors le code suivant dans l'entête (balises <code>&lt;head&gt;</code>) de la page HTML:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;js\monpremierjs.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<div class="highlight"><span class="filename">HTML</span><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;js\monpremierjs.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </code></pre></div>
 4. Il faut aussi modifier notre bouton pour associer à sa fonction <code>onclick</code> l'exécution de la fonction <code>ma_fonc_test</code>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;ma_fonc_test()&quot;</span><span class="p">&gt;</span>Appuyez ici!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<div class="highlight"><span class="filename">HTML</span><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;ma_fonc_test()&quot;</span><span class="p">&gt;</span>Appuyez ici!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 </code></pre></div>
 5. Enregistrez et rafraîchissez, tout doit fonctionner!</p>
 </div>
@@ -1282,10 +1281,10 @@
 <p class="admonition-title">Affichage dans la console...</p>
 <ol>
 <li>Ajouter à la fonction <code>ma_fonc_test()</code>, l'instruction suivante:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">ma_fonc_test</span><span class="p">(){</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nb">window</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;C&#39;est encore mieux de faire ainsi!!&quot;</span><span class="p">);</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Ma javascript fonctionne&quot;</span><span class="p">);</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="p">}</span>
+<div class="highlight"><span class="filename">JavaScript</span><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">ma_fonc_test</span><span class="p">(){</span>
+<span class="w">  </span><span class="nb">window</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;C&#39;est encore mieux de faire ainsi!!&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Ma javascript fonctionne&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
 </code></pre></div></li>
 <li>Enregistrez, rafraîchissez et visualisez dans la console que tout va bien!</li>
 <li>Échangez les deux instructions et commentez ce qui se passe.</li>
@@ -1305,24 +1304,24 @@
 <p class="admonition-title">En mode stylé!</p>
 <ol>
 <li>Dans le fichier <code>style.css</code>, ajouter le code suivant:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>button {
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    display: inline-block;
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    background-color: #7b38d8;
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    border-radius: 10px;
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    border: 4px double #cccccc;
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    color: #eeeeee;
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>    text-align: center;
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    font-size: 28px;
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    padding: 20px;
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>    width: 200px;
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>    transition: all 0.5s;
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>    cursor: pointer;
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>    margin: 5px;
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>  }
-<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>
-<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>button:hover {
-<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>    background-color: #f7c2f9;
-<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>  }
+<div class="highlight"><span class="filename">HTML</span><pre><span></span><code>button {
+    display: inline-block;
+    background-color: #7b38d8;
+    border-radius: 10px;
+    border: 4px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+
+button:hover {
+    background-color: #f7c2f9;
+  }
 </code></pre></div></li>
 <li>Enregistrez, rafraîchissez et admirez!</li>
 </ol>
@@ -1332,13 +1331,13 @@
 <p class="admonition-title">Utiliser un conteneur</p>
 <ol>
 <li>Ajouter les balises <code>&lt;div&gt;&lt;/div&gt;</code> taggées par la classe <code>b_haut</code> autour des balises <code>&lt;button&gt;</code>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class </span><span class="o">=</span> <span class="s">&quot;b_haut&quot;</span><span class="p">&gt;&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;ma_fonc_test()&quot;</span><span class="p">&gt;</span>Essai<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<div class="highlight"><span class="filename">HTML</span><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class </span><span class="o">=</span> <span class="s">&quot;b_haut&quot;</span><span class="p">&gt;&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;ma_fonc_test()&quot;</span><span class="p">&gt;</span>Essai<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </code></pre></div></li>
 <li>Dans le css, on va indiquer que cette balise taggée <code>&lt;div&gt;</code> doit être centrée:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">div</span><span class="p">.</span><span class="nc">b_haut</span><span class="p">{</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="k">justify-content</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="p">}</span>
+<div class="highlight"><span class="filename">CSS</span><pre><span></span><code><span class="nt">div</span><span class="p">.</span><span class="nc">b_haut</span><span class="p">{</span>
+<span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span>
+<span class="k">justify-content</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div></li>
 <li>Enregistrez et rafraîchissez.</li>
 <li>Enfin, taggez la balise <code>&lt;div&gt;</code> contenant les autres boutons pour uniformiser notre affichage.</li>
@@ -1356,16 +1355,16 @@
 <p class="admonition-title">Changer le bg</p>
 <ol>
 <li>Compléter le fichier <code>monpremierjs.js</code>(inutile d'effacer son contenu existant) comme suit:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">new_bg</span><span class="p">(){</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">elt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">);</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">elt</span><span class="p">);</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="nx">elt</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;rgb(200,200,0)&quot;</span><span class="p">;</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="nx">elt</span><span class="p">[</span><span class="mf">1</span><span class="p">].</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;#00FF00&quot;</span><span class="p">;</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="nx">elt</span><span class="p">[</span><span class="mf">2</span><span class="p">].</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;white&quot;</span><span class="p">;</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="p">}</span>
+<div class="highlight"><span class="filename">JavaScript</span><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">new_bg</span><span class="p">(){</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">elt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">elt</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">elt</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;rgb(200,200,0)&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">elt</span><span class="p">[</span><span class="mf">1</span><span class="p">].</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;#00FF00&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">elt</span><span class="p">[</span><span class="mf">2</span><span class="p">].</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;white&quot;</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div></li>
 <li>Changer le nom de la fonction javascript dans l'attribut <code>onclick</code>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;new_bg()&quot;</span><span class="p">&gt;</span>
+<div class="highlight"><span class="filename">HTML</span><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;new_bg()&quot;</span><span class="p">&gt;</span>
 </code></pre></div></li>
 </ol>
 </div>
@@ -1377,11 +1376,11 @@
 <li>Taguer les balises <code>&lt;p&gt;</code> selon le principe suivant: la premier balise est <code>&lt;p id ="p1"&gt;</code>, la deuxième <code>&lt;p id ="p2"&gt;</code>, etc...</li>
 <li>Modifier la fonction js précédente:</li>
 </ol>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">new_bg</span><span class="p">(){</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;p1&quot;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span><span class="w"> </span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">;</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;p2&quot;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span><span class="w"> </span><span class="o">=</span><span class="s2">&quot;yellow&quot;</span><span class="p">;</span>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">  </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;p3&quot;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span><span class="w"> </span><span class="o">=</span><span class="s2">&quot;purple&quot;</span><span class="p">;</span>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">  </span><span class="p">}</span>
+<p><div class="highlight"><span class="filename">JavaScript</span><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">new_bg</span><span class="p">(){</span>
+<span class="w">  </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;p1&quot;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span><span class="w"> </span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">;</span>
+<span class="w">  </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;p2&quot;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span><span class="w"> </span><span class="o">=</span><span class="s2">&quot;yellow&quot;</span><span class="p">;</span>
+<span class="w">  </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;p3&quot;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span><span class="w"> </span><span class="o">=</span><span class="s2">&quot;purple&quot;</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 </code></pre></div>
 3. Enregistrez et rafraîchissez.</p>
 </div>
@@ -1389,10 +1388,10 @@
 <div class="admonition exo">
 <p class="admonition-title">Quelques changements sympas!</p>
 <p>À ajouter dans le corps de la fonction précédente (entre les accolades sinon cela ne fonctionnera pas...)
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;p1&quot;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">visibility</span><span class="o">=</span><span class="s1">&#39;hidden&#39;</span><span class="p">;</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;p2&quot;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">border</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;dashed red&quot;</span><span class="p">;</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;p3&quot;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">fontSize</span><span class="w"> </span><span class="o">=</span><span class="s2">&quot;500%&quot;</span><span class="p">;</span>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;p3&quot;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">fontFamily</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Brush Script MT&quot;</span><span class="p">;</span>
+<div class="highlight"><span class="filename">JavaScript</span><pre><span></span><code><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;p1&quot;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">visibility</span><span class="o">=</span><span class="s1">&#39;hidden&#39;</span><span class="p">;</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;p2&quot;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">border</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;dashed red&quot;</span><span class="p">;</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;p3&quot;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">fontSize</span><span class="w"> </span><span class="o">=</span><span class="s2">&quot;500%&quot;</span><span class="p">;</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;p3&quot;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">fontFamily</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Brush Script MT&quot;</span><span class="p">;</span>
 </code></pre></div></p>
 </div>
 <div class="admonition info">
@@ -1418,15 +1417,15 @@
 <p class="admonition-title">Modifier un fils...</p>
 <ol>
 <li>Insérer après la balise <code>&lt;body&gt;</code>, le code HTML suivant:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class </span><span class="o">=</span> <span class="s">&quot;b_haut&quot;</span><span class="p">&gt;&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;ma_fonc_bonjour()&quot;</span><span class="p">&gt;</span>Essai<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;demo&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<div class="highlight"><span class="filename">HTML</span><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class </span><span class="o">=</span> <span class="s">&quot;b_haut&quot;</span><span class="p">&gt;&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;ma_fonc_bonjour()&quot;</span><span class="p">&gt;</span>Essai<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;demo&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </code></pre></div>
 Cela crée le bouton que nous avions effacé à l'exercice précédent et un paragraphe vide...</li>
 <li>Créer un nouveau fichier javascript avec notepad, nommé  <code>monscript.js</code> que vous enregistrez dans le dossier  <code>js</code>.</li>
 <li>Ajoutez-y le code suivant:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">ma_fonc_bonjour</span><span class="p">(){</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;demo&quot;</span><span class="p">).</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Bonjour, nous sommes le &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">Date</span><span class="p">();</span>
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="p">}</span>
+<div class="highlight"><span class="filename">JavaScript</span><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">ma_fonc_bonjour</span><span class="p">(){</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;demo&quot;</span><span class="p">).</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Bonjour, nous sommes le &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">Date</span><span class="p">();</span>
+<span class="p">}</span>
 </code></pre></div></li>
 <li>Enfin, n'oubliez pas de changer le chemin de la source js dans les balises <code>&lt;script&gt;</code> pour pointer vers le bon fichier js...</li>
 <li>Enregistrez, rafraîchissez et visualisez...</li>
@@ -1448,14 +1447,14 @@ Cela crée le bouton que nous avions effacé à l'exercice précédent et un par
 <p class="admonition-title">Ouvrir une fenêtre de saisie</p>
 <ol>
 <li>Dans le fichier <code>monscript.js</code>, ajoutez le code suivant:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">debut</span><span class="p">(){</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nx">nom</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="nb">window</span><span class="p">.</span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Donner votre nom avant de commencer!&quot;</span><span class="p">);</span>
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;nom&quot;</span><span class="p">).</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;C&#39;est parti!, &quot;</span><span class="o">+</span><span class="w"> </span><span class="nx">nom</span><span class="p">;</span>
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="p">}</span>
+<div class="highlight"><span class="filename">JavaScript</span><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">debut</span><span class="p">(){</span>
+<span class="nx">nom</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="nb">window</span><span class="p">.</span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Donner votre nom avant de commencer!&quot;</span><span class="p">);</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;nom&quot;</span><span class="p">).</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;C&#39;est parti!, &quot;</span><span class="o">+</span><span class="w"> </span><span class="nx">nom</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div></li>
 <li>Changer l'<code>id</code> du paragraphe <code>&lt;p&gt;</code> de <code>demo</code> en <code>nom</code>.</li>
 <li>Enfin, associer au clic de bouton la bonne fonction:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;debut()&quot;</span><span class="p">&gt;</span>
+<div class="highlight"><span class="filename">HTML</span><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;debut()&quot;</span><span class="p">&gt;</span>
 </code></pre></div></li>
 </ol>
 </div>
@@ -1464,26 +1463,26 @@ Cela crée le bouton que nous avions effacé à l'exercice précédent et un par
 <p class="admonition-title">Insérer une zone de saisie</p>
 <ol>
 <li>Ajouter le code HTML suivant sous le premier paragraphe(celui où <code>id = nom</code>):
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p">&lt;</span><span class="nt">h1</span> <span class="p">&gt;</span> Donner votre âge  <span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;zone_saisie&quot;</span><span class="p">&gt;</span>
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;choix_age&quot;</span> <span class="na">pattern </span><span class="o">=</span><span class="s">&quot;[0-9]{2}&quot;</span> <span class="na">value</span><span class="o">=</span> <span class="s">16</span><span class="p">&gt;</span>
-<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="p">&lt;</span><span class="nt">button</span>  <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;affiche_age()&quot;</span> <span class="p">&gt;</span>Valider<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="p">&lt;</span><span class="nt">p</span> <span class="na">id </span><span class="o">=</span><span class="s">&quot;age&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<div class="highlight"><span class="filename">HTML</span><pre><span></span><code><span class="p">&lt;</span><span class="nt">h1</span> <span class="p">&gt;</span> Donner votre âge  <span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;zone_saisie&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;choix_age&quot;</span> <span class="na">pattern </span><span class="o">=</span><span class="s">&quot;[0-9]{2}&quot;</span> <span class="na">value</span><span class="o">=</span> <span class="s">16</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span>  <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;affiche_age()&quot;</span> <span class="p">&gt;</span>Valider<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">id </span><span class="o">=</span><span class="s">&quot;age&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </code></pre></div></li>
 <li>Ajouter la fonction javascript suivante dans le fichier <code>monscript.js</code>.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">affiche_age</span><span class="p">(){</span>
-<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">choix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;choix_age&quot;</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
-<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">();</span>
-<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">d</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">()</span><span class="o">-</span><span class="w"> </span><span class="nx">choix</span>
-<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;age&quot;</span><span class="p">).</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Vous êtes né en &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="p">;</span>
-<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="p">}</span>
+<div class="highlight"><span class="filename">JavaScript</span><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">affiche_age</span><span class="p">(){</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">choix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;choix_age&quot;</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">d</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">()</span><span class="o">-</span><span class="w"> </span><span class="nx">choix</span>
+<span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;age&quot;</span><span class="p">).</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Vous êtes né en &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div></li>
 <li>Et si vous voulez centrer tout cela, ajouter à la feuille de style, les instructions suivantes:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="p">#</span><span class="nn">zone_saisie</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span>
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="k">justify-content</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span>
-<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="p">}</span>
+<div class="highlight"><span class="filename">CSS</span><pre><span></span><code><span class="p">#</span><span class="nn">zone_saisie</span><span class="w"> </span><span class="p">{</span>
+<span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span>
+<span class="k">justify-content</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div></li>
 </ol>
 </div>
@@ -1574,11 +1573,9 @@ Cela crée le bouton que nous avions effacé à l'exercice précédent et un par
     
       <script src="../assets/javascripts/bundle.dd8806f2.min.js"></script>
       
-        <script src="../xtra/javascripts/mathjax-config.js"></script>
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../xtra/javascripts/mathjax.js"></script>
       
         <script src="../xtra/javascripts/interpreter.js"></script>
       
