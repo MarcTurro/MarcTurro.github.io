@@ -10,24 +10,28 @@
         <meta name="author" content="Marc TURRO">
       
       
-        <link rel="canonical" href="https://marcturro.github.io/exempleCode.html">
+        <link rel="canonical" href="https://marcturro.github.io/prem/exo_listes.html">
       
       
+        <link rel="prev" href="exo_string.html">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+        <link rel="next" href="../term/termnsi.html">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.19">
     
     
       
-        <title>Première NSI - Numérique et Sciences Informatiques</title>
+        <title>Exercices sur les listes - Numérique et Sciences Informatiques</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.66ac8b77.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.66ac8b77.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
   
@@ -79,7 +83,7 @@
       
     
 <!-- Massilia javascripts -->
-    <script src="./js/massilia.js"></script>
+    <script src="../js/massilia.js"></script>
 
 <!-- favicons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/atom-one-light.min.css">
@@ -94,7 +98,7 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/js/jquery.terminal.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/css/jquery.terminal.min.css" rel="stylesheet">
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<script src="./pyodide-mkdocs/interpreter.js"></script> 
+<script src="../pyodide-mkdocs/interpreter.js"></script> 
 
 
     
@@ -107,26 +111,26 @@
       
     
     
-      <link rel="stylesheet" href="xtra/stylesheets/extra.css">
+      <link rel="stylesheet" href="../xtra/stylesheets/extra.css">
     
-      <link rel="stylesheet" href="xtra/stylesheets/pyoditeur.css">
+      <link rel="stylesheet" href="../xtra/stylesheets/pyoditeur.css">
     
-      <link rel="stylesheet" href="xtra/stylesheets/ajustements.css">
+      <link rel="stylesheet" href="../xtra/stylesheets/ajustements.css">
     
-      <link rel="stylesheet" href="xtra/stylesheets/massilia-columns.css">
+      <link rel="stylesheet" href="../xtra/stylesheets/massilia-columns.css">
     
-      <link rel="stylesheet" href="xtra/stylesheets/massilia-admonitions.css">
+      <link rel="stylesheet" href="../xtra/stylesheets/massilia-admonitions.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
     
-<script src="./pyodide-mkdocs/ide.js"></script> 
+<script src="../pyodide-mkdocs/ide.js"></script> 
 
-<link rel="stylesheet" href="./pyodide-mkdocs/pyoditeur.css">
+<link rel="stylesheet" href="../pyodide-mkdocs/pyoditeur.css">
 
 
 <input id="ace_palette" autocomplete="off" class="md-toggle" data-ace-dark-mode="tomorrow_night_bright" data-ace-light-mode="crimson_editor" type="checkbox"></input>
@@ -150,11 +154,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#premiere-nsi" class="md-skip">
-          Aller au contenu
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -167,9 +166,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="En-tête">
-    <a href="index.html" title="Numérique et Sciences Informatiques" class="md-header__button md-logo" aria-label="Numérique et Sciences Informatiques" data-md-component="logo">
+    <a href="../index.html" title="Numérique et Sciences Informatiques" class="md-header__button md-logo" aria-label="Numérique et Sciences Informatiques" data-md-component="logo">
       
-  <img src="img/logoNSIsite.png" alt="logo">
+  <img src="../img/logoNSIsite.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -186,7 +185,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Première NSI
+              Exercices sur les listes
             
           </span>
         </div>
@@ -275,7 +274,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="index.html" class="md-tabs__link">
+      <a href="../index.html" class="md-tabs__link">
         
   
     
@@ -290,11 +289,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="prem/premnsi.html" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="premnsi.html" class="md-tabs__link">
           
   
   Première NSI
@@ -312,7 +313,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="term/termnsi.html" class="md-tabs__link">
+        <a href="../term/termnsi.html" class="md-tabs__link">
           
   
   Terminale NSI
@@ -328,7 +329,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="term/ep.html" class="md-tabs__link">
+      <a href="../term/ep.html" class="md-tabs__link">
         
   
     
@@ -345,7 +346,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="ecolo/ecologie.html" class="md-tabs__link">
+      <a href="../ecolo/ecologie.html" class="md-tabs__link">
         
   
     
@@ -364,7 +365,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="ressources.html" class="md-tabs__link">
+        <a href="../ressources.html" class="md-tabs__link">
           
   
   Ressources
@@ -405,9 +406,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="index.html" title="Numérique et Sciences Informatiques" class="md-nav__button md-logo" aria-label="Numérique et Sciences Informatiques" data-md-component="logo">
+    <a href="../index.html" title="Numérique et Sciences Informatiques" class="md-nav__button md-logo" aria-label="Numérique et Sciences Informatiques" data-md-component="logo">
       
-  <img src="img/logoNSIsite.png" alt="logo">
+  <img src="../img/logoNSIsite.png" alt="logo">
 
     </a>
     Numérique et Sciences Informatiques
@@ -422,7 +423,7 @@
   
   
     <li class="md-nav__item">
-      <a href="index.html" class="md-nav__link">
+      <a href="../index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -439,27 +440,30 @@
       
   
   
+    
   
   
+  
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -470,7 +474,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Première NSI
@@ -484,7 +488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="prem/premnsi.html" class="md-nav__link">
+      <a href="premnsi.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -505,7 +509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="prem/index_tpbash.html" class="md-nav__link">
+      <a href="index_tpbash.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -526,7 +530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="prem/frontend.html" class="md-nav__link">
+      <a href="frontend.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -547,7 +551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="prem/jscript.html" class="md-nav__link">
+      <a href="jscript.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -568,7 +572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="prem/init_python.html" class="md-nav__link">
+      <a href="init_python.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -589,7 +593,7 @@
   
   
     <li class="md-nav__item">
-      <a href="prem/dessin.html" class="md-nav__link">
+      <a href="dessin.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -610,7 +614,7 @@
   
   
     <li class="md-nav__item">
-      <a href="prem/widget.html" class="md-nav__link">
+      <a href="widget.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -631,7 +635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="prem/exo_string.html" class="md-nav__link">
+      <a href="exo_string.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -649,10 +653,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="prem/exo_listes.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="exo_listes.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -661,6 +672,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -722,7 +734,7 @@
   
   
     <li class="md-nav__item">
-      <a href="term/termnsi.html" class="md-nav__link">
+      <a href="../term/termnsi.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -743,7 +755,7 @@
   
   
     <li class="md-nav__item">
-      <a href="term/recursivite.html" class="md-nav__link">
+      <a href="../term/recursivite.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -764,7 +776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="term/cherche.html" class="md-nav__link">
+      <a href="../term/cherche.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -785,7 +797,7 @@
   
   
     <li class="md-nav__item">
-      <a href="term/stalin.html" class="md-nav__link">
+      <a href="../term/stalin.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -806,7 +818,7 @@
   
   
     <li class="md-nav__item">
-      <a href="term/arbres.html" class="md-nav__link">
+      <a href="../term/arbres.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -827,7 +839,7 @@
   
   
     <li class="md-nav__item">
-      <a href="term/complex_struc.html" class="md-nav__link">
+      <a href="../term/complex_struc.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -848,7 +860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="term/recherche.html" class="md-nav__link">
+      <a href="../term/recherche.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -869,7 +881,7 @@
   
   
     <li class="md-nav__item">
-      <a href="term/reseau_term.html" class="md-nav__link">
+      <a href="../term/reseau_term.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -890,7 +902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="term/routage.html" class="md-nav__link">
+      <a href="../term/routage.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -911,7 +923,7 @@
   
   
     <li class="md-nav__item">
-      <a href="term/securite.html" class="md-nav__link">
+      <a href="../term/securite.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -939,7 +951,7 @@
   
   
     <li class="md-nav__item">
-      <a href="term/ep.html" class="md-nav__link">
+      <a href="../term/ep.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -959,7 +971,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ecolo/ecologie.html" class="md-nav__link">
+      <a href="../ecolo/ecologie.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1021,7 +1033,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ressources.html" class="md-nav__link">
+      <a href="../ressources.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1042,7 +1054,7 @@
   
   
     <li class="md-nav__item">
-      <a href="res_prem.html" class="md-nav__link">
+      <a href="../res_prem.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1063,7 +1075,7 @@
   
   
     <li class="md-nav__item">
-      <a href="res_term.html" class="md-nav__link">
+      <a href="../res_term.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1100,121 +1112,109 @@
                   
 
 
-<h1 id="premiere-nsi">Première NSI<a class="headerlink" href="#premiere-nsi" title="Permanent link">&para;</a></h1>
-<h2 id="programme-de-la-classe">Programme de la classe<a class="headerlink" href="#programme-de-la-classe" title="Permanent link">&para;</a></h2>
-<h2 id="project-layout">Project layout<a class="headerlink" href="#project-layout" title="Permanent link">&para;</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Normalement ça marche!</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
-nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
-massa, nec semper lorem quam in massa.</p>
+  <h1>Exercices sur les listes</h1>
+
+<p><em>Les exercices taggés du symbole <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M384 96v224H64V96h320zM64 32C28.7 32 0 60.7 0 96v224c0 35.3 28.7 64 64 64h117.3l-10.7 32H96c-17.7 0-32 14.3-32 32s14.3 32 32 32h256c17.7 0 32-14.3 32-32s-14.3-32-32-32h-74.7l-10.7-32H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm464 0c-26.5 0-48 21.5-48 48v352c0 26.5 21.5 48 48 48h64c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48h-64zm16 64h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16s7.2-16 16-16zm-16 80c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16zm32 160a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg></span> sont à faire sur machine.</em></p>
+<p><em>Les exercices taggés du symbole <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z"/></svg></span> doivent être résolus par écrit.</em></p>
+<div class="admonition exercice">
+<p class="admonition-title">Manipulation simple <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z"/></svg></span></p>
+<p>On considère la liste suivante:
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+</code></pre></div></p>
+<ol>
+<li>
+<p>Écrire en Python les instructions qui permettent d':</p>
+<ol>
+<li>afficher le premier élément de la liste, les deux premiers, le dernier.</li>
+<li>ajouter 10 à la fin de la liste.</li>
+<li>ajouter 1 à chaque élément de L.</li>
+</ol>
+</li>
+<li>
+<p>Écrire en Python l'instruction qui permet de modifier le second élément de la liste en le remplaçant par la somme du premier et du dernier élément de cette liste.</p>
+</li>
+</ol>
 </div>
-<div class="admonition question">
-<p class="admonition-title">Est-ce aussi simple que cela?</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
-nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
-massa, nec semper lorem quam in massa.</p>
+<div class="admonition exercice">
+<p class="admonition-title">Liste hasardeuse <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M384 96v224H64V96h320zM64 32C28.7 32 0 60.7 0 96v224c0 35.3 28.7 64 64 64h117.3l-10.7 32H96c-17.7 0-32 14.3-32 32s14.3 32 32 32h256c17.7 0 32-14.3 32-32s-14.3-32-32-32h-74.7l-10.7-32H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm464 0c-26.5 0-48 21.5-48 48v352c0 26.5 21.5 48 48 48h64c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48h-64zm16 64h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16s7.2-16 16-16zm-16 80c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16zm32 160a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg></span></p>
+<p>En utilisant la fonction <code>randint</code> du module <code>random</code>, créer une liste de 10 nombres entiers aléatoires compris entre 0 et 100:</p>
+<ol>
+<li>avec la méthode <code>append</code> et une boucle <code>for</code>.</li>
+<li>par compréhension</li>
+</ol>
 </div>
-<p class="annotate">Code pour faire des annotations, (1) consectetur adipiscing elit.</p>
-<div class="highlight"><span class="filename">📋 Texte</span><pre><span></span><code>1.  :man_raising_hand: I&#39;m an annotation! I can contain `code`, __formatted
-text__, images, ... basically anything that can be expressed in Markdown.
+<div class="admonition exercice">
+<p class="admonition-title">Affichage dynamique <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M384 96v224H64V96h320zM64 32C28.7 32 0 60.7 0 96v224c0 35.3 28.7 64 64 64h117.3l-10.7 32H96c-17.7 0-32 14.3-32 32s14.3 32 32 32h256c17.7 0 32-14.3 32-32s-14.3-32-32-32h-74.7l-10.7-32H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm464 0c-26.5 0-48 21.5-48 48v352c0 26.5 21.5 48 48 48h64c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48h-64zm16 64h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16s7.2-16 16-16zm-16 80c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16zm32 160a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg></span></p>
+<p>On utilisera une liste <code>L</code> de l'exercice précédent. Créer une <code>f-string</code> qui permet d'afficher dans la console, par exemple, <code>L'élément situé au rang 0 de la liste est 5</code> (si bien entendu <code>5</code> est le premier élément de la liste <code>L</code>...).</p>
+</div>
+<div class="admonition exercice">
+<p class="admonition-title">Compréhension comprise ? <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z"/></svg></span></p>
+<p>Donner les éléments de chacune des listes construites par compréhension. 
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">lst1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+<span class="n">lst2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span> <span class="o">-</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+<span class="n">lst3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">lst4</span> <span class="o">=</span> <span class="p">[</span><span class="n">lst3</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lst3</span><span class="p">))]</span>
+<span class="n">lst5</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+<span class="n">lst6</span> <span class="o">=</span> <span class="p">[</span><span class="nb">ord</span><span class="p">(</span><span class="n">lst5</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lst5</span><span class="p">))]</span>
+<span class="n">lst7</span> <span class="o">=</span> <span class="p">[</span><span class="nb">chr</span><span class="p">(</span><span class="mi">97</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">26</span><span class="p">))]</span>
+</code></pre></div></p>
+</div>
+<div class="admonition exercice">
+<p class="admonition-title">Liste de string: <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z"/></svg></span></p>
+<p>On considère la liste suivante:</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">Liste_prenom</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Arthur&quot;</span><span class="p">,</span> <span class="s2">&quot;Charles&quot;</span><span class="p">,</span> <span class="s2">&quot;Patrick&quot;</span><span class="p">,</span> <span class="s2">&quot;Jean&quot;</span><span class="p">,</span> <span class="s2">&quot;René&quot;</span><span class="p">,</span> <span class="s2">&quot;Delphine&quot;</span><span class="p">,</span> <span class="s2">&quot;Olivier&quot;</span><span class="p">]</span>
 </code></pre></div>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Tab 1</label><label for="__tabbed_1_2">Tab 2</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p class="annotate">C'est trop cool, (1) consectetur adipiscing elit.</p>
+<p>Par compréhension, déterminer la liste:</p>
 <ol>
-<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> I'm an annotation!</li>
+<li><code>Lettre</code> des initiales de chaque prénom de la liste <code>Liste_prenom</code>.</li>
+<li><code>PrenomVoyelle</code> des prénoms de <code>Liste_prenom</code> commençant par une voyelle</li>
 </ol>
 </div>
-<div class="tabbed-block"></div>
-</div>
-</div>
-<p>J'ai compris! (1){.annotate }</p>
-<div class="highlight"><span class="filename">📋 Texte</span><pre><span></span><code>1.  :woman_raising_hand: I&#39;m an annotation as well!
-</code></pre></div>
-<div class="highlight"><span class="filename">bubble_sort.py</span><pre><span></span><code><span class="k">def</span> <span class="nf">bubble_sort</span><span class="p">(</span><span class="n">items</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)):</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">):</span>
-            <span class="k">if</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]:</span>
-                <span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
-</code></pre></div>
-<h1 id="terminale-nsi">terminale NSI<a class="headerlink" href="#terminale-nsi" title="Permanent link">&para;</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Information the user should notice even if skimming.</p>
-</div>
-<details class="tip">
-<summary>Tip</summary>
-<p>Optional information to help a user be more successful.</p>
-</details>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>Essential information required for user success.</p>
-</div>
-<div class="admonition caution">
-<p class="admonition-title">Caution</p>
-<p>Negative potential consequences of an action.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Dangerous certain consequences of an action.</p>
-</div>
-<h2 id="programme-de-la-classe_1">Programme de la classe<a class="headerlink" href="#programme-de-la-classe_1" title="Permanent link">&para;</a></h2>
-<p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
-</code></pre></div>
-The <code class="highlight"><span class="nb">range</span><span class="p">()</span></code> function is used to generate a sequence of numbers.</p>
-<h2 id="project-layout_1">Project layout<a class="headerlink" href="#project-layout_1" title="Permanent link">&para;</a></h2>
-<h1 id="admonitions-de-massilia">Admonitions de massilia<a class="headerlink" href="#admonitions-de-massilia" title="Permanent link">&para;</a></h1>
-<p>https://eskool.gitlab.io/mkhack3rs/admonitions/examples/</p>
-<div class="admonition ex">
-<p class="admonition-title">Ex</p>
+<div class="admonition exercice">
+<p class="admonition-title">Liste de listes <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z"/></svg></span></p>
+<p>On considère la liste :
+<code>python
+L = [[1,2,3], [4,5,6], [7,9,9]]</code></p>
 <ol>
-<li>What's the weather today?</li>
-<li>What will the weather be tomorrow?</li>
+<li>Que vaut <code>len(L)</code>?</li>
+<li>Que vaut <code>L[1]</code>? et <code>L[0][1]</code>?</li>
+<li>La condition <code>len(L) == len(L[0])</code> est-elle vraie??</li>
+<li>Par quelle instruction peut-on modifier le '9' visiblement pas à sa place...?</li>
 </ol>
 </div>
-<div class="admonition mth">
-<p class="admonition-title">Mth</p>
+<div class="admonition exercice">
+<p class="admonition-title">Un classique! <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M384 96v224H64V96h320zM64 32C28.7 32 0 60.7 0 96v224c0 35.3 28.7 64 64 64h117.3l-10.7 32H96c-17.7 0-32 14.3-32 32s14.3 32 32 32h256c17.7 0 32-14.3 32-32s-14.3-32-32-32h-74.7l-10.7-32H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm464 0c-26.5 0-48 21.5-48 48v352c0 26.5 21.5 48 48 48h64c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48h-64zm16 64h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16s7.2-16 16-16zm-16 80c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16zm32 160a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg></span></p>
+<p>Pour une liste <code>L</code> de nombres, définir des instructions qui:</p>
 <ol>
-<li>What's the weather today?</li>
-<li>What will the weather be tomorrow?</li>
+<li>calcule la somme des éléments de cette liste;</li>
+<li>calcule la moyenne des éléments de cette liste.</li>
+<li>Transformer ces instructions en fonction <code>Python</code></li>
 </ol>
 </div>
-<div class="admonition not">
-<p class="admonition-title">Not</p>
-<ol>
-<li>What's the weather today?</li>
-<li>What will the weather be tomorrow?</li>
-</ol>
+<div class="admonition exercice">
+<p class="admonition-title">Valeurs extrêmes <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M384 96v224H64V96h320zM64 32C28.7 32 0 60.7 0 96v224c0 35.3 28.7 64 64 64h117.3l-10.7 32H96c-17.7 0-32 14.3-32 32s14.3 32 32 32h256c17.7 0 32-14.3 32-32s-14.3-32-32-32h-74.7l-10.7-32H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm464 0c-26.5 0-48 21.5-48 48v352c0 26.5 21.5 48 48 48h64c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48h-64zm16 64h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16s7.2-16 16-16zm-16 80c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16zm32 160a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg></span></p>
+<p>Compléter le programme suivant qui permet de déterminer les valeurs minimales et maximales contenues dans une liste.
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
+
+<span class="nb">max</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">min</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">......</span><span class="p">)</span> <span class="p">:</span>
+    <span class="k">if</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="o">.....</span> <span class="p">:</span>
+        <span class="nb">max</span> <span class="o">=</span> <span class="o">........</span>
+    <span class="k">else</span> <span class="p">:</span>
+        <span class="k">if</span> <span class="o">......</span> <span class="o">&lt;</span> <span class="nb">min</span> <span class="p">:</span>
+            <span class="nb">min</span> <span class="o">=</span> <span class="o">.....</span>
+<span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Le maximum est </span><span class="si">{</span><span class="o">.......</span><span class="si">}</span><span class="s2"> et le minimum est </span><span class="si">{</span><span class="o">.........</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></p>
 </div>
-<div class="admonition rep">
-<p class="admonition-title">Rep</p>
-<ol>
-<li>What's the weather today?</li>
-<li>What will the weather be tomorrow?</li>
-</ol>
+<div class="admonition exercice">
+<p class="admonition-title">Valeurs extrêmes localisées <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M384 96v224H64V96h320zM64 32C28.7 32 0 60.7 0 96v224c0 35.3 28.7 64 64 64h117.3l-10.7 32H96c-17.7 0-32 14.3-32 32s14.3 32 32 32h256c17.7 0 32-14.3 32-32s-14.3-32-32-32h-74.7l-10.7-32H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm464 0c-26.5 0-48 21.5-48 48v352c0 26.5 21.5 48 48 48h64c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48h-64zm16 64h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16s7.2-16 16-16zm-16 80c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16zm32 160a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg></span></p>
+<p>Améliorer le programme précédent pour qu'il affiche en plus, les indices du minimum et du maximum.</p>
 </div>
-<div class="admonition cor">
-<p class="admonition-title">Cor</p>
-<ol>
-<li>What's the weather today?</li>
-<li>What will the weather be tomorrow?</li>
-</ol>
-</div>
-<div class="admonition jeretiens">
-<p class="admonition-title">Jeretiens</p>
-<ol>
-<li>What's the weather today?</li>
-<li>What will the weather be tomorrow?</li>
-</ol>
-</div>
-<div class="admonition ref">
-<p class="admonition-title">Ref</p>
-<ol>
-<li>What's the weather today?</li>
-<li>What will the weather be tomorrow?</li>
-</ol>
+<div class="admonition exercice">
+<p class="admonition-title">Listes triées? <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M384 96v224H64V96h320zM64 32C28.7 32 0 60.7 0 96v224c0 35.3 28.7 64 64 64h117.3l-10.7 32H96c-17.7 0-32 14.3-32 32s14.3 32 32 32h256c17.7 0 32-14.3 32-32s-14.3-32-32-32h-74.7l-10.7-32H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm464 0c-26.5 0-48 21.5-48 48v352c0 26.5 21.5 48 48 48h64c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48h-64zm16 64h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16s7.2-16 16-16zm-16 80c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16zm32 160a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg></span></p>
+<p>Écrire une fonction python qui prend en paramètre une liste quelconque et retourne <code>True</code> si la liste est triée et <code>False</code> sinon.</p>
 </div>
 
 
@@ -1229,10 +1229,10 @@ The <code class="highlight"><span class="nb">range</span><span class="p">()</spa
 
 
                 
-<script src="./pyodide-mkdocs/ide.js"></script> 
+<script src="../pyodide-mkdocs/ide.js"></script> 
 <!-- Massilia javascripts -->
 
-<script src="./js/massilia.js" ></script>
+<script src="../js/massilia.js" ></script>
 
               </article>
             </div>
@@ -1274,24 +1274,24 @@ The <code class="highlight"><span class="nb">range</span><span class="p">()</spa
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.sections", "content.code.copy", "content.code.select", "header.autohide", "navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "navigation.expand", "toc.integrate"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "content.code.copy", "content.code.select", "header.autohide", "navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "navigation.expand", "toc.integrate"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.dd8806f2.min.js"></script>
+      <script src="../assets/javascripts/bundle.dd8806f2.min.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="xtra/javascripts/mathjax.js"></script>
+        <script src="../xtra/javascripts/mathjax.js"></script>
       
-        <script src="xtra/javascripts/interpreter.js"></script>
+        <script src="../xtra/javascripts/interpreter.js"></script>
       
-        <script src="xtra/javascripts/config.js"></script>
+        <script src="../xtra/javascripts/config.js"></script>
       
-        <script src="xtra/gifplayer/gif-player.es6.js"></script>
+        <script src="../xtra/gifplayer/gif-player.es6.js"></script>
       
-        <script src="xtra/webcomponentsjs/webcomponents-loader.js"></script>
+        <script src="../xtra/webcomponentsjs/webcomponents-loader.js"></script>
       
-        <script src="js/massilia.js"></script>
+        <script src="../js/massilia.js"></script>
       
     
   </body>
