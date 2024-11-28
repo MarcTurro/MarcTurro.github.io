@@ -13,14 +13,18 @@
         <link rel="canonical" href="https://marcturro.github.io/prem/pyjeu.html">
       
       
+        <link rel="prev" href="exo_listes.html">
+      
+      
+        <link rel="next" href="traitement_texte.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.19">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.19">
     
     
       
-        <title>Le module Pygame de Python - Numérique et Sciences Informatiques</title>
+        <title>Jeu en Python - Numérique et Sciences Informatiques</title>
       
     
     
@@ -186,7 +190,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Le module Pygame de Python
+              Jeu en Python
             
           </span>
         </div>
@@ -290,10 +294,12 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="premnsi.html" class="md-tabs__link">
           
   
@@ -439,27 +445,30 @@
       
   
   
+    
   
   
+  
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -470,7 +479,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Première NSI
@@ -657,6 +666,202 @@
   
   <span class="md-ellipsis">
     Exercices sur les listes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Jeu en Python
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="pyjeu.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Jeu en Python
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-de-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration de base
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-boucle-de-jeu" class="md-nav__link">
+    <span class="md-ellipsis">
+      La boucle de jeu
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creation-de-lecran-de-jeu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creation de l'écran de jeu
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definir-les-emplacements-des-jetons" class="md-nav__link">
+    <span class="md-ellipsis">
+      Définir les emplacements des jetons
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#un-jeton-sur-le-canvas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un jeton sur le canvas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alternance-des-couleurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alternance des couleurs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#et-le-gagnant-est" class="md-nav__link">
+    <span class="md-ellipsis">
+      Et le gagnant est...
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Et le gagnant est...">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#memoriser-les-emplacements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memoriser les emplacements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gain-vertical" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gain vertical
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gain-horizontal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gain horizontal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gain-diagonal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gain diagonal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#declaration-du-gagnant" class="md-nav__link">
+    <span class="md-ellipsis">
+      Déclaration du gagnant
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="traitement_texte.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Traitement de textes
   </span>
   
 
@@ -1547,9 +1752,44 @@ Les listes sont évidemment vide au départ! À chaque construction on ajoute le
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">y</span><span class="p">)</span> <span class="ow">in</span> <span class="n">place_jeton_jaune</span><span class="p">:</span>
         <span class="n">gain</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">else</span><span class="p">:</span> 
+        <span class="k">break</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">y</span><span class="p">)</span> <span class="ow">in</span> <span class="n">place_jeton_jaune</span><span class="p">:</span>
         <span class="n">gain</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">break</span>    
 </code></pre></div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Question</label><label for="__tabbed_2_2">Réponse</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Quelle doit être la valeur de la variable <code>gain</code> pour que le joueur jaune gagne?</p>
+</div>
+<div class="tabbed-block">
+<p>Elle doit être égale à 4!</p>
+</div>
+</div>
+</div>
+</div>
+<h3 id="gain-diagonal">Gain diagonal<a class="headerlink" href="#gain-diagonal" title="Permanent link">&para;</a></h3>
+<div class="admonition exercice">
+<p class="admonition-title">À vous de jouer!</p>
+<p>En s'inspirant des instructions précédentes sur la largeur et la hauteur, donner le code qui teste si 4 pions sont alignés en diagonale.</p>
+</div>
+<h3 id="declaration-du-gagnant">Déclaration du gagnant<a class="headerlink" href="#declaration-du-gagnant" title="Permanent link">&para;</a></h3>
+<p>Nous allons maintenant créer une fonction <code>test_gagnant</code> qui permettra à chaque coup de tester si un joueur a gagné.</p>
+<div class="admonition exercice">
+<p class="admonition-title">La fonction <code>test_gagnant</code></p>
+<ol>
+<li>Quel paramètre utilisé pour la fonction?</li>
+<li>Que retourne la fonction?</li>
+<li>Écrire la fonction.</li>
+<li>Intégrer l'appel de cette fonction dans le jeu, au bon endroit...</li>
+</ol>
+</div>
+<p>Vous pouvez aussi vous documenter pour ajouter des actions lorsque un joueur à gaganer...</p>
 
 
 
