@@ -10,13 +10,13 @@
         <meta name="author" content="Marc TURRO">
       
       
-        <link rel="canonical" href="https://marcturro.github.io/term/stalin.html">
+        <link rel="canonical" href="https://marcturro.github.io/term/poo_arbres.html">
       
       
-        <link rel="prev" href="cherche.html">
+        <link rel="prev" href="arbres.html">
       
       
-        <link rel="next" href="arbres.html">
+        <link rel="next" href="complex_struc.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Structure de données linéaires - Numérique et Sciences Informatiques</title>
+        <title>Implémentation des arbres binaires en POO - Numérique et Sciences Informatiques</title>
       
     
     
@@ -154,6 +154,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#implementation-des-arbres-binaires-en-poo" class="md-skip">
+          Aller au contenu
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -185,7 +190,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Structure de données linéaires
+              Implémentation des arbres binaires en POO
             
           </span>
         </div>
@@ -828,17 +833,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="stalin.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="stalin.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -847,7 +845,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -878,10 +875,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="poo_arbres.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="poo_arbres.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -890,6 +896,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -1175,178 +1182,192 @@
                   
 
 
-  <h1>Structure de données linéaires</h1>
+<h1 id="implementation-des-arbres-binaires-en-poo">Implémentation des Arbres binaires en Poo<a class="headerlink" href="#implementation-des-arbres-binaires-en-poo" title="Permanent link">&para;</a></h1>
+<p>Python ne propose pas de façon native l’implémentation des arbres binaires.</p>
+<p>On va utiliser la POO pour créer une classe <code>AB</code> (pour Arbre Binaire), en utilisant le caractère récursif d'un arbre: une racine, et éventuellement un sous-arbre gauche et un sous-arbre droit.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">AB</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">racine</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">racine</span> <span class="o">=</span> <span class="n">racine</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">racine</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">gauche</span> <span class="o">=</span> <span class="n">AB</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">droit</span> <span class="o">=</span> <span class="n">AB</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">affiche</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">indent</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">indent</span> <span class="o">+</span> <span class="s1">&#39;|_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">racine</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">gauche</span><span class="o">.</span><span class="n">est_vide</span><span class="p">():</span>
+            <span class="n">s</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gauche</span><span class="o">.</span><span class="n">affiche</span><span class="p">(</span><span class="n">indent</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gauche</span><span class="o">.</span><span class="n">est_vide</span><span class="p">()</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">droit</span><span class="o">.</span><span class="n">est_vide</span><span class="p">():</span>
+            <span class="n">s</span> <span class="o">+=</span> <span class="s1">&#39; &#39;</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">indent</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;|&#39;</span> <span class="o">+</span> <span class="s1">&#39;_&#39;</span> <span class="o">+</span> <span class="s1">&#39;None&#39;</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>     
 
-<p><em>Les exercices taggés du symbole <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M384 96v224H64V96h320zM64 32C28.7 32 0 60.7 0 96v224c0 35.3 28.7 64 64 64h117.3l-10.7 32H96c-17.7 0-32 14.3-32 32s14.3 32 32 32h256c17.7 0 32-14.3 32-32s-14.3-32-32-32h-74.7l-10.7-32H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm464 0c-26.5 0-48 21.5-48 48v352c0 26.5 21.5 48 48 48h64c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48h-64zm16 64h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16s7.2-16 16-16zm-16 80c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16zm32 160a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg></span> sont à faire sur machine.</em></p>
-<p><em>Les exercices taggés du symbole <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z"/></svg></span> doivent être résolus par écrit.</em></p>
-<div class="admonition exercice">
-<p class="admonition-title"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M384 96v224H64V96h320zM64 32C28.7 32 0 60.7 0 96v224c0 35.3 28.7 64 64 64h117.3l-10.7 32H96c-17.7 0-32 14.3-32 32s14.3 32 32 32h256c17.7 0 32-14.3 32-32s-14.3-32-32-32h-74.7l-10.7-32H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm464 0c-26.5 0-48 21.5-48 48v352c0 26.5 21.5 48 48 48h64c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48h-64zm16 64h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16s7.2-16 16-16zm-16 80c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16zm32 160a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg></span></p>
-<p>On choisit l'implémentation des listes avec des tuples:</p>
-<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="sd">&quot;&quot;&quot; Implémentation du type abstrait &quot;liste&quot; avec des tuples&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">droit</span><span class="o">.</span><span class="n">est_vide</span><span class="p">():</span>
+            <span class="n">s</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">droit</span><span class="o">.</span><span class="n">affiche</span><span class="p">(</span><span class="n">indent</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">droit</span><span class="o">.</span><span class="n">est_vide</span><span class="p">()</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">gauche</span><span class="o">.</span><span class="n">est_vide</span><span class="p">():</span>
+            <span class="n">s</span> <span class="o">+=</span> <span class="s1">&#39; &#39;</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">indent</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;|&#39;</span> <span class="o">+</span> <span class="s1">&#39;_&#39;</span> <span class="o">+</span> <span class="s1">&#39;None&#39;</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>  
+        <span class="k">return</span> <span class="n">s</span>
 
-<span class="k">def</span> <span class="nf">creer</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Retourne une liste vide&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="p">()</span>
-
-
-<span class="k">def</span> <span class="nf">ajouter</span><span class="p">(</span><span class="n">element</span><span class="p">:</span> <span class="nb">all</span><span class="p">,</span> <span class="n">liste</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Retourne la liste avec l&#39;élément ajouté en tête de liste&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">liste</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">est_vide</span><span class="p">(</span><span class="n">liste</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Retourne True si la liste est vide et False sinon&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">liste</span> <span class="o">==</span> <span class="p">()</span>
-
-
-<span class="k">def</span> <span class="nf">tete</span><span class="p">(</span><span class="n">liste</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">all</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Retourne la tête de la liste&quot;&quot;&quot;</span>
-    <span class="k">assert</span> <span class="ow">not</span> <span class="n">est_vide</span><span class="p">(</span><span class="n">liste</span><span class="p">),</span> <span class="s2">&quot;Erreur : liste vide&quot;</span>
-    <span class="k">return</span> <span class="n">liste</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-
-
-<span class="k">def</span> <span class="nf">queue</span><span class="p">(</span><span class="n">liste</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Retourne la queue de la liste&quot;&quot;&quot;</span>
-    <span class="k">assert</span> <span class="ow">not</span> <span class="n">est_vide</span><span class="p">(</span><span class="n">liste</span><span class="p">),</span> <span class="s2">&quot;Erreur : liste vide&quot;</span>
-    <span class="k">return</span> <span class="n">liste</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-
-
-<span class="k">def</span> <span class="nf">longueur</span><span class="p">(</span><span class="n">liste</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Retourne le nombre d&#39;éléments de la liste&quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">est_vide</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
-        <span class="k">return</span> <span class="mi">0</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">longueur</span><span class="p">(</span><span class="n">liste</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-</code></pre></div>
-<p>Prévoir l'effet et l'affichage en console des instructions suivantes, puis vérifier en exécutant ces instructions dans la console interactive après avoir créé et importé un fichier contenant le code du cours :</p>
-<div class="highlight"><span class="filename">🐍 Console Python</span><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">L</span> <span class="o">=</span> <span class="n">creer</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">est_vide</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span> <span class="o">=</span> <span class="n">ajouter</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">ajouter</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">ajouter</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">ajouter</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">ajouter</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">ajouter</span><span class="p">(</span><span class="mi">0</span><span class="p">,()))))))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">est_vide</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">longueur</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span> <span class="o">=</span> <span class="n">ajouter</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="n">L</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">longueur</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">tete</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">queue</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">longueur</span><span class="p">(</span><span class="n">queue</span><span class="p">(</span><span class="n">L</span><span class="p">))</span>
-</code></pre></div>
-</div>
-<hr />
-<div class="admonition exercice">
-<p class="admonition-title"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z"/></svg></span></p>
-<p>Soit la suite d'instructions suivantes :</p>
-<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">L</span> <span class="o">=</span> <span class="n">creer</span><span class="p">()</span>
-<span class="n">L</span> <span class="o">=</span> <span class="n">ajouter</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">ajouter</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="n">ajouter</span> <span class="p">(</span><span class="mi">23</span><span class="p">,</span> <span class="n">L</span><span class="p">)))</span>
-<span class="n">L1</span> <span class="o">=</span> <span class="n">queue</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">tete</span><span class="p">(</span><span class="n">L1</span><span class="p">)</span>
-<span class="n">L1</span> <span class="o">=</span> <span class="n">ajouter</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">ajouter</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">L1</span><span class="p">))</span>
-</code></pre></div>
-<p>Donnez le contenu des listes <code>L</code> et <code>L1</code> et la valeur de <code>a</code>.</p>
-</div>
-<hr />
-<div class="admonition exercice">
-<p class="admonition-title"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z"/></svg></span></p>
-<p>Soit une pile P initialement vide. Soit les instructions suivantes (implémentation des piles avec des listes Python) :</p>
-<div class="highlight"><span class="filename">🐍 Console Python</span><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">empiler</span><span class="p">(</span><span class="n">P</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">empiler</span><span class="p">(</span><span class="n">P</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">depiler</span><span class="p">(</span><span class="n">P</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">taille</span><span class="p">(</span><span class="n">P</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">depiler</span><span class="p">(</span><span class="n">P</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">empiler</span><span class="p">(</span><span class="n">P</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">empiler</span><span class="p">(</span><span class="n">P</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">taille</span><span class="p">(</span><span class="n">P</span><span class="p">)</span>
-</code></pre></div>
-<p>Donnez le contenu de la pile <code>P</code>, la valeur de <code>a</code>, la valeur de <code>b</code>, la valeur de <code>c</code> et la valeur de <code>d</code>.</p>
-</div>
-<hr />
-<div class="admonition exercice">
-<p class="admonition-title"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z"/></svg></span></p>
-<p>Soit le programme Python suivant (on utilise l'implémentation des piles en POO) :</p>
-<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">pile</span> <span class="o">=</span> <span class="n">Pile</span><span class="p">()</span>
-<span class="n">tab</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">tab</span><span class="p">:</span>
-    <span class="n">pile</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
-<span class="n">pile</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">pile</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">pile</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
-<span class="n">pile</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">tab</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">k</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
-        <span class="n">pile</span><span class="o">.</span><span class="n">depiler</span><span class="p">()</span>
-</code></pre></div>
-<p>Donnez l'état de la pile pile après l'exécution de ce programme.</p>
-</div>
-<hr />
-<div class="admonition exercice">
-<p class="admonition-title"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M384 96v224H64V96h320zM64 32C28.7 32 0 60.7 0 96v224c0 35.3 28.7 64 64 64h117.3l-10.7 32H96c-17.7 0-32 14.3-32 32s14.3 32 32 32h256c17.7 0 32-14.3 32-32s-14.3-32-32-32h-74.7l-10.7-32H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm464 0c-26.5 0-48 21.5-48 48v352c0 26.5 21.5 48 48 48h64c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48h-64zm16 64h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16s7.2-16 16-16zm-16 80c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16zm32 160a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg></span></p>
-<p>Ce problème propose une application concrète des piles. Il s'agit d'écrire une fonction qui contrôle si une expression mathématique, donnée sous forme d'une chaîne de caractères, est bien parenthésée, c'est- à-dire s'il y a autant de parenthèses ouvrantes que de fermantes, et qu'elles sont bien placées</p>
-<p>Par exemple :</p>
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">affiche</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>On peut alors créer l'arbre ci-après de cette manière:</p>
+<p><div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="n">AB</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">gauche</span> <span class="o">=</span> <span class="n">AB</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">droit</span> <span class="o">=</span> <span class="n">AB</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">droit</span><span class="o">.</span><span class="n">gauche</span> <span class="o">=</span> <span class="n">AB</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">droit</span><span class="o">.</span><span class="n">droit</span> <span class="o">=</span> <span class="n">AB</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">gauche</span><span class="o">.</span><span class="n">gauche</span> <span class="o">=</span> <span class="n">AB</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">droit</span><span class="o">.</span><span class="n">droit</span><span class="o">.</span><span class="n">gauche</span> <span class="o">=</span> <span class="n">AB</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<img alt="" class="center" src="img/exo_imp.png" /> </p>
+<div class="admonition gear">
+<p class="admonition-title">Objectif</p>
+<p>Dans ce TP, il s'agit d'utiliser l'implémentation POO d'un arbre binaire et d'implémenter des fonctions:</p>
 <ul>
-<li>(..(..)..) est bien parenthésée</li>
-<li>(...(..(..)...) ne l'est pas</li>
+<li>de calcul de taille</li>
+<li>de calcul de hauteur</li>
+<li>de parcours (largeur, préfixe, infixe, postfixe)</li>
 </ul>
-<p>L'algorithme :</p>
-<div class="highlight"><span class="filename">📋 Texte</span><pre><span></span><code>* On crée une pile
-* On parcourt l&#39;expression de gauche à droite.
-* À chaque fois que l&#39;on rencontre une parenthèse ouvrante &quot;( &quot; on l&#39;empile
-* Si on rencontre une parenthèse fermante &quot; ) &quot; et que la pile n&#39;est pas vide on dépile ( sinon
-on retourne faux )
-* À la fin la pile doit être vide...
-</code></pre></div>
+</div>
+<p>Compléter au fur et à mesure la classe <code>AB</code>.</p>
+<div class="admonition info">
+<p class="admonition-title">Stratégie</p>
+<p>Dès que possible, il s'agit d'exploiter le caractère <strong>récursif</strong> de la structure d'arbre pour écrire les méthodes suivantes...</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Taille et hauteur</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Énoncé</label><label for="__tabbed_1_2">Correction</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <ol>
-<li>En utilisant l'une des structures pile du cours, écrire une fonction <code>verification(expr)</code> qui vérifie si une expression mathématique passée en paramètre est correctement parenthésée.</li>
-<li>Faire en sorte que le programme tienne compte également des [.</li>
+<li>Écrire une méthode renvoyant la taille d'un arbre binaire.</li>
+<li>Écrire une méthode renvoyant la hauteur d'un arbre binaire.</li>
 </ol>
 </div>
-<hr />
-<div class="admonition exercice">
-<p class="admonition-title"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z"/></svg></span></p>
-<p>Soit une file F initialement vide. Soit les instructions suivantes :</p>
-<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">enfiler</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
-<span class="n">enfiler</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">defiler</span><span class="p">(</span><span class="n">F</span><span class="p">)</span>
-<span class="n">enfiler</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">taille_file</span><span class="p">(</span><span class="n">F</span><span class="p">)</span>
-<span class="n">enfiler</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="mi">17</span><span class="p">)</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">defiler</span><span class="p">(</span><span class="n">F</span><span class="p">)</span>
-<span class="n">enfiler</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">d</span> <span class="o">=</span> <span class="n">taille_file</span><span class="p">(</span><span class="n">F</span><span class="p">)</span>
-</code></pre></div>
-<p>Donnez le contenu de la file <code>F</code>, la valeur de <code>a</code>, la valeur de <code>b</code>, la valeur de <code>c</code> et la valeur de <code>d</code>.</p>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">taille</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">est_vide</span><span class="p">():</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">gauche</span><span class="o">.</span><span class="n">taille</span><span class="p">()</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">droit</span><span class="o">.</span><span class="n">taille</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">hauteur</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">est_vide</span><span class="p">():</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">gauche</span><span class="o">.</span><span class="n">taille</span><span class="p">()</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">droit</span><span class="o">.</span><span class="n">taille</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+<p>```</p>
 </div>
-<hr />
-<div class="admonition exercice">
-<p class="admonition-title"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z"/></svg></span></p>
-<p>Soit le programme Python suivant :</p>
-<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">file</span> <span class="o">=</span> <span class="n">File</span><span class="p">()</span>
-<span class="n">tab</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">78</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">89</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">17</span><span class="p">]</span>
-<span class="n">file</span><span class="o">.</span><span class="n">enfiler</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">file</span><span class="o">.</span><span class="n">enfiler</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">file</span><span class="o">.</span><span class="n">enfiler</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
-<span class="n">file</span><span class="o">.</span><span class="n">enfiler</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tab</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">:</span>
-        <span class="n">file</span><span class="o">.</span><span class="n">defiler</span><span class="p">()</span>
-</code></pre></div>
-<p>Donnez l'état de la file file après l'exécution de ce programme</p>
 </div>
-<hr />
-<div class="admonition exercice">
-<p class="admonition-title">Les exercices au bac <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z"/></svg></span></p>
 </div>
-<ul>
-<li><a href="fichier/pdf/2021_Metropole_CL_1.pdf" target="_blank">2021 Métropole Jour 1 : exo 2</a>.</li>
-<li><a href="fichier/pdf/2021_CentresEtrangers_2.pdf" target="_blank">2021 Centres étrangers Jour 2 : exo 1</a>.</li>
-<li><a href="fichier/pdf/2021_CentresEtrangers_1.pdf" target="_blank">2021 Centres étrangers Jour 1 : exo 5</a>.</li>
-<li><a href="fichier/pdf/2021_AmeriqueDuNord_1.pdf" target="_blank">2021 Amérique du Nord Jour1 : exo 5</a>.</li>
-<li><a href="fichier/pdf/2021_Sujet_0.pdf" target="_blank">2021 Sujet zéro : exo 1</a>.</li>
-<li><a href="fichier/pdf/2022_CentresEtrangers_1.pdf" target="_blank">2022 Centres étrangers Jour 1 : exo 2</a>.</li>
-<li><a href="fichier/pdf/2022_Metropole_Jour1.pdf" target="_blank">2022 Métropole Jour 1 : exo 1</a>.</li>
-<li><a href="fichier/pdf/2022_Metropole_Jour2.pdf" target="_blank">2022 Métropole Jour 2 : exo 2</a>.</li>
-<li><a href="fichier/pdf/2022_Mayotte_Liban_1.pdf" target="_blank">2022 Mayotte Liban Jour 1 : exo 1</a>.</li>
-<li><a href="fichier/pdf/2022_Mayotte_Liban_2.pdf" target="_blank">2022 Mayotte Liban Jour 2 : exo 1</a>.</li>
-<li><a href="fichier/pdf/2022_AmeriqueDuNord_1.pdf" target="_blank">2022 Amérique du Nord Jour 1 : exo 5</a>.</li>
-</ul>
+</div>
+<div class="admonition example">
+<p class="admonition-title"> DFS</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Énoncé</label><label for="__tabbed_2_2">Correction</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Écrire les méthodes <code>prefixe</code>, <code>infixe</code> et <code>postfixe</code> parcourant l'arbre en profondeur d'abord selon les algorithmes correspondants (page précédente). Le traitement de la racine consistera en un affichage (<code>print</code>).</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">prefixe</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">est_vide</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">racine</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gauche</span><span class="o">.</span><span class="n">prefixe</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">droit</span><span class="o">.</span><span class="n">prefixe</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">infixe</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">est_vide</span><span class="p">():</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gauche</span><span class="o">.</span><span class="n">infixe</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">racine</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">droit</span><span class="o">.</span><span class="n">infixe</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">postfixe</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">est_vide</span><span class="p">():</span>            
+        <span class="bp">self</span><span class="o">.</span><span class="n">gauche</span><span class="o">.</span><span class="n">postfixe</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">droit</span><span class="o">.</span><span class="n">postfixe</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">racine</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title"> recherche d'une valeur</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Énoncé</label><label for="__tabbed_3_2">Correction</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Écrire une méthode permettant de déterminer si un arbre contient une valeur donnée. La méthode renverra un booléen selon le résultat de la recherche.</p>
+</div>
+<div class="tabbed-block">
+<p>Avec un parcours préfixe adapté:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">recherche</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">valeur</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">est_vide</span><span class="p">():</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">racine</span> <span class="o">==</span> <span class="n">valeur</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">gauche</span><span class="o">.</span><span class="n">recherche</span><span class="p">(</span><span class="n">valeur</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">droit</span><span class="o">.</span><span class="n">recherche</span><span class="p">(</span><span class="n">valeur</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</div>
 
 
 

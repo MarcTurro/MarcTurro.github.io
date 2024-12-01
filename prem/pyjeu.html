@@ -16,7 +16,7 @@
         <link rel="prev" href="exo_listes.html">
       
       
-        <link rel="next" href="../term/termnsi.html">
+        <link rel="next" href="images_numeriques.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -850,6 +850,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="images_numeriques.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Travail sur les images numériques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -995,6 +1016,27 @@
   
   <span class="md-ellipsis">
     Les arbres binaires
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../term/poo_arbres.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Implémentation des arbres binaires en POO
   </span>
   
 
@@ -1480,13 +1522,13 @@
 <p class="admonition-title">Code à modifier</p>
 <p>Modifier la boucle d'événements du précédent code pour obtenir ceci:
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>                         <span class="c1">#boucle infinie</span>
-<span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>    <span class="c1">#pour tous les événements</span>
-    <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">QUIT</span><span class="p">:</span>          <span class="c1">#si l&#39;événement quit est déclenché</span>
-        <span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>                  <span class="c1">#fin du jeu</span>
-    <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">MOUSEBUTTONDOWN</span><span class="p">:</span> <span class="c1"># si clic de souris</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">)</span>                     <span class="c1">#alors affichage des coordonnées dans la console</span>
-<span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>    <span class="c1">#pour tous les événements</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">QUIT</span><span class="p">:</span>          <span class="c1">#si l&#39;événement quit est déclenché</span>
+            <span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>                  <span class="c1">#fin du jeu</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">MOUSEBUTTONDOWN</span><span class="p">:</span> <span class="c1"># si clic de souris</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">)</span>                     <span class="c1">#alors affichage des coordonnées dans la console</span>
+    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
 </code></pre></div></p>
 </div>
 <p>On peut donc finalement tracer un jeton jaune ou rouge au clic de souris en ajoutant l'instruction suivante:</p>
@@ -1684,6 +1726,13 @@ ou mieux, liste construite par compréhension:</p>
 <div class="admonition tip">
 <p class="admonition-title">Astuce</p>
 <p>Pour savoir si la variable <code>tour</code> contient une valeur paire on peut utiliser le <strong>modulo</strong> 2 (<code>tour%2</code>), reste de la division euclidienne du nombre par 2. Si le reste de la division euclidienne d'un nombre par 2 est 0 alors ce nombre est pair. Sinon il est impair!</p>
+</div>
+<div class="admonition exercice">
+<p class="admonition-title">Alternance des couleurs</p>
+<ol>
+<li>Ajouter la variable <code>tour</code> initialisée à 0 au début du programme principal.</li>
+<li>Modifier le programme afin d'ajouter le code précédent.</li>
+</ol>
 </div>
 <p>Maintenant, il reste à savoir si un joueur a gagné: pas évident à coder.</p>
 <h2 id="et-le-gagnant-est">Et le gagnant est...<a class="headerlink" href="#et-le-gagnant-est" title="Permanent link">&para;</a></h2>
