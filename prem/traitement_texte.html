@@ -689,27 +689,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="images_numeriques.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Travail sur les images numériques
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1167,35 +1146,109 @@
 
 <h1 id="travail-sur-les-textes-en-python">Travail sur les textes en Python <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"/></svg></span><a class="headerlink" href="#travail-sur-les-textes-en-python" title="Permanent link">&para;</a></h1>
 <p>Nous allons découvrir comment avec quelques routines Python, nous pouvons explorer le contenu de certains fichiers numériques.</p>
-<p>Il faut cependant que leur contenu soit en <strong>accès libre</strong>: c'est le cas de tous les fichiers du web, notamment ceux développés par le W3C comme le fichier image au formet PNG: en revanche on ne pourra pas lire les fichiers générés par des logiciels propriétaires comme Microsoft ou Apple... ces fichiers étant cryptés.</p>
-<h2 id="ouverture-dun-fichier-texte">Ouverture d'un fichier texte<a class="headerlink" href="#ouverture-dun-fichier-texte" title="Permanent link">&para;</a></h2>
+<p>Il faut cependant que leur contenu soit dans un <strong>format ouvert</strong>: c'est le cas de tous les fichiers du web, notamment ceux développés par le W3C comme le fichier image au formet PNG.</p>
+<p>En revanche on ne pourra pas lire les fichiers générés par des logiciels propriétaires comme Microsoft ou Apple... ces fichiers étant cryptés.</p>
+<h2 id="ouverture-dun-fichier">Ouverture d'un fichier.<a class="headerlink" href="#ouverture-dun-fichier" title="Permanent link">&para;</a></h2>
 <div class="admonition exercice">
 <p class="admonition-title">Le fichier test</p>
-<p>Télécharger <a :download=":download" href="fichier/test.txt">ici</a> le fichier sur lequel nous allons tester nos codes python</p>
-</div>
-<div class="admonition info">
-<p class="admonition-title">Problème d'encodage?</p>
-<p>Si vous rencontrez des problèmes d'encodage, vous pouvez les contourner dans Firefox dans l'onglet <em>Affichage -&gt; Réparer l'encodage du texte</em>.</p>
+<p>Télécharger <a download="test.txt" href="fichier/test.txt">ici</a> le fichier sur lequel nous allons tester nos codes python.</p>
 </div>
 <p>Il s'agit d'un fichier texte contenant la constitution française.
 Nous allons analyser ce fichier texte.</p>
-<p>Pour ouvrir le fichier, nous allons utiliser les routines suivantes:</p>
-<p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">fich</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;mousquetaires.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<div class="admonition question">
+<p class="admonition-title">Comment lire et écrire sur des fichiers en Python?</p>
+</div>
+<p>Pour ouvrir le fichier en <strong>mode lecture</strong>, nous allons utiliser les routines suivantes:</p>
+<p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">fich</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;test.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="c1"># r comme read</span>
 </code></pre></div>
-La variable <code>fich</code> est un objet tampon contenant tous les caractères du fichier texte mais ce n'est pas une chaîne de caractères. Pour que cela en devienne une il faut <strong>lire</strong> cet objet. Il existe pour cela plusieurs méthodes:
-<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">fich</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;mousquetaires.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+La variable <code>fich</code> est un objet tampon contenant tous les caractères du fichier texte mais ce n'est pas une chaîne de caractères: il faut <strong>lire</strong> cet objet et stocker l'information dans une variable.
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">fich</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;test.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">fichier</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="c1">#lit tout le texte et l&#39;affecte à la la variable f</span>
-</code></pre></div>
-La varaible <code>f</code> est alors une chaîne de caractères.</p>
-<h2 id="analyse-frequentielle">Analyse fréquentielle<a class="headerlink" href="#analyse-frequentielle" title="Permanent link">&para;</a></h2>
-<h2 id="transformation-du-texte-original">Transformation du texte original<a class="headerlink" href="#transformation-du-texte-original" title="Permanent link">&para;</a></h2>
-<p>Le site <a href="https://www.gutenberg.org">Gutenberg</a> propose en accès libre, des tas de romans. </p>
+</code></pre></div></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>La variable <code>f</code> est alors une chaîne de caractères.</p>
+</div>
+<p>Évitez de <code>printer</code> la valeur de <code>f</code> dans la console qui est extrêmement grande!</p>
 <div class="admonition exercice">
-<p class="admonition-title">Télécharger un fichier texte</p>
+<p class="admonition-title">Taille du texte</p>
+<p>Faites afficher dans la console la taille de la variable <code>f</code> et comparer la à la taille du fichier texte que vous avez ouvert.</p>
+</div>
+<p>La méthode <code>read</code> permet de lire tout le contenu de l'objet <code>fich</code>.</p>
+<p>On peut aussi lire ligne par ligne le fichier:
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">fich</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;test.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">fich</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span> <span class="c1">#lit la première ligne </span>
+<span class="k">while</span> <span class="n">f</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+  <span class="n">f</span> <span class="o">=</span> <span class="n">fich</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+</code></pre></div>
+La variable <code>f</code> prend à chaque tour de boucle, la valeur de chaque ligne du fichier.
+On peut aussi procéder ainsi pour stocker toutes les lignes dans une <strong>liste</strong>:
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">fich</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;test.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">liste_de_lignes</span> <span class="o">=</span> <span class="n">fich</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span> <span class="c1">#stocke chaque ligne dans une liste</span>
+</code></pre></div></p>
+<p>On peut aussi:</p>
+<ul>
+<li>ouvrir un fichier en <strong>écriture</strong> mais attention: si ce fichier existe déjà son contenu sera alors détruit</li>
+<li>ouvrir un fichier en <strong>ajout</strong> pour ajouter à un fichier existant de nouvelles informations.</li>
+</ul>
+<p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">fich</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;mon_texte.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="c1"># ouverture en écriture</span>
+<span class="n">fich</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;bonjour!&quot;</span><span class="p">)</span> <span class="c1">#écris dans le fichier txt</span>
+</code></pre></div>
+Si le fichier <code>mon_texte.txt</code> n'existe pas, il est alors créer: s'il existe son contenu est effacé.</p>
+<p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">fich</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;mon_texte.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="c1"># ouverture en écriture</span>
+<span class="n">fich</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;bonjour!&quot;</span><span class="p">)</span> <span class="c1">#écris dans le fichier txt</span>
+</code></pre></div>
+Dans ce mode, si le fichier <code>mon_texte.txt</code> n'existe pas, il est alors créer: s'il existe son contenu est préservé.</p>
+<p>Il existe aussi le mode <code>rb</code> pour une lecture binaire(plutôt hexadécimale...) du fichier, mode que nous n'utiliserons pas ici.</p>
+<div class="admonition warning">
+<p class="admonition-title">Fermer le fichier ouvert</p>
+<p>À chaque fois que vous ouvrirez un fichier pour le lire, le modifier ou le créer, il faudra toujours penser à le fermer à la fin du programme par l'instruction <code>fich.close()</code></p>
+</div>
+<p>Nous allons d'abord travailler sur le fichier <code>test.txt</code> afin de le simplier:</p>
+<ul>
+<li>on va remplacer toutes les majuscules par des minuscules</li>
+<li>on va remplacer les caractères accentués les plus usités par le caractère correspondant sans accent (<code>é,è,ù</code> et <code>à</code>).</li>
+</ul>
+<div class="admonition exercice">
+<p class="admonition-title">Prération du fichier</p>
 <ol>
-<li>À cette <a href="https://www.gutenberg.org/ebooks/13951">adresse</a>, ouvrez le roman d'Alexandre Dumas, intitulé <em>Les trois mousquetaires</em>. On choisira la version <strong>Plain Text UTF-8</strong>.</li>
-<li>Une page web s'affiche. Sélectionnez tout le contenu (<kbd>Ctrl</kbd> + <kbd>A</kbd>), le copier (<kbd>Ctrl</kbd> + <kbd>C</kbd>) et le coller (<kbd>Ctrl</kbd> + <kbd>V</kbd>) dans le bloc note de windows.</li>
-<li>Enregistrez le fichier sous le nom <em>mousquetaires.txt</em>.</li>
+<li>Ouvrez le fichier <code>test.txt</code> en lecture puisstockez son contenu dans une variable <code>texte_original</code> de type <code>string</code>.</li>
+<li>Construire un programme Python qui à partir d'une chaîne de caractères, construit une nouvelle chaîne de caractères en remplaçant toutes les majuscules par des minuscules(voir le cours sur les chaînes de caractères...)</li>
+<li>Construire un programme Python qui à partir d'une chaîne de caractères, construit une nouvelle chaîne de cractères en remplaçant les caractères accentués usuels par leur correspondant sans accent.</li>
+<li>Appliquez les deux programmes précédents à l'objet <code>texte_original</code> pour obtenir la chaîne <code>texte_filtre</code>.</li>
+<li>Ouvrez un fichier <code>fichier_test_filtre.txt</code> en écriture et y écrire le contenu de la variable <code>texte_filtre</code>.</li>
+<li>N'oubliez pas de fermer les fichiers ouverts!</li>
+</ol>
+</div>
+<h2 id="transformer-des-fichiers-textes">Transformer des fichiers textes<a class="headerlink" href="#transformer-des-fichiers-textes" title="Permanent link">&para;</a></h2>
+<h3 id="voyelles-contre-voyelles">Voyelles contre voyelles<a class="headerlink" href="#voyelles-contre-voyelles" title="Permanent link">&para;</a></h3>
+<p>Nous allons dorénavant travailler sur le fichier <code>fichier_test_filtre.txt</code>.</p>
+<div class="admonition exercice">
+<p class="admonition-title">Permutation de voyelle</p>
+<p>Le cerveau a des capacités étonnantes: il est capable de lire un texte dans lequel les voyelles ont été mélangées!!
+Tentons l'expérience.
+Construire un fichier <code>fichier_test_melange.txt</code> où on a échangé les <code>e</code> avec les <code>a</code> et les <code>o</code> avec les <code>u</code>. Vous pouvez aussi coder un remplacement aléatoire d'une voyelle par une autre...</p>
+</div>
+<h3 id="cryptage">Cryptage<a class="headerlink" href="#cryptage" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Principe</p>
+<p>Le terme de cryptage désigne un ensemble de techniques, avec différents protocoles de codage, visant à rendre illisible un message, un texte ou autre contenu sensible.</p>
+</div>
+<p>Nous avons déjà rencontré le codage de César qui consiste à substituer une lettre par une autre en décalant d'une certaine valeur (la clé) les lettres de l'alphabet.</p>
+<div class="admonition exercice">
+<p class="admonition-title">Codage de César avec choix de la clé</p>
+<ol>
+<li>Coder le fichier <code>fichier_test_filtre.txt</code> par le codage de César avec la clé de votre choix.</li>
+<li>Imaginer un programme Python qui permet de tester l'ensemble des clés possibles pour décoder le texte crypté.</li>
+</ol>
+</div>
+<p>Nous allons améliorer ce codage en changeant la transformation utilisée.</p>
+<p>Dans le codage de César avec un clé égale à 4, c'est la fonction <span class="arithmatex">\(f\)</span> définie par <span class="arithmatex">\(f(x)=x+4\)</span> qui permet le décalage des rangs de l'alphabet. Nous allons choisir maintenant une <em>vraie</em> fonction <strong>affine</strong> pour transformer: le décodage en sera alors plus difficile.</p>
+<div class="admonition exercice">
+<p class="admonition-title">Codage affine</p>
+<ol>
+<li>Reprendre le travail de l'exercice précédent avec la fonction affine <span class="arithmatex">\(code\)</span> définie pour tout <span class="arithmatex">\(x\)</span> dans <span class="arithmatex">\([0,25]\)</span> par <span class="arithmatex">\(code(x)=17x+5\)</span>.</li>
+<li>Vérifier que la fonction affine <span class="arithmatex">\(decode\)</span> définie par <span class="arithmatex">\(decode(x)=23x+15\)</span> décode le fichier précédemment codé...</li>
 </ol>
 </div>
 

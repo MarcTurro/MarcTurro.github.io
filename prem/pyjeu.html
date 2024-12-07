@@ -16,7 +16,7 @@
         <link rel="prev" href="exo_listes.html">
       
       
-        <link rel="next" href="images_numeriques.html">
+        <link rel="next" href="../term/termnsi.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -841,31 +841,19 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#un-peu-de-musique-et-de-bruitage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un peu de musique et de bruitage
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="images_numeriques.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Travail sur les images numériques
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -1764,64 +1752,268 @@ Les listes sont évidemment vide au départ! À chaque construction on ajoute le
     <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">ROUGE</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="mi">40</span><span class="p">)</span>
     <span class="n">place_jeton_rouge</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
 </code></pre></div>
+<div class="admonition exercice">
+<p class="admonition-title">Compléter le code</p>
+<p>Ajouter les deux précédentes listes au programme et ainsi que les instructions précédentes.</p>
+</div>
 <h3 id="gain-vertical">Gain vertical<a class="headerlink" href="#gain-vertical" title="Permanent link">&para;</a></h3>
 <p>Un jeton étant placé, il suffit de tester si il y en a un en dessous, puis un autre puis un autre. Voici mon code:</p>
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="c1">#exemple pour les jaunes</span>
 <span class="n">gain</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">cible</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="mi">550</span> <span class="o">-</span> <span class="n">mem</span><span class="p">[</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="mi">100</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="ow">in</span> <span class="n">place_jeton_jaune</span><span class="p">:</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="n">i</span><span class="p">)</span> <span class="ow">in</span> <span class="n">place_jeton_jaune</span><span class="p">:</span>
         <span class="n">gain</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">break</span>
 </code></pre></div>
-<p>Le <code>break</code> casse la boucle: si il n'y a pas de jeton en dessous, inutile de continuer la boucle pour tester d'autres cas. En revanche, si à la fin de la boucle la variable <code>gain</code> vaut <code>3</code> alors c'est gagné!</p>
+<p>Le <code>break</code> casse la boucle: si il n'y a pas de jeton en dessous, inutile de continuer la boucle pour tester d'autres cas. En revanche, si à la fin de la boucle la variable <code>gain</code> vaut <code>4</code> alors c'est gagné!</p>
+<p>La fonction <code>gain_vertical</code> prend en paramètres les coordonnées <code>x,y</code> du clic et une liste puis retourne le booléen <code>True</code> en cas de gain vertical et <code>False</code> sinon:</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">gain_vertical</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">,</span> <span class="n">liste</span><span class="p">):</span>
+    <span class="n">gain</span> <span class="o">=</span> <span class="mi">0</span>    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="n">i</span><span class="p">)</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
+            <span class="n">gain</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">gain</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">True</span>            
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+</code></pre></div>
 <h3 id="gain-horizontal">Gain horizontal<a class="headerlink" href="#gain-horizontal" title="Permanent link">&para;</a></h3>
-<p>Un jeton étant positionné, il faut regarder à sa droite et éventuellement à sa gauche si il devient le quatrième jeton d'un alignement. Voici le code:</p>
-<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="c1">#exemple pour les jaunes</span>
-<span class="n">gain</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">cible</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="mi">550</span> <span class="o">-</span> <span class="n">mem</span><span class="p">[</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="mi">100</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">y</span><span class="p">)</span> <span class="ow">in</span> <span class="n">place_jeton_jaune</span><span class="p">:</span>
-        <span class="n">gain</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="k">else</span><span class="p">:</span> 
-        <span class="k">break</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">y</span><span class="p">)</span> <span class="ow">in</span> <span class="n">place_jeton_jaune</span><span class="p">:</span>
-        <span class="n">gain</span> <span class="o">+=</span> <span class="mi">1</span>
+<p>Un jeton étant positionné, il faut regarder à sa droite et éventuellement à sa gauche si il devient le quatrième jeton d'un alignement. Voici la fonction correspondante:</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">gain_horizontal</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">liste</span><span class="p">):</span>
+    <span class="n">gain</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
+            <span class="n">gain</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">break</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">y</span><span class="p">)</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
+            <span class="n">gain</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">break</span>
+    <span class="k">if</span> <span class="n">gain</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">break</span>    
+        <span class="k">return</span> <span class="kc">False</span> 
 </code></pre></div>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Question</label><label for="__tabbed_2_2">Réponse</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p>Quelle doit être la valeur de la variable <code>gain</code> pour que le joueur jaune gagne?</p>
-</div>
-<div class="tabbed-block">
-<p>Elle doit être égale à 4!</p>
-</div>
-</div>
-</div>
-</div>
 <h3 id="gain-diagonal">Gain diagonal<a class="headerlink" href="#gain-diagonal" title="Permanent link">&para;</a></h3>
+<p>Pour les diagonales, on s'inspire du code précédent et on obtient les deux fonctions suivantes:</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">gain_diagonal_1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">liste</span><span class="p">):</span>
+    <span class="n">gain</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="n">i</span><span class="p">)</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
+            <span class="n">gain</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">break</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
+            <span class="n">gain</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">break</span>
+    <span class="k">if</span> <span class="n">gain</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+<span class="k">def</span> <span class="nf">gain_diagonal_2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">liste</span><span class="p">):</span>
+    <span class="n">gain</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">100</span><span class="o">*</span><span class="n">i</span><span class="p">)</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
+            <span class="n">gain</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">break</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
+            <span class="n">gain</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">break</span>
+    <span class="k">if</span> <span class="n">gain</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+</code></pre></div>
 <div class="admonition exercice">
-<p class="admonition-title">À vous de jouer!</p>
-<p>En s'inspirant des instructions précédentes sur la largeur et la hauteur, donner le code qui teste si 4 pions sont alignés en diagonale.</p>
+<p class="admonition-title">Ajouter des fonctions</p>
+<p>À l'endroit indiqué, ajouter les fonctions précédentes au programme principal.</p>
 </div>
 <h3 id="declaration-du-gagnant">Déclaration du gagnant<a class="headerlink" href="#declaration-du-gagnant" title="Permanent link">&para;</a></h3>
-<p>Nous allons maintenant créer une fonction <code>test_gagnant</code> qui permettra à chaque coup de tester si un joueur a gagné.</p>
+<p>Nous allons maintenant utiliser ces fonctions pour tester à chaque coup si un joueur a gagné.
+Avant cela, nous allons créer une variable globale <code>flag</code> initialisée à 0. Elle sert à contrôler le déroulement du jeu:</p>
+<ul>
+<li>si <code>flag</code> est à 0 je jeu continue</li>
+<li>si <code>flag</code> passe à 1 (ou autre chose...) le jeu s'arrête!</li>
+</ul>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Comment arrêter le jeu?</p>
+</div>
+<p>On pourrait stopper la boucle infinie <code>while True</code> mais les événements de type <code>QUIT</code> ne seraient accessibles. On va cependant conditionner les actions de type <code>pygame.MOUSEBUTTONDOWN</code> à la valeur de la variable <code>flag</code>. On obtient alors le code maintenant complet ci-dessous:</p>
+<details class="info">
+<summary>Code complet pour jouer</summary>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">import</span> <span class="nn">pygame</span><span class="o">,</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">pygame.locals</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="c1">#----- CONSTANTE DU JEU --------------------#</span>
+<span class="n">BLEU</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+<span class="n">WHITE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+<span class="n">JAUNE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">ROUGE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">tour</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">mem</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">)]</span>
+<span class="n">place_jeton_jaune</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">place_jeton_rouge</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">gain_j</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">gain_r</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">flag</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1"># ----- INITIALISATION CONSTRUCTEURS-------------------  #</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+
+<span class="n">screen</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">(</span> <span class="p">(</span><span class="mi">700</span><span class="p">,</span> <span class="mi">600</span><span class="p">))</span>
+<span class="n">icon</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;logoNSI.ico&quot;</span><span class="p">)</span>
+
+<span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_icon</span><span class="p">(</span><span class="n">icon</span><span class="p">)</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s2">&quot;Puissance 4&quot;</span><span class="p">)</span>
+
+<span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">BLEU</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">WHITE</span><span class="p">,</span> <span class="p">(</span><span class="mi">50</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="mi">50</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="n">j</span><span class="p">),</span> <span class="mi">40</span><span class="p">)</span>
+
+<span class="c1">#  ---     FONCTIONS    -----------         #</span>
+<span class="k">def</span> <span class="nf">cible</span><span class="p">(</span><span class="n">valeur</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span>
+        <span class="k">if</span> <span class="mi">100</span><span class="o">*</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">valeur</span> <span class="o">&lt;</span><span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">valeur</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">i</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span><span class="o">//</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="n">valeur</span>
+
+<span class="k">def</span> <span class="nf">gain_vertical</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">,</span> <span class="n">liste</span><span class="p">):</span>
+    <span class="n">gain</span> <span class="o">=</span> <span class="mi">0</span>    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="n">i</span><span class="p">)</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
+            <span class="n">gain</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">gain</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">True</span>            
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+<span class="k">def</span> <span class="nf">gain_horizontal</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">liste</span><span class="p">):</span>
+    <span class="n">gain</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
+            <span class="n">gain</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">break</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">y</span><span class="p">)</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
+            <span class="n">gain</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">break</span>
+    <span class="k">if</span> <span class="n">gain</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+<span class="k">def</span> <span class="nf">gain_diagonal_1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">liste</span><span class="p">):</span>
+    <span class="n">gain</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="n">i</span><span class="p">)</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
+            <span class="n">gain</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">break</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
+            <span class="n">gain</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">break</span>
+    <span class="k">if</span> <span class="n">gain</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+<span class="k">def</span> <span class="nf">gain_diagonal_2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">liste</span><span class="p">):</span>
+    <span class="n">gain</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">100</span><span class="o">*</span><span class="n">i</span><span class="p">)</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
+            <span class="n">gain</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">break</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
+            <span class="n">gain</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">break</span>
+    <span class="k">if</span> <span class="n">gain</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>                             <span class="c1">#boucle infinie</span>
+    <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>    <span class="c1">#pour tous les événements</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">QUIT</span><span class="p">:</span>          <span class="c1">#si l&#39;événement quit est déclenché</span>
+            <span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>                  <span class="c1">#fin du jeu</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">MOUSEBUTTONDOWN</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">flag</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">cible</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="mi">550</span> <span class="o">-</span> <span class="n">mem</span><span class="p">[</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="mi">100</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span>
+                <span class="k">if</span> <span class="n">tour</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">JAUNE</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="mi">40</span><span class="p">)</span>
+                    <span class="n">place_jeton_jaune</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+
+
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">ROUGE</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="mi">40</span><span class="p">)</span>
+                    <span class="n">place_jeton_rouge</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+
+
+                <span class="k">if</span> <span class="n">gain_vertical</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">place_jeton_jaune</span><span class="p">)</span> <span class="ow">or</span> <span class="n">gain_horizontal</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">place_jeton_jaune</span><span class="p">)</span> <span class="ow">or</span> <span class="n">gain_diagonal_1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">place_jeton_jaune</span><span class="p">)</span> <span class="ow">or</span> <span class="n">gain_diagonal_2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">place_jeton_jaune</span><span class="p">):</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jaune a gagné&quot;</span><span class="p">)</span>
+                    <span class="n">flag</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="k">if</span> <span class="n">gain_vertical</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">place_jeton_rouge</span><span class="p">)</span> <span class="ow">or</span> <span class="n">gain_horizontal</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">place_jeton_rouge</span><span class="p">)</span> <span class="ow">or</span> <span class="n">gain_diagonal_1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">place_jeton_rouge</span><span class="p">)</span> <span class="ow">or</span> <span class="n">gain_diagonal_2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">place_jeton_rouge</span><span class="p">):</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rouge a gagné&quot;</span><span class="p">)</span>
+                    <span class="n">flag</span> <span class="o">=</span> <span class="mi">1</span>
+
+                <span class="n">tour</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">mem</span><span class="p">[</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="mi">100</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+</code></pre></div>
+</details>
+<h2 id="un-peu-de-musique-et-de-bruitage">Un peu de musique et de bruitage<a class="headerlink" href="#un-peu-de-musique-et-de-bruitage" title="Permanent link">&para;</a></h2>
+<p>Pygame permet d'utiliser de la musique pour dynamiser votre jeu.</p>
+<p>On suppose que vous avez trois fichiers musicaux:</p>
+<ul>
+<li><code>musique_ambiance.mp3</code> pour une musique de fond</li>
+<li><code>bruit.wav</code> pour un bruitage quand vous positionner un jeton</li>
+<li><code>applaudissement.wav</code> pour applaudir quand un joueur a gagné</li>
+</ul>
+<p>J'ai pour ma part, rangé ces trois musiques dans un dossier <code>son</code>.</p>
+<p>Pour jouer de la musique, il faut d'abord initialiser le contexte avec les instructions suivantes:</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">pygame</span><span class="o">.</span><span class="n">mixer</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">mixer</span><span class="o">.</span><span class="n">set_num_channels</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># creation de 3 channels sonores</span>
+</code></pre></div>
+<p>puis charger la musique dans une variable:
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">musique_de_fond</span> <span class="o">=</span> <span class="s2">&quot;./son/musique_ambiance.mp3&quot;</span>
+<span class="n">ambiance</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">mixer</span><span class="o">.</span><span class="n">Sound</span><span class="p">(</span><span class="n">musique_de_fond</span><span class="p">)</span>
+</code></pre></div>
+puis régler le niveau de son:
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">ambiance</span><span class="o">.</span><span class="n">set_volume</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+</code></pre></div>
+puis trouver un channel libre:
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">ch1</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">mixer</span><span class="o">.</span><span class="n">find_channel</span><span class="p">()</span>
+</code></pre></div>
+et enfin jouer la musique souhaitée dans ce canal:
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">ch1</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">ambiance</span><span class="p">)</span>
+</code></pre></div>
+Bien entendu, la musique s'arrêtera à l'instruction:
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">ch1</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+</code></pre></div></p>
 <div class="admonition exercice">
-<p class="admonition-title">La fonction <code>test_gagnant</code></p>
+<p class="admonition-title">Animation musicale</p>
 <ol>
-<li>Quel paramètre utilisé pour la fonction?</li>
-<li>Que retourne la fonction?</li>
-<li>Écrire la fonction.</li>
-<li>Intégrer l'appel de cette fonction dans le jeu, au bon endroit...</li>
+<li>Chercher sur la toile, trois musiques libres de droits que vous renommerez et sauvegarderez dans un dossier <code>son</code> au même niveau d'arborescence que votre fichier principal Python. Moi j'ai pioché <a href="https://www.musicscreen.be/">ici</a>.</li>
+<li>En s'inspirant des routines précédentes, jouer les musiques en les associant aux actions correspondantes. Par exemple, le bruitage <code>bruit</code> est associer au placement d'un jeton...</li>
 </ol>
 </div>
-<p>Vous pouvez aussi vous documenter pour ajouter des actions lorsque un joueur à gaganer...</p>
 
 
 
