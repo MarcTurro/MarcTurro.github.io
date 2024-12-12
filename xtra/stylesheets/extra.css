@@ -1,6 +1,6 @@
 .md-typeset .admonition,
 .md-typeset details {
-  border-width: 1;
+  border-width: 1px;
   border-left-width: 1px;
 }
 :root {
