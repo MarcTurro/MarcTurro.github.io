@@ -1596,10 +1596,11 @@
 <p><strong>Attention</strong>, la méthode <code>getpixel</code> prend en paramètre un tuple correspondant aux coordonnées <code>(colonne, ligne)</code> du pixel dans l'image: dans l'exemple, 20 ième colonne et 30ième ligne(il faut bien sûr s'assurer que ce pixel existe...) . Donc on ne tape pas <code>im.getpixel(20,30)</code> mais bien <code>im.getpixel((20,30))</code></p>
 <div class="admonition exo">
 <p class="admonition-title">Exo</p>
-<p>En s'utilisant le code précédent, </p>
+<p>En utilisant le code précédent, </p>
 <ol>
+<li>donner l'intensité du pixel <code>(0,0)</code> de l'image <code>puppy.png</code></li>
 <li>donner l'intensité des pixels <code>(105,42)</code> de l'image <code>puppy.png</code>.</li>
-<li>quelles sont les coordonnées du dernier pixel de l'image(en bas à droite). Donnez son intensité</li>
+<li>quelles sont les coordonnées du dernier pixel de l'image(en bas à droite). Donnez son intensité.</li>
 </ol>
 </div>
 <h3 id="ecrire-lintensite-dun-pixel">Écrire l'intensité d'un pixel<a class="headerlink" href="#ecrire-lintensite-dun-pixel" title="Permanent link">&para;</a></h3>
@@ -1631,7 +1632,11 @@ La méthode <code>putpixel</code>s'applique à l'objet <code>IM</code> et prend 
 </code></pre></div>
 Ce programme fait afficher la valeur d'intensité de tous les pixels de l'image: donc <strong>ne l'exécutez pas!</strong></p>
 <p>Dans tous les exercices, on utilisera ces deux boucles pour lire ou écrire sur une image.
-Par exemple, créeons une image en couleur de taille <code>(500, 500)</code> dont tous les pixels sont blancs sauf ceux de la ligne 250 qui sont rouges:</p>
+Par exemple, créons une image en couleur de taille <code>(500, 500)</code> dont tous les pixels sont blancs sauf ceux de la ligne 250 qui sont rouges:</p>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
+<p>Copier le code suivant et exécuter-le.</p>
+</div>
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
 <span class="c1">#Ouverture d&#39;une nouvelle image</span>
 <span class="n">img_new</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;RGB&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">))</span>
@@ -1711,7 +1716,7 @@ Quelques informations sur le programme précédent:</p>
 <p class="admonition-title">Exo</p>
 <ol>
 <li>Créer une image en niveaux de gris de dimension 500 sur 100 pixels où chaque pixel a une intensité égale à un nombre aléatoire entre 0  et 255. On sauvegardera sous le nom <code>hasard.png</code> cette image.</li>
-<li>Créer une image en couleur de dimension 500 sur 100 pixels où chaque pixel a une intensité de rouge, de vert et de bleu est égale à un nombre aléatoire entre 0  et 255. On sauvegardera cette image sous le nom <code>hasardcouleur.png</code> .</li>
+<li>Créer une image en couleur de dimension 500 sur 100 pixels où chaque pixel a une intensité de rouge, de vert et de bleu égale à un nombre aléatoire entre 0  et 255. On sauvegardera cette image sous le nom <code>hasardcouleur.png</code> .</li>
 </ol>
 </div>
 <div class="admonition exo">
