@@ -1,0 +1,37 @@
+
+<svg
+    width="1234" height="458" viewBox="-211 -214 302 125" xmlns="http://www.w3.org/2000/svg"
+>
+    <circle class="svg-6" cx="-90.0" cy="-105.0" r="15.5" stroke="#1bac1b" fill="#1bac1b"/>
+    <text class="svg-6" x="-90.0" y="-105.0" font-size="12" text-anchor="middle" dominant-baseline="middle" >2</text>
+    <circle class="svg-0" cx="-90.0" cy="-195.0" r="15.5" stroke="#1bac1b" fill="#1bac1b"/>
+    <text class="svg-0" x="-90.0" y="-195.0" font-size="12" text-anchor="middle" dominant-baseline="middle" >0</text>
+    <circle class="svg-3" cx="-30.0" cy="-195.0" r="15.5" stroke="#1bac1b" fill="#1bac1b"/>
+    <text class="svg-3" x="-30.0" y="-195.0" font-size="12" text-anchor="middle" dominant-baseline="middle" >1</text>
+    <circle class="svg-87" cx="-30.0" cy="-105.0" r="15.5" stroke="#1bac1b" fill="#1bac1b"/>
+    <text class="svg-87" x="-30.0" y="-105.0" font-size="12" text-anchor="middle" dominant-baseline="middle" >5</text>
+    <circle class="svg-72" cx="75.0" cy="-150.0" r="15.5" stroke="#1bac1b" fill="#1bac1b"/>
+    <text class="svg-72" x="75.0" y="-150.0" font-size="12" text-anchor="middle" dominant-baseline="middle" >4</text>
+    <circle class="svg-9" cx="-195.0" cy="-150.0" r="15.5" stroke="#1bac1b" fill="#1bac1b"/>
+    <text class="svg-9" x="-195.0" y="-150.0" font-size="12" text-anchor="middle" dominant-baseline="middle" >3</text>
+    <path class="svg-174" d="M -46.0 -105.0 L -73.0 -105.0" stroke="#1bac1b"/>
+    <path class="svg-174" d="M -66.0 -101.0 L -66.0 -109.0 L -74.0 -105.0 z" stroke="none" fill="#1bac1b" />
+    <path class="svg-212" d="M -90.0 -179.0 L -90.0 -122.0" stroke="#1bac1b"/>
+    <path class="svg-212" d="M -86.0 -129.0 L -94.0 -129.0 L -90.0 -121.0 z" stroke="none" fill="#1bac1b" />
+    <path class="svg-61" d="M -180.3 -143.7 L -105.6 -111.7" stroke="#1bac1b"/>
+    <path class="svg-61" d="M -110.5 -118.1 L -113.6 -110.8 L -104.7 -111.3 z" stroke="none" fill="#1bac1b" />
+    <path class="svg-243" d="M -42.0 -185.0 A 38.0 38.0 0 0 1 -71.0 -182.0" stroke="#1bac1b" fill="none"/>
+    <path class="svg-243" d="M -72.8 -177.2 L -69.0 -184.2 L -77.9 -184.5 z" stroke="none" fill="#1bac1b" />
+    <path class="svg-13" d="M -78.0 -205.0 A 38.0 38.0 0 0 1 -49.0 -208.0" stroke="#1bac1b" fill="none"/>
+    <path class="svg-13" d="M -47.2 -212.8 L -51.0 -205.8 L -42.1 -205.5 z" stroke="none" fill="#1bac1b" />
+    <path class="svg-44" d="M -104.7 -188.7 L -179.4 -156.7" stroke="#1bac1b"/>
+    <path class="svg-44" d="M -171.4 -155.8 L -174.5 -163.1 L -180.3 -156.3 z" stroke="none" fill="#1bac1b" />
+    <path class="svg-117" d="M -14.0 -196.0 A 116.0 116.0 0 0 1 59.0 -167.0" stroke="#1bac1b" fill="none"/>
+    <path class="svg-117" d="M 61.6 -170.5 L 55.9 -164.8 L 64.4 -162.0 z" stroke="none" fill="#1bac1b" />
+    <path class="svg-268" d="M -30.0 -179.0 L -30.0 -122.0" stroke="#1bac1b"/>
+    <path class="svg-268" d="M -26.0 -129.0 L -34.0 -129.0 L -30.0 -121.0 z" stroke="none" fill="#1bac1b" />
+    <path class="svg-261" d="M 64.0 -138.0 A 116.0 116.0 0 0 1 -7.0 -105.0" stroke="#1bac1b" fill="none"/>
+    <path class="svg-261" d="M -5.9 -100.6 L -6.1 -108.6 L -14.0 -104.4 z" stroke="none" fill="#1bac1b" />
+    <path class="svg-152" d="M -19.0 -117.0 A 116.0 116.0 0 0 1 52.0 -150.0" stroke="#1bac1b" fill="none"/>
+    <path class="svg-152" d="M 50.9 -154.4 L 51.1 -146.4 L 59.0 -150.6 z" stroke="none" fill="#1bac1b" />
+</svg>

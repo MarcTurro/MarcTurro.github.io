@@ -1,0 +1,25 @@
+
+<svg
+    width="1234" height="458" viewBox="-4006 -3616 152 182" xmlns="http://www.w3.org/2000/svg"
+>
+    <circle class="svg-3" cx="-3870.0" cy="-3525.0" r="15.5" stroke="#1bac1b" fill="#1bac1b"/>
+    <text class="svg-3" x="-3870.0" y="-3525.0" font-size="12" text-anchor="middle" dominant-baseline="middle" >1</text>
+    <circle class="svg-9" cx="-3990.0" cy="-3525.0" r="15.5" stroke="#1bac1b" fill="#1bac1b"/>
+    <text class="svg-9" x="-3990.0" y="-3525.0" font-size="12" text-anchor="middle" dominant-baseline="middle" >3</text>
+    <circle class="svg-0" cx="-3930.0" cy="-3600.0" r="15.5" stroke="#1bac1b" fill="#1bac1b"/>
+    <text class="svg-0" x="-3930.0" y="-3600.0" font-size="12" text-anchor="middle" dominant-baseline="middle" >0</text>
+    <circle class="svg-6" cx="-3930.0" cy="-3450.0" r="15.5" stroke="#1bac1b" fill="#1bac1b"/>
+    <text class="svg-6" x="-3930.0" y="-3450.0" font-size="12" text-anchor="middle" dominant-baseline="middle" >2</text>
+    <path class="svg-17" d="M -3886.0 -3525.0 L -3973.0 -3525.0" stroke="#1bac1b"/>
+    <path class="svg-17" d="M -3966.0 -3521.0 L -3966.0 -3529.0 L -3974.0 -3525.0 z" stroke="none" fill="#1bac1b" />
+    <path class="svg-57" d="M -3885.0 -3531.0 A 84.0 84.0 0 0 1 -3925.0 -3577.0" stroke="#1bac1b" fill="none"/>
+    <path class="svg-57" d="M -3929.2 -3575.5 L -3921.5 -3577.5 L -3927.4 -3584.2 z" stroke="none" fill="#1bac1b" />
+    <path class="svg-13" d="M -3915.0 -3594.0 A 84.0 84.0 0 0 1 -3875.0 -3548.0" stroke="#1bac1b" fill="none"/>
+    <path class="svg-13" d="M -3870.8 -3549.5 L -3878.5 -3547.5 L -3872.6 -3540.8 z" stroke="none" fill="#1bac1b" />
+    <path class="svg-33" d="M -3927.0 -3466.0 A 84.0 84.0 0 0 1 -3891.0 -3515.0" stroke="#1bac1b" fill="none"/>
+    <path class="svg-33" d="M -3893.8 -3518.8 L -3890.1 -3511.7 L -3884.8 -3519.0 z" stroke="none" fill="#1bac1b" />
+    <path class="svg-24" d="M -3873.0 -3509.0 A 84.0 84.0 0 0 1 -3909.0 -3460.0" stroke="#1bac1b" fill="none"/>
+    <path class="svg-24" d="M -3906.2 -3456.2 L -3909.9 -3463.3 L -3915.2 -3456.0 z" stroke="none" fill="#1bac1b" />
+    <path class="svg-40" d="M -3940.0 -3587.5 L -3979.4 -3538.3" stroke="#1bac1b"/>
+    <path class="svg-40" d="M -3971.9 -3541.2 L -3978.1 -3546.2 L -3980.0 -3537.5 z" stroke="none" fill="#1bac1b" />
+</svg>
