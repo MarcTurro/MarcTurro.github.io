@@ -7,7 +7,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
-        <meta name="author" content="Mireille Coilhac">
+        <meta name="author" content="Marc TURRO">
       
       
         <link rel="canonical" href="https://marcturro.github.io/term/parcours_graphes.html">
@@ -16,7 +16,7 @@
         <link rel="prev" href="poo_arbres.html">
       
       
-        <link rel="next" href="complex_struc.html">
+        <link rel="next" href="recherche.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -157,7 +157,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introduction-modeliser-un-labyrinthe" class="md-skip">
+        <a href="#les-parcours-de-graphes" class="md-skip">
           Aller au contenu
         </a>
       
@@ -991,6 +991,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -1019,45 +1021,14 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table des matières
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#introduction-modeliser-un-labyrinthe" class="md-nav__link">
-    <span class="md-ellipsis">
-      Introduction : modéliser un labyrinthe
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Introduction : modéliser un labyrinthe">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#les-labyrinthes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Les labyrinthes
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#les-parcours-de-graphes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Les parcours de graphes
-    </span>
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#le-parcours-en-largeur" class="md-nav__link">
@@ -1072,15 +1043,6 @@
   <a href="#le-parcours-en-profondeur" class="md-nav__link">
     <span class="md-ellipsis">
       Le parcours en profondeur
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#le-parcours-en-profondeur-iteratif" class="md-nav__link">
-    <span class="md-ellipsis">
-      Le parcours en profondeur itératif
     </span>
   </a>
   
@@ -1111,53 +1073,11 @@
   
   
     <li class="md-nav__item">
-      <a href="complex_struc.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Complexité des structures
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="recherche.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Recherche textuelle
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="reseau_term.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Rappel sur les réseaux informatiques
   </span>
   
 
@@ -1405,73 +1325,11 @@
                   
 
 
-  <h1>Parcours de graphes</h1>
-
-<h2 id="introduction-modeliser-un-labyrinthe">Introduction : modéliser un labyrinthe<a class="headerlink" href="#introduction-modeliser-un-labyrinthe" title="Permanent link">&para;</a></h2>
-<p><strong>Considérons les problèmes suivants :</strong></p>
-<ul>
-<li>Comment rechercher le chemin le plus court entre deux stations dans le métro? Indépendamment de l'aspect ludique, c'est en fait un problème difficile qu'on aurait bien du mal à résoudre de façon raisonnable sur un gros graphe comme celui du métro.   </li>
-<li>Comment trouver la sortie d'un labyrinthe? </li>
-</ul>
-<h3 id="les-labyrinthes">Les labyrinthes<a class="headerlink" href="#les-labyrinthes" title="Permanent link">&para;</a></h3>
-<p>Voici l'image d'un labyrinthe :</p>
-<p><img src="https://www.di.ens.fr/~mauborgn/td-99/programmation/petitlab.gif"></p>
-<p>Ce labyrinthe peut être représenté par le graphe suivant :</p>
-<p><img src="https://www.di.ens.fr/~mauborgn/td-99/programmation/petit.gif"></p>
-<ul>
-<li>
-<p><strong>Chaque sommet du graphe correspond à une case du labyrinthe</strong></p>
-</li>
-<li>
-<p><strong>une arête relie 2 cases voisines quand le passage est possible.</strong></p>
-</li>
-<li>
-<p><strong>Si une paroie empêche de passer on ne met pas l'arête.</strong></p>
-</li>
-</ul>
-<p>Par exemple il n'y a pas d'arête entre les sommets (1,1) et (1,2) mais il y en a une entre (1,1) et (2,1).  </p>
-<details class="question" open="open">
-<summary>Les noeuds</summary>
-<p>A quoi correspondent les deux chiffres des noeuds de cette représentation ?</p>
-<details class="success">
-<summary>Solution</summary>
-<p>Le premier chiffre est un numéro de ligne, le deuxième un numéro de colonne.</p>
-</details>
-</details>
-<p>Nous allons représenter ce graphe par le dictionnaire suivant : </p>
-<p><div class="highlight"><pre><span></span><code><span class="n">graphe</span> <span class="o">=</span> <span class="p">{</span><span class="mi">11</span><span class="p">:</span> <span class="p">[</span><span class="mi">21</span><span class="p">],</span> <span class="mi">12</span><span class="p">:</span> <span class="p">[],</span> <span class="mi">13</span><span class="p">:</span> <span class="p">[</span><span class="mi">23</span><span class="p">,</span> <span class="mi">14</span><span class="p">],</span> <span class="mi">14</span><span class="p">:</span> <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">24</span><span class="p">],</span> <span class="mi">15</span><span class="p">:</span> <span class="p">[</span><span class="mi">14</span><span class="p">,</span> <span class="mi">25</span><span class="p">],</span> <span class="mi">16</span><span class="p">:</span> <span class="p">[</span><span class="mi">26</span><span class="p">,</span> <span class="mi">17</span><span class="p">],</span> <span class="mi">17</span><span class="p">:</span> <span class="p">[</span><span class="mi">16</span><span class="p">,</span> <span class="mi">18</span><span class="p">],</span> <span class="mi">18</span><span class="p">:</span> <span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">28</span><span class="p">],</span>
-         <span class="mi">21</span><span class="p">:</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">22</span><span class="p">],</span> <span class="mi">22</span><span class="p">:</span> <span class="p">[</span><span class="mi">21</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">32</span><span class="p">],</span> <span class="mi">23</span><span class="p">:</span> <span class="p">[</span><span class="mi">22</span><span class="p">,</span> <span class="mi">13</span><span class="p">],</span> <span class="mi">24</span><span class="p">:</span> <span class="p">[</span><span class="mi">14</span><span class="p">,</span> <span class="mi">34</span><span class="p">],</span> <span class="mi">25</span><span class="p">:</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">26</span><span class="p">],</span> <span class="mi">26</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">27</span><span class="p">],</span> 
-         <span class="mi">27</span><span class="p">:</span> <span class="p">[</span><span class="mi">37</span><span class="p">,</span> <span class="mi">26</span><span class="p">],</span> <span class="mi">28</span><span class="p">:</span> <span class="p">[</span><span class="mi">18</span><span class="p">,</span> <span class="mi">38</span><span class="p">],</span> <span class="mi">31</span><span class="p">:</span> <span class="p">[],</span> <span class="mi">32</span><span class="p">:</span> <span class="p">[</span><span class="mi">22</span><span class="p">,</span> <span class="mi">42</span><span class="p">],</span> <span class="mi">33</span><span class="p">:</span> <span class="p">[],</span> <span class="mi">34</span><span class="p">:</span> <span class="p">[</span><span class="mi">24</span><span class="p">,</span> <span class="mi">35</span><span class="p">],</span> <span class="mi">35</span><span class="p">:</span> <span class="p">[</span><span class="mi">34</span><span class="p">,</span> <span class="mi">36</span><span class="p">],</span> 
-         <span class="mi">36</span><span class="p">:</span> <span class="p">[</span><span class="mi">26</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">37</span><span class="p">],</span> <span class="mi">37</span><span class="p">:</span> <span class="p">[</span><span class="mi">27</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">47</span><span class="p">],</span> <span class="mi">38</span><span class="p">:</span> <span class="p">[</span><span class="mi">28</span><span class="p">,</span> <span class="mi">48</span><span class="p">],</span> <span class="mi">41</span><span class="p">:</span> <span class="p">[],</span> <span class="mi">42</span><span class="p">:</span> <span class="p">[</span><span class="mi">32</span><span class="p">,</span> <span class="mi">43</span><span class="p">],</span> <span class="mi">43</span><span class="p">:</span> <span class="p">[</span><span class="mi">42</span><span class="p">,</span> <span class="mi">44</span><span class="p">],</span> <span class="mi">44</span><span class="p">:</span> <span class="p">[</span><span class="mi">43</span><span class="p">],</span> 
-         <span class="mi">45</span><span class="p">:</span> <span class="p">[</span><span class="mi">46</span><span class="p">],</span> <span class="mi">46</span><span class="p">:</span> <span class="p">[</span><span class="mi">36</span><span class="p">,</span> <span class="mi">45</span><span class="p">],</span> <span class="mi">47</span><span class="p">:</span> <span class="p">[</span><span class="mi">37</span><span class="p">,</span> <span class="mi">48</span><span class="p">],</span> <span class="mi">48</span><span class="p">:</span> <span class="p">[</span><span class="mi">47</span><span class="p">,</span> <span class="mi">38</span><span class="p">]}</span>
-</code></pre></div>
-Pour simplifier la figure, nous avons adopté les conventions suivantes : le nœud 11 représente en fait 1,1, le nœud 12 représente 1,2 etc ...</p>
-<details class="question" open="open">
-<summary>Résoudre ce labyrinthe</summary>
-<p>Ce labyrinthe est assez simple, et une fois sa représentation en graphe tracée , il semble assez facile de résoudre ce labyrinthe, c'est à dire de trouver un chemin qui permette d'aller d'une case "entrée" à une case "sortie".</p>
-<p>Supposons que la case "entrée" soit la case (1,1) et la case sortie la case (4,8). Cela correspond respectivement aux noeuds 11 et 48.
-Observons le graphe précédent. On voit assez facilement plusieurs chemins possibles. En donner trois possibles.</p>
-<details class="success">
-<summary>Solution</summary>
-<ul>
-<li>11-21-22-23-13-14-15-25-26-16-17-18-28-38-48</li>
-<li>11-21-22-23-13-14-24-34-35-36-37-47-48</li>
-<li>11-21-22-23-13-14-24-34-35-36-26-16-17-18-28-38-48</li>
-</ul>
-</details>
-</details>
-<div class="admonition example">
-<p class="admonition-title">Quels parcours ?</p>
-<p>Nous voulons écrire un script Python qui permette de résoudre automatiquement, dans le cas où c'est possible, n'importe quel labyrinthe, même très compliqué.   </p>
-<p>Pour cela on peut penser parcourir le graphe en partant de l'entrée, en suivant différents chemins, jusqu'à atteindre le sommet de sortie.<br />
-Plusieurs algorithmes "classiques" permettent de parcourir les graphes. Nous allons commencer par les étudier, puis nous essaierons de résoudre ce problème en choisissant l'algorithme le plus adapté à cette situation.</p>
-</div>
-<h2 id="les-parcours-de-graphes">Les parcours de graphes<a class="headerlink" href="#les-parcours-de-graphes" title="Permanent link">&para;</a></h2>
+<h1 id="les-parcours-de-graphes">Les parcours de graphes<a class="headerlink" href="#les-parcours-de-graphes" title="Permanent link">&para;</a></h1>
 <p>Contrairement aux arbres, les graphes n’ont pas de racine, de « début ». On peut donc choisir n’importe
 quel sommet pour commencer le parcours. Ceci dit, le parcours de certains graphes orientés demande un
 choix de sommet de début réfléchi.  </p>
-<p>😅 La vidéo suivante explique le principe des parcours. Pour bien justifier l'utilisation de la pile, la première étape du premier
-parcours présenté n'est pas tout à fait celle du parcours en profondeur que nous verrons au IV. </p>
+<p>😅 La vidéo suivante explique le principe des parcours.  </p>
 <p><center></p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/uTwgr2Gbovk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 <p></center></p>
@@ -1483,8 +1341,8 @@ parcours présenté n'est pas tout à fait celle du parcours en profondeur que n
 </ul>
 </div>
 <h2 id="le-parcours-en-largeur">Le parcours en largeur<a class="headerlink" href="#le-parcours-en-largeur" title="Permanent link">&para;</a></h2>
-<div class="admonition info">
-<p class="admonition-title">Parcours en largeur</p>
+<div class="admonition abstract">
+<p class="admonition-title">Algorithme</p>
 <p>Parcours en largeur ou <strong>BFS</strong> pour Breadth-First Search en anglais.</p>
 <p><pre>
 <b>parcours</b> est la liste vide qui contiendra les sommets visités par parcours en largeur
@@ -1614,7 +1472,6 @@ Lorsqu'il n'y a plus de voisin, on revient en arrière pour aller voir le dernie
 auquel cas on revient au dernier embranchement et on prend un autre chemin, puis on repart à droite, etc. 
 Attention, pour ne pas tourner en rond autour d'un bloc, il faut marquer les endroits par lesquels on est déjà passés.</p>
 </div>
-<h2 id="le-parcours-en-profondeur-iteratif">Le parcours en profondeur itératif<a class="headerlink" href="#le-parcours-en-profondeur-iteratif" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Algorithme itératif avec une pile</p>
 <p>Comme nous l'avons vu dans la vidéo, on peut aussi utiliser une pile pour stocker les premiers voisins.</p>
@@ -1714,9 +1571,6 @@ sommets déjà visités pour ne pas les visiter à nouveau. On avance le plus po
 
 
 
-
-  
-  
 
 
 
