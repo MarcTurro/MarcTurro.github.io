@@ -13,6 +13,10 @@
         <link rel="canonical" href="https://marcturro.github.io/prem/dauphin.html">
       
       
+        <link rel="prev" href="traitement_donnees.html">
+      
+      
+        <link rel="next" href="../term/termnsi.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +24,7 @@
     
     
       
-        <title>Dauphin - Numérique et Sciences Informatiques</title>
+        <title>Programmer un microprocesseur - Numérique et Sciences Informatiques</title>
       
     
     
@@ -78,10 +82,9 @@
 
       
     
+
 <script src="../xtra/webcomponentsjs/webcomponents-loader.js"></script>
 <script src="../xtra/gifplayer/gif-player.es6.js" defer async></script>
-<!-- Massilia javascripts -->
-    <script src="../js/massilia.js"></script>
 
 <!-- favicons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/atom-one-light.min.css">
@@ -112,12 +115,6 @@
       <link rel="stylesheet" href="../xtra/stylesheets/extra.css">
     
       <link rel="stylesheet" href="../xtra/stylesheets/pyoditeur.css">
-    
-      <link rel="stylesheet" href="../xtra/stylesheets/ajustements.css">
-    
-      <link rel="stylesheet" href="../xtra/stylesheets/massilia-columns.css">
-    
-      <link rel="stylesheet" href="../xtra/stylesheets/massilia-admonitions.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -188,7 +185,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Dauphin
+              Programmer un microprocesseur
             
           </span>
         </div>
@@ -292,10 +289,12 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="premnsi.html" class="md-tabs__link">
           
   
@@ -443,27 +442,30 @@
       
   
   
+    
   
   
+  
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -474,7 +476,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Première NSI
@@ -770,6 +772,234 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Programmer un microprocesseur
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="dauphin.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Programmer un microprocesseur
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-dauphin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le Dauphin
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-bus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les bus
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lire-ou-ecrire" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lire ou écrire
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#communiquer-avec-les-peripheriques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Communiquer avec les périphériques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Communiquer avec les périphériques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lecran-aux-7-segments" class="md-nav__link">
+    <span class="md-ellipsis">
+      L'écran aux 7 segments.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lecran-bitmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      L'écran Bitmap
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-clavier-du-dauphin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le clavier du dauphin
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-processeur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le processeur
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Le processeur">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tournez-en-rond" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tournez en rond!
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registre-et-memoire" class="md-nav__link">
+    <span class="md-ellipsis">
+      Registre et mémoire.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#une-instruction-importante-le-saut" class="md-nav__link">
+    <span class="md-ellipsis">
+      Une instruction importante: le saut!
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-boucle" class="md-nav__link">
+    <span class="md-ellipsis">
+      La boucle!
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programmons-enfin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programmons enfin!
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Programmons enfin!">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#laddition" class="md-nav__link">
+    <span class="md-ellipsis">
+      L'addition!
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#saut-conditionnel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Saut conditionnel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#et-apres" class="md-nav__link">
+    <span class="md-ellipsis">
+      Et après...
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1265,8 +1495,8 @@ L'ENIAC(photo ci-dessus) est naît en 1943 de la volonté du gouvernement Améri
 </ul>
 <p>Pour comprendre comment fonctionnent ces architectures, nous allons utiliser le simulateur Dauphin développé en 1977 par le professeur Jean Daniel Nicoud. Il permet de simuler le fonctionnement rudimentaire d'un ordinateur démuni de <strong>logiciels</strong> et même de <strong>système d'exploitation</strong>.</p>
 <h2 id="le-dauphin">Le Dauphin<a class="headerlink" href="#le-dauphin" title="Permanent link">&para;</a></h2>
-<p><img align="right" alt="" src="img/dauphin.png" width="40%" /> 
-À l'ouverture du dauphin, vous observerez ceci:</p>
+<p><img align="right" alt="" src="img/dauphin.png" width="40%" /> </p>
+<p>À l'ouverture du dauphin, vous observerez ceci:</p>
 <ol>
 <li>Icônes classiques</li>
 <li>Choix des panneaux</li>
@@ -1282,8 +1512,8 @@ L'ENIAC(photo ci-dessus) est naît en 1943 de la volonté du gouvernement Améri
 <div class="admonition info">
 <p class="admonition-title">Les bus</p>
 <ul>
-<li>Les bus d'adresses servent à déterminer l'adresse des mémoires où nous allons écrire ou lire des données</li>
-<li>Les bus de données servent à écrire une information à l'adresse indiquée par le ... bus d'adresses!</li>
+<li>Les <strong>bus d'adresses</strong> servent à déterminer l'adresse des mémoires où nous allons écrire ou lire des données</li>
+<li>Les <strong>bus de données</strong> servent à écrire une information à l'adresse indiquée par le ... bus d'adresses!</li>
 </ul>
 </div>
 <p>Les données sont des valeurs données sous un format <strong>hexadécimal</strong>. Un manipulation pour comprendre...</p>
@@ -1304,17 +1534,13 @@ L'ENIAC(photo ci-dessus) est naît en 1943 de la volonté du gouvernement Améri
 La mémoire des ordinateurs peut être considérée comme une grande commode contenant une quantité énorme de tiroirs. Pour accéder à ces tiroirs, on utilise son <strong>adresse</strong> donnée sous forme hexadécimale. Et dans ces tiroirs, on stocke une information, une <strong>donnée</strong> sous la forme d'un nombre hexadécimal.</p>
 <div class="admonition exercice">
 <p class="admonition-title">Exercice</p>
-<p>Le bus d'adresse contient 12 bits et le bus de données 8.</p>
-<ol>
-<li>Combien d'adresses possède le simulateur dauphin?</li>
-<li>Combien de données différentes peut-on écrire à une adresse?</li>
-</ol>
+<p>Le bus d'adresse contient 12 bits et le bus de données 8. Combien de bus d'adresses possède le simulateur dauphin?</p>
 </div>
+<p>On verra que les bus d'adresses permettent d'accéder à des endroits particuliers comme la mémoire, mais aussi les périphériques(écran par exemple..)</p>
 <div class="admonition info">
 <p class="admonition-title">La mémoire du dauphin</p>
 <p>Les adresses mémoires du dauphin vont de <code>0x000</code> à <code>0x7FF</code>(<code>0111 1111 1111</code> en binaire).</p>
 </div>
-<p>On verra que les bus d'adresses permettent d'accéder à des endroits particuliers comme la mémoire, mais aussi les périphériques(écran par exemple..)</p>
 <h2 id="lire-ou-ecrire">Lire ou écrire<a class="headerlink" href="#lire-ou-ecrire" title="Permanent link">&para;</a></h2>
 <div class="admonition exercice">
 <p class="admonition-title">Vous avez bien compris?</p>
@@ -1326,7 +1552,7 @@ La mémoire des ordinateurs peut être considérée comme une grande commode con
 <p>Lisez la valeur au bus d'adresse <code>0x0D2</code>.</p>
 </div>
 <h1 id="communiquer-avec-les-peripheriques">Communiquer avec les périphériques<a class="headerlink" href="#communiquer-avec-les-peripheriques" title="Permanent link">&para;</a></h1>
-<p>Pour communiquer avec un ordinateur, on a besoin de:</p>
+<p>Pour communiquer avec le <strong>processeur</strong>, on a besoin de:</p>
 <ul>
 <li>périphériques d'<strong>entrées</strong> pour lui donner des informations: le clavier en est un bon exemple.</li>
 <li>périphériques de <strong>sorties</strong> pour qu'il nous donne des informations: l'écran est l'exemple parfait.</li>
@@ -1361,10 +1587,6 @@ La mémoire des ordinateurs peut être considérée comme une grande commode con
 <tr>
 <td style="text-align: center;"><code>0xC80</code> à <code>0xCDF</code></td>
 <td style="text-align: center;">Ecran Display</td>
-</tr>
-<tr>
-<td style="text-align: center;">{: .tabnsi :}</td>
-<td style="text-align: center;"></td>
 </tr>
 </tbody>
 </table>
@@ -1403,7 +1625,7 @@ La mémoire des ordinateurs peut être considérée comme une grande commode con
 <p class="admonition-title">Utiliser le clavier du dauphin</p>
 <ol>
 <li>Saisissez le bus d'adresse <code>0xC07</code>.</li>
-<li>Appuyez sur le <strong>6</strong> du clavier du dauphin.</li>
+<li>Appuyez sur le <strong>6</strong> du CLAVIER DU DAUPHIN.</li>
 <li>Appuyer deux fois sur le bouton <code>R</code> pour lire la valeur (deux fois car dauphin utilise une mémoire tampon pour sauvegarder la touche enfoncée).</li>
 </ol>
 </div>
@@ -1427,7 +1649,7 @@ La mémoire des ordinateurs peut être considérée comme une grande commode con
 </div>
 <div class="admonition question">
 <p class="admonition-title">Que fait le processeur?</p>
-<p>Il balaie toutes les bus adresses pour y lire les données. Or toutes les données sont à <code>0x00</code>, instruction qui veut dire <code>Ne rien faire...(NOP)</code>.</p>
+<p>Il <strong>balaie</strong> tous les bus adresses pour y lire les données. Or toutes les données sont à <code>0x00</code>, instruction qui veut dire <code>Ne rien faire...(NOP)</code>.</p>
 </div>
 <p>C'est le principe général: il lit une instruction en mémoire, l'exécute avant de passer à l'instruction suivante, à l'infini...</p>
 <div class="admonition exercice">
@@ -1442,7 +1664,7 @@ La mémoire des ordinateurs peut être considérée comme une grande commode con
 <p>C'est simple, non ! Pour afficher les chiffres de la date, le processeur lit les adresses de <code>0xC00</code> à <code>0xC03</code>: il suffit d'y écrire les bonnes valeurs!</p>
 <p><img alt="" src="img/date2024.png" width="40%" /></p>
 <h2 id="registre-et-memoire">Registre et mémoire.<a class="headerlink" href="#registre-et-memoire" title="Permanent link">&para;</a></h2>
-<p>Restons dans la configuration <code>CPU +MEM</code> pour observer les <strong>registres</strong> du processeur et la <strong>mémoire</strong>. Mais c'est quoi un registre? Demondons à wikipédia...</p>
+<p>Restons dans la configuration <code>CPU +MEM</code> pour observer les <strong>registres</strong> du processeur et la <strong>mémoire</strong>. Mais c'est quoi un registre? Demandons à wikipédia...</p>
 <div class="admonition quote">
 <p class="admonition-title">un registre selon Wikipédia</p>
 <p>Un registre est un emplacement de mémoire interne à un processeur. Les registres se situent au sommet de la hiérarchie mémoire : il s'agit de la mémoire la plus rapide d'un ordinateur, mais dont le coût de fabrication est le plus élevé, car la place dans un microprocesseur est limitée. </p>
@@ -1461,12 +1683,12 @@ La mémoire des ordinateurs peut être considérée comme une grande commode con
 <li>Ouvrez un noveau programme.</li>
 <li>Dans le panneau mémoire, tapez la valeur <code>10</code> à l'adresse <code>0x002</code>.</li>
 <li>Puis tapez respectivement <code>03</code> et <code>A0</code> aux adresses <code>0x003</code> puis <code>0x004</code>.</li>
-<li>Passez en mode <code>step</code>(pas à pas) et appuyez sur <code>RUN</code>, puis <code>S</code> pour observer le comportement du processeur.</li>
-<li>Observez la valeur du registre <code>PC</code>.</li>
+<li>Passez en mode <code>step</code>(pas à pas) et appuyez sur <code>RUN</code>, puis  plusieurs fois sur <code>S</code> pour observer le comportement du processeur.</li>
+<li>Recommencez plusieurs fois pour observez la valeur du registre <code>PC</code>.</li>
 </ol>
 </div>
-<p>C'est votre premier programme en lanage machine! Félicitations.</p>
-<p>Cependant il est peu commode d'écrire un programme sous forme d'instructions codées en hexadécimal. On préfère donc décrire son programme sous la forme d'instructions plus simples, plus proche de notre langage que celui de la machine...</p>
+<p>C'est votre premier programme en langage machine! Félicitations.</p>
+<p>Cependant il est peu commode d'écrire un programme sous <strong>forme d'instructions codées en hexadécimal</strong>. On préfère donc décrire son programme sous la forme d'instructions plus simples, plus proche de notre langage que celui de la machine...</p>
 <table class="table">
 <thead>
 <tr>
@@ -1504,12 +1726,6 @@ La mémoire des ordinateurs peut être considérée comme une grande commode con
 <tr>
 <td style="text-align: center;"><strong>004</strong></td>
 <td style="text-align: center;">A0</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr>
-<td style="text-align: center;">{: .tabnsi :}</td>
-<td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;"></td>
 </tr>
@@ -1562,12 +1778,6 @@ La mémoire des ordinateurs peut être considérée comme une grande commode con
 <tr>
 <td style="text-align: center;"><strong>004</strong></td>
 <td style="text-align: center;">00</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr>
-<td style="text-align: center;">{: .tabnsi :}</td>
-<td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;"></td>
 </tr>
@@ -1638,12 +1848,6 @@ La mémoire des ordinateurs peut être considérée comme une grande commode con
 <tr>
 <td style="text-align: center;"><strong>008</strong></td>
 <td style="text-align: center;">02</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr>
-<td style="text-align: center;">{: .tabnsi :}</td>
-<td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;"></td>
 </tr>
@@ -1751,12 +1955,6 @@ La mémoire des ordinateurs peut être considérée comme une grande commode con
 <td style="text-align: center;"></td>
 <td style="text-align: left;"></td>
 </tr>
-<tr>
-<td style="text-align: center;">{: .tabnsi :}</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-</tr>
 </tbody>
 </table>
 <div class="admonition exo">
@@ -1766,9 +1964,11 @@ La mémoire des ordinateurs peut être considérée comme une grande commode con
 <p>Pour savoir si vous avez tout compris, réalisez enfin l'exercice suivant:</p>
 <div class="admonition exo">
 <p class="admonition-title">Une première synthèse.</p>
-<p>Écrire un programme qui:
-1. Fait un chenillard sur chacun des quatre cadrans à segments.
-2. Fait un chenillar qui passe d'un cadran à un autre...</p>
+<p>Écrire un programme qui:</p>
+<ol>
+<li>Fait un chenillard sur chacun des quatre cadrans à segments.</li>
+<li>Fait un chenillar qui passe d'un cadran à un autre...</li>
+</ol>
 </div>
 <h2 id="et-apres">Et après...<a class="headerlink" href="#et-apres" title="Permanent link">&para;</a></h2>
 <p>Vous pouvez observer toutes les intructions du dauphin dans le menu <code>Ops</code>.
@@ -1796,10 +1996,7 @@ La mémoire des ordinateurs peut être considérée comme une grande commode con
 
 
                 
-<script src="../pyodide-mkdocs/ide.js"></script> 
-<!-- Massilia javascripts -->
 
-<script src="../js/massilia.js" ></script>
 
               </article>
             </div>
@@ -1849,14 +2046,6 @@ La mémoire des ordinateurs peut être considérée comme une grande commode con
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
         <script src="../xtra/javascripts/mathjax.js"></script>
-      
-        <script src="../xtra/javascripts/interpreter.js"></script>
-      
-        <script src="../xtra/javascripts/config.js"></script>
-      
-        <script src="../xtra/gifplayer/gif-player.es6.js"></script>
-      
-        <script src="../xtra/webcomponentsjs/webcomponents-loader.js"></script>
       
         <script src="../js/massilia.js"></script>
       
