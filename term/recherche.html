@@ -83,8 +83,7 @@
       
     
 
-<script src="../xtra/webcomponentsjs/webcomponents-loader.js"></script>
-<script src="../xtra/gifplayer/gif-player.es6.js" defer async></script>
+
 
 <!-- favicons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/atom-one-light.min.css">
@@ -123,6 +122,8 @@
     
     
     
+<script src="../js/webcomponentsjs/webcomponents-loader.js"></script>
+<script src="../js/gifplayer/gif-player.es6.js" defer async></script>
 <script src="../pyodide-mkdocs/ide.js"></script> 
 
 <link rel="stylesheet" href="../pyodide-mkdocs/pyoditeur.css">
@@ -1379,6 +1380,7 @@
 <p class="admonition-title">Comment ça marche?</p>
 <p>Comment rechercher un mot (nous dirons un motif...) dans un texte bien plus grand que le motif recherché?</p>
 </div>
+<p>Ce cours est largement inspiré de celui de mon collègue Gilles Lassus que je remercie (encore) infiniment.</p>
 <h2 id="retour-en-classe-de-premiere-nsi">Retour en classe de première NSI<a class="headerlink" href="#retour-en-classe-de-premiere-nsi" title="Permanent link">&para;</a></h2>
 <p>L'opérateur <code>in</code> permet de tester la présence d'un élément dans un itérable. En particulier, on peut l'utiliser pour rechercher un motif dans une chaîne.</p>
 <p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">phrase_de_test</span> <span class="o">=</span> <span class="s2">&quot;Une phrase qui dit n&#39;importe quoi, juste pour tester la présence de quoi &quot;</span>
@@ -1422,9 +1424,10 @@ Néanmoins, cet opérateur ne teste que la présence du motif <code>quoi</code> 
 </div>
 <h2 id="un-algorithme-de-recherche-simple">Un algorithme de recherche simple<a class="headerlink" href="#un-algorithme-de-recherche-simple" title="Permanent link">&para;</a></h2>
 <p>Pour éviter d'utiliser les méthodes <code>count</code> et <code>find</code> (qui font appel à des algorithmes mystérieux...), on va reprendre l'idée de comparer lettre par lettre, motif et texte, pour voir si il y a correspondance. Voici la proposition d'un algorithme qu'on appellera <strong>naïf</strong>:</p>
-<p><gif-player src="https://github.com/MarcTurro/MarcTurro.github.io/tree/main/term/img/gif_naive.gif" speed="1" play="" style= "display: inline-block; position: relative; overflow: hidden; width: 945px; height:118px;"></gif-player></p>
-<p><em>Vous pouvez contrôler le déroulement de l'animation en la survolant avec la souris.</em></p>
-<p>On décale de 1 à chaque fois le motif pour voir la correspondance dans le texte...</p>
+<p><gif-player src="./img/gif_naive.gif" speed="1" play="" style= "display: block; float: left; margin: 10px; border: 1px solid #ccc;width: 945px; height:118px;"></gif-player></p>
+<p><em>Vous pouvez contrôler le déroulement de l'animation en la survolant avec la souris.</em>
+<img alt="Alt Text" src="img/gif_naive.gif" />
+On décale de 1 à chaque fois le motif pour voir la correspondance dans le texte...</p>
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">recherche_naive</span><span class="p">(</span><span class="n">texte</span><span class="p">,</span> <span class="n">motif</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    renvoie la liste des indices (éventuellement vide) des occurrences de</span>
