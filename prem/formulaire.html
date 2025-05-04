@@ -10,13 +10,13 @@
         <meta name="author" content="Marc TURRO">
       
       
-        <link rel="canonical" href="https://marcturro.github.io/prem/animation_canvas.html">
+        <link rel="canonical" href="https://marcturro.github.io/prem/formulaire.html">
       
       
-        <link rel="prev" href="interface_graphique.html">
+        <link rel="prev" href="reseaux.html">
       
       
-        <link rel="next" href="images_numeriques.html">
+        <link rel="next" href="../term/termnsi.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Animation dans un canvas - Numérique et Sciences Informatiques</title>
+        <title>Formulaires et PHP - Numérique et Sciences Informatiques</title>
       
     
     
@@ -154,7 +154,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introduction" class="md-skip">
+        <a href="#un-formulaire-html" class="md-skip">
           Aller au contenu
         </a>
       
@@ -187,7 +187,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Animation dans un canvas
+              Formulaires et PHP
             
           </span>
         </div>
@@ -398,7 +398,7 @@
               
                 
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -911,19 +911,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="animation_canvas.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="animation_canvas.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -933,7 +924,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1031,10 +1021,29 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="formulaire.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Formulaires et PHP
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="formulaire.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1044,6 +1053,93 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#un-formulaire-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un formulaire HTML!
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-fait-quoi-maintenant" class="md-nav__link">
+    <span class="md-ellipsis">
+      On fait quoi maintenant?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="On fait quoi maintenant?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installer-un-serveur-php" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installer un serveur PHP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#definir-les-pages-php" class="md-nav__link">
+    <span class="md-ellipsis">
+      Définir les pages PHP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#envoyer-les-donnees-du-formulaires" class="md-nav__link">
+    <span class="md-ellipsis">
+      Envoyer les données du formulaires
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testez" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testez!
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-coin-des-exercices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le coin des exercices
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1798,340 +1894,295 @@
 
 
 
-<h1 id="introduction">Introduction:<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
-<p><center></p>
-<canvas id="canvas1" width="300" height="200"></canvas>
+  <h1>Formulaires et PHP</h1>
 
-<canvas id="canvas2" width="300" height="200"></canvas>
-
-<style type="text/css">
-      canvas {
-        margin-left:150px;
-        border: 5px solid black;
-      }
-
-</style>
-
-<script>
-
-var canvas1 = document.getElementById("canvas1");
-var ctx = canvas1.getContext("2d");
-var raf;
-
-x =100;
-y =0;
-window.onload=function(){
-can=document.getElementById("canvas2");
-cont=can.getContext("2d");
-fonc();
-} 
-dirX="inc";
-dirY="inc";
-function fonc(){
-t=setTimeout("fonc()",10);
-cont.fillStyle="#FFF";
-cont.fillRect(0,0,300,200);
-cont.fillStyle="#E70";
-cont.beginPath();
-cont.arc(x,y,25,0,2*Math.PI);
-cont.fill();
-cont.closePath();
-cont.fillStyle="#EEE";
-if(dirX=="inc")
-    x+=4.5;   
-if(dirY=="inc")
-    y+=5;
-if(dirX=="dec")
-    x-=4.5;
-if(dirY=="dec")
-    y-=5;
-
-if(x>=300-20){
-    dirX="dec";
-}
-if(y>=200-20){
-    dirY="dec";
-}
-if(x<=24){
-    dirX="inc";
-}
-if(y<=24){
-    dirY="inc";
-}       
-         } 
-
-var ball = {
-  x: 100,
-  y: 0,
-  vx: 5,
-  vy: 2,
-  radius: 25,
-  color: "blue",
-  draw: function () {
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true);
-    ctx.closePath();
-    ctx.fillStyle = this.color;
-    ctx.fill();
-  },
-};
-
-function draw() {
-    ctx.fillStyle = "rgba(255,255,255,0.3)";
-    ctx.fillRect(0, 0, canvas1.width, canvas1.height);
-  ball.draw();
-  ball.x += ball.vx;
-  ball.y += ball.vy;
-  raf = window.requestAnimationFrame(draw);
-  if (ball.y + ball.vy > canvas1.height || ball.y + ball.vy < 0) {
-  ball.vy = -ball.vy;
-}
-if (ball.x + ball.vx > canvas1.width || ball.x + ball.vx < 0) {
-  ball.vx = -ball.vx;
-}
-ball.vy *= 0.99;
-ball.vy += 0.25;
-}
-
-
-canvas1.addEventListener("mouseover", function (e) {
-  raf = window.requestAnimationFrame(draw);
-});
-
-
-
-ball.draw();
-
-</script>
-<p></center></p>
-<div class="admonition abstract">
-<p class="admonition-title">Ce que nous savons faire...</p>
-<p>Dans un travail précédent, nous avons appris à:</p>
-<ul>
-<li>construire une interface graphique grâce aux possibilités du module <code>Tkinter</code> ;</li>
-<li>déclencher une action à partir d'un bouton de commande ;</li>
-<li>transporter l’information donnée par un widget de choix dans une variable de contrôle dont on peut
-récupérer la valeur à tout moment ;</li>
-<li>interagir avec l’utilisateur en récupérant les coordonnées du clic de souris dans le canvas.</li>
-<li>piloter un objet au clavier</li>
-</ul>
-</div>
-<p>Le paragraphe suivant illustre des méthodes classiques pour créer une animation dans un canvas...</p>
+<p>L'objectif de ce travail est de comprendre le principe des formulaires <code>HTML</code> et de leur traitement côté serveur via le langage <code>PHP</code>.</p>
+<h2 id="un-formulaire-html">Un formulaire HTML!<a class="headerlink" href="#un-formulaire-html" title="Permanent link">&para;</a></h2>
+<p>Les formulaires <code>HTML</code> sont des structures classiques du WEB dès lors qu'il s'agit de saisir des informations personnelles à la création d'un compte par exemple:
+<center></p>
+<iframe src="fichier/formulaires1.html" width = "400" height="300" title="description"></iframe>
+<p></center>
+Les <strong>balises HTML</strong> qui définissent ce formulaire sont données ci-après.</p>
 <div class="admonition exo">
-<p class="admonition-title">Exo</p>
-<p>Récupérer le code suivant qui définit l'interface sur laquelle nous allons travailler.</p>
+<p class="admonition-title">Premier formulaire</p>
+<ol>
+<li>Créer un dossier <code>site_web</code></li>
+<li>Recopier le code suivant dans <code>notepad++</code> et l'enregistrer sous le nom <code>index.html</code> dans le dossier précédent</li>
+<li>Ouvrez ensuite ce fichier avec votre navigateur favori.</li>
+</ol>
 </div>
-<details>
-<summary>Code à copier</summary>
-<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">tkinter</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">random</span><span class="w"> </span><span class="kn">import</span> <span class="n">randint</span>
-<span class="c1">###################################################VARIABLES  ###############################</span>
-<span class="n">ListeCouleurs</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;maroon&#39;</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">]</span>
-<span class="c1">#############################################################################################</span>
-<span class="c1">######################################## DECLARATION DES FONCTIONS ##########################</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">cercle</span><span class="p">():</span>
-    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">800</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">580</span><span class="p">)</span>
-    <span class="n">r</span> <span class="o">=</span> <span class="n">valeur</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-    <span class="n">Can</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">coul</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-    <span class="n">Can</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">cercle</span><span class="p">)</span>
+<details class="info">
+<summary>Code HTML pour les formulaires</summary>
+<div class="highlight"><span class="filename">HTML</span><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">efface</span><span class="p">():</span>
-    <span class="n">Can</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">ALL</span><span class="p">)</span>
-
-<span class="c1">##############################################################################################</span>
-<span class="c1">##############################################################################################</span>
-<span class="c1">############### CONSTRUCTION DES OBJETS DANS LA FEN ##########################################</span>
-<span class="c1">##############################################################################################</span>
-<span class="n">fen</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
-<span class="n">fen</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s2">&quot;Animation dans un canvas&quot;</span><span class="p">)</span>
-<span class="n">fen</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s1">&#39;1000x600+100+100&#39;</span><span class="p">)</span>
-<span class="n">fen</span><span class="o">.</span><span class="n">resizable</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
-<span class="c1">#widthxheight+bordecran</span>
-<span class="c1">##############################################################################################</span>
-<span class="n">ZoneDessin</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">fen</span><span class="p">,</span> <span class="n">borderwidth</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">relief</span> <span class="o">=</span> <span class="n">RIDGE</span><span class="p">)</span>
-<span class="n">ZoneDessin</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
-<span class="c1">##############################################################################################</span>
-<span class="n">Can</span> <span class="o">=</span> <span class="n">Canvas</span><span class="p">(</span><span class="n">ZoneDessin</span><span class="p">,</span> <span class="n">bg</span> <span class="o">=</span> <span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">800</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">580</span><span class="p">)</span>
-<span class="n">Can</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
-<span class="c1">##############################################################################################</span>
-<span class="n">ZoneOptions</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">fen</span><span class="p">,</span> <span class="n">borderwidth</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span><span class="n">width</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">580</span><span class="p">)</span>
-<span class="n">ZoneOptions</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">ZoneOptions</span><span class="o">.</span><span class="n">grid_propagate</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="c1">##############################################################################################</span>
-<span class="n">BouDebut</span> <span class="o">=</span> <span class="n">Button</span> <span class="p">(</span> <span class="n">ZoneOptions</span><span class="p">,</span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Débuter la construction&#39;</span><span class="p">,</span> <span class="n">command</span> <span class="o">=</span> <span class="n">fen</span><span class="o">.</span><span class="n">destroy</span><span class="p">)</span>
-<span class="n">BouDebut</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">pady</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span><span class="n">columnspan</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">BouFin</span> <span class="o">=</span> <span class="n">Button</span> <span class="p">(</span> <span class="n">ZoneOptions</span><span class="p">,</span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Stopper la construction&#39;</span><span class="p">,</span> <span class="n">command</span> <span class="o">=</span> <span class="n">fen</span><span class="o">.</span><span class="n">destroy</span><span class="p">)</span>
-<span class="n">BouFin</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">pady</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span><span class="n">columnspan</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">BouEfface</span> <span class="o">=</span> <span class="n">Button</span> <span class="p">(</span> <span class="n">ZoneOptions</span><span class="p">,</span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Effacer&#39;</span><span class="p">,</span> <span class="n">command</span> <span class="o">=</span> <span class="n">fen</span><span class="o">.</span><span class="n">destroy</span><span class="p">)</span>
-<span class="n">BouEfface</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pady</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span><span class="n">columnspan</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
-
-<span class="c1">##############################################################################################</span>
-<span class="n">valeur</span> <span class="o">=</span> <span class="n">IntVar</span><span class="p">(</span><span class="n">ZoneOptions</span><span class="p">)</span>
-<span class="n">valeur</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">EchelleRayon</span> <span class="o">=</span> <span class="n">Scale</span><span class="p">(</span><span class="n">ZoneOptions</span><span class="p">,</span> <span class="n">orient</span> <span class="o">=</span> <span class="s1">&#39;horizontal&#39;</span><span class="p">,</span> <span class="n">from_</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-    <span class="n">to</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">resolution</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">tickinterval</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">length</span> <span class="o">=</span> <span class="mi">190</span><span class="p">,</span>
-    <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Dimension du cercle ou du carre&#39;</span><span class="p">,</span> <span class="n">variable</span> <span class="o">=</span> <span class="n">valeur</span><span class="p">)</span>
-<span class="n">EchelleRayon</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">columnspan</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
-<span class="c1">##############################################################################################</span>
-<span class="n">coul</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">(</span><span class="n">ZoneOptions</span><span class="p">)</span>
-<span class="n">coul</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">ListeCouleurs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">ChoixCoul</span> <span class="o">=</span> <span class="n">OptionMenu</span><span class="p">(</span><span class="n">ZoneOptions</span><span class="p">,</span> <span class="n">coul</span><span class="p">,</span> <span class="o">*</span><span class="n">ListeCouleurs</span><span class="p">)</span>
-<span class="n">ChoixCoul</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pady</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
-<span class="c1">##############################################################################################</span>
-<span class="c1">##############################################################################################</span>
-<span class="n">fen</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+<span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Compléter les informations suivantes<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;fname&quot;</span><span class="p">&gt;</span>Nom:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;fname&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;fname&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;John&quot;</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;lname&quot;</span><span class="p">&gt;</span>Prénom:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;lname&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;lname&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Doe&quot;</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;age&quot;</span><span class="p">&gt;</span>Âge:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;age&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;age_saisi&quot;</span> <span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;html&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;sexe&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;H&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;html&quot;</span><span class="p">&gt;</span>Masculin<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;css&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;sexe&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;F&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;css&quot;</span><span class="p">&gt;</span>Féminin<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
 </details>
-<h1 id="quest-ce-quune-animation">Qu'est ce qu'une animation?<a class="headerlink" href="#quest-ce-quune-animation" title="Permanent link">&para;</a></h1>
-<p>Le mouvement d’un objet dans un canvas (zone de dessin ) est une animation : cet objet étant défini par ses
-coordonnées, il suffit alors de faire évoluer ces valeurs pour voir bouger l’objet. C’est ce choix que nous adopterons
-dans un second temps... </p>
-<p>Mais avant cela, on définit un appel <strong>récursif</strong> d’une fonction pour la construction d’un objet dans le canvas.</p>
-<h1 id="creer-et-controler-lanimation">Créer et contrôler l'animation:<a class="headerlink" href="#creer-et-controler-lanimation" title="Permanent link">&para;</a></h1>
-<h2 id="la-fonction-after">La fonction <code>after(...)</code>.<a class="headerlink" href="#la-fonction-after" title="Permanent link">&para;</a></h2>
-<p>Voici le code d'une nouvelle fonction <code>cercle</code>:
-<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">cercle</span><span class="p">():</span>
-    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">800</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">580</span><span class="p">)</span>
-    <span class="n">r</span> <span class="o">=</span> <span class="n">valeur</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-    <span class="n">Can</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">coul</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-    <span class="n">Can</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">cercle</span><span class="p">)</span><span class="c1">#Appel recursif de la fonction cercle</span>
-</code></pre></div></p>
-<p>Cette fonction est dite <strong>récursive</strong> car elle s'appelle elle-même toutes les 100ms. Donc si aucun événement ne l'arrête, elle boucle à l'infini!</p>
+<p>Vous remarquerez que les zones de saisies (balises <code>input</code>) ont plusieurs <strong>types</strong>: du texte à saisir, des boutons radios à cocher ou encore des nombres... mais il en existe bien d'autres (password, email, ...).</p>
+<p>Les balises <code>input</code> ont des attributs: <code>type</code> pour le ... type, <code>id</code> pour les identifier et agir sur eux via du <code>CSS</code> ou du <code>JS</code>, puis <code>name</code> et <code>value</code> que nous évoquerons plus tard.</p>
+<p>Notre formulaire est très archaïque: ajoutons un peu de <code>CSS</code>!</p>
 <div class="admonition exo">
-<p class="admonition-title">Exo</p>
-<p>Associer cette fonction au bouton <code>BouDebut</code> et tester!</p>
+<p class="admonition-title">Second formulaire plus stylé</p>
+<ol>
+<li>Recopier le code <code>CSS</code> ci-après dans <code>notepad++</code> et l'enregistrez-le sous le nom <code>mon_style_formulaire.css</code> dans le dossier <code>site_web</code>.</li>
+<li>
+<p>Modifier le fichier <code>index.html</code> en ajoutant l'instruction:
+<div class="highlight"><span class="filename">HTML</span><pre><span></span><code><span class="p">&lt;</span><span class="nt">HEAD</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;mon_style_formulaire.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span><span class="p">&gt;</span> 
+<span class="p">&lt;/</span><span class="nt">HEAD</span><span class="p">&gt;</span>
+</code></pre></div>
+au bon endroit</p>
+</li>
+<li>
+<p>Pensez à enregistrez puis rafraîchir la page du navigateur pour oberver les effets de style.</p>
+</li>
+</ol>
 </div>
-<p>Il ne suffit pas de lancer une animation, il faut aussi la maîtriser : en particulier,</p>
-<ul>
-<li>comment arrêter l'animation ?</li>
-<li>comment reprendre l'animation quand on le souhaite ?</li>
-</ul>
-<p>En effet, la fonction <code>after</code> crée un appel récursif et perpétuel de la fonction <code>cercle()</code> ; il n’y donc aucune raison
-que la construction s’achève...</p>
-<h2 id="une-premiere-astuce-avec-un-compteur">Une première astuce avec un compteur<a class="headerlink" href="#une-premiere-astuce-avec-un-compteur" title="Permanent link">&para;</a></h2>
-<p>Pour répondre à notre problématique, nous allons utiliser encore des <strong>variables globales</strong>. Il faut comprendre qu’une
-variable crée au sein d’une fonction n’existe que dans cette fonction ; on dit que la variable est <strong>locale</strong>. En particulier, elle n’est
-donc pas visible en dehors de la fonction.</p>
+<details class="info">
+<summary>Code CSS pour les formulaires</summary>
+<div class="highlight"><span class="filename">CSS</span><pre><span></span><code><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">text</span><span class="o">]</span><span class="p">{</span>
+<span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="kt">px</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="kt">px</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">inline-block</span><span class="p">;</span>
+<span class="w">  </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#FF0000</span><span class="p">;</span>
+<span class="w">  </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">box-sizing</span><span class="p">:</span><span class="w"> </span><span class="kc">border-box</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">number</span><span class="o">]</span><span class="p">{</span>
+<span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="kt">%</span><span class="p">;</span>
+<span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="kt">px</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="kt">px</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">inline-flex</span><span class="p">;</span>
+<span class="w">  </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#0000FF</span><span class="p">;</span>
+<span class="w">  </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">box-sizing</span><span class="p">:</span><span class="w"> </span><span class="kc">border-box</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">radio</span><span class="o">]</span><span class="p">{</span>
+<span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="kt">%</span><span class="p">;</span>
+<span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="kt">px</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="kt">px</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">inline-flex</span><span class="p">;</span>
+<span class="w">  </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#0000FF</span><span class="p">;</span>
+<span class="w">  </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">box-sizing</span><span class="p">:</span><span class="w"> </span><span class="kc">border-box</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">submit</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#4CAF50</span><span class="p">;</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">white</span><span class="p">;</span>
+<span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="kt">px</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="kt">px</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">  </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<span class="w">  </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">cursor</span><span class="p">:</span><span class="w"> </span><span class="kc">pointer</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">submit</span><span class="o">]</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#45a049</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">div</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#f2f2f2</span><span class="p">;</span>
+<span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">h2</span><span class="p">{</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="n">Tomato</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+<p>Vous devrier obtenir quelque chose qui ressemble à cela:
+<center></p>
+<iframe src="fichier/formulaires2.html" width = "400" height="500" title="description"></iframe>
+<p></center></p>
+<h2 id="on-fait-quoi-maintenant">On fait quoi maintenant?<a class="headerlink" href="#on-fait-quoi-maintenant" title="Permanent link">&para;</a></h2>
+<p>Une fois les données saisies, il faut les envoyer au serveur qui va certainement les <strong>stocker</strong> dans une <strong>base de données</strong>, concept que nous ne développerons pas ici (compétences d'un élève de terminale). </p>
+<p>Il peut aussi traiter ces informations saisies en vous envoyant une page <code>HTML</code> formatée: c'est en particulier le rôle du langage <code>PHP</code> que de proposer un affichage <strong>dynamique</strong> en fonction des données que vous lui avez transmis!</p>
+<div class="admonition abstract">
+<p class="admonition-title">Le langage PHP</p>
+<p>Le langage <code>PHP</code> est un langage de programmation principalement utilisé pour produire des pages Web dynamiques via un serveur web.</p>
+</div>
+<p>Nous allons donc faire un peu de <code>PHP</code>, ce qui vous permettra d'agrandir la liste des <strong>langages de programmation</strong> rencontrés cette année. Mais nous nous contenterons des routines les plus simples...</p>
+<h3 id="installer-un-serveur-php">Installer un serveur PHP<a class="headerlink" href="#installer-un-serveur-php" title="Permanent link">&para;</a></h3>
+<p>Nous pourrions installer un serveur <code>Python</code> qui traitera alors des <strong>scripts</strong> écrits dans ce langage, nous l'avons déjà fait <a href="https://marcturro.github.io/prem/reseaux.html">ici</a>.</p>
+<p>Mais nous allons utiliser une architecture très classique: <strong>WAMP</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Wamp</p>
+<p>WAMP est un acronyme informatique: Windows, Apache, MySQL, PHP</p>
+</div>
+<p>Si vous connaissez bien Windows, Apache est le serveur WEB qui répond aux requêtes des clients, le langage de script <strong>PHP</strong> sert la logique et MySQL gère les base de données.</p>
+<p>Nous allons utiliser <strong>UWAMP</strong> un version légère installée sur vos machines. Il n'y a rien à faire à part démarrer le serveur... Nous y reviendrons plus tard.</p>
+<h3 id="definir-les-pages-php">Définir les pages PHP<a class="headerlink" href="#definir-les-pages-php" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>Une <strong>variable globale</strong> est déclarée dans le corps de programme et est initialisée. Pour qu’une fonction puisse modifier
-son état, il faut la déclarer <strong>globale</strong> dans la fonction comme le montre l’exemple suivant:</p>
+<p class="admonition-title">pages PHP</p>
+<p>Si les fichiers <code>HTML</code> utilisent le langage <code>PHP</code>, ils doivent alors porter l'extension <strong>php</strong></p>
 </div>
-<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">compteur</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#je suis une variable globale</span>
-<span class="c1">#################### DECLARATION DES FONCTIONS ###################</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">cercle</span><span class="p">():</span>
-    <span class="k">global</span> <span class="n">compteur</span> <span class="c1">#variable définie en dehors de la fonction</span>
-    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">800</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">580</span><span class="p">)</span>
-    <span class="n">r</span> <span class="o">=</span> <span class="n">valeur</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">compteur</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">:</span>
-        <span class="n">compteur</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="n">Can</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">coul</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-        <span class="n">Can</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="n">cercle</span><span class="p">)</span>
-</code></pre></div>
+<p>Ainsi le fichier <code>index.html</code> doit-il s'appeler dorénavant <code>index.php</code> même s'il ne contient pas encore du code <code>php</code>.</p>
 <div class="admonition exo">
-<p class="admonition-title">Exo</p>
-<ol>
-<li>Modifier le code de l'interface en y incluant les instructions ci-dessus.</li>
-<li>Combien de cercles seront construits? Modifier le code pour construire 100 cercles en 50ms.</li>
-</ol>
+<p class="admonition-title">Changer l'extension</p>
+<p>Changer l'extension du fichier <code>index.html</code> en <code>index.php</code></p>
 </div>
-<h2 id="controle-par-lutilisateur">Contrôle par l'utilisateur<a class="headerlink" href="#controle-par-lutilisateur" title="Permanent link">&para;</a></h2>
-<p>Nous allons utiliser le bouton de commande qui stoppe l’animation. Pour cela on utilise traditionnellement une
-variable globale, nommée <strong>flag</strong>, qui contrôle le déroulement de l’animation selon le principe suivant :</p>
+<h3 id="envoyer-les-donnees-du-formulaires">Envoyer les données du formulaires<a class="headerlink" href="#envoyer-les-donnees-du-formulaires" title="Permanent link">&para;</a></h3>
+<p>Vous effectuez une requête sur le serveur WEB pour obtenir la ressource d'accueil <code>index.php</code> qui contient le formulaire.</p>
+<p>Les données saisies dans le formulaire vont être envoyées à une page <code>traitement.php</code> qui va traiter ces informations et construire une page <code>HTML</code> <strong>personnalisée</strong> que le serveur va vous renvoyer:</p>
+<p><center>
+<img alt="image" src="img/ordi_serveur_php.png" width="40%" />
+</center></p>
+<p>Pour indiquer que c'est le fichier <code>traitement.php</code> qui va traiter les demandes, il faut modifier le code <code>HTML</code> du fichier <code>index.php</code>.</p>
+<div class="admonition exo">
+<p class="admonition-title">Modifier le code du fichier index.php</p>
+<p>Modifier les balises du formulaires comme indiqué ci-dessous.</p>
+</div>
+<details class="info">
+<summary>Code à modifier</summary>
+<div class="highlight"><span class="filename">Modification des balises form</span><pre><span></span><code><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;traitement.php&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;get&quot;</span><span class="p">&gt;</span> 
+<span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;fname&quot;</span><span class="p">&gt;</span>Nom:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;fname&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;fname&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;John&quot;</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;lname&quot;</span><span class="p">&gt;</span>Prénom:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;lname&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;lname&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Doe&quot;</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;age&quot;</span><span class="p">&gt;</span>Âge:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;age&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;age_saisi&quot;</span> <span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;html&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;sexe&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;H&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;html&quot;</span><span class="p">&gt;</span>Masculin<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;css&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;sexe&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;F&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;css&quot;</span><span class="p">&gt;</span>Féminin<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Envoyer les données&quot;</span><span class="p">&gt;</span> 
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+</details>
+<p><center></p>
+<iframe src="fichier/formulaires3.html" width = "400" height="500" title="description"></iframe>
+<p></center></p>
+<p>À l'appui de la touche <code>Envoyer des données</code>, les valeurs saisies sont communiquées au fichier <code>traitement.php</code> qui va alors construire une nouvelle page en fonction de ces valeurs.</p>
+<div class="admonition tip">
+<p class="admonition-title">Quelle méthode?</p>
+<p>Deux méthodes sont disponibles pour envoyer des données:</p>
 <ul>
-<li>la variable est initialisée à 0;</li>
-<li>l'animation n'est possible que si <strong>flag</strong> à pour valeur 1.</li>
+<li>la méthode <code>GET</code> qui permet d'envoyer les données dans l'<strong>URL</strong></li>
+<li>la méthode <code>POST</code> qui permet d'envoyer les données dans le corps de la requête</li>
 </ul>
+</div>
+<p>Vous pourrez tester les deux méthodes un peu plus tard pour saisir la différence.</p>
 <div class="admonition exo">
-<p class="admonition-title">Exo</p>
+<p class="admonition-title">Mon premier fichier php</p>
 <ol>
-<li>Supprimer la variable compteur ainsi que la fonction cercle précédente.</li>
-<li>Copier le code ci-dessous.</li>
-<li>Associer à chaque bouton, la commande qu'il permet d'activer.</li>
+<li>Avec <code>notepad++</code>, créer un fichier <code>PHP</code> et enregistrez-le dans le dossier <code>site_web</code> sous le nom <code>traitement.php</code>.</li>
+<li>Copiez-y le contenu du code <code>PHP</code> proposé ci-après.</li>
 </ol>
 </div>
-<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">flag</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#je suis globale</span>
-<span class="c1">######################################## DECLARATION DES FONCTIONS ##########################</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">demarrer</span><span class="p">():</span>
-    <span class="k">global</span> <span class="n">flag</span>
-    <span class="k">if</span> <span class="n">flag</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span><span class="c1">#comparaison</span>
-        <span class="n">flag</span> <span class="o">=</span> <span class="mi">1</span>
-        <span class="n">cercle</span><span class="p">()</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">stopper</span><span class="p">():</span>
-    <span class="k">global</span> <span class="n">flag</span>
-    <span class="n">flag</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">cercle</span><span class="p">():</span>
-    <span class="k">global</span> <span class="n">flag</span>
-    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">800</span><span class="p">),</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">580</span><span class="p">)</span>
-    <span class="n">r</span> <span class="o">=</span> <span class="n">valeur</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-    <span class="n">Can</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">coul</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-    <span class="k">if</span> <span class="n">flag</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c1">#si flag passe à 0, l&#39;animation s&#39;arrête</span>
-        <span class="n">Can</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="n">cercle</span><span class="p">)</span>
+<details class="info">
+<summary>Code à modifier</summary>
+<div class="highlight"><span class="filename">traitement.php</span><pre><span></span><code><span class="p">&lt;</span><span class="nt">HTML</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">HEAD</span><span class="p">&gt;</span>
+<span class="cm">&lt;!-- ************************NOM de la Page *************************************--&gt;</span>
+<span class="p">&lt;</span><span class="nt">TITLE</span><span class="p">&gt;</span> Site de bienvenu <span class="p">&lt;/</span><span class="nt">TITLE</span><span class="p">&gt;</span>
+<span class="cm">&lt;!-- ************************Utilisation d&#39;une feuille de style *************************************--&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;mon_style_formulaire.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span><span class="p">&gt;</span> 
+<span class="p">&lt;/</span><span class="nt">HEAD</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">BODY</span> <span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">center</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="cp">&lt;?php</span>
+<span class="cp">$nom = $_GET[&#39;fname&#39;];</span>
+<span class="cp">$prenom = $_GET[&#39;lname&#39;];</span>
+<span class="cp">$age = $_GET[&#39;age_saisi&#39;];</span>
+<span class="cp">$civ = $_GET[&#39;sexe&#39;]</span>
+<span class="cp">?&gt;</span>
+<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="cp">&lt;?php</span>
+<span class="cp">if($civ == &#39;F&#39;){</span>
+<span class="cp">echo &#39;Bonjour Madame, &#39;;</span>
+<span class="cp">}</span>
+<span class="cp">else{</span>
+<span class="cp">echo &#39;Bonjour Monsieur, &#39;;</span>
+<span class="cp">}</span>
+<span class="cp">?&gt;</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span> <span class="cp">&lt;?php echo $nom.&quot; &quot;.$prenom ; ?&gt;</span> <span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Ton âge est: <span class="cp">&lt;?php echo $age.&quot; ans&quot;;?&gt;</span>  <span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">center</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">BODY</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">HTML</span><span class="p">&gt;</span>
 </code></pre></div>
-<h2 id="une-animation-simple-avec-la-methode-coords">Une animation simple avec la méthode <code>coords</code>.<a class="headerlink" href="#une-animation-simple-avec-la-methode-coords" title="Permanent link">&para;</a></h2>
-<p>Nous allons maintenant pour finir, faire évoluer une balle rouge dans le canvas à l'aide de la méthode <code>coords</code>que nous avons déjà rencontrée dans un travail précédent.</p>
+</details>
+<p>Dans un premier temps, le <code>PHP</code> récupère les valeurs de tous les champs du formulaire envoyées par la méthode <code>GET</code> pour les stocker dans des variables <code>PHP</code> qui commençent par le symbole <code>$</code>.</p>
+<p>Puis la méthode <code>echo</code> largement utilisée, retourne des éléments <code>HTML</code> personnalisés.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Toutes les commandes <code>php</code> se terminent par un <code>;</code>. Leur oubli est source d'erreur.</p>
+</div>
+<h3 id="testez">Testez!<a class="headerlink" href="#testez" title="Permanent link">&para;</a></h3>
+<p>À ce stade vous devriez avoir dans le dossier <code>site_web</code>, trois fichiers:</p>
+<ul>
+<li>le fichier <code>index.php</code></li>
+<li>le fichier <code>traitement.php</code></li>
+<li>le fichier <code>mon_style_formulaire.css</code></li>
+</ul>
+<p>Respectez bien les étapes suivantes pour utiliser la technologie <code>php</code>.</p>
+<p><strong>Étape n°1: Lancer le serveur</strong></p>
+<p>Lancer le serveur <code>UWAMP</code>, vous devriez obtenir après quelques secondes, un truc qui ressemble à cela:</p>
+<p><center>
+<img alt="image" src="img/uwamp.png" width="20%" />
+</center></p>
+<p><strong>Étape n°2: Déposer votre site dynamique</strong></p>
+<p>Appuyer sur le bouton <code>dossier www</code> et pas un autre!</p>
+<p><center>
+<img alt="image" src="img/uwamp_btn.png" width="20%" />
+</center></p>
+<p>Dans la fenêtre qui s'ouvre, copier dans le dossier <code>www</code>, le dossier <code>site_web</code> que vous avez créé.</p>
+<p><strong>Étape n°3: Consulter votre site</strong></p>
+<p>Appuyer sur le bouton <code>Navigateur www</code> et pas un autre!</p>
+<p>Un navigateur s'ouvre avec l'url <code>localhost</code>. Il faut comprendre que votre machine héberge à la fois le client qui effectue la requête vers un site web via le navigateur et aussi le serveur dont l'adresse <code>IP</code> est <code>127.0.0.1</code>. Son nom <code>DNS</code> est alors <code>localhost</code>.</p>
+<p><center>
+<img alt="image" src="img/localhost.png" width="50%" />
+</center></p>
+<p>Cliquez sur le seul dossier <code>site_web</code>et votre page d'index devrait apparaître. Complétez alors les champs du formulaire et soumettez-le au php( en appuyant sur le bouton vert...)</p>
+<p>Vous remarquerez alors que les valeurs saisies ont été ajoutées à l'URL:</p>
+<p><center>
+<img alt="image" src="img/methode_get.png" width="80%" />
+</center></p>
 <div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>La méthode <code>coords</code> permet de rédéfinir les coordonnées d'un objet (déjà créé) dans un canvas.</p>
+<p class="admonition-title">Méthode GET</p>
+<p>Avec la méthode <code>GET</code>, les valeurs saisies apparaissent en clair dans l'URL</p>
 </div>
-<div class="admonition exo">
-<p class="admonition-title">Exo</p>
-<p>Modifiez le code précédent en y ajoutant les éléments suivants.</p>
-</div>
-<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">flag</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#je suis globale</span>
-<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">580</span><span class="p">)</span> <span class="c1">#nous aussi</span>
-<span class="c1">######################################## DECLARATION DES FONCTIONS ##########################</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">demarrer</span><span class="p">():</span>
-    <span class="k">global</span> <span class="n">flag</span><span class="p">,</span> <span class="n">balle</span>
-    <span class="n">r</span> <span class="o">=</span> <span class="n">valeur</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">flag</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span><span class="c1">#comparaison</span>
-        <span class="n">flag</span> <span class="o">=</span> <span class="mi">1</span>
-        <span class="n">balle</span> <span class="o">=</span> <span class="n">Can</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">coul</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-        <span class="n">bouge</span><span class="p">()</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">stopper</span><span class="p">():</span>
-    <span class="k">global</span> <span class="n">flag</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
-    <span class="n">flag</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">580</span><span class="p">)</span>
-
-
-<span class="k">def</span><span class="w"> </span><span class="nf">bouge</span><span class="p">():</span>
-    <span class="k">global</span> <span class="n">flag</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">balle</span>
-    <span class="n">r</span> <span class="o">=</span> <span class="n">valeur</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">flag</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c1">#si flag passe à 0, l&#39;animation s&#39;arrête</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
-        <span class="n">Can</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="n">balle</span><span class="p">,</span> <span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span>
-        <span class="n">Can</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">bouge</span><span class="p">)</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">efface</span><span class="p">():</span>
-    <span class="n">Can</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">ALL</span><span class="p">)</span>
-</code></pre></div>
-<p>Vous allez maintenant devoir améliorer ce code pour répondre aux défis proposés dans l'exercice suivant:</p>
-<div class="admonition exo">
-<p class="admonition-title">Exo</p>
-<ol>
-<li>La balle revient au début de la ligne quand elle arrive à la fin de celle-ci(voir comment utiliser le modulo...).</li>
-<li>La balle rebondit.</li>
-<li>La balle part au milieu du canvas dans une direction choisit aléatoirement.</li>
-<li>La balle rebondit sur tous les côtés!</li>
-</ol>
-</div>
-<h1 id="pour-finir-en-beaute">Pour finir en beauté!<a class="headerlink" href="#pour-finir-en-beaute" title="Permanent link">&para;</a></h1>
-<p>Si vous avez bien accompli les missions précédentes, vous êtes aptes à réaliser ce dernier exercice. Bon courage!</p>
-<div class="admonition exo">
-<p class="admonition-title">Exo</p>
-<p>Vous allez maintenant devoir:</p>
+<p>On peut utiliser la méthode <code>POST</code>. Pour cela, il faut remplacer:</p>
 <ul>
-<li>créer deux balles de couleurs différentes et de même rayon</li>
-<li>les animer dans le canvas sans qu'elles aient la même direction.</li>
-<li>elles rebondissent sur les bords.</li>
-<li>les balles s'arrêtent lorsqu'elles rentrent en collision</li>
-<li>la première balle contamine la seconde en lui donnant sa couleur lors d'une collision.</li>
-<li>créer cinq balles qui n'ont pas les mêmes propriétés.</li>
+<li>dans le fichier <code>index.php</code>, l'attribut <code>method</code> de la balise <code>&lt;form&gt;</code> par <code>POST</code> au lieu de <code>GET</code></li>
+<li>dans le fichier <code>traitement.php</code>, toutes les instructions <code>$_GET</code> par <code>$_POST</code>.</li>
 </ul>
+<div class="admonition info">
+<p class="admonition-title">Méthode POST</p>
+<p>Avec la méthode <code>POST</code>, les données saisies sont envoyées dans le corps de la requête et sont alors moins visibles.</p>
+</div>
+<p>Voilà pour la découverte de <code>PHP</code>...</p>
+<h2 id="le-coin-des-exercices">Le coin des exercices<a class="headerlink" href="#le-coin-des-exercices" title="Permanent link">&para;</a></h2>
+<p>Pour savoir si vous avez compris les manipulations précédentes, vous pouvez réaliser les exercices suivants.</p>
+<div class="admonition exo">
+<p class="admonition-title">Calcul de périmètre</p>
+<p>Écrire un formulaire qui permet de saisir la longueur et la largeur d'un rectangle et qui retourne à l'envoi des valeurs, le périmètre et l'aire de ce rectangle.</p>
+</div>
+<div class="admonition exo">
+<p class="admonition-title">Calcul de moyenne</p>
+<p>Écrire un formulaire qui permet de saisir les notes obtenues en maths, H.G, français puis technologie et qui retourne à l'envoi des valeurs, la moyenne obtenue.</p>
 </div>
 
 
