@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://marcturro.github.io/prem/index_tpbash.html">
       
       
-        <link rel="prev" href="exo_dictionnaires.html">
+        <link rel="prev" href="devoir_formulaire.html">
       
       
         <link rel="next" href="frontend.html">
@@ -682,6 +682,28 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="devoir_formulaire.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices mathématiques...
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1182,6 +1204,28 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="microntroleur.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programmer un microcontrôleur
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1441,6 +1485,50 @@
   
   <span class="md-ellipsis">
     Complexité des structures
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../term/mon_cours_de_php.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mon cours de PHP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../term/mon_cours_sql.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mon cours de SQL
     
   </span>
   
@@ -2008,7 +2096,7 @@
 <li><code>del</code>(delete) efface le fichier passé en argument...</li>
 </ul>
 <p>Le caractère * , appelé <strong>joker</strong>, remplace n'importe quel texte dans le nom d'un fichier. Par exemple, la commande:</p>
-<p><div class="highlight"><span class="filename">Bash</span><pre><span></span><code>copy<span class="w"> </span>*.txt<span class="w"> </span>C:<span class="se">\b</span>ackup
+<p><div class="highlight"><span class="filename">📃 Script Bash</span><pre><span></span><code>copy<span class="w"> </span>*.txt<span class="w"> </span>C:<span class="se">\b</span>ackup
 </code></pre></div>
 copie <strong>tous</strong> les fichiers portant l'extension <code>.txt</code> dans le dossier <code>backup</code> situé à la <strong>racine</strong> du lecteur C.</p>
 <div class="admonition exo">
@@ -2050,7 +2138,7 @@ copie <strong>tous</strong> les fichiers portant l'extension <code>.txt</code> d
 <ol>
 <li>En ligne de commande tapez: <code>echo  Nous sommes le %date%, il est %time%</code></li>
 <li>Ouvrez le bloc notes en tapant la commande <code>notepad</code>( si elle est au <code>path</code>...) puis copiez les instructions :
-<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>@echo<span class="w"> </span>off
+<div class="highlight"><span class="filename">📃 Script Bash</span><pre><span></span><code>@echo<span class="w"> </span>off
 <span class="nb">echo</span><span class="w">  </span>Nous<span class="w"> </span>sommes<span class="w"> </span>le<span class="w"> </span>%date%,<span class="w"> </span>il<span class="w"> </span>est<span class="w"> </span>%time%
 pause
 </code></pre></div></li>
@@ -2067,7 +2155,7 @@ pause
 <p>La commande <code>dir</code> sans argument permet d'afficher le contenu du dossier dans lequel elle est lancée. Nous allons créer ici un script <code>affiche.bat</code> qui prend en argument une extension de fichier (pdf, doc, txt, ...) et affiche les fichiers de cette extension contenu dans le dossier dans lequel il est exécuté.</p>
 <ol>
 <li>Recopier les lignes suivantes dans un fichier que vous sauvegarderez à la racine du disque système sous le nom <code>affiche.bat</code>.
-<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>@echo<span class="w"> </span>off
+<div class="highlight"><span class="filename">📃 Script Bash</span><pre><span></span><code>@echo<span class="w"> </span>off
 cls
 IF<span class="w"> </span>EXIST<span class="w"> </span>*.%1<span class="w"> </span><span class="o">(</span>
 dir<span class="w"> </span>*.%1
@@ -2078,7 +2166,7 @@ pause
 </code></pre></div></li>
 <li>Commenter ces instructions avec la commande <code>rem</code>.</li>
 <li>Ouvrez la ligne de commande et tapez:
-<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>C:<span class="se">\&gt;</span>affiche<span class="w"> </span>txt
+<div class="highlight"><span class="filename">📃 Script Bash</span><pre><span></span><code>C:<span class="se">\&gt;</span>affiche<span class="w"> </span>txt
 </code></pre></div></li>
 <li>Modifier le script précédent en ajoutant la source dans laquelle vous souhaitez afficher les fichiers.Il faudra pour cela créer un nouveau paramètre...</li>
 </ol>
@@ -2086,7 +2174,7 @@ pause
 <details class="exo">
 <summary>Affichage des données de votre PC</summary>
 <p>Enregistrez le fichier suivant sous le nom <code>info.bat</code> puis exécutez-le.</p>
-<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>@echo<span class="w"> </span>off
+<div class="highlight"><span class="filename">📃 Script Bash</span><pre><span></span><code>@echo<span class="w"> </span>off
 title<span class="w"> </span>Advanced<span class="w"> </span>System<span class="w"> </span>Information*
 color<span class="w"> </span>0a
 cls
