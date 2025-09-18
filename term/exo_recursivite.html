@@ -10,13 +10,13 @@
         <meta name="author" content="Marc TURRO">
       
       
-        <link rel="canonical" href="https://marcturro.github.io/term/mon_cours_de_php.html">
+        <link rel="canonical" href="https://marcturro.github.io/term/exo_recursivite.html">
       
       
-        <link rel="prev" href="recherche.html">
+        <link rel="prev" href="mon_cours_sql.html">
       
       
-        <link rel="next" href="mon_cours_sql.html">
+        <link rel="next" href="stalin.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Mon cours de PHP - Numérique et Sciences Informatiques</title>
+        <title>Fonctions récursives - Numérique et Sciences Informatiques</title>
       
     
     
@@ -178,7 +178,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#un-cours-de" class="md-skip">
+        <a href="#un-exemple-comment-calculer-la-somme-des-n-premiers-entiers-consecutifs" class="md-skip">
           Aller au contenu
         </a>
       
@@ -211,7 +211,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Mon cours de PHP
+              Fonctions récursives
             
           </span>
         </div>
@@ -955,8 +955,6 @@
                 
   
   
-    
-  
   
   
     
@@ -967,11 +965,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
           <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
@@ -987,7 +985,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             Cours
@@ -1021,19 +1019,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="mon_cours_de_php.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="mon_cours_de_php.html" class="md-nav__link">
         
   
   
@@ -1044,7 +1033,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1085,6 +1073,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1095,11 +1085,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
@@ -1115,7 +1105,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             Exercices
@@ -1126,10 +1116,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="exo_recursivite.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Fonctions récursives
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="exo_recursivite.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1140,6 +1150,42 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#un-exemple-comment-calculer-la-somme-des-n-premiers-entiers-consecutifs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un exemple: comment calculer la somme des n premiers entiers consécutifs?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualiser-la-pile-dexecution-dun-appel-recursif" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualiser la pile d'exécution d'un appel récursif
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1594,238 +1640,103 @@
 
 
 
-<div><h1 id="un-cours-de">Un cours de ...<a class="headerlink" href="#un-cours-de" title="Permanent link">¶</a></h1>
-<p>Ce cours traîte des langages <code>PHP</code> pour tout ce qui est calcul et <code>MySQL</code> pour tout ce qui est gestion de <strong>base de données</strong>.</p>
-<div class="admonition note">
-<p class="admonition-title">Une base de données</p>
-<p>Le MySQL est un système de gestion de bases de données relationnelles. Une base de données est un ensemble structuré de données.</p>
-</div>
-<p>À ne pas confondre avec <code>SQL</code> qui est un langage de requête sur base de données.</p>
-<p>Le <code>PHP</code> est un langage simple d'accès, Open Source et gratuit, performant et solide.</p>
-<h1 id="le-langage-php">Le langage PHP<a class="headerlink" href="#le-langage-php" title="Permanent link">¶</a></h1>
-<h2 id="ou-ecrire-tu-php">Où écrire tu PHP?<a class="headerlink" href="#ou-ecrire-tu-php" title="Permanent link">¶</a></h2>
-<p>Dans n'importe quel éditeur de texte: Notepad++ est universel. J'utilise Visual Studio Code pour ma part.</p>
-<div class="admonition info">
-<p class="admonition-title">L'extension .php</p>
-<p>Les fichiers qui décrivent le contenu <code>HTML</code> porte naturellement l'extension <code>.html</code>. Les fichiers contenant du <code>PHP</code> en plus du <code>HTML</code> porteront l'extension <code>.php</code></p>
-</div>
-<h2 id="la-syntaxe-de-base">La syntaxe de base<a class="headerlink" href="#la-syntaxe-de-base" title="Permanent link">¶</a></h2>
-<p>Le code <code>PHP</code> se tape entre les <strong>balises</strong> du même nom. Un exemple de code ci-dessous:</p>
-<div class="highlight"><span class="filename">🗃️ Script PHP</span><pre><span></span><code><span class="x">&lt;!DOCTYPE html&gt;</span>
-<span class="x">&lt;html&gt;</span>
-<span class="x">    &lt;head&gt;</span>
-<span class="x">        &lt;title&gt;Mon cours de PHP&lt;/title&gt;</span>
-<span class="x">        &lt;meta charset="utf-8"&gt;</span>
-<span class="x">        &lt;link rel="stylesheet" href="cours_php.css"&gt;</span>
-<span class="x">    &lt;/head&gt;</span>
+  <h1>Fonctions récursives</h1>
 
-<span class="x">    &lt;body&gt;</span>
-<span class="x">        &lt;h1&gt;Titre de ma page&lt;/h1&gt;</span>
-<span class="x">        </span><span class="cp">&lt;?php</span>
-            <span class="c1">//Affiche "Bravo" avec un retour à la ligne</span>
-            <span class="k">echo</span> <span class="s2">"Bravo!&lt;br&gt;"</span><span class="p">;</span> 
-            <span class="cm">/*Affiche</span>
-<span class="cm">              "Bonjour le Monde</span>
-<span class="cm">            */</span>
-            <span class="k">echo</span> <span class="s2">"Tu as fait ton premier script php"</span><span class="p">;</span> 
-        <span class="cp">?&gt;</span>
-<span class="x">        &lt;p&gt;Attention, le navigateur ne sait pas lire du php!&lt;/p&gt;</span>
-<span class="x">    &lt;/body&gt;</span>
-<span class="x">&lt;/html&gt;</span>
-</code></pre></div>
-<p>Alors qu'un navigateur comme Firefox ou Chrome, peut directement interpréter du langage <code>HTML</code> ce n'est pas le cas pour le langage <code>PHP</code>. Il faut se doter d'une technologie de <strong>serveur</strong> qui exécute le code <code>PHP</code>, le traduit en <code>HTML</code> et le transmet au navigateur du client.</p>
-<h2 id="interpreter-du-php">Interpréter du PHP<a class="headerlink" href="#interpreter-du-php" title="Permanent link">¶</a></h2>
-<p>Pour exécuter du code <code>PHP</code>, nous allons utiliser <strong>WAMP</strong>, le quatuor incontournable:</p>
-<ul>
-<li><strong>W</strong> indows pour l'OS</li>
-<li><strong>A</strong> pache pour le serveur HTTP</li>
-<li><strong>M</strong> ySQL pour la gestion de base de données</li>
-<li><strong>P</strong> HP pour exécuter le PHP</li>
-</ul>
-<p>Pour lancer l’exécution du fichier PHP créé et voir le résultat dans notre navigateur, il faut alors accéder au dossier dans lequel le fichier a été stocké via notre navigateur web en passant par nos serveurs.</p>
-<p>Pour cela, il suffit d’ouvrir un nouvel onglet dans notre navigateur favori et de renseigner l’adresse <code>localhost</code> ou encore <code>127.0.0.1</code> selon votre système.</p>
-<h2 id="premiere-manipulation">Première manipulation<a class="headerlink" href="#premiere-manipulation" title="Permanent link">¶</a></h2>
-<h3 id="linstruction-echo">L'instruction echo<a class="headerlink" href="#linstruction-echo" title="Permanent link">¶</a></h3>
-<p>Cette instruction permet l'<strong>affichage</strong> dans un script <code>PHP</code></p>
-<div class="highlight"><span class="filename">🗃️ Script PHP</span><pre><span></span><code><span class="cp">&lt;?</span> <span class="nx">php</span>
-<span class="k">echo</span> <span class="s2">"&lt;h2&gt; Je suis un nouveau titre&lt;/h2&gt;"</span><span class="p">;</span>
-<span class="k">echo</span> <span class="mi">30</span> <span class="p">;</span>
-<span class="cp">?&gt;</span>
-</code></pre></div>
-<p>Remarquez comment est définie la balise <code>php</code>.</p>
-<div class="admonition info">
-<p class="admonition-title">Un point c'est tout!</p>
-<p>Toutes les instructions <code>PHP</code> finissent par un <code>;</code>.</p>
+<div><h2 id="un-exemple-comment-calculer-la-somme-des-n-premiers-entiers-consecutifs">Un exemple: comment calculer la somme des n premiers entiers consécutifs?<a class="headerlink" href="#un-exemple-comment-calculer-la-somme-des-n-premiers-entiers-consecutifs" title="Permanent link">¶</a></h2>
+<p>Il s'agit de calculer la somme (dite de Gauss...)  </p>
+<div class="arithmatex">\[ S = 1 + 2 + 3 + 4 + ... +  n-1 + n \]</div>
+<div class="admonition exercice">
+<p class="admonition-title">Exercice</p>
+<ol>
+<li>Copier et coller le code Python ci-dessous</li>
+<li>Testez pour plusieurs valeurs simples de <span class="arithmatex">\(n\)</span></li>
+</ol>
 </div>
-<h3 id="creer-des-variables">Créer des variables<a class="headerlink" href="#creer-des-variables" title="Permanent link">¶</a></h3>
-<p>Les variables contiennent des valeurs, de l'information.</p>
-<p>En PHP, une variable ne va exister que durant le temps de l’exécution du script l’utilisant.</p>
-<div class="admonition info">
-<p class="admonition-title">Déclarer des variables</p>
-<p>Toute variable en <code>PHP</code> doit commencer par le signe <code>$</code> qui sera suivi du nom de la variable.</p>
+<p></p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Donner un entier positif"</span><span class="p">))</span>
+<span class="n">S</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">S</span> <span class="o">=</span> <span class="n">S</span> <span class="o">+</span> <span class="n">i</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"La somme des </span><span class="si">{}</span><span class="s2"> premiers entiers est </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">S</span><span class="p">))</span>
+</code></pre></div>
+Le code ci-dessus est <strong>impératif</strong> au sens où nous donnons des ordres que l'ordinateur exécute ligne par ligne.
+<div class="admonition exercice">
+<p class="admonition-title">Exercice</p>
+<ol>
+<li>Transformer le code ci-dessus en une fonction <code>somme_entier</code> qui prend en paramètre le seul entier <span class="arithmatex">\(n\)</span> et qui retourne la somme recherchée.</li>
+<li>Ajouter des assertions à la fonction.</li>
+</ol>
 </div>
-<div class="highlight"><span class="filename">🗃️ Script PHP</span><pre><span></span><code><span class="cp">&lt;?</span> <span class="nx">php</span>
-<span class="nv">$nom</span> <span class="o">=</span> <span class="s2">"Hugo"</span><span class="p">;</span>
-<span class="nv">$pnom</span> <span class="o">=</span> <span class="s2">"Victor"</span><span class="p">;</span>
-<span class="nv">$age</span> <span class="o">=</span> <span class="mi">46</span><span class="p">;</span>
-<span class="k">echo</span> <span class="nv">$nom</span> <span class="p">;</span>
-<span class="cp">?&gt;</span>
+<p>Posons la notation <span class="arithmatex">\(S_n\)</span> pour indiquer la somme <span class="arithmatex">\(1 + 2 + 3 + 4 + ... +  n-1 + n\)</span>. Remarquons alors ceci:</p>
+<div class="arithmatex">\[S_n=1 + 2 + 3 + 4 + ... +  n-1 + n =S_{n -1} + n\]</div>
+<p>Autrement dit, le calcul de <span class="arithmatex">\(S_n\)</span> est récurrent et la traduction python de cette relation donne:</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">somme_rect</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">=</span> <span class="n">somme_rect</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">n</span>
 </code></pre></div>
-<h3 id="boucle-en-php">Boucle en PHP<a class="headerlink" href="#boucle-en-php" title="Permanent link">¶</a></h3>
-<p>On retrouve la notion de boucle pour répéter des instructions. Nous disposons de quatre boucles en <code>PHP</code>:</p>
-<ul>
-<li>la boucle <strong>while</strong></li>
-<li>la boucle <strong>do...while</strong></li>
-<li>la boucle <strong>for</strong></li>
-<li>la boucle <strong>foreach</strong></li>
-</ul>
-<p>Le fonctionnement général est toujours le même.</p>
-<div class="highlight"><span class="filename">🗃️ Script PHP</span><pre><span></span><code><span class="cp">&lt;?php</span>
-    <span class="nv">$x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-
-    <span class="k">while</span><span class="p">(</span><span class="nv">$x</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">){</span>
-        <span class="k">echo</span> <span class="s1">'$x contient la valeur '</span> <span class="o">.</span><span class="nv">$x</span><span class="o">.</span> <span class="s1">'&lt;br&gt;'</span><span class="p">;</span>
-        <span class="nv">$x</span><span class="o">++</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="cp">?&gt;</span>
-<span class="cp">&lt;?php</span>
-    <span class="k">for</span><span class="p">(</span><span class="nv">$x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$x</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">;</span> <span class="nv">$x</span><span class="o">++</span><span class="p">){</span>    
-        <span class="k">echo</span> <span class="s1">'$x contient la valeur '</span> <span class="o">.</span><span class="nv">$x</span><span class="o">.</span> <span class="s1">'&lt;br&gt;'</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="cp">?&gt;</span>
-</code></pre></div>
-<h3 id="structure-de-controle">Structure de contrôle<a class="headerlink" href="#structure-de-controle" title="Permanent link">¶</a></h3>
-<p>La modularité est un concept qui permet d'inclure des fichiers annexes à un programme principal. On retrouve cette notion en <code>PHP</code>.</p>
-<p>Un site, celui-ci en particulier contient des zones communes à toutes les pages. L'idée est d'encapsuler ce code dans des fichiers puis de les inclure aux différentes pages web qui constituent le site.</p>
-<p>La seule et unique différence entre les instructions include et require va se situer dans la réponse du <code>PHP</code> dans le cas ou le fichier ne peut pas être inclus pour une quelconque raison (fichier introuvable, indisponible, etc.).</p>
-<div class="admonition info">
-<p class="admonition-title">Inclusion fatale ou pas</p>
-<p>L'instruction <code>require</code> lève une erreur fatale si le fichier n'est pas trouvée alors que l'instruction <code>include</code> retourne un simple avertissement.</p>
+<div class="admonition warning">
+<p class="admonition-title">Mais attention!</p>
+<p>La relation précédente n'est valable que pour <span class="arithmatex">\(n\geq 1\)</span> et à la condition qu'elle soit aussi <strong>initialisée</strong>: si on déclare que <code>somme_rec(0) = 0</code>, on peut alors calculer <code>somme_rec(1),somme_rec(2),...</code></p>
 </div>
-<div class="highlight"><span class="filename">🗃️ Script PHP</span><pre><span></span><code><span class="cp">&lt;?php</span>
-<span class="k">echo</span> <span class="s2">"&lt;h2&gt;Menu inclus avec include&lt;/h2&gt; &lt;br&gt;"</span><span class="p">;</span>
-<span class="k">include</span> <span class="s2">"menu.php"</span><span class="p">;</span>
-<span class="cp">?&gt;</span>
+<p>Au final, nous obtenons la version <strong>récursive</strong> de la fonction précédente:</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">somme_rec</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">somme_rec</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">n</span>
 </code></pre></div>
-<h3 id="les-constantes">Les constantes<a class="headerlink" href="#les-constantes" title="Permanent link">¶</a></h3>
-<p>En créant des constantes avec le mot clé <code>CONST</code>, vous ne pourrez stocker que des données de type <code>string, integer, float, boolean</code> ou <code>array</code>.</p>
-<p>On peut aussi utiliser la fonction <code>define()</code>, dont les paramètres sont le nom de la constante et sa valeur.</p>
-<div class="admonition info">
-<p class="admonition-title">Une constante</p>
-<p>Une fois définie, une constante ne peut pas être modifiée ou détruite.</p>
+<h2 id="visualiser-la-pile-dexecution-dun-appel-recursif">Visualiser la pile d'exécution d'un appel récursif<a class="headerlink" href="#visualiser-la-pile-dexecution-dun-appel-recursif" title="Permanent link">¶</a></h2>
+<div class="admonition exercice">
+<p class="admonition-title">Exercice</p>
+<ol>
+<li>Allez sur le site <a href="https://pythontutor.com/render.html#mode=edit">python tutor</a> et recopier le code de la fonction récursive dans la zone d'édition.</li>
+<li>Exécutez <code>somme_rec(5)</code> et visualisez les différents appels.</li>
+<li>Même consigne avec <code>somme_rec(50)</code>.</li>
+<li>Quel pourrait être le problème des fonctions récursives? </li>
+</ol>
 </div>
-<p>Il existe des constantes prédéfinies dans le système comme <code>__FILE__,__NAMESPACE__</code> ou <code>__DIR__</code>...</p>
-<h2 id="les-fonctions-php">Les fonctions PHP<a class="headerlink" href="#les-fonctions-php" title="Permanent link">¶</a></h2>
-<p>La notion de fonction est importante, elle permet d'englober une portion de code avec ses entrées et ses sorties.</p>
-<p>Il existe des fonctions internes à <code>PHP</code> et on peut compléter la liste par nos propres créations.</p>
-<p>Un exemple de création de fonction sans paramètres:
-</p><div class="highlight"><span class="filename">🗃️ Script PHP</span><pre><span></span><code><span class="cp">&lt;?php</span>
-<span class="k">function</span> <span class="nf">bonjour</span><span class="p">(){</span>
-    <span class="k">echo</span> <span class="s2">"Bonjour tout le monde:"</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="cp">?&gt;</span>
+<p>Il existe de nombreuses situations algorithmiques qui justifient l'appel d'une fonction récursive. Cependant le nombre d'appel dans la pile est souvent limitée pour des raisons évidentes de sécurité puisque la zone mémoire qui stocke tous les appels peut très vite augmentée...</p>
+<p>Dans Thonny, on peut connaître le nombre maximum d'appel:</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">getrecursionlimit</span><span class="p">())</span>
 </code></pre></div>
-Il suffit alors d'appeler la fonction dans le script et d'observer son exécution (simple ici...)
-<p></p><div class="highlight"><span class="filename">🗃️ Script PHP</span><pre><span></span><code><span class="cp">&lt;?php</span>
-<span class="nx">bonjour</span><span class="p">();</span>
-<span class="cp">?&gt;</span>
-</code></pre></div>
-Mais on peut sans trop de difficulté, ajouter des paramètres à cette fonction:
-<div class="highlight"><span class="filename">🗃️ Script PHP</span><pre><span></span><code><span class="cp">&lt;?php</span>
-<span class="k">function</span> <span class="nf">bonjour</span><span class="p">(</span><span class="nv">$n</span><span class="p">){</span>
-    <span class="k">echo</span> <span class="s2">"Bonjour"</span> <span class="o">.</span><span class="nv">$n</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nv">$pnom</span> <span class="o">=</span> <span class="s2">"Charles"</span><span class="p">;</span>
-<span class="nx">bonjour</span><span class="p">(</span><span class="nv">$pnom</span><span class="p">);</span>
-<span class="cp">?&gt;</span>
-</code></pre></div>
-<div class="admonition info">
-<p class="admonition-title">Paramètre ou argument</p>
-<p>Une fonction est peut être défini avec des paramètres. La valeur prise par ceux-ci lors de l'appel de la fonction s'appelle des arguments.</p>
+<div class="admonition tldr">
+<p class="admonition-title">À retenir</p>
+<p>Lors de l’exécution d’un algorithme récursif, les appels successifs de la fonction sont stockés dans une pile, c’est <strong>la pile d’exécution</strong>.
+Plus précisément, la pile d’exécution est un emplacement mémoire destiné à stocker les paramètres, les variables locales ainsi que les adresses mémoires de retour des fonctions en cours d’exécution. </p>
 </div>
-<p>Lorsqu’on passe une variable comme <strong>argument par valeur</strong> à une fonction, le fait de modifier la valeur de la variable à l’intérieur de la fonction ne va pas modifier sa valeur à l’extérieur de la fonction.</p>
-<p>Parfois, on voudra cependant que nos fonctions puissent modifier la valeur des variables qu’on leur passe en argument. Pour cela, il va falloir passer ces <strong>arguments par référence</strong>.</p>
-<p></p><div class="highlight"><span class="filename">🗃️ Script PHP</span><pre><span></span><code><span class="cp">&lt;?php</span>
-<span class="c1">// passage par valeurs</span>
-<span class="nv">$x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="k">function</span> <span class="nf">incrementation_par_valeur</span><span class="p">(</span><span class="nv">$n</span><span class="p">){</span>
-    <span class="nv">$n</span> <span class="o">=</span> <span class="nv">$n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="k">echo</span> <span class="s2">"La valeur de la variable est"</span> <span class="o">.</span><span class="nv">$n</span><span class="p">;</span> <span class="p">;</span>
-<span class="p">}</span>
-<span class="k">function</span> <span class="nf">incrementation_par_reference</span><span class="p">(</span><span class="o">&amp;</span><span class="nv">$n</span><span class="p">){</span>
-    <span class="nv">$n</span> <span class="o">=</span> <span class="nv">$n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="k">echo</span> <span class="s2">"La valeur de la variable est"</span> <span class="o">.</span><span class="nv">$n</span><span class="p">;</span> <span class="p">;</span>
-<span class="p">}</span>
-<span class="nx">incrementation_par_valeur</span><span class="p">(</span><span class="nv">$x</span><span class="p">);</span>
-<span class="nx">incrementation_par_reference</span><span class="p">(</span><span class="nv">$x</span><span class="p">);</span>
-<span class="cp">?&gt;</span>
-</code></pre></div>
-La première fonction ne modifie pas la valeur de la variable <code>$x</code> contrairement à le seconde.
-<div class="admonition question">
-<p class="admonition-title">Pas de return en php?</p>
-<p>Si nous souhaitons garder en mémoire dans une variable le résultat de l'exécution d'une fonction, il suffit de le retourner avec une <code>`return</code>.</p>
+<p><em>Les exercices taggés du symbole <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 576 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M348.8 32C340.7 46.1 336 62.5 336 80v16H64v224h272v64H64c-35.3 0-64-28.7-64-64V96c0-35.3 28.7-64 64-64zM336 432c0 17.5 4.7 33.9 12.8 48H120c-13.3 0-24-10.7-24-24s10.7-24 24-24zm96-400h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48h-96c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48m24 64c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm56 144a32 32 0 1 0-64 0 32 32 0 1 0 64 0"></path></svg></span> sont à faire sur machine.</em></p>
+<p><em>Les exercices taggés du symbole <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16"><path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.25.25 0 0 0-.064.108l-.558 1.953 1.953-.558a.25.25 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z"></path></svg></span> doivent être résolus par écrit.</em></p>
+<div class="admonition exercice">
+<p class="admonition-title"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 576 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M348.8 32C340.7 46.1 336 62.5 336 80v16H64v224h272v64H64c-35.3 0-64-28.7-64-64V96c0-35.3 28.7-64 64-64zM336 432c0 17.5 4.7 33.9 12.8 48H120c-13.3 0-24-10.7-24-24s10.7-24 24-24zm96-400h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48h-96c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48m24 64c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm56 144a32 32 0 1 0-64 0 32 32 0 1 0 64 0"></path></svg></span></p>
+<p>La factorielle d'un entier n, notée <span class="arithmatex">\(n!\)</span> est égale à : <span class="arithmatex">\(n!=1\times 2 \times 3 \times...\times (n-1) \times n\)</span> si <span class="arithmatex">\(n&gt;0\)</span> et égal à 1 si <span class="arithmatex">\(n=0\)</span>.</p>
+<ol>
+<li>Écrire la fonction <strong>facto_simple(n)</strong> qui prend en paramètre un entier <span class="arithmatex">\(n\)</span> et qui renvoie la factorielle de <span class="arithmatex">\(n\)</span>.</li>
+<li>Écrire la fonction <strong>récursive</strong> facto_recu(n) qui prend en paramètre un entier <span class="arithmatex">\(n\)</span> et qui renvoie la factorielle de <span class="arithmatex">\(n\)</span>.</li>
+</ol>
+<p>On posera des assertions dans ces fonctions pour vérifier leur comportement.</p>
 </div>
-<p>Dans ce cas, aucun résultat ne s'affiche...</p>
-<h2 id="les-tableaux-en-php">Les tableaux en PHP<a class="headerlink" href="#les-tableaux-en-php" title="Permanent link">¶</a></h2>
-<p>Structures de stockage indispensables, l'utilisation des tableaux (array) mérite toute notre attention.</p>
-<h3 id="declarer-des-tableaux-en-php">Déclarer des tableaux en php<a class="headerlink" href="#declarer-des-tableaux-en-php" title="Permanent link">¶</a></h3>
-<p>Un exemple:
-</p><div class="highlight"><span class="filename">🗃️ Script PHP</span><pre><span></span><code><span class="cp">&lt;?php</span>
-    <span class="nv">$joueurs</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">'Jean'</span><span class="p">,</span> <span class="s1">'Bruno'</span><span class="p">,</span> <span class="s1">'Francis'</span><span class="p">,</span> <span class="s1">'Hachem'</span><span class="p">);</span>
-    <span class="nv">$point_de_vies</span> <span class="o">=</span> <span class="p">[</span><span class="mi">64</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">23</span><span class="p">];</span>
-<span class="cp">?&gt;</span>
-</code></pre></div>
-<h3 id="afficher-les-valeurs-dun-tableau">Afficher les valeurs d'un tableau<a class="headerlink" href="#afficher-les-valeurs-dun-tableau" title="Permanent link">¶</a></h3>
-<p>Pour afficher la valeur d'un tableau, il faut utiliser l'indice de cet élément dans le tableau:
-</p><div class="highlight"><span class="filename">🗃️ Script PHP</span><pre><span></span><code><span class="cp">&lt;?php</span>
-    <span class="k">echo</span> <span class="nv">$joueurs</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
-    <span class="k">echo</span> <span class="nx">point_de_vies</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
-<span class="cp">?&gt;</span>
-</code></pre></div>
-Pour afficher toutes les valeurs, il faut boucler sur les indices du tableau:
-<div class="highlight"><span class="filename">🗃️ Script PHP</span><pre><span></span><code><span class="cp">&lt;?php</span>
-    <span class="nv">$taille</span> <span class="o">=</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$joueurs</span><span class="p">);</span>
-    <span class="k">for</span><span class="p">(</span><span class="nv">$i</span><span class="o">=</span><span class="mi">0</span> <span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="nv">$taille</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span><span class="p">){</span>
-        <span class="k">echo</span> <span class="nv">$joueurs</span><span class="p">[</span><span class="nv">$i</span><span class="p">]</span> <span class="o">.</span><span class="s1">';'</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="cp">?&gt;</span>
-</code></pre></div>
-<p>On aurait pu créer des <strong>tableaux associatifs</strong> en associant à chaque joueur ses points de vies. La syntaxe est alors:
-</p><div class="highlight"><span class="filename">🗃️ Script PHP</span><pre><span></span><code><span class="cp">&lt;?php</span>
-    <span class="nv">$joueurs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Jean'</span><span class="o">=&gt;</span><span class="mi">64</span><span class="p">,</span> <span class="s1">'Bruno'</span><span class="o">=&gt;</span><span class="mi">59</span><span class="p">,</span> <span class="s1">'Francis'</span><span class="o">=&gt;</span><span class="mi">2</span><span class="p">,</span> <span class="s1">'Hachem'</span><span class="o">=&gt;</span><span class="mi">23</span><span class="p">];</span>
-<span class="cp">?&gt;</span>
-</code></pre></div>
-Et pour afficher tous les couples clefs/valeurs:
-<div class="highlight"><span class="filename">🗃️ Script PHP</span><pre><span></span><code><span class="cp">&lt;?php</span>
-<span class="k">foreach</span><span class="p">(</span><span class="nv">$joueurs</span> <span class="k">as</span> <span class="nv">$clef</span> <span class="o">=&gt;</span> <span class="nv">$valeur</span><span class="p">){</span>
-    <span class="k">echo</span> <span class="nv">$clef</span><span class="o">.</span> <span class="s1">'a'</span> <span class="o">.</span><span class="nv">$valeur</span><span class="o">.</span> <span class="s1">'points de vie.&lt;br&gt;'</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="cp">?&gt;</span>
-</code></pre></div>
-<h2 id="les-variables-super-globales">Les variables super globales<a class="headerlink" href="#les-variables-super-globales" title="Permanent link">¶</a></h2>
-<p>Ces variables sont internes au programme et peuvent être appellées n'importe où. Il en existe neuf: <code>$GLOBALS, $_SERVER, $_REQUEST, $_GET, $_POST, $_FILES, $_ENV, $_COOKIE, $_SESSION</code>.</p>
-<div class="admonition info">
-<p class="admonition-title">$GLOBALS</p>
-<p>La variable superglobale <code>$GLOBALS</code> est une variable de type <strong>tableau associatif</strong> qui stocke en fait automatiquement toutes les variables globales déclarées dans le script.</p>
+<div class="admonition exercice">
+<p class="admonition-title"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 576 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M348.8 32C340.7 46.1 336 62.5 336 80v16H64v224h272v64H64c-35.3 0-64-28.7-64-64V96c0-35.3 28.7-64 64-64zM336 432c0 17.5 4.7 33.9 12.8 48H120c-13.3 0-24-10.7-24-24s10.7-24 24-24zm96-400h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48h-96c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48m24 64c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm56 144a32 32 0 1 0-64 0 32 32 0 1 0 64 0"></path></svg></span></p>
+<p>On rappelle que <span class="arithmatex">\(x^n=x\times x \times x....\times x\)</span>, <span class="arithmatex">\(n\)</span> fois où <span class="arithmatex">\(x\)</span> est un réel quelconque et <span class="arithmatex">\(n\)</span> un entier.</p>
+<ol>
+<li>Écrire la fonction <strong>puissance_recu(n,x)</strong> qui prend en paramètres l'entier <span class="arithmatex">\(n\)</span> et le réel <span class="arithmatex">\(x\)</span>.</li>
+<li>On peut améliorer cette dernière fonction en considérant la définition ci-dessous:</li>
+</ol>
+<div class="arithmatex">\[\textrm{puissance}(x , n) = 
+\left\{
+      \begin{array}{c c}
+        x &amp; \textrm{si } n = 1 \\
+        \textrm{puissance}(x^2 , n/2) &amp; \textrm{si } n \textrm{ est pair}\\
+        x \times \textrm{puissance}(x^2 , (n - 1)/2) &amp; \textrm{si } n \textrm{ est impair}\\
+      \end{array}
+\right.\]</div>
+<p>Écrire la fonction <strong>puissance_mieux(n, x)</strong> avec cette définition et comparer le temps d'exécution de ces deux fonctions. On utilisera le module <code>timeit</code> pour cela...</p>
 </div>
-<div class="admonition info">
-<p class="admonition-title">$_SERVER</p>
-<p>La variable superglobale $_SERVER contient les variables définies par le serveur.</p>
-</div>
-<div class="admonition info">
-<p class="admonition-title">$_REQUEST</p>
-<p>La variable superglobale $_REQUEST va contenir toutes les variables envoyées via les méthodes <code>GET</code> et <code>POST</code> et par les cookies HTTP.</p>
-</div>
-<div class="admonition info">
-<p class="admonition-title">$_ENV</p>
-<p>La variable superglobale $_ENV va contenir des informations liées à l’environnement dans lequel s’exécute le script.</p>
-</div>
-<div class="admonition info">
-<p class="admonition-title">$_FILES</p>
-<p>La variable superglobale $_FILES va contenir des informations sur un fichier téléchargé, comme le type du fichier, sa taille, son nom, etc.</p>
-</div>
-<p>Les variables superglobales <code>$_GET</code> et <code>$_POST</code> sont relatives aux formulaires HTML: elles stockent les informations envoyées par un formulaire selon la méthode utilisée.</p>
-<p>Quant aux variables <code>$_COOKIE</code> et <code>$_SESSION</code> elles sont suffisamment explicites pour comprendre leur rôle...</p></div>
+<div class="admonition exercice">
+<p class="admonition-title"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 576 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M348.8 32C340.7 46.1 336 62.5 336 80v16H64v224h272v64H64c-35.3 0-64-28.7-64-64V96c0-35.3 28.7-64 64-64zM336 432c0 17.5 4.7 33.9 12.8 48H120c-13.3 0-24-10.7-24-24s10.7-24 24-24zm96-400h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48h-96c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48m24 64c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm56 144a32 32 0 1 0-64 0 32 32 0 1 0 64 0"></path></svg></span></p>
+<ol>
+<li>Écrire une fonction nommée <code>reverse(phrase)</code>qui prend en paramètre la chaîne de caractère <code>phrase</code>  et qui la renvoie à l'envers...</li>
+<li>Écrire la version récursive de cette fonction.</li>
+</ol>
+</div></div>
 
 
 
