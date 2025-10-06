@@ -13,6 +13,10 @@
         <link rel="canonical" href="https://marcturro.github.io/prem/widget.html">
       
       
+        <link rel="prev" href="frontend.html">
+      
+      
+        <link rel="next" href="../term/termnsi.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +24,7 @@
     
     
       
-        <title>Widget - Numérique et Sciences Informatiques</title>
+        <title>Création de widgets - Numérique et Sciences Informatiques</title>
       
     
     
@@ -202,7 +206,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Widget
+              Création de widgets
             
           </span>
         </div>
@@ -319,10 +323,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="premnsi.html" class="md-tabs__link">
           
   
@@ -524,24 +530,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -554,7 +565,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             <img src='https://marcturro.github.io/icones/checklist-16.svg' width=16px height=16px>&thinsp; Première NSI
@@ -717,29 +728,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="devoir_formulaire.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Exercices mathématiques...
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -752,6 +740,8 @@
                 
   
   
+    
+  
   
   
     
@@ -762,11 +752,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -782,7 +772,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             Travaux Pratiques
@@ -853,6 +843,37 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="widget.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Création de widgets
+    
+  </span>
+  
+
+      </a>
+      
     </li>
   
 
@@ -1574,10 +1595,7 @@
 
 <p>Il s'agit dans ce travail d'utiliser les constructeurs et les méthodes de la bibliothèques <code>Tkinter</code> afin de réaliser des interfaces graphiques (bouton, champ de saisie, échelle, label, fenêtre,...) et tout cela dans le langage <code>python</code>.</p>
 <p>L'apprentissage se résume à l'élaboration de la fenêtre ci-dessous qui donne la couleur obtenue dans le mélange des trois composantes <code>RGB</code>(Red Green Blue):</p>
-<center>
-![fenetre_a_realiser](<img>)
-</center>
-
+<p><img alt="Interface à réaliser" src="img/interface_couleur.png"></p>
 <div class="admonition example">
 <p class="admonition-title">Étape1: Construction de la fenêtre mère</p>
 <p>L'idée principale est de construire un conteneur principal, l'élément <strong>mère</strong> qui va contenir d'autres éléments <strong>filles</strong>. Le code Python est donné ci-après.</p>
@@ -1614,7 +1632,7 @@
 <div class="admonition exo">
 <p class="admonition-title"> Ajouter les widgets</p>
 <ol>
-<li>Ajouter le code python suivant au programme précédent à l'endroit indiqué.</li>
+<li>Ajouter le code python suivant au programme précédent à l'<strong>endroit indiqué</strong>.</li>
 <li>Changer la couleur d'arrière plan du canvas</li>
 <li>On peut aussi exprimer la couleur en hexadécimal. Essayez l'instruction <code>bg= '#FF00FF'</code> puis une autre de votre choix.</li>
 </ol>
@@ -1649,10 +1667,10 @@
 <div class="admonition exo">
 <p class="admonition-title">Ajouter des variables de contrôles</p>
 <ol>
-<li>Ajouter le code <code>python</code> suivant juste après l'instruction <code>fen.iconbitmap</code>.
+<li><strong>Ajouter</strong> le code <code>python</code> suivant <strong>juste après</strong> l'instruction <code>fen.iconbitmap</code>.
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">r</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s1">'12'</span><span class="p">)</span>
 </code></pre></div></li>
-<li>Modifier le constructeur <code>Entry</code> nommé <code>rou</code> en lui ajoutant l'attribut <code>textvariable = r</code> comme ceci:
+<li><strong>Modifier</strong> le constructeur <code>Entry</code> nommé <code>rou</code> en lui ajoutant l'attribut <code>textvariable = r</code> comme ceci:
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">rou</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">fen</span><span class="p">,</span> <span class="n">textvariable</span> <span class="o">=</span> <span class="n">r</span><span class="p">)</span>
 </code></pre></div></li>
 </ol>
@@ -1680,18 +1698,16 @@
 </ul>
 </div>
 <p>Mais problème! Les couleurs saisies sont décimales. Il faut donc construire un outil qui prend en entrée un triplet comme <code>(12,200,100)</code> et le transforme en <code>'#0CC864'</code>. </p>
+<p><img alt="" src="img/fct_color.png"></p>
 <p>Nous allons pour cela créer la fonction <code>rgb_10to16</code> qui prend en paramètre un tuple de trois couleurs et retourne une chaîne de caractères formatée et répondant à notre besoin.</p>
 <div class="admonition exo">
 <p class="admonition-title">Ajouter une fonction</p>
 <ol>
-<li>Ajouter le code python suivant après la variable b:
+<li><strong>Ajouter</strong> le code python suivant après la variable b:
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="c1">#------  FONCTIONS    --------------------------#</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">rgb_10to16</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
     <span class="k">return</span> <span class="s2">"#</span><span class="si">%.2x</span><span class="s2">"</span> <span class="o">%</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"</span><span class="si">%.2x</span><span class="s2">"</span> <span class="o">%</span><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"</span><span class="si">%.2x</span><span class="s2">"</span> <span class="o">%</span><span class="n">t</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 </code></pre></div></li>
-<li>Rappelez le nom de l'opération <code>+</code> pour les chaînes de caractères.</li>
-<li>Expliquer le rôle de l'instruction <code>.2x</code></li>
-<li>Justifier que cette fonction retourne une chaîne de caractères.</li>
 <li>Testez votre fonction en console sur des entrées simples comme <code>(255, 0, 0)</code></li>
 </ol>
 </div>
@@ -1730,9 +1746,7 @@
 <p>Au lieu de saisir les valeurs, on souhaite utiliser des échelles qui permettent à l'aide de curseur de choisir la valeur de la composante de rouge, de vert ou de bleu(voir ci-dessous...).</p>
 <p>Documentez-vous par exemple <a href="https://profjahier.github.io/html/NSI/tkinter/doc_EFlorent_allegee/doc/scw.html">ici</a> et remplacez les entrées par trois échelles.</p>
 </div>
-<center>
-![fenetre_a_realiser](<img>)
-</center></div>
+<p><img alt="Fenêtre avec des curseurs: la couleur change automatiquement!" src="img/interface_couleur_scale.png"></p></div>
 
 
 
