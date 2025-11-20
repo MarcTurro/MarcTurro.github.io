@@ -16,7 +16,7 @@
         <link rel="prev" href="widget.html">
       
       
-        <link rel="next" href="../term/termnsi.html">
+        <link rel="next" href="jscript.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -1011,6 +1011,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="jscript.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dynamisons le Web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1751,8 +1774,11 @@
 <p>En revanche on ne pourra pas lire les fichiers générés par des logiciels propriétaires comme Microsoft ou Apple... ces fichiers étant cryptés.</p>
 <h2 id="ouverture-dun-fichier">Ouverture d'un fichier.<a class="headerlink" href="#ouverture-dun-fichier" title="Permanent link">¶</a></h2>
 <div class="admonition exercice">
-<p class="admonition-title">Le fichier test</p>
-<p>Télécharger <a download="test.txt" href="fichier/test.txt">ici</a> le fichier sur lequel nous allons tester nos codes python.</p>
+<p class="admonition-title">Préparation</p>
+<ol>
+<li>Construire un dossier <code>TP_traitement_texte</code> dans lequel vous enregistrerez tous vos fichiers.</li>
+<li>Télécharger <a download="test.txt" href="fichier/test.txt">ici</a> le fichier sur lequel nous allons tester nos codes python.</li>
+</ol>
 </div>
 <p>Il s'agit d'un fichier texte contenant la constitution française.
 Nous allons analyser ce fichier texte.</p>
@@ -1764,32 +1790,28 @@ Nous allons analyser ce fichier texte.</p>
 </code></pre></div>
 La variable <code>fich</code> est un objet tampon contenant tous les caractères du fichier texte mais <strong>ce n'est pas une chaîne de caractères</strong>: il faut <strong>lire</strong> cet objet et stocker l'information dans une variable.
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">fich</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"test.txt"</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">"utf-8"</span><span class="p">)</span> <span class="c1"># r comme read</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">fichier</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="c1">#lit tout le texte et l'affecte à la la variable f</span>
+<span class="n">contenu</span> <span class="o">=</span> <span class="n">fich</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="c1">#lit tout le texte et l'affecte à la la variable contenu</span>
 </code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>La variable <code>f</code> est alors une chaîne de caractères.</p>
+<p>La variable <code>contenu</code> est alors une chaîne de caractères.</p>
 </div>
-<p>Évitez de <code>printer</code> la valeur de <code>f</code> dans la console qui est extrêmement grande!</p>
+<p>Évitez de <code>printer</code> la valeur de <code>contenu</code> dans la console qui est extrêmement grande!</p>
 <div class="admonition exercice">
 <p class="admonition-title">Taille du texte</p>
-<p>Faites afficher dans la console la taille de la variable <code>f</code> et comparez-la à la taille du fichier texte que vous avez ouvert.</p>
+<p>Faites afficher dans la console la taille de la variable <code>contenu</code> et comparez-la à la taille du fichier texte que vous avez ouvert.</p>
 </div>
 <p>La méthode <code>read</code> permet de lire tout le contenu de l'objet <code>fich</code>.</p>
 <p>On peut aussi lire ligne par ligne le fichier:
 </p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">fich</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"test.txt"</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">"utf-8"</span><span class="p">)</span> <span class="c1"># r comme read</span>
 <span class="n">cpt</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">fich</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span> <span class="c1">#lit la première ligne </span>
-<span class="k">while</span> <span class="n">f</span> <span class="o">!=</span> <span class="s2">""</span><span class="p">:</span>
-  <span class="n">f</span> <span class="o">=</span> <span class="n">fich</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="n">contenu</span> <span class="o">=</span> <span class="n">fich</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span> <span class="c1">#lit la première ligne </span>
+<span class="k">while</span> <span class="n">contenu</span> <span class="o">!=</span> <span class="s2">""</span><span class="p">:</span>
+  <span class="n">contenu</span> <span class="o">=</span> <span class="n">fich</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
   <span class="n">cpt</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">cpt</span><span class="p">)</span>
 </code></pre></div>
-La variable <code>f</code> prend à chaque tour de boucle, la valeur de chaque ligne du fichier. La variable <code>cpt</code> compte ici le nombre de ligne dans le fichier.
-<p>On peut aussi procéder ainsi pour stocker toutes les lignes dans une <strong>liste</strong>:
-</p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">fich</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"test.txt"</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">"utf-8"</span><span class="p">)</span> <span class="c1"># r comme read</span>
-<span class="n">liste_de_lignes</span> <span class="o">=</span> <span class="n">fich</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span> <span class="c1">#stocke chaque ligne dans une liste</span>
-</code></pre></div>
+La variable <code>contenu</code> prend à chaque tour de boucle, la valeur de chaque ligne du fichier. La variable <code>cpt</code> compte ici le nombre de ligne dans le fichier.
 <p>On peut aussi:</p>
 <ul>
 <li>ouvrir un fichier en <strong>écriture</strong> mais attention: si ce fichier existe déjà son contenu sera alors détruit</li>
@@ -1830,8 +1852,8 @@ Dans ce mode, si le fichier <code>mon_texte.txt</code> n'existe pas, il est alor
 <div class="admonition exercice">
 <p class="admonition-title">Permutation de voyelle</p>
 <p>Le cerveau a des capacités étonnantes: il est capable de lire un texte dans lequel les voyelles ont été mélangées!!
-Tentons l'expérience.
-Construire un fichier <code>fichier_test_melange.txt</code> où on a échangé les <code>e</code> avec les <code>a</code> et les <code>o</code> avec les <code>u</code>. Vous pouvez aussi coder un remplacement aléatoire d'une voyelle par une autre...</p>
+Tentons l'expérience.</p>
+<p>Construire un fichier <code>fichier_test_melange.txt</code> où on a échangé les <code>e</code> avec les <code>a</code> et les <code>o</code> avec les <code>u</code>. Vous pouvez aussi coder un remplacement aléatoire d'une voyelle par une autre...</p>
 </div>
 <h3 id="cryptage">Cryptage<a class="headerlink" href="#cryptage" title="Permanent link">¶</a></h3>
 <div class="admonition info">
@@ -1908,7 +1930,7 @@ Construire un fichier <code>fichier_test_melange.txt</code> où on a échangé l
 <span class="n">fichier_1</span> <span class="o">=</span> <span class="s1">'fichier_test_filtre.txt'</span> <span class="c1">#fichier d'étude</span>
 <span class="n">fichier_etude_1</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">fichier_1</span><span class="p">,</span><span class="s1">'r'</span><span class="p">)</span>
 <span class="n">f_1</span> <span class="o">=</span> <span class="n">fichier_etude_1</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-<span class="c1">#########################################################################################################################################</span>
+<span class="c1">###################################################################################</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
 <span class="n">minus</span> <span class="o">=</span> <span class="p">[</span><span class="nb">chr</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">97</span><span class="p">,</span> <span class="mi">123</span><span class="p">)]</span> <span class="c1">#liste en abscisse</span>
@@ -1916,11 +1938,10 @@ Construire un fichier <code>fichier_test_melange.txt</code> où on a échangé l
 
 <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">minus</span><span class="p">,</span> <span class="n">freq</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Analyse du fichier </span><span class="si">{</span><span class="n">fichier_1</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">26</span><span class="p">),</span> <span class="n">xticks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">26</span><span class="p">),</span>
-       <span class="n">ylim</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">),</span> <span class="n">yticks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.15</span><span class="p">,</span><span class="mf">0.02</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">26</span><span class="p">),</span> <span class="n">xticks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">26</span><span class="p">),</span> <span class="n">ylim</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">),</span> <span class="n">yticks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.15</span><span class="p">,</span><span class="mf">0.02</span><span class="p">))</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="c1">#########################################################################################################################################</span>
+<span class="c1">###################################################################################</span>
 <span class="n">fichier_etude_1</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
 <div class="admonition exercice">
