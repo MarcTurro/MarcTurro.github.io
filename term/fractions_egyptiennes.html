@@ -932,6 +932,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prem/images_numeriques.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Travail sur les images numériques
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1804,13 +1827,9 @@ Nous avons bien évidemment  <span class="arithmatex">\(\dfrac{1}{2}&gt;\dfrac{1
 <p>Nous allons ici montrer comment on trouve que <span class="arithmatex">\(\dfrac{6}{7}=\dfrac{1}{2}+\dfrac{1}{3}+\dfrac{1}{42}\)</span>.  </p>
 <p>L'idée de cet algorithme <strong>glouton</strong>, et d'utiliser toujours en premier les fractions <strong>les plus grandes possibles</strong>.<br>
 Regardons la première fraction unitaire possible : <span class="arithmatex">\(\dfrac{1}{2}\)</span>  </p>
-<center>
-$\dfrac{6}{7}&gt;\dfrac{1}{2}$ donc $\dfrac{6}{7}=\dfrac{1}{2}+\text{reste}$ avec $\text{reste}$ est bien un nombre positif.  
-</center>
+<p><span class="arithmatex">\(\dfrac{6}{7}&gt;\dfrac{1}{2}\)</span> donc <span class="arithmatex">\(\dfrac{6}{7}=\dfrac{1}{2}+\text{reste}\)</span> avec <span class="arithmatex">\(\text{reste}\)</span> est bien un nombre positif.  </p>
 <p>Calculons ce <span class="arithmatex">\(\text{reste}\)</span> :  </p>
-<center>
-$\text{reste}=\dfrac{6}{7}-\dfrac{1}{2}=\dfrac{12-7}{14}=\dfrac{5}{14}$  
-</center>
+<p><span class="arithmatex">\(\text{reste}=\dfrac{6}{7}-\dfrac{1}{2}=\dfrac{12-7}{14}=\dfrac{5}{14}\)</span>  </p>
 <p>Regardons la fraction unitaire suivante <span class="arithmatex">\(\dfrac{1}{3}\)</span> et pour cela, aidons nous de la calculatrice. Nous vérifions facilement que <span class="arithmatex">\(\dfrac{5}{14}&gt;\dfrac{1}{3}\)</span><br>
 Nous pouvons donc écrire que  <span class="arithmatex">\(\dfrac{5}{14}=\dfrac{1}{3}+\text{reste}\)</span>.<br>
 Nous allons utiliser le même procédé pour calculer ce nouveau reste :<br>
@@ -1825,14 +1844,9 @@ Nous utilisons le principe de l'algorithme glouton, et regardons la fraction uni
 <span class="arithmatex">\(\dfrac{10}{21}\)</span> est supérieur à <span class="arithmatex">\(\dfrac{1}{3}\)</span>, donc il est possible d'écrire <span class="arithmatex">\(\dfrac{10}{21}=\dfrac{1}{3}+\text{reste}\)</span>, avec
 <span class="arithmatex">\(\text{reste}\)</span> qui serait un nombre positif.<br>
 Calculons ce reste :  </p>
-<center> 
-$\text{reste} = \dfrac{10}{21}-\dfrac{1}{3}=\dfrac{3}{21}$.  
-</center>
+<p><span class="arithmatex">\(\text{reste} = \dfrac{10}{21}-\dfrac{1}{3}=\dfrac{3}{21}\)</span>.  </p>
 <p>Mais <span class="arithmatex">\(\dfrac{3}{21}\)</span> peut être simplifié en <span class="arithmatex">\(\dfrac{1}{7}\)</span> qui est bien une fraction unitaire. L'algorithme est donc terminé, et nous avons obtenu, en rassemblant tous les résultats :   </p>
-<center> 
-$\boxed{\dfrac{10}{21}=\dfrac{1}{3}+\dfrac{1}{7}}$
-</center>
-
+<p><span class="arithmatex">\(\boxed{\dfrac{10}{21}=\dfrac{1}{3}+\dfrac{1}{7}}\)</span></p>
 <h3 id="troisieme-exemple">Troisième exemple:<a class="headerlink" href="#troisieme-exemple" title="Permanent link">¶</a></h3>
 <p>Nous allons décomposer <span class="arithmatex">\(\dfrac{3}{7}\)</span>.  </p>
 <ul>
@@ -1854,14 +1868,9 @@ Mais <span class="arithmatex">\(\dfrac{2}{21}\)</span> ne peut pas être simplif
 <span class="arithmatex">\(\text{reste}\)</span> qui serait un nombre positif.<br>
 Calculons ce reste : </li>
 </ul>
-<center>
-$\text{reste} = \dfrac{2}{21}-\dfrac{1}{11}=\dfrac{1}{231}$.  
-</center>
+<p><span class="arithmatex">\(\text{reste} = \dfrac{2}{21}-\dfrac{1}{11}=\dfrac{1}{231}\)</span>.  </p>
 <p><span class="arithmatex">\(\dfrac{1}{231}\)</span> est une fraction unitaire. L'algorithme est donc terminé, et nous avons obtenu, en rassemblant tous les résultats :  </p>
-<center> 
-$\boxed{\dfrac{3}{7}=\dfrac{1}{3}+\dfrac{1}{11}+\dfrac{1}{231}}$.  
-</center>
-
+<p><span class="arithmatex">\(\boxed{\dfrac{3}{7}=\dfrac{1}{3}+\dfrac{1}{11}+\dfrac{1}{231}}\)</span>.  </p>
 <h2 id="ii-lalgorithme-simple">II. L'algorithme simple<a class="headerlink" href="#ii-lalgorithme-simple" title="Permanent link">¶</a></h2>
 <p>a) Sans affichage</p>
 <ul>
