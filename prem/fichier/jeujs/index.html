@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devinez le nombre - Apprentissage Javascript</title>
+	
+
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Deviner le nombre</h1>
+        <p style="text-align: center; color: #666; margin-bottom: 20px;">NSI Première</p>
+
+        <div id="description-niveau" class="description-niveau">
+            <h2> Principe</h2>
+            <p>Devinez le nombre entre 1 et 100. Vous recevrez des indices après chaque essai.</p>
+			<div id="nom"></div>
+        </div>
+		
+        <div class="game-area">
+            
+            <div class="stats">
+                <div class="stat-box">
+                    <div class="stat-label">Tentatives</div>
+                    <div class="stat-value" id="tentatives">0</div>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <input type="number" id="inputNombre" placeholder="Entrez un nombre" min="1" max="100">
+                <button onclick="deviner()">Deviner</button>
+            </div>
+
+            <div id="message"></div>
+
+            <div class="historique" id="historique">
+                <h3>📝 Historique des tentatives</h3>
+                <div class="tentatives-list" id="tentatives-list"></div>
+            </div>
+
+            <button class="btn-nouvelle-partie" onclick="nouvellePartie()" style="display:none" id="btnNouvelle">🔄 Nouvelle partie</button>
+        </div>
+    </div>
+
+<!-- ****************************COMMENTAIRES***************************-->
+
+</body>
+</html>
