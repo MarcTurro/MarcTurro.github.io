@@ -13,6 +13,10 @@
         <link rel="canonical" href="https://marcturro.github.io/prem/pyjeu.html">
       
       
+        <link rel="prev" href="jeujs.html">
+      
+      
+        <link rel="next" href="../term/termnsi.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +24,7 @@
     
     
       
-        <title>Le module Pygame de Python - Numérique et Sciences Informatiques</title>
+        <title>Jeu en Python - Numérique et Sciences Informatiques</title>
       
     
     
@@ -207,7 +211,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Le module Pygame de Python
+              Jeu en Python
             
           </span>
         </div>
@@ -324,10 +328,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="premnsi.html" class="md-tabs__link">
           
   
@@ -546,24 +552,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -576,7 +587,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             <img src='https://marcturro.github.io/icones/checklist-16.svg' width=16px height=16px>&thinsp; Première NSI
@@ -751,6 +762,8 @@
                 
   
   
+    
+  
   
   
     
@@ -761,11 +774,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -781,7 +794,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             Travaux Pratiques
@@ -930,20 +943,185 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="images_numeriques.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Jeu en Python
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="pyjeu.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    Travail sur les images numériques
+    Jeu en Python
     
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-de-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration de base
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-boucle-de-jeu" class="md-nav__link">
+    <span class="md-ellipsis">
+      La boucle de jeu
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creation-de-lecran-de-jeu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creation de l'écran de jeu
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definir-les-emplacements-des-jetons" class="md-nav__link">
+    <span class="md-ellipsis">
+      Définir les emplacements des jetons
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#un-jeton-sur-le-canvas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un jeton sur le canvas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alternance-des-couleurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alternance des couleurs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#et-le-gagnant-est" class="md-nav__link">
+    <span class="md-ellipsis">
+      Et le gagnant est...
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Et le gagnant est...">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#memoriser-les-emplacements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memoriser les emplacements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gain-vertical" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gain vertical
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gain-horizontal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gain horizontal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gain-diagonal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gain diagonal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#declaration-du-gagnant" class="md-nav__link">
+    <span class="md-ellipsis">
+      Déclaration du gagnant
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#un-peu-de-musique-et-de-bruitage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un peu de musique et de bruitage
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1684,17 +1862,14 @@
 <div><h1 id="le-module-pygame-de-python">Le module Pygame de Python<a class="headerlink" href="#le-module-pygame-de-python" title="Permanent link">¶</a></h1>
 <p>Le module <strong>Pygame</strong> de Python permet de construire des jeux d'arcade très simple. </p>
 <p>Je vous propose ici de découvrir ce module et quelques unes de ses fonctionnalité avec l'objectif de construire le <strong>jeu de puissance 4</strong>.</p>
-<center>
-    ![puissance 4 ](<img>){width=20%}
-</center>
-
+<p><img alt="Jeu du Puissance 4 " src="img/Puissance4.png" width="20%"></p>
 <div class="admonition warning">
 <p class="admonition-title">Ce que vous devez faire!</p>
 <p>Presque tout le code est donné pour fabriquer ce jeu. Vous devez lire ce document, comprendre les stratégies utilisées puis copier et compléter le code Python lorsque les exercices le demandent. Ne soyez pas trop impatient!</p>
 </div>
 <h2 id="configuration-de-base">Configuration de base<a class="headerlink" href="#configuration-de-base" title="Permanent link">¶</a></h2>
 <p>Comme dans tout projet Python, il faut importer des bibliothèque nécessaires:</p>
-<div class="admonition note">
+<div class="admonition info">
 <p class="admonition-title">Import du module</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pygame</span><span class="o">,</span><span class="w"> </span><span class="nn">sys</span>
@@ -1702,7 +1877,7 @@
 </code></pre></div></td></tr></table></div>
 </div>
 <p>Tous les projets utilisant Pygame contiennent ces imports.</p>
-<div class="admonition note">
+<div class="admonition info">
 <p class="admonition-title">Initialisation du Jeu</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
@@ -1710,7 +1885,7 @@
 <p>La fonction <code>init()</code> initialise le moteur du jeu. Elle aussi reste obligatoire</p>
 <h2 id="la-boucle-de-jeu">La boucle de jeu<a class="headerlink" href="#la-boucle-de-jeu" title="Permanent link">¶</a></h2>
 <p>La boucle de jeu est l'endroit où tous les événements du jeu se produisent, se mettent à jour et sont affichés à l'écran. </p>
-<div class="admonition note">
+<div class="admonition info">
 <p class="admonition-title">La boucle de Jeu</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -1729,7 +1904,7 @@
 <p>Un « événement » Pygame se produit lorsque l'utilisateur effectue une action spécifique, comme cliquer sur sa souris ou appuyer sur un bouton du clavier: la fonction <code>pygame.event.get()</code> retourne la liste des événements créés.</p>
 <h2 id="creation-de-lecran-de-jeu">Creation de l'écran de jeu<a class="headerlink" href="#creation-de-lecran-de-jeu" title="Permanent link">¶</a></h2>
 <p>Pour chaque jeu, il faut créer une fenêtre de dimension donnée:</p>
-<div class="admonition note">
+<div class="admonition info">
 <p class="admonition-title">Création de la fenêtre</p>
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">screen</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="mi">700</span><span class="p">,</span> <span class="mi">600</span><span class="p">))</span>  <span class="c1"># largeur: 700 pixels hauteur: 600 pixels</span>
 <span class="n">icon</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">"logoNSI.png"</span><span class="p">)</span>       <span class="c1"># charger une nouvelle image comme icone</span>
@@ -1740,7 +1915,7 @@
 </div>
 <p>La fenêtre a par défaut un icône et un titre que j'ai changé ici. </p>
 <p>Je vais créer deux constantes <code>BLEU</code> et <code>WHITE</code> pour colorer le background d'une part et les emplacements des jetons d'autre part:</p>
-<div class="admonition note">
+<div class="admonition info">
 <p class="admonition-title">Création des couleurs</p>
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">BLEU</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>      
 <span class="n">WHITE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
@@ -1749,8 +1924,15 @@
 </code></pre></div>
 </div>
 <p>À ce stade, le code complet est donc:</p>
+<div class="admonition exo">
+<p class="admonition-title">Premiers fichiers</p>
+<ol>
+<li>Télécharger le logo de la NSI <a download="logoNSI.png" href="img/logoNSI.png">(ici)</a> dans un dossier <code>JeuPuissance</code></li>
+<li>Copier le code ci-après dans un fichier Python et enregistrez-le dans le dossier précédent sous le nom <code>jeu.py</code>.</li>
+</ol>
+</div>
 <details class="note">
-<summary>Code complet</summary>
+<summary>Code complet à recopier</summary>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1804,15 +1986,11 @@
     <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
 </details>
-<div class="admonition exo">
-<p class="admonition-title">Code à recopier</p>
-<p>Copier le code dans un fichier Python.</p>
-</div>
 <h2 id="definir-les-emplacements-des-jetons">Définir les emplacements des jetons<a class="headerlink" href="#definir-les-emplacements-des-jetons" title="Permanent link">¶</a></h2>
 <p>Le puissance 4 traditionnel est composé de 7 colonnes et 6 lignes: c'est la raison pour laquelle j'ai choisi la taille de l'écran de largeur 700pixels (<span class="arithmatex">\(7\times 100\)</span>) et de hauteur 600 pixels(<span class="arithmatex">\(6\times 100\)</span>).</p>
 <p>Maintenant, nous allons définir les 42 emplacements pour les jetons.</p>
 <p>Pour déssiner un cercle dans Pygame, il faut utiliser la commande <code>pygame.draw.circle()</code> qui prend en paramètres l'endroit où on le construit, la couleur, les coordonnées du centre et le rayon. On obtient:</p>
-<div class="admonition note">
+<div class="admonition info">
 <p class="admonition-title">Premier emplacement</p>
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">WHITE</span><span class="p">,</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="mi">40</span><span class="p">)</span>
 </code></pre></div>
@@ -1825,41 +2003,28 @@
 <p>Nous allons donc utiliser une <strong>première boucle</strong> pour construire les 7 premiers jetons de la ligne du haut.</p>
 <p>Remarquons que les coordonnées de ces disques sont <code>(50, 50), (100, 50), (150, 50), (200, 50), ..., (650, 50)</code>: en mathématiques, nous dirions que les abscisses de ces points sont en <strong>progression arithmétique</strong> (ou linéaire...) et que le i-ième jeton a pour coordonnées <code>(50 + 100*i, 50)</code>.</p>
 <p>Voici donc la construction des 7 premiers jetons avec une boucle:</p>
-<div class="admonition col __70">
-<p class="admonition-title">Col</p>
-<div class="admonition note">
+<div class="admonition info">
 <p class="admonition-title">Première ligne</p>
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span>
     <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">WHITE</span><span class="p">,</span> <span class="p">(</span><span class="mi">50</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="mi">40</span><span class="p">)</span>
 </code></pre></div>
 </div>
-</div>
-<div class="admonition col __30">
-<p class="admonition-title">Col</p>
-<p></p><center>
-<img alt="fonction" src="img/ligne_puissance4.png" width="80%">
-</center>
-</div>
+<p><img alt="Première ligne" src="img/ligne_puissance4.png" width="50%"></p>
 <p>Mais finalement pourquoi ne pas <strong>boucler</strong> aussi sur la hauteur??</p>
-<div class="admonition col __70">
-<p class="admonition-title">Col</p>
-<div class="admonition note">
+<div class="admonition info">
 <p class="admonition-title">Construction des emplacements</p>
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span>
         <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">WHITE</span><span class="p">,</span> <span class="p">(</span><span class="mi">50</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="mi">50</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="n">j</span><span class="p">),</span> <span class="mi">40</span><span class="p">)</span>
 </code></pre></div>
 </div>
-</div>
-<div class="admonition col __30">
-<p class="admonition-title">Col</p>
-<p></p><center>
-<img alt="fonction" src="img/jeton_puissance4.png" width="80%">
-</center>
-</div>
+<p><img alt="Grille complète" src="img/jeton_puissance4.png" width="50%"></p>
 <div class="admonition exo">
 <p class="admonition-title">Code à compléter</p>
-<p>Ajouter les deux boucles <code>for</code> au code précédent à la fin de la partie <code>Initialisation</code>.</p>
+<ol>
+<li>Ajouter les deux boucles <code>for</code> au code précédent à la fin de la partie <code>Initialisation</code>.</li>
+<li>Exécuter le code, vous devriez obtenir l'interface prévue.</li>
+</ol>
 </div>
 <p>À ce stade, l'interface graphique est prête à recevoir les instructions des joueurs...</p>
 <h2 id="un-jeton-sur-le-canvas">Un jeton sur le canvas<a class="headerlink" href="#un-jeton-sur-le-canvas" title="Permanent link">¶</a></h2>
@@ -1876,7 +2041,7 @@
 <p>Ces deux événements disposent d'un attribut <code>pos</code> qui permet de récupérer sous forme de tuple, les coordonnées du clic de souris dans le canvas.</p>
 <div class="admonition exo">
 <p class="admonition-title">Code à modifier</p>
-<p>Modifier la boucle d'événements du précédent code pour obtenir ceci:
+<p><strong>Modifier</strong> la boucle d'événements du précédent code pour obtenir ceci:
 </p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>                         <span class="c1">#boucle infinie</span>
     <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>    <span class="c1">#pour tous les événements</span>
         <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">QUIT</span><span class="p">:</span>          <span class="c1">#si l'événement quit est déclenché</span>
@@ -1887,10 +2052,11 @@
     <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
 </code></pre></div>
 </div>
-<p>On peut donc finalement tracer un jeton jaune ou rouge au clic de souris en ajoutant l'instruction suivante:</p>
+<p>À chaque clic de souris, vous voyez apparaître les coordonnées de ce clic dans la console.</p>
+<p>On peut donc maintenant, tracer un jeton jaune ou rouge au clic de souris en ajoutant l'instruction suivante:</p>
 <div class="admonition exo">
 <p class="admonition-title">Code à compléter</p>
-<p>Ajouter dans le <code>if</code> précédent, après le <code>print</code>, l'instruction suivante:
+<p>Ajouter dans le <code>if</code> précédent, après le <code>print(event.pos)</code>, l'instruction suivante:
 </p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">JAUNE</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
 </code></pre></div>
 </div>
@@ -1932,12 +2098,16 @@ est la moyenne des deux bornes de l'intervalle.</p>
             <span class="n">valeur</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">i</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span><span class="o">//</span><span class="mi">2</span>
     <span class="k">return</span> <span class="n">valeur</span>
 </code></pre></div>
-J'appelle ensuite cette fonction dans la construction des disques jaunes. 
+On aurait pu faire autrement. En effet, l'instruction <code>(valeur//100)*100 + 50</code> retourne la valeur attendue...
+<p>J'appelle ensuite cette fonction dans la construction des disques jaunes. </p>
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">JAUNE</span><span class="p">,</span> <span class="p">(</span><span class="n">cible</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">cible</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">])),</span> <span class="mi">40</span><span class="p">)</span>
 </code></pre></div>
 <p>Voici le code:</p>
-<details class="exo">
-<summary>Utiliser une fonction</summary>
+<div class="admonition exo">
+<p class="admonition-title">Utiliser une fonction</p>
+<p><strong>Remplacer</strong> tout le code existant par celui qui suit.</p>
+<details class="tip">
+<summary>nouveau code</summary>
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pygame</span><span class="o">,</span><span class="w"> </span><span class="nn">sys</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pygame.locals</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
@@ -1979,6 +2149,7 @@ J'appelle ensuite cette fonction dans la construction des disques jaunes.
     <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
 </code></pre></div>
 </details>
+</div>
 <p>C'est mieux mais ce n'est pas encore gagné...</p>
 <div class="admonition bug">
 <p class="admonition-title">Jeton encore mal positionné!</p>
@@ -1995,19 +2166,11 @@ ou mieux, liste construite par compréhension:
 <p>À chaque fois que je construis un jeton dans une colonne, j'<strong>incrémente</strong> le nombre dans la liste correspondant à la colonne!</p>
 </div>
 <p>Voici alors l'état de la liste après quelques coups joués:</p>
-<div class="admonition col __70">
-<p class="admonition-title">Col</p>
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">mem</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
 </code></pre></div>
-</div>
-<div class="admonition col __30">
-<p class="admonition-title">Col</p>
-<p></p><center>
-<img alt="fonction" src="img/liste_jeton.png" width="40%">
-</center>
-</div>
+<p><img alt="Mémoriser les choix effectués" src="img/liste_jeton.png" width="40%"></p>
 <p>Cette liste me sert à déterminer <strong>les ordonnées</strong> des jetons jaunes (ou rouges).
-    </p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">JAUNE</span><span class="p">,</span> <span class="p">(</span><span class="n">cible</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="mi">550</span> <span class="o">-</span> <span class="n">mem</span><span class="p">[</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="mi">100</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="p">),</span> <span class="mi">40</span><span class="p">)</span>
+</p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">JAUNE</span><span class="p">,</span> <span class="p">(</span><span class="n">cible</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="mi">550</span> <span class="o">-</span> <span class="n">mem</span><span class="p">[</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="mi">100</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="p">),</span> <span class="mi">40</span><span class="p">)</span>
 <span class="n">mem</span><span class="p">[</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="mi">100</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
 </code></pre></div>
 <p>Code pas facile à comprendre mais tentons tout de même une explication.</p>
@@ -2020,9 +2183,12 @@ ou mieux, liste construite par compréhension:
 <p>L'instruction <code>event.pos[0]//100</code> réalise la <strong>division entière</strong> de <code>event.pos[0]</code> par <code>100</code> qui donnera dans notre cas soit 0,1,... ou 6, les indices des colonnes!</p>
 </div>
 <p>Donc au final, l'ordonnée d'un jeton dans le canvas est <code>550 - mem[event.pos[0]//100]*100</code>.</p>
-<p>Re-voici le code complet pour l'instant:</p>
-<details class="info">
-<summary>Code complet</summary>
+<p>Re-voici le code complet pour l'instant que je vous demande de recopier.</p>
+<div class="admonition exo">
+<p class="admonition-title">Recopier le code</p>
+<p><strong>Remplacer</strong> tout le code existant par celui qui suit.</p>
+<details class="tip">
+<summary>nouveau code</summary>
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pygame</span><span class="o">,</span><span class="w"> </span><span class="nn">sys</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pygame.locals</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
@@ -2066,6 +2232,7 @@ ou mieux, liste construite par compréhension:
     <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
 </code></pre></div>
 </details>
+</div>
 <h2 id="alternance-des-couleurs">Alternance des couleurs<a class="headerlink" href="#alternance-des-couleurs" title="Permanent link">¶</a></h2>
 <p>Les deux joueurs jouent l'un après l'autre: il faut donc coder l'<strong>alternance des couleurs</strong>. Voici ma stratégie (il en existe d'autres!):</p>
 <div class="admonition tip">
@@ -2086,17 +2253,14 @@ ou mieux, liste construite par compréhension:
 <div class="admonition exercice">
 <p class="admonition-title">Alternance des couleurs</p>
 <ol>
-<li>Ajouter la variable <code>tour</code> initialisée à 0 au début du programme principal.</li>
-<li>Modifier le programme afin d'ajouter le code précédent.</li>
+<li>Ajouter la variable <code>tour</code> initialisée à 0 au début du programme principal dans la partie <code>CONSTANTE DU JEU</code>.</li>
+<li>Modifier le programme et ajouter le code précédent au bon endroit.</li>
 </ol>
 </div>
 <p>Maintenant, il reste à savoir si un joueur a gagné: pas évident à coder.</p>
 <h2 id="et-le-gagnant-est">Et le gagnant est...<a class="headerlink" href="#et-le-gagnant-est" title="Permanent link">¶</a></h2>
 <p>Un joueur gagne lorsqu'il aligne <strong>quatre</strong> jetons les uns à côtés des autres. Regardons de plus près...</p>
-<center>
-    ![gain possible](<img>){width=80%}
-    </center>
-
+<p><img alt="Gains possibles" src="img/dessinP4_gain_possible.png" width="80%"></p>
 <p>On peut gagner en horizontal, en vertical ou en diagonal.</p>
 <div class="admonition tip">
 <p class="admonition-title">Le cas vertical</p>
@@ -2123,7 +2287,10 @@ Les listes sont évidemment vide au départ! À chaque construction on ajoute le
 </code></pre></div>
 <div class="admonition exercice">
 <p class="admonition-title">Compléter le code</p>
-<p>Ajouter les deux précédentes listes au programme et ainsi que les instructions précédentes.</p>
+<ol>
+<li>Ajouter les deux listes vides dans la partie <code>CONSTANTE DU JEU</code>.</li>
+<li>Puis intégrer les instructions précédentes au programme existant.</li>
+</ol>
 </div>
 <h3 id="gain-vertical">Gain vertical<a class="headerlink" href="#gain-vertical" title="Permanent link">¶</a></h3>
 <p>Un jeton étant placé, il suffit de tester si il y en a un en dessous, puis un autre puis un autre. Voici mon code:</p>
@@ -2136,7 +2303,7 @@ Les listes sont évidemment vide au départ! À chaque construction on ajoute le
     <span class="k">else</span><span class="p">:</span>
         <span class="k">break</span>
 </code></pre></div>
-<p>Le <code>break</code> casse la boucle: si il n'y a pas de jeton en dessous, inutile de continuer la boucle pour tester d'autres cas. En revanche, si à la fin de la boucle la variable <code>gain</code> vaut <code>4</code> alors c'est gagné!</p>
+<p>Le <code>break</code> <strong>casse</strong> la boucle: si il n'y a pas de jeton en dessous, inutile de continuer la boucle pour tester d'autres cas. En revanche, si à la fin de la boucle la variable <code>gain</code> vaut <code>4</code> alors c'est gagné!</p>
 <p>La fonction <code>gain_vertical</code> prend en paramètres les coordonnées <code>x,y</code> du clic et une liste puis retourne le booléen <code>True</code> en cas de gain vertical et <code>False</code> sinon:</p>
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">gain_vertical</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">,</span> <span class="n">liste</span><span class="p">):</span>
     <span class="n">gain</span> <span class="o">=</span> <span class="mi">0</span>    
@@ -2203,10 +2370,6 @@ Les listes sont évidemment vide au départ! À chaque construction on ajoute le
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">False</span>
 </code></pre></div>
-<div class="admonition exercice">
-<p class="admonition-title">Ajouter des fonctions</p>
-<p>À l'endroit indiqué, ajouter les fonctions précédentes au programme principal.</p>
-</div>
 <h3 id="declaration-du-gagnant">Déclaration du gagnant<a class="headerlink" href="#declaration-du-gagnant" title="Permanent link">¶</a></h3>
 <p>Nous allons maintenant utiliser ces fonctions pour tester à chaque coup si un joueur a gagné.
 Avant cela, nous allons créer une variable globale <code>flag</code> initialisée à 0. Elle sert à contrôler le déroulement du jeu:</p>
@@ -2218,7 +2381,10 @@ Avant cela, nous allons créer une variable globale <code>flag</code> initialis�
 <p class="admonition-title">Question</p>
 <p>Comment arrêter le jeu?</p>
 </div>
-<p>On pourrait stopper la boucle infinie <code>while True</code> mais les événements de type <code>QUIT</code> ne seraient accessibles. On va cependant conditionner les actions de type <code>pygame.MOUSEBUTTONDOWN</code> à la valeur de la variable <code>flag</code>. On obtient alors le code maintenant complet ci-dessous:</p>
+<p>On pourrait stopper la boucle infinie <code>while True</code> mais les événements de type <code>QUIT</code> ne seraient plus accessibles. On va cependant conditionner les actions de type <code>pygame.MOUSEBUTTONDOWN</code> à la valeur de la variable <code>flag</code>. On obtient alors le code maintenant complet ci-dessous:</p>
+<div class="admonition exo">
+<p class="admonition-title">Code complet</p>
+<p>Voici le code complet du jeu. Recopiez-le!</p>
 <details class="info">
 <summary>Code complet pour jouer</summary>
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pygame</span><span class="o">,</span><span class="w"> </span><span class="nn">sys</span>
@@ -2239,7 +2405,7 @@ Avant cela, nous allons créer une variable globale <code>flag</code> initialis�
 <span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
 
 <span class="n">screen</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">(</span> <span class="p">(</span><span class="mi">700</span><span class="p">,</span> <span class="mi">600</span><span class="p">))</span>
-<span class="n">icon</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">"logoNSI.ico"</span><span class="p">)</span>
+<span class="n">icon</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">"logoNSI.png"</span><span class="p">)</span>
 
 <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_icon</span><span class="p">(</span><span class="n">icon</span><span class="p">)</span>
 <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s2">"Puissance 4"</span><span class="p">)</span>
@@ -2347,6 +2513,7 @@ Avant cela, nous allons créer une variable globale <code>flag</code> initialis�
     <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
 </code></pre></div>
 </details>
+</div>
 <h2 id="un-peu-de-musique-et-de-bruitage">Un peu de musique et de bruitage<a class="headerlink" href="#un-peu-de-musique-et-de-bruitage" title="Permanent link">¶</a></h2>
 <p>Pygame permet d'utiliser de la musique pour dynamiser votre jeu.</p>
 <p>On suppose que vous avez trois fichiers musicaux:</p>

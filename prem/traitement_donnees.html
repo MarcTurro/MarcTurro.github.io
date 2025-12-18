@@ -935,12 +935,12 @@
   
   
     <li class="md-nav__item">
-      <a href="images_numeriques.html" class="md-nav__link">
+      <a href="pyjeu.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Travail sur les images numériques
+    Jeu en Python
     
   </span>
   
@@ -1694,9 +1694,7 @@
 </ul>
 <p>Vous trouverez ici diverses façons de récupérer, représenter et analyser des données de tout type...</p>
 <h2 id="des-donnees-qui-explosent">Des données qui explosent!<a class="headerlink" href="#des-donnees-qui-explosent" title="Permanent link">¶</a></h2>
-<center>
-![donnes](img/donnees_numeriques.jpeg){width=40% }
-</center>
+<p><img alt="Big Data" src="img/donnees_numeriques.jpeg" width="40%"></p>
 <div class="admonition quote">
 <p class="admonition-title">Wikipédia</p>
 <p>Le <strong>big data</strong>  désigne les ressources d’informations dont les caractéristiques en termes de volume, de vélocité et de variété imposent l’utilisation de technologies et de méthodes analytiques particulières pour créer de la valeur, et qui dépassent en général les capacités d'une seule et unique machine et nécessitent des traitements parallélisés.</p>
@@ -1704,10 +1702,7 @@
 </div>
 <h2 id="requetes-sur-serveur">Requêtes sur serveur<a class="headerlink" href="#requetes-sur-serveur" title="Permanent link">¶</a></h2>
 <p>Dans une architecture classique, votre ordinateur (le <strong>client</strong>) sollicite un service sur Internet hébergé par un autre ordinateur (le <strong>serveur</strong>). On appelle <strong>requête</strong> la demande réalisée par le client vers le serveur:</p>
-<center>
-![ordi](img/requete_sur_serveur.png){width=40% }
-</center>
-
+<p><img alt="Principe des requêtes" src="img/requete_sur_serveur.png" width="40%"></p>
 <div class="admonition question">
 <p class="admonition-title"> Comment sont réalisées les requêtes?</p>
 <p>Lorsque vous souhaitez visualiser le contenu d'un site <code>https://www.parcoursup.fr/</code> par exemple, vous saisissez cette URL dans la barre d'adresse du navigateur et vous tapez sur <kbd>ENTREE</kbd>. Votre navigateur effectue alors une <strong>requête</strong> sur le serveur qui héberge le site sollicité.</p>
@@ -1722,9 +1717,7 @@
 </ol>
 </div>
 <p>Vous devriez obtenir quelque chose qui ressemble à cela:</p>
-<center>
-![req](img/requete_http.png){width=75% }
-</center>
+<p><img alt="Visualisation des différentes requêtes" src="img/requete_http.png" width="75%"></p>
 <p>Vous remarquerez plusieurs choses:</p>
 <ol>
 <li>La méthode utilisée est <strong>GET</strong> avec le protocole <strong>https</strong>. Cette méthode demande une ressource au serveur.</li>
@@ -1786,11 +1779,6 @@ La méthode <code>headers</code> permet d'afficher les entêtes de la réponse e
 <span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 Il existe aussi le standard <code>XML</code> qui permet l'échande de données d'un logiciel à un autre: les QCM de pronote utilisent ce standard! 
-&lt;
-<center>
-![XML](img/formatXML.png){width=60% }
-</center>
-
 <div class="admonition exo">
 <p class="admonition-title">Exo</p>
 <ol>
@@ -1841,7 +1829,7 @@ Il existe aussi le standard <code>XML</code> qui permet l'échande de données d
 </div>
 <p>On peut donc effectuer des requêtes sur des serveurs distants afin de récupérer des données. Python propose des routines pour obtenir des données <code>json</code>. Mais que faire de ces valeurs? Comment les mettre en valeurs?</p>
 <p>Le travail suivant permet la création d'une <strong>Interface Homme Machine(IHM)</strong>. Le but est de construire une interface WEB( on aurait pu le faire en Tkinter...) pour illustrer les informations obtenues par la requête. Nous allons d'une part utiliser le langage <code>javascript</code> pour effectuer des requêtes et le code <code>HTML</code> et <code>CSS</code> pour les mettre en valeurs!</p>
-<h3 id="requetes-en-javascript">Requêtes en Javascript<a class="headerlink" href="#requetes-en-javascript" title="Permanent link">¶</a></h3>
+<h2 id="creation-dune-ihm-meteo">Création d'une IHM météo<a class="headerlink" href="#creation-dune-ihm-meteo" title="Permanent link">¶</a></h2>
 <p>Nous allons créer une application web qui permet d'afficher des informations météorologiques sur une ville choisie.</p>
 <div class="admonition exo">
 <p class="admonition-title">Exo</p>
@@ -1903,10 +1891,7 @@ Il existe aussi le standard <code>XML</code> qui permet l'échande de données d
 <li>Finaliser le travail en construisant l'interface proposée ci-dessous.</li>
 </ol>
 </div>
-<center>
-![site_meteo](img/site_meteo.png){width=50% }
-</center>
-
+<p><img alt="Ma jolie IHM..." src="img/site_meteo.png" width="50%"></p>
 <h2 id="travailler-sur-des-fichiers-csv">Travailler sur des fichiers csv<a class="headerlink" href="#travailler-sur-des-fichiers-csv" title="Permanent link">¶</a></h2>
 <p>Dans la partie précédente, les données à exploiter sont obtenues par des requêtes sur des serveurs distants dont la vocation est de fournir ce genre de service. Il existe aussi une pratique courante qui consiste à exploiter les données stockées dans des fichiers bruts formatés (comme le <code>json</code>). Nous allons donc exploiter maintenant les fichiers <code>csv</code>.</p>
 <div class="admonition info">
@@ -1994,10 +1979,7 @@ Il existe aussi le standard <code>XML</code> qui permet l'échande de données d
 </ol>
 </div>
 <p>Vous devriez alors obtenir à peu près ceci...</p>
-<center>
-![carte_test](img/carte_test.png){width=30% }
-</center>
-
+<p><img alt="La carte du prof!" src="img/carte_test.png" width="30%"></p>
 <p>Retour à nos radars du 47! L'objectif est de créer une carte du Lot-et-Garonne contenant les marques de tous les radars. L'algorithme de construction ressemble alors à cela:</p>
 <div class="highlight"><span class="filename">📋 Texte</span><pre><span></span><code>Créer carte du Lot et Garonne
 Pour chaque élément radar du fichier radar47.csv
@@ -2010,9 +1992,7 @@ Afficher la carte
 <p>Écrire le programme qui implémente l'algorithme suivant. </p>
 </div>
 <p>Vous devriez obtenir la carte ci-dessous( celle-ci n'est pas interactive, la vôtre si!):</p>
-<center>
-![carte_radar](img/carte_radar.png){width=50% }
-</center></div>
+<p><img alt="carte des radars du 47 (Maj 2018)" src="img/carte_radar.png" width="50%"></p></div>
 
 
 
