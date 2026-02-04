@@ -13,6 +13,10 @@
         <link rel="canonical" href="https://marcturro.github.io/prem/microntroleur.html">
       
       
+        <link rel="prev" href="dauphin.html">
+      
+      
+        <link rel="next" href="../term/termnsi.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +24,7 @@
     
     
       
-        <title>Microcontrôleur - Numérique et Sciences Informatiques</title>
+        <title>Programmer un microcontrôleur - Numérique et Sciences Informatiques</title>
       
     
     
@@ -207,7 +211,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Microcontrôleur
+              Programmer un microcontrôleur
             
           </span>
         </div>
@@ -324,10 +328,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="premnsi.html" class="md-tabs__link">
           
   
@@ -548,24 +554,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -578,7 +589,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             <img src='https://marcturro.github.io/icones/checklist-16.svg' width=16px height=16px>&thinsp; Première NSI
@@ -753,6 +764,8 @@
                 
   
   
+    
+  
   
   
     
@@ -763,11 +776,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -783,7 +796,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             Travaux Pratiques
@@ -1001,20 +1014,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="reseaux.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="microntroleur.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    Réseaux en Python
+    Programmer un microcontrôleur
     
   </span>
   
 
       </a>
+      
     </li>
   
 
@@ -1781,60 +1804,339 @@
 <p class="admonition-title">Digital contre Analogique</p>
 <p>Les entrées/sorties (E/S) digitales sont numériques et n'ont donc que deux états(0V ou 5V). Les E/S analogiques proposent des valeurs continues entre 0V et 5V(donc beaucoup plus de possibilités...)</p>
 </div>
+<h2 id="le-mbot">Le Mbot<a class="headerlink" href="#le-mbot" title="Permanent link">¶</a></h2>
+<p>Nous utiliserons une <strong>carte embarquée</strong> dans un robot:</p>
+<p><img alt="La carte du Mbot" src="img/mbot.png" width="20%"><img alt="Le Mbot" src="img/carte_mbot.png" width="40%"></p>
+<p>La carte possède des <strong>ports de communication</strong> pour les différents <strong>capteurs</strong> et <strong>actionneurs</strong>:</p>
+<ul>
+<li>un <strong>capteur</strong> capte des informations et les transmet au microcontroleur: le <strong>Light Sensor</strong> capte la luminosité ambiante, c'est un capteur!</li>
+<li>un <strong>actionneur</strong> reçoit des informations de la carte et les traduit en action: les moteurs actionnent les roues sont des <strong>actionneurs</strong>.</li>
+</ul>
 <p>Vous remarquerez aussi la présence d'un port USB qui permet non seulement d'alimenter la carte en 5V mais surtout de téléverser le programme sur la carte!</p>
 <div class="admonition info">
 <p class="admonition-title">Téléverser??</p>
-<p>Téléverser c'est l'action qui consiste à écrire puis à installer le programme dans le microcontrôleur.</p>
+<p>Téléverser c'est l'<strong>action</strong> qui consiste à écrire puis à installer le programme dans le microcontrôleur.</p>
 </div>
 <h2 id="lenvironnement-arduino">L'environnement Arduino<a class="headerlink" href="#lenvironnement-arduino" title="Permanent link">¶</a></h2>
-<p>Il faut pour cela un environnement de travail pour écrire un programme Arduino (l'équivalent de Thonny pour Python...). Nous utiliserons naturellement l'<strong>IDE</strong> d'Arduino:</p>
+<p>Il faut un environnement de travail pour <strong>écrire</strong> puis <strong>téléverser</strong> un programme (l'équivalent de Thonny pour Python...). Nous utiliserons naturellement l'<strong>IDE</strong> d'Arduino:</p>
 <p><img alt="IDE Arduino" src="img/interface_arduino.png" width="30%"></p>
 <h2 id="premiere-manipulation">Première manipulation<a class="headerlink" href="#premiere-manipulation" title="Permanent link">¶</a></h2>
 <p>C'est parti! </p>
 <div class="admonition exo">
-<p class="admonition-title">Clignotage de led</p>
+<p class="admonition-title">Pour bien commencer</p>
 <ol>
 <li>Tout d'abord brancher votre carte Arduino sur un port USB de votre ordinateur.</li>
 <li>Lancer l'IDE arduino et vérifier bien qu'il reconnaît la carte. (Menu Outils-&gt; Type de carte et Port)</li>
-<li>Recopiez le programme ci-dessous dans la zone de script et enregistrez sous le nom <code>clignotage_led</code>.</li>
-<li>Téléverser dans l'arduino en appuyant sur le bon bouton (je vous laisse chercher...)</li>
 </ol>
-<details class="tip">
-<summary>Code à copier</summary>
-<div class="highlight"><span class="filename">💻 Script C++</span><pre><span></span><code><span class="c1">//***** FONCTION SETUP = Code d'initialisation *****</span>
-<span class="c1">// La fonction setup() est exécutée en premier et une seule fois, au démarrage du programme</span>
+</div>
+<p><img alt="Configuration requise" src="img/interface_arduino_port.png" width="30%"></p>
+<h2 id="premier-programme">Premier programme<a class="headerlink" href="#premier-programme" title="Permanent link">¶</a></h2>
+<p>Maintenant que la configuration est bonne, on peut téléverser notre premier programme.</p>
+<div class="admonition exo">
+<p class="admonition-title">Mon premier programme</p>
+<ol>
+<li>Créer un nouveau fichier que vous nommerez <code>clignotage_led</code>.</li>
+<li>Recopier le code suivant dans la zone d'édition.</li>
+<li>Téléverser dans le robot en vérifiant qu'il soit bien allumé...</li>
+</ol>
+</div>
+<div class="highlight"><span class="filename">💻 Script C++</span><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">"MeMCore.h"</span><span class="c1">    // c'est toutes les méthodes pour la carte du robot</span>
+<span class="n">MeRGBLed</span><span class="w"> </span><span class="n">ledRGB</span><span class="w"> </span><span class="p">;</span><span class="w">       </span><span class="c1">// on instancie l'objet ledRGR qui est un objet de la classe MeRGBLed </span>
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w">    </span><span class="c1">// début de la fonction setup()</span>
+<span class="c1">//-------------------------------------------------------------------------------</span>
+<span class="c1">//---- Le setup, n'est exécuté qu'une fois au démarrage du programme</span>
+<span class="c1">//-------------------------------------------------------------------------------</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w">  </span><span class="c1">// Initialise la broche 13 comme sortie</span>
-<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w">   </span><span class="c1">// Ouvre le port série à 9600 bauds</span>
-<span class="p">}</span><span class="w">               </span><span class="c1">// fin de la fonction setup()</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w">                 </span><span class="c1">// démmare la communication par la liaison série</span>
+<span class="w">    </span><span class="n">ledRGB</span><span class="p">.</span><span class="n">setpin</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w">                 </span><span class="c1">// fixe la broche qui commande les LEDs</span>
+<span class="w">    </span><span class="n">ledRGB</span><span class="p">.</span><span class="n">setNumber</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w">                </span><span class="c1">// Nombre de LEDs sur la carte du robot</span>
+<span class="w">    </span><span class="n">ledRGB</span><span class="p">.</span><span class="n">setColorAt</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span><span class="w">         </span><span class="c1">// La LED n°0 avec aucun couleurs allumées --&gt; donc LED OFF</span>
+<span class="w">    </span><span class="n">ledRGB</span><span class="p">.</span><span class="n">setColorAt</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span><span class="w">         </span><span class="c1">// La LED n°1 avec aucun couleurs allumées --&gt; donc LED OFF </span>
+<span class="w">    </span><span class="n">ledRGB</span><span class="p">.</span><span class="n">show</span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w">                     </span><span class="c1">// Un fois les couleurs fixées, on valide l'affichage</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Début du programme"</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c1">// envoie le texte sur la liaison série</span>
+<span class="p">}</span>
 
-<span class="c1">//***** FONCTION LOOP = Boucle sans fin = cœur du programme *****</span>
-<span class="c1">// la fonction loop() s'exécute sans fin en boucle aussi longtemps que l'Arduino est sous tension</span>
-
-<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w">     </span><span class="c1">// début de la fonction loop()</span>
+<span class="c1">//-------------------------------------------------------------------------------</span>
+<span class="c1">//----- programme principal boucle à l'infini...</span>
+<span class="c1">//-------------------------------------------------------------------------------</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="c1">// Met la broche 13 au niveau haut = allume la LED</span>
-<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"diode allumée"</span><span class="p">);</span>
-<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span><span class="w">              </span><span class="c1">// Pause de 500 ms</span>
-<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w">   </span><span class="c1">// Met la broche 13 au niveau bas = éteint la LED</span>
-<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"diode éteinte"</span><span class="p">);</span>
-<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">2500</span><span class="p">);</span><span class="w">              </span><span class="c1">// Pause 500 ms</span>
-<span class="p">}</span><span class="w">               </span><span class="c1">// fin de la fonction loop()</span>
+<span class="w">  </span><span class="n">ledRGB</span><span class="p">.</span><span class="n">setColorAt</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">60</span><span class="p">);</span><span class="w">          </span><span class="c1">// La LED n°0 avec le bleu à 60/255</span>
+<span class="w">  </span><span class="n">ledRGB</span><span class="p">.</span><span class="n">setColorAt</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span><span class="w">           </span><span class="c1">// La LED n°1 OFF</span>
+<span class="w">  </span><span class="n">ledRGB</span><span class="p">.</span><span class="n">show</span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w">                       </span><span class="c1">// Valide l'affichage</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"bleu"</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w">              </span><span class="c1">// envoi du texte sur la liaison série</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span><span class="w">                           </span><span class="c1">// petite pause avant étape suivante</span>
+<span class="w">  </span><span class="n">ledRGB</span><span class="p">.</span><span class="n">setColorAt</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span><span class="w">           </span><span class="c1">// La LED n°0 OFF</span>
+<span class="w">  </span><span class="n">ledRGB</span><span class="p">.</span><span class="n">setColorAt</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span><span class="w">         </span><span class="c1">// La LED n°1 avec le rouge à 40/255 et le vert à 40/255 --&gt; jaune</span>
+<span class="w">  </span><span class="n">ledRGB</span><span class="p">.</span><span class="n">show</span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w">                       </span><span class="c1">// Valide l'affichage</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Jaune"</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w">             </span><span class="c1">// envoi du texte sur la liaison série</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span><span class="w">                           </span><span class="c1">// petite pause avant étape suivante</span>
+
+<span class="w">  </span><span class="c1">// A la fin du programme on recommence à partir du début du loop</span>
+<span class="p">}</span>
 </code></pre></div>
-</details>
+<div class="admonition exo">
+<p class="admonition-title">Modifier les couleurs</p>
+<p>Modifier le programme pour obtenir des couleurs plus funs!</p>
 </div>
 <p>Vous pouvez remarquez les instructions <code>Serial.println</code> qui permettent d'imprimer dans la console. Mais où se trouve t-elle? Il suffit de cliquer sur le bouton en haut à droite (en forme de loupe) de l'IDE. Vérifier bien que la transmission se fait avec la bonne valeur de <code>baud</code>...</p>
 <h2 id="premiere-synthese">Première synthèse<a class="headerlink" href="#premiere-synthese" title="Permanent link">¶</a></h2>
-<p>Le langage utilisé pour programmer une carte Arduino est le <strong>C++</strong>.</p>
+<p>Le langage utilisé pour programmer une carte Arduino est le <strong>C++</strong> dont la syntaxe diffère de celle du Python. </p>
 <p>Toutes les instructions se terminent par un <code>;</code> et l'indentation n'est ici pas du tout obligatoire (elle permet de visualiser les différentes structures du code).</p>
-<p>Toutes les instructions d'une fonctions sont regroupées autour d'accolades.</p>
-<p>Il existe deux fonctions de base reconnaissables par la particule <code>void</code>:</p>
+<p>Toutes les instructions d'une fonctions sont regroupées autour d'accolades: si <strong>l'indentation</strong> n'est pas obligatoire, elle est conseillée pour visualiser les blocs d'instructions.</p>
+<p>Il existe <strong>deux fonctions de base</strong> reconnaissables par la particule <code>void</code>:</p>
 <ul>
 <li>la fonction <code>setup()</code>: c'est une fonction écrite au départ qui définit la configuration de base comme définir les broches d'entrées et de sorties. Elle n'est exécutée qu'une seule fois au début du programme.</li>
 <li>la fonction <code>loop()</code>: c'est une boucle infinie! Toutes les instructions qui s'y trouvent sont répétées sans fin...</li>
-</ul></div>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">void setup() et void loop()</p>
+<p>Tous les programmes que vous ferez contiendront ces deux fonctions ainsi que l'import des méthodes de la carte.</p>
+</div>
+<h1 id="serie-de-programmes-dapprentissage">Série de programmes d'apprentissage<a class="headerlink" href="#serie-de-programmes-dapprentissage" title="Permanent link">¶</a></h1>
+<p>Dans cette section, vous trouverez toute une série de programme à réaliser en utilisant toute sorte de capteur et actionneur...</p>
+<div class="admonition tip">
+<p class="admonition-title">N'oubliez pas!</p>
+<p>À chaque fois vous créerez un nouveau fichier que vous n'oublierez pas d'enregistrer!</p>
+</div>
+<h2 id="utilisation-du-bouton">Utilisation du bouton<a class="headerlink" href="#utilisation-du-bouton" title="Permanent link">¶</a></h2>
+<p>Le robot possède un bouton sur sa face avant.</p>
+<div class="admonition exo">
+<p class="admonition-title">Actionner le bouton</p>
+<ol>
+<li>Copiez le code suivant.</li>
+<li>Actionnez le bouton et lisez les instructions dans la console.</li>
+</ol>
+</div>
+<div class="highlight"><span class="filename">💻 Script C++</span><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">"MeMCore.h"</span><span class="c1">    // c'est toutes les méthodes pour la carte du robot</span>
+<span class="n">Me4Button</span><span class="w"> </span><span class="n">bouton</span><span class="w"> </span><span class="p">;</span><span class="w">       </span><span class="c1">// on instancie l'objet bouton qui est un objet de la classe Me4Button</span>
+
+<span class="c1">//-------------------------------------------------------------------------------</span>
+<span class="c1">//---- Le setup, n'est exécuté qu'une fois au démmarage du programme</span>
+<span class="c1">//-------------------------------------------------------------------------------</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w">                 </span><span class="c1">// démmare la communication par la liaison série</span>
+<span class="w">    </span><span class="n">bouton</span><span class="p">.</span><span class="n">setpin</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span><span class="w"> </span><span class="p">;</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Début du programme"</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c1">// envoie le texte sur la liaison série</span>
+<span class="p">}</span>
+
+<span class="c1">//-------------------------------------------------------------------------------</span>
+<span class="c1">//----- programme principal boucle à l'infini...</span>
+<span class="c1">//-------------------------------------------------------------------------------</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">bouton</span><span class="p">.</span><span class="n">pressed</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">true</span><span class="p">)</span>
+<span class="w">   </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"bouton appuyé"</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w">              </span><span class="c1">// envoi du texte sur la liaison série</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w">  </span><span class="k">else</span>
+<span class="w">   </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"bouton relaché"</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w">              </span><span class="c1">// envoi du texte sur la liaison série</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w">  </span><span class="c1">// A la fin du programme on recommence à partir du début du loop</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="utilisation-du-buzzer">Utilisation du buzzer<a class="headerlink" href="#utilisation-du-buzzer" title="Permanent link">¶</a></h2>
+<p>Le robot possède un buzzer pour faire du bruit ou ... de la musique!</p>
+<div class="admonition exo">
+<p class="admonition-title">Actionner le buzzer</p>
+<ol>
+<li>Copiez le code suivant.</li>
+<li>Actionnez le bouton et écoutez.</li>
+</ol>
+</div>
+<div class="highlight"><span class="filename">💻 Script C++</span><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">"MeMCore.h"</span><span class="c1">    // c'est toutes les méthodes pour la carte du robot</span>
+<span class="n">Me4Button</span><span class="w"> </span><span class="n">bouton</span><span class="w"> </span><span class="p">;</span><span class="w">      </span><span class="c1">// on instancie l'objet bouton qui est un objet de la classe Me4Button</span>
+<span class="n">MeBuzzer</span><span class="w"> </span><span class="n">buzzer</span><span class="w"> </span><span class="p">;</span><span class="w">       </span><span class="c1">// on instancie l'objet buzzer qui est un objet de la classe MeBuzzer</span>
+
+<span class="c1">//-------------------------------------------------------------------------------</span>
+<span class="c1">//---- Le setup, n'est exécuté qu'une fois au démmarage du programme</span>
+<span class="c1">//-------------------------------------------------------------------------------</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w">                 </span><span class="c1">// démmare la communication par la liaison série</span>
+<span class="w">    </span><span class="n">bouton</span><span class="p">.</span><span class="n">setpin</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span><span class="w"> </span><span class="p">;</span>
+<span class="w">    </span><span class="n">bouton</span><span class="p">.</span><span class="n">setpin</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="p">;</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Début du programme"</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c1">// envoie le texte sur la liaison série</span>
+<span class="p">}</span>
+
+<span class="c1">//-------------------------------------------------------------------------------</span>
+<span class="c1">//----- programme principal boucle à l'infini...</span>
+<span class="c1">//-------------------------------------------------------------------------------</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">bouton</span><span class="p">.</span><span class="n">pressed</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">true</span><span class="p">)</span>
+<span class="w">   </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"bouton appuyé"</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w">              </span><span class="c1">// envoi du texte sur la liaison série</span>
+<span class="w">    </span><span class="n">buzzer</span><span class="p">.</span><span class="n">tone</span><span class="p">(</span><span class="mi">440</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span><span class="w">                         </span><span class="c1">// On génére un LA</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w">  </span><span class="k">else</span>
+<span class="w">   </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"bouton relaché"</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w">           </span><span class="c1">// envoi du texte sur la liaison série</span>
+<span class="w">    </span><span class="n">buzzer</span><span class="p">.</span><span class="n">notone</span><span class="p">();</span><span class="w">                             </span><span class="c1">// buzzer OFF</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w">  </span><span class="c1">// A la fin du programme on recommence à partir du début du loop</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="le-capteur-de-luminosite">Le capteur de luminosité:<a class="headerlink" href="#le-capteur-de-luminosite" title="Permanent link">¶</a></h2>
+<p>Le robot possède un capteur pour mesurer la luminosité ambiante.</p>
+<div class="admonition exo">
+<p class="admonition-title">Utiliser le capteur de luminosité</p>
+<ol>
+<li>Copiez le code suivant.</li>
+<li>Cacher avec votre main le capteur pour voir évoluer la valeur de la mesure.</li>
+</ol>
+</div>
+<div class="highlight"><span class="filename">💻 Script C++</span><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">"MeMCore.h"</span><span class="c1">    // c'est toutes les méthodes pour la carte du robot</span>
+<span class="n">MeLightSensor</span><span class="w"> </span><span class="nf">capteurLumiere</span><span class="p">(</span><span class="n">PORT_6</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w">      </span><span class="c1">// on instancie l'objet capteurLumiere qui est un objet </span>
+<span class="w">                                            </span><span class="c1">// de la classe MeLightSensor </span>
+<span class="w">                                            </span><span class="c1">// en le connectant sur le PORT6</span>
+<span class="w">                                            </span><span class="c1">// correspond à faire capteurLumiere.setPin(8,A6)</span>
+
+<span class="c1">//-------------------------------------------------------------------------------</span>
+<span class="c1">//---- Le setup, n'est exécuté qu'une fois au démmarage du programme</span>
+<span class="c1">//-------------------------------------------------------------------------------</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w">                 </span><span class="c1">// démmare la communication par la liaison série    </span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Début du programme"</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c1">// envoie le texte sur la liaison série</span>
+<span class="p">}</span>
+
+<span class="c1">//-------------------------------------------------------------------------------</span>
+<span class="c1">//----- programme principal boucle à l'infini...</span>
+<span class="c1">//-------------------------------------------------------------------------------</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"Niveau de lumiere : "</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w">       </span><span class="c1">// envoi du texte sur la liaison série sans retour ligne (ln)</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">capteurLumiere</span><span class="p">.</span><span class="n">read</span><span class="p">())</span><span class="w"> </span><span class="p">;</span><span class="w">      </span><span class="c1">// envoi du niveau de lumière sur la liaison série </span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="le-capteur-de-distance">Le capteur de distance:<a class="headerlink" href="#le-capteur-de-distance" title="Permanent link">¶</a></h2>
+<p>Le robot possède un capteur ultra son pour mesurer la distance à un objet situé devant lui. Il émet un signal par la broche <code>T</code>(transmission) et le reçoit après réflexion sur la broche <code>R</code>.</p>
+<div class="admonition exo">
+<p class="admonition-title">Utiliser le capteur de distance</p>
+<ol>
+<li>Connectez le capteur de distance au <code>PORT 1</code> de la carte.</li>
+<li>Copiez le code suivant.</li>
+<li>Mettre un obstacle devant le capteur pour voir évoluer la valeur de la mesure.</li>
+</ol>
+</div>
+<div class="highlight"><span class="filename">💻 Script C++</span><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">"MeMCore.h"</span><span class="c1">  // c'est toutes les méthodes pour la carte du robot</span>
+<span class="n">MeUltrasonicSensor</span><span class="w"> </span><span class="nf">capteurDedistance</span><span class="p">(</span><span class="n">PORT_1</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w">      </span><span class="c1">// on instancie l'objet en fonction </span>
+<span class="w">                                                    </span><span class="c1">// de là où il est connecté</span>
+
+<span class="c1">//-------------------------------------------------------------------------------</span>
+<span class="c1">//---- Le setup, n'est exécuté qu'une fois au démmarage du programme</span>
+<span class="c1">//-------------------------------------------------------------------------------</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w">                 </span><span class="c1">// démmare la communication par la liaison série    </span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Début du programme"</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c1">// envoie le texte sur la liaison série</span>
+<span class="p">}</span>
+
+<span class="c1">//-------------------------------------------------------------------------------</span>
+<span class="c1">//----- programme principal boucle à l'infini...</span>
+<span class="c1">//-------------------------------------------------------------------------------</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"distance en cm : "</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">capteurDedistance</span><span class="p">.</span><span class="n">distanceCm</span><span class="p">());</span><span class="w">   </span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="le-panneau-led">Le panneau LED:<a class="headerlink" href="#le-panneau-led" title="Permanent link">¶</a></h2>
+<p>Le robot possède un panneau LED (rectangle blanc) qui permet d'afficher des messages ou de simples informations graphiques comme des icones.</p>
+<div class="admonition exo">
+<p class="admonition-title">Utiliser le panneau LED</p>
+<ol>
+<li>Connectez le panneau LED au <code>PORT 2</code> de la carte.</li>
+<li>Copiez le code suivant.</li>
+<li>Obervez le résultat.</li>
+</ol>
+</div>
+<div class="highlight"><span class="filename">💻 Script C++</span><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">"MeMCore.h"</span><span class="c1">  // c'est toutes les méthodes pour la carte du robot</span>
+<span class="n">MeLEDMatrix</span><span class="w"> </span><span class="nf">Panneau_LED</span><span class="p">(</span><span class="n">PORT_2</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w">      </span><span class="c1">// on instancie l'objet en fonction </span>
+<span class="w">                                       </span><span class="c1">// de là où il est connecté</span>
+<span class="kt">char</span><span class="w"> </span><span class="n">string_data</span><span class="p">[]</span><span class="o">=</span><span class="s">"NSI AGEN 2025-2026   "</span><span class="p">;</span><span class="w">           </span>
+<span class="kt">uint8_t</span><span class="w"> </span><span class="n">Bitmap_Heart</span><span class="p">[</span><span class="mi">16</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="mh">0x00</span><span class="p">,</span><span class="mh">0x38</span><span class="p">,</span><span class="mh">0x44</span><span class="p">,</span><span class="mh">0x42</span><span class="p">,</span><span class="mh">0x21</span><span class="p">,</span><span class="mh">0x21</span><span class="p">,</span><span class="mh">0x42</span><span class="p">,</span><span class="mh">0x44</span><span class="p">,</span><span class="mh">0x38</span><span class="p">,</span><span class="mh">0x44</span><span class="p">,</span><span class="mh">0x42</span><span class="p">,</span><span class="mh">0x21</span><span class="p">,</span><span class="mh">0x21</span><span class="p">,</span><span class="mh">0x42</span><span class="p">,</span><span class="mh">0x44</span><span class="p">,</span><span class="mh">0x38</span><span class="p">,};</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">move_times</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">string_data</span><span class="p">)</span><span class="o">*</span><span class="mi">6</span><span class="p">;</span>
+
+
+<span class="c1">//-------------------------------------------------------------------------------</span>
+<span class="c1">//---- Le setup, n'est exécuté qu'une fois au démmarage du programme</span>
+<span class="c1">//-------------------------------------------------------------------------------</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w">                 </span><span class="c1">// démmare la communication par la liaison série    </span>
+<span class="w">    </span><span class="n">Panneau_LED</span><span class="p">.</span><span class="n">clearScreen</span><span class="p">()</span><span class="w"> </span><span class="p">;</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Début du programme"</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c1">// envoie le texte sur la liaison série</span>
+<span class="p">}</span>
+
+<span class="c1">//-------------------------------------------------------------------------------</span>
+<span class="c1">//----- programme principal boucle à l'infini...</span>
+<span class="c1">//-------------------------------------------------------------------------------</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">//---------------------------------------------------------</span>
+<span class="w">    </span><span class="c1">//----- affichage d'un nombre</span>
+<span class="w">    </span><span class="n">Panneau_LED</span><span class="p">.</span><span class="n">clearScreen</span><span class="p">()</span><span class="w"> </span><span class="p">;</span>
+<span class="w">    </span><span class="n">Panneau_LED</span><span class="p">.</span><span class="n">setBrightness</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Panneau_LED</span><span class="p">.</span><span class="n">showNum</span><span class="p">(</span><span class="mf">1.32</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="p">;</span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span><span class="w"> </span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">//---------------------------------------------------------</span>
+<span class="w">    </span><span class="c1">//----- affichage d'un texte défilant</span>
+<span class="w">    </span><span class="n">Panneau_LED</span><span class="p">.</span><span class="n">clearScreen</span><span class="p">()</span><span class="w"> </span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int16_t</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">move_times</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">move_times</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">        </span><span class="n">Panneau_LED</span><span class="p">.</span><span class="n">drawStr</span><span class="p">(</span><span class="mi">15</span><span class="o">-</span><span class="n">i</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="n">string_data</span><span class="p">);</span>
+<span class="w">        </span><span class="n">delay</span><span class="p">(</span><span class="mi">25</span><span class="p">);</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span><span class="w"> </span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">//---------------------------------------------------------</span>
+<span class="w">    </span><span class="c1">//----- affichage d'une image et variation de la luminosité</span>
+<span class="w">    </span><span class="n">Panneau_LED</span><span class="p">.</span><span class="n">clearScreen</span><span class="p">()</span><span class="w"> </span><span class="p">;</span>
+<span class="w">    </span><span class="n">Panneau_LED</span><span class="p">.</span><span class="n">drawBitmap</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">Bitmap_Heart</span><span class="p">),</span><span class="w"> </span><span class="n">Bitmap_Heart</span><span class="p">);</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="k">for</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">8</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Panneau_LED</span><span class="p">.</span><span class="n">setBrightness</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="w">        </span><span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">      </span><span class="k">for</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">7</span><span class="p">;</span><span class="n">i</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">--</span><span class="p">)</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Panneau_LED</span><span class="p">.</span><span class="n">setBrightness</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="w">        </span><span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span><span class="w"> </span><span class="p">;</span>
+
+<span class="p">}</span>
+</code></pre></div>
+<p>On a la ligne suivante qui permet de définir deux coeurs:</p>
+<p><code>uint8_t Bitmap_Heart[16]={0x00,0x38,0x44,0x42,0x21,0x21,0x42,0x44,0x38,0x44,0x42,0x21,0x21,0x42,0x44,0x38,};</code></p>
+<p>Rappelez-vous du cours sur l'architecture: vous indiquez au <strong>microcontroleur</strong> ce qu'il doit écrire dans les 16 colonnes du panneau LED. L'image suivante est assez claire:</p>
+<p><img alt="Découpage hexadécimale" src="img/coeur.png" width="60%"></p>
+<div class="admonition exo">
+<p class="admonition-title">Monstres et compagnie</p>
+<p>En s'aidant du tableau suivant, modifier le code précédent pour afficher seulement nos deux petits monstres.</p>
+</div>
+<p><img alt="Somme hexadécimale" src="img/monstre.png" width="60%"></p>
+<h1 id="serie-de-programmes-de-synthese">Série de programmes de synthèse<a class="headerlink" href="#serie-de-programmes-de-synthese" title="Permanent link">¶</a></h1>
+<h2 id="defi-n1">Défi n°1:<a class="headerlink" href="#defi-n1" title="Permanent link">¶</a></h2>
+<div class="admonition exo">
+<p class="admonition-title">Affichage dynamique</p>
+<p>Faites afficher la valeur donnée par le capteur de distance sur le panneau Led</p>
+</div>
+<h2 id="defi-n2">Défi n°2:<a class="headerlink" href="#defi-n2" title="Permanent link">¶</a></h2>
+<div class="admonition exo">
+<p class="admonition-title">En musique</p>
+<p>Faites jouer de la musique à votre mbot.</p>
+</div></div>
 
 
 
