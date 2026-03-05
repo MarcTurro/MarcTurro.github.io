@@ -13,6 +13,10 @@
         <link rel="canonical" href="https://marcturro.github.io/prem/traitement_donnees.html">
       
       
+        <link rel="prev" href="microntroleur.html">
+      
+      
+        <link rel="next" href="../term/termnsi.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +24,7 @@
     
     
       
-        <title>Capturer, visualiser et analyser des données - Numérique et Sciences Informatiques</title>
+        <title>Traitement des données - Numérique et Sciences Informatiques</title>
       
     
     
@@ -217,7 +221,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Capturer, visualiser et analyser des données
+              Traitement des données
             
           </span>
         </div>
@@ -334,10 +338,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="premnsi.html" class="md-tabs__link">
           
   
@@ -558,24 +564,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -588,7 +599,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             <img src='https://marcturro.github.io/icones/checklist-16.svg' width=16px height=16px>&thinsp; Première NSI
@@ -763,6 +774,8 @@
                 
   
   
+    
+  
   
   
     
@@ -773,11 +786,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -793,7 +806,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             Travaux Pratiques
@@ -1025,6 +1038,146 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Traitement des données
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="traitement_donnees.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Traitement des données
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#des-donnees-qui-explosent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Des données qui explosent!
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requetes-sur-serveur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requêtes sur serveur
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Requêtes sur serveur">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requetes-en-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requêtes en Python
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requetes-sur-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requêtes sur API
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creation-dune-ihm-meteo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Création d'une IHM météo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#travailler-sur-des-fichiers-csv" class="md-nav__link">
+    <span class="md-ellipsis">
+      Travailler sur des fichiers csv
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Travailler sur des fichiers csv">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#importation-des-donnees-sur-une-carte" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importation des données sur une carte
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1987,7 +2140,8 @@ Il existe aussi le standard <code>XML</code> qui permet l'échande de données d
 <div class="admonition exo">
 <p class="admonition-title">Exo</p>
 <ol>
-<li>Récupérer à cette <a href="https://www.data.gouv.fr/fr/datasets/radars-automatiques/">adresse</a>, le fichier <code>radars.csv</code>, donnant la liste des radars automatiques en France(MAJ 2018).</li>
+<li>Récupérer à cette <a href="https://static.data.gouv.fr/resources/liste-des-radars-fixes-en-france/20251230-134204/jeu-de-donnees-liste-des-radars-fixes-en-france-12-2025.csv">adresse</a> donnant la liste des radars automatiques en France(MAJ 2024).</li>
+<li>Renommez le fichier en <code>radars.csv</code></li>
 <li>Ouvrez ce fichier avec le bloc note pour visualiser son contenu(attention par défaut, il s'ouvre avec Excel...).</li>
 </ol>
 </div>
@@ -1995,7 +2149,6 @@ Il existe aussi le standard <code>XML</code> qui permet l'échande de données d
 <p></p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">source</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"radars.csv"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="c1">#ouverture en lecture du fichier radars.csv</span>
 <span class="n">entete</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">entete</span><span class="p">)</span>
-<span class="n">destination</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"new_file.csv"</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span><span class="c1"># crée un nouveau fichier csv en écriture</span>
 </code></pre></div>
  La méthode <code>readline()</code> appliquée à l'objet <code>source</code> permet de lire la première ligne du fichier: ici cette ligne est stockée dans la variable <code>entete</code>. En rappelant cette instruction, vous pourrez alors lire la seconde ligne, et ainsi de suite.
 <div class="admonition exo">
@@ -2007,36 +2160,8 @@ Il existe aussi le standard <code>XML</code> qui permet l'échande de données d
 <p class="admonition-title">Une méthode importante: la méthode <code>split</code></p>
 <p>La méthode <code>readline()</code> appliquée à l'objet <code>source</code> renvoie une chaîne de caractères. La méthode <code>split</code> appliquée à une chaîne de caractères prend en paramètre un caractère (la virgule par exemple) et découpe la chaîne de caractères en plusieurs éléments qui seront alors stockés dans une liste. Le découpage se fait au caractère indiqué en paramètre dans la fonction.</p>
 </div>
-<h3 id="filtrer-les-donnees">Filtrer les données<a class="headerlink" href="#filtrer-les-donnees" title="Permanent link">¶</a></h3>
-<p>On désire maintenant exploiter le fichier <code>radars.csv</code> afin d'extraire :</p>
-<ul>
-<li>seulement les données suivantes sur les radars automatiques du lot-et-garonne(47): emplacement, longitude et latitude, type de radars</li>
-<li>et de les stocker dans le fichier <code>radars47.csv</code>. </li>
-</ul>
-<div class="admonition exo">
-<p class="admonition-title">Exo</p>
-<ol>
-<li>Compléter puis exécuter le fichier python suivant afin qu'il réalise le voeu précédent.</li>
-</ol>
-<p></p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="c1"># fichier à enregistrer au même endroit que le fichier radars.csv</span>
-<span class="n">source</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"radars.csv"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">"utf-8"</span><span class="p">)</span>
-<span class="n">source47</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"radars47.csv"</span><span class="p">,</span><span class="o">.....</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">"utf-8"</span><span class="p">)</span>
-<span class="n">entete</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
-<span class="n">source47</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"emplacement, latitude, longitude, type de radars</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
-<span class="n">enregistrement</span> <span class="o">=</span> <span class="o">..................</span>
-<span class="k">while</span> <span class="n">enregistrement</span> <span class="o">!=</span> <span class="s1">''</span><span class="p">:</span>
-    <span class="n">liste</span> <span class="o">=</span> <span class="n">enregistrement</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">','</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">liste</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="o">.......</span><span class="p">:</span>
-        <span class="n">source47</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">liste</span><span class="p">[</span><span class="o">.....</span><span class="p">]</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="nb">float</span><span class="p">(</span><span class="n">liste</span><span class="p">[</span><span class="o">.....</span><span class="p">])</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="nb">float</span><span class="p">(</span><span class="n">liste</span><span class="p">[</span><span class="o">.....</span><span class="p">])</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">liste</span><span class="p">[</span><span class="o">.....</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
-    <span class="n">enregistrement</span> <span class="o">=</span> <span class="o">...............</span>
-
-<span class="n">source</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="n">source47</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre></div>
-2. Vérifier avec le bloc note que le fichier <code>radars47.csv</code> contient bien les données demandées.
-</div>
 <h3 id="importation-des-donnees-sur-une-carte">Importation des données sur une carte<a class="headerlink" href="#importation-des-donnees-sur-une-carte" title="Permanent link">¶</a></h3>
-<p>Il s'agit maintenant d'exploiter le fichier <code>radars47.csv</code> afin de situer les différents radars sur une carte. Nous allons pour cela utiliser le module <code>folium</code> de python qui génére des cartes de <em>OpenStreetMap</em>.</p>
+<p>Il s'agit maintenant d'exploiter le fichier <code>radars.csv</code> afin de situer les différents radars sur une carte. Nous allons pour cela utiliser le module <code>folium</code> de python qui génére des cartes de <em>OpenStreetMap</em>.</p>
 <div class="admonition exo">
 <p class="admonition-title">Exo</p>
 <p>Installer le module <code>folium</code> dans Thonny ou Edupython.</p>
@@ -2061,11 +2186,12 @@ Il existe aussi le standard <code>XML</code> qui permet l'échande de données d
 <p><img alt="La carte du prof!" src="img/carte_test.png" width="30%"></p>
 <p>Retour à nos radars du 47! L'objectif est de créer une carte du Lot-et-Garonne contenant les marques de tous les radars. L'algorithme de construction ressemble alors à cela:</p>
 <div class="highlight"><span class="filename">📋 Texte</span><pre><span></span><code>Créer carte du Lot et Garonne
-Pour chaque élément radar du fichier radar47.csv
-    Créer le marqueur au coordonnées du radar , popup= type de radar, tooltip= Nom du lieu
+Pour chaque élément radar du fichier radars.csv
+    Créer le marqueur au coordonnées du radar , popup= type de radar, tooltip= Date de mise en service
 Sauvegarder la carte
 Afficher la carte
 </code></pre></div>
+<p>Vous utiliserez la méthode <code>split</code> donnée ci-dessus, pour transformer une chaîne de caractères en liste puis exploitez les éléments de cette liste.</p>
 <div class="admonition exo">
 <p class="admonition-title">Exo</p>
 <p>Écrire le programme qui implémente l'algorithme suivant. </p>
