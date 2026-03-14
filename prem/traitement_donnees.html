@@ -1161,6 +1161,24 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#recuperation-et-personnalisation-des-donnees" class="md-nav__link">
+    <span class="md-ellipsis">
+      Récupération et personnalisation des données
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exploitation-des-donnees" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exploitation des données
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#importation-des-donnees-sur-une-carte" class="md-nav__link">
     <span class="md-ellipsis">
       Importation des données sur une carte
@@ -2010,7 +2028,7 @@ La méthode <code>headers</code> permet d'afficher les entêtes de la réponse e
 <span class="w">    </span><span class="s2">"viandes"</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"poisson"</span><span class="p">,</span><span class="s2">"poulet"</span><span class="p">,</span><span class="s2">"boeuf"</span><span class="p">]</span>
 <span class="w"> </span><span class="p">}</span>
 </code></pre></div>
-Il existe aussi le standard <code>XML</code> qui permet l'échande de données d'un logiciel à un autre: les QCM de pronote utilisent ce standard! 
+Il existe aussi le standard <code>XML</code> qui permet l'échande de données d'un logiciel à un autre: les QCM de pronotel'utilisent!
 <div class="admonition exo">
 <p class="admonition-title">Exo</p>
 <ol>
@@ -2055,7 +2073,7 @@ Il existe aussi le standard <code>XML</code> qui permet l'échande de données d
 </code></pre></div></li>
 <li>Complétez le code avec les deux lignes suivantes afin d'afficher dans la console la température actuelle à AGEN.
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">t</span> <span class="o">=</span> <span class="o">.....</span><span class="c1"># À compléter pour que t soit la température.</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"La témpérature est de </span><span class="si">{}</span><span class="s2"> degrés C"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">t</span> <span class="o">-</span> <span class="mf">273.15</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"La témpérature est de </span><span class="si">{</span><span class="n">t</span><span class="o">-</span><span class="mf">273.15</span><span class="si">:</span><span class="s2">2.2f</span><span class="si">}</span><span class="s2"> degrés C"</span><span class="p">)</span>
 </code></pre></div></li>
 </ol>
 </div>
@@ -2067,7 +2085,7 @@ Il existe aussi le standard <code>XML</code> qui permet l'échande de données d
 <p class="admonition-title">Exo</p>
 <ol>
 <li>Récupérer les fichiers necessaires <a href="fichier\fichier_cours.zip" download="fichier_cours.zip">ici</a>.</li>
-<li>Ouvrez le fichier <code>script.js</code> en écriture pour modifier la variable <code>API_KEY</code> (remplacer les pointillés par votre clé openweather). Pensez à enregistrer.</li>
+<li>Ouvrez le fichier <code>script.js</code> en écriture pour modifier la variable <code>API_KEY</code> (ligne 26 remplacer les pointillés par votre clé openweather). Pensez à enregistrer.</li>
 <li>Ouvrez le fichier <code>index.html</code> en lecture et saisissez le nom d'une ville.</li>
 </ol>
 </div>
@@ -2137,14 +2155,59 @@ Il existe aussi le standard <code>XML</code> qui permet l'échande de données d
 <p>Le site <a href="https://www.data.gouv.fr/fr/">data.gouv</a> est une plateforme qui permet de récupérer des données publiques françaises.</p>
 </div>
 <p>Les données proposées sont publiques et  soumis à la licence  <code>LICENCE OUVERTE</code>  qui permet une grande liberté de réutilisation de ces données.</p>
+<h3 id="recuperation-et-personnalisation-des-donnees">Récupération et personnalisation des données<a class="headerlink" href="#recuperation-et-personnalisation-des-donnees" title="Permanent link">¶</a></h3>
 <div class="admonition exo">
 <p class="admonition-title">Exo</p>
 <ol>
-<li>Récupérer à cette <a href="https://static.data.gouv.fr/resources/liste-des-radars-fixes-en-france/20251230-134204/jeu-de-donnees-liste-des-radars-fixes-en-france-12-2025.csv">adresse</a> donnant la liste des radars automatiques en France(MAJ 2024).</li>
+<li>Récupérer à cette <a href="https://static.data.gouv.fr/resources/liste-des-radars-fixes-en-france/20251230-134204/jeu-de-donnees-liste-des-radars-fixes-en-france-12-2025.csv">adresse</a> donnant la liste des radars automatiques en France(MAJ 2025).</li>
 <li>Renommez le fichier en <code>radars.csv</code></li>
 <li>Ouvrez ce fichier avec le bloc note pour visualiser son contenu(attention par défaut, il s'ouvre avec Excel...).</li>
 </ol>
 </div>
+<div class="admonition failure">
+<p class="admonition-title">Données manquantes</p>
+<p>Le fichier contient la localisation de près de 3330 radars mais les lieux ne sont pas données!!</p>
+</div>
+<p>Pas de panique! En fouillant un peu dans les bibliothèques Python, on trouve <code>reverse_geocoder</code> qui permet de déterminer un lieu à partir de coordonnées GPS.</p>
+<p>Nous allons donc créer un noveau fichier <code>csv</code> en ajoutant au fichier <code>radars.csv</code> les villes où se situent ces radars.</p>
+<div class="admonition exo">
+<p class="admonition-title">Personnaliser les données</p>
+<ol>
+<li>Exécuter le fichier Python suivant. Attention, ce fichier doit être situé au même niveau d'arborescence que le fichier <code>csv</code>.</li>
+<li>Normalement cela ne fonctionne pas! Essayez de trouver pour quelles raisons.</li>
+</ol>
+</div>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">reverse_geocoder</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">rg</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"radars.csv"</span><span class="p">)</span>
+
+    <span class="n">coords</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"Latitude"</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">" Longitude"</span><span class="p">]):</span>
+        <span class="n">coords</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">))</span>
+
+
+    <span class="n">results</span> <span class="o">=</span> <span class="n">rg</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">coords</span><span class="p">)</span>  <span class="c1"># Traite tout en une seule fois, très rapide</span>
+
+    <span class="n">df</span><span class="p">[</span><span class="s1">'ville'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">results</span><span class="p">]</span>
+
+
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">"radars_avec_villes.csv"</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+<details class="note">
+<summary>Aide au cas où...</summary>
+<ol>
+<li>Pour ce module, le séparateur par défaut des fichiers <code>csv</code> est la virgule (comma). Or les données enregistrées sont séparées par des <code>;</code>. Il faut donc le préciser à la méthode <code>read_csv</code>.</li>
+<li>L'encodage des caractères n'est pas en utf-8 (quelle idée!!!). Là aussi il faut l'indiquer à la méthode précédente.</li>
+</ol>
+<p>La première instruction sera alors : <code>df = pd.read_csv("radars.csv", sep = ';', encoding ="ANSI")</code></p>
+</details>
+<p>Nous disposons maintenant du fichier <code>radars_avec_villes.csv</code> contenant les informations souhaitées.</p>
+<h3 id="exploitation-des-donnees">Exploitation des données<a class="headerlink" href="#exploitation-des-donnees" title="Permanent link">¶</a></h3>
 <p>Nous avons rappelons les routines <code>python</code> qui permettent d'ouvrir, de créer, de lire ou d'écrire sur un fichier.</p>
 <p></p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">source</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"radars.csv"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="c1">#ouverture en lecture du fichier radars.csv</span>
 <span class="n">entete</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
@@ -2156,19 +2219,20 @@ Il existe aussi le standard <code>XML</code> qui permet l'échande de données d
 <p>Quel est le type de la variable <code>entete</code>?</p>
 </div>
 <p>Nous souhaitons exploiter les données de ce fichier. Si chaque enregistrement est renvoyé comme une chaîne de caractères, ce n'est pas l'idéal. On préferait une liste ou un dictionnaire pour accéder plus facilement aux données qu'elles contiennent.</p>
-<div class="admonition info">
-<p class="admonition-title">Une méthode importante: la méthode <code>split</code></p>
-<p>La méthode <code>readline()</code> appliquée à l'objet <code>source</code> renvoie une chaîne de caractères. La méthode <code>split</code> appliquée à une chaîne de caractères prend en paramètre un caractère (la virgule par exemple) et découpe la chaîne de caractères en plusieurs éléments qui seront alors stockés dans une liste. Le découpage se fait au caractère indiqué en paramètre dans la fonction.</p>
+<p>Nous allons donc construire un programme Python qui à partir du fichier <code>csv</code> construit une liste de tuples <code>(lieu, lat, lon, date)</code> que l'on pourra exploiter par la suite.</p>
+<div class="admonition exo">
+<p class="admonition-title">Exploiter le fichier <code>csv</code></p>
+<p>Écrire un programme qui permet de construire cette liste de tuples. On utilisera les aides fournies précédemment.</p>
 </div>
 <h3 id="importation-des-donnees-sur-une-carte">Importation des données sur une carte<a class="headerlink" href="#importation-des-donnees-sur-une-carte" title="Permanent link">¶</a></h3>
-<p>Il s'agit maintenant d'exploiter le fichier <code>radars.csv</code> afin de situer les différents radars sur une carte. Nous allons pour cela utiliser le module <code>folium</code> de python qui génére des cartes de <em>OpenStreetMap</em>.</p>
+<p>Il s'agit maintenant d'exploiter le fichier <code>radars_avec_villes.csv</code>(plus précisément le liste des tuples...) afin de situer les différents radars sur une carte. Nous allons pour cela utiliser le module <code>folium</code> de python qui génére des cartes de <em>OpenStreetMap</em>.</p>
 <div class="admonition exo">
 <p class="admonition-title">Exo</p>
 <p>Installer le module <code>folium</code> dans Thonny ou Edupython.</p>
 </div>
 <p>La documentation du module est simple et se trouve <a href="https://python-visualization.github.io/folium/quickstart.html#Getting-Started">ici</a></p>
 <div class="admonition exo">
-<p class="admonition-title">Exo</p>
+<p class="admonition-title">Première manip</p>
 <ol>
 <li>Créer une carte nommée <code>carte_47</code> centrée sur le Lot-et-Garonne.</li>
 <li>Ajouter un paramètre de zoom.</li>
@@ -2176,7 +2240,7 @@ Il existe aussi le standard <code>XML</code> qui permet l'échande de données d
 </div>
 <p>La carte ainsi créée, on peut ajouter des marqueurs (<code>Marker</code>) comme indiqué dans la documentation en précisant la longitude et la latitude du lieu que vous souhaitez mettre en avant.</p>
 <div class="admonition exo">
-<p class="admonition-title">Exo</p>
+<p class="admonition-title">Utiliser des marqueurs</p>
 <ol>
 <li>Ajouter un marqueur rouge avec une icône information sur le lycée Jean Baptiste de Baudre. Quand la souris passe sur ce marqueur est affichée le nom de la ville et quand on clique dessus, c'est le nom du lycée qui est affiché. </li>
 <li>Ajouter un marqueur vert avec une icône information sur le point de coordonnées <code>lat = 44.2969</code> et <code>lon = 0.0397</code>. Vous remplirez le popup et le tooltip en fonction de ce que vous y trouverez!</li>
@@ -2186,18 +2250,47 @@ Il existe aussi le standard <code>XML</code> qui permet l'échande de données d
 <p><img alt="La carte du prof!" src="img/carte_test.png" width="30%"></p>
 <p>Retour à nos radars du 47! L'objectif est de créer une carte du Lot-et-Garonne contenant les marques de tous les radars. L'algorithme de construction ressemble alors à cela:</p>
 <div class="highlight"><span class="filename">📋 Texte</span><pre><span></span><code>Créer carte du Lot et Garonne
-Pour chaque élément radar du fichier radars.csv
-    Créer le marqueur au coordonnées du radar , popup= type de radar, tooltip= Date de mise en service
+Pour chaque élément radar du la liste de tuples
+    Créer le marqueur au coordonnées du radar , popup= Lieu, tooltip= Date de mise en service
 Sauvegarder la carte
 Afficher la carte
 </code></pre></div>
-<p>Vous utiliserez la méthode <code>split</code> donnée ci-dessus, pour transformer une chaîne de caractères en liste puis exploitez les éléments de cette liste.</p>
+<div class="admonition info">
+<p class="admonition-title">Une méthode importante: la méthode <code>split</code></p>
+<p>La méthode <code>readline()</code> appliquée à l'objet <code>source</code> renvoie une chaîne de caractères. La méthode <code>split</code> appliquée à une chaîne de caractères prend en paramètre un caractère (la virgule par exemple) et découpe la chaîne de caractères en plusieurs éléments qui seront alors stockés dans une liste. Le découpage se fait au caractère indiqué en paramètre dans la fonction.</p>
+</div>
+<p>Le programme Python pourrait ressembler à :</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">folium</span>
+
+
+<span class="n">carte</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span> <span class="o">=</span> <span class="p">[</span><span class="mf">44.4</span><span class="p">,</span><span class="mf">0.6</span><span class="p">],</span> <span class="n">zoom_start</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="n">source</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"radars_avec_villes.csv"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span>
+
+
+<span class="n">entete</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span> <span class="c1"># pour sortir la légende des données</span>
+<span class="n">ligne</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+
+<span class="k">while</span> <span class="n">ligne</span> <span class="o">!=</span> <span class="s2">""</span><span class="p">:</span>
+    <span class="n">num</span><span class="p">,</span> <span class="n">type_r</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">vma</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">long</span><span class="p">,</span> <span class="n">lieu</span> <span class="p">,</span> <span class="n">code</span> <span class="o">=</span> <span class="n">ligne</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">","</span><span class="p">)</span>
+    <span class="n">folium</span><span class="o">.</span><span class="n">Marker</span><span class="p">([</span><span class="o">.......</span> <span class="p">,</span> <span class="o">..........</span><span class="p">],</span><span class="n">tooltip</span> <span class="o">=</span> <span class="o">....</span> <span class="p">,</span> <span class="n">popup</span> <span class="o">=</span> <span class="o">.....</span><span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">carte</span><span class="p">)</span>
+    <span class="n">ligne</span> <span class="o">=</span> <span class="o">..............</span>
+
+<span class="n">source</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">carte</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">'radars_france.html'</span><span class="p">)</span>
+</code></pre></div>
 <div class="admonition exo">
-<p class="admonition-title">Exo</p>
-<p>Écrire le programme qui implémente l'algorithme suivant. </p>
+<p class="admonition-title">Carte des radars en France</p>
+<p>Compléter le programme précédent puis exécutez-le pour construire la carte</p>
 </div>
 <p>Vous devriez obtenir la carte ci-dessous( celle-ci n'est pas interactive, la vôtre si!):</p>
-<p><img alt="carte des radars du 47 (Maj 2018)" src="img/carte_radar.png" width="50%"></p></div>
+<p><img alt="carte des radars sur l'Agenais (Maj 2025)" src="img/carte_radar.png" width="30%"></p>
+<p>Il y a plusieurs types de radars : ETD, ETF, ETT, ETU, ETVM, ETFR et ETPN.</p>
+<div class="admonition exo">
+<p class="admonition-title">Avec de la couleurs</p>
+<p>Modifiez le code précédent en affectant une couleur pour chaque type de radar et en utilisant des calques.(voir documentation)</p>
+</div>
+<p><img alt="carte des types de radars(Maj 2025)" src="img/carte_radar_couleur.png" width="50%"></p></div>
 
 
 
