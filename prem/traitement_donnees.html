@@ -16,7 +16,7 @@
         <link rel="prev" href="microntroleur.html">
       
       
-        <link rel="next" href="../term/termnsi.html">
+        <link rel="next" href="reseaux.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -1201,6 +1201,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reseaux.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Réseaux en Python
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2206,7 +2229,7 @@ Il existe aussi le standard <code>XML</code> qui permet l'échande de données d
 </ol>
 <p>La première instruction sera alors : <code>df = pd.read_csv("radars.csv", sep = ';', encoding ="ANSI")</code></p>
 </details>
-<p>Nous disposons maintenant du fichier <code>radars_avec_villes.csv</code> contenant les informations souhaitées.</p>
+<p>Nous disposons maintenant du fichier <code>radars_avec_villes.csv</code> contenant les informations souhaitées. Vous remarquerez sans doute que le séparateur de ce dernier fichier est <code>,</code>.</p>
 <h3 id="exploitation-des-donnees">Exploitation des données<a class="headerlink" href="#exploitation-des-donnees" title="Permanent link">¶</a></h3>
 <p>Nous avons rappelons les routines <code>python</code> qui permettent d'ouvrir, de créer, de lire ou d'écrire sur un fichier.</p>
 <p></p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">source</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"radars.csv"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="c1">#ouverture en lecture du fichier radars.csv</span>
@@ -2219,11 +2242,6 @@ Il existe aussi le standard <code>XML</code> qui permet l'échande de données d
 <p>Quel est le type de la variable <code>entete</code>?</p>
 </div>
 <p>Nous souhaitons exploiter les données de ce fichier. Si chaque enregistrement est renvoyé comme une chaîne de caractères, ce n'est pas l'idéal. On préferait une liste ou un dictionnaire pour accéder plus facilement aux données qu'elles contiennent.</p>
-<p>Nous allons donc construire un programme Python qui à partir du fichier <code>csv</code> construit une liste de tuples <code>(lieu, lat, lon, date)</code> que l'on pourra exploiter par la suite.</p>
-<div class="admonition exo">
-<p class="admonition-title">Exploiter le fichier <code>csv</code></p>
-<p>Écrire un programme qui permet de construire cette liste de tuples. On utilisera les aides fournies précédemment.</p>
-</div>
 <h3 id="importation-des-donnees-sur-une-carte">Importation des données sur une carte<a class="headerlink" href="#importation-des-donnees-sur-une-carte" title="Permanent link">¶</a></h3>
 <p>Il s'agit maintenant d'exploiter le fichier <code>radars_avec_villes.csv</code>(plus précisément le liste des tuples...) afin de situer les différents radars sur une carte. Nous allons pour cela utiliser le module <code>folium</code> de python qui génére des cartes de <em>OpenStreetMap</em>.</p>
 <div class="admonition exo">
@@ -2259,6 +2277,8 @@ Afficher la carte
 <p class="admonition-title">Une méthode importante: la méthode <code>split</code></p>
 <p>La méthode <code>readline()</code> appliquée à l'objet <code>source</code> renvoie une chaîne de caractères. La méthode <code>split</code> appliquée à une chaîne de caractères prend en paramètre un caractère (la virgule par exemple) et découpe la chaîne de caractères en plusieurs éléments qui seront alors stockés dans une liste. Le découpage se fait au caractère indiqué en paramètre dans la fonction.</p>
 </div>
+<p>Le schéma suivant résume le cheminement:</p>
+<p><img alt="Description de notre algorithme" src="img/algo_carte_csv.png" width="80%"></p>
 <p>Le programme Python pourrait ressembler à :</p>
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">folium</span>
 
@@ -2272,8 +2292,8 @@ Afficher la carte
 <span class="n">ligne</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
 
 <span class="k">while</span> <span class="n">ligne</span> <span class="o">!=</span> <span class="s2">""</span><span class="p">:</span>
-    <span class="n">num</span><span class="p">,</span> <span class="n">type_r</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">vma</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">long</span><span class="p">,</span> <span class="n">lieu</span> <span class="p">,</span> <span class="n">code</span> <span class="o">=</span> <span class="n">ligne</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">","</span><span class="p">)</span>
-    <span class="n">folium</span><span class="o">.</span><span class="n">Marker</span><span class="p">([</span><span class="o">.......</span> <span class="p">,</span> <span class="o">..........</span><span class="p">],</span><span class="n">tooltip</span> <span class="o">=</span> <span class="o">....</span> <span class="p">,</span> <span class="n">popup</span> <span class="o">=</span> <span class="o">.....</span><span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">carte</span><span class="p">)</span>
+    <span class="n">liste_donnees</span>  <span class="o">=</span> <span class="n">ligne</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">","</span><span class="p">)</span>
+    <span class="n">folium</span><span class="o">.</span><span class="n">Marker</span><span class="p">([</span><span class="o">.......</span> <span class="p">,</span> <span class="o">..........</span><span class="p">],</span><span class="n">tooltip</span> <span class="o">=</span> <span class="o">....</span> <span class="p">,</span> <span class="n">popup</span> <span class="o">=</span> <span class="n">liste_donnees</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">carte</span><span class="p">)</span>
     <span class="n">ligne</span> <span class="o">=</span> <span class="o">..............</span>
 
 <span class="n">source</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
