@@ -1302,18 +1302,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#amelioration-de-lalgorithme-naif" class="md-nav__link">
-    <span class="md-ellipsis">
-      Amélioration de l'algorithme naïf
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#lalgorithme-de-boyer-moore-version-simplifee-de-horspol" class="md-nav__link">
     <span class="md-ellipsis">
-      L'algorithme de Boyer-Moore, version simplifée de Horspol:
+      L'algorithme de Boyer-Moore, version simplifée de Horspol
     </span>
   </a>
   
@@ -1899,16 +1890,12 @@
 <div><h1 id="recherche-dun-motif-dans-un-texte">Recherche d'un motif dans un texte<a class="headerlink" href="#recherche-dun-motif-dans-un-texte" title="Permanent link">¶</a></h1>
 <h2 id="motivation">Motivation<a class="headerlink" href="#motivation" title="Permanent link">¶</a></h2>
 <p>Il existe un raccourci clavier universel, <kbd>Ctrl</kbd> + <kbd>F</kbd> , qui permet la recherche d'un mot dans un texte, dans une page web ou tout autre document...</p>
-<center>
-![](img/crtlF.png){width=70%}
-</center>
-
+<p><img alt="" src="img/crtlF.png" width="70%"></p>
 <p>Derrière cette combinaison de touche se cachent des algorithmes efficaces que nous allons en partie découvrir dans ce cours...</p>
 <div class="admonition question">
 <p class="admonition-title">Comment ça marche?</p>
 <p>Comment rechercher un mot (nous dirons un motif...) dans un texte bien plus grand que le motif recherché?</p>
 </div>
-<p>Ce cours est largement inspiré de celui de mon collègue Gilles Lassus que je remercie (encore) infiniment.</p>
 <h2 id="retour-en-classe-de-premiere-nsi">Retour en classe de première NSI<a class="headerlink" href="#retour-en-classe-de-premiere-nsi" title="Permanent link">¶</a></h2>
 <p>L'opérateur <code>in</code> permet de tester la présence d'un élément dans un itérable. En particulier, on peut l'utiliser pour rechercher un motif dans une chaîne.</p>
 <p></p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">phrase_de_test</span> <span class="o">=</span> <span class="s2">"Une phrase qui dit n'importe quoi, juste pour tester la présence de quoi "</span>
@@ -1952,8 +1939,14 @@ Néanmoins, cet opérateur ne teste que la présence du motif <code>quoi</code> 
 </div>
 <h2 id="un-algorithme-de-recherche-simple">Un algorithme de recherche simple<a class="headerlink" href="#un-algorithme-de-recherche-simple" title="Permanent link">¶</a></h2>
 <p>Pour éviter d'utiliser les méthodes <code>count</code> et <code>find</code> (qui font appel à des algorithmes mystérieux...), on va reprendre l'idée de comparer lettre par lettre, motif et texte, pour voir si il y a correspondance. Voici la proposition d'un algorithme qu'on appellera <strong>naïf</strong>:</p>
-<p><img alt="Animation" src="img/gif_naive.gif">
+<p><img alt="Recherche simple et naturelle" src="img/gif_naive.gif">
 On décale de 1 à chaque fois le motif pour voir la correspondance dans le texte...</p>
+<p>Pour rechercher un motif <code>M</code> de longueur <code>p</code> dans un texte <code>T</code> de longueur <code>n</code>, on a donc besoin:</p>
+<ul>
+<li>d'un indice <code>i</code> qui va de <code>0</code> à <code>n - p</code> qui indique le début de la fenêtre de recherche</li>
+<li>d'un indice <code>k</code> qui va de <code>0</code> à <code>p - 1</code> pour vérifier la correspondance entre les indices dans le texte et le motif.</li>
+</ul>
+<p>Si il existe un rang <code>i</code> pour lequel <code>M[k] == T[i + k]</code> pour tout <code>k</code>, alors on en déduit la présence de <code>M</code> au rang <code>i</code> dans le texte <code>T</code>.</p>
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">recherche_naive</span><span class="p">(</span><span class="n">texte</span><span class="p">,</span> <span class="n">motif</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    renvoie la liste des indices (éventuellement vide) des occurrences de</span>
@@ -1961,11 +1954,11 @@ On décale de 1 à chaque fois le motif pour voir la correspondance dans le text
 <span class="sd">    """</span>
     <span class="n">indices</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">texte</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">):</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="o">.....................</span><span class="p">:</span>
         <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">while</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> <span class="ow">and</span> <span class="n">texte</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">k</span><span class="p">]</span> <span class="o">==</span> <span class="n">motif</span><span class="p">[</span><span class="n">k</span><span class="p">]:</span>
             <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="o">...........</span><span class="p">:</span>
             <span class="n">indices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
         <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
 
@@ -1974,35 +1967,45 @@ On décale de 1 à chaque fois le motif pour voir la correspondance dans le text
 <div class="admonition exercice">
 <p class="admonition-title">Exercice</p>
 <ol>
+<li>Compléter les parties manquantes.</li>
 <li>Tester cette fonction sur des exemples simples.</li>
 <li>Tester cette fonction sur le roman et les trois mousquetaires</li>
 <li>À l'aide du module <code>time</code>, mesurer le temps de recherche de chaque mousquetaire. Que remarquez-vous?</li>
 </ol>
 </div>
 <h2 id="complexite-de-loperation">Complexité de l'opération<a class="headerlink" href="#complexite-de-loperation" title="Permanent link">¶</a></h2>
-<p>On détermine la complexité dans le pire des cas de cet algorithme, en déterminant le <strong>nombre de comparaisons</strong> de lettres. On appelle <code>n</code> (respectivement <code>m</code>), le nombre de caractères du texte (respectivement du motif).</p>
+<p>On détermine la complexité dans le pire des cas de cet algorithme, en déterminant le <strong>nombre de comparaisons</strong> de lettres. On appelle <code>n</code> (respectivement <code>p</code>), le nombre de caractères du texte (respectivement du motif).</p>
 <div class="admonition exercice">
 <p class="admonition-title">Exercice</p>
 <ol>
 <li>Quel est le pire des cas?</li>
-<li>Déterminer en fonction de <code>n</code> et <code>m</code> la complexité de cet algorithme.</li>
+<li>Déterminer en fonction de <code>n</code> et <code>p</code> la complexité de cet algorithme.</li>
 </ol>
 </div>
-<h2 id="amelioration-de-lalgorithme-naif">Amélioration de l'algorithme naïf<a class="headerlink" href="#amelioration-de-lalgorithme-naif" title="Permanent link">¶</a></h2>
-<p>En général, on se contente de savoir si un motif est dans un texte ou non.</p>
-<div class="admonition exo">
-<p class="admonition-title">Exo</p>
-<p>Modifier la fonction <code>recherche_naive</code> pour qu'elle retourne le booléen <code>True</code> dès qu'elle trouve le motif dans le texte et <code>False</code> sinon.</p>
-</div>
 <p>Pour comparer la présence du motif dans le texte, nous avons comparé la premier lettre du motif, puis éventuellement la seconde, etc... Nous allons changer de stratégie!</p>
-<div class="admonition exo">
-<p class="admonition-title">Exo</p>
-<p>Re-écrire l'algorithme de recherche naïve mais en démarrant de la fin du <strong>motif</strong> et non du début. La comparaison se fera alors de droite à gauche!</p>
+<h2 id="lalgorithme-de-boyer-moore-version-simplifee-de-horspol">L'algorithme de Boyer-Moore, version simplifée de Horspol<a class="headerlink" href="#lalgorithme-de-boyer-moore-version-simplifee-de-horspol" title="Permanent link">¶</a></h2>
+<p>Cet algorithme permet d'améliorer significativement la complexité de recherche.L'idée est de décaler le motif vers la droite d'une valeur qui n'est pas toujours 1. </p>
+<p>Naturellement, la comparaison des lettres entre <code>M</code> et <code>T</code> s'effectue de gauche à droite. Nous allons maintenant comparer de droite à gauche et surtout <strong>décaler</strong> la fenêtre de recherche en fonction de la paire de caractères qui a révélé la non correpondance. </p>
+<p>Décrivons étape par étape le processus sur un exemple: rechercher le motif <code>MAISON</code> dans une phrase.</p>
+<p><img alt="Étape n°1" src="img/gif_BM_1.png"></p>
+<p>La correspondance n'est pas bonne entre le A et le N. Décalons de 4 rangs pour que la correspondance le soit puisque la lettre A est bien présente dans le motif.</p>
+<p><img alt="Étape n°2" src="img/gif_BM_2.png"></p>
+<p>Les dernières lettres (F et N) ne correspondent toujours pas et il faut donc redécaler le motif. Mais le F n'étant pas présent dans le motif, on peut décaler de 6 pour tester une nouvelle correspondance:</p>
+<p><img alt="Étape n°3" src="img/gif_BM_3.png"></p>
+<p>Toujours pas de correspondance avec la dernière lettre mais le décalage est de 5 car le M se trouve aussi dans le motif.</p>
+<p><img alt="Étape n°4" src="img/gif_BM_4.png"></p>
+<p>Il y a maintenant une correspondance entre les lettres. L'algorithme se termine... En résumé:</p>
+<p><img alt="Principe algorithmique" src="img/gif_BM.gif"></p>
+<div class="admonition info">
+<p class="admonition-title">Un décalage qui n'est plus 1</p>
+<p>On décale donc le motif d'une valeur qui dépend du contenu de ce motif.</p>
 </div>
-<h2 id="lalgorithme-de-boyer-moore-version-simplifee-de-horspol">L'algorithme de Boyer-Moore, version simplifée de Horspol:<a class="headerlink" href="#lalgorithme-de-boyer-moore-version-simplifee-de-horspol" title="Permanent link">¶</a></h2>
-<p>L'idée est de décaler le motif vers la droite d'une valeur qui n'est pas toujours 1.</p>
-<p><img alt="Animation" src="img/gif_BM.gif"></p>
-<p>On va d'abord coder une fonction <code>dico_lettres</code> qui renvoie un dictionnaire associant à chaque lettre de <code>mot</code> (paramètre d'entrée) son dernier rang dans le <code>mot</code>. On exclut la dernière lettre, qui poserait un problème lors du décalage (on décalerait de 0...) </p>
+<p>Appellons <code>let</code> le caractère du <strong>texte</strong> qui ne correspond pas. Alors:</p>
+<ul>
+<li>si <code>let</code> n'est pas dans le motif, on décale de la longueur du motif.</li>
+<li>si <code>let</code> est dans le motif , on décale en fonction de la position de <code>let</code> dans le motif.</li>
+</ul>
+<p>On va donc d'abord coder une fonction <code>dico_lettres</code> qui renvoie un dictionnaire associant à chaque lettre de <code>mot</code> (paramètre d'entrée) son dernier rang dans le <code>mot</code>. On exclut la dernière lettre, qui poserait un problème lors du décalage (on décalerait de 0...) </p>
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">dico_lettres</span><span class="p">(</span><span class="n">mot</span><span class="p">):</span>
     <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mot</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
@@ -2012,15 +2015,15 @@ On décale de 1 à chaque fois le motif pour voir la correspondance dans le text
 <span class="k">def</span><span class="w"> </span><span class="nf">boyer_moore</span><span class="p">(</span><span class="n">texte</span><span class="p">,</span> <span class="n">motif</span><span class="p">):</span>
     <span class="n">dico</span> <span class="o">=</span> <span class="n">dico_lettres</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span>
     <span class="n">indices</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">i</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
-    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">texte</span><span class="p">):</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="c1"># la valeur initiale de i </span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">texte</span><span class="p">):</span> <span class="c1"># i s'arrête donc à len(texte) - 1</span>
         <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">while</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> <span class="ow">and</span> <span class="n">motif</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">k</span><span class="p">]</span> <span class="o">==</span> <span class="n">texte</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">k</span><span class="p">]:</span> 
             <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">):</span> 
+        <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">):</span> <span class="c1"># coorespondance</span>
             <span class="n">indices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
             <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span> 
-        <span class="k">else</span><span class="p">:</span>
+        <span class="k">else</span><span class="p">:</span> <span class="c1"># on décale</span>
             <span class="k">if</span> <span class="n">texte</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">k</span><span class="p">]</span> <span class="ow">in</span> <span class="n">dico</span><span class="p">:</span> 
                 <span class="n">i</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="n">k</span>  <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> <span class="o">-</span> <span class="n">dico</span><span class="p">[</span><span class="n">texte</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">k</span><span class="p">]]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> 
             <span class="k">else</span><span class="p">:</span>
