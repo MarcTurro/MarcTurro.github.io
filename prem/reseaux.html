@@ -188,7 +188,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#python-et-linterface-reseau" class="md-skip">
+        <a href="#connaitre-la-configuration-de-sa-machine" class="md-skip">
           Aller au contenu
         </a>
       
@@ -1119,6 +1119,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#connaitre-la-configuration-de-sa-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connaître la configuration de sa machine
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#python-et-linterface-reseau" class="md-nav__link">
     <span class="md-ellipsis">
       Python et l'interface réseau
@@ -1875,6 +1884,40 @@
 <li>de créer un serveur à plusieurs clients</li>
 <li>de jouer en réseau au puissance 4</li>
 </ul>
+<h2 id="connaitre-la-configuration-de-sa-machine">Connaître la configuration de sa machine<a class="headerlink" href="#connaitre-la-configuration-de-sa-machine" title="Permanent link">¶</a></h2>
+<p>Le script suivant permet de connaître des informations sur l'état du réseau auquel appartient votre machine.</p>
+<details class="example">
+<summary>Mon script bash</summary>
+<div class="highlight"><span class="filename">Batchfile</span><pre><span></span><code><span class="p">@</span><span class="k">echo</span> off
+<span class="k">echo</span> =========================================================
+<span class="k">echo</span> Information sur la configuration machine de votre machine
+<span class="k">echo</span> =========================================================
+<span class="k">echo</span> ADRESSE IP ET MASQUE
+<span class="k">echo</span> =========================================================
+ipconfig /all
+<span class="k">echo</span> =========================================================
+<span class="k">echo</span> TABLE DE ROUTAGE
+<span class="k">echo</span> =========================================================
+route print
+<span class="k">echo</span> =========================================================
+<span class="k">echo</span> TABLE ARP 
+<span class="k">echo</span> =========================================================
+arp -a
+<span class="k">echo</span> =========================================================
+<span class="k">echo</span> PARTAGE RESEAU
+<span class="k">echo</span> =========================================================
+net share
+</code></pre></div>
+</details>
+<div class="admonition exo">
+<p class="admonition-title">Script</p>
+<ol>
+<li>Recopier ce script dans notepad en précisant le langage utilisé(batch)</li>
+<li>Enregistrer sour le nom <code>config_reseau.bat</code></li>
+<li>Lancer le script en cliquant sur le fichier.</li>
+</ol>
+</div>
+<p>Vous aurez besoin de connaître l'adresse IP de votre machine pour poursuivre le travail.</p>
 <h2 id="python-et-linterface-reseau">Python et l'interface réseau<a class="headerlink" href="#python-et-linterface-reseau" title="Permanent link">¶</a></h2>
 <p>On peut créer une architecture client/serveur en Python avec les codes suivants. Le principe est représenté par la figure suivante:</p>
 <p><img alt="L'architecture Client/Serveur" src="img/archi_client_serveur.png" width="40%"></p>
